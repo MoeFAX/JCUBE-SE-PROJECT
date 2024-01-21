@@ -10,21 +10,15 @@ using System.Windows.Forms;
 
 namespace JCUBE_SE_PROJECT
 {
-    public partial class Form1 : Form
+    public partial class PosUI : Form
     {
-        public Form1()
+        public PosUI()
         {
             InitializeComponent();
         }
 
-        private void lblLoggedIn_Click(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void lblUserRole_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

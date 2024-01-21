@@ -1,6 +1,6 @@
 ﻿namespace JCUBE_SE_PROJECT
 {
-    partial class Form1
+    partial class PosUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PosUI));
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
@@ -39,9 +39,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelJcube = new System.Windows.Forms.Label();
             this.panelTitle = new System.Windows.Forms.Panel();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.lblUserRole = new System.Windows.Forms.Label();
             this.lblLoggedIn = new System.Windows.Forms.Label();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.panelSidebar.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,7 +60,7 @@
             this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSidebar.Location = new System.Drawing.Point(0, 0);
             this.panelSidebar.Name = "panelSidebar";
-            this.panelSidebar.Size = new System.Drawing.Size(200, 653);
+            this.panelSidebar.Size = new System.Drawing.Size(253, 653);
             this.panelSidebar.TabIndex = 0;
             // 
             // btnLogout
@@ -72,7 +72,7 @@
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Location = new System.Drawing.Point(0, 620);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(200, 33);
+            this.btnLogout.Size = new System.Drawing.Size(253, 33);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Log out";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             this.btnChangePassword.ForeColor = System.Drawing.Color.White;
             this.btnChangePassword.Location = new System.Drawing.Point(0, 357);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(200, 50);
+            this.btnChangePassword.Size = new System.Drawing.Size(253, 50);
             this.btnChangePassword.TabIndex = 0;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@
             this.btnDailySales.ForeColor = System.Drawing.Color.White;
             this.btnDailySales.Location = new System.Drawing.Point(0, 307);
             this.btnDailySales.Name = "btnDailySales";
-            this.btnDailySales.Size = new System.Drawing.Size(200, 50);
+            this.btnDailySales.Size = new System.Drawing.Size(253, 50);
             this.btnDailySales.TabIndex = 0;
             this.btnDailySales.Text = "Daily Sales";
             this.btnDailySales.UseVisualStyleBackColor = true;
@@ -114,7 +114,7 @@
             this.btnSettlePayment.ForeColor = System.Drawing.Color.White;
             this.btnSettlePayment.Location = new System.Drawing.Point(0, 257);
             this.btnSettlePayment.Name = "btnSettlePayment";
-            this.btnSettlePayment.Size = new System.Drawing.Size(200, 50);
+            this.btnSettlePayment.Size = new System.Drawing.Size(253, 50);
             this.btnSettlePayment.TabIndex = 0;
             this.btnSettlePayment.Text = "Settle Payment";
             this.btnSettlePayment.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@
             this.btnCart.ForeColor = System.Drawing.Color.White;
             this.btnCart.Location = new System.Drawing.Point(0, 207);
             this.btnCart.Name = "btnCart";
-            this.btnCart.Size = new System.Drawing.Size(200, 50);
+            this.btnCart.Size = new System.Drawing.Size(253, 50);
             this.btnCart.TabIndex = 0;
             this.btnCart.Text = "Cart";
             this.btnCart.UseVisualStyleBackColor = true;
@@ -141,13 +141,13 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 207);
+            this.panelLogo.Size = new System.Drawing.Size(253, 207);
             this.panelLogo.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(40, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(67, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(119, 106);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -161,7 +161,7 @@
             this.labelJcube.ForeColor = System.Drawing.Color.White;
             this.labelJcube.Location = new System.Drawing.Point(0, 144);
             this.labelJcube.Name = "labelJcube";
-            this.labelJcube.Size = new System.Drawing.Size(200, 63);
+            this.labelJcube.Size = new System.Drawing.Size(253, 63);
             this.labelJcube.TabIndex = 0;
             this.labelJcube.Text = "JCUBE SHIELDWORKS CORPORATION";
             this.labelJcube.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -169,25 +169,32 @@
             // panelTitle
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.panelTitle.Controls.Add(this.lblUserRole);
             this.panelTitle.Controls.Add(this.lblLoggedIn);
+            this.panelTitle.Controls.Add(this.lblUserRole);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitle.Location = new System.Drawing.Point(200, 0);
+            this.panelTitle.Location = new System.Drawing.Point(253, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(982, 62);
+            this.panelTitle.Size = new System.Drawing.Size(929, 62);
             this.panelTitle.TabIndex = 1;
+            // 
+            // panelMain
+            // 
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(253, 62);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(929, 591);
+            this.panelMain.TabIndex = 2;
             // 
             // lblUserRole
             // 
             this.lblUserRole.AutoSize = true;
             this.lblUserRole.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserRole.ForeColor = System.Drawing.Color.White;
-            this.lblUserRole.Location = new System.Drawing.Point(835, 36);
+            this.lblUserRole.Location = new System.Drawing.Point(782, 36);
             this.lblUserRole.Name = "lblUserRole";
             this.lblUserRole.Size = new System.Drawing.Size(62, 16);
-            this.lblUserRole.TabIndex = 1;
+            this.lblUserRole.TabIndex = 3;
             this.lblUserRole.Text = "UserRole";
-            this.lblUserRole.Click += new System.EventHandler(this.lblUserRole_Click);
             // 
             // lblLoggedIn
             // 
@@ -195,22 +202,13 @@
             this.lblLoggedIn.AutoSize = true;
             this.lblLoggedIn.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedIn.ForeColor = System.Drawing.Color.White;
-            this.lblLoggedIn.Location = new System.Drawing.Point(835, 19);
+            this.lblLoggedIn.Location = new System.Drawing.Point(782, 19);
             this.lblLoggedIn.Name = "lblLoggedIn";
             this.lblLoggedIn.Size = new System.Drawing.Size(95, 17);
-            this.lblLoggedIn.TabIndex = 0;
+            this.lblLoggedIn.TabIndex = 4;
             this.lblLoggedIn.Text = "Logged in as:";
-            this.lblLoggedIn.Click += new System.EventHandler(this.lblLoggedIn_Click);
             // 
-            // panelMain
-            // 
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(200, 62);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(982, 591);
-            this.panelMain.TabIndex = 2;
-            // 
-            // Form1
+            // PosUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -219,7 +217,7 @@
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panelSidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form1";
+            this.Name = "PosUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jcube Point Of Sales";
             this.panelSidebar.ResumeLayout(false);
@@ -244,8 +242,8 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label labelJcube;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblLoggedIn;
         private System.Windows.Forms.Label lblUserRole;
+        private System.Windows.Forms.Label lblLoggedIn;
     }
 }
 
