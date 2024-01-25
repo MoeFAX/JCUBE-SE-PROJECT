@@ -69,6 +69,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesHistory.Designer.cs">
+      <DependentUpon>SalesHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoldItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoldItems.Designer.cs">
+      <DependentUpon>SoldItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="StocksUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SalesHistory.resx">
+      <DependentUpon>SalesHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoldItems.resx">
+      <DependentUpon>SoldItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StocksUI.resx">
       <DependentUpon>StocksUI.cs</DependentUpon>
     </EmbeddedResource>

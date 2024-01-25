@@ -105,11 +105,13 @@ namespace JCUBE_SE_PROJECT
 
         private void btnSaleHistory_Click(object sender, EventArgs e)
         {
+            openChildForm(new SalesHistory());
             hideSubmenu();
         }
 
         private void btnSoldItem_Click(object sender, EventArgs e)
         {
+            openChildForm(new SoldItems());
             hideSubmenu();
         }
 
