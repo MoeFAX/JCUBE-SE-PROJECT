@@ -122,5 +122,15 @@ namespace JCUBE_SE_PROJECT
         {
             hideSubmenu();
         }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+            DashUI frm = new DashUI();
+            frm.TopLevel = false;
+            frm.Dock = DockStyle.Fill;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            panelMain.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }
