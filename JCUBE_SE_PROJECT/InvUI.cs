@@ -18,6 +18,23 @@ namespace JCUBE_SE_PROJECT
             customizeDesign();
         }
 
+        private Form activeForm = null;
+        public void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(childForm);
+            panelMain.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
         private void customizeDesign()
         {
             panelSubItem.Visible = false;
@@ -53,6 +70,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
+            openChildForm(new Category());
             hideSubmenu();
         }
 
@@ -80,11 +98,13 @@ namespace JCUBE_SE_PROJECT
 
         private void btnBrand_Click(object sender, EventArgs e)
         {
+            openChildForm(new Brand());
             hideSubmenu();
         }
 
         private void btnSupplier_Click(object sender, EventArgs e)
         {
+            openChildForm(new Supplier());
             hideSubmenu();
         }
 
