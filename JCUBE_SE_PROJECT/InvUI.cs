@@ -56,8 +56,6 @@ namespace JCUBE_SE_PROJECT
             hideSubmenu();
         }
 
-        
-
         private void btnItem_Click(object sender, EventArgs e)
         {
             showSubmenu(panelSubItem);
