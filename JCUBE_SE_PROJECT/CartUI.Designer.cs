@@ -30,10 +30,7 @@
         {
             this.newTransactionLabel = new System.Windows.Forms.Label();
             this.itemCodeLabel = new System.Windows.Forms.Label();
-            this.itemCodeTB = new MetroFramework.Controls.MetroTextBox();
             this.searchProdLabel = new System.Windows.Forms.Label();
-            this.searchProdTB = new MetroFramework.Controls.MetroTextBox();
-            this.addDiscountLabel = new System.Windows.Forms.Label();
             this.tablePanel1 = new System.Windows.Forms.Panel();
             this.tableTotalLabel = new System.Windows.Forms.Label();
             this.tablePriceLabel = new System.Windows.Forms.Label();
@@ -43,13 +40,16 @@
             this.tableInvCodeLabel = new System.Windows.Forms.Label();
             this.tableNoLabel = new System.Windows.Forms.Label();
             this.tablePanel2 = new System.Windows.Forms.Panel();
+            this.metroScrollBar1 = new MetroFramework.Controls.MetroScrollBar();
             this.transactionNoLabel = new System.Windows.Forms.Label();
             this.salesTotalLabel = new System.Windows.Forms.Label();
             this.discountLabel = new System.Windows.Forms.Label();
             this.vatLabel = new System.Windows.Forms.Label();
             this.vatableLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
-            this.metroScrollBar1 = new MetroFramework.Controls.MetroScrollBar();
+            this.addDiscountLabel = new System.Windows.Forms.Label();
+            this.searchProdTB = new MetroFramework.Controls.MetroTextBox();
+            this.itemCodeTB = new MetroFramework.Controls.MetroTextBox();
             this.tablePanel1.SuspendLayout();
             this.tablePanel2.SuspendLayout();
             this.SuspendLayout();
@@ -75,39 +75,6 @@
             this.itemCodeLabel.TabIndex = 1;
             this.itemCodeLabel.Text = "Item Code:";
             // 
-            // itemCodeTB
-            // 
-            // 
-            // 
-            // 
-            this.itemCodeTB.CustomButton.Image = null;
-            this.itemCodeTB.CustomButton.Location = new System.Drawing.Point(135, 1);
-            this.itemCodeTB.CustomButton.Name = "";
-            this.itemCodeTB.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.itemCodeTB.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.itemCodeTB.CustomButton.TabIndex = 1;
-            this.itemCodeTB.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.itemCodeTB.CustomButton.UseSelectable = true;
-            this.itemCodeTB.CustomButton.Visible = false;
-            this.itemCodeTB.DisplayIcon = true;
-            this.itemCodeTB.Icon = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_search_50__1_;
-            this.itemCodeTB.IconRight = true;
-            this.itemCodeTB.Lines = new string[0];
-            this.itemCodeTB.Location = new System.Drawing.Point(112, 71);
-            this.itemCodeTB.MaxLength = 32767;
-            this.itemCodeTB.Name = "itemCodeTB";
-            this.itemCodeTB.PasswordChar = '\0';
-            this.itemCodeTB.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.itemCodeTB.SelectedText = "";
-            this.itemCodeTB.SelectionLength = 0;
-            this.itemCodeTB.SelectionStart = 0;
-            this.itemCodeTB.ShortcutsEnabled = true;
-            this.itemCodeTB.Size = new System.Drawing.Size(157, 23);
-            this.itemCodeTB.TabIndex = 2;
-            this.itemCodeTB.UseSelectable = true;
-            this.itemCodeTB.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.itemCodeTB.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // searchProdLabel
             // 
             this.searchProdLabel.AutoSize = true;
@@ -117,49 +84,6 @@
             this.searchProdLabel.Size = new System.Drawing.Size(134, 21);
             this.searchProdLabel.TabIndex = 3;
             this.searchProdLabel.Text = "Search Product:";
-            // 
-            // searchProdTB
-            // 
-            // 
-            // 
-            // 
-            this.searchProdTB.CustomButton.Image = null;
-            this.searchProdTB.CustomButton.Location = new System.Drawing.Point(135, 1);
-            this.searchProdTB.CustomButton.Name = "";
-            this.searchProdTB.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.searchProdTB.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.searchProdTB.CustomButton.TabIndex = 1;
-            this.searchProdTB.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.searchProdTB.CustomButton.UseSelectable = true;
-            this.searchProdTB.CustomButton.Visible = false;
-            this.searchProdTB.DisplayIcon = true;
-            this.searchProdTB.Icon = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_search_50__1_;
-            this.searchProdTB.IconRight = true;
-            this.searchProdTB.Lines = new string[0];
-            this.searchProdTB.Location = new System.Drawing.Point(409, 71);
-            this.searchProdTB.MaxLength = 32767;
-            this.searchProdTB.Name = "searchProdTB";
-            this.searchProdTB.PasswordChar = '\0';
-            this.searchProdTB.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.searchProdTB.SelectedText = "";
-            this.searchProdTB.SelectionLength = 0;
-            this.searchProdTB.SelectionStart = 0;
-            this.searchProdTB.ShortcutsEnabled = true;
-            this.searchProdTB.Size = new System.Drawing.Size(157, 23);
-            this.searchProdTB.TabIndex = 4;
-            this.searchProdTB.UseSelectable = true;
-            this.searchProdTB.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.searchProdTB.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // addDiscountLabel
-            // 
-            this.addDiscountLabel.AutoSize = true;
-            this.addDiscountLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addDiscountLabel.Location = new System.Drawing.Point(572, 72);
-            this.addDiscountLabel.Name = "addDiscountLabel";
-            this.addDiscountLabel.Size = new System.Drawing.Size(117, 21);
-            this.addDiscountLabel.TabIndex = 5;
-            this.addDiscountLabel.Text = "Add Discount";
             // 
             // tablePanel1
             // 
@@ -258,6 +182,20 @@
             this.tablePanel2.TabIndex = 7;
             this.tablePanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // metroScrollBar1
+            // 
+            this.metroScrollBar1.LargeChange = 10;
+            this.metroScrollBar1.Location = new System.Drawing.Point(693, 4);
+            this.metroScrollBar1.Maximum = 100;
+            this.metroScrollBar1.Minimum = 0;
+            this.metroScrollBar1.MouseWheelBarPartitions = 10;
+            this.metroScrollBar1.Name = "metroScrollBar1";
+            this.metroScrollBar1.Orientation = MetroFramework.Controls.MetroScrollOrientation.Vertical;
+            this.metroScrollBar1.ScrollbarSize = 10;
+            this.metroScrollBar1.Size = new System.Drawing.Size(10, 200);
+            this.metroScrollBar1.TabIndex = 0;
+            this.metroScrollBar1.UseSelectable = true;
+            // 
             // transactionNoLabel
             // 
             this.transactionNoLabel.AutoSize = true;
@@ -325,19 +263,83 @@
             this.dateLabel.TabIndex = 13;
             this.dateLabel.Text = "Date Today:";
             // 
-            // metroScrollBar1
+            // addDiscountLabel
             // 
-            this.metroScrollBar1.LargeChange = 10;
-            this.metroScrollBar1.Location = new System.Drawing.Point(693, 4);
-            this.metroScrollBar1.Maximum = 100;
-            this.metroScrollBar1.Minimum = 0;
-            this.metroScrollBar1.MouseWheelBarPartitions = 10;
-            this.metroScrollBar1.Name = "metroScrollBar1";
-            this.metroScrollBar1.Orientation = MetroFramework.Controls.MetroScrollOrientation.Vertical;
-            this.metroScrollBar1.ScrollbarSize = 10;
-            this.metroScrollBar1.Size = new System.Drawing.Size(10, 200);
-            this.metroScrollBar1.TabIndex = 0;
-            this.metroScrollBar1.UseSelectable = true;
+            this.addDiscountLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addDiscountLabel.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_discount_642;
+            this.addDiscountLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addDiscountLabel.Location = new System.Drawing.Point(572, 70);
+            this.addDiscountLabel.Name = "addDiscountLabel";
+            this.addDiscountLabel.Size = new System.Drawing.Size(149, 27);
+            this.addDiscountLabel.TabIndex = 5;
+            this.addDiscountLabel.Text = "Add Discount";
+            this.addDiscountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // searchProdTB
+            // 
+            // 
+            // 
+            // 
+            this.searchProdTB.CustomButton.Image = null;
+            this.searchProdTB.CustomButton.Location = new System.Drawing.Point(135, 1);
+            this.searchProdTB.CustomButton.Name = "";
+            this.searchProdTB.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.searchProdTB.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.searchProdTB.CustomButton.TabIndex = 1;
+            this.searchProdTB.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.searchProdTB.CustomButton.UseSelectable = true;
+            this.searchProdTB.CustomButton.Visible = false;
+            this.searchProdTB.DisplayIcon = true;
+            this.searchProdTB.Icon = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_search_50__1_;
+            this.searchProdTB.IconRight = true;
+            this.searchProdTB.Lines = new string[0];
+            this.searchProdTB.Location = new System.Drawing.Point(409, 71);
+            this.searchProdTB.MaxLength = 32767;
+            this.searchProdTB.Name = "searchProdTB";
+            this.searchProdTB.PasswordChar = '\0';
+            this.searchProdTB.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.searchProdTB.SelectedText = "";
+            this.searchProdTB.SelectionLength = 0;
+            this.searchProdTB.SelectionStart = 0;
+            this.searchProdTB.ShortcutsEnabled = true;
+            this.searchProdTB.Size = new System.Drawing.Size(157, 23);
+            this.searchProdTB.TabIndex = 4;
+            this.searchProdTB.UseSelectable = true;
+            this.searchProdTB.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.searchProdTB.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // itemCodeTB
+            // 
+            // 
+            // 
+            // 
+            this.itemCodeTB.CustomButton.Image = null;
+            this.itemCodeTB.CustomButton.Location = new System.Drawing.Point(135, 1);
+            this.itemCodeTB.CustomButton.Name = "";
+            this.itemCodeTB.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.itemCodeTB.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.itemCodeTB.CustomButton.TabIndex = 1;
+            this.itemCodeTB.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.itemCodeTB.CustomButton.UseSelectable = true;
+            this.itemCodeTB.CustomButton.Visible = false;
+            this.itemCodeTB.DisplayIcon = true;
+            this.itemCodeTB.Icon = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_search_50__1_;
+            this.itemCodeTB.IconRight = true;
+            this.itemCodeTB.Lines = new string[0];
+            this.itemCodeTB.Location = new System.Drawing.Point(112, 71);
+            this.itemCodeTB.MaxLength = 32767;
+            this.itemCodeTB.Name = "itemCodeTB";
+            this.itemCodeTB.PasswordChar = '\0';
+            this.itemCodeTB.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.itemCodeTB.SelectedText = "";
+            this.itemCodeTB.SelectionLength = 0;
+            this.itemCodeTB.SelectionStart = 0;
+            this.itemCodeTB.ShortcutsEnabled = true;
+            this.itemCodeTB.Size = new System.Drawing.Size(157, 23);
+            this.itemCodeTB.TabIndex = 2;
+            this.itemCodeTB.UseSelectable = true;
+            this.itemCodeTB.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.itemCodeTB.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // CartUI
             // 

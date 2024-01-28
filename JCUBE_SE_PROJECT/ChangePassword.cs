@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace JCUBE_SE_PROJECT
 {
-    public partial class SettlePayment : Form
+    public partial class ChangePassword : Form
     {
-        public SettlePayment()
+        public ChangePassword()
         {
             InitializeComponent();
-        }
-
-        private void metroButton5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroTextBox2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
