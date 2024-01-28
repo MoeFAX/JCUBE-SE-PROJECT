@@ -55,6 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CriticalStocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CriticalStocks.Designer.cs">
+      <DependentUpon>CriticalStocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryList.Designer.cs">
+      <DependentUpon>InventoryList.cs</DependentUpon>
+    </Compile>
     <Compile Include="InvUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,18 @@
     <Compile Include="StocksUI.Designer.cs">
       <DependentUpon>StocksUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="TopSelling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopSelling.Designer.cs">
+      <DependentUpon>TopSelling.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CriticalStocks.resx">
+      <DependentUpon>CriticalStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryList.resx">
+      <DependentUpon>InventoryList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InvUI.resx">
       <DependentUpon>InvUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StocksUI.resx">
       <DependentUpon>StocksUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopSelling.resx">
+      <DependentUpon>TopSelling.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

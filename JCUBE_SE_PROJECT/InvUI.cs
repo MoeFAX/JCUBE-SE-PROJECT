@@ -117,6 +117,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnInventoryList_Click(object sender, EventArgs e)
         {
+            openChildForm(new InventoryList());
             hideSubmenu();
         }
 
