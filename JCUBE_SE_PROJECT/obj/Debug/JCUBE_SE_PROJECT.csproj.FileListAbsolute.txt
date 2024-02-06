@@ -25,3 +25,6 @@ C:\Users\herald\source\repos\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\MetroFr
 C:\Users\herald\source\repos\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\herald\source\repos\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.DashUI.resources
 C:\Users\herald\source\repos\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.csproj.CopyComplete
+C:\Users\herald\source\repos\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CancelledOrdersUI.resources
+C:\Users\herald\source\repos\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.StockInHistoryUI.resources
+C:\Users\herald\source\repos\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.UserAccountsUI.resources

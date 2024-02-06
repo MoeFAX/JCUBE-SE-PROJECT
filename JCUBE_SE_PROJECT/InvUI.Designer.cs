@@ -75,7 +75,7 @@
             this.panelSidebar.Controls.Add(this.panelLogo);
             this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSidebar.Location = new System.Drawing.Point(0, 0);
-            this.panelSidebar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelSidebar.Margin = new System.Windows.Forms.Padding(2);
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(190, 531);
             this.panelSidebar.TabIndex = 0;
@@ -88,7 +88,7 @@
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Location = new System.Drawing.Point(0, 709);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(173, 41);
             this.btnLogout.TabIndex = 7;
@@ -104,7 +104,7 @@
             this.btnUserAcc.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserAcc.ForeColor = System.Drawing.Color.White;
             this.btnUserAcc.Location = new System.Drawing.Point(0, 668);
-            this.btnUserAcc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUserAcc.Margin = new System.Windows.Forms.Padding(2);
             this.btnUserAcc.Name = "btnUserAcc";
             this.btnUserAcc.Size = new System.Drawing.Size(173, 41);
             this.btnUserAcc.TabIndex = 6;
@@ -122,7 +122,7 @@
             this.panelSubRecord.Controls.Add(this.btnSaleHistory);
             this.panelSubRecord.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubRecord.Location = new System.Drawing.Point(0, 458);
-            this.panelSubRecord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelSubRecord.Margin = new System.Windows.Forms.Padding(2);
             this.panelSubRecord.Name = "panelSubRecord";
             this.panelSubRecord.Size = new System.Drawing.Size(173, 210);
             this.panelSubRecord.TabIndex = 1;
@@ -135,7 +135,7 @@
             this.btnStockHistory.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStockHistory.ForeColor = System.Drawing.Color.White;
             this.btnStockHistory.Location = new System.Drawing.Point(0, 164);
-            this.btnStockHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStockHistory.Margin = new System.Windows.Forms.Padding(2);
             this.btnStockHistory.Name = "btnStockHistory";
             this.btnStockHistory.Size = new System.Drawing.Size(173, 41);
             this.btnStockHistory.TabIndex = 10;
@@ -151,7 +151,7 @@
             this.btnCancelledOrder.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelledOrder.ForeColor = System.Drawing.Color.White;
             this.btnCancelledOrder.Location = new System.Drawing.Point(0, 123);
-            this.btnCancelledOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelledOrder.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelledOrder.Name = "btnCancelledOrder";
             this.btnCancelledOrder.Size = new System.Drawing.Size(173, 41);
             this.btnCancelledOrder.TabIndex = 9;
@@ -167,7 +167,7 @@
             this.btnInventoryList.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventoryList.ForeColor = System.Drawing.Color.White;
             this.btnInventoryList.Location = new System.Drawing.Point(0, 82);
-            this.btnInventoryList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInventoryList.Margin = new System.Windows.Forms.Padding(2);
             this.btnInventoryList.Name = "btnInventoryList";
             this.btnInventoryList.Size = new System.Drawing.Size(173, 41);
             this.btnInventoryList.TabIndex = 8;
@@ -183,7 +183,7 @@
             this.btnSoldItem.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSoldItem.ForeColor = System.Drawing.Color.White;
             this.btnSoldItem.Location = new System.Drawing.Point(0, 41);
-            this.btnSoldItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSoldItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnSoldItem.Name = "btnSoldItem";
             this.btnSoldItem.Size = new System.Drawing.Size(173, 41);
             this.btnSoldItem.TabIndex = 7;
@@ -199,7 +199,7 @@
             this.btnSaleHistory.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaleHistory.ForeColor = System.Drawing.Color.White;
             this.btnSaleHistory.Location = new System.Drawing.Point(0, 0);
-            this.btnSaleHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaleHistory.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaleHistory.Name = "btnSaleHistory";
             this.btnSaleHistory.Size = new System.Drawing.Size(173, 41);
             this.btnSaleHistory.TabIndex = 6;
@@ -215,7 +215,7 @@
             this.btnRecords.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecords.ForeColor = System.Drawing.Color.White;
             this.btnRecords.Location = new System.Drawing.Point(0, 417);
-            this.btnRecords.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRecords.Margin = new System.Windows.Forms.Padding(2);
             this.btnRecords.Name = "btnRecords";
             this.btnRecords.Size = new System.Drawing.Size(173, 41);
             this.btnRecords.TabIndex = 5;
@@ -231,7 +231,7 @@
             this.btnStocks.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStocks.ForeColor = System.Drawing.Color.White;
             this.btnStocks.Location = new System.Drawing.Point(0, 376);
-            this.btnStocks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStocks.Margin = new System.Windows.Forms.Padding(2);
             this.btnStocks.Name = "btnStocks";
             this.btnStocks.Size = new System.Drawing.Size(173, 41);
             this.btnStocks.TabIndex = 4;
@@ -248,7 +248,7 @@
             this.panelSubItem.Controls.Add(this.btnItemList);
             this.panelSubItem.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubItem.Location = new System.Drawing.Point(0, 209);
-            this.panelSubItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelSubItem.Margin = new System.Windows.Forms.Padding(2);
             this.panelSubItem.Name = "panelSubItem";
             this.panelSubItem.Size = new System.Drawing.Size(173, 167);
             this.panelSubItem.TabIndex = 1;
@@ -261,7 +261,7 @@
             this.btnSupplier.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupplier.ForeColor = System.Drawing.Color.White;
             this.btnSupplier.Location = new System.Drawing.Point(0, 123);
-            this.btnSupplier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSupplier.Margin = new System.Windows.Forms.Padding(2);
             this.btnSupplier.Name = "btnSupplier";
             this.btnSupplier.Size = new System.Drawing.Size(173, 41);
             this.btnSupplier.TabIndex = 8;
@@ -277,7 +277,7 @@
             this.btnBrand.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrand.ForeColor = System.Drawing.Color.White;
             this.btnBrand.Location = new System.Drawing.Point(0, 82);
-            this.btnBrand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBrand.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrand.Name = "btnBrand";
             this.btnBrand.Size = new System.Drawing.Size(173, 41);
             this.btnBrand.TabIndex = 7;
@@ -293,7 +293,7 @@
             this.btnCategory.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategory.ForeColor = System.Drawing.Color.White;
             this.btnCategory.Location = new System.Drawing.Point(0, 41);
-            this.btnCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Size = new System.Drawing.Size(173, 41);
             this.btnCategory.TabIndex = 6;
@@ -309,7 +309,7 @@
             this.btnItemList.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItemList.ForeColor = System.Drawing.Color.White;
             this.btnItemList.Location = new System.Drawing.Point(0, 0);
-            this.btnItemList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnItemList.Margin = new System.Windows.Forms.Padding(2);
             this.btnItemList.Name = "btnItemList";
             this.btnItemList.Size = new System.Drawing.Size(173, 41);
             this.btnItemList.TabIndex = 5;
@@ -325,7 +325,7 @@
             this.btnItem.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItem.ForeColor = System.Drawing.Color.White;
             this.btnItem.Location = new System.Drawing.Point(0, 168);
-            this.btnItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnItem.Name = "btnItem";
             this.btnItem.Size = new System.Drawing.Size(173, 41);
             this.btnItem.TabIndex = 3;
@@ -340,7 +340,7 @@
             this.panelLogo.Controls.Add(this.labelJcube);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(173, 168);
             this.panelLogo.TabIndex = 2;
@@ -349,12 +349,13 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(50, 29);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(89, 86);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // labelJcube
             // 
@@ -376,7 +377,7 @@
             this.panel1.Controls.Add(this.lblLoggedIn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(190, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(696, 50);
             this.panel1.TabIndex = 1;
@@ -410,7 +411,7 @@
             // 
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(190, 50);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(696, 481);
             this.panelMain.TabIndex = 2;
@@ -424,7 +425,7 @@
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSidebar);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "InvUI";
             this.Text = "Jcube Inventory";
             this.panelSidebar.ResumeLayout(false);

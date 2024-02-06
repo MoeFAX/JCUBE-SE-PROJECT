@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CancelledOrdersUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelledOrdersUI.Designer.cs">
+      <DependentUpon>CancelledOrdersUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StockInHistoryUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockInHistoryUI.Designer.cs">
+      <DependentUpon>StockInHistoryUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccountsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAccountsUI.Designer.cs">
+      <DependentUpon>UserAccountsUI.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CancelledOrdersUI.resx">
+      <DependentUpon>CancelledOrdersUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashUI.resx">
       <DependentUpon>DashUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +114,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StockInHistoryUI.resx">
+      <DependentUpon>StockInHistoryUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserAccountsUI.resx">
+      <DependentUpon>UserAccountsUI.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -110,6 +137,10 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Images\jcube_logo_transparent.png" />
+    <Content Include="Images\product icon.png" />
+    <Content Include="Images\sales icon v2.png" />
+    <Content Include="Images\total prod icon.png" />
+    <Content Include="Images\warning icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
