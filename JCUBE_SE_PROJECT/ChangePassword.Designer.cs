@@ -103,6 +103,7 @@
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.label1);
             this.Name = "ChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangePassword";
             this.ResumeLayout(false);
 

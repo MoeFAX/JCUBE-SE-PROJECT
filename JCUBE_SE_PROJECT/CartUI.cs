@@ -36,5 +36,10 @@ namespace JCUBE_SE_PROJECT
         {
 
         }
+
+        private void CartUI_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
