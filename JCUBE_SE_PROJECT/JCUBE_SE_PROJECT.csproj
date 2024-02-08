@@ -73,6 +73,18 @@
     <Compile Include="InvUI.Designer.cs">
       <DependentUpon>InvUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemList.Designer.cs">
+      <DependentUpon>ItemList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="PosUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +132,12 @@
     <EmbeddedResource Include="InvUI.resx">
       <DependentUpon>InvUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ItemList.resx">
+      <DependentUpon>ItemList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PosUI.resx">
       <DependentUpon>PosUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,7 +181,16 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Images\add-icon.png" />
+    <Content Include="Images\archive-icon.png" />
+    <Content Include="Images\close-blue-icon.png" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\edit-icon.png" />
     <Content Include="Images\jcube_logo_transparent.png" />
+    <Content Include="Images\manage-icon-0.png" />
+    <Content Include="Images\password.png" />
+    <Content Include="Images\supplier-icon.png" />
+    <Content Include="Images\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

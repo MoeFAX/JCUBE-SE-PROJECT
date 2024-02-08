@@ -403,6 +403,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InvUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jcube Inventory";
             this.panelSidebar.ResumeLayout(false);
             this.panelSubRecord.ResumeLayout(false);
