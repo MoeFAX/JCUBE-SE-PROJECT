@@ -42,7 +42,7 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(-9, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(740, 43);
+            this.panel1.Size = new System.Drawing.Size(707, 43);
             this.panel1.TabIndex = 8;
             // 
             // label9
@@ -62,9 +62,9 @@
             this.columnHeader1,
             this.columnHeader2});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(-3, 43);
+            this.listView1.Location = new System.Drawing.Point(0, 42);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(682, 403);
+            this.listView1.Size = new System.Drawing.Size(698, 436);
             this.listView1.TabIndex = 9;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -82,11 +82,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 442);
+            this.ClientSize = new System.Drawing.Size(696, 481);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StockInHistoryUI";
-            this.Text = "StockInHistoryUI";
+            this.Text = "Stock in History";
+            this.Load += new System.EventHandler(this.StockInHistoryUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

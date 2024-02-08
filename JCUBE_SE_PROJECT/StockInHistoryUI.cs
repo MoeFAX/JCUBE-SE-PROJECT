@@ -16,5 +16,10 @@ namespace JCUBE_SE_PROJECT
         {
             InitializeComponent();
         }
+
+        private void StockInHistoryUI_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

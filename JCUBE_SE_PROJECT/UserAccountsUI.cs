@@ -16,5 +16,20 @@ namespace JCUBE_SE_PROJECT
         {
             InitializeComponent();
         }
+
+        private void UserAccountsUI_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RPBttn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

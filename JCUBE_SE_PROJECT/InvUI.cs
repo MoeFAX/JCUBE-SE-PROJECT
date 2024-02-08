@@ -33,7 +33,26 @@ namespace JCUBE_SE_PROJECT
                 pictureBox1.Location = new Point(67, 36);
                 panelSubRecord.Visible = false;
         }
-        
+
+        // UI INITIALZATION
+
+        private Form activeForm = null;
+
+        public void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.Dock = DockStyle.Fill;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            panelMain.Controls.Add(childForm);
+            childForm.BringToFront();
+            childForm.Show();
+        }
         public void ShowDashboard()
         {
             DashUI frm = new DashUI();
@@ -43,37 +62,6 @@ namespace JCUBE_SE_PROJECT
             panelMain.Controls.Add(frm);
             frm.Show();
         }
-
-        public void ShowCancelledOrders()
-        {
-            CancelledOrdersUI COWindow = new CancelledOrdersUI();
-            COWindow.TopLevel = false;
-            COWindow.Dock = DockStyle.Fill;
-            COWindow.FormBorderStyle = FormBorderStyle.None;
-            panelMain.Controls.Add(COWindow);
-            COWindow.Show();
-        }
-
-        public void ShowStockInHistory()
-        {
-            StockInHistoryUI SIHWindow = new StockInHistoryUI();
-            SIHWindow.TopLevel = false;
-            SIHWindow.Dock = DockStyle.Fill;
-            SIHWindow.FormBorderStyle = FormBorderStyle.None;
-            panelMain.Controls.Add(SIHWindow);
-            SIHWindow.Show();
-        }
-
-        public void ShowUserAccounts()
-        {
-            UserAccountsUI UAWindow = new UserAccountsUI();
-            UAWindow.TopLevel = false;
-            UAWindow.Dock = DockStyle.Fill;
-            UAWindow.FormBorderStyle = FormBorderStyle.None;
-            panelMain.Controls.Add(UAWindow);
-            UAWindow.Show();
-        }
-    
 
         private void showSubmenu(Panel submenu)
         {
@@ -143,21 +131,18 @@ namespace JCUBE_SE_PROJECT
 
         private void btnCancelledOrder_Click(object sender, EventArgs e)
         {
-            panelMain.Controls.Clear();
-            ShowCancelledOrders();
+            openChildForm(new CancelledOrdersUI());
         }
 
         private void btnStockHistory_Click(object sender, EventArgs e)
         {
-            panelMain.Controls.Clear();
-            ShowStockInHistory();
+            openChildForm(new StockInHistoryUI());
            
         }
 
         private void btnUserAcc_Click(object sender, EventArgs e)
         {
-            panelMain.Controls.Clear();
-            ShowUserAccounts();
+            openChildForm(new UserAccountsUI());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -167,7 +152,7 @@ namespace JCUBE_SE_PROJECT
 
         private void panelMain_Paint(object sender, PaintEventArgs e)
         {
-            ShowDashboard();
+            openChildForm(new DashUI());
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
