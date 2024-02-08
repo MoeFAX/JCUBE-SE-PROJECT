@@ -8,18 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace JCUBE_SE_PROJECT
 {
     public partial class InvUI : Form
     {
-       
-
         public InvUI()
         {
             InitializeComponent();
             customizeDesign();
-  
         }
 
         private Form activeForm = null;
