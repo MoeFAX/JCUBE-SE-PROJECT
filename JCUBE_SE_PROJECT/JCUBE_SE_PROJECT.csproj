@@ -66,6 +66,7 @@
     </Compile>
     <Compile Include="InventoryList.Designer.cs">
       <DependentUpon>InventoryList.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +158,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryList.resx">
       <DependentUpon>InventoryList.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
