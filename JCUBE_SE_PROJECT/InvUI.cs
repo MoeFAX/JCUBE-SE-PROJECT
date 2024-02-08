@@ -78,6 +78,20 @@ namespace JCUBE_SE_PROJECT
             hideSubmenu();
         }
 
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(childForm);
+            panelMain.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
         
 
         private void btnItem_Click(object sender, EventArgs e)
@@ -87,6 +101,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnStocks_Click(object sender, EventArgs e)
         {
+            openChildForm(new StocksUI());
             hideSubmenu();
         }
 
@@ -115,16 +130,19 @@ namespace JCUBE_SE_PROJECT
 
         private void btnSaleHistory_Click(object sender, EventArgs e)
         {
+            openChildForm(new SalesHistory());
             hideSubmenu();
         }
 
         private void btnSoldItem_Click(object sender, EventArgs e)
         {
+            openChildForm(new SoldItems());
             hideSubmenu();
         }
 
         private void btnInventoryList_Click(object sender, EventArgs e)
         {
+            openChildForm(new InventoryList());
             hideSubmenu();
         }
 

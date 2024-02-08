@@ -399,6 +399,9 @@
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSidebar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "InvUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jcube Inventory";

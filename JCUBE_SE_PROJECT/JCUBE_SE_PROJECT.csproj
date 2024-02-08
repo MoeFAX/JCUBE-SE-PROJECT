@@ -55,6 +55,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CriticalStocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CriticalStocks.Designer.cs">
+      <DependentUpon>CriticalStocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryList.Designer.cs">
+      <DependentUpon>InventoryList.cs</DependentUpon>
     <Compile Include="AddItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +122,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesHistory.Designer.cs">
+      <DependentUpon>SalesHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoldItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoldItems.Designer.cs">
+      <DependentUpon>SoldItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockEntry.Designer.cs">
+      <DependentUpon>StockEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StocksUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StocksUI.Designer.cs">
+      <DependentUpon>StocksUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TopSelling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopSelling.Designer.cs">
+      <DependentUpon>TopSelling.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CriticalStocks.resx">
+      <DependentUpon>CriticalStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryList.resx">
+      <DependentUpon>InventoryList.cs</DependentUpon>
     <Compile Include="Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +205,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SalesHistory.resx">
+      <DependentUpon>SalesHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoldItems.resx">
+      <DependentUpon>SoldItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockEntry.resx">
+      <DependentUpon>StockEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StocksUI.resx">
+      <DependentUpon>StocksUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopSelling.resx">
+      <DependentUpon>TopSelling.cs</DependentUpon>
     <EmbeddedResource Include="Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
