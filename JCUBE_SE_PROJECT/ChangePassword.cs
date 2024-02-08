@@ -16,5 +16,14 @@ namespace JCUBE_SE_PROJECT
         {
             InitializeComponent();
         }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            txtNewPass.Visible = true;
+            txtConfirmPass.Visible = true;
+            btnSave.Visible = true;
+            btnNext.Visible = false;
+
+        }
     }
 }
