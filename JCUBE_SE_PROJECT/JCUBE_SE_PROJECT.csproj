@@ -219,6 +219,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TopSelling.resx">
       <DependentUpon>TopSelling.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
