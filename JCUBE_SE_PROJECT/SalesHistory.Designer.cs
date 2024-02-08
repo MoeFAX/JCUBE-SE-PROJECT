@@ -36,14 +36,14 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -119,6 +119,24 @@
             this.panel1.Size = new System.Drawing.Size(911, 100);
             this.panel1.TabIndex = 4;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(802, 38);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 23);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "45,000.00";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(379, 39);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(19, 24);
+            this.comboBox1.TabIndex = 9;
+            // 
             // button3
             // 
             this.button3.FlatAppearance.BorderSize = 0;
@@ -175,24 +193,6 @@
             this.label2.Size = new System.Drawing.Size(196, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Filter By Date From:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(379, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(19, 24);
-            this.comboBox1.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(802, 38);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 23);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "45,000.00";
             // 
             // dataGridView1
             // 

@@ -31,5 +31,11 @@ namespace JCUBE_SE_PROJECT
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StockEntry stockEntry = new StockEntry();
+            stockEntry.ShowDialog();
+        }
     }
 }

@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace JCUBE_SE_PROJECT
 {
-    public partial class SoldItems : Form
+    public partial class StockEntry : Form
     {
-        public SoldItems()
+        public StockEntry()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            InvUI invUI = new InvUI();
-
         }
     }
 }
