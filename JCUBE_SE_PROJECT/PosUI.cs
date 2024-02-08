@@ -17,8 +17,43 @@ namespace JCUBE_SE_PROJECT
             InitializeComponent();
         }
 
-        
+        private Form activeForm = null;
 
-      
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(childForm);
+            panelMain.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void btnCart_Click(object sender, EventArgs e)
+        {
+            openChildForm(new CartUI());
+        }
+
+        private void btnSettlePayment_Click(object sender, EventArgs e)
+        {
+            SettlePayment moduleForm = new SettlePayment();
+            moduleForm.ShowDialog();
+        }
+
+        private void btnDailySales_Click(object sender, EventArgs e)
+        {
+            DailySales moduleForm = new DailySales();
+            moduleForm.ShowDialog();
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            ChangePassword moduleForm = new ChangePassword();
+            moduleForm.ShowDialog();
+        }
     }
 }

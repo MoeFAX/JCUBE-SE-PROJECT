@@ -44,6 +44,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,6 +67,23 @@
     </Compile>
     <Compile Include="InventoryList.Designer.cs">
       <DependentUpon>InventoryList.cs</DependentUpon>
+    <Compile Include="CartUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CartUI.Designer.cs">
+      <DependentUpon>CartUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailySales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailySales.Designer.cs">
+      <DependentUpon>DailySales.cs</DependentUpon>
     </Compile>
     <Compile Include="InvUI.cs">
       <SubType>Form</SubType>
@@ -128,6 +146,25 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryList.resx">
       <DependentUpon>InventoryList.cs</DependentUpon>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SettlePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettlePayment.Designer.cs">
+      <DependentUpon>SettlePayment.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CartUI.resx">
+      <DependentUpon>CartUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailySales.resx">
+      <DependentUpon>DailySales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InvUI.resx">
       <DependentUpon>InvUI.cs</DependentUpon>
@@ -143,8 +180,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -164,6 +201,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TopSelling.resx">
       <DependentUpon>TopSelling.cs</DependentUpon>
+    <EmbeddedResource Include="SettlePayment.resx">
+      <DependentUpon>SettlePayment.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -191,6 +230,12 @@
     <Content Include="Images\password.png" />
     <Content Include="Images\supplier-icon.png" />
     <Content Include="Images\user.png" />
+    <None Include="Resources\icons8-lock-30.png" />
+    <None Include="Resources\icons8-person-60 2.png" />
+    <None Include="Resources\icons8-print-50.png" />
+    <None Include="Resources\icons8-dropdown-field-50.png" />
+    <None Include="Resources\icons8-discount-642.png" />
+    <None Include="Resources\icons8-search-50 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
