@@ -16,5 +16,10 @@ namespace JCUBE_SE_PROJECT
         {
             InitializeComponent();
         }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

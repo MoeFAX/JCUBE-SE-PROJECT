@@ -19,7 +19,8 @@ namespace JCUBE_SE_PROJECT
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-
+            AddItem moduleForm = new AddItem();
+            moduleForm.ShowDialog();
         }
     }
 }
