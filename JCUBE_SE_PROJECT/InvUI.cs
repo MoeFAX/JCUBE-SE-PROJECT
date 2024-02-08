@@ -93,6 +93,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnItemList_Click(object sender, EventArgs e)
         {
+            openChildForm(new ItemList());
             hideSubmenu();
         }
 
