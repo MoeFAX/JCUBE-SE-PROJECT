@@ -61,6 +61,7 @@
     <Compile Include="CriticalStocks.Designer.cs">
       <DependentUpon>CriticalStocks.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBConnect.cs" />
     <Compile Include="InventoryList.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -7,18 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 
 namespace JCUBE_SE_PROJECT
 {
     public partial class InvUI : Form
     {
-       
+        SqlConnection cn = new SqlConnection();
+        SqlCommand cm = new SqlCommand();
+        DBConnect dbcon = new DBConnect();
 
         public InvUI()
         {
             InitializeComponent();
             customizeDesign();
+            cn = new SqlConnection(dbcon.myConnection());
+            cn.Open();
+            MessageBox.Show("Database is Connected");
   
         }
 
