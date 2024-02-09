@@ -74,6 +74,12 @@
     <Compile Include="DailySales.Designer.cs">
       <DependentUpon>DailySales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Discount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Discount.Designer.cs">
+      <DependentUpon>Discount.cs</DependentUpon>
+    </Compile>
     <Compile Include="InvUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DailySales.resx">
       <DependentUpon>DailySales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Discount.resx">
+      <DependentUpon>Discount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InvUI.resx">
       <DependentUpon>InvUI.cs</DependentUpon>

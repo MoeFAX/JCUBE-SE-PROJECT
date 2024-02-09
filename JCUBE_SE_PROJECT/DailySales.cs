@@ -16,10 +16,5 @@ namespace JCUBE_SE_PROJECT
         {
             InitializeComponent();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

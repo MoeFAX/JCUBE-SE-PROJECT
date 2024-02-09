@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace JCUBE_SE_PROJECT
 {
-    public partial class CartUI : Form
+    public partial class Discount : Form
     {
-        public CartUI()
+        public Discount()
         {
             InitializeComponent();
-        }
-        private void btnDiscount_Click(object sender, EventArgs e)
-        {
-            Discount moduleForm = new Discount();
-            moduleForm.ShowDialog();
         }
     }
 }

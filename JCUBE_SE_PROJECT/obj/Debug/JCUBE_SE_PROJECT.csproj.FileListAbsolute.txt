@@ -63,3 +63,4 @@ C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUB
 C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.csproj.CopyComplete
 C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.exe
 C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.pdb
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Discount.resources
