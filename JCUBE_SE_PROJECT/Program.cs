@@ -18,7 +18,7 @@ namespace JCUBE_SE_PROJECT
                 SetProcessDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InvUI());
+            Application.Run(new PosUI());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
