@@ -36,6 +36,7 @@
             this.BrandNameField = new System.Windows.Forms.TextBox();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
+            this.lblid = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
             this.SuspendLayout();
@@ -100,6 +101,7 @@
             this.SaveBtn.TabIndex = 3;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // CancelBtn
             // 
@@ -113,6 +115,17 @@
             this.CancelBtn.TabIndex = 4;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = false;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Location = new System.Drawing.Point(12, 216);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(25, 21);
+            this.lblid.TabIndex = 5;
+            this.lblid.Text = "id";
+            this.lblid.Visible = false;
             // 
             // BrandModule
             // 
@@ -120,6 +133,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(722, 246);
+            this.Controls.Add(this.lblid);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.BrandNameField);
@@ -145,8 +159,9 @@
         private System.Windows.Forms.Label BrandModulelbl;
         private System.Windows.Forms.PictureBox CloseBtn;
         private System.Windows.Forms.Label BrandNamelbl;
-        private System.Windows.Forms.TextBox BrandNameField;
-        private System.Windows.Forms.Button SaveBtn;
-        private System.Windows.Forms.Button CancelBtn;
+        public System.Windows.Forms.TextBox BrandNameField;
+        public System.Windows.Forms.Button SaveBtn;
+        public System.Windows.Forms.Button CancelBtn;
+        public System.Windows.Forms.Label lblid;
     }
 }

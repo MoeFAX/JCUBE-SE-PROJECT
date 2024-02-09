@@ -44,6 +44,7 @@
             this.EmailAddlbl = new System.Windows.Forms.Label();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
+            this.lblid = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
             this.SuspendLayout();
@@ -172,6 +173,7 @@
             this.SaveBtn.TabIndex = 18;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // CancelBtn
             // 
@@ -185,12 +187,24 @@
             this.CancelBtn.TabIndex = 19;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = false;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Location = new System.Drawing.Point(26, 400);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(25, 21);
+            this.lblid.TabIndex = 20;
+            this.lblid.Text = "id";
+            this.lblid.Visible = false;
             // 
             // SupplierModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 428);
+            this.Controls.Add(this.lblid);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.EmailAddField);
@@ -223,17 +237,18 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox CloseBtn;
         private System.Windows.Forms.Label BrandSupplierlbl;
-        private System.Windows.Forms.TextBox SupplierNameField;
-        private System.Windows.Forms.TextBox AddressField;
-        private System.Windows.Forms.TextBox ContactField;
-        private System.Windows.Forms.TextBox PhoneField;
-        private System.Windows.Forms.TextBox EmailAddField;
         private System.Windows.Forms.Label SupplierNamelbl;
         private System.Windows.Forms.Label Addresslbl;
         private System.Windows.Forms.Label Contactlbl;
         private System.Windows.Forms.Label Phonelbl;
         private System.Windows.Forms.Label EmailAddlbl;
-        private System.Windows.Forms.Button SaveBtn;
-        private System.Windows.Forms.Button CancelBtn;
+        public System.Windows.Forms.Label lblid;
+        public System.Windows.Forms.TextBox SupplierNameField;
+        public System.Windows.Forms.TextBox AddressField;
+        public System.Windows.Forms.TextBox ContactField;
+        public System.Windows.Forms.TextBox PhoneField;
+        public System.Windows.Forms.TextBox EmailAddField;
+        public System.Windows.Forms.Button SaveBtn;
+        public System.Windows.Forms.Button CancelBtn;
     }
 }

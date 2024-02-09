@@ -36,6 +36,7 @@
             this.CancelBtn = new System.Windows.Forms.Button();
             this.CtgryNamelbl = new System.Windows.Forms.Label();
             this.CtgryNameField = new System.Windows.Forms.TextBox();
+            this.lblid = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +85,7 @@
             this.SaveBtn.TabIndex = 4;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // CancelBtn
             // 
@@ -97,6 +99,7 @@
             this.CancelBtn.TabIndex = 5;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = false;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // CtgryNamelbl
             // 
@@ -114,12 +117,23 @@
             this.CtgryNameField.Size = new System.Drawing.Size(384, 30);
             this.CtgryNameField.TabIndex = 7;
             // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Location = new System.Drawing.Point(16, 218);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(25, 21);
+            this.lblid.TabIndex = 8;
+            this.lblid.Text = "id";
+            this.lblid.Visible = false;
+            // 
             // CategoryModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(722, 246);
+            this.Controls.Add(this.lblid);
             this.Controls.Add(this.CtgryNameField);
             this.Controls.Add(this.CtgryNamelbl);
             this.Controls.Add(this.CancelBtn);
@@ -127,7 +141,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CategoryModule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CategoryModule";
@@ -144,9 +158,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox CloseBtn;
         private System.Windows.Forms.Label CtgryModulelbl;
-        private System.Windows.Forms.Button SaveBtn;
-        private System.Windows.Forms.Button CancelBtn;
         private System.Windows.Forms.Label CtgryNamelbl;
-        private System.Windows.Forms.TextBox CtgryNameField;
+        public System.Windows.Forms.TextBox CtgryNameField;
+        public System.Windows.Forms.Label lblid;
+        public System.Windows.Forms.Button SaveBtn;
+        public System.Windows.Forms.Button CancelBtn;
     }
 }

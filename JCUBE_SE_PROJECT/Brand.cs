@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,15 +13,63 @@ namespace JCUBE_SE_PROJECT
 {
     public partial class Brand : Form
     {
+        SqlConnection cn = new SqlConnection();
+        SqlCommand cm = new SqlCommand();
+        DBConnect dbcon = new DBConnect();
+        SqlDataReader dr;
         public Brand()
         {
             InitializeComponent();
+            cn = new SqlConnection(dbcon.myConnection());
+            LoadBrand();
         }
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            BrandModule moduleForm = new BrandModule();
+            BrandModule moduleForm = new BrandModule(this);
             moduleForm.ShowDialog();
+        }
+
+        public void LoadBrand()
+        {
+            int i = 0;
+            dgvBrand.Rows.Clear();
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tbBrand ORDER BY BrandName", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i++;
+                dgvBrand.Rows.Add(i, dr["BrandID"].ToString(), dr["BrandName"].ToString());
+            }
+            dr.Close();
+            cn.Close();
+        }
+
+        private void dgvBrand_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvBrand.Columns[e.ColumnIndex].Name;
+            if (colName == "Archive")
+            {
+                if(MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cn.Open();
+                    cm = new SqlCommand("DELETE FROM tbBrand WHERE BrandID LIKE '" + dgvBrand[1, e.RowIndex].Value.ToString() + "'", cn);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+                    MessageBox.Show("Brand has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else if (colName == "Edit")
+            {
+                BrandModule brandModule = new BrandModule(this);
+                brandModule.lblid.Text = dgvBrand[1, e.RowIndex].Value.ToString();
+                brandModule.BrandNameField.Text = dgvBrand[2, e.RowIndex].Value.ToString();
+                brandModule.SaveBtn.Enabled = true;
+                brandModule.ShowDialog();
+
+            }
+            LoadBrand();
         }
     }
 }
