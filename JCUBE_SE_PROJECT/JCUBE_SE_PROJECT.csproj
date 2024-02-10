@@ -113,6 +113,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="StockInHistoryUI.resx">
       <DependentUpon>StockInHistoryUI.cs</DependentUpon>
@@ -134,13 +135,22 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\activate icon.png" />
+    <Content Include="Images\deactivate icon.png" />
+    <Content Include="Images\delete icon.png" />
+    <Content Include="Images\edit icon.png" />
     <Content Include="Images\jcube_logo_transparent.png" />
+    <Content Include="Images\local data icon.png" />
+    <Content Include="Images\manage record icon.png" />
     <Content Include="Images\product icon.png" />
     <Content Include="Images\sales icon v2.png" />
     <Content Include="Images\total prod icon.png" />
     <Content Include="Images\warning icon.png" />
+    <None Include="Images\usersettings icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
