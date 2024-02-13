@@ -123,6 +123,18 @@
     <Compile Include="Discount.Designer.cs">
       <DependentUpon>Discount.cs</DependentUpon>
     </Compile>
+    <Compile Include="CancelledOrdersUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelledOrdersUI.Designer.cs">
+      <DependentUpon>CancelledOrdersUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashUI.Designer.cs">
+      <DependentUpon>DashUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="InvUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +247,24 @@
     <EmbeddedResource Include="Discount.resx">
       <DependentUpon>Discount.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="StockInHistoryUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockInHistoryUI.Designer.cs">
+      <DependentUpon>StockInHistoryUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccountsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAccountsUI.Designer.cs">
+      <DependentUpon>UserAccountsUI.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CancelledOrdersUI.resx">
+      <DependentUpon>CancelledOrdersUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashUI.resx">
+      <DependentUpon>DashUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InvUI.resx">
       <DependentUpon>InvUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +285,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SalesHistory.resx">
       <DependentUpon>SalesHistory.cs</DependentUpon>
@@ -280,6 +311,12 @@
     <EmbeddedResource Include="SettlePayment.resx">
       <DependentUpon>SettlePayment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StockInHistoryUI.resx">
+      <DependentUpon>StockInHistoryUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserAccountsUI.resx">
+      <DependentUpon>UserAccountsUI.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -294,7 +331,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Images\add-icon.png" />
     <Content Include="Images\archive-icon.png" />
@@ -312,6 +348,21 @@
     <None Include="Resources\icons8-dropdown-field-50.png" />
     <None Include="Resources\icons8-discount-642.png" />
     <None Include="Resources\icons8-search-50 %281%29.png" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\activate icon.png" />
+    <Content Include="Images\deactivate icon.png" />
+    <Content Include="Images\delete icon.png" />
+    <Content Include="Images\edit icon.png" />
+    <Content Include="Images\jcube_logo_transparent.png" />
+    <Content Include="Images\local data icon.png" />
+    <Content Include="Images\manage record icon.png" />
+    <Content Include="Images\product icon.png" />
+    <Content Include="Images\sales icon v2.png" />
+    <Content Include="Images\total prod icon.png" />
+    <Content Include="Images\warning icon.png" />
+    <None Include="Images\usersettings icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

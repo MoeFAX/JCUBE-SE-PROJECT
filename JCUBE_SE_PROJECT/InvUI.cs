@@ -59,8 +59,35 @@ namespace JCUBE_SE_PROJECT
             if (panelSubRecord.Visible == true)
                 pictureBox1.Location = new Point(67, 36);
                 panelSubRecord.Visible = false;
-               
+        }
 
+        // UI INITIALZATION
+
+        private Form activeForm = null;
+
+        public void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.Dock = DockStyle.Fill;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            panelMain.Controls.Add(childForm);
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        public void ShowDashboard()
+        {
+            DashUI frm = new DashUI();
+            frm.TopLevel = false;
+            frm.Dock = DockStyle.Fill;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            panelMain.Controls.Add(frm);
+            frm.Show();
         }
 
         private void showSubmenu(Panel submenu)
@@ -129,7 +156,6 @@ namespace JCUBE_SE_PROJECT
             openChildForm(new SoldItems());
             hideSubmenu();
         }
-
         private void btnInventoryList_Click(object sender, EventArgs e)
         {
             openChildForm(new InventoryList());
@@ -138,22 +164,33 @@ namespace JCUBE_SE_PROJECT
 
         private void btnCancelledOrder_Click(object sender, EventArgs e)
         {
-            hideSubmenu();
+            openChildForm(new CancelledOrdersUI());
         }
 
         private void btnStockHistory_Click(object sender, EventArgs e)
         {
-            hideSubmenu();
+            openChildForm(new StockInHistoryUI());
+           
         }
 
         private void btnUserAcc_Click(object sender, EventArgs e)
         {
-            hideSubmenu();
+            openChildForm(new UserAccountsUI());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             hideSubmenu();
+        }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+            openChildForm(new DashUI());
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ShowDashboard();
         }
     }
 }

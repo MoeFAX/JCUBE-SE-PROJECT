@@ -1,4 +1,4 @@
-﻿namespace JCUBE_SE_PROJECT
+namespace JCUBE_SE_PROJECT
 {
     partial class InvUI
     {
@@ -351,9 +351,6 @@
             this.pictureBox1.Location = new System.Drawing.Point(50, 29);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(89, 86);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // labelJcube
@@ -414,6 +411,7 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(696, 481);
             this.panelMain.TabIndex = 2;
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // InvUI
             // 
