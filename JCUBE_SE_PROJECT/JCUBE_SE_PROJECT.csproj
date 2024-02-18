@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateAccount.Designer.cs">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="CriticalStocks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalesHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +203,9 @@
     <Compile Include="TopSelling.Designer.cs">
       <DependentUpon>TopSelling.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CreateAccount.resx">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CriticalStocks.resx">
       <DependentUpon>CriticalStocks.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,7 +238,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CategoryModule.resx">
       <DependentUpon>CategoryModule.cs</DependentUpon>
-    </EmbeddedResource>  
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -252,6 +267,12 @@
     </Compile>
     <Compile Include="StockInHistoryUI.Designer.cs">
       <DependentUpon>StockInHistoryUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UAChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UAChangePassword.Designer.cs">
+      <DependentUpon>UAChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="UserAccountsUI.cs">
       <SubType>Form</SubType>
@@ -287,6 +308,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SalesHistory.resx">
       <DependentUpon>SalesHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StockInHistoryUI.resx">
       <DependentUpon>StockInHistoryUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UAChangePassword.resx">
+      <DependentUpon>UAChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserAccountsUI.resx">
       <DependentUpon>UserAccountsUI.cs</DependentUpon>
@@ -348,7 +375,6 @@
     <None Include="Resources\icons8-dropdown-field-50.png" />
     <None Include="Resources\icons8-discount-642.png" />
     <None Include="Resources\icons8-search-50 %281%29.png" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\activate icon.png" />

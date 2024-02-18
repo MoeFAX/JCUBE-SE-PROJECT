@@ -17,19 +17,22 @@ namespace JCUBE_SE_PROJECT
             InitializeComponent();
         }
 
-        private void UserAccountsUI_Load(object sender, EventArgs e)
+        private void CABttn_Click(object sender, EventArgs e)
         {
-
+            CreateAccount moduleForm = new CreateAccount();
+            moduleForm.ShowDialog();
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void ResetPasswordBttn_Click(object sender, EventArgs e)
         {
-
+            ResetPassword moduleForm = new ResetPassword();
+            moduleForm.ShowDialog();
         }
 
-        private void RPBttn_Click(object sender, EventArgs e)
+        private void CPBttn_Click(object sender, EventArgs e)
         {
-
+            UAChangePassword moduleForm = new UAChangePassword();
+            moduleForm.ShowDialog();
         }
     }
 }

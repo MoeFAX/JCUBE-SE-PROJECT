@@ -36,16 +36,16 @@
             this.btnSettlePayment = new System.Windows.Forms.Button();
             this.btnCart = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelJcube = new System.Windows.Forms.Label();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.lblLoggedIn = new System.Windows.Forms.Label();
             this.lblUserRole = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSidebar.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSidebar
@@ -61,7 +61,7 @@
             this.panelSidebar.Location = new System.Drawing.Point(0, 0);
             this.panelSidebar.Margin = new System.Windows.Forms.Padding(2);
             this.panelSidebar.Name = "panelSidebar";
-            this.panelSidebar.Size = new System.Drawing.Size(202, 522);
+            this.panelSidebar.Size = new System.Drawing.Size(252, 652);
             this.panelSidebar.TabIndex = 0;
             // 
             // btnLogout
@@ -71,13 +71,14 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 496);
+            this.btnLogout.Location = new System.Drawing.Point(0, 620);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(202, 26);
+            this.btnLogout.Size = new System.Drawing.Size(252, 32);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Log out";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnChangePassword
             // 
@@ -86,10 +87,10 @@
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePassword.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePassword.ForeColor = System.Drawing.Color.White;
-            this.btnChangePassword.Location = new System.Drawing.Point(0, 286);
+            this.btnChangePassword.Location = new System.Drawing.Point(0, 358);
             this.btnChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(202, 40);
+            this.btnChangePassword.Size = new System.Drawing.Size(252, 50);
             this.btnChangePassword.TabIndex = 0;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = true;
@@ -102,10 +103,10 @@
             this.btnDailySales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDailySales.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDailySales.ForeColor = System.Drawing.Color.White;
-            this.btnDailySales.Location = new System.Drawing.Point(0, 246);
+            this.btnDailySales.Location = new System.Drawing.Point(0, 308);
             this.btnDailySales.Margin = new System.Windows.Forms.Padding(2);
             this.btnDailySales.Name = "btnDailySales";
-            this.btnDailySales.Size = new System.Drawing.Size(202, 40);
+            this.btnDailySales.Size = new System.Drawing.Size(252, 50);
             this.btnDailySales.TabIndex = 0;
             this.btnDailySales.Text = "Daily Sales";
             this.btnDailySales.UseVisualStyleBackColor = true;
@@ -118,10 +119,10 @@
             this.btnSettlePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettlePayment.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettlePayment.ForeColor = System.Drawing.Color.White;
-            this.btnSettlePayment.Location = new System.Drawing.Point(0, 206);
+            this.btnSettlePayment.Location = new System.Drawing.Point(0, 258);
             this.btnSettlePayment.Margin = new System.Windows.Forms.Padding(2);
             this.btnSettlePayment.Name = "btnSettlePayment";
-            this.btnSettlePayment.Size = new System.Drawing.Size(202, 40);
+            this.btnSettlePayment.Size = new System.Drawing.Size(252, 50);
             this.btnSettlePayment.TabIndex = 0;
             this.btnSettlePayment.Text = "Settle Payment";
             this.btnSettlePayment.UseVisualStyleBackColor = true;
@@ -134,10 +135,10 @@
             this.btnCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCart.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCart.ForeColor = System.Drawing.Color.White;
-            this.btnCart.Location = new System.Drawing.Point(0, 166);
+            this.btnCart.Location = new System.Drawing.Point(0, 208);
             this.btnCart.Margin = new System.Windows.Forms.Padding(2);
             this.btnCart.Name = "btnCart";
-            this.btnCart.Size = new System.Drawing.Size(202, 40);
+            this.btnCart.Size = new System.Drawing.Size(252, 50);
             this.btnCart.TabIndex = 0;
             this.btnCart.Text = "Cart";
             this.btnCart.UseVisualStyleBackColor = true;
@@ -152,18 +153,29 @@
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(202, 166);
+            this.panelLogo.Size = new System.Drawing.Size(252, 208);
             this.panelLogo.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(68, 36);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(119, 106);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // labelJcube
             // 
             this.labelJcube.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelJcube.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelJcube.ForeColor = System.Drawing.Color.White;
-            this.labelJcube.Location = new System.Drawing.Point(0, 116);
+            this.labelJcube.Location = new System.Drawing.Point(0, 146);
             this.labelJcube.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelJcube.Name = "labelJcube";
-            this.labelJcube.Size = new System.Drawing.Size(202, 50);
+            this.labelJcube.Size = new System.Drawing.Size(252, 62);
             this.labelJcube.TabIndex = 0;
             this.labelJcube.Text = "JCUBE SHIELDWORKS CORPORATION";
             this.labelJcube.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -174,10 +186,10 @@
             this.panelTitle.Controls.Add(this.lblLoggedIn);
             this.panelTitle.Controls.Add(this.lblUserRole);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitle.Location = new System.Drawing.Point(202, 0);
+            this.panelTitle.Location = new System.Drawing.Point(252, 0);
             this.panelTitle.Margin = new System.Windows.Forms.Padding(2);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(744, 50);
+            this.panelTitle.Size = new System.Drawing.Size(930, 62);
             this.panelTitle.TabIndex = 1;
             // 
             // lblLoggedIn
@@ -186,10 +198,10 @@
             this.lblLoggedIn.AutoSize = true;
             this.lblLoggedIn.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedIn.ForeColor = System.Drawing.Color.White;
-            this.lblLoggedIn.Location = new System.Drawing.Point(627, 15);
+            this.lblLoggedIn.Location = new System.Drawing.Point(784, 19);
             this.lblLoggedIn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLoggedIn.Name = "lblLoggedIn";
-            this.lblLoggedIn.Size = new System.Drawing.Size(78, 16);
+            this.lblLoggedIn.Size = new System.Drawing.Size(95, 17);
             this.lblLoggedIn.TabIndex = 4;
             this.lblLoggedIn.Text = "Logged in as:";
             // 
@@ -198,38 +210,27 @@
             this.lblUserRole.AutoSize = true;
             this.lblUserRole.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserRole.ForeColor = System.Drawing.Color.White;
-            this.lblUserRole.Location = new System.Drawing.Point(626, 29);
+            this.lblUserRole.Location = new System.Drawing.Point(782, 36);
             this.lblUserRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserRole.Name = "lblUserRole";
-            this.lblUserRole.Size = new System.Drawing.Size(54, 15);
+            this.lblUserRole.Size = new System.Drawing.Size(62, 16);
             this.lblUserRole.TabIndex = 3;
             this.lblUserRole.Text = "UserRole";
             // 
             // panelMain
             // 
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(202, 50);
+            this.panelMain.Location = new System.Drawing.Point(252, 62);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(744, 472);
+            this.panelMain.Size = new System.Drawing.Size(930, 590);
             this.panelMain.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(54, 29);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(95, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // PosUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(946, 522);
+            this.ClientSize = new System.Drawing.Size(1182, 652);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panelSidebar);
@@ -240,9 +241,9 @@
             this.Text = "Jcube Point Of Sales";
             this.panelSidebar.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

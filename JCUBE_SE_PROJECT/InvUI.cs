@@ -61,25 +61,6 @@ namespace JCUBE_SE_PROJECT
                 panelSubRecord.Visible = false;
         }
 
-        // UI INITIALZATION
-
-        private Form activeForm = null;
-
-        public void openChildForm(Form childForm)
-        {
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
-
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.Dock = DockStyle.Fill;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            panelMain.Controls.Add(childForm);
-            childForm.BringToFront();
-            childForm.Show();
-        }
         public void ShowDashboard()
         {
             DashUI frm = new DashUI();
@@ -181,6 +162,12 @@ namespace JCUBE_SE_PROJECT
         private void btnLogout_Click(object sender, EventArgs e)
         {
             hideSubmenu();
+            if (MessageBox.Show("Logout Application?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+            }
         }
 
         private void panelMain_Paint(object sender, PaintEventArgs e)
@@ -190,7 +177,7 @@ namespace JCUBE_SE_PROJECT
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ShowDashboard();
+            openChildForm(new DashUI());
         }
     }
 }

@@ -36,7 +36,7 @@ namespace JCUBE_SE_PROJECT
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            string _username = "", _name = "", _role = "";
+            string _username = "", _fullname = "", _role = "";
             try
             {
                 bool found;
@@ -50,7 +50,7 @@ namespace JCUBE_SE_PROJECT
                 {
                     found = true;
                     _username = dr["username"].ToString();
-                    _name = dr["name"].ToString();
+                    _fullname = dr["fullname"].ToString();
                     _role = dr["role"].ToString();
                     _pass = dr["password"].ToString();
                     _isactive = bool.Parse(dr["isactive"].ToString());
@@ -67,27 +67,49 @@ namespace JCUBE_SE_PROJECT
                     if (!_isactive)
                     {
                         MessageBox.Show("Account is inactive. Unable to login", "Inactive Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        UserID.Clear();
+                        Password.Clear();
                         return;
                     }
-                    if(_role =="Cashier")
+                    if(_role == "Sales Clerk")
                     {
-                        MessageBox.Show("Welcome " + _name + "|", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Welcome " + _fullname + "!", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         UserID.Clear();
                         Password.Clear();
                         this.Hide();
-                        //Cashier cashier = new Cashier();
-                        //cashier
+                        PosUI main = new PosUI();
+                        main.Show();
+                        //Sales Clerk salesclerk = new Sales Clerk();
+                        //Sales Clerk
+
+                    }
+                    if (_role == "Administrator")
+                    {
+                        MessageBox.Show("Welcome " + _fullname + "!", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        UserID.Clear();
+                        Password.Clear();
+                        this.Hide();
+                        InvUI main = new InvUI();
+                        main.Show();
+                        //Sales Clerk salesclerk = new Sales Clerk();
+                        //Sales Clerk
 
                     }
 
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message, "Warning");
             }
+        }
+
+        private void CancelBtn_Click(object sender, EventArgs e)
+        {
+            UserID.Clear();
+            Password.Clear();
         }
     }
 }

@@ -55,5 +55,15 @@ namespace JCUBE_SE_PROJECT
             ChangePassword moduleForm = new ChangePassword();
             moduleForm.ShowDialog();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {           
+            if (MessageBox.Show("Logout Application?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+            }
+        }
     }
 }
