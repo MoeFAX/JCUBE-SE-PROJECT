@@ -42,10 +42,16 @@
             this.lblLoggedIn = new System.Windows.Forms.Label();
             this.lblUserRole = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.JCubelbl = new System.Windows.Forms.Label();
+            this.POSJCUBELOGOIMG = new System.Windows.Forms.PictureBox();
+            this.POSLoggedInlbl = new System.Windows.Forms.Label();
+            this.POSNamelbl = new System.Windows.Forms.Label();
             this.panelSidebar.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitle.SuspendLayout();
+            this.panelMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.POSJCUBELOGOIMG)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSidebar
@@ -219,12 +225,65 @@
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.POSLoggedInlbl);
+            this.panelMain.Controls.Add(this.POSNamelbl);
+            this.panelMain.Controls.Add(this.POSJCUBELOGOIMG);
+            this.panelMain.Controls.Add(this.JCubelbl);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(252, 62);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(930, 590);
             this.panelMain.TabIndex = 2;
+            // 
+            // JCubelbl
+            // 
+            this.JCubelbl.AutoSize = true;
+            this.JCubelbl.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JCubelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.JCubelbl.Location = new System.Drawing.Point(50, 18);
+            this.JCubelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.JCubelbl.Name = "JCubelbl";
+            this.JCubelbl.Size = new System.Drawing.Size(836, 56);
+            this.JCubelbl.TabIndex = 1;
+            this.JCubelbl.Text = "JCUBE SHIELDWORKS CORPORATION";
+            this.JCubelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // POSJCUBELOGOIMG
+            // 
+            this.POSJCUBELOGOIMG.Image = ((System.Drawing.Image)(resources.GetObject("POSJCUBELOGOIMG.Image")));
+            this.POSJCUBELOGOIMG.Location = new System.Drawing.Point(335, 98);
+            this.POSJCUBELOGOIMG.Name = "POSJCUBELOGOIMG";
+            this.POSJCUBELOGOIMG.Size = new System.Drawing.Size(275, 273);
+            this.POSJCUBELOGOIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.POSJCUBELOGOIMG.TabIndex = 2;
+            this.POSJCUBELOGOIMG.TabStop = false;
+            // 
+            // POSLoggedInlbl
+            // 
+            this.POSLoggedInlbl.AutoSize = true;
+            this.POSLoggedInlbl.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.POSLoggedInlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.POSLoggedInlbl.Location = new System.Drawing.Point(7, 504);
+            this.POSLoggedInlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.POSLoggedInlbl.Name = "POSLoggedInlbl";
+            this.POSLoggedInlbl.Size = new System.Drawing.Size(237, 40);
+            this.POSLoggedInlbl.TabIndex = 6;
+            this.POSLoggedInlbl.Text = "Logged in as:";
+            this.POSLoggedInlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // POSNamelbl
+            // 
+            this.POSNamelbl.AutoSize = true;
+            this.POSNamelbl.Font = new System.Drawing.Font("Century Gothic", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.POSNamelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.POSNamelbl.Location = new System.Drawing.Point(7, 544);
+            this.POSNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.POSNamelbl.Name = "POSNamelbl";
+            this.POSNamelbl.Size = new System.Drawing.Size(165, 40);
+            this.POSNamelbl.TabIndex = 5;
+            this.POSNamelbl.Text = "Fullname";
+            this.POSNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PosUI
             // 
@@ -244,6 +303,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
+            this.panelMain.ResumeLayout(false);
+            this.panelMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.POSJCUBELOGOIMG)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -263,6 +325,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUserRole;
         private System.Windows.Forms.Label lblLoggedIn;
+        private System.Windows.Forms.Label JCubelbl;
+        private System.Windows.Forms.PictureBox POSJCUBELOGOIMG;
+        public System.Windows.Forms.Label POSLoggedInlbl;
+        public System.Windows.Forms.Label POSNamelbl;
     }
 }
 

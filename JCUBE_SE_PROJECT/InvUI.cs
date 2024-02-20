@@ -21,6 +21,11 @@ namespace JCUBE_SE_PROJECT
         public InvUI()
         {
             InitializeComponent();
+            //SetStyle(ControlStyles.UserPaint, true);
+            //SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            //SetStyle(ControlStyles.AllPaintingInWmPaint, true); 
+            //SetStyle(ControlStyles.ResizeRedraw, true);
+            //UpdateStyles();
             customizeDesign();
             cn = new SqlConnection(dbcon.myConnection());
             cn.Open();
@@ -32,7 +37,7 @@ namespace JCUBE_SE_PROJECT
         public void openChildForm(Form childForm)
         {
             if (activeForm != null)
-            {
+            { 
                 activeForm.Close();
             }
             activeForm = childForm;
@@ -54,21 +59,11 @@ namespace JCUBE_SE_PROJECT
         private void hideSubmenu()
         {
             if (panelSubItem.Visible == true)
-                pictureBox1.Location = new Point(67, 36);
+                JCUBELOGOIMG.Location = new Point(67, 36);
                 panelSubItem.Visible = false;
             if (panelSubRecord.Visible == true)
-                pictureBox1.Location = new Point(67, 36);
+                JCUBELOGOIMG.Location = new Point(67, 36);
                 panelSubRecord.Visible = false;
-        }
-
-        public void ShowDashboard()
-        {
-            DashUI frm = new DashUI();
-            frm.TopLevel = false;
-            frm.Dock = DockStyle.Fill;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            panelMain.Controls.Add(frm);
-            frm.Show();
         }
 
         private void showSubmenu(Panel submenu)
@@ -77,12 +72,12 @@ namespace JCUBE_SE_PROJECT
             {
                 hideSubmenu();
                 submenu.Visible = true;
-                pictureBox1.Location = new Point(57, 36);
+                JCUBELOGOIMG.Location = new Point(57, 36);
             }
             else
             {
                 submenu.Visible = false;
-                pictureBox1.Location = new Point(67, 36);
+                JCUBELOGOIMG.Location = new Point(67, 36);
             }
         }
 
@@ -161,7 +156,6 @@ namespace JCUBE_SE_PROJECT
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            hideSubmenu();
             if (MessageBox.Show("Logout Application?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
@@ -170,12 +164,7 @@ namespace JCUBE_SE_PROJECT
             }
         }
 
-        private void panelMain_Paint(object sender, PaintEventArgs e)
-        {
-            openChildForm(new DashUI());
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void JCUBELOGOIMG_Click(object sender, EventArgs e)
         {
             openChildForm(new DashUI());
         }

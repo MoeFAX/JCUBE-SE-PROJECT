@@ -34,7 +34,7 @@ namespace JCUBE_SE_PROJECT
             }
         }
 
-        private void LoginBtn_Click(object sender, EventArgs e)
+        public void LoginBtn_Click(object sender, EventArgs e)
         {
             string _username = "", _fullname = "", _role = "";
             try
@@ -42,8 +42,8 @@ namespace JCUBE_SE_PROJECT
                 bool found;
                 cn.Open();
                 cm = new SqlCommand("Select * From tbUser Where username = @username and password = @password", cn);
-                cm.Parameters.AddWithValue("@username", UserID.Text);
-                cm.Parameters.AddWithValue("@password", Password.Text);
+                cm.Parameters.AddWithValue("@username", UserIDtxtbox.Text);
+                cm.Parameters.AddWithValue("@password", Passwordtxtbox.Text);
                 dr = cm.ExecuteReader();
                 dr.Read();
                 if (dr.HasRows)
@@ -67,18 +67,19 @@ namespace JCUBE_SE_PROJECT
                     if (!_isactive)
                     {
                         MessageBox.Show("Account is inactive. Unable to login", "Inactive Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        UserID.Clear();
-                        Password.Clear();
+                        UserIDtxtbox.Clear();
+                        Passwordtxtbox.Clear();
                         return;
                     }
                     if(_role == "Sales Clerk")
                     {
                         MessageBox.Show("Welcome " + _fullname + "!", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        UserID.Clear();
-                        Password.Clear();
+                        UserIDtxtbox.Clear();
+                        Passwordtxtbox.Clear();
                         this.Hide();
                         PosUI main = new PosUI();
-                        main.Show();
+                        main.POSNamelbl.Text = _fullname;
+                        main.ShowDialog();
                         //Sales Clerk salesclerk = new Sales Clerk();
                         //Sales Clerk
 
@@ -86,30 +87,36 @@ namespace JCUBE_SE_PROJECT
                     if (_role == "Administrator")
                     {
                         MessageBox.Show("Welcome " + _fullname + "!", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        UserID.Clear();
-                        Password.Clear();
+                        UserIDtxtbox.Clear();
+                        Passwordtxtbox.Clear();
                         this.Hide();
                         InvUI main = new InvUI();
-                        main.Show();
+                        main.INVNamelbl.Text = _fullname;
+
+                        main.ShowDialog();
                         //Sales Clerk salesclerk = new Sales Clerk();
                         //Sales Clerk
 
                     }
 
                 }
+                else
+                {
+                    MessageBox.Show("Invalid username and password!", "ACCESS DENIED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message, "Warning");
+                cn.Close();
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
-            UserID.Clear();
-            Password.Clear();
+            UserIDtxtbox.Clear();
+            Passwordtxtbox.Clear();
         }
     }
 }
