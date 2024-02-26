@@ -178,12 +178,7 @@
             this.InventoryCode.HeaderText = "Inventory Code";
             this.InventoryCode.MinimumWidth = 6;
             this.InventoryCode.Name = "InventoryCode";
-<<<<<<< HEAD
             this.InventoryCode.Width = 162;
-=======
-            this.InventoryCode.Visible = false;
-            this.InventoryCode.Width = 125;
->>>>>>> 9b803e62105503925e9b730ea80656ec53c3c8b8
             // 
             // ItemCode
             // 

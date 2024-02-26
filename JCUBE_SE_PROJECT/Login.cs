@@ -20,13 +20,10 @@ namespace JCUBE_SE_PROJECT
 
         public string _pass = "";
         public bool _isactive;
-
         public Login()
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
-            NPEyeBtn.MouseDown += new MouseEventHandler(NPEyeBtn_MouseDown);
-            NPEyeBtn.MouseUp += new MouseEventHandler(NPEyeBtn_MouseUp);
         }
 
         private void Closebtn_Click(object sender, EventArgs e)
@@ -37,23 +34,23 @@ namespace JCUBE_SE_PROJECT
             }
         }
 
-        public void LoginBtn_Click(object sender, EventArgs e)
+        private void LoginBtn_Click(object sender, EventArgs e)
         {
-            string _username = "", _fullname = "", _role = "";
+            string _username = "", _name = "", _role = "";
             try
             {
                 bool found;
                 cn.Open();
                 cm = new SqlCommand("Select * From tbUser Where username = @username and password = @password", cn);
-                cm.Parameters.AddWithValue("@username", UserIDtxtbox.Text);
-                cm.Parameters.AddWithValue("@password", Passwordtxtbox.Text);
+                cm.Parameters.AddWithValue("@username", UserID.Text);
+                cm.Parameters.AddWithValue("@password", Password.Text);
                 dr = cm.ExecuteReader();
                 dr.Read();
                 if (dr.HasRows)
                 {
                     found = true;
                     _username = dr["username"].ToString();
-                    _fullname = dr["fullname"].ToString();
+                    _name = dr["name"].ToString();
                     _role = dr["role"].ToString();
                     _pass = dr["password"].ToString();
                     _isactive = bool.Parse(dr["isactive"].ToString());
@@ -70,72 +67,27 @@ namespace JCUBE_SE_PROJECT
                     if (!_isactive)
                     {
                         MessageBox.Show("Account is inactive. Unable to login", "Inactive Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        UserIDtxtbox.Clear();
-                        Passwordtxtbox.Clear();
                         return;
                     }
-                    if(_role == "Sales Clerk")
+                    if(_role =="Cashier")
                     {
-                        MessageBox.Show("Welcome " + _fullname + "!", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        UserIDtxtbox.Clear();
-                        Passwordtxtbox.Clear();
+                        MessageBox.Show("Welcome " + _name + "|", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        UserID.Clear();
+                        Password.Clear();
                         this.Hide();
-                        PosUI main = new PosUI();
-                        main.POSNamelbl.Text = _fullname;
-                        main.lblUserRolePOS.Text = _username;
-                        main.ShowDialog();
-                        //Sales Clerk salesclerk = new Sales Clerk();
-                        //Sales Clerk
-
-                    }
-                    if (_role == "Administrator")
-                    {
-                        MessageBox.Show("Welcome " + _fullname + "!", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        UserIDtxtbox.Clear();
-                        Passwordtxtbox.Clear();
-                        this.Hide();
-                        InvUI main = new InvUI();
-                        main.INVNamelbl.Text = _fullname;
-                        main.lblUserRole.Text = _username;
-                        main.UserRole = _username;
-
-                        main.ShowDialog();
-                        //Sales Clerk salesclerk = new Sales Clerk();
-                        //Sales Clerk
+                        //Cashier cashier = new Cashier();
+                        //cashier
 
                     }
 
-                }
-                else
-                {
-                    MessageBox.Show("Invalid username and password!", "ACCESS DENIED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                cn.Close();
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                throw;
             }
-        }
-
-
-        private void CancelBtn_Click(object sender, EventArgs e)
-        {
-            UserIDtxtbox.Clear();
-            Passwordtxtbox.Clear();
-        }
-
-        public void NPEyeBtn_MouseDown(object sender, EventArgs e)
-        {
-            Passwordtxtbox.PasswordChar = '\0';
-            Passwordtxtbox.UseSystemPasswordChar = false;
-        }
-
-        public void NPEyeBtn_MouseUp(object sender, EventArgs e)
-        {
-            Passwordtxtbox.PasswordChar = '●';
-            Passwordtxtbox.UseSystemPasswordChar = true;
         }
     }
 }

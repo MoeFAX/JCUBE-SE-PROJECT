@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace JCUBE_SE_PROJECT
@@ -22,11 +21,6 @@ namespace JCUBE_SE_PROJECT
         public InvUI()
         {
             InitializeComponent();
-            //SetStyle(ControlStyles.UserPaint, true);
-            //SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-            //SetStyle(ControlStyles.AllPaintingInWmPaint, true); 
-            //SetStyle(ControlStyles.ResizeRedraw, true);
-            //UpdateStyles();
             customizeDesign();
             cn = new SqlConnection(dbcon.myConnection());
             cn.Open();
@@ -38,7 +32,7 @@ namespace JCUBE_SE_PROJECT
         public void openChildForm(Form childForm)
         {
             if (activeForm != null)
-            { 
+            {
                 activeForm.Close();
             }
             activeForm = childForm;
@@ -57,19 +51,16 @@ namespace JCUBE_SE_PROJECT
             panelSubRecord.Visible = false;
         }
 
-        public string UserRole { get; set; }
-
         private void hideSubmenu()
         {
             if (panelSubItem.Visible == true)
-                JCUBELOGOIMG.Location = new Point(67, 36);
+                pictureBox1.Location = new Point(67, 36);
                 panelSubItem.Visible = false;
             if (panelSubRecord.Visible == true)
-                JCUBELOGOIMG.Location = new Point(67, 36);
+                pictureBox1.Location = new Point(67, 36);
                 panelSubRecord.Visible = false;
         }
 
-<<<<<<< HEAD
         
         public void ShowDashboard()
         {
@@ -81,20 +72,18 @@ namespace JCUBE_SE_PROJECT
             frm.Show();
         }
 
-=======
->>>>>>> 9b803e62105503925e9b730ea80656ec53c3c8b8
         private void showSubmenu(Panel submenu)
         {
             if(submenu.Visible == false)
             {
                 hideSubmenu();
                 submenu.Visible = true;
-                JCUBELOGOIMG.Location = new Point(57, 36);
+                pictureBox1.Location = new Point(57, 36);
             }
             else
             {
                 submenu.Visible = false;
-                JCUBELOGOIMG.Location = new Point(67, 36);
+                pictureBox1.Location = new Point(67, 36);
             }
         }
 
@@ -168,40 +157,22 @@ namespace JCUBE_SE_PROJECT
 
         private void btnUserAcc_Click(object sender, EventArgs e)
         {
-            UserAccountsUI childForm = new UserAccountsUI();
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
-            activeForm = childForm;
-            childForm.UAUserRolelbl.Text = UserRole;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(childForm);
-            panelMain.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+            openChildForm(new UserAccountsUI());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Logout Application?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Hide();
-                Login login = new Login();
-                login.ShowDialog();
-            }
+            hideSubmenu();
         }
 
-        private void JCUBELOGOIMG_Click(object sender, EventArgs e)
+        private void panelMain_Paint(object sender, PaintEventArgs e)
         {
             openChildForm(new DashUI());
         }
 
-        private void InvUI_Load(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            UserRole = lblUserRole.Text;
+            ShowDashboard();
         }
     }
 }

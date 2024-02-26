@@ -36,22 +36,16 @@
             this.btnSettlePayment = new System.Windows.Forms.Button();
             this.btnCart = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelJcube = new System.Windows.Forms.Label();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.lblLoggedIn = new System.Windows.Forms.Label();
-            this.lblUserRolePOS = new System.Windows.Forms.Label();
+            this.lblUserRole = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.POSLoggedInlbl = new System.Windows.Forms.Label();
-            this.POSNamelbl = new System.Windows.Forms.Label();
-            this.POSJCUBELOGOIMG = new System.Windows.Forms.PictureBox();
-            this.JCubelbl = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSidebar.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitle.SuspendLayout();
-            this.panelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.POSJCUBELOGOIMG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSidebar
@@ -67,7 +61,7 @@
             this.panelSidebar.Location = new System.Drawing.Point(0, 0);
             this.panelSidebar.Margin = new System.Windows.Forms.Padding(2);
             this.panelSidebar.Name = "panelSidebar";
-            this.panelSidebar.Size = new System.Drawing.Size(252, 652);
+            this.panelSidebar.Size = new System.Drawing.Size(202, 522);
             this.panelSidebar.TabIndex = 0;
             // 
             // btnLogout
@@ -77,14 +71,13 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 620);
+            this.btnLogout.Location = new System.Drawing.Point(0, 496);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(252, 32);
+            this.btnLogout.Size = new System.Drawing.Size(202, 26);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Log out";
             this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnChangePassword
             // 
@@ -93,10 +86,10 @@
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePassword.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePassword.ForeColor = System.Drawing.Color.White;
-            this.btnChangePassword.Location = new System.Drawing.Point(0, 358);
+            this.btnChangePassword.Location = new System.Drawing.Point(0, 286);
             this.btnChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(252, 50);
+            this.btnChangePassword.Size = new System.Drawing.Size(202, 40);
             this.btnChangePassword.TabIndex = 0;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = true;
@@ -109,10 +102,10 @@
             this.btnDailySales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDailySales.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDailySales.ForeColor = System.Drawing.Color.White;
-            this.btnDailySales.Location = new System.Drawing.Point(0, 308);
+            this.btnDailySales.Location = new System.Drawing.Point(0, 246);
             this.btnDailySales.Margin = new System.Windows.Forms.Padding(2);
             this.btnDailySales.Name = "btnDailySales";
-            this.btnDailySales.Size = new System.Drawing.Size(252, 50);
+            this.btnDailySales.Size = new System.Drawing.Size(202, 40);
             this.btnDailySales.TabIndex = 0;
             this.btnDailySales.Text = "Daily Sales";
             this.btnDailySales.UseVisualStyleBackColor = true;
@@ -125,10 +118,10 @@
             this.btnSettlePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettlePayment.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettlePayment.ForeColor = System.Drawing.Color.White;
-            this.btnSettlePayment.Location = new System.Drawing.Point(0, 258);
+            this.btnSettlePayment.Location = new System.Drawing.Point(0, 206);
             this.btnSettlePayment.Margin = new System.Windows.Forms.Padding(2);
             this.btnSettlePayment.Name = "btnSettlePayment";
-            this.btnSettlePayment.Size = new System.Drawing.Size(252, 50);
+            this.btnSettlePayment.Size = new System.Drawing.Size(202, 40);
             this.btnSettlePayment.TabIndex = 0;
             this.btnSettlePayment.Text = "Settle Payment";
             this.btnSettlePayment.UseVisualStyleBackColor = true;
@@ -141,10 +134,10 @@
             this.btnCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCart.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCart.ForeColor = System.Drawing.Color.White;
-            this.btnCart.Location = new System.Drawing.Point(0, 208);
+            this.btnCart.Location = new System.Drawing.Point(0, 166);
             this.btnCart.Margin = new System.Windows.Forms.Padding(2);
             this.btnCart.Name = "btnCart";
-            this.btnCart.Size = new System.Drawing.Size(252, 50);
+            this.btnCart.Size = new System.Drawing.Size(202, 40);
             this.btnCart.TabIndex = 0;
             this.btnCart.Text = "Cart";
             this.btnCart.UseVisualStyleBackColor = true;
@@ -159,29 +152,18 @@
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(252, 208);
+            this.panelLogo.Size = new System.Drawing.Size(202, 166);
             this.panelLogo.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(68, 36);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(119, 106);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // labelJcube
             // 
             this.labelJcube.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelJcube.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelJcube.ForeColor = System.Drawing.Color.White;
-            this.labelJcube.Location = new System.Drawing.Point(0, 146);
+            this.labelJcube.Location = new System.Drawing.Point(0, 116);
             this.labelJcube.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelJcube.Name = "labelJcube";
-            this.labelJcube.Size = new System.Drawing.Size(252, 62);
+            this.labelJcube.Size = new System.Drawing.Size(202, 50);
             this.labelJcube.TabIndex = 0;
             this.labelJcube.Text = "JCUBE SHIELDWORKS CORPORATION";
             this.labelJcube.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -190,12 +172,12 @@
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.panelTitle.Controls.Add(this.lblLoggedIn);
-            this.panelTitle.Controls.Add(this.lblUserRolePOS);
+            this.panelTitle.Controls.Add(this.lblUserRole);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitle.Location = new System.Drawing.Point(252, 0);
+            this.panelTitle.Location = new System.Drawing.Point(202, 0);
             this.panelTitle.Margin = new System.Windows.Forms.Padding(2);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(930, 62);
+            this.panelTitle.Size = new System.Drawing.Size(744, 50);
             this.panelTitle.TabIndex = 1;
             // 
             // lblLoggedIn
@@ -204,92 +186,50 @@
             this.lblLoggedIn.AutoSize = true;
             this.lblLoggedIn.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedIn.ForeColor = System.Drawing.Color.White;
-            this.lblLoggedIn.Location = new System.Drawing.Point(784, 19);
+            this.lblLoggedIn.Location = new System.Drawing.Point(627, 15);
             this.lblLoggedIn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLoggedIn.Name = "lblLoggedIn";
-            this.lblLoggedIn.Size = new System.Drawing.Size(95, 17);
+            this.lblLoggedIn.Size = new System.Drawing.Size(78, 16);
             this.lblLoggedIn.TabIndex = 4;
             this.lblLoggedIn.Text = "Logged in as:";
             // 
-            // lblUserRolePOS
+            // lblUserRole
             // 
-            this.lblUserRolePOS.AutoSize = true;
-            this.lblUserRolePOS.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserRolePOS.ForeColor = System.Drawing.Color.White;
-            this.lblUserRolePOS.Location = new System.Drawing.Point(782, 36);
-            this.lblUserRolePOS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUserRolePOS.Name = "lblUserRolePOS";
-            this.lblUserRolePOS.Size = new System.Drawing.Size(62, 16);
-            this.lblUserRolePOS.TabIndex = 3;
-            this.lblUserRolePOS.Text = "UserRole";
+            this.lblUserRole.AutoSize = true;
+            this.lblUserRole.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserRole.ForeColor = System.Drawing.Color.White;
+            this.lblUserRole.Location = new System.Drawing.Point(626, 29);
+            this.lblUserRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUserRole.Name = "lblUserRole";
+            this.lblUserRole.Size = new System.Drawing.Size(54, 15);
+            this.lblUserRole.TabIndex = 3;
+            this.lblUserRole.Text = "UserRole";
             // 
             // panelMain
             // 
-            this.panelMain.Controls.Add(this.POSLoggedInlbl);
-            this.panelMain.Controls.Add(this.POSNamelbl);
-            this.panelMain.Controls.Add(this.POSJCUBELOGOIMG);
-            this.panelMain.Controls.Add(this.JCubelbl);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(252, 62);
+            this.panelMain.Location = new System.Drawing.Point(202, 50);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(930, 590);
+            this.panelMain.Size = new System.Drawing.Size(744, 472);
             this.panelMain.TabIndex = 2;
             // 
-            // POSLoggedInlbl
+            // pictureBox1
             // 
-            this.POSLoggedInlbl.AutoSize = true;
-            this.POSLoggedInlbl.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.POSLoggedInlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.POSLoggedInlbl.Location = new System.Drawing.Point(7, 504);
-            this.POSLoggedInlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.POSLoggedInlbl.Name = "POSLoggedInlbl";
-            this.POSLoggedInlbl.Size = new System.Drawing.Size(232, 39);
-            this.POSLoggedInlbl.TabIndex = 6;
-            this.POSLoggedInlbl.Text = "Logged in as:";
-            this.POSLoggedInlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // POSNamelbl
-            // 
-            this.POSNamelbl.AutoSize = true;
-            this.POSNamelbl.Font = new System.Drawing.Font("Century Gothic", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.POSNamelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.POSNamelbl.Location = new System.Drawing.Point(7, 544);
-            this.POSNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.POSNamelbl.Name = "POSNamelbl";
-            this.POSNamelbl.Size = new System.Drawing.Size(163, 40);
-            this.POSNamelbl.TabIndex = 5;
-            this.POSNamelbl.Text = "Fullname";
-            this.POSNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // POSJCUBELOGOIMG
-            // 
-            this.POSJCUBELOGOIMG.Image = ((System.Drawing.Image)(resources.GetObject("POSJCUBELOGOIMG.Image")));
-            this.POSJCUBELOGOIMG.Location = new System.Drawing.Point(335, 98);
-            this.POSJCUBELOGOIMG.Name = "POSJCUBELOGOIMG";
-            this.POSJCUBELOGOIMG.Size = new System.Drawing.Size(275, 273);
-            this.POSJCUBELOGOIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.POSJCUBELOGOIMG.TabIndex = 2;
-            this.POSJCUBELOGOIMG.TabStop = false;
-            // 
-            // JCubelbl
-            // 
-            this.JCubelbl.AutoSize = true;
-            this.JCubelbl.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JCubelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.JCubelbl.Location = new System.Drawing.Point(50, 18);
-            this.JCubelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.JCubelbl.Name = "JCubelbl";
-            this.JCubelbl.Size = new System.Drawing.Size(836, 56);
-            this.JCubelbl.TabIndex = 1;
-            this.JCubelbl.Text = "JCUBE SHIELDWORKS CORPORATION";
-            this.JCubelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(54, 29);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(95, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // PosUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1182, 652);
+            this.ClientSize = new System.Drawing.Size(946, 522);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panelSidebar);
@@ -300,12 +240,9 @@
             this.Text = "Jcube Point Of Sales";
             this.panelSidebar.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
-            this.panelMain.ResumeLayout(false);
-            this.panelMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.POSJCUBELOGOIMG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -323,12 +260,8 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label labelJcube;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblUserRole;
         private System.Windows.Forms.Label lblLoggedIn;
-        private System.Windows.Forms.Label JCubelbl;
-        private System.Windows.Forms.PictureBox POSJCUBELOGOIMG;
-        public System.Windows.Forms.Label POSLoggedInlbl;
-        public System.Windows.Forms.Label POSNamelbl;
-        public System.Windows.Forms.Label lblUserRolePOS;
     }
 }
 
