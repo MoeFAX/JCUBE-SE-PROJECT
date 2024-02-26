@@ -61,25 +61,7 @@ namespace JCUBE_SE_PROJECT
                 panelSubRecord.Visible = false;
         }
 
-        // UI INITIALZATION
-
-        private Form activeForm = null;
-
-        public void openChildForm(Form childForm)
-        {
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
-
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.Dock = DockStyle.Fill;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            panelMain.Controls.Add(childForm);
-            childForm.BringToFront();
-            childForm.Show();
-        }
+        
         public void ShowDashboard()
         {
             DashUI frm = new DashUI();

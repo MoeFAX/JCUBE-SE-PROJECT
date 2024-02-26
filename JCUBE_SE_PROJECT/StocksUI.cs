@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,30 +13,117 @@ namespace JCUBE_SE_PROJECT
 {
     public partial class StocksUI : Form
     {
+        SqlConnection cn = new SqlConnection();
+        SqlCommand cm = new SqlCommand();
+        DBConnect dbcon = new DBConnect();
+        SqlDataReader dr;
         public StocksUI()
         {
             InitializeComponent();
+            cn = new SqlConnection(dbcon.myConnection());
+            LoadStocks();
         }
 
-        private void StocksUI_Load(object sender, EventArgs e)
+        private void addbutton_Click(object sender, EventArgs e)
         {
-
+            StockEntry moduleForm = new StockEntry(this);
+            moduleForm.ShowDialog();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void LoadStocks()
         {
+            dgvStockEntry.Rows.Clear();
+            cn.Open();
+            cm = new SqlCommand("SELECT se.StockID, il.Description, se.Stocks, s.SupplierName, se.Status FROM tbStockEntry AS se INNER JOIN tbItemList AS il ON il.ItemID = se.ilid INNER JOIN tbSupplier AS s ON s.SupplierID = se.sid", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
 
+
+                dgvStockEntry.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString());
+            }
+            dr.Close();
+            cn.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void dgvStockEntry_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                string colName = dgvStockEntry.Columns[e.ColumnIndex].Name;
+                if (colName == "Delete")
+                {
+                    if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
 
-        }
+                        string stockID = dgvStockEntry.Rows[e.RowIndex].Cells["StockID"].Value.ToString();
+                        cn.Open();
+                        cm = new SqlCommand("DELETE FROM tbStockEntry WHERE StockID = @StockID", cn);
+                        cm.Parameters.AddWithValue("@StockID", stockID);
+                        cm.ExecuteNonQuery();
+                        cn.Close();
+                        MessageBox.Show("Stock Entry record has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            StockEntry stockEntry = new StockEntry();
-            stockEntry.ShowDialog();
+
+                        dgvStockEntry.Rows.RemoveAt(e.RowIndex);
+                    }
+                }
+                
+                else if (colName == "Edit")
+                {
+
+                    //supplierModule.lblid.Text = dgvSupplier[1, e.RowIndex].Value.ToString();
+                    int stockID = Convert.ToInt32(dgvStockEntry.Rows[e.RowIndex].Cells["StockID"].Value);
+                    StockEntry moduleForm = new StockEntry(this);
+                    moduleForm.StockID = stockID; // Set SupplierID property
+                    moduleForm.ItemNameField.Text = dgvStockEntry[1, e.RowIndex].Value.ToString();
+                    moduleForm.stocksField.Text = dgvStockEntry[2, e.RowIndex].Value.ToString();
+                    moduleForm.SuppNameField.Text = dgvStockEntry[3, e.RowIndex].Value.ToString();
+                    moduleForm.StatusField.Text = dgvStockEntry[4, e.RowIndex].Value.ToString();
+                    string stockInBy = "";
+                    try
+                    {
+                        cn.Open();
+                        SqlCommand getStockInByCmd = new SqlCommand("SELECT StockInBy FROM tbStockEntry WHERE StockID = @StockID", cn);
+                        getStockInByCmd.Parameters.AddWithValue("@StockID", stockID);
+                        object stockInByObj = getStockInByCmd.ExecuteScalar();
+                        if (stockInByObj != null)
+                        {
+                            stockInBy = stockInByObj.ToString();
+                        }
+                        cn.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    moduleForm.StockinbyField.Text = stockInBy;
+                    DateTime stockInDate = DateTime.MinValue;
+                    try
+                    {
+                        cn.Open();
+                        SqlCommand getStockInDateCmd = new SqlCommand("SELECT StockInDate FROM tbStockEntry WHERE StockID = @StockID", cn);
+                        getStockInDateCmd.Parameters.AddWithValue("@StockID", stockID);
+                        object stockInDateObj = getStockInDateCmd.ExecuteScalar();
+                        if (stockInDateObj != null && stockInDateObj != DBNull.Value)
+                        {
+                            stockInDate = Convert.ToDateTime(stockInDateObj);
+                        }
+                        cn.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    moduleForm.StockInDate.Value = stockInDate;
+                    moduleForm.savebtn.Enabled = true;
+                    moduleForm.ShowDialog();
+
+                }
+                LoadStocks();
+            }
         }
     }
 }

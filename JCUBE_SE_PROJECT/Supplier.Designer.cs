@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Supplier));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.SupplierLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -38,12 +40,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.side2 = new System.Windows.Forms.Panel();
             this.dgvSupplier = new System.Windows.Forms.DataGridView();
-            this.IdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContactPersonColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContactPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Archive = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2.SuspendLayout();
@@ -128,81 +130,99 @@
             this.dgvSupplier.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSupplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSupplier.ColumnHeadersHeight = 29;
-            this.dgvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSupplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdColumn,
+            this.SupplierID,
             this.SupplierName,
-            this.AddressColumn,
-            this.ContactPersonColumn,
-            this.PhoneColumn,
-            this.EmailColumn,
+            this.Address,
+            this.ContactPerson,
+            this.PhoneNo,
+            this.EmailAddress,
             this.Edit,
             this.Archive});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSupplier.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSupplier.EnableHeadersVisualStyles = false;
-            this.dgvSupplier.GridColor = System.Drawing.Color.Snow;
             this.dgvSupplier.Location = new System.Drawing.Point(20, 70);
+            this.dgvSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSupplier.Name = "dgvSupplier";
+            this.dgvSupplier.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvSupplier.RowHeadersVisible = false;
             this.dgvSupplier.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvSupplier.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSupplier.RowTemplate.Height = 24;
             this.dgvSupplier.Size = new System.Drawing.Size(942, 383);
-            this.dgvSupplier.TabIndex = 7;
+            this.dgvSupplier.TabIndex = 18;
             this.dgvSupplier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSupplier_CellContentClick);
             // 
-            // IdColumn
+            // SupplierID
             // 
-            this.IdColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.IdColumn.HeaderText = "Id";
-            this.IdColumn.MinimumWidth = 6;
-            this.IdColumn.Name = "IdColumn";
-            this.IdColumn.Width = 54;
+            this.SupplierID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SupplierID.DataPropertyName = "SupplierID";
+            this.SupplierID.HeaderText = "Id";
+            this.SupplierID.MinimumWidth = 6;
+            this.SupplierID.Name = "SupplierID";
+            this.SupplierID.Visible = false;
+            this.SupplierID.Width = 125;
             // 
             // SupplierName
             // 
             this.SupplierName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SupplierName.DataPropertyName = "SupplierName";
             this.SupplierName.HeaderText = "Supplier";
             this.SupplierName.MinimumWidth = 6;
             this.SupplierName.Name = "SupplierName";
-            this.SupplierName.Width = 104;
+            this.SupplierName.Width = 85;
             // 
-            // AddressColumn
+            // Address
             // 
-            this.AddressColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AddressColumn.HeaderText = "Address";
-            this.AddressColumn.MinimumWidth = 6;
-            this.AddressColumn.Name = "AddressColumn";
+            this.Address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Address";
+            this.Address.MinimumWidth = 6;
+            this.Address.Name = "Address";
             // 
-            // ContactPersonColumn
+            // ContactPerson
             // 
-            this.ContactPersonColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ContactPersonColumn.HeaderText = "Contact Person";
-            this.ContactPersonColumn.MinimumWidth = 6;
-            this.ContactPersonColumn.Name = "ContactPersonColumn";
-            this.ContactPersonColumn.Width = 176;
+            this.ContactPerson.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ContactPerson.DataPropertyName = "ContactPerson";
+            this.ContactPerson.HeaderText = "Contact Person";
+            this.ContactPerson.MinimumWidth = 6;
+            this.ContactPerson.Name = "ContactPerson";
+            this.ContactPerson.Width = 136;
             // 
-            // PhoneColumn
+            // PhoneNo
             // 
-            this.PhoneColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.PhoneColumn.HeaderText = "Phone";
-            this.PhoneColumn.MinimumWidth = 6;
-            this.PhoneColumn.Name = "PhoneColumn";
-            this.PhoneColumn.Width = 94;
+            this.PhoneNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.PhoneNo.DataPropertyName = "PhoneNo";
+            this.PhoneNo.HeaderText = "Phone";
+            this.PhoneNo.MinimumWidth = 6;
+            this.PhoneNo.Name = "PhoneNo";
+            this.PhoneNo.Width = 76;
             // 
-            // EmailColumn
+            // EmailAddress
             // 
-            this.EmailColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.EmailColumn.HeaderText = "Email";
-            this.EmailColumn.MinimumWidth = 6;
-            this.EmailColumn.Name = "EmailColumn";
-            this.EmailColumn.Width = 82;
+            this.EmailAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.EmailAddress.DataPropertyName = "EmailAddress";
+            this.EmailAddress.HeaderText = "Email";
+            this.EmailAddress.MinimumWidth = 6;
+            this.EmailAddress.Name = "EmailAddress";
+            this.EmailAddress.Width = 70;
             // 
             // Edit
             // 
@@ -257,12 +277,12 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel side2;
         private System.Windows.Forms.DataGridView dgvSupplier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AddressColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ContactPersonColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmailColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContactPerson;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmailAddress;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Archive;
     }
