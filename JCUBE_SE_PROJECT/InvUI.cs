@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace JCUBE_SE_PROJECT
@@ -55,6 +56,8 @@ namespace JCUBE_SE_PROJECT
             panelSubItem.Visible = false;
             panelSubRecord.Visible = false;
         }
+
+        public string UserRole { get; set; }
 
         private void hideSubmenu()
         {
@@ -151,7 +154,20 @@ namespace JCUBE_SE_PROJECT
 
         private void btnUserAcc_Click(object sender, EventArgs e)
         {
-            openChildForm(new UserAccountsUI());
+            UserAccountsUI childForm = new UserAccountsUI();
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.UAUserRolelbl.Text = UserRole;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(childForm);
+            panelMain.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -167,6 +183,11 @@ namespace JCUBE_SE_PROJECT
         private void JCUBELOGOIMG_Click(object sender, EventArgs e)
         {
             openChildForm(new DashUI());
+        }
+
+        private void InvUI_Load(object sender, EventArgs e)
+        {
+            UserRole = lblUserRole.Text;
         }
     }
 }

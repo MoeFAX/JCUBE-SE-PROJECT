@@ -44,8 +44,12 @@
             this.Fullnamelbl = new System.Windows.Forms.Label();
             this.CancelBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
+            this.NPEyeBtn = new System.Windows.Forms.PictureBox();
+            this.RTEyeBtn = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RTEyeBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,6 +104,7 @@
             // 
             this.PasswordField.Location = new System.Drawing.Point(174, 133);
             this.PasswordField.Name = "PasswordField";
+            this.PasswordField.PasswordChar = '●';
             this.PasswordField.Size = new System.Drawing.Size(459, 30);
             this.PasswordField.TabIndex = 30;
             // 
@@ -116,6 +121,7 @@
             // 
             this.RTPasswordField.Location = new System.Drawing.Point(174, 183);
             this.RTPasswordField.Name = "RTPasswordField";
+            this.RTPasswordField.PasswordChar = '●';
             this.RTPasswordField.Size = new System.Drawing.Size(459, 30);
             this.RTPasswordField.TabIndex = 32;
             // 
@@ -168,6 +174,7 @@
             // CancelBtn
             // 
             this.CancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(29)))), ((int)(((byte)(43)))));
+            this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.FlatAppearance.BorderSize = 0;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelBtn.ForeColor = System.Drawing.Color.White;
@@ -193,11 +200,37 @@
             this.SaveBtn.UseVisualStyleBackColor = false;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
+            // NPEyeBtn
+            // 
+            this.NPEyeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.NPEyeBtn.Image = ((System.Drawing.Image)(resources.GetObject("NPEyeBtn.Image")));
+            this.NPEyeBtn.Location = new System.Drawing.Point(609, 138);
+            this.NPEyeBtn.Name = "NPEyeBtn";
+            this.NPEyeBtn.Size = new System.Drawing.Size(20, 20);
+            this.NPEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.NPEyeBtn.TabIndex = 56;
+            this.NPEyeBtn.TabStop = false;
+            // 
+            // RTEyeBtn
+            // 
+            this.RTEyeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.RTEyeBtn.Image = ((System.Drawing.Image)(resources.GetObject("RTEyeBtn.Image")));
+            this.RTEyeBtn.Location = new System.Drawing.Point(609, 188);
+            this.RTEyeBtn.Name = "RTEyeBtn";
+            this.RTEyeBtn.Size = new System.Drawing.Size(20, 20);
+            this.RTEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.RTEyeBtn.TabIndex = 57;
+            this.RTEyeBtn.TabStop = false;
+            // 
             // CreateAccount
             // 
+            this.AcceptButton = this.SaveBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CancelBtn;
             this.ClientSize = new System.Drawing.Size(727, 385);
+            this.Controls.Add(this.RTEyeBtn);
+            this.Controls.Add(this.NPEyeBtn);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.FullnameField);
@@ -220,6 +253,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RTEyeBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +277,7 @@
         private System.Windows.Forms.Label Fullnamelbl;
         private System.Windows.Forms.Button CancelBtn;
         private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.PictureBox NPEyeBtn;
+        private System.Windows.Forms.PictureBox RTEyeBtn;
     }
 }

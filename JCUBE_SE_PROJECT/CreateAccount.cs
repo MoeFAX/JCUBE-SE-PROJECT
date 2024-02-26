@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,11 +18,17 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
+
         public CreateAccount()
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            NPEyeBtn.MouseDown += new MouseEventHandler(NPEyeBtn_MouseDown);
+            NPEyeBtn.MouseUp += new MouseEventHandler(NPEyeBtn_MouseUp);
+            RTEyeBtn.MouseDown += new MouseEventHandler(RTEyeBtn_MouseDown);
+            RTEyeBtn.MouseUp += new MouseEventHandler(RTEyeBtn_MouseUp);
         }
+
 
         public void Clear()
         {
@@ -38,25 +45,49 @@ namespace JCUBE_SE_PROJECT
             this.Dispose();
         }
 
-        private void SaveBtn_Click(object sender, EventArgs e)
+        public void SaveBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                if (PasswordField.Text != RTPasswordField.Text)
+                cn.Open();
+                cm = new SqlCommand("Insert into tbUser(username, password, fullname, role) Values (@username, @password, @fullname, @role)", cn);
+                cm.Parameters.AddWithValue("@username", UsernameField.Text);
+
+                if (string.IsNullOrWhiteSpace(PasswordField.Text))
+                {
+                    MessageBox.Show("Password can not be null", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (PasswordField.Text.Length < 8)
+                {
+                    MessageBox.Show("Password must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    PasswordField.Clear();
+                    RTPasswordField.Clear();
+                    cn.Close();
+                }
+                else if (!Regex.IsMatch(PasswordField.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=-]).{8,}$"))
+                {
+                    MessageBox.Show("Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    PasswordField.Clear();
+                    RTPasswordField.Clear();
+                    cn.Close();
+                }
+                else if (PasswordField.Text != RTPasswordField.Text)
                 {
                     MessageBox.Show("Passwords does not match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                cn.Open();
-                cm = new SqlCommand("Insert into tbUser(username, password, fullname, role) Values (@username, @password, @fullname, @role)", cn);
-                cm.Parameters.AddWithValue("@username", UsernameField.Text);
-                cm.Parameters.AddWithValue("@password", PasswordField.Text);
-                cm.Parameters.AddWithValue("@fullname", FullnameField.Text);
-                cm.Parameters.AddWithValue("@role", RoleComboBox.Text);
-                cm.ExecuteNonQuery();
-                cn.Close();
-                MessageBox.Show("New account has been successfully saved!", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Clear();
+                else
+                {
+                    cm.Parameters.AddWithValue("@password", PasswordField.Text);
+                    cm.Parameters.AddWithValue("@fullname", FullnameField.Text);
+                    cm.Parameters.AddWithValue("@role", RoleComboBox.Text);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+                    Clear();
+                    MessageBox.Show("New account has been successfully saved! Please Reload.", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                
             }
             catch (Exception ex)
             {
@@ -67,6 +98,29 @@ namespace JCUBE_SE_PROJECT
         private void CancelBtn_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        public void NPEyeBtn_MouseDown(object sender, EventArgs e)
+        {
+            PasswordField.PasswordChar = '\0';
+            PasswordField.UseSystemPasswordChar = false;
+        }
+
+        public void NPEyeBtn_MouseUp(object sender, EventArgs e)
+        {
+            PasswordField.PasswordChar = '●';
+            PasswordField.UseSystemPasswordChar = true;
+        }
+        public void RTEyeBtn_MouseDown(object sender, EventArgs e)
+        {
+            RTPasswordField.PasswordChar = '\0';
+            RTPasswordField.UseSystemPasswordChar = false;
+        }
+
+        public void RTEyeBtn_MouseUp(object sender, EventArgs e)
+        {
+            RTPasswordField.PasswordChar = '●';
+            RTPasswordField.UseSystemPasswordChar = true;
         }
     }
 }

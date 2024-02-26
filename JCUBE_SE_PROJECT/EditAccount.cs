@@ -13,24 +13,24 @@ namespace JCUBE_SE_PROJECT
 {
     public partial class EditAccount : Form
     {
-        private int accountID;
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
-        UserAccountsUI user;
-        
+        UserAccountsUI useracc;
         public EditAccount(UserAccountsUI user)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            useracc = user;
         }
 
         public int AccountID
         {
-            get { return accountID; }
-            set { accountID = value; }
+            get { return AccountID; }
+            set { AccountID = value; }
         }
+        
 
         private void CloseBtn_Click(object sender, EventArgs e)
         {
@@ -56,31 +56,38 @@ namespace JCUBE_SE_PROJECT
                 cn.Open();
                 if (!string.IsNullOrEmpty(EditUsernameField.Text))
                 {
-                    if (AccountID != 0) // Check if AccountID is set (indicating an existing record)
+
+                    if (int.Parse(EditAccountIDField.Text) != 0) // Check if AccountID is set (indicating an existing record)
                     {
                         // Update operation
-                        cm = new SqlCommand("UPDATE tbUser SET username = @username, fullname = @fullname,  role = @role, WHERE AccountID = @AccountID", cn);
-                        cm.Parameters.AddWithValue("@AccountID", AccountID);
+                        cm = new SqlCommand("UPDATE tbUser SET username = @username, fullname = @fullname, role = @role WHERE AccountID = @AccountID", cn);
+                        cm.Parameters.AddWithValue("@AccountID", int.Parse(EditAccountIDField.Text));
+
+                        // Common parameters for both update and insert operations
+                        cm.Parameters.AddWithValue("@username", EditUsernameField.Text);
+                        cm.Parameters.AddWithValue("@fullname", EditFullnameField.Text);
+                        cm.Parameters.AddWithValue("@role", EditRoleComboBox.Text);
                     }
-                    else
+                    else 
                     {
                         // Insert operation
                         cm = new SqlCommand("INSERT INTO tbUser(username, fullname, role) VALUES(@username, @fullname, @role)", cn);
+                        MessageBox.Show("MAC CALINA", "SAVED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Common parameters for both update and insert operations
+                        cm.Parameters.AddWithValue("@username", EditUsernameField.Text);
+                        cm.Parameters.AddWithValue("@fullname", EditFullnameField.Text);
+                        cm.Parameters.AddWithValue("@role", EditRoleComboBox.Text);
                     }
 
-                    // Common parameters for both update and insert operations
-                    cm.Parameters.AddWithValue("@username", EditUsernameField.Text);
-                    cm.Parameters.AddWithValue("@fullname", EditFullnameField.Text);
-                    cm.Parameters.AddWithValue("@role", EditRoleComboBox.Text);
                     cm.ExecuteNonQuery();
                     cn.Close();
                     MessageBox.Show("Account has been successfully saved!", "SAVED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
-                    user.LoadUser();
+                    useracc.LoadUser();
                 }
                 else
                 {
-                    MessageBox.Show("Account name cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Account Name cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)

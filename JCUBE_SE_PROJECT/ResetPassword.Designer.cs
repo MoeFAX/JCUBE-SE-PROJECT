@@ -42,9 +42,14 @@
             this.CancelBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.RPNewPasswordlbl = new System.Windows.Forms.Label();
+            this.RPWDAccIDlbl = new System.Windows.Forms.Label();
+            this.NPEyeBtn = new System.Windows.Forms.PictureBox();
+            this.RTEyeBtn = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RPPersonIMG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RTEyeBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,6 +88,7 @@
             // 
             this.RPRTPasswordField.Location = new System.Drawing.Point(188, 223);
             this.RPRTPasswordField.Name = "RPRTPasswordField";
+            this.RPRTPasswordField.PasswordChar = '●';
             this.RPRTPasswordField.Size = new System.Drawing.Size(459, 30);
             this.RPRTPasswordField.TabIndex = 38;
             // 
@@ -100,6 +106,7 @@
             // 
             this.RPNewPasswordField.Location = new System.Drawing.Point(188, 173);
             this.RPNewPasswordField.Name = "RPNewPasswordField";
+            this.RPNewPasswordField.PasswordChar = '●';
             this.RPNewPasswordField.Size = new System.Drawing.Size(459, 30);
             this.RPNewPasswordField.TabIndex = 36;
             // 
@@ -107,6 +114,8 @@
             // 
             this.RPCurrPasswordField.Location = new System.Drawing.Point(188, 124);
             this.RPCurrPasswordField.Name = "RPCurrPasswordField";
+            this.RPCurrPasswordField.PasswordChar = '●';
+            this.RPCurrPasswordField.ReadOnly = true;
             this.RPCurrPasswordField.Size = new System.Drawing.Size(459, 30);
             this.RPCurrPasswordField.TabIndex = 34;
             // 
@@ -142,6 +151,7 @@
             // CancelBtn
             // 
             this.CancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(29)))), ((int)(((byte)(43)))));
+            this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.FlatAppearance.BorderSize = 0;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelBtn.ForeColor = System.Drawing.Color.White;
@@ -151,6 +161,7 @@
             this.CancelBtn.TabIndex = 43;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = false;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // SaveBtn
             // 
@@ -164,6 +175,7 @@
             this.SaveBtn.TabIndex = 42;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // RPNewPasswordlbl
             // 
@@ -175,12 +187,49 @@
             this.RPNewPasswordlbl.TabIndex = 44;
             this.RPNewPasswordlbl.Text = "New Password:";
             // 
+            // RPWDAccIDlbl
+            // 
+            this.RPWDAccIDlbl.AutoSize = true;
+            this.RPWDAccIDlbl.Location = new System.Drawing.Point(188, 81);
+            this.RPWDAccIDlbl.Name = "RPWDAccIDlbl";
+            this.RPWDAccIDlbl.Size = new System.Drawing.Size(62, 21);
+            this.RPWDAccIDlbl.TabIndex = 45;
+            this.RPWDAccIDlbl.Text = "label1";
+            this.RPWDAccIDlbl.Visible = false;
+            // 
+            // NPEyeBtn
+            // 
+            this.NPEyeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.NPEyeBtn.Image = ((System.Drawing.Image)(resources.GetObject("NPEyeBtn.Image")));
+            this.NPEyeBtn.Location = new System.Drawing.Point(623, 178);
+            this.NPEyeBtn.Name = "NPEyeBtn";
+            this.NPEyeBtn.Size = new System.Drawing.Size(20, 20);
+            this.NPEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.NPEyeBtn.TabIndex = 57;
+            this.NPEyeBtn.TabStop = false;
+            // 
+            // RTEyeBtn
+            // 
+            this.RTEyeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.RTEyeBtn.Image = ((System.Drawing.Image)(resources.GetObject("RTEyeBtn.Image")));
+            this.RTEyeBtn.Location = new System.Drawing.Point(623, 228);
+            this.RTEyeBtn.Name = "RTEyeBtn";
+            this.RTEyeBtn.Size = new System.Drawing.Size(20, 20);
+            this.RTEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.RTEyeBtn.TabIndex = 58;
+            this.RTEyeBtn.TabStop = false;
+            // 
             // ResetPassword
             // 
+            this.AcceptButton = this.SaveBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.CancelButton = this.CancelBtn;
             this.ClientSize = new System.Drawing.Size(727, 329);
+            this.Controls.Add(this.RTEyeBtn);
+            this.Controls.Add(this.NPEyeBtn);
+            this.Controls.Add(this.RPWDAccIDlbl);
             this.Controls.Add(this.RPNewPasswordlbl);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.SaveBtn);
@@ -202,6 +251,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RPPersonIMG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RTEyeBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,12 +266,15 @@
         private System.Windows.Forms.TextBox RPRTPasswordField;
         private System.Windows.Forms.Label RPRTPasswordlbl;
         private System.Windows.Forms.TextBox RPNewPasswordField;
-        private System.Windows.Forms.TextBox RPCurrPasswordField;
         private System.Windows.Forms.Label RPCurrPasswordlbl;
         private System.Windows.Forms.PictureBox RPPersonIMG;
-        private System.Windows.Forms.Label RPUNlbl;
         private System.Windows.Forms.Button CancelBtn;
-        private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Label RPNewPasswordlbl;
+        public System.Windows.Forms.Label RPWDAccIDlbl;
+        public System.Windows.Forms.Button SaveBtn;
+        public System.Windows.Forms.TextBox RPCurrPasswordField;
+        public System.Windows.Forms.Label RPUNlbl;
+        private System.Windows.Forms.PictureBox NPEyeBtn;
+        private System.Windows.Forms.PictureBox RTEyeBtn;
     }
 }

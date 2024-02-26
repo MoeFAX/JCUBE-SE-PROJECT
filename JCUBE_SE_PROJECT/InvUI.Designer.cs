@@ -53,10 +53,10 @@ namespace JCUBE_SE_PROJECT
             this.lblUserRole = new System.Windows.Forms.Label();
             this.lblLoggedIn = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.JCubelbl = new System.Windows.Forms.Label();
-            this.INVJCUBELOGOIMG = new System.Windows.Forms.PictureBox();
-            this.INVNamelbl = new System.Windows.Forms.Label();
             this.INVLoggedInlbl = new System.Windows.Forms.Label();
+            this.INVNamelbl = new System.Windows.Forms.Label();
+            this.INVJCUBELOGOIMG = new System.Windows.Forms.PictureBox();
+            this.JCubelbl = new System.Windows.Forms.Label();
             this.panelSidebar.SuspendLayout();
             this.panelSubRecord.SuspendLayout();
             this.panelSubItem.SuspendLayout();
@@ -423,6 +423,42 @@ namespace JCUBE_SE_PROJECT
             this.panelMain.Size = new System.Drawing.Size(928, 592);
             this.panelMain.TabIndex = 2;
             // 
+            // INVLoggedInlbl
+            // 
+            this.INVLoggedInlbl.AutoSize = true;
+            this.INVLoggedInlbl.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INVLoggedInlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.INVLoggedInlbl.Location = new System.Drawing.Point(7, 504);
+            this.INVLoggedInlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.INVLoggedInlbl.Name = "INVLoggedInlbl";
+            this.INVLoggedInlbl.Size = new System.Drawing.Size(232, 39);
+            this.INVLoggedInlbl.TabIndex = 4;
+            this.INVLoggedInlbl.Text = "Logged in as:";
+            this.INVLoggedInlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // INVNamelbl
+            // 
+            this.INVNamelbl.AutoSize = true;
+            this.INVNamelbl.Font = new System.Drawing.Font("Century Gothic", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INVNamelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.INVNamelbl.Location = new System.Drawing.Point(7, 544);
+            this.INVNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.INVNamelbl.Name = "INVNamelbl";
+            this.INVNamelbl.Size = new System.Drawing.Size(163, 40);
+            this.INVNamelbl.TabIndex = 3;
+            this.INVNamelbl.Text = "Fullname";
+            this.INVNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // INVJCUBELOGOIMG
+            // 
+            this.INVJCUBELOGOIMG.Image = ((System.Drawing.Image)(resources.GetObject("INVJCUBELOGOIMG.Image")));
+            this.INVJCUBELOGOIMG.Location = new System.Drawing.Point(335, 98);
+            this.INVJCUBELOGOIMG.Name = "INVJCUBELOGOIMG";
+            this.INVJCUBELOGOIMG.Size = new System.Drawing.Size(275, 273);
+            this.INVJCUBELOGOIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.INVJCUBELOGOIMG.TabIndex = 1;
+            this.INVJCUBELOGOIMG.TabStop = false;
+            // 
             // JCubelbl
             // 
             this.JCubelbl.AutoSize = true;
@@ -436,42 +472,6 @@ namespace JCUBE_SE_PROJECT
             this.JCubelbl.Text = "JCUBE SHIELDWORKS CORPORATION";
             this.JCubelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // INVJCUBELOGOIMG
-            // 
-            this.INVJCUBELOGOIMG.Image = ((System.Drawing.Image)(resources.GetObject("INVJCUBELOGOIMG.Image")));
-            this.INVJCUBELOGOIMG.Location = new System.Drawing.Point(335, 98);
-            this.INVJCUBELOGOIMG.Name = "INVJCUBELOGOIMG";
-            this.INVJCUBELOGOIMG.Size = new System.Drawing.Size(275, 273);
-            this.INVJCUBELOGOIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.INVJCUBELOGOIMG.TabIndex = 1;
-            this.INVJCUBELOGOIMG.TabStop = false;
-            // 
-            // INVNamelbl
-            // 
-            this.INVNamelbl.AutoSize = true;
-            this.INVNamelbl.Font = new System.Drawing.Font("Century Gothic", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.INVNamelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.INVNamelbl.Location = new System.Drawing.Point(7, 544);
-            this.INVNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.INVNamelbl.Name = "INVNamelbl";
-            this.INVNamelbl.Size = new System.Drawing.Size(165, 40);
-            this.INVNamelbl.TabIndex = 3;
-            this.INVNamelbl.Text = "Fullname";
-            this.INVNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // INVLoggedInlbl
-            // 
-            this.INVLoggedInlbl.AutoSize = true;
-            this.INVLoggedInlbl.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.INVLoggedInlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.INVLoggedInlbl.Location = new System.Drawing.Point(7, 504);
-            this.INVLoggedInlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.INVLoggedInlbl.Name = "INVLoggedInlbl";
-            this.INVLoggedInlbl.Size = new System.Drawing.Size(237, 40);
-            this.INVLoggedInlbl.TabIndex = 4;
-            this.INVLoggedInlbl.Text = "Logged in as:";
-            this.INVLoggedInlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // InvUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -481,7 +481,7 @@ namespace JCUBE_SE_PROJECT
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InvUI";
@@ -525,11 +525,11 @@ namespace JCUBE_SE_PROJECT
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblLoggedIn;
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.Label lblUserRole;
         private System.Windows.Forms.PictureBox JCUBELOGOIMG;
         private System.Windows.Forms.Label JCubelbl;
         private System.Windows.Forms.PictureBox INVJCUBELOGOIMG;
         public System.Windows.Forms.Label INVNamelbl;
         public System.Windows.Forms.Label INVLoggedInlbl;
+        public System.Windows.Forms.Label lblUserRole;
     }
 }

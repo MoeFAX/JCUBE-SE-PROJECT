@@ -20,10 +20,13 @@ namespace JCUBE_SE_PROJECT
 
         public string _pass = "";
         public bool _isactive;
+
         public Login()
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            NPEyeBtn.MouseDown += new MouseEventHandler(NPEyeBtn_MouseDown);
+            NPEyeBtn.MouseUp += new MouseEventHandler(NPEyeBtn_MouseUp);
         }
 
         private void Closebtn_Click(object sender, EventArgs e)
@@ -79,6 +82,7 @@ namespace JCUBE_SE_PROJECT
                         this.Hide();
                         PosUI main = new PosUI();
                         main.POSNamelbl.Text = _fullname;
+                        main.lblUserRolePOS.Text = _username;
                         main.ShowDialog();
                         //Sales Clerk salesclerk = new Sales Clerk();
                         //Sales Clerk
@@ -92,6 +96,8 @@ namespace JCUBE_SE_PROJECT
                         this.Hide();
                         InvUI main = new InvUI();
                         main.INVNamelbl.Text = _fullname;
+                        main.lblUserRole.Text = _username;
+                        main.UserRole = _username;
 
                         main.ShowDialog();
                         //Sales Clerk salesclerk = new Sales Clerk();
@@ -113,10 +119,23 @@ namespace JCUBE_SE_PROJECT
             }
         }
 
+
         private void CancelBtn_Click(object sender, EventArgs e)
         {
             UserIDtxtbox.Clear();
             Passwordtxtbox.Clear();
+        }
+
+        public void NPEyeBtn_MouseDown(object sender, EventArgs e)
+        {
+            Passwordtxtbox.PasswordChar = '\0';
+            Passwordtxtbox.UseSystemPasswordChar = false;
+        }
+
+        public void NPEyeBtn_MouseUp(object sender, EventArgs e)
+        {
+            Passwordtxtbox.PasswordChar = '●';
+            Passwordtxtbox.UseSystemPasswordChar = true;
         }
     }
 }

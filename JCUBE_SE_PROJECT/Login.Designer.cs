@@ -40,11 +40,13 @@
             this.CancelBtn = new System.Windows.Forms.Button();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.NPEyeBtn = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Closebtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -106,6 +108,7 @@
             this.UserIDtxtbox.CustomButton.UseSelectable = true;
             this.UserIDtxtbox.CustomButton.Visible = false;
             this.UserIDtxtbox.DisplayIcon = true;
+            this.UserIDtxtbox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.UserIDtxtbox.Icon = ((System.Drawing.Image)(resources.GetObject("UserIDtxtbox.Icon")));
             this.UserIDtxtbox.Lines = new string[0];
             this.UserIDtxtbox.Location = new System.Drawing.Point(69, 163);
@@ -151,13 +154,15 @@
             this.Passwordtxtbox.CustomButton.UseSelectable = true;
             this.Passwordtxtbox.CustomButton.Visible = false;
             this.Passwordtxtbox.DisplayIcon = true;
+            this.Passwordtxtbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.Passwordtxtbox.Icon = ((System.Drawing.Image)(resources.GetObject("Passwordtxtbox.Icon")));
             this.Passwordtxtbox.Lines = new string[0];
             this.Passwordtxtbox.Location = new System.Drawing.Point(69, 218);
             this.Passwordtxtbox.MaxLength = 32767;
             this.Passwordtxtbox.Name = "Passwordtxtbox";
-            this.Passwordtxtbox.PasswordChar = '\0';
+            this.Passwordtxtbox.PasswordChar = '●';
             this.Passwordtxtbox.PromptText = "PASSWORD";
+            this.Passwordtxtbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Passwordtxtbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Passwordtxtbox.SelectedText = "";
             this.Passwordtxtbox.SelectionLength = 0;
@@ -174,12 +179,13 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.panel2.Controls.Add(this.NPEyeBtn);
             this.panel2.Controls.Add(this.CancelBtn);
             this.panel2.Controls.Add(this.LoginBtn);
             this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.Passwordtxtbox);
             this.panel2.Controls.Add(this.LoginLabel);
             this.panel2.Controls.Add(this.UserIDtxtbox);
+            this.panel2.Controls.Add(this.Passwordtxtbox);
             this.panel2.Location = new System.Drawing.Point(284, 190);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(337, 311);
@@ -188,6 +194,7 @@
             // CancelBtn
             // 
             this.CancelBtn.BackColor = System.Drawing.Color.White;
+            this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.FlatAppearance.BorderSize = 0;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelBtn.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,6 +210,7 @@
             // LoginBtn
             // 
             this.LoginBtn.BackColor = System.Drawing.Color.White;
+            this.LoginBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.LoginBtn.FlatAppearance.BorderSize = 0;
             this.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginBtn.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -226,14 +234,27 @@
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             // 
+            // NPEyeBtn
+            // 
+            this.NPEyeBtn.BackColor = System.Drawing.Color.White;
+            this.NPEyeBtn.Image = ((System.Drawing.Image)(resources.GetObject("NPEyeBtn.Image")));
+            this.NPEyeBtn.Location = new System.Drawing.Point(242, 223);
+            this.NPEyeBtn.Name = "NPEyeBtn";
+            this.NPEyeBtn.Size = new System.Drawing.Size(20, 20);
+            this.NPEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.NPEyeBtn.TabIndex = 56;
+            this.NPEyeBtn.TabStop = false;
+            // 
             // Login
             // 
+            this.AcceptButton = this.LoginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.CancelBtn;
             this.ClientSize = new System.Drawing.Size(950, 650);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -247,6 +268,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,12 +279,13 @@
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox Closebtn;
-        private MetroFramework.Controls.MetroTextBox UserIDtxtbox;
         private System.Windows.Forms.Label LoginLabel;
         private MetroFramework.Controls.MetroTextBox Passwordtxtbox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button LoginBtn;
         private System.Windows.Forms.Button CancelBtn;
+        private MetroFramework.Controls.MetroTextBox UserIDtxtbox;
+        private System.Windows.Forms.PictureBox NPEyeBtn;
     }
 }
