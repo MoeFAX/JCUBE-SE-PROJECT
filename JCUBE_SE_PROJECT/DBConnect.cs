@@ -16,7 +16,7 @@ namespace JCUBE_SE_PROJECT
 
         public string myConnection()
         {
-            con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\herald\source\repos\JCUBE-SE-PROJECT\DBjcube.mdf;Integrated Security=True;Connect Timeout=30";
+            con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\DBjcube.mdf;Integrated Security=True;Connect Timeout=30";
             return con;
         }
         public DataTable getTable(string qury)

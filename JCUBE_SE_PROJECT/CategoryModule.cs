@@ -35,7 +35,7 @@ namespace JCUBE_SE_PROJECT
             {
                 if (string.IsNullOrWhiteSpace(CtgryNameField.Text))
                 {
-                    MessageBox.Show("Brand name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Category name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 cn.Open();

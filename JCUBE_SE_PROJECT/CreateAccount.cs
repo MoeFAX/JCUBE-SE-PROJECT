@@ -55,7 +55,8 @@ namespace JCUBE_SE_PROJECT
 
                 if (string.IsNullOrWhiteSpace(PasswordField.Text))
                 {
-                    MessageBox.Show("Password can not be null", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Fields can not be null", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cn.Close();
                 }
                 else if (PasswordField.Text.Length < 8)
                 {
