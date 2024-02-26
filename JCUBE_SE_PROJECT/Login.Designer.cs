@@ -33,18 +33,20 @@
             this.Closebtn = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Title = new System.Windows.Forms.Label();
-            this.UserID = new MetroFramework.Controls.MetroTextBox();
+            this.UserIDtxtbox = new MetroFramework.Controls.MetroTextBox();
             this.LoginLabel = new System.Windows.Forms.Label();
-            this.Password = new MetroFramework.Controls.MetroTextBox();
+            this.Passwordtxtbox = new MetroFramework.Controls.MetroTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CancelBtn = new System.Windows.Forms.Button();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.NPEyeBtn = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Closebtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -91,40 +93,40 @@
             this.Title.TabIndex = 0;
             this.Title.Text = "JCUBE SHIELDWORKS CORPORATION";
             // 
-            // UserID
+            // UserIDtxtbox
             // 
             // 
             // 
             // 
-            this.UserID.CustomButton.Image = null;
-            this.UserID.CustomButton.Location = new System.Drawing.Point(165, 1);
-            this.UserID.CustomButton.Name = "";
-            this.UserID.CustomButton.Size = new System.Drawing.Size(31, 31);
-            this.UserID.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.UserID.CustomButton.TabIndex = 1;
-            this.UserID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.UserID.CustomButton.UseSelectable = true;
-            this.UserID.CustomButton.Visible = false;
-            this.UserID.DisplayIcon = true;
-            this.UserID.Icon = ((System.Drawing.Image)(resources.GetObject("UserID.Icon")));
-            this.UserID.Lines = new string[0];
-            this.UserID.Location = new System.Drawing.Point(69, 163);
-            this.UserID.MaxLength = 32767;
-            this.UserID.Multiline = true;
-            this.UserID.Name = "UserID";
-            this.UserID.PasswordChar = '\0';
-            this.UserID.PromptText = "USER ID";
-            this.UserID.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.UserID.SelectedText = "";
-            this.UserID.SelectionLength = 0;
-            this.UserID.SelectionStart = 0;
-            this.UserID.ShortcutsEnabled = true;
-            this.UserID.Size = new System.Drawing.Size(197, 33);
-            this.UserID.TabIndex = 3;
-            this.UserID.UseSelectable = true;
-            this.UserID.WaterMark = "USER ID";
-            this.UserID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.UserID.WaterMarkFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserIDtxtbox.CustomButton.Image = null;
+            this.UserIDtxtbox.CustomButton.Location = new System.Drawing.Point(165, 1);
+            this.UserIDtxtbox.CustomButton.Name = "";
+            this.UserIDtxtbox.CustomButton.Size = new System.Drawing.Size(31, 31);
+            this.UserIDtxtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.UserIDtxtbox.CustomButton.TabIndex = 1;
+            this.UserIDtxtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.UserIDtxtbox.CustomButton.UseSelectable = true;
+            this.UserIDtxtbox.CustomButton.Visible = false;
+            this.UserIDtxtbox.DisplayIcon = true;
+            this.UserIDtxtbox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.UserIDtxtbox.Icon = ((System.Drawing.Image)(resources.GetObject("UserIDtxtbox.Icon")));
+            this.UserIDtxtbox.Lines = new string[0];
+            this.UserIDtxtbox.Location = new System.Drawing.Point(69, 163);
+            this.UserIDtxtbox.MaxLength = 32767;
+            this.UserIDtxtbox.Name = "UserIDtxtbox";
+            this.UserIDtxtbox.PasswordChar = '\0';
+            this.UserIDtxtbox.PromptText = "USER ID";
+            this.UserIDtxtbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.UserIDtxtbox.SelectedText = "";
+            this.UserIDtxtbox.SelectionLength = 0;
+            this.UserIDtxtbox.SelectionStart = 0;
+            this.UserIDtxtbox.ShortcutsEnabled = true;
+            this.UserIDtxtbox.Size = new System.Drawing.Size(197, 33);
+            this.UserIDtxtbox.TabIndex = 3;
+            this.UserIDtxtbox.UseSelectable = true;
+            this.UserIDtxtbox.WaterMark = "USER ID";
+            this.UserIDtxtbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.UserIDtxtbox.WaterMarkFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // LoginLabel
             // 
@@ -137,51 +139,53 @@
             this.LoginLabel.TabIndex = 4;
             this.LoginLabel.Text = "LOGIN";
             // 
-            // Password
+            // Passwordtxtbox
             // 
             // 
             // 
             // 
-            this.Password.CustomButton.Image = null;
-            this.Password.CustomButton.Location = new System.Drawing.Point(169, 2);
-            this.Password.CustomButton.Name = "";
-            this.Password.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.Password.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Password.CustomButton.TabIndex = 1;
-            this.Password.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Password.CustomButton.UseSelectable = true;
-            this.Password.CustomButton.Visible = false;
-            this.Password.DisplayIcon = true;
-            this.Password.Icon = ((System.Drawing.Image)(resources.GetObject("Password.Icon")));
-            this.Password.Lines = new string[0];
-            this.Password.Location = new System.Drawing.Point(69, 218);
-            this.Password.MaxLength = 32767;
-            this.Password.Multiline = true;
-            this.Password.Name = "Password";
-            this.Password.PasswordChar = '\0';
-            this.Password.PromptText = "PASSWORD";
-            this.Password.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Password.SelectedText = "";
-            this.Password.SelectionLength = 0;
-            this.Password.SelectionStart = 0;
-            this.Password.ShortcutsEnabled = true;
-            this.Password.Size = new System.Drawing.Size(197, 30);
-            this.Password.TabIndex = 5;
-            this.Password.UseSelectable = true;
-            this.Password.WaterMark = "PASSWORD";
-            this.Password.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.Password.WaterMarkFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Passwordtxtbox.CustomButton.Image = null;
+            this.Passwordtxtbox.CustomButton.Location = new System.Drawing.Point(169, 2);
+            this.Passwordtxtbox.CustomButton.Name = "";
+            this.Passwordtxtbox.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.Passwordtxtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.Passwordtxtbox.CustomButton.TabIndex = 1;
+            this.Passwordtxtbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.Passwordtxtbox.CustomButton.UseSelectable = true;
+            this.Passwordtxtbox.CustomButton.Visible = false;
+            this.Passwordtxtbox.DisplayIcon = true;
+            this.Passwordtxtbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.Passwordtxtbox.Icon = ((System.Drawing.Image)(resources.GetObject("Passwordtxtbox.Icon")));
+            this.Passwordtxtbox.Lines = new string[0];
+            this.Passwordtxtbox.Location = new System.Drawing.Point(69, 218);
+            this.Passwordtxtbox.MaxLength = 32767;
+            this.Passwordtxtbox.Name = "Passwordtxtbox";
+            this.Passwordtxtbox.PasswordChar = '●';
+            this.Passwordtxtbox.PromptText = "PASSWORD";
+            this.Passwordtxtbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Passwordtxtbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.Passwordtxtbox.SelectedText = "";
+            this.Passwordtxtbox.SelectionLength = 0;
+            this.Passwordtxtbox.SelectionStart = 0;
+            this.Passwordtxtbox.ShortcutsEnabled = true;
+            this.Passwordtxtbox.Size = new System.Drawing.Size(197, 30);
+            this.Passwordtxtbox.TabIndex = 5;
+            this.Passwordtxtbox.UseSelectable = true;
+            this.Passwordtxtbox.WaterMark = "PASSWORD";
+            this.Passwordtxtbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.Passwordtxtbox.WaterMarkFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.panel2.Controls.Add(this.NPEyeBtn);
             this.panel2.Controls.Add(this.CancelBtn);
             this.panel2.Controls.Add(this.LoginBtn);
             this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.Password);
             this.panel2.Controls.Add(this.LoginLabel);
-            this.panel2.Controls.Add(this.UserID);
+            this.panel2.Controls.Add(this.UserIDtxtbox);
+            this.panel2.Controls.Add(this.Passwordtxtbox);
             this.panel2.Location = new System.Drawing.Point(284, 190);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(337, 311);
@@ -190,6 +194,7 @@
             // CancelBtn
             // 
             this.CancelBtn.BackColor = System.Drawing.Color.White;
+            this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.FlatAppearance.BorderSize = 0;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelBtn.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -200,10 +205,12 @@
             this.CancelBtn.TabIndex = 9;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = false;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // LoginBtn
             // 
             this.LoginBtn.BackColor = System.Drawing.Color.White;
+            this.LoginBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.LoginBtn.FlatAppearance.BorderSize = 0;
             this.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginBtn.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -227,14 +234,27 @@
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             // 
+            // NPEyeBtn
+            // 
+            this.NPEyeBtn.BackColor = System.Drawing.Color.White;
+            this.NPEyeBtn.Image = ((System.Drawing.Image)(resources.GetObject("NPEyeBtn.Image")));
+            this.NPEyeBtn.Location = new System.Drawing.Point(242, 223);
+            this.NPEyeBtn.Name = "NPEyeBtn";
+            this.NPEyeBtn.Size = new System.Drawing.Size(20, 20);
+            this.NPEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.NPEyeBtn.TabIndex = 56;
+            this.NPEyeBtn.TabStop = false;
+            // 
             // Login
             // 
+            this.AcceptButton = this.LoginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.CancelBtn;
             this.ClientSize = new System.Drawing.Size(950, 650);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -248,6 +268,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -258,12 +279,13 @@
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox Closebtn;
-        private MetroFramework.Controls.MetroTextBox UserID;
         private System.Windows.Forms.Label LoginLabel;
-        private MetroFramework.Controls.MetroTextBox Password;
+        private MetroFramework.Controls.MetroTextBox Passwordtxtbox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button LoginBtn;
         private System.Windows.Forms.Button CancelBtn;
+        private MetroFramework.Controls.MetroTextBox UserIDtxtbox;
+        private System.Windows.Forms.PictureBox NPEyeBtn;
     }
 }

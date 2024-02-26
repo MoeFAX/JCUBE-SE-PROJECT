@@ -17,10 +17,6 @@ namespace JCUBE_SE_PROJECT
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            InvUI invUI = new InvUI();
-
-        }
+        
     }
 }
