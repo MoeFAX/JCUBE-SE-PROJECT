@@ -33,11 +33,6 @@ namespace JCUBE_SE_PROJECT
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(BrandNameField.Text))
-                {
-                    MessageBox.Show("Brand name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
                 cn.Open();
                 if (!string.IsNullOrEmpty(BrandNameField.Text) && int.TryParse(lblid.Text, out int brandID)) 
                 {

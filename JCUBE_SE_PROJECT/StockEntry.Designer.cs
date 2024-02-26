@@ -29,37 +29,45 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.StockinbyField = new System.Windows.Forms.TextBox();
-            this.savebtn = new System.Windows.Forms.Button();
-            this.cancelbtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.stocksField = new System.Windows.Forms.NumericUpDown();
-            this.SuppNameField = new System.Windows.Forms.ComboBox();
-            this.ItemNameField = new System.Windows.Forms.ComboBox();
-            this.StockInDate = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.StatusField = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.stocksField)).BeginInit();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 40);
+            this.label2.Location = new System.Drawing.Point(18, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 20);
+            this.label2.Size = new System.Drawing.Size(62, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Item Name:";
+            this.label2.Text = "ItemID:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 77);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Reference No:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 77);
+            this.label4.Location = new System.Drawing.Point(18, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 20);
             this.label4.TabIndex = 3;
@@ -69,7 +77,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 120);
+            this.label5.Location = new System.Drawing.Point(18, 167);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 20);
             this.label5.TabIndex = 4;
@@ -79,123 +87,96 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 165);
+            this.label6.Location = new System.Drawing.Point(18, 212);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 20);
             this.label6.TabIndex = 5;
             this.label6.Text = "Stock In Date:";
             // 
-            // StockinbyField
+            // textBox1
             // 
-            this.StockinbyField.BackColor = System.Drawing.SystemColors.Window;
-            this.StockinbyField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.StockinbyField.Location = new System.Drawing.Point(132, 121);
-            this.StockinbyField.Name = "StockinbyField";
-            this.StockinbyField.Size = new System.Drawing.Size(362, 23);
-            this.StockinbyField.TabIndex = 9;
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(132, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(459, 23);
+            this.textBox1.TabIndex = 6;
             // 
-            // savebtn
+            // textBox2
             // 
-            this.savebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.savebtn.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.savebtn.ForeColor = System.Drawing.Color.White;
-            this.savebtn.Location = new System.Drawing.Point(178, 259);
-            this.savebtn.Name = "savebtn";
-            this.savebtn.Size = new System.Drawing.Size(75, 23);
-            this.savebtn.TabIndex = 12;
-            this.savebtn.Text = "Save";
-            this.savebtn.UseVisualStyleBackColor = false;
-            this.savebtn.Click += new System.EventHandler(this.savebtn_Click);
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Location = new System.Drawing.Point(132, 77);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(362, 23);
+            this.textBox2.TabIndex = 7;
             // 
-            // cancelbtn
+            // textBox3
             // 
-            this.cancelbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(29)))), ((int)(((byte)(43)))));
-            this.cancelbtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(29)))), ((int)(((byte)(43)))));
-            this.cancelbtn.FlatAppearance.BorderSize = 0;
-            this.cancelbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelbtn.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelbtn.ForeColor = System.Drawing.Color.White;
-            this.cancelbtn.Location = new System.Drawing.Point(287, 259);
-            this.cancelbtn.Name = "cancelbtn";
-            this.cancelbtn.Size = new System.Drawing.Size(75, 23);
-            this.cancelbtn.TabIndex = 13;
-            this.cancelbtn.Text = "Cancel";
-            this.cancelbtn.UseVisualStyleBackColor = false;
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.Location = new System.Drawing.Point(132, 122);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(459, 23);
+            this.textBox3.TabIndex = 8;
             // 
-            // label1
+            // textBox4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(322, 203);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Stocks:";
+            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox4.Location = new System.Drawing.Point(132, 167);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(459, 23);
+            this.textBox4.TabIndex = 9;
             // 
-            // stocksField
+            // textBox5
             // 
-            this.stocksField.BackColor = System.Drawing.SystemColors.Window;
-            this.stocksField.Location = new System.Drawing.Point(387, 204);
-            this.stocksField.Name = "stocksField";
-            this.stocksField.Size = new System.Drawing.Size(107, 23);
-            this.stocksField.TabIndex = 38;
-            this.stocksField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.stocksField.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox5.Location = new System.Drawing.Point(132, 212);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(459, 23);
+            this.textBox5.TabIndex = 10;
             // 
-            // SuppNameField
+            // linkLabel1
             // 
-            this.SuppNameField.BackColor = System.Drawing.SystemColors.Window;
-            this.SuppNameField.FormattingEnabled = true;
-            this.SuppNameField.Location = new System.Drawing.Point(132, 76);
-            this.SuppNameField.Name = "SuppNameField";
-            this.SuppNameField.Size = new System.Drawing.Size(362, 25);
-            this.SuppNameField.TabIndex = 39;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel1.Location = new System.Drawing.Point(500, 77);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(91, 20);
+            this.linkLabel1.TabIndex = 11;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "[Generate]";
             // 
-            // ItemNameField
+            // button1
             // 
-            this.ItemNameField.BackColor = System.Drawing.SystemColors.Window;
-            this.ItemNameField.FormattingEnabled = true;
-            this.ItemNameField.Location = new System.Drawing.Point(132, 35);
-            this.ItemNameField.Name = "ItemNameField";
-            this.ItemNameField.Size = new System.Drawing.Size(362, 25);
-            this.ItemNameField.TabIndex = 40;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(241, 265);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // StockInDate
+            // button2
             // 
-            this.StockInDate.CustomFormat = "MM/dd/yyyy";
-            this.StockInDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StockInDate.Location = new System.Drawing.Point(132, 162);
-            this.StockInDate.Name = "StockInDate";
-            this.StockInDate.Size = new System.Drawing.Size(362, 23);
-            this.StockInDate.TabIndex = 41;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 202);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 20);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "Status:";
-            // 
-            // StatusField
-            // 
-            this.StatusField.BackColor = System.Drawing.SystemColors.Window;
-            this.StatusField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.StatusField.FormattingEnabled = true;
-            this.StatusField.Items.AddRange(new object[] {
-            "Pending",
-            "Delivered"});
-            this.StatusField.Location = new System.Drawing.Point(132, 202);
-            this.StatusField.Name = "StatusField";
-            this.StatusField.Size = new System.Drawing.Size(184, 25);
-            this.StatusField.TabIndex = 43;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(29)))), ((int)(((byte)(43)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(29)))), ((int)(((byte)(43)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(350, 265);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // StockEntry
             // 
@@ -203,20 +184,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(542, 312);
-            this.Controls.Add(this.StatusField);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.StockInDate);
-            this.Controls.Add(this.ItemNameField);
-            this.Controls.Add(this.SuppNameField);
-            this.Controls.Add(this.stocksField);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cancelbtn);
-            this.Controls.Add(this.savebtn);
-            this.Controls.Add(this.StockinbyField);
+            this.ClientSize = new System.Drawing.Size(652, 312);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -225,7 +205,6 @@
             this.Name = "StockEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "StockEntry";
-            ((System.ComponentModel.ISupportInitialize)(this.stocksField)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,18 +212,17 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.NumericUpDown stocksField;
-        public System.Windows.Forms.ComboBox SuppNameField;
-        public System.Windows.Forms.ComboBox ItemNameField;
-        private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.ComboBox StatusField;
-        public System.Windows.Forms.TextBox StockinbyField;
-        public System.Windows.Forms.Button savebtn;
-        public System.Windows.Forms.Button cancelbtn;
-        public System.Windows.Forms.DateTimePicker StockInDate;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
