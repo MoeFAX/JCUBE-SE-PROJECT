@@ -16,6 +16,8 @@ namespace JCUBE_SE_PROJECT
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
+        string id;
+        string price;
         SqlDataReader dr;
         PosUI clerk;
         public CartUI(PosUI clerk)
@@ -28,8 +30,10 @@ namespace JCUBE_SE_PROJECT
         }
         private void btnDiscount_Click(object sender, EventArgs e)
         {
-            Discount moduleForm = new Discount();
-            moduleForm.ShowDialog();
+           Discount discount= new Discount(this);
+            discount.lbid.Text = id;
+            discount.totalPriceTB.Text = price;
+            discount.ShowDialog();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -121,7 +125,12 @@ namespace JCUBE_SE_PROJECT
             DateTodayVal.Text = sDate;
         }
 
-        
+        private void dgvCart_SelectionChanged(object sender, EventArgs e)
+        {
+            int i = dgvCart.CurrentRow.Index;
+            id = dgvCart[0,i].Value.ToString();
+            price = dgvCart[6,i].Value.ToString();
+        }
     }
 }
 

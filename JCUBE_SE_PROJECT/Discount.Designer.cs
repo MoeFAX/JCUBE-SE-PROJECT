@@ -38,6 +38,7 @@
             this.totalPriceTB = new MetroFramework.Controls.MetroTextBox();
             this.percentageTB = new MetroFramework.Controls.MetroTextBox();
             this.amountTB = new MetroFramework.Controls.MetroTextBox();
+            this.lbid = new System.Windows.Forms.Label();
             this.discountPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,6 +104,7 @@
             this.btnConfirm.TabIndex = 4;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnClose
             // 
@@ -116,6 +118,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // totalPriceTB
             // 
@@ -176,6 +179,7 @@
             this.percentageTB.UseSelectable = true;
             this.percentageTB.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.percentageTB.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.percentageTB.TextChanged += new System.EventHandler(this.percentageTB_TextChanged);
             // 
             // amountTB
             // 
@@ -207,11 +211,23 @@
             this.amountTB.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.amountTB.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // lbid
+            // 
+            this.lbid.AutoSize = true;
+            this.lbid.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbid.Location = new System.Drawing.Point(26, 181);
+            this.lbid.Name = "lbid";
+            this.lbid.Size = new System.Drawing.Size(25, 21);
+            this.lbid.TabIndex = 9;
+            this.lbid.Text = "id";
+            this.lbid.Visible = false;
+            // 
             // Discount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 213);
+            this.Controls.Add(this.lbid);
             this.Controls.Add(this.amountTB);
             this.Controls.Add(this.percentageTB);
             this.Controls.Add(this.totalPriceTB);
@@ -221,9 +237,12 @@
             this.Controls.Add(this.discAmount);
             this.Controls.Add(this.discPercentage);
             this.Controls.Add(this.discTotalPriceLabel);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Discount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Discount";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Discount_KeyDown);
             this.discountPanel1.ResumeLayout(false);
             this.discountPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -240,8 +259,9 @@
         private System.Windows.Forms.Label discountLabel;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnClose;
-        private MetroFramework.Controls.MetroTextBox totalPriceTB;
-        private MetroFramework.Controls.MetroTextBox percentageTB;
-        private MetroFramework.Controls.MetroTextBox amountTB;
+        public System.Windows.Forms.Label lbid;
+        public MetroFramework.Controls.MetroTextBox totalPriceTB;
+        public MetroFramework.Controls.MetroTextBox percentageTB;
+        public MetroFramework.Controls.MetroTextBox amountTB;
     }
 }

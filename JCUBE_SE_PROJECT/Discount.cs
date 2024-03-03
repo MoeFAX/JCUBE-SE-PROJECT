@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,66 @@ namespace JCUBE_SE_PROJECT
 {
     public partial class Discount : Form
     {
-        public Discount()
+        SqlConnection cn = new SqlConnection();
+        SqlCommand cm = new SqlCommand();
+        DBConnect dbcon = new DBConnect();
+        string stitle = "Discount";
+        CartUI clerk;
+        public Discount(CartUI clerk)
         {
             InitializeComponent();
+            cn = new SqlConnection(dbcon.myConnection());
+            this.clerk = clerk;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void Discount_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                this.Dispose();
+            }
+        }
+
+        private void percentageTB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double disc = double.Parse(totalPriceTB.Text) * double.Parse(percentageTB.Text) * 0.01;
+                amountTB.Text= disc.ToString("#,##0.00");
+
+            }
+            catch (Exception)
+            {
+                amountTB.Text = "0.00";
+            }
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Add discount? Select Yes to confirm", stitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+                {
+                    cn.Open();
+                    cm = new SqlCommand("UPDATE tbCart SET disc_percent=@disc_percent WHERE id = @id", cn);
+                    cm.Parameters.AddWithValue("@disc_percent", double.Parse(percentageTB.Text));
+                    cm.Parameters.AddWithValue("@id", int.Parse(lbid.Text));
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+                    clerk.LoadCart();
+                    this.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                cn.Close() ;
+                MessageBox.Show(ex.Message, stitle);
+            }
         }
     }
 }

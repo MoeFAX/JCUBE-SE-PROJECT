@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartUI));
             this.searchProdLabel = new System.Windows.Forms.Label();
             this.transactionNoLabel = new System.Windows.Forms.Label();
             this.salesTotalLabel = new System.Windows.Forms.Label();
@@ -57,7 +56,7 @@
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InventoryCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.srp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -192,7 +191,7 @@
             this.No,
             this.InventoryCode,
             this.Description,
-            this.Price,
+            this.srp,
             this.Quantity,
             this.Discount,
             this.Total,
@@ -217,6 +216,7 @@
             this.dgvCart.RowHeadersWidth = 51;
             this.dgvCart.Size = new System.Drawing.Size(1048, 304);
             this.dgvCart.TabIndex = 1;
+            this.dgvCart.SelectionChanged += new System.EventHandler(this.dgvCart_SelectionChanged);
             // 
             // newTransactionLabel
             // 
@@ -409,60 +409,61 @@
             // Description
             // 
             this.Description.HeaderText = "Description";
-            this.Description.MinimumWidth = 225;
+            this.Description.MinimumWidth = 345;
             this.Description.Name = "Description";
-            this.Description.Width = 225;
+            this.Description.Width = 345;
             // 
-            // Price
+            // srp
             // 
-            this.Price.HeaderText = "Price";
-            this.Price.MinimumWidth = 75;
-            this.Price.Name = "Price";
-            this.Price.Width = 75;
+            this.srp.HeaderText = "Price";
+            this.srp.MinimumWidth = 75;
+            this.srp.Name = "srp";
+            this.srp.Width = 75;
             // 
             // Quantity
             // 
             this.Quantity.HeaderText = "Qty";
-            this.Quantity.MinimumWidth = 50;
+            this.Quantity.MinimumWidth = 40;
             this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 50;
+            this.Quantity.Width = 40;
             // 
             // Discount
             // 
             this.Discount.HeaderText = "Discount";
-            this.Discount.MinimumWidth = 100;
+            this.Discount.MinimumWidth = 75;
             this.Discount.Name = "Discount";
-            this.Discount.Width = 125;
+            this.Discount.Width = 75;
             // 
             // Total
             // 
             this.Total.HeaderText = "Total";
-            this.Total.MinimumWidth = 100;
+            this.Total.MinimumWidth = 90;
             this.Total.Name = "Total";
+            this.Total.Width = 90;
             // 
             // AddQty
             // 
-            this.AddQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.AddQty.HeaderText = "";
-            this.AddQty.Image = ((System.Drawing.Image)(resources.GetObject("AddQty.Image")));
+            this.AddQty.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_plus_20;
             this.AddQty.MinimumWidth = 20;
             this.AddQty.Name = "AddQty";
+            this.AddQty.Width = 20;
             // 
             // RemQty
             // 
-            this.RemQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.RemQty.HeaderText = "";
-            this.RemQty.Image = ((System.Drawing.Image)(resources.GetObject("RemQty.Image")));
+            this.RemQty.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_minus_20;
             this.RemQty.MinimumWidth = 20;
             this.RemQty.Name = "RemQty";
+            this.RemQty.Width = 20;
             // 
             // CancelOrder
             // 
-            this.CancelOrder.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.CancelOrder.HeaderText = "";
-            this.CancelOrder.Image = ((System.Drawing.Image)(resources.GetObject("CancelOrder.Image")));
+            this.CancelOrder.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
             this.CancelOrder.MinimumWidth = 20;
             this.CancelOrder.Name = "CancelOrder";
+            this.CancelOrder.Width = 20;
             // 
             // CartUI
             // 
@@ -513,7 +514,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn srp;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
