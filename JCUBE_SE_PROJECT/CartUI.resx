@@ -138,4 +138,47 @@
   <metadata name="Total.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="AddQty.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="AddQty.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAUNJREFUOE+tk01OwzAQhb3mVxCcigsAh0EsgHEW9BggRDlJJTbUzqZSuUlBHIPC
+        GQrznAnKzxQS6JOelNgzn8Zjj/lNdkpbSX5+Ag8mw01Z7qe9Ke2mnu5T717S4D5rxpqn0b6/2pHwnzUI
+        lNngPlqghq2nd5tnJGm6bE63XMFSA6jmWAbfSHpdqKwXrHQBvRRMIfQMR1AT2NyCJ1jbg613i1pP4wUo
+        gaU5YQxre9/mixIc987Tqxok7gh8jrDk4WxbDai4G9At4zs9eMyO2ps0KyER5GkIN9ZmzTyw1g9c+5Eh
+        /mmPWMWdgIHmEQZx+SM9qHAXIL/TO8EZg0f5r4cd3BtaJ7hCGPQ/j97EXQimLgx6Lyhgga4lXRcGnfu1
+        UAEVI2ZlZU2hp/GieJzaMJrjAlo966rD8elG4ukYxrcsr5AxX761NkLloOeHAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="RemQty.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="RemQty.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAQFJREFUOE/Vk8sNwjAMhnsBduExDiv0VhTbA3QCEAgEYzAAjyWARQrHILAri/Bw
+        0x7gwC/9UtT6/+okdfK/AoCBQ5wB0tEBXsSyBqDpiKivZfXKsqzjgJYMuDLgVmHP4EWe522N2SphSHsD
+        YBtwF4UC4soMRszHMtf4q8ozi2+zyt4511NMkF6AFag34EQxQdzdySxuYM4eFBPED4tHEdAaEYcxS80T
+        sFBM0C+A390yf3FqFTcxD8JYMUEyTvzSvxc3sCeirmJexV0ujEDU8rtp/FMyRtz+1graxk2api2N2yqh
+        PE4ciG3fS2e1sGfJOMkEyA0y4CyWtVxA5Zn9gZLkDuBC5kxhJ5ECAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="CancelOrder.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="CancelOrder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAUlJREFUOE+tlN1OwkAQhfdaUS8IMcKCiSFCdv254FGU+CIaIjyWz6FyxRsYA7vl
+        EdQ560Da6XahCSc5STs986U7263apWXLNNzlzRD+Pr875nI9ra9GZ75rZ+TPrGt/80aNPPX9/inH06Km
+        J2rwEiRNGZf1zJjb4qLAhII/MUDMIavtC7cXRQG82d6wjdHje+aRMf/ime1cZpWp14HBOKWoMCuFtHnL
+        tFnIOmrhmagTY8o4AM1cBtC47tj7AjRWY3ttPwLMNQcn8uHWeUACBmOW4TtdtYfXscDWDErBNgbr8MCD
+        Lxmim9IRiwJSUG3fAwzClstA/c/GvDKOd1qbpQzta4KtSj8LHHTMIdaQMnp8xz4wpigc9DrQkNX2mdvj
+        wkHHEmKAvMMyq95MCvPARuE4lWC0m9gAzJ3j9fR1MTpy7dsBjGsuV0ipPwQIYZ/mNoVsAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
 </root>

@@ -35,7 +35,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnCart_Click(object sender, EventArgs e)
         {
-            openChildForm(new CartUI());
+            openChildForm(new CartUI(this));
         }
 
         private void btnSettlePayment_Click(object sender, EventArgs e)
