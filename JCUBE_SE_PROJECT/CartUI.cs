@@ -20,6 +20,7 @@ namespace JCUBE_SE_PROJECT
         string price;
         SqlDataReader dr;
         PosUI clerk;
+        Qty qty;
         public CartUI(PosUI clerk)
         {
             InitializeComponent();
@@ -28,6 +29,9 @@ namespace JCUBE_SE_PROJECT
             getTransNo();
             this.clerk = clerk;
         }
+
+        
+
         private void btnDiscount_Click(object sender, EventArgs e)
         {
            Discount discount= new Discount(this);
@@ -43,8 +47,11 @@ namespace JCUBE_SE_PROJECT
             searchProduct.ShowDialog();
         }
 
+        public double TotalSales { get; set; }
+
         public void LoadCart()
         {
+            Boolean hasCart = false;
             double total = 0;
             double discount = 0;
             
@@ -60,7 +67,7 @@ namespace JCUBE_SE_PROJECT
                 total += Convert.ToDouble(dr["total"].ToString());
                 discount += Convert.ToDouble(dr["discount"].ToString());
                 dgvCart.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), double.Parse(dr[6].ToString()).ToString("#,##0.00"));
-
+                hasCart = true;
             }
             dr.Close();
             cn.Close();
@@ -68,19 +75,46 @@ namespace JCUBE_SE_PROJECT
             SalesTotalVal.Text = total.ToString("#,##0.00");
             discountVal.Text = discount.ToString("#,##0.00");
             GetCartTotal();
-
+            if (hasCart)
+            {
+               btnClear.Enabled = true;
+               clerk.btnSettlePayment.Enabled = true;
+               btnDiscount.Enabled = true;
+            }
+            else
+            {
+                btnClear.Enabled = false;
+                clerk.btnSettlePayment.Enabled = false;
+                btnDiscount.Enabled = false;
+            }
         }
 
         public void GetCartTotal()
         {
-            double discount = double.Parse(discountVal.Text);
-            double sales = double.Parse(SalesTotalVal.Text) - discount;
-            double vat = sales * 0.12; // change accordingly
-            double vatable = sales - vat;
+           /* double discount = double.Parse(discountVal.Text);
+            double sales = double.Parse(SalesTotalVal.Text) - discount;*/
+            double total = double.Parse(SalesTotalVal.Text); 
+            double vat = total * 0.12; // Ensure VAT calculation uses the correct total
+            double vatable = total - vat;
 
             vatVal.Text = vat.ToString("#,##0.00");
             vatableVal.Text = vatable.ToString("#,##0.00");
-            SalesTotalVal.Text = sales.ToString("#,##0.00");
+            lbDisplayTotal.Text = total.ToString("#,##0.00");
+            TotalSales = total;
+
+        }
+
+        public void StartNewTransaction()
+        {
+            try
+            {
+                getTransNo();
+                LoadCart(); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Generate Transaction No.
@@ -130,6 +164,76 @@ namespace JCUBE_SE_PROJECT
             int i = dgvCart.CurrentRow.Index;
             id = dgvCart[0,i].Value.ToString();
             price = dgvCart[6,i].Value.ToString();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Remove all items from the cart?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                cn.Open();
+                cm= new SqlCommand("Delete from tbCart where transNo LIKE'"+ TransNoVal.Text+"'",cn);
+                cm.ExecuteNonQuery();
+                cn.Close();
+                LoadCart();
+                MessageBox.Show("All items has been successfully removed", "Clear Cart", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+        }
+
+        private void dgvCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvCart.Columns[e.ColumnIndex].Name;
+            if(colName == "CancelOrder")
+            {
+                if (MessageBox.Show("Remove this item from the cart?", "Remove item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    dbcon.ExecuteQuery("Delete from tbCart where id LIKE'" + dgvCart.Rows[e.RowIndex].Cells[0].Value.ToString() + "'");
+                    MessageBox.Show("Item has been successfully removed", "Remove Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadCart();
+                }
+            }
+            else if(colName == "AddQty") 
+            {
+                qty = new Qty(clerk, this);
+                int i = 0;
+                cn.Open();
+                cm = new SqlCommand("SELECT SUM(Qty) as Qty FROM tbItemList WHERE InventoryCode LIKE'" + dgvCart.Rows[e.RowIndex].Cells[1].Value.ToString() + "' GROUP BY InventoryCode", cn);
+                i = int.Parse(cm.ExecuteScalar().ToString());
+                cn.Close();
+
+                if (int.Parse(dgvCart.Rows[e.RowIndex].Cells[4].Value.ToString()) < i)
+                {
+                    dbcon.ExecuteQuery("UPDATE tbCart SET qty = qty + " + int.Parse(qty.txtQty.Text) + " WHERE transNo LIKE '" + TransNoVal.Text + "' AND InventoryCode LIKE'" + dgvCart.Rows[e.RowIndex].Cells[1].Value.ToString() + "'");
+                    LoadCart();
+                }
+                else
+                {
+                    MessageBox.Show("Remaining quantity on hand is " + i + "!", "Out of Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            else if (colName == "RemQty")
+            {
+                qty = new Qty(clerk, this);
+                int currentQtyInCart = int.Parse(dgvCart.Rows[e.RowIndex].Cells[4].Value.ToString());
+                int qtyToSubtract = int.Parse(qty.txtQty.Text);
+
+                if (currentQtyInCart <= 1 || currentQtyInCart - qtyToSubtract <= 0)
+                {
+                    MessageBox.Show("Subtracting more will make the quantity of the item 0!" , "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                cn.Open();
+                cm = new SqlCommand("UPDATE tbCart SET qty = qty - @qty WHERE transNo LIKE @transNo AND inventoryCode LIKE @inventoryCode", cn);
+                cm.Parameters.AddWithValue("@transNo", TransNoVal.Text);
+                cm.Parameters.AddWithValue("@inventoryCode", dgvCart.Rows[e.RowIndex].Cells[1].Value.ToString());
+                cm.Parameters.AddWithValue("@qty", qtyToSubtract);
+                cm.ExecuteNonQuery();
+                cn.Close();
+
+                LoadCart();
+            }
         }
     }
 }

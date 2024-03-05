@@ -180,6 +180,7 @@
             this.percentageTB.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.percentageTB.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.percentageTB.TextChanged += new System.EventHandler(this.percentageTB_TextChanged);
+            this.percentageTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.percentageTB_KeyPress);
             // 
             // amountTB
             // 

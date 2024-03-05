@@ -12,9 +12,11 @@ namespace JCUBE_SE_PROJECT
 {
     public partial class PosUI : Form
     {
+        CartUI clerk;
         public PosUI()
         {
             InitializeComponent();
+            clerk = new CartUI(this);
         }
 
         private Form activeForm = null;
@@ -35,13 +37,16 @@ namespace JCUBE_SE_PROJECT
 
         private void btnCart_Click(object sender, EventArgs e)
         {
-            openChildForm(new CartUI(this));
+            clerk = new CartUI(this);
+            openChildForm(clerk);
         }
 
         private void btnSettlePayment_Click(object sender, EventArgs e)
         {
-            SettlePayment moduleForm = new SettlePayment();
-            moduleForm.ShowDialog();
+            clerk.LoadCart();
+            SettlePayment settle = new SettlePayment(clerk);
+            settle.txtSale.Text = clerk.TotalSales.ToString("#,##0.00");
+            settle.Show();
         }
 
         private void btnDailySales_Click(object sender, EventArgs e)

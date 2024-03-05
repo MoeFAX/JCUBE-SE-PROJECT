@@ -40,19 +40,6 @@
             this.dateLabel = new System.Windows.Forms.Label();
             this.addDiscountLabel = new System.Windows.Forms.Label();
             this.dgvCart = new System.Windows.Forms.DataGridView();
-            this.newTransactionLabel = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnDiscount = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.DateTodayVal = new System.Windows.Forms.Label();
-            this.vatableVal = new System.Windows.Forms.Label();
-            this.vatVal = new System.Windows.Forms.Label();
-            this.discountVal = new System.Windows.Forms.Label();
-            this.SalesTotalVal = new System.Windows.Forms.Label();
-            this.TransNoVal = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InventoryCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +50,23 @@
             this.AddQty = new System.Windows.Forms.DataGridViewImageColumn();
             this.RemQty = new System.Windows.Forms.DataGridViewImageColumn();
             this.CancelOrder = new System.Windows.Forms.DataGridViewImageColumn();
+            this.newTransactionLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.clrCartLabel = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnDiscount = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbDisplayTotal = new System.Windows.Forms.Label();
+            this.DateTodayVal = new System.Windows.Forms.Label();
+            this.vatableVal = new System.Windows.Forms.Label();
+            this.vatVal = new System.Windows.Forms.Label();
+            this.discountVal = new System.Windows.Forms.Label();
+            this.SalesTotalVal = new System.Windows.Forms.Label();
+            this.TransNoVal = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -163,12 +167,12 @@
             this.addDiscountLabel.BackColor = System.Drawing.Color.White;
             this.addDiscountLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addDiscountLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addDiscountLabel.Location = new System.Drawing.Point(681, 87);
+            this.addDiscountLabel.Location = new System.Drawing.Point(355, 87);
             this.addDiscountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.addDiscountLabel.Name = "addDiscountLabel";
-            this.addDiscountLabel.Size = new System.Drawing.Size(142, 23);
+            this.addDiscountLabel.Size = new System.Drawing.Size(151, 23);
             this.addDiscountLabel.TabIndex = 5;
-            this.addDiscountLabel.Text = "Add Discount";
+            this.addDiscountLabel.Text = "Add Discount:";
             this.addDiscountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dgvCart
@@ -216,7 +220,84 @@
             this.dgvCart.RowHeadersWidth = 51;
             this.dgvCart.Size = new System.Drawing.Size(1048, 304);
             this.dgvCart.TabIndex = 1;
+            this.dgvCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellContentClick);
             this.dgvCart.SelectionChanged += new System.EventHandler(this.dgvCart_SelectionChanged);
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.No.DefaultCellStyle = dataGridViewCellStyle2;
+            this.No.HeaderText = "No";
+            this.No.MinimumWidth = 55;
+            this.No.Name = "No";
+            this.No.Width = 55;
+            // 
+            // InventoryCode
+            // 
+            this.InventoryCode.HeaderText = "Inventory Code";
+            this.InventoryCode.MinimumWidth = 150;
+            this.InventoryCode.Name = "InventoryCode";
+            this.InventoryCode.Width = 150;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.MinimumWidth = 300;
+            this.Description.Name = "Description";
+            this.Description.Width = 300;
+            // 
+            // srp
+            // 
+            this.srp.HeaderText = "Unit Price";
+            this.srp.MinimumWidth = 100;
+            this.srp.Name = "srp";
+            this.srp.Width = 125;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Qty";
+            this.Quantity.MinimumWidth = 40;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Width = 40;
+            // 
+            // Discount
+            // 
+            this.Discount.HeaderText = "Discount";
+            this.Discount.MinimumWidth = 75;
+            this.Discount.Name = "Discount";
+            this.Discount.Width = 75;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 90;
+            this.Total.Name = "Total";
+            this.Total.Width = 90;
+            // 
+            // AddQty
+            // 
+            this.AddQty.HeaderText = "";
+            this.AddQty.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_plus_20;
+            this.AddQty.MinimumWidth = 20;
+            this.AddQty.Name = "AddQty";
+            this.AddQty.Width = 20;
+            // 
+            // RemQty
+            // 
+            this.RemQty.HeaderText = "";
+            this.RemQty.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_minus_20;
+            this.RemQty.MinimumWidth = 20;
+            this.RemQty.Name = "RemQty";
+            this.RemQty.Width = 20;
+            // 
+            // CancelOrder
+            // 
+            this.CancelOrder.HeaderText = "";
+            this.CancelOrder.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
+            this.CancelOrder.MinimumWidth = 20;
+            this.CancelOrder.Name = "CancelOrder";
+            this.CancelOrder.Width = 20;
             // 
             // newTransactionLabel
             // 
@@ -233,6 +314,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnClear);
+            this.panel2.Controls.Add(this.clrCartLabel);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.btnDiscount);
             this.panel2.Controls.Add(this.newTransactionLabel);
@@ -244,6 +327,33 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1048, 123);
             this.panel2.TabIndex = 15;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnClear.Enabled = false;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_clear_shopping_cart_30;
+            this.btnClear.Location = new System.Drawing.Point(825, 81);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(34, 35);
+            this.btnClear.TabIndex = 10;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // clrCartLabel
+            // 
+            this.clrCartLabel.BackColor = System.Drawing.Color.White;
+            this.clrCartLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clrCartLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.clrCartLabel.Location = new System.Drawing.Point(699, 87);
+            this.clrCartLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.clrCartLabel.Name = "clrCartLabel";
+            this.clrCartLabel.Size = new System.Drawing.Size(119, 23);
+            this.clrCartLabel.TabIndex = 9;
+            this.clrCartLabel.Text = "Clear Cart:";
+            this.clrCartLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnSearch
             // 
@@ -261,10 +371,11 @@
             // btnDiscount
             // 
             this.btnDiscount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDiscount.Enabled = false;
             this.btnDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDiscount.ForeColor = System.Drawing.Color.White;
             this.btnDiscount.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_discount_642;
-            this.btnDiscount.Location = new System.Drawing.Point(819, 84);
+            this.btnDiscount.Location = new System.Drawing.Point(506, 81);
             this.btnDiscount.Name = "btnDiscount";
             this.btnDiscount.Size = new System.Drawing.Size(34, 35);
             this.btnDiscount.TabIndex = 7;
@@ -284,6 +395,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.lbDisplayTotal);
             this.panel3.Controls.Add(this.DateTodayVal);
             this.panel3.Controls.Add(this.vatableVal);
             this.panel3.Controls.Add(this.vatVal);
@@ -302,6 +415,32 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1067, 127);
             this.panel3.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
+            this.label1.Location = new System.Drawing.Point(445, 39);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 44);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Total:";
+            // 
+            // lbDisplayTotal
+            // 
+            this.lbDisplayTotal.AutoSize = true;
+            this.lbDisplayTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lbDisplayTotal.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDisplayTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
+            this.lbDisplayTotal.Location = new System.Drawing.Point(565, 41);
+            this.lbDisplayTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbDisplayTotal.Name = "lbDisplayTotal";
+            this.lbDisplayTotal.Size = new System.Drawing.Size(113, 44);
+            this.lbDisplayTotal.TabIndex = 20;
+            this.lbDisplayTotal.Text = "00.00";
             // 
             // DateTodayVal
             // 
@@ -389,82 +528,6 @@
             this.panel4.Size = new System.Drawing.Size(21, 304);
             this.panel4.TabIndex = 18;
             // 
-            // No
-            // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.No.DefaultCellStyle = dataGridViewCellStyle2;
-            this.No.HeaderText = "No";
-            this.No.MinimumWidth = 55;
-            this.No.Name = "No";
-            this.No.Width = 55;
-            // 
-            // InventoryCode
-            // 
-            this.InventoryCode.HeaderText = "Inventory Code";
-            this.InventoryCode.MinimumWidth = 150;
-            this.InventoryCode.Name = "InventoryCode";
-            this.InventoryCode.Width = 150;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.MinimumWidth = 345;
-            this.Description.Name = "Description";
-            this.Description.Width = 345;
-            // 
-            // srp
-            // 
-            this.srp.HeaderText = "Price";
-            this.srp.MinimumWidth = 75;
-            this.srp.Name = "srp";
-            this.srp.Width = 75;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Qty";
-            this.Quantity.MinimumWidth = 40;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 40;
-            // 
-            // Discount
-            // 
-            this.Discount.HeaderText = "Discount";
-            this.Discount.MinimumWidth = 75;
-            this.Discount.Name = "Discount";
-            this.Discount.Width = 75;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.MinimumWidth = 90;
-            this.Total.Name = "Total";
-            this.Total.Width = 90;
-            // 
-            // AddQty
-            // 
-            this.AddQty.HeaderText = "";
-            this.AddQty.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_plus_20;
-            this.AddQty.MinimumWidth = 20;
-            this.AddQty.Name = "AddQty";
-            this.AddQty.Width = 20;
-            // 
-            // RemQty
-            // 
-            this.RemQty.HeaderText = "";
-            this.RemQty.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_minus_20;
-            this.RemQty.MinimumWidth = 20;
-            this.RemQty.Name = "RemQty";
-            this.RemQty.Width = 20;
-            // 
-            // CancelOrder
-            // 
-            this.CancelOrder.HeaderText = "";
-            this.CancelOrder.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
-            this.CancelOrder.MinimumWidth = 20;
-            this.CancelOrder.Name = "CancelOrder";
-            this.CancelOrder.Width = 20;
-            // 
             // CartUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -497,7 +560,6 @@
         private System.Windows.Forms.Label vatLabel;
         private System.Windows.Forms.Label vatableLabel;
         private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.DataGridView dgvCart;
         private System.Windows.Forms.Label newTransactionLabel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
@@ -507,10 +569,14 @@
         private System.Windows.Forms.Label vatableVal;
         private System.Windows.Forms.Label vatVal;
         private System.Windows.Forms.Label discountVal;
-        private System.Windows.Forms.Label SalesTotalVal;
         private System.Windows.Forms.Label DateTodayVal;
         private System.Windows.Forms.Button btnSearch;
         public System.Windows.Forms.Label TransNoVal;
+        public System.Windows.Forms.DataGridView dgvCart;
+        public System.Windows.Forms.Label SalesTotalVal;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbDisplayTotal;
+        private System.Windows.Forms.Label clrCartLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
@@ -521,5 +587,6 @@
         private System.Windows.Forms.DataGridViewImageColumn AddQty;
         private System.Windows.Forms.DataGridViewImageColumn RemQty;
         private System.Windows.Forms.DataGridViewImageColumn CancelOrder;
+        private System.Windows.Forms.Button btnClear;
     }
 }

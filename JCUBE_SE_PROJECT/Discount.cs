@@ -23,6 +23,7 @@ namespace JCUBE_SE_PROJECT
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             this.clerk = clerk;
+            this.KeyPreview = true;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -32,10 +33,8 @@ namespace JCUBE_SE_PROJECT
 
         private void Discount_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
-            {
-                this.Dispose();
-            }
+            if (e.KeyCode == Keys.Escape) btnClose.PerformClick();
+            else if (e.KeyCode == Keys.Enter) btnConfirm.PerformClick();
         }
 
         private void percentageTB_TextChanged(object sender, EventArgs e)
@@ -72,6 +71,14 @@ namespace JCUBE_SE_PROJECT
             {
                 cn.Close() ;
                 MessageBox.Show(ex.Message, stitle);
+            }
+        }
+
+        private void percentageTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
             }
         }
     }

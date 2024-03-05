@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace JCUBE_SE_PROJECT
 {
@@ -27,6 +28,23 @@ namespace JCUBE_SE_PROJECT
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table;
+        }
+
+        public void ExecuteQuery(String sql)
+        {
+            try
+            {
+                cn.ConnectionString = myConnection();
+                cn.Open();
+                cm = new SqlCommand(sql, cn);
+                cm.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+          
         }
     }
 }
