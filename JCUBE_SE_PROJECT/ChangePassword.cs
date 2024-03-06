@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,18 +14,150 @@ namespace JCUBE_SE_PROJECT
 {
     public partial class ChangePassword : Form
     {
-        public ChangePassword()
+        SqlConnection cn = new SqlConnection();
+        SqlCommand cm = new SqlCommand();
+        DBConnect dbcon = new DBConnect();
+        SqlDataReader dr;
+        PosUI posUI;
+        public ChangePassword(PosUI posUI)
         {
             InitializeComponent();
+            this.posUI = posUI;
+            lblUser.Text = posUI.POSNamelbl.Text;
+            lblUsername.Text = posUI.lblUserRolePOS.Text;
+            CurEyeBtn.Visible= true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            txtNewPass.Visible = true;
-            txtConfirmPass.Visible = true;
-            btnSave.Visible = true;
-            btnNext.Visible = false;
+            try
+            {
+                string currentPass = dbcon.getPassword(lblUsername.Text);
+                if (currentPass != txtCurrentPass.Text) 
+                {
+                    MessageBox.Show("Wrong Password! Please try again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    txtNewPass.Visible = true;
+                    newPassEyeBtn.Visible = true;
+                    confirmEyeBtn.Visible = true;
+                    CurEyeBtn.Visible = false;
+                    txtConfirmPass.Visible = true;
+                    txtCurrentPass.Visible = false;
+                    btnSave.Visible = true;
+                    btnNext.Visible = false;
+                }
+                
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            }
+           
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string currentPass = dbcon.getPassword(lblUsername.Text);
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtNewPass.Text))
+                {
+                    MessageBox.Show("New Password field cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (txtNewPass.Text == currentPass)
+                {
+                    MessageBox.Show("New password cannot be the same as the current password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtNewPass.Text.Length < 8)
+                {
+                    MessageBox.Show("Password must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (!Regex.IsMatch(txtNewPass.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=-]).{8,}$"))
+                {
+                    MessageBox.Show("Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (txtNewPass.Text != txtConfirmPass.Text)
+                {
+                    MessageBox.Show("Passwords do not match, please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    if (MessageBox.Show("Change Password?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        dbcon.ExecuteQuery("UPDATE tbUser set password = '" + txtNewPass.Text + "' WHERE username ='" + lblUsername.Text + "'");
+                        MessageBox.Show("Password has been successfully updated.", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Dispose();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
+        private void CurEyeBtn_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                txtCurrentPass.PasswordChar = '\0';
+                txtCurrentPass.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void CurEyeBtn_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                txtCurrentPass.PasswordChar = '●';
+                txtCurrentPass.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void confirmEyeBtn_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                txtConfirmPass.PasswordChar = '\0';
+                txtConfirmPass.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void confirmEyeBtn_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                txtConfirmPass.PasswordChar = '●';
+                txtConfirmPass.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void newPassEyeBtn_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                txtNewPass.PasswordChar = '\0';
+                txtNewPass.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void newPassEyeBtn_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                txtNewPass.PasswordChar = '●';
+                txtNewPass.UseSystemPasswordChar = true;
+            }
         }
     }
 }

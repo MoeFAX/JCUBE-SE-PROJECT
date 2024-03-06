@@ -399,6 +399,8 @@
     <Content Include="Properties\icons8-cancel-20.png" />
     <Content Include="Properties\icons8-close-20.png" />
     <Content Include="Properties\icons8-minus-20.png" />
+    <None Include="Resources\icons8-eye-20.png" />
+    <None Include="Resources\icons8-password-20.png" />
     <None Include="Resources\icons8-clear-shopping-cart-30.png" />
     <None Include="Resources\icons8-clear-shopping-cart-40.png" />
     <None Include="Resources\icons8-clear-shopping-cart-50.png" />

@@ -57,17 +57,43 @@ namespace JCUBE_SE_PROJECT
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            ChangePassword moduleForm = new ChangePassword();
+            ChangePassword moduleForm = new ChangePassword(this);
             moduleForm.ShowDialog();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
-        {           
+        {    
+            if (clerk.dgvCart.Rows.Count > 0) //The cart should not have an item to logout
+            {
+                MessageBox.Show("Please cancel transaction, before logging out!.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (MessageBox.Show("Logout Application?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
                 Login login = new Login();
                 login.ShowDialog();
+            }
+        }
+        private DialogResult ConfirmExit()
+        {
+            return MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+        private void PosUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                if (clerk.dgvCart.Rows.Count > 0) //User can only exit when the cart is empty
+                {
+                    e.Cancel = true;
+                    MessageBox.Show("Please cancel transaction, before you exit!.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (ConfirmExit() == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
             }
         }
     }

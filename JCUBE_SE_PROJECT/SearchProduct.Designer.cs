@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.addbtn = new System.Windows.Forms.Button();
             this.MngBrandLabel = new System.Windows.Forms.Label();
             this.dgvItem = new System.Windows.Forms.DataGridView();
@@ -52,7 +52,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.addbtn);
             this.panel1.Controls.Add(this.MngBrandLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -75,14 +75,15 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(167, 26);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(337, 30);
-            this.textBox1.TabIndex = 2;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(167, 26);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(337, 30);
+            this.txtSearch.TabIndex = 2;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // addbtn
             // 
@@ -164,11 +165,10 @@
             // 
             // Desc
             // 
-            this.Desc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Desc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Desc.HeaderText = "Description";
             this.Desc.MinimumWidth = 6;
             this.Desc.Name = "Desc";
-            this.Desc.Width = 130;
             // 
             // Brand
             // 
@@ -204,11 +204,12 @@
             // 
             // AddToCart
             // 
+            this.AddToCart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.AddToCart.HeaderText = "";
             this.AddToCart.Image = ((System.Drawing.Image)(resources.GetObject("AddToCart.Image")));
             this.AddToCart.MinimumWidth = 6;
             this.AddToCart.Name = "AddToCart";
-            this.AddToCart.Width = 125;
+            this.AddToCart.Width = 6;
             // 
             // SearchProduct
             // 
@@ -220,6 +221,7 @@
             this.Name = "SearchProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SearchProduct";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchProduct_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();
@@ -232,7 +234,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button addbtn;
         private System.Windows.Forms.Label MngBrandLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridView dgvItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;

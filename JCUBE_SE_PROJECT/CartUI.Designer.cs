@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartUI));
             this.searchProdLabel = new System.Windows.Forms.Label();
             this.transactionNoLabel = new System.Windows.Forms.Label();
             this.salesTotalLabel = new System.Windows.Forms.Label();
@@ -40,16 +42,6 @@
             this.dateLabel = new System.Windows.Forms.Label();
             this.addDiscountLabel = new System.Windows.Forms.Label();
             this.dgvCart = new System.Windows.Forms.DataGridView();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InventoryCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.srp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddQty = new System.Windows.Forms.DataGridViewImageColumn();
-            this.RemQty = new System.Windows.Forms.DataGridViewImageColumn();
-            this.CancelOrder = new System.Windows.Forms.DataGridViewImageColumn();
             this.newTransactionLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
@@ -67,6 +59,16 @@
             this.SalesTotalVal = new System.Windows.Forms.Label();
             this.TransNoVal = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InventoryCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.srp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddQty = new System.Windows.Forms.DataGridViewImageColumn();
+            this.RemQty = new System.Windows.Forms.DataGridViewImageColumn();
+            this.CancelOrder = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -202,14 +204,14 @@
             this.AddQty,
             this.RemQty,
             this.CancelOrder});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCart.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCart.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCart.EnableHeadersVisualStyles = false;
             this.dgvCart.GridColor = System.Drawing.Color.Snow;
@@ -218,86 +220,10 @@
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.RowHeadersVisible = false;
             this.dgvCart.RowHeadersWidth = 51;
-            this.dgvCart.Size = new System.Drawing.Size(1048, 304);
+            this.dgvCart.Size = new System.Drawing.Size(893, 293);
             this.dgvCart.TabIndex = 1;
             this.dgvCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellContentClick);
             this.dgvCart.SelectionChanged += new System.EventHandler(this.dgvCart_SelectionChanged);
-            // 
-            // No
-            // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.No.DefaultCellStyle = dataGridViewCellStyle2;
-            this.No.HeaderText = "No";
-            this.No.MinimumWidth = 55;
-            this.No.Name = "No";
-            this.No.Width = 55;
-            // 
-            // InventoryCode
-            // 
-            this.InventoryCode.HeaderText = "Inventory Code";
-            this.InventoryCode.MinimumWidth = 150;
-            this.InventoryCode.Name = "InventoryCode";
-            this.InventoryCode.Width = 150;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.MinimumWidth = 300;
-            this.Description.Name = "Description";
-            this.Description.Width = 300;
-            // 
-            // srp
-            // 
-            this.srp.HeaderText = "Unit Price";
-            this.srp.MinimumWidth = 100;
-            this.srp.Name = "srp";
-            this.srp.Width = 125;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Qty";
-            this.Quantity.MinimumWidth = 40;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 40;
-            // 
-            // Discount
-            // 
-            this.Discount.HeaderText = "Discount";
-            this.Discount.MinimumWidth = 75;
-            this.Discount.Name = "Discount";
-            this.Discount.Width = 75;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.MinimumWidth = 90;
-            this.Total.Name = "Total";
-            this.Total.Width = 90;
-            // 
-            // AddQty
-            // 
-            this.AddQty.HeaderText = "";
-            this.AddQty.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_plus_20;
-            this.AddQty.MinimumWidth = 20;
-            this.AddQty.Name = "AddQty";
-            this.AddQty.Width = 20;
-            // 
-            // RemQty
-            // 
-            this.RemQty.HeaderText = "";
-            this.RemQty.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_minus_20;
-            this.RemQty.MinimumWidth = 20;
-            this.RemQty.Name = "RemQty";
-            this.RemQty.Width = 20;
-            // 
-            // CancelOrder
-            // 
-            this.CancelOrder.HeaderText = "";
-            this.CancelOrder.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
-            this.CancelOrder.MinimumWidth = 20;
-            this.CancelOrder.Name = "CancelOrder";
-            this.CancelOrder.Width = 20;
             // 
             // newTransactionLabel
             // 
@@ -325,7 +251,7 @@
             this.panel2.Location = new System.Drawing.Point(19, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1048, 123);
+            this.panel2.Size = new System.Drawing.Size(893, 123);
             this.panel2.TabIndex = 15;
             // 
             // btnClear
@@ -389,7 +315,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(19, 427);
+            this.panel1.Size = new System.Drawing.Size(19, 416);
             this.panel1.TabIndex = 16;
             // 
             // panel3
@@ -410,10 +336,10 @@
             this.panel3.Controls.Add(this.discountLabel);
             this.panel3.Controls.Add(this.vatLabel);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 427);
+            this.panel3.Location = new System.Drawing.Point(0, 416);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1067, 127);
+            this.panel3.Size = new System.Drawing.Size(912, 127);
             this.panel3.TabIndex = 17;
             // 
             // label1
@@ -523,17 +449,101 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1046, 123);
+            this.panel4.Location = new System.Drawing.Point(891, 123);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(21, 304);
+            this.panel4.Size = new System.Drawing.Size(21, 293);
             this.panel4.TabIndex = 18;
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.No.DefaultCellStyle = dataGridViewCellStyle2;
+            this.No.HeaderText = "No";
+            this.No.MinimumWidth = 55;
+            this.No.Name = "No";
+            this.No.Width = 55;
+            // 
+            // InventoryCode
+            // 
+            this.InventoryCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.InventoryCode.HeaderText = "Inventory Code";
+            this.InventoryCode.MinimumWidth = 150;
+            this.InventoryCode.Name = "InventoryCode";
+            this.InventoryCode.Width = 150;
+            // 
+            // Description
+            // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Description.HeaderText = "Description";
+            this.Description.MinimumWidth = 260;
+            this.Description.Name = "Description";
+            // 
+            // srp
+            // 
+            this.srp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.srp.HeaderText = "Unit Price";
+            this.srp.MinimumWidth = 100;
+            this.srp.Name = "srp";
+            // 
+            // Quantity
+            // 
+            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Quantity.HeaderText = "Qty";
+            this.Quantity.MinimumWidth = 40;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Width = 61;
+            // 
+            // Discount
+            // 
+            this.Discount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Discount.HeaderText = "Discount";
+            this.Discount.MinimumWidth = 75;
+            this.Discount.Name = "Discount";
+            this.Discount.Width = 95;
+            // 
+            // Total
+            // 
+            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 100;
+            this.Total.Name = "Total";
+            // 
+            // AddQty
+            // 
+            this.AddQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.AddQty.HeaderText = "";
+            this.AddQty.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_plus_20;
+            this.AddQty.MinimumWidth = 20;
+            this.AddQty.Name = "AddQty";
+            this.AddQty.Width = 20;
+            // 
+            // RemQty
+            // 
+            this.RemQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.RemQty.HeaderText = "";
+            this.RemQty.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_minus_20;
+            this.RemQty.MinimumWidth = 20;
+            this.RemQty.Name = "RemQty";
+            this.RemQty.Width = 20;
+            // 
+            // CancelOrder
+            // 
+            this.CancelOrder.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            this.CancelOrder.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CancelOrder.HeaderText = "";
+            this.CancelOrder.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
+            this.CancelOrder.MinimumWidth = 20;
+            this.CancelOrder.Name = "CancelOrder";
             // 
             // CartUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(912, 543);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.dgvCart);
             this.Controls.Add(this.panel2);
@@ -577,6 +587,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbDisplayTotal;
         private System.Windows.Forms.Label clrCartLabel;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
@@ -587,6 +598,5 @@
         private System.Windows.Forms.DataGridViewImageColumn AddQty;
         private System.Windows.Forms.DataGridViewImageColumn RemQty;
         private System.Windows.Forms.DataGridViewImageColumn CancelOrder;
-        private System.Windows.Forms.Button btnClear;
     }
 }

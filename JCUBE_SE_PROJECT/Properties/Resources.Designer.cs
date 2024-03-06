@@ -123,6 +123,16 @@ namespace JCUBE_SE_PROJECT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_eye_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-eye-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_lock_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-lock-30", resourceCulture);
@@ -136,6 +146,16 @@ namespace JCUBE_SE_PROJECT.Properties {
         internal static System.Drawing.Bitmap icons8_minus_20 {
             get {
                 object obj = ResourceManager.GetObject("icons8-minus-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_password_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-password-20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

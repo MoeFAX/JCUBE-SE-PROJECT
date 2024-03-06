@@ -299,6 +299,7 @@
             this.Name = "PosUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jcube Point Of Sales";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PosUI_FormClosing);
             this.panelSidebar.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

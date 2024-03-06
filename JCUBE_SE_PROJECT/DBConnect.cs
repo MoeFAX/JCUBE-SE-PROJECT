@@ -13,6 +13,7 @@ namespace JCUBE_SE_PROJECT
     {
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
+        SqlDataReader dr;
         public string con;
 
         public string myConnection()
@@ -45,6 +46,23 @@ namespace JCUBE_SE_PROJECT
                 MessageBox.Show(ex.Message);
             }
           
+        }
+
+        public string getPassword(string username)
+        {
+            string password = "";
+            cn.ConnectionString = myConnection();
+            cn.Open();
+            cm = new SqlCommand("SELECT password FROM tbUser WHERE username = '"+ username + "'" , cn);
+            dr = cm.ExecuteReader();
+            dr.Read();
+            if(dr.HasRows)
+            {
+                password = dr["password"].ToString();
+            }
+            dr.Close();
+            cn.Close();
+            return password;
         }
     }
 }
