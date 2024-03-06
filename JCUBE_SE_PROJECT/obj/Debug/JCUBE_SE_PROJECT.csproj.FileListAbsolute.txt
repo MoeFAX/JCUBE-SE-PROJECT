@@ -207,3 +207,5 @@ C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT
 C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.UserAccountsUI.resources
 C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.SearchProduct.resources
 C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Qty.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CancelOrder.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CancelOrderModule.resources

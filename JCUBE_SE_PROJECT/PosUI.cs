@@ -51,8 +51,9 @@ namespace JCUBE_SE_PROJECT
 
         private void btnDailySales_Click(object sender, EventArgs e)
         {
-            DailySales moduleForm = new DailySales();
-            moduleForm.ShowDialog();
+            DailySales dailySales = new DailySales();
+            dailySales.soldUser = lblUserRolePOS.Text;
+            dailySales.ShowDialog();
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)

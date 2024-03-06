@@ -285,6 +285,8 @@ namespace JCUBE_SE_PROJECT
             this.Controls.Add(this.picAvatar);
             this.Controls.Add(this.btnSave);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangePassword";

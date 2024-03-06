@@ -34,7 +34,6 @@
             this.comboClerk = new System.Windows.Forms.ComboBox();
             this.totalVal = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.btnPrint = new MetroFramework.Controls.MetroButton();
             this.dateFrom = new System.Windows.Forms.DateTimePicker();
             this.dateTo = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -48,7 +47,9 @@
             this.DSQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DSDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DSTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cancel = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.CancelOrder = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnPrint = new MetroFramework.Controls.MetroButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSoldItems)).BeginInit();
             this.SuspendLayout();
@@ -117,16 +118,6 @@
             this.lblTotal.Size = new System.Drawing.Size(64, 26);
             this.lblTotal.TabIndex = 14;
             this.lblTotal.Text = "Total:";
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackgroundImage = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_print_50;
-            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnPrint.Location = new System.Drawing.Point(723, 10);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(42, 34);
-            this.btnPrint.TabIndex = 13;
-            this.btnPrint.UseSelectable = true;
             // 
             // dateFrom
             // 
@@ -197,7 +188,7 @@
             this.DSQuantity,
             this.DSDiscount,
             this.DSTotal,
-            this.Cancel});
+            this.CancelOrder});
             this.dgvSoldItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSoldItems.EnableHeadersVisualStyles = false;
             this.dgvSoldItems.GridColor = System.Drawing.Color.Snow;
@@ -209,6 +200,7 @@
             this.dgvSoldItems.RowTemplate.Height = 24;
             this.dgvSoldItems.Size = new System.Drawing.Size(1067, 471);
             this.dgvSoldItems.TabIndex = 3;
+            this.dgvSoldItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSoldItems_CellContentClick);
             // 
             // DSNo
             // 
@@ -273,14 +265,33 @@
             this.DSTotal.Name = "DSTotal";
             this.DSTotal.Width = 80;
             // 
-            // Cancel
+            // dataGridViewImageColumn1
             // 
-            this.Cancel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Cancel.HeaderText = "";
-            this.Cancel.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
-            this.Cancel.MinimumWidth = 6;
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Width = 6;
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 6;
+            // 
+            // CancelOrder
+            // 
+            this.CancelOrder.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CancelOrder.HeaderText = "";
+            this.CancelOrder.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
+            this.CancelOrder.MinimumWidth = 6;
+            this.CancelOrder.Name = "CancelOrder";
+            this.CancelOrder.Width = 6;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackgroundImage = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_print_50;
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPrint.Location = new System.Drawing.Point(723, 10);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(42, 34);
+            this.btnPrint.TabIndex = 13;
+            this.btnPrint.UseSelectable = true;
             // 
             // DailySales
             // 
@@ -308,11 +319,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dgvSoldItems;
         private System.Windows.Forms.DateTimePicker dateFrom;
         private System.Windows.Forms.DateTimePicker dateTo;
         private System.Windows.Forms.Label label11;
         private MetroFramework.Controls.MetroButton btnPrint;
+        private System.Windows.Forms.Label totalVal;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.ComboBox comboClerk;
         private System.Windows.Forms.DataGridViewTextBoxColumn DSNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn DSInvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn DSItemCode;
@@ -321,9 +334,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DSQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn DSDiscount;
         private System.Windows.Forms.DataGridViewTextBoxColumn DSTotal;
-        private System.Windows.Forms.DataGridViewImageColumn Cancel;
-        private System.Windows.Forms.Label totalVal;
-        private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.ComboBox comboClerk;
+        private System.Windows.Forms.DataGridViewImageColumn CancelOrder;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        public System.Windows.Forms.DataGridView dgvSoldItems;
     }
 }

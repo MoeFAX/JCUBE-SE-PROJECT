@@ -16,6 +16,7 @@ namespace JCUBE_SE_PROJECT
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
+        public string soldUser;
         SqlDataReader dr;
         public DailySales()
         {
@@ -106,6 +107,26 @@ namespace JCUBE_SE_PROJECT
             if(e.KeyCode == Keys.Escape) 
             {
                 this.Dispose();
+            }
+        }
+
+        private void dgvSoldItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvSoldItems.Columns[e.ColumnIndex].Name;
+            if (colName == "CancelOrder")
+            {
+                CancelOrder cancelOrder = new CancelOrder(this);
+                cancelOrder.idTxtbox.Text = dgvSoldItems.Rows[e.RowIndex].Cells[0].Value.ToString();
+                cancelOrder.InvTxtBox.Text = dgvSoldItems.Rows[e.RowIndex].Cells[1].Value.ToString();
+                cancelOrder.itemCodeTxtbox.Text = dgvSoldItems.Rows[e.RowIndex].Cells[2].Value.ToString();
+                cancelOrder.descriptionTxtBox.Text = dgvSoldItems.Rows[e.RowIndex].Cells[3].Value.ToString();
+                cancelOrder.PrcTxtBox.Text = dgvSoldItems.Rows[e.RowIndex].Cells[4].Value.ToString();
+                cancelOrder.QtyTxtBox.Text = dgvSoldItems.Rows[e.RowIndex].Cells[5].Value.ToString();
+                cancelOrder.DiscTxtBox.Text = dgvSoldItems.Rows[e.RowIndex].Cells[6].Value.ToString();
+                cancelOrder.TtlTxtBox.Text = dgvSoldItems.Rows[e.RowIndex].Cells[7].Value.ToString();
+                cancelOrder.CnclByTxtBox.Text = "";
+                cancelOrder.ShowDialog();
+
             }
         }
     }
