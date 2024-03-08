@@ -78,7 +78,7 @@ namespace JCUBE_SE_PROJECT
                         return;
                     }
 
-                    cm = new SqlCommand("UPDATE tbCart SET qty = qty + @qty WHERE transNo = @transNo AND inventoryCode = @inventoryCode", cn);
+                    cm = new SqlCommand("UPDATE tbCart SET qty = qty + @qty, disc_percent = 0 WHERE transNo = @transNo AND inventoryCode = @inventoryCode", cn);
                     cm.Parameters.AddWithValue("@transNo", transNo);
                     cm.Parameters.AddWithValue("@inventoryCode", inventoryCode);
                     cm.Parameters.AddWithValue("@qty", int.Parse(txtQty.Text));
