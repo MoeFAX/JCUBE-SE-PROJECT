@@ -134,6 +134,7 @@
             this.totalPriceTB.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.totalPriceTB.CustomButton.UseSelectable = true;
             this.totalPriceTB.CustomButton.Visible = false;
+            this.totalPriceTB.Enabled = false;
             this.totalPriceTB.Lines = new string[0];
             this.totalPriceTB.Location = new System.Drawing.Point(137, 55);
             this.totalPriceTB.MaxLength = 32767;
@@ -196,6 +197,7 @@
             this.amountTB.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.amountTB.CustomButton.UseSelectable = true;
             this.amountTB.CustomButton.Visible = false;
+            this.amountTB.Enabled = false;
             this.amountTB.Lines = new string[0];
             this.amountTB.Location = new System.Drawing.Point(201, 135);
             this.amountTB.MaxLength = 32767;

@@ -18,6 +18,7 @@ namespace JCUBE_SE_PROJECT
         DBConnect dbcon = new DBConnect();
         string id;
         string price;
+        private double originalPrice = 0.0;
         SqlDataReader dr;
         PosUI clerk;
         Qty qty;
@@ -34,10 +35,43 @@ namespace JCUBE_SE_PROJECT
 
         private void btnDiscount_Click(object sender, EventArgs e)
         {
-           Discount discount= new Discount(this);
-            discount.lbid.Text = id;
-            discount.totalPriceTB.Text = price;
-            discount.ShowDialog();
+            try
+            {
+                //Check if a discount is already in the cart
+                double existingDiscount = 0.0;
+                cn.Open();
+                cm = new SqlCommand("SELECT disc_percent FROM tbCart WHERE transNo LIKE @transNo", cn);
+                cm.Parameters.AddWithValue("@transNo", TransNoVal.Text);
+                object result = cm.ExecuteScalar();
+                cn.Close();
+
+                if (result != null && double.TryParse(result.ToString(), out existingDiscount) && existingDiscount > 0)
+                {
+                    DialogResult dialogResult = MessageBox.Show("A discount already exists. Do you want to change it?", "Existing Discount", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                      
+                        Discount discount = new Discount(this);
+                        discount.lbid.Text = id;
+                        discount.totalPriceTB.Text = originalPrice.ToString("#,##0.00");
+                        discount.ShowDialog();
+                    }
+
+                }
+                else
+                {
+                    // If no discount exists, proceed to open the Discount form
+                    Discount discount = new Discount(this);
+                    discount.lbid.Text = id;
+                    discount.totalPriceTB.Text = originalPrice.ToString("#,##0.00");
+                    discount.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                cn.Close();
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -63,7 +97,7 @@ namespace JCUBE_SE_PROJECT
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
-               
+                originalPrice = Convert.ToDouble(dr["srp"].ToString()) * Convert.ToDouble(dr["qty"].ToString());
                 total += Convert.ToDouble(dr["total"].ToString());
                 discount += Convert.ToDouble(dr["discount"].ToString());
                 dgvCart.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), double.Parse(dr[6].ToString()).ToString("#,##0.00"));
@@ -74,6 +108,7 @@ namespace JCUBE_SE_PROJECT
 
             SalesTotalVal.Text = total.ToString("#,##0.00");
             discountVal.Text = discount.ToString("#,##0.00");
+
             GetCartTotal();
             if (hasCart)
             {
@@ -192,7 +227,7 @@ namespace JCUBE_SE_PROJECT
                     LoadCart();
                 }
             }
-            else if(colName == "AddQty") 
+            else if (colName == "AddQty")
             {
                 qty = new Qty(clerk, this);
                 int i = 0;
@@ -203,7 +238,15 @@ namespace JCUBE_SE_PROJECT
 
                 if (int.Parse(dgvCart.Rows[e.RowIndex].Cells[4].Value.ToString()) < i)
                 {
-                    dbcon.ExecuteQuery("UPDATE tbCart SET qty = qty + " + int.Parse(qty.txtQty.Text) + " WHERE transNo LIKE '" + TransNoVal.Text + "' AND InventoryCode LIKE'" + dgvCart.Rows[e.RowIndex].Cells[1].Value.ToString() + "'");
+                    // Reset the discount to 0
+                    cn.Open();
+                    cm = new SqlCommand("UPDATE tbCart SET qty = qty + @qty, disc_percent = 0 WHERE transNo LIKE @transNo AND InventoryCode LIKE @inventoryCode", cn);
+                    cm.Parameters.AddWithValue("@qty", int.Parse(qty.txtQty.Text));
+                    cm.Parameters.AddWithValue("@transNo", TransNoVal.Text);
+                    cm.Parameters.AddWithValue("@inventoryCode", dgvCart.Rows[e.RowIndex].Cells[1].Value.ToString());
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+
                     LoadCart();
                 }
                 else
@@ -220,15 +263,16 @@ namespace JCUBE_SE_PROJECT
 
                 if (currentQtyInCart <= 1 || currentQtyInCart - qtyToSubtract <= 0)
                 {
-                    MessageBox.Show("Subtracting more will make the quantity of the item 0!" , "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Subtracting more will make the quantity of the item 0!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 cn.Open();
-                cm = new SqlCommand("UPDATE tbCart SET qty = qty - @qty WHERE transNo LIKE @transNo AND inventoryCode LIKE @inventoryCode", cn);
+                // Reset the discount to 0
+                cm = new SqlCommand("UPDATE tbCart SET qty = qty - @qty, disc_percent = 0 WHERE transNo LIKE @transNo AND inventoryCode LIKE @inventoryCode", cn);
+                cm.Parameters.AddWithValue("@qty", qtyToSubtract);
                 cm.Parameters.AddWithValue("@transNo", TransNoVal.Text);
                 cm.Parameters.AddWithValue("@inventoryCode", dgvCart.Rows[e.RowIndex].Cells[1].Value.ToString());
-                cm.Parameters.AddWithValue("@qty", qtyToSubtract);
                 cm.ExecuteNonQuery();
                 cn.Close();
 
