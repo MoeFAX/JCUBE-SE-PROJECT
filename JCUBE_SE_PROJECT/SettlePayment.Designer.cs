@@ -76,7 +76,7 @@
             this.txtSale.SelectionStart = 0;
             this.txtSale.ShortcutsEnabled = true;
             this.txtSale.Size = new System.Drawing.Size(353, 49);
-            this.txtSale.TabIndex = 0;
+            this.txtSale.TabIndex = 1;
             this.txtSale.UseSelectable = true;
             this.txtSale.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSale.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -110,7 +110,7 @@
             this.txtCash.SelectionStart = 0;
             this.txtCash.ShortcutsEnabled = true;
             this.txtCash.Size = new System.Drawing.Size(353, 49);
-            this.txtCash.TabIndex = 1;
+            this.txtCash.TabIndex = 0;
             this.txtCash.UseSelectable = true;
             this.txtCash.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCash.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);

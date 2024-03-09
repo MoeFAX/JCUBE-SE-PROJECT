@@ -32,6 +32,12 @@ namespace JCUBE_SE_PROJECT
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(txtCurrentPass.Text))
+                {
+                    MessageBox.Show("Current Password field cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 string currentPass = dbcon.getPassword(lblUsername.Text);
                 if (currentPass != txtCurrentPass.Text) 
                 {
@@ -62,6 +68,13 @@ namespace JCUBE_SE_PROJECT
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrWhiteSpace(txtNewPass.Text) || string.IsNullOrWhiteSpace(txtConfirmPass.Text))
+            {
+                MessageBox.Show("New Password and Confirm Password fields cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string currentPass = dbcon.getPassword(lblUsername.Text);
             try
             {

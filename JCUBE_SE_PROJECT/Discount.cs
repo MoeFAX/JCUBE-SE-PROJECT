@@ -24,6 +24,7 @@ namespace JCUBE_SE_PROJECT
             cn = new SqlConnection(dbcon.myConnection());
             this.clerk = clerk;
             this.KeyPreview = true;
+            percentageTB.Select();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -55,6 +56,12 @@ namespace JCUBE_SE_PROJECT
         {
             try
             {
+                if (string.IsNullOrEmpty(percentageTB.Text))
+                {
+                    MessageBox.Show("Discount percent cannot be empty.", stitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Exit the method if percentageTB is empty
+                }
+
                 if (MessageBox.Show("Add discount? Select Yes to confirm", stitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
                 {
                     cn.Open();

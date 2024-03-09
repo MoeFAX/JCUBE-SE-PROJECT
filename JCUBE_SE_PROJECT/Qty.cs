@@ -44,11 +44,18 @@ namespace JCUBE_SE_PROJECT
 
         private void txtQty_KeyPress_1(object sender, KeyPressEventArgs e)
         {
+
             if (char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Enter)
             {
                
                 if (e.KeyChar == (char)Keys.Enter && txtQty.Text != string.Empty)
                 {
+                    if (string.IsNullOrWhiteSpace(txtQty.Text))
+                    {
+                        MessageBox.Show("Quantity cannot be empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     cm = new SqlCommand("SELECT Qty FROM tbItemList WHERE inventoryCode = @inventoryCode", cn);
                     cm.Parameters.AddWithValue("@inventoryCode", inventoryCode);
                     cn.Open();
@@ -59,6 +66,7 @@ namespace JCUBE_SE_PROJECT
                     cm.Parameters.AddWithValue("@inventoryCode", inventoryCode);
                     object result = cm.ExecuteScalar();
                     int currentQty = result != null ? (int)result : 0;
+
 
                     if (int.Parse(txtQty.Text) + currentQty > qtyOnHand)
                     {

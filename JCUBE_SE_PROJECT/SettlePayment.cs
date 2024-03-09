@@ -92,6 +92,12 @@ namespace JCUBE_SE_PROJECT
         {
             try
             {
+                if (string.IsNullOrEmpty(txtCash.Text))
+                {
+                    MessageBox.Show("Payment cannot be empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Exit the method if percentageTB is empty
+                }
+
                 if ((double.Parse(txtChange.Text)<0) || (txtCash.Text.Equals("")))
                 {
                     MessageBox.Show("Insufficient amount, Please enter the correct amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
