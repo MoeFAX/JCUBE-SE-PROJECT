@@ -17,9 +17,11 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
-        public StocksUI()
+        private string _loggedInUsername;
+        public StocksUI(string loggedInUsername)
         {
             InitializeComponent();
+            _loggedInUsername = loggedInUsername;
             cn = new SqlConnection(dbcon.myConnection());
             LoadStocks();
         }
@@ -27,6 +29,8 @@ namespace JCUBE_SE_PROJECT
         private void addbutton_Click(object sender, EventArgs e)
         {
             StockEntry moduleForm = new StockEntry(this);
+            moduleForm.StockinbyField.Text = _loggedInUsername;
+            moduleForm.StatusField.SelectedItem = "Pending";
             moduleForm.ShowDialog();
         }
 
@@ -55,8 +59,25 @@ namespace JCUBE_SE_PROJECT
                 {
                     if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
+                       
 
                         string stockID = dgvStockEntry.Rows[e.RowIndex].Cells["StockID"].Value.ToString();
+                        string status = dgvStockEntry.Rows[e.RowIndex].Cells["Status"].Value.ToString();
+                        if (status == "Delivered")
+                        {
+                            // Retrieve the current value of the stocks from the StockEntry form
+                            int currentStocks = Convert.ToInt32(dgvStockEntry.Rows[e.RowIndex].Cells["Stocks"].Value);
+
+                            // Subtract the quantity from the products table
+                            using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty - @Quantity WHERE ItemID = (SELECT ilid FROM tbStockEntry WHERE StockID = @StockID)", cn))
+                            {
+                                updateQtyCmd.Parameters.AddWithValue("@Quantity", currentStocks);
+                                updateQtyCmd.Parameters.AddWithValue("@StockID", stockID);
+                                cn.Open();
+                                updateQtyCmd.ExecuteNonQuery();
+                                cn.Close();
+                            }
+                        }
                         cn.Open();
                         cm = new SqlCommand("DELETE FROM tbStockEntry WHERE StockID = @StockID", cn);
                         cm.Parameters.AddWithValue("@StockID", stockID);
@@ -98,7 +119,7 @@ namespace JCUBE_SE_PROJECT
                         MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    moduleForm.StockinbyField.Text = stockInBy;
+                    moduleForm.StockinbyField.Text = _loggedInUsername;
                     DateTime stockInDate = DateTime.MinValue;
                     try
                     {

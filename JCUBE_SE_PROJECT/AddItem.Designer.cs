@@ -83,9 +83,9 @@
             this.AddItemlbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddItemlbl.Location = new System.Drawing.Point(12, 18);
             this.AddItemlbl.Name = "AddItemlbl";
-            this.AddItemlbl.Size = new System.Drawing.Size(101, 23);
+            this.AddItemlbl.Size = new System.Drawing.Size(134, 23);
             this.AddItemlbl.TabIndex = 1;
-            this.AddItemlbl.Text = "Add Item";
+            this.AddItemlbl.Text = "Item Module";
             // 
             // CancelBtn
             // 

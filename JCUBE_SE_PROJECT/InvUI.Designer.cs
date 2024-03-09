@@ -57,6 +57,7 @@ namespace JCUBE_SE_PROJECT
             this.INVNamelbl = new System.Windows.Forms.Label();
             this.INVJCUBELOGOIMG = new System.Windows.Forms.PictureBox();
             this.JCubelbl = new System.Windows.Forms.Label();
+            this.btnCriticalStocks = new System.Windows.Forms.Button();
             this.panelSidebar.SuspendLayout();
             this.panelSubRecord.SuspendLayout();
             this.panelSubItem.SuspendLayout();
@@ -93,7 +94,7 @@ namespace JCUBE_SE_PROJECT
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 871);
+            this.btnLogout.Location = new System.Drawing.Point(0, 917);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(232, 50);
@@ -109,7 +110,7 @@ namespace JCUBE_SE_PROJECT
             this.btnUserAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserAcc.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserAcc.ForeColor = System.Drawing.Color.White;
-            this.btnUserAcc.Location = new System.Drawing.Point(0, 821);
+            this.btnUserAcc.Location = new System.Drawing.Point(0, 867);
             this.btnUserAcc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUserAcc.Name = "btnUserAcc";
             this.btnUserAcc.Size = new System.Drawing.Size(232, 50);
@@ -121,6 +122,7 @@ namespace JCUBE_SE_PROJECT
             // panelSubRecord
             // 
             this.panelSubRecord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(111)))), ((int)(((byte)(153)))));
+            this.panelSubRecord.Controls.Add(this.btnCriticalStocks);
             this.panelSubRecord.Controls.Add(this.btnStockHistory);
             this.panelSubRecord.Controls.Add(this.btnCancelledOrder);
             this.panelSubRecord.Controls.Add(this.btnInventoryList);
@@ -130,7 +132,7 @@ namespace JCUBE_SE_PROJECT
             this.panelSubRecord.Location = new System.Drawing.Point(0, 563);
             this.panelSubRecord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelSubRecord.Name = "panelSubRecord";
-            this.panelSubRecord.Size = new System.Drawing.Size(232, 258);
+            this.panelSubRecord.Size = new System.Drawing.Size(232, 304);
             this.panelSubRecord.TabIndex = 1;
             // 
             // btnStockHistory
@@ -472,6 +474,22 @@ namespace JCUBE_SE_PROJECT
             this.JCubelbl.Text = "JCUBE SHIELDWORKS CORPORATION";
             this.JCubelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnCriticalStocks
+            // 
+            this.btnCriticalStocks.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCriticalStocks.FlatAppearance.BorderSize = 0;
+            this.btnCriticalStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCriticalStocks.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCriticalStocks.ForeColor = System.Drawing.Color.White;
+            this.btnCriticalStocks.Location = new System.Drawing.Point(0, 250);
+            this.btnCriticalStocks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCriticalStocks.Name = "btnCriticalStocks";
+            this.btnCriticalStocks.Size = new System.Drawing.Size(232, 50);
+            this.btnCriticalStocks.TabIndex = 11;
+            this.btnCriticalStocks.Text = "Critical Stocks";
+            this.btnCriticalStocks.UseVisualStyleBackColor = true;
+            this.btnCriticalStocks.Click += new System.EventHandler(this.btnCriticalStocks_Click);
+            // 
             // InvUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -531,5 +549,6 @@ namespace JCUBE_SE_PROJECT
         public System.Windows.Forms.Label INVNamelbl;
         public System.Windows.Forms.Label INVLoggedInlbl;
         public System.Windows.Forms.Label lblUserRole;
+        private System.Windows.Forms.Button btnCriticalStocks;
     }
 }

@@ -72,6 +72,7 @@ namespace JCUBE_SE_PROJECT
             {
                 cn.Open();
 
+
                 if (string.IsNullOrWhiteSpace(InvCodeField.Text) ||
                     string.IsNullOrWhiteSpace(ItemCodeField.Text) ||
                     string.IsNullOrWhiteSpace(DescriptionField.Text) ||
@@ -103,6 +104,36 @@ namespace JCUBE_SE_PROJECT
                 }
                 else
                 {
+                    string invCode = InvCodeField.Text.Trim();
+                    SqlCommand checkinv = new SqlCommand("SELECT COUNT(*) FROM tbItemList WHERE InventoryCode = @InventoryCode", cn);
+                    checkinv.Parameters.AddWithValue("@InventoryCode", invCode);
+                    int invcodeCount = (int)checkinv.ExecuteScalar();
+
+                    if (invcodeCount > 0)
+                    {
+                        MessageBox.Show("Inventory Code already exists. Please enter a unique inventory code.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    string itemCode = ItemCodeField.Text.Trim();
+                    SqlCommand checkitem = new SqlCommand("SELECT COUNT(*) FROM tbItemList WHERE ItemCode = @ItemCode", cn);
+                    checkitem.Parameters.AddWithValue("@ItemCode", itemCode);
+                    int itemcodeCount = (int)checkitem.ExecuteScalar();
+
+                    if (itemcodeCount > 0)
+                    {
+                        MessageBox.Show("Item Code already exists. Please enter a unique item code.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    string desc = ItemCodeField.Text.Trim();
+                    SqlCommand checkdesc = new SqlCommand("SELECT COUNT(*) FROM tbItemList WHERE Description = @Description", cn);
+                    checkdesc.Parameters.AddWithValue("@Description", desc);
+                    int descCount = (int)checkdesc.ExecuteScalar();
+
+                    if (descCount > 0)
+                    {
+                        MessageBox.Show("Description already exists. Please enter a unique desciption.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     // Insert operation
                     cm = new SqlCommand("INSERT INTO tbItemList(InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Reorder) VALUES(@InventoryCode, @ItemCode, @Description, @AcquiredCost, @bid, @cid, @Price, @Reorder)", cn);
                 }
@@ -140,5 +171,7 @@ namespace JCUBE_SE_PROJECT
         {
             Clear();
         }
+
+        
     }
 }

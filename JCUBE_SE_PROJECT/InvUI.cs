@@ -18,8 +18,9 @@ namespace JCUBE_SE_PROJECT
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
+        private string loggedInUsername;
 
-        public InvUI()
+        public InvUI(string username)
         {
             InitializeComponent();
             //SetStyle(ControlStyles.UserPaint, true);
@@ -27,6 +28,7 @@ namespace JCUBE_SE_PROJECT
             //SetStyle(ControlStyles.AllPaintingInWmPaint, true); 
             //SetStyle(ControlStyles.ResizeRedraw, true);
             //UpdateStyles();
+            loggedInUsername = username;
             customizeDesign();
             cn = new SqlConnection(dbcon.myConnection());
             cn.Open();
@@ -97,7 +99,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnStocks_Click(object sender, EventArgs e)
         {
-            openChildForm(new StocksUI());
+            openChildForm(new StocksUI(loggedInUsername));
             hideSubmenu();
         }
 
@@ -188,6 +190,11 @@ namespace JCUBE_SE_PROJECT
         private void InvUI_Load(object sender, EventArgs e)
         {
             UserRole = lblUserRole.Text;
+        }
+
+        private void btnCriticalStocks_Click(object sender, EventArgs e)
+        {
+            openChildForm(new CriticalStocks());
         }
     }
 }

@@ -39,6 +39,16 @@ namespace JCUBE_SE_PROJECT
                     return;
                 }
                 cn.Open();
+                string brandName = BrandNameField.Text.Trim();
+                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM tbBrand WHERE BrandName = @BrandName", cn);
+                checkCmd.Parameters.AddWithValue("@BrandName", brandName);
+                int brandCount = (int)checkCmd.ExecuteScalar();
+
+                if (brandCount > 0)
+                {
+                    MessageBox.Show("Brand name already exists. Please enter a unique brand name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (!string.IsNullOrEmpty(BrandNameField.Text) && int.TryParse(lblid.Text, out int brandID)) 
                 {
                     // for update

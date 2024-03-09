@@ -40,6 +40,11 @@ namespace JCUBE_SE_PROJECT
         public void LoginBtn_Click(object sender, EventArgs e)
         {
             string _username = "", _fullname = "", _role = "";
+            if (!string.IsNullOrEmpty(_username))
+            {
+                StocksUI stocksForm = new StocksUI(_username);
+                stocksForm.ShowDialog();
+            }
             try
             {
                 bool found;
@@ -94,7 +99,7 @@ namespace JCUBE_SE_PROJECT
                         UserIDtxtbox.Clear();
                         Passwordtxtbox.Clear();
                         this.Hide();
-                        InvUI main = new InvUI();
+                        InvUI main = new InvUI(_username);
                         main.INVNamelbl.Text = _fullname;
                         main.lblUserRole.Text = _username;
                         main.UserRole = _username;
@@ -103,8 +108,7 @@ namespace JCUBE_SE_PROJECT
                         //Sales Clerk salesclerk = new Sales Clerk();
                         //Sales Clerk
 
-                    }
-
+                    } 
                 }
                 else
                 {

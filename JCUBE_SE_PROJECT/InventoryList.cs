@@ -21,10 +21,10 @@ namespace JCUBE_SE_PROJECT
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
-            LoadItemList();
+            LoadInvList();
         }
 
-        public void LoadItemList()
+        public void LoadInvList()
         {
             dgvInventory.Rows.Clear();
             cn.Open();

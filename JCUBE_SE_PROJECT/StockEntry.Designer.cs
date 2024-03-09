@@ -91,6 +91,7 @@
             this.StockinbyField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.StockinbyField.Location = new System.Drawing.Point(132, 121);
             this.StockinbyField.Name = "StockinbyField";
+            this.StockinbyField.ReadOnly = true;
             this.StockinbyField.Size = new System.Drawing.Size(362, 23);
             this.StockinbyField.TabIndex = 9;
             // 

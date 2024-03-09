@@ -42,7 +42,7 @@ namespace JCUBE_SE_PROJECT
             try
             {
                 cn.Open();
-
+                
                 if (string.IsNullOrWhiteSpace(SupplierNameField.Text) ||
                     string.IsNullOrWhiteSpace(AddressField.Text) ||
                     string.IsNullOrWhiteSpace(ContactField.Text) ||
@@ -75,6 +75,16 @@ namespace JCUBE_SE_PROJECT
                 }
                 else
                 {
+                    string supplierName = SupplierNameField.Text.Trim();
+                    SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM tbSupplier WHERE SupplierName = @SupplierName", cn);
+                    checkCmd.Parameters.AddWithValue("@SupplierName", supplierName);
+                    int supplierCount = (int)checkCmd.ExecuteScalar();
+
+                    if (supplierCount > 0)
+                    {
+                        MessageBox.Show("Supplier name already exists. Please enter a unique supplier name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     // Insert operation
                     cm = new SqlCommand("INSERT INTO tbSupplier(SupplierName, Address, ContactPerson, PhoneNo, EmailAddress) VALUES(@SupplierName, @Address, @ContactPerson, @PhoneNo, @EmailAddress)", cn);
                 }
