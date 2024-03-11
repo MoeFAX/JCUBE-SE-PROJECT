@@ -192,6 +192,18 @@ namespace JCUBE_SE_PROJECT
             UserRole = lblUserRole.Text;
         }
 
+        private void btnLogs_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Logs());
+            hideSubmenu();
+        }
+
+        private void btnArchives_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ArchivesUI());
+            hideSubmenu();
+        }
+
         private void btnCriticalStocks_Click(object sender, EventArgs e)
         {
             openChildForm(new CriticalStocks());

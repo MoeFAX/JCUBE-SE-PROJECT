@@ -70,6 +70,8 @@
             this.RemQty = new System.Windows.Forms.DataGridViewImageColumn();
             this.CancelOrder = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
+
+            
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -455,6 +457,7 @@
             this.panel4.TabIndex = 18;
             // 
             // No
+            // btnDiscount
             // 
             this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -537,6 +540,40 @@
             this.CancelOrder.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
             this.CancelOrder.MinimumWidth = 20;
             this.CancelOrder.Name = "CancelOrder";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(19, 427);
+            this.panel1.TabIndex = 16;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.transactionNoLabel);
+            this.panel3.Controls.Add(this.dateLabel);
+            this.panel3.Controls.Add(this.vatableLabel);
+            this.panel3.Controls.Add(this.salesTotalLabel);
+            this.panel3.Controls.Add(this.discountLabel);
+            this.panel3.Controls.Add(this.vatLabel);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 427);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1067, 127);
+            this.panel3.TabIndex = 17;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(1046, 123);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(21, 304);
+            this.panel4.TabIndex = 18;
             // 
             // CartUI
             // 

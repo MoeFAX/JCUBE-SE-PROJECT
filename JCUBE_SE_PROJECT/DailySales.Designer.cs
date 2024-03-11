@@ -34,11 +34,13 @@
             this.comboClerk = new System.Windows.Forms.ComboBox();
             this.totalVal = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.btnPrint = new MetroFramework.Controls.MetroButton();
             this.dateFrom = new System.Windows.Forms.DateTimePicker();
             this.dateTo = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvSoldItems = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.DSNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DSInvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DSItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,9 +49,7 @@
             this.DSQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DSDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DSTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.CancelOrder = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnPrint = new MetroFramework.Controls.MetroButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSoldItems)).BeginInit();
             this.SuspendLayout();
@@ -79,10 +79,10 @@
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 504);
+            this.panel2.Location = new System.Drawing.Point(0, 632);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1067, 50);
+            this.panel2.Size = new System.Drawing.Size(1423, 50);
             this.panel2.TabIndex = 2;
             // 
             // comboClerk
@@ -90,9 +90,10 @@
             this.comboClerk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboClerk.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboClerk.FormattingEnabled = true;
-            this.comboClerk.Location = new System.Drawing.Point(554, 13);
+            this.comboClerk.Location = new System.Drawing.Point(739, 16);
+            this.comboClerk.Margin = new System.Windows.Forms.Padding(4);
             this.comboClerk.Name = "comboClerk";
-            this.comboClerk.Size = new System.Drawing.Size(115, 28);
+            this.comboClerk.Size = new System.Drawing.Size(152, 28);
             this.comboClerk.TabIndex = 16;
             this.comboClerk.SelectedIndexChanged += new System.EventHandler(this.comboClerk_SelectedIndexChanged);
             // 
@@ -100,10 +101,10 @@
             // 
             this.totalVal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalVal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.totalVal.Location = new System.Drawing.Point(882, 14);
-            this.totalVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalVal.Location = new System.Drawing.Point(1176, 17);
+            this.totalVal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.totalVal.Name = "totalVal";
-            this.totalVal.Size = new System.Drawing.Size(172, 26);
+            this.totalVal.Size = new System.Drawing.Size(229, 32);
             this.totalVal.TabIndex = 15;
             this.totalVal.Text = "0.00";
             this.totalVal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -112,21 +113,32 @@
             // 
             this.lblTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTotal.Location = new System.Drawing.Point(815, 14);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotal.Location = new System.Drawing.Point(1087, 17);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(64, 26);
+            this.lblTotal.Size = new System.Drawing.Size(85, 32);
             this.lblTotal.TabIndex = 14;
             this.lblTotal.Text = "Total:";
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackgroundImage = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_print_50;
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPrint.Location = new System.Drawing.Point(964, 12);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(56, 42);
+            this.btnPrint.TabIndex = 13;
+            this.btnPrint.UseSelectable = true;
             // 
             // dateFrom
             // 
             this.dateFrom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFrom.Location = new System.Drawing.Point(231, 14);
-            this.dateFrom.Margin = new System.Windows.Forms.Padding(4);
+            this.dateFrom.Location = new System.Drawing.Point(308, 17);
+            this.dateFrom.Margin = new System.Windows.Forms.Padding(5);
             this.dateFrom.Name = "dateFrom";
-            this.dateFrom.Size = new System.Drawing.Size(105, 26);
+            this.dateFrom.Size = new System.Drawing.Size(139, 26);
             this.dateFrom.TabIndex = 4;
             this.dateFrom.ValueChanged += new System.EventHandler(this.dateFrom_ValueChanged);
             // 
@@ -134,10 +146,10 @@
             // 
             this.dateTo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTo.Location = new System.Drawing.Point(408, 14);
-            this.dateTo.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTo.Location = new System.Drawing.Point(544, 17);
+            this.dateTo.Margin = new System.Windows.Forms.Padding(5);
             this.dateTo.Name = "dateTo";
-            this.dateTo.Size = new System.Drawing.Size(110, 26);
+            this.dateTo.Size = new System.Drawing.Size(145, 26);
             this.dateTo.TabIndex = 4;
             this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
@@ -145,12 +157,11 @@
             // 
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label11.Location = new System.Drawing.Point(363, 14);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(275, 14);
+            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 26);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "To:";
+            this.label11.Size = new System.Drawing.Size(133, 28);
+            this.label11.TabIndex = 17;
             // 
             // label10
             // 
@@ -193,14 +204,23 @@
             this.dgvSoldItems.EnableHeadersVisualStyles = false;
             this.dgvSoldItems.GridColor = System.Drawing.Color.Snow;
             this.dgvSoldItems.Location = new System.Drawing.Point(0, 33);
-            this.dgvSoldItems.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvSoldItems.Margin = new System.Windows.Forms.Padding(5);
             this.dgvSoldItems.Name = "dgvSoldItems";
             this.dgvSoldItems.RowHeadersVisible = false;
             this.dgvSoldItems.RowHeadersWidth = 51;
             this.dgvSoldItems.RowTemplate.Height = 24;
-            this.dgvSoldItems.Size = new System.Drawing.Size(1067, 471);
+            this.dgvSoldItems.Size = new System.Drawing.Size(1423, 599);
             this.dgvSoldItems.TabIndex = 3;
             this.dgvSoldItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSoldItems_CellContentClick);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 125;
             // 
             // DSNo
             // 
@@ -265,15 +285,6 @@
             this.DSTotal.Name = "DSTotal";
             this.DSTotal.Width = 80;
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 6;
-            // 
             // CancelOrder
             // 
             this.CancelOrder.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -283,26 +294,16 @@
             this.CancelOrder.Name = "CancelOrder";
             this.CancelOrder.Width = 6;
             // 
-            // btnPrint
-            // 
-            this.btnPrint.BackgroundImage = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_print_50;
-            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnPrint.Location = new System.Drawing.Point(723, 10);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(42, 34);
-            this.btnPrint.TabIndex = 13;
-            this.btnPrint.UseSelectable = true;
-            // 
             // DailySales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1423, 682);
             this.Controls.Add(this.dgvSoldItems);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "DailySales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DailySales";
@@ -326,6 +327,8 @@
         private System.Windows.Forms.Label totalVal;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.ComboBox comboClerk;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        public System.Windows.Forms.DataGridView dgvSoldItems;
         private System.Windows.Forms.DataGridViewTextBoxColumn DSNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn DSInvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn DSItemCode;
@@ -335,7 +338,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DSDiscount;
         private System.Windows.Forms.DataGridViewTextBoxColumn DSTotal;
         private System.Windows.Forms.DataGridViewImageColumn CancelOrder;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        public System.Windows.Forms.DataGridView dgvSoldItems;
     }
 }

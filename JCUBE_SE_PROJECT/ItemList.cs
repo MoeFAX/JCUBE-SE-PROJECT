@@ -52,17 +52,17 @@ namespace JCUBE_SE_PROJECT
                 string colName = dgvItem.Columns[e.ColumnIndex].Name;
                 if (colName == "Archive")
                 {
-                    if (MessageBox.Show("Are you sure you want to delete this item?", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Are you sure you want to archive this item?", "Archive Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         // Retrieve ItemID from the DataGridView
                         int itemID = Convert.ToInt32(dgvItem.Rows[e.RowIndex].Cells["ItemID"].Value);
 
                         cn.Open();
-                        cm = new SqlCommand("DELETE FROM tbItemList WHERE ItemID = @ItemID", cn);
+                        cm = new SqlCommand("INSERT INTO tbItemListArchive(ItemID, InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Qty, Reorder) SELECT ItemID, InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Qty, Reorder FROM tbItemList WHERE ItemID = @ItemID DELETE FROM tbItemList WHERE ItemID = @ItemID", cn);
                         cm.Parameters.AddWithValue("@ItemID", itemID); // Add @ItemID parameter
                         cm.ExecuteNonQuery();
                         cn.Close();
-                        MessageBox.Show("Item has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Item has been successfully archived.", "ARCHIVE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         // Remove the row from the DataGridView
                         dgvItem.Rows.RemoveAt(e.RowIndex);

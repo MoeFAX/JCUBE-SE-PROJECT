@@ -57,7 +57,7 @@ namespace JCUBE_SE_PROJECT
                 string colName = dgvStockEntry.Columns[e.ColumnIndex].Name;
                 if (colName == "Delete")
                 {
-                    if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Are you sure you want to archive this record?", "Archive Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                        
 
@@ -79,11 +79,11 @@ namespace JCUBE_SE_PROJECT
                             }
                         }
                         cn.Open();
-                        cm = new SqlCommand("DELETE FROM tbStockEntry WHERE StockID = @StockID", cn);
+                        cm = new SqlCommand("INSERT INTO tbStockEntryArchive(StockID, RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate) SELECT StockID, RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate FROM tbStockEntry WHERE StockID = @StockID DELETE FROM tbStockEntry WHERE StockID = @StockID", cn);
                         cm.Parameters.AddWithValue("@StockID", stockID);
                         cm.ExecuteNonQuery();
                         cn.Close();
-                        MessageBox.Show("Stock Entry record has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Stock Entry record has been successfully archived.", "ARCHIVE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                         dgvStockEntry.Rows.RemoveAt(e.RowIndex);
