@@ -18,6 +18,7 @@ namespace JCUBE_SE_PROJECT
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
+        SqlDataReader dr;
         private string loggedInUsername;
 
         public InvUI(string username)
@@ -33,7 +34,9 @@ namespace JCUBE_SE_PROJECT
             cn = new SqlConnection(dbcon.myConnection());
             cn.Open();
             MessageBox.Show("Database is Connected");
-  
+           
+
+
         }
 
         private Form activeForm = null;
@@ -112,6 +115,7 @@ namespace JCUBE_SE_PROJECT
         {
             openChildForm(new ItemList());
             hideSubmenu();
+            
         }
 
         private void btnBrand_Click(object sender, EventArgs e)
@@ -185,11 +189,16 @@ namespace JCUBE_SE_PROJECT
         private void JCUBELOGOIMG_Click(object sender, EventArgs e)
         {
             openChildForm(new DashUI());
+            
+
         }
 
         private void InvUI_Load(object sender, EventArgs e)
         {
+            Notif();
             UserRole = lblUserRole.Text;
+            
+
         }
 
         private void btnLogs_Click(object sender, EventArgs e)
@@ -208,5 +217,38 @@ namespace JCUBE_SE_PROJECT
         {
             openChildForm(new CriticalStocks());
         }
+
+        
+        //Notification Alert for critical stocks
+        public void Notif()
+        {
+            try
+            {
+                int i = 0;
+                using (SqlConnection cn = new SqlConnection(dbcon.myConnection()))
+                {
+                    cn.Open();
+                    using (SqlCommand cm = new SqlCommand("SELECT p.ItemID, p.InventoryCode, p.ItemCode, p.Description, b.BrandName, c.CategoryName, p.Price, p.Reorder, p.Qty FROM tbItemList AS p INNER JOIN tbBrand AS b ON b.BrandID = p.bid INNER JOIN tbCategory AS c ON c.CategoryID = p.cid WHERE (p.Qty <= p.Reorder)", cn))
+                    {
+                        using (SqlDataReader dr = cm.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                i++;
+                                Alert alert = new Alert();
+                                alert.lblItemCode.Text = dr["ItemCode"].ToString(); // Remove the 'p.' prefix here
+                                alert.btnReOrder.Enabled = true;
+                                alert.showAlert(i + ". " + dr["Description"].ToString() + " - " + dr["Qty"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }
