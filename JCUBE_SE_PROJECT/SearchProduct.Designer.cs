@@ -32,8 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.metroSearch = new MetroFramework.Controls.MetroTextBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.addbtn = new System.Windows.Forms.Button();
             this.MngBrandLabel = new System.Windows.Forms.Label();
             this.dgvItem = new System.Windows.Forms.DataGridView();
@@ -51,8 +51,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.metroSearch);
             this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.addbtn);
             this.panel1.Controls.Add(this.MngBrandLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -60,6 +60,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 77);
             this.panel1.TabIndex = 1;
+            // 
+            // metroSearch
+            // 
+            this.metroSearch.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            // 
+            // 
+            // 
+            this.metroSearch.CustomButton.Image = null;
+            this.metroSearch.CustomButton.Location = new System.Drawing.Point(253, 1);
+            this.metroSearch.CustomButton.Name = "";
+            this.metroSearch.CustomButton.Size = new System.Drawing.Size(29, 29);
+            this.metroSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroSearch.CustomButton.TabIndex = 1;
+            this.metroSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroSearch.CustomButton.UseSelectable = true;
+            this.metroSearch.CustomButton.Visible = false;
+            this.metroSearch.DisplayIcon = true;
+            this.metroSearch.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.metroSearch.Icon = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_search_50__1_;
+            this.metroSearch.IconRight = true;
+            this.metroSearch.Lines = new string[0];
+            this.metroSearch.Location = new System.Drawing.Point(259, 23);
+            this.metroSearch.MaxLength = 32767;
+            this.metroSearch.Name = "metroSearch";
+            this.metroSearch.PasswordChar = '\0';
+            this.metroSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroSearch.SelectedText = "";
+            this.metroSearch.SelectionLength = 0;
+            this.metroSearch.SelectionStart = 0;
+            this.metroSearch.ShortcutsEnabled = true;
+            this.metroSearch.Size = new System.Drawing.Size(283, 31);
+            this.metroSearch.TabIndex = 7;
+            this.metroSearch.UseSelectable = true;
+            this.metroSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI Symbol", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroSearch.TextChanged += new System.EventHandler(this.metroSearch_TextChanged);
             // 
             // btnClose
             // 
@@ -74,16 +110,6 @@
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(167, 26);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(337, 30);
-            this.txtSearch.TabIndex = 2;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // addbtn
             // 
@@ -138,6 +164,7 @@
             this.dgvItem.GridColor = System.Drawing.Color.Snow;
             this.dgvItem.Location = new System.Drawing.Point(0, 0);
             this.dgvItem.Name = "dgvItem";
+            this.dgvItem.ReadOnly = true;
             this.dgvItem.RowHeadersVisible = false;
             this.dgvItem.RowHeadersWidth = 51;
             this.dgvItem.RowTemplate.Height = 24;
@@ -148,11 +175,11 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 4.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn1.HeaderText = "No";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 61;
             // 
             // InventoryCode
@@ -161,6 +188,7 @@
             this.InventoryCode.HeaderText = "Inventory Code";
             this.InventoryCode.MinimumWidth = 6;
             this.InventoryCode.Name = "InventoryCode";
+            this.InventoryCode.ReadOnly = true;
             this.InventoryCode.Width = 168;
             // 
             // Desc
@@ -169,6 +197,7 @@
             this.Desc.HeaderText = "Description";
             this.Desc.MinimumWidth = 6;
             this.Desc.Name = "Desc";
+            this.Desc.ReadOnly = true;
             // 
             // Brand
             // 
@@ -176,6 +205,7 @@
             this.Brand.HeaderText = "Brand";
             this.Brand.MinimumWidth = 6;
             this.Brand.Name = "Brand";
+            this.Brand.ReadOnly = true;
             this.Brand.Width = 86;
             // 
             // Category
@@ -184,6 +214,7 @@
             this.Category.HeaderText = "Category";
             this.Category.MinimumWidth = 6;
             this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
             this.Category.Width = 116;
             // 
             // Price
@@ -192,6 +223,7 @@
             this.Price.HeaderText = "Price";
             this.Price.MinimumWidth = 6;
             this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             this.Price.Width = 77;
             // 
             // Qty
@@ -200,6 +232,7 @@
             this.Qty.HeaderText = "Qty";
             this.Qty.MinimumWidth = 6;
             this.Qty.Name = "Qty";
+            this.Qty.ReadOnly = true;
             this.Qty.Width = 67;
             // 
             // AddToCart
@@ -209,6 +242,7 @@
             this.AddToCart.Image = ((System.Drawing.Image)(resources.GetObject("AddToCart.Image")));
             this.AddToCart.MinimumWidth = 6;
             this.AddToCart.Name = "AddToCart";
+            this.AddToCart.ReadOnly = true;
             this.AddToCart.Width = 6;
             // 
             // SearchProduct
@@ -223,7 +257,6 @@
             this.Text = "SearchProduct";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchProduct_KeyDown);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();
             this.ResumeLayout(false);
 
@@ -234,7 +267,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button addbtn;
         private System.Windows.Forms.Label MngBrandLabel;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridView dgvItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -245,5 +277,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.DataGridViewImageColumn AddToCart;
+        private MetroFramework.Controls.MetroTextBox metroSearch;
     }
 }

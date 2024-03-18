@@ -37,7 +37,7 @@ namespace JCUBE_SE_PROJECT
         {
             dgvItem.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand("SELECT p.ItemID, p.InventoryCode, p.Description, b.BrandName, c.CategoryName, p.Price, p.Qty FROM tbItemList AS p INNER JOIN tbBrand AS b ON b.BrandID = p.bid INNER JOIN tbCategory AS c ON c.CategoryID = p.cid WHERE CONCAT(p.inventoryCode, p.Description, b.BrandName, c.CategoryName) LIKE '%" + txtSearch.Text+"%' ", cn);
+            cm = new SqlCommand("SELECT p.ItemID, p.InventoryCode, p.Description, b.BrandName, c.CategoryName, p.Price, p.Qty FROM tbItemList AS p INNER JOIN tbBrand AS b ON b.BrandID = p.bid INNER JOIN tbCategory AS c ON c.CategoryID = p.cid WHERE CONCAT(p.inventoryCode, p.Description, b.BrandName, c.CategoryName) LIKE '%" + metroSearch.Text+ "%' ", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
@@ -57,17 +57,17 @@ namespace JCUBE_SE_PROJECT
             }
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            LoadItemList();
-        }
-
         private void SearchProduct_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
                 this.Dispose();
             }
+        }
+
+        private void metroSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadItemList();
         }
     }
     }

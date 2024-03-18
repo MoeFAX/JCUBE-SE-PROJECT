@@ -26,6 +26,7 @@ namespace JCUBE_SE_PROJECT
             lblUser.Text = posUI.POSNamelbl.Text;
             lblUsername.Text = posUI.lblUserRolePOS.Text;
             CurEyeBtn.Visible= true;
+            this.KeyPreview = true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -38,12 +39,27 @@ namespace JCUBE_SE_PROJECT
                     return;
                 }
 
+
                 string currentPass = dbcon.getPassword(lblUsername.Text);
                 if (currentPass != txtCurrentPass.Text) 
                 {
                     MessageBox.Show("Wrong Password! Please try again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+                if (!string.Equals(currentPass, txtCurrentPass.Text, StringComparison.Ordinal))
+                {
+                    MessageBox.Show("Wrong Password! Please try again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+     
+                if (!string.Equals(lblUsername.Text, posUI.lblUserRolePOS.Text, StringComparison.Ordinal))
+                {
+                    MessageBox.Show("Wrong Username! Please try again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 else
                 {
                     txtNewPass.Visible = true;
@@ -171,6 +187,26 @@ namespace JCUBE_SE_PROJECT
                 txtNewPass.PasswordChar = '●';
                 txtNewPass.UseSystemPasswordChar = true;
             }
+        }
+
+        private void ChangePassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Dispose();
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                if (btnNext.Visible)
+                {
+                    btnNext.PerformClick();
+                }
+                else if (btnSave.Visible)
+                {
+                    btnSave.PerformClick();
+                }
+            }
+
         }
     }
 }

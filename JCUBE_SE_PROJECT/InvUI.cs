@@ -138,7 +138,8 @@ namespace JCUBE_SE_PROJECT
 
         private void btnSoldItem_Click(object sender, EventArgs e)
         {
-            openChildForm(new SoldItems());
+            SoldItems soldItemsForm = new SoldItems(this); 
+            openChildForm(soldItemsForm);
             hideSubmenu();
         }
         private void btnInventoryList_Click(object sender, EventArgs e)
@@ -182,7 +183,7 @@ namespace JCUBE_SE_PROJECT
             {
                 this.Hide();
                 Login login = new Login();
-                login.ShowDialog();
+                login.Show();
             }
         }
 

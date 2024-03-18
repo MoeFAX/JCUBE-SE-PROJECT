@@ -290,6 +290,7 @@ namespace JCUBE_SE_PROJECT
             this.Name = "ChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangePassword";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ChangePassword_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.CurEyeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.confirmEyeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.newPassEyeBtn)).EndInit();

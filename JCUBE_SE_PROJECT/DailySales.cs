@@ -85,7 +85,8 @@ namespace JCUBE_SE_PROJECT
             dr.Close();
             cn.Close();
             totalVal.Text = total.ToString("#,##0.00");
-        }
+
+            }
 
         private void comboClerk_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -95,11 +96,21 @@ namespace JCUBE_SE_PROJECT
         private void dateFrom_ValueChanged(object sender, EventArgs e)
         {
             LoadSoldItems();
+            ShowNoSalesMessage();
         }
 
         private void dateTo_ValueChanged(object sender, EventArgs e)
         {
             LoadSoldItems();
+            ShowNoSalesMessage();
+        }
+
+        private void ShowNoSalesMessage()
+        {
+            if (dgvSoldItems.Rows.Count == 0)
+            {
+                MessageBox.Show("No sales recorded for the selected period.", "No Sales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void DailySales_KeyDown(object sender, KeyEventArgs e)

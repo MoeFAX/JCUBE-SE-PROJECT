@@ -73,7 +73,7 @@ namespace JCUBE_SE_PROJECT
             {
                 this.Hide();
                 Login login = new Login();
-                login.ShowDialog();
+                login.Show();
             }
         }
         private DialogResult ConfirmExit()
