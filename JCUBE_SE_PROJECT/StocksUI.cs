@@ -46,7 +46,7 @@ namespace JCUBE_SE_PROJECT
             {
 
 
-                dgvStockEntry.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString());
+                dgvStockEntry.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), DateTime.Parse(dr[4].ToString()).ToShortDateString(), dr[5].ToString());
             }
             dr.Close();
             cn.Close();

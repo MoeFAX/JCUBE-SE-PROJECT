@@ -55,35 +55,42 @@ namespace JCUBE_SE_PROJECT
                 string colName = dgvSupplier.Columns[e.ColumnIndex].Name;
                 if (colName == "Archive")
                 {
-                    if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                       
-                        string supplierID = dgvSupplier.Rows[e.RowIndex].Cells["SupplierID"].Value.ToString();
-                        cn.Open();
-                        cm = new SqlCommand("DELETE FROM tbSupplier WHERE SupplierID = @SupplierID", cn);
-                        cm.Parameters.AddWithValue("@SupplierID", supplierID);
-                        cm.ExecuteNonQuery();
-                        cn.Close();
-                        MessageBox.Show("Supplier has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string supplierID = dgvSupplier.Rows[e.RowIndex].Cells["SupplierID"].Value.ToString();
 
-                        
-                        dgvSupplier.Rows.RemoveAt(e.RowIndex);
-                    }
-                }
-                /*
-                string colName = dgvSupplier.Columns[e.ColumnIndex].Name;
-                if (colName == "Archive")
-                {
-                    if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    // Check if the supplier is used in other records
+                    bool isUsed = false;
+                    using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM tbStockEntry WHERE sid = @SupplierID", cn))
                     {
+                        cmd.Parameters.AddWithValue("@SupplierID", supplierID);
                         cn.Open();
-                        cm = new SqlCommand("DELETE FROM tbSupplier WHERE SupplierID LIKE '" + dgvSupplier[1, e.RowIndex].Value.ToString() + "'", cn);
-                        cm.ExecuteNonQuery();
+                        int count = (int)cmd.ExecuteScalar();
                         cn.Close();
-                        MessageBox.Show("Supplier has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        isUsed = (count > 0);
+                    }
+
+                    if (isUsed)
+                    {
+                        MessageBox.Show("Cannot delete the supplier as it is used in other records.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            // Perform deletion of the supplier record
+                            cn.Open();
+                            cm = new SqlCommand("DELETE FROM tbSupplier WHERE SupplierID = @SupplierID", cn);
+                            cm.Parameters.AddWithValue("@SupplierID", supplierID);
+                            cm.ExecuteNonQuery();
+                            cn.Close();
+                            MessageBox.Show("Supplier has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Remove the supplier from the DataGridView
+                            dgvSupplier.Rows.RemoveAt(e.RowIndex);
+                        }
                     }
                 }
-                */
+
                 else if (colName == "Edit")
                 {
                     
