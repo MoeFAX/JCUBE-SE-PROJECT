@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace JCUBE_SE_PROJECT
 {
@@ -26,6 +27,8 @@ namespace JCUBE_SE_PROJECT
             LoadBrand();
             LoadCategory();
         }
+
+
 
         public int ItemID
         {
@@ -82,6 +85,16 @@ namespace JCUBE_SE_PROJECT
                     MessageBox.Show("All fields are required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                string invCode = InvCodeField.Text.ToUpper();
+                string pattern = @"^INVC-[A-Z]{6}-\d{4}$";
+                bool isValidInvCode = Regex.IsMatch(invCode, pattern);
+
+                if (!isValidInvCode)
+                {
+                    MessageBox.Show("Invalid Inventory Code format. Please follow the format: INVC-XXXXXX-XXXX", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
 
                 if (!double.TryParse(AcquiredCostField.Text, out double acquiredCost) ||
                     !double.TryParse(PriceField.Text, out double price))
@@ -90,23 +103,50 @@ namespace JCUBE_SE_PROJECT
                     return;
                 }
 
-                if (Convert.ToInt32(reorderField.Value) <= 0)
+                string reorderString = reorderField.Value.ToString();
+                foreach (char c in reorderString)
                 {
-                    MessageBox.Show("Reorder should be greater than zero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (!char.IsDigit(c))
+                    {
+                        if (c == '-')
+                        {
+                            MessageBox.Show("Reorder should contain only numbers and not a single '-' character.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Reorder should contain only numbers.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        return;
+                    }
+                }
+
+                if  (Convert.ToInt32(reorderField.Value) <= 0)
+                {
+                    MessageBox.Show("Reorder should must be a positive integer and it should not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
+                
+
                 if (itemID != 0) // Check if itemID is set (indicating an existing record)
                 {
+                    string InvCode = InvCodeField.Text.Trim(); 
+                    SqlCommand checkinv = new SqlCommand("SELECT COUNT(*) FROM tbItemList WHERE InventoryCode = @InventoryCode", cn);
+                    checkinv.Parameters.AddWithValue("@InventoryCode", InvCode);
+                    int invcodeCount = (int)checkinv.ExecuteScalar();
+
+                    
+
                     // Update operation
                     cm = new SqlCommand("UPDATE tbItemList SET InventoryCode = @InventoryCode, ItemCode = @ItemCode, Description = @Description, AcquiredCost = @AcquiredCost, bid = @bid, cid = @cid, Price = @Price, Reorder = @Reorder WHERE ItemID = @ItemID", cn);
                     cm.Parameters.AddWithValue("@ItemID", itemID);
+                    
                 }
                 else
                 {
-                    string invCode = InvCodeField.Text.Trim();
+                    string InvCode2 = InvCodeField.Text.Trim();
                     SqlCommand checkinv = new SqlCommand("SELECT COUNT(*) FROM tbItemList WHERE InventoryCode = @InventoryCode", cn);
-                    checkinv.Parameters.AddWithValue("@InventoryCode", invCode);
+                    checkinv.Parameters.AddWithValue("@InventoryCode", InvCode2);
                     int invcodeCount = (int)checkinv.ExecuteScalar();
 
                     if (invcodeCount > 0)
@@ -136,6 +176,7 @@ namespace JCUBE_SE_PROJECT
                     }
                     // Insert operation
                     cm = new SqlCommand("INSERT INTO tbItemList(InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Reorder) VALUES(@InventoryCode, @ItemCode, @Description, @AcquiredCost, @bid, @cid, @Price, @Reorder)", cn);
+                    
                 }
 
                 // Common parameters for both update and insert operations
@@ -152,6 +193,7 @@ namespace JCUBE_SE_PROJECT
                 MessageBox.Show("Record has been successfully saved.", "SAVE");
                 Clear();
                 itemList.LoadItemList();
+                this.Close();
             }
             catch (Exception ex)
             {

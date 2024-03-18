@@ -134,8 +134,9 @@ namespace JCUBE_SE_PROJECT
                             cm.Parameters.AddWithValue("@StockInDate", StockInDate.Value);
                             cm.Parameters.AddWithValue("@StockID", stockID);
                             cm.ExecuteNonQuery();
+                            
 
-                            if(oldItem != Convert.ToInt32(ItemNameField.SelectedValue))
+                            if (oldItem != Convert.ToInt32(ItemNameField.SelectedValue))
                             {
                                 using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty - @Quantity WHERE ItemID = @ItemID", cn))
                                 {
@@ -181,7 +182,7 @@ namespace JCUBE_SE_PROJECT
                                     
                                 }
 
-
+                                
 
                             }
 
@@ -215,6 +216,7 @@ namespace JCUBE_SE_PROJECT
                                     updateQtyCmd.Parameters.AddWithValue("@Quantity", stocksField.Text);
                                     updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
                                     updateQtyCmd.ExecuteNonQuery();
+                                    
                                 }
                             }
 
@@ -227,6 +229,7 @@ namespace JCUBE_SE_PROJECT
                             cm.Parameters.AddWithValue("@StockInBy", StockinbyField.Text);
                             cm.Parameters.AddWithValue("@StockInDate", StockInDate.Value);
                             cm.ExecuteNonQuery();
+                            
                         }
                     }
                 }
@@ -234,6 +237,7 @@ namespace JCUBE_SE_PROJECT
                 MessageBox.Show("Record has been successfully saved.", "SAVE");
                 Clear();
                 stocks.LoadStocks();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -248,6 +252,9 @@ namespace JCUBE_SE_PROJECT
             }
         }
 
-      
+        private void cancelbtn_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
     }
 }

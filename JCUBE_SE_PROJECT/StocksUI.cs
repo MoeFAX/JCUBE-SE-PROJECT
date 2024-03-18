@@ -38,13 +38,15 @@ namespace JCUBE_SE_PROJECT
         {
             dgvStockEntry.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand("SELECT se.StockID, il.Description, se.Stocks, s.SupplierName, se.Status FROM tbStockEntry AS se INNER JOIN tbItemList AS il ON il.ItemID = se.ilid INNER JOIN tbSupplier AS s ON s.SupplierID = se.sid", cn);
+            cm = new SqlCommand("SELECT se.StockID, il.Description, se.Stocks, s.SupplierName, se.StockInDate, se.Status FROM tbStockEntry AS se INNER JOIN tbItemList AS il ON il.ItemID = se.ilid INNER JOIN tbSupplier AS s ON s.SupplierID = se.sid WHERE CAST(se.StockInDate AS date) BETWEEN @StartDate AND @EndDate", cn);
+            cm.Parameters.AddWithValue("@StartDate", dtpStockStartDate.Value.Date);
+            cm.Parameters.AddWithValue("@EndDate", dtpStockEndDate.Value.Date);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
 
 
-                dgvStockEntry.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString());
+                dgvStockEntry.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString());
             }
             dr.Close();
             cn.Close();
@@ -145,6 +147,11 @@ namespace JCUBE_SE_PROJECT
                 }
                 LoadStocks();
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LoadStocks();
         }
     }
 }

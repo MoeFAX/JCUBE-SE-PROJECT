@@ -221,6 +221,11 @@
             // reorderField
             // 
             this.reorderField.Location = new System.Drawing.Point(655, 234);
+            this.reorderField.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.reorderField.Name = "reorderField";
             this.reorderField.Size = new System.Drawing.Size(72, 30);
             this.reorderField.TabIndex = 37;
