@@ -45,6 +45,13 @@ namespace JCUBE_SE_PROJECT
                 double disc = double.Parse(totalPriceTB.Text) * double.Parse(percentageTB.Text) * 0.01;
                 amountTB.Text= disc.ToString("#,##0.00");
 
+                if (double.Parse(percentageTB.Text) > 100)
+                {
+                    MessageBox.Show("Discount percent cannot exceed 100%.", stitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    percentageTB.Clear();
+                    return;
+                }
+
             }
             catch (Exception)
             {

@@ -33,6 +33,19 @@ namespace JCUBE_SE_PROJECT
             {
                 string user;
                 cn.Open();
+
+                if (string.IsNullOrWhiteSpace(txtUsername.Text))
+                {
+                    MessageBox.Show("Username field cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtPassword.Text))
+                {
+                    MessageBox.Show("Password field cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 cm = new SqlCommand("SELECT * FROM tbUser WHERE username = @username and password = @password", cn);
                 cm.Parameters.AddWithValue("@username", txtUsername.Text);
                 cm.Parameters.AddWithValue("@password", txtPassword.Text);
@@ -42,6 +55,24 @@ namespace JCUBE_SE_PROJECT
                 {
                     user = dr["username"].ToString();
                     string role = dr["role"].ToString();
+
+
+                    if (!String.Equals(user, txtUsername.Text, StringComparison.Ordinal))
+                    {
+                        MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        dr.Close();
+                        cn.Close();
+                        return;
+                    }
+
+                    if (!String.Equals(dr["password"].ToString(), txtPassword.Text, StringComparison.Ordinal))
+                    {
+                        MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        dr.Close();
+                        cn.Close();
+                        return;
+                    }
+
                     dr.Close();
                     cn.Close();
                     if (role == "Administrator")

@@ -117,7 +117,10 @@ namespace JCUBE_SE_PROJECT
                         cm.ExecuteNonQuery();
                         cn.Close();
                     }
-                    
+                    printReceipt prtReceipt = new printReceipt(clerk);
+                    prtReceipt.LoadReceipt(txtCash.Text, txtChange.Text, txtCustName.Text);
+                    prtReceipt.ShowDialog();
+
                     MessageBox.Show("Payment Complete!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     clerk.StartNewTransaction();

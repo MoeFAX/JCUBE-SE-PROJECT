@@ -101,6 +101,10 @@ namespace JCUBE_SE_PROJECT
                 {
                     e.Cancel = true;
                 }
+                else
+                {
+                    Application.Exit();
+                }
             }
         }
 

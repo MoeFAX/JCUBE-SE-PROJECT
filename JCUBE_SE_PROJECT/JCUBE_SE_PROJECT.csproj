@@ -60,8 +60,13 @@
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
+<<<<<<< Updated upstream
     <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+=======
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+>>>>>>> Stashed changes
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -118,6 +123,14 @@
     </Compile>
     <Compile Include="DailySalesArchive.Designer.cs">
       <DependentUpon>DailySalesArchive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="DBConnect.cs" />
     <Compile Include="DtInvList.Designer.cs">
@@ -239,11 +252,19 @@
     <Compile Include="PosUI.Designer.cs">
       <DependentUpon>PosUI.cs</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="PrintInvList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PrintInvList.Designer.cs">
       <DependentUpon>PrintInvList.cs</DependentUpon>
+=======
+    <Compile Include="printReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="printReceipt.Designer.cs">
+      <DependentUpon>printReceipt.cs</DependentUpon>
+>>>>>>> Stashed changes
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -277,6 +298,7 @@
     <Compile Include="SoldItems.Designer.cs">
       <DependentUpon>SoldItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="StockEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -422,8 +444,13 @@
     <EmbeddedResource Include="PosUI.resx">
       <DependentUpon>PosUI.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< Updated upstream
     <EmbeddedResource Include="PrintInvList.resx">
       <DependentUpon>PrintInvList.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="printReceipt.resx">
+      <DependentUpon>printReceipt.cs</DependentUpon>
+>>>>>>> Stashed changes
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -438,7 +465,11 @@
     <EmbeddedResource Include="Qty.resx">
       <DependentUpon>Qty.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< Updated upstream
     <EmbeddedResource Include="ReportInvList.rdlc" />
+=======
+    <EmbeddedResource Include="Receipt.rdlc" />
+>>>>>>> Stashed changes
     <EmbeddedResource Include="ResetPassword.resx">
       <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -481,6 +512,7 @@
     <EmbeddedResource Include="UserAccountsUI.resx">
       <DependentUpon>UserAccountsUI.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< Updated upstream
     <None Include="DtInvList.xsc">
       <DependentUpon>DtInvList.xsd</DependentUpon>
     </None>
@@ -491,6 +523,18 @@
     </None>
     <None Include="DtInvList.xss">
       <DependentUpon>DtInvList.xsd</DependentUpon>
+=======
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+>>>>>>> Stashed changes
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -520,6 +564,19 @@
     <Content Include="Properties\icons8-cancel-20.png" />
     <Content Include="Properties\icons8-close-20.png" />
     <Content Include="Properties\icons8-minus-20.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\icons8-eye-20.png" />
     <None Include="Resources\icons8-password-20.png" />
     <None Include="Resources\icons8-clear-shopping-cart-30.png" />

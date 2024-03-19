@@ -29,6 +29,7 @@ namespace JCUBE_SE_PROJECT
             getDate();
             getTransNo();
             this.clerk = clerk;
+            clerkLbl = clerk.lblUserRolePOS;
         }
 
         
@@ -125,9 +126,10 @@ namespace JCUBE_SE_PROJECT
         {
            /* double discount = double.Parse(discountVal.Text);
             double sales = double.Parse(SalesTotalVal.Text) - discount;*/
-            double total = double.Parse(SalesTotalVal.Text); 
-            double vat = total * 0.12; // Change Vat accordingly
-            double vatable = total - vat;
+            double total = double.Parse(SalesTotalVal.Text);
+            double vatable = total / 1.12;
+            double vat = vatable * 0.12; // Change Vat accordingly
+           
 
             vatVal.Text = vat.ToString("#,##0.00");
             vatableVal.Text = vatable.ToString("#,##0.00");

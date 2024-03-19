@@ -47,6 +47,8 @@
             this.lblChange = new System.Windows.Forms.Label();
             this.lblPayment = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.lblCustName = new System.Windows.Forms.Label();
+            this.txtCustName = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
             // 
             // txtSale
@@ -55,10 +57,10 @@
             // 
             // 
             this.txtSale.CustomButton.Image = null;
-            this.txtSale.CustomButton.Location = new System.Drawing.Point(305, 1);
+            this.txtSale.CustomButton.Location = new System.Drawing.Point(325, 2);
             this.txtSale.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtSale.CustomButton.Name = "";
-            this.txtSale.CustomButton.Size = new System.Drawing.Size(47, 47);
+            this.txtSale.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtSale.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtSale.CustomButton.TabIndex = 1;
             this.txtSale.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -67,7 +69,7 @@
             this.txtSale.Enabled = false;
             this.txtSale.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtSale.Lines = new string[0];
-            this.txtSale.Location = new System.Drawing.Point(16, 31);
+            this.txtSale.Location = new System.Drawing.Point(13, 31);
             this.txtSale.Margin = new System.Windows.Forms.Padding(4);
             this.txtSale.MaxLength = 32767;
             this.txtSale.Multiline = true;
@@ -78,7 +80,7 @@
             this.txtSale.SelectionLength = 0;
             this.txtSale.SelectionStart = 0;
             this.txtSale.ShortcutsEnabled = true;
-            this.txtSale.Size = new System.Drawing.Size(353, 49);
+            this.txtSale.Size = new System.Drawing.Size(353, 30);
             this.txtSale.TabIndex = 1;
             this.txtSale.UseSelectable = true;
             this.txtSale.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -90,10 +92,10 @@
             // 
             // 
             this.txtCash.CustomButton.Image = null;
-            this.txtCash.CustomButton.Location = new System.Drawing.Point(305, 1);
+            this.txtCash.CustomButton.Location = new System.Drawing.Point(325, 2);
             this.txtCash.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtCash.CustomButton.Name = "";
-            this.txtCash.CustomButton.Size = new System.Drawing.Size(47, 47);
+            this.txtCash.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtCash.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCash.CustomButton.TabIndex = 1;
             this.txtCash.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -101,7 +103,7 @@
             this.txtCash.CustomButton.Visible = false;
             this.txtCash.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCash.Lines = new string[0];
-            this.txtCash.Location = new System.Drawing.Point(17, 106);
+            this.txtCash.Location = new System.Drawing.Point(13, 87);
             this.txtCash.Margin = new System.Windows.Forms.Padding(4);
             this.txtCash.MaxLength = 32767;
             this.txtCash.Multiline = true;
@@ -112,7 +114,7 @@
             this.txtCash.SelectionLength = 0;
             this.txtCash.SelectionStart = 0;
             this.txtCash.ShortcutsEnabled = true;
-            this.txtCash.Size = new System.Drawing.Size(353, 49);
+            this.txtCash.Size = new System.Drawing.Size(353, 30);
             this.txtCash.TabIndex = 0;
             this.txtCash.UseSelectable = true;
             this.txtCash.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -126,10 +128,10 @@
             // 
             // 
             this.txtChange.CustomButton.Image = null;
-            this.txtChange.CustomButton.Location = new System.Drawing.Point(305, 1);
+            this.txtChange.CustomButton.Location = new System.Drawing.Point(325, 2);
             this.txtChange.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtChange.CustomButton.Name = "";
-            this.txtChange.CustomButton.Size = new System.Drawing.Size(47, 47);
+            this.txtChange.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtChange.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtChange.CustomButton.TabIndex = 1;
             this.txtChange.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -138,7 +140,7 @@
             this.txtChange.Enabled = false;
             this.txtChange.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtChange.Lines = new string[0];
-            this.txtChange.Location = new System.Drawing.Point(17, 181);
+            this.txtChange.Location = new System.Drawing.Point(13, 143);
             this.txtChange.Margin = new System.Windows.Forms.Padding(4);
             this.txtChange.MaxLength = 32767;
             this.txtChange.Multiline = true;
@@ -149,7 +151,7 @@
             this.txtChange.SelectionLength = 0;
             this.txtChange.SelectionStart = 0;
             this.txtChange.ShortcutsEnabled = true;
-            this.txtChange.Size = new System.Drawing.Size(353, 49);
+            this.txtChange.Size = new System.Drawing.Size(353, 30);
             this.txtChange.TabIndex = 2;
             this.txtChange.UseSelectable = true;
             this.txtChange.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -348,7 +350,7 @@
             // 
             this.lblChange.AutoSize = true;
             this.lblChange.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChange.Location = new System.Drawing.Point(14, 159);
+            this.lblChange.Location = new System.Drawing.Point(13, 121);
             this.lblChange.Name = "lblChange";
             this.lblChange.Size = new System.Drawing.Size(72, 18);
             this.lblChange.TabIndex = 16;
@@ -358,7 +360,7 @@
             // 
             this.lblPayment.AutoSize = true;
             this.lblPayment.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPayment.Location = new System.Drawing.Point(14, 84);
+            this.lblPayment.Location = new System.Drawing.Point(13, 65);
             this.lblPayment.Name = "lblPayment";
             this.lblPayment.Size = new System.Drawing.Size(76, 18);
             this.lblPayment.TabIndex = 17;
@@ -368,17 +370,63 @@
             // 
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPrice.Location = new System.Drawing.Point(14, 9);
+            this.lblTotalPrice.Location = new System.Drawing.Point(13, 9);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(87, 18);
             this.lblTotalPrice.TabIndex = 18;
             this.lblTotalPrice.Text = "Total Price:";
+            // 
+            // lblCustName
+            // 
+            this.lblCustName.AutoSize = true;
+            this.lblCustName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustName.Location = new System.Drawing.Point(13, 177);
+            this.lblCustName.Name = "lblCustName";
+            this.lblCustName.Size = new System.Drawing.Size(131, 18);
+            this.lblCustName.TabIndex = 19;
+            this.lblCustName.Text = "Customer Name:";
+            // 
+            // txtCustName
+            // 
+            // 
+            // 
+            // 
+            this.txtCustName.CustomButton.Image = null;
+            this.txtCustName.CustomButton.Location = new System.Drawing.Point(325, 2);
+            this.txtCustName.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCustName.CustomButton.Name = "";
+            this.txtCustName.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtCustName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtCustName.CustomButton.TabIndex = 1;
+            this.txtCustName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtCustName.CustomButton.UseSelectable = true;
+            this.txtCustName.CustomButton.Visible = false;
+            this.txtCustName.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtCustName.Lines = new string[0];
+            this.txtCustName.Location = new System.Drawing.Point(13, 199);
+            this.txtCustName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCustName.MaxLength = 32767;
+            this.txtCustName.Multiline = true;
+            this.txtCustName.Name = "txtCustName";
+            this.txtCustName.PasswordChar = '\0';
+            this.txtCustName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCustName.SelectedText = "";
+            this.txtCustName.SelectionLength = 0;
+            this.txtCustName.SelectionStart = 0;
+            this.txtCustName.ShortcutsEnabled = true;
+            this.txtCustName.Size = new System.Drawing.Size(353, 30);
+            this.txtCustName.TabIndex = 20;
+            this.txtCustName.UseSelectable = true;
+            this.txtCustName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtCustName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // SettlePayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 562);
+            this.Controls.Add(this.txtCustName);
+            this.Controls.Add(this.lblCustName);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.lblPayment);
             this.Controls.Add(this.lblChange);
@@ -430,5 +478,7 @@
         private System.Windows.Forms.Label lblChange;
         private System.Windows.Forms.Label lblPayment;
         private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Label lblCustName;
+        public MetroFramework.Controls.MetroTextBox txtCustName;
     }
 }
