@@ -98,7 +98,7 @@ namespace JCUBE_SE_PROJECT
             this.btnArchives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnArchives.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArchives.ForeColor = System.Drawing.Color.White;
-            this.btnArchives.Location = new System.Drawing.Point(0, 1037);
+            this.btnArchives.Location = new System.Drawing.Point(0, 971);
             this.btnArchives.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnArchives.Name = "btnArchives";
             this.btnArchives.Size = new System.Drawing.Size(232, 50);
@@ -114,7 +114,7 @@ namespace JCUBE_SE_PROJECT
             this.btnLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogs.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogs.ForeColor = System.Drawing.Color.White;
-            this.btnLogs.Location = new System.Drawing.Point(0, 987);
+            this.btnLogs.Location = new System.Drawing.Point(0, 921);
             this.btnLogs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogs.Name = "btnLogs";
             this.btnLogs.Size = new System.Drawing.Size(232, 50);
@@ -130,7 +130,7 @@ namespace JCUBE_SE_PROJECT
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 1087);
+            this.btnLogout.Location = new System.Drawing.Point(0, 1021);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(232, 50);
@@ -146,7 +146,7 @@ namespace JCUBE_SE_PROJECT
             this.btnUserAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserAcc.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserAcc.ForeColor = System.Drawing.Color.White;
-            this.btnUserAcc.Location = new System.Drawing.Point(0, 937);
+            this.btnUserAcc.Location = new System.Drawing.Point(0, 871);
             this.btnUserAcc.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnUserAcc.Name = "btnUserAcc";
             this.btnUserAcc.Size = new System.Drawing.Size(232, 50);
@@ -168,7 +168,7 @@ namespace JCUBE_SE_PROJECT
             this.panelSubRecord.Location = new System.Drawing.Point(0, 563);
             this.panelSubRecord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelSubRecord.Name = "panelSubRecord";
-            this.panelSubRecord.Size = new System.Drawing.Size(232, 374);
+            this.panelSubRecord.Size = new System.Drawing.Size(232, 308);
             this.panelSubRecord.TabIndex = 13;
             // 
             // btnCriticalStocks

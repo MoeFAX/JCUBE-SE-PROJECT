@@ -60,13 +60,8 @@
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
-<<<<<<< Updated upstream
     <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
-=======
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
->>>>>>> Stashed changes
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -252,19 +247,17 @@
     <Compile Include="PosUI.Designer.cs">
       <DependentUpon>PosUI.cs</DependentUpon>
     </Compile>
-<<<<<<< Updated upstream
     <Compile Include="PrintInvList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PrintInvList.Designer.cs">
       <DependentUpon>PrintInvList.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="printReceipt.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="printReceipt.Designer.cs">
       <DependentUpon>printReceipt.cs</DependentUpon>
->>>>>>> Stashed changes
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -444,13 +437,11 @@
     <EmbeddedResource Include="PosUI.resx">
       <DependentUpon>PosUI.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< Updated upstream
     <EmbeddedResource Include="PrintInvList.resx">
       <DependentUpon>PrintInvList.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="printReceipt.resx">
       <DependentUpon>printReceipt.cs</DependentUpon>
->>>>>>> Stashed changes
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -465,11 +456,8 @@
     <EmbeddedResource Include="Qty.resx">
       <DependentUpon>Qty.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< Updated upstream
     <EmbeddedResource Include="ReportInvList.rdlc" />
-=======
     <EmbeddedResource Include="Receipt.rdlc" />
->>>>>>> Stashed changes
     <EmbeddedResource Include="ResetPassword.resx">
       <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -512,7 +500,6 @@
     <EmbeddedResource Include="UserAccountsUI.resx">
       <DependentUpon>UserAccountsUI.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< Updated upstream
     <None Include="DtInvList.xsc">
       <DependentUpon>DtInvList.xsd</DependentUpon>
     </None>
@@ -523,7 +510,7 @@
     </None>
     <None Include="DtInvList.xss">
       <DependentUpon>DtInvList.xsd</DependentUpon>
-=======
+    </None>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -534,7 +521,6 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
->>>>>>> Stashed changes
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
