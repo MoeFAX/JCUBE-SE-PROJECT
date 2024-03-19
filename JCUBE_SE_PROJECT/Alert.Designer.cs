@@ -35,7 +35,6 @@
             this.lblItemCode = new System.Windows.Forms.Label();
             this.MsgTxt = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnReOrder = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +47,6 @@
             this.panel1.Controls.Add(this.lblItemCode);
             this.panel1.Controls.Add(this.MsgTxt);
             this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.btnReOrder);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -69,7 +67,7 @@
             // 
             this.MsgTxt.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MsgTxt.ForeColor = System.Drawing.Color.White;
-            this.MsgTxt.Location = new System.Drawing.Point(73, 4);
+            this.MsgTxt.Location = new System.Drawing.Point(49, 9);
             this.MsgTxt.Name = "MsgTxt";
             this.MsgTxt.Size = new System.Drawing.Size(243, 54);
             this.MsgTxt.TabIndex = 6;
@@ -90,19 +88,6 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnReOrder
-            // 
-            this.btnReOrder.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReOrder.BackgroundImage")));
-            this.btnReOrder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReOrder.FlatAppearance.BorderSize = 0;
-            this.btnReOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReOrder.ForeColor = System.Drawing.Color.White;
-            this.btnReOrder.Location = new System.Drawing.Point(6, 7);
-            this.btnReOrder.Name = "btnReOrder";
-            this.btnReOrder.Size = new System.Drawing.Size(61, 51);
-            this.btnReOrder.TabIndex = 4;
-            this.btnReOrder.UseVisualStyleBackColor = true;
-            // 
             // Alert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -112,7 +97,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Alert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alert";
@@ -128,6 +113,5 @@
         private System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.Label lblItemCode;
         public System.Windows.Forms.Label MsgTxt;
-        public System.Windows.Forms.Button btnReOrder;
     }
 }

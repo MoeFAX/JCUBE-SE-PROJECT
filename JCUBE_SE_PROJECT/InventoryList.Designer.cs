@@ -29,15 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryList));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryList));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.mngRecord = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InventoryCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +42,12 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.PrintInvList = new System.Windows.Forms.Button();
+            this.mngRecord = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -99,60 +100,6 @@
             this.dgvInventory.RowTemplate.Height = 24;
             this.dgvInventory.Size = new System.Drawing.Size(871, 374);
             this.dgvInventory.TabIndex = 28;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(20, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(871, 70);
-            this.panel2.TabIndex = 25;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(20, 444);
-            this.panel3.TabIndex = 26;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.mngRecord);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 444);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(891, 100);
-            this.panel1.TabIndex = 24;
-            // 
-            // mngRecord
-            // 
-            this.mngRecord.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mngRecord.Image = ((System.Drawing.Image)(resources.GetObject("mngRecord.Image")));
-            this.mngRecord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mngRecord.Location = new System.Drawing.Point(16, 16);
-            this.mngRecord.Name = "mngRecord";
-            this.mngRecord.Size = new System.Drawing.Size(141, 75);
-            this.mngRecord.TabIndex = 13;
-            this.mngRecord.Text = "Manage Record";
-            this.mngRecord.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(891, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(20, 544);
-            this.panel4.TabIndex = 27;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -228,6 +175,75 @@
             this.ReOrder.Name = "ReOrder";
             this.ReOrder.Width = 121;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(20, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(871, 70);
+            this.panel2.TabIndex = 25;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(20, 444);
+            this.panel3.TabIndex = 26;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.PrintInvList);
+            this.panel1.Controls.Add(this.mngRecord);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 444);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(891, 100);
+            this.panel1.TabIndex = 24;
+            // 
+            // PrintInvList
+            // 
+            this.PrintInvList.FlatAppearance.BorderSize = 0;
+            this.PrintInvList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrintInvList.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintInvList.Image = ((System.Drawing.Image)(resources.GetObject("PrintInvList.Image")));
+            this.PrintInvList.Location = new System.Drawing.Point(833, 41);
+            this.PrintInvList.MinimumSize = new System.Drawing.Size(20, 20);
+            this.PrintInvList.Name = "PrintInvList";
+            this.PrintInvList.Size = new System.Drawing.Size(27, 28);
+            this.PrintInvList.TabIndex = 33;
+            this.PrintInvList.UseVisualStyleBackColor = true;
+            this.PrintInvList.Click += new System.EventHandler(this.PrintInvList_Click);
+            // 
+            // mngRecord
+            // 
+            this.mngRecord.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mngRecord.Image = ((System.Drawing.Image)(resources.GetObject("mngRecord.Image")));
+            this.mngRecord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mngRecord.Location = new System.Drawing.Point(16, 16);
+            this.mngRecord.Name = "mngRecord";
+            this.mngRecord.Size = new System.Drawing.Size(141, 75);
+            this.mngRecord.TabIndex = 13;
+            this.mngRecord.Text = "Manage Record";
+            this.mngRecord.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(891, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(20, 544);
+            this.panel4.TabIndex = 27;
+            // 
             // InventoryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -265,5 +281,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReOrder;
+        private System.Windows.Forms.Button PrintInvList;
     }
 }

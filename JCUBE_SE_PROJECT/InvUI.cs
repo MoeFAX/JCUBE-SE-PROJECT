@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 
 
 namespace JCUBE_SE_PROJECT
@@ -144,7 +145,7 @@ namespace JCUBE_SE_PROJECT
         }
         private void btnInventoryList_Click(object sender, EventArgs e)
         {
-            openChildForm(new InventoryList());
+            openChildForm(new InventoryList(this));
             hideSubmenu();
         }
 
@@ -194,13 +195,7 @@ namespace JCUBE_SE_PROJECT
 
         }
 
-        private void InvUI_Load(object sender, EventArgs e)
-        {
-            Notif();
-            UserRole = lblUserRole.Text;
-            
-
-        }
+        
 
         private void btnLogs_Click(object sender, EventArgs e)
         {
@@ -219,7 +214,8 @@ namespace JCUBE_SE_PROJECT
             openChildForm(new CriticalStocks());
         }
 
-        
+
+
         //Notification Alert for critical stocks
         public void Notif()
         {
@@ -237,8 +233,7 @@ namespace JCUBE_SE_PROJECT
                             {
                                 i++;
                                 Alert alert = new Alert();
-                                alert.lblItemCode.Text = dr["ItemCode"].ToString(); // Remove the 'p.' prefix here
-                                alert.btnReOrder.Enabled = true;
+                                alert.lblItemCode.Text = dr["ItemCode"].ToString(); 
                                 alert.showAlert(i + ". " + dr["Description"].ToString() + " - " + dr["Qty"].ToString());
                             }
                         }
@@ -251,5 +246,12 @@ namespace JCUBE_SE_PROJECT
             }
         }
 
+        private void InvUI_Load(object sender, EventArgs e)
+        {
+            Notif();
+            UserRole = lblUserRole.Text;
+        }
+
+        
     }
 }

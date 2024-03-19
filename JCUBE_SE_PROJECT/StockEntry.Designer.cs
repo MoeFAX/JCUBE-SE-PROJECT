@@ -152,6 +152,7 @@
             // SuppNameField
             // 
             this.SuppNameField.BackColor = System.Drawing.SystemColors.Window;
+            this.SuppNameField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SuppNameField.FormattingEnabled = true;
             this.SuppNameField.Location = new System.Drawing.Point(132, 76);
             this.SuppNameField.Name = "SuppNameField";
@@ -161,6 +162,7 @@
             // ItemNameField
             // 
             this.ItemNameField.BackColor = System.Drawing.SystemColors.Window;
+            this.ItemNameField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ItemNameField.FormattingEnabled = true;
             this.ItemNameField.Location = new System.Drawing.Point(132, 35);
             this.ItemNameField.Name = "ItemNameField";

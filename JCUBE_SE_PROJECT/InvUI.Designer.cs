@@ -50,6 +50,7 @@ namespace JCUBE_SE_PROJECT
             this.btnItemList = new System.Windows.Forms.Button();
             this.btnItem = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.JCUBELOGOIMG = new System.Windows.Forms.PictureBox();
             this.labelJcube = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblUserRole = new System.Windows.Forms.Label();
@@ -57,17 +58,16 @@ namespace JCUBE_SE_PROJECT
             this.panelMain = new System.Windows.Forms.Panel();
             this.INVLoggedInlbl = new System.Windows.Forms.Label();
             this.INVNamelbl = new System.Windows.Forms.Label();
-            this.JCubelbl = new System.Windows.Forms.Label();
             this.INVJCUBELOGOIMG = new System.Windows.Forms.PictureBox();
-            this.JCUBELOGOIMG = new System.Windows.Forms.PictureBox();
+            this.JCubelbl = new System.Windows.Forms.Label();
             this.panelSidebar.SuspendLayout();
             this.panelSubRecord.SuspendLayout();
             this.panelSubItem.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.JCUBELOGOIMG)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.INVJCUBELOGOIMG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.JCUBELOGOIMG)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSidebar
@@ -405,6 +405,18 @@ namespace JCUBE_SE_PROJECT
             this.panelLogo.Size = new System.Drawing.Size(232, 207);
             this.panelLogo.TabIndex = 2;
             // 
+            // JCUBELOGOIMG
+            // 
+            this.JCUBELOGOIMG.Image = ((System.Drawing.Image)(resources.GetObject("JCUBELOGOIMG.Image")));
+            this.JCUBELOGOIMG.Location = new System.Drawing.Point(67, 36);
+            this.JCUBELOGOIMG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.JCUBELOGOIMG.Name = "JCUBELOGOIMG";
+            this.JCUBELOGOIMG.Size = new System.Drawing.Size(100, 100);
+            this.JCUBELOGOIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.JCUBELOGOIMG.TabIndex = 0;
+            this.JCUBELOGOIMG.TabStop = false;
+            this.JCUBELOGOIMG.Click += new System.EventHandler(this.JCUBELOGOIMG_Click);
+            // 
             // labelJcube
             // 
             this.labelJcube.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -491,6 +503,17 @@ namespace JCUBE_SE_PROJECT
             this.INVNamelbl.Text = "Fullname";
             this.INVNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // INVJCUBELOGOIMG
+            // 
+            this.INVJCUBELOGOIMG.Image = ((System.Drawing.Image)(resources.GetObject("INVJCUBELOGOIMG.Image")));
+            this.INVJCUBELOGOIMG.Location = new System.Drawing.Point(335, 98);
+            this.INVJCUBELOGOIMG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.INVJCUBELOGOIMG.Name = "INVJCUBELOGOIMG";
+            this.INVJCUBELOGOIMG.Size = new System.Drawing.Size(275, 273);
+            this.INVJCUBELOGOIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.INVJCUBELOGOIMG.TabIndex = 1;
+            this.INVJCUBELOGOIMG.TabStop = false;
+            // 
             // JCubelbl
             // 
             this.JCubelbl.AutoSize = true;
@@ -504,29 +527,6 @@ namespace JCUBE_SE_PROJECT
             this.JCubelbl.Text = "JCUBE SHIELDWORKS CORPORATION";
             this.JCubelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // INVJCUBELOGOIMG
-            // 
-            this.INVJCUBELOGOIMG.Image = ((System.Drawing.Image)(resources.GetObject("INVJCUBELOGOIMG.Image")));
-            this.INVJCUBELOGOIMG.Location = new System.Drawing.Point(335, 98);
-            this.INVJCUBELOGOIMG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.INVJCUBELOGOIMG.Name = "INVJCUBELOGOIMG";
-            this.INVJCUBELOGOIMG.Size = new System.Drawing.Size(275, 273);
-            this.INVJCUBELOGOIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.INVJCUBELOGOIMG.TabIndex = 1;
-            this.INVJCUBELOGOIMG.TabStop = false;
-            // 
-            // JCUBELOGOIMG
-            // 
-            this.JCUBELOGOIMG.Image = ((System.Drawing.Image)(resources.GetObject("JCUBELOGOIMG.Image")));
-            this.JCUBELOGOIMG.Location = new System.Drawing.Point(67, 36);
-            this.JCUBELOGOIMG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.JCUBELOGOIMG.Name = "JCUBELOGOIMG";
-            this.JCUBELOGOIMG.Size = new System.Drawing.Size(100, 100);
-            this.JCUBELOGOIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.JCUBELOGOIMG.TabIndex = 0;
-            this.JCUBELOGOIMG.TabStop = false;
-            this.JCUBELOGOIMG.Click += new System.EventHandler(this.JCUBELOGOIMG_Click);
-            // 
             // InvUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -536,22 +536,23 @@ namespace JCUBE_SE_PROJECT
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InvUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jcube Inventory";
+            this.Load += new System.EventHandler(this.InvUI_Load);
             this.panelSidebar.ResumeLayout(false);
             this.panelSubRecord.ResumeLayout(false);
             this.panelSubItem.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.JCUBELOGOIMG)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.INVJCUBELOGOIMG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.JCUBELOGOIMG)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.dtpStockEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpStockStartDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,7 +60,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.dtpStockEndDate);
             this.panel1.Controls.Add(this.dtpStockStartDate);
             this.panel1.Controls.Add(this.label3);
@@ -92,19 +90,6 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(712, 41);
-            this.button3.MinimumSize = new System.Drawing.Size(20, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(27, 28);
-            this.button3.TabIndex = 8;
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // dtpStockEndDate
             // 
@@ -358,7 +343,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpStockStartDate;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         public System.Windows.Forms.DateTimePicker dtpStockEndDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockID;

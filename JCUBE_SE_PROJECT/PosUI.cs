@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,15 @@ namespace JCUBE_SE_PROJECT
     public partial class PosUI : Form
     {
         CartUI clerk;
+        SqlConnection cn = new SqlConnection();
+        SqlCommand cm = new SqlCommand();
+        DBConnect dbcon = new DBConnect();
+        SqlDataReader dr;
         public PosUI()
         {
             InitializeComponent();
             clerk = new CartUI(this);
+            cn = new SqlConnection(dbcon.myConnection());
         }
 
         private Form activeForm = null;
@@ -96,6 +102,40 @@ namespace JCUBE_SE_PROJECT
                     e.Cancel = true;
                 }
             }
+        }
+
+        public void Notif()
+        {
+            try
+            {
+                int i = 0;
+                using (SqlConnection cn = new SqlConnection(dbcon.myConnection()))
+                {
+                    cn.Open();
+                    using (SqlCommand cm = new SqlCommand("SELECT p.ItemID, p.InventoryCode, p.ItemCode, p.Description, b.BrandName, c.CategoryName, p.Price, p.Reorder, p.Qty FROM tbItemList AS p INNER JOIN tbBrand AS b ON b.BrandID = p.bid INNER JOIN tbCategory AS c ON c.CategoryID = p.cid WHERE (p.Qty <= p.Reorder)", cn))
+                    {
+                        using (SqlDataReader dr = cm.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                i++;
+                                Alert alert = new Alert();
+                                alert.lblItemCode.Text = dr["ItemCode"].ToString();
+                                alert.showAlert(i + ". " + dr["Description"].ToString() + " - " + dr["Qty"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PosUI_Load(object sender, EventArgs e)
+        {
+            Notif();
         }
     }
 }

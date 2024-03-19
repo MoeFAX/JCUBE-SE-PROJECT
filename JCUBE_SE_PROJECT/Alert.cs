@@ -103,6 +103,8 @@ namespace JCUBE_SE_PROJECT
             action = enmAction.close;
         }
 
+       
+
         private Color SelectThemeColor()
         {
             int index = random.Next(ThemeColor.ColorList.Count);
