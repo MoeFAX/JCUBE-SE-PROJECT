@@ -161,8 +161,10 @@
             // 
             // InvCodeField
             // 
+            this.InvCodeField.Enabled = false;
             this.InvCodeField.Location = new System.Drawing.Point(194, 85);
             this.InvCodeField.Name = "InvCodeField";
+            this.InvCodeField.ReadOnly = true;
             this.InvCodeField.Size = new System.Drawing.Size(166, 30);
             this.InvCodeField.TabIndex = 20;
             // 
