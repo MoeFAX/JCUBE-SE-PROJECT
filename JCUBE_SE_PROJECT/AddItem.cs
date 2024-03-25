@@ -106,7 +106,7 @@ namespace JCUBE_SE_PROJECT
                     string.IsNullOrWhiteSpace(DescriptionField.Text) ||
                     string.IsNullOrWhiteSpace(AcquiredCostField.Text) ||
                     string.IsNullOrWhiteSpace(PriceField.Text) ||
-                    reorderField.Value == 0)
+                    reorderField.Value == 0 || string.IsNullOrEmpty(reorderField.Text))
                 {
                     MessageBox.Show("All fields are required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -122,12 +122,7 @@ namespace JCUBE_SE_PROJECT
                 }*/
 
 
-                if (!double.TryParse(AcquiredCostField.Text, out double acquiredCost) ||
-                    !double.TryParse(PriceField.Text, out double price))
-                {
-                    MessageBox.Show("Acquired Cost and SRP should be numbers.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                
 
                 string reorderString = reorderField.Value.ToString();
                 foreach (char c in reorderString)
@@ -152,8 +147,19 @@ namespace JCUBE_SE_PROJECT
                     return;
                 }
 
+
+                if (!double.TryParse(AcquiredCostField.Text, out double acquiredCost) || acquiredCost <= 0)
+                {
+                    MessageBox.Show("Acquired Cost should be a positive number greater than zero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 
-                
+                if (!double.TryParse(PriceField.Text, out double price) || price <= 0)
+                {
+                    MessageBox.Show("Price should be a positive number greater than zero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
 
                 if (itemID != 0) // Check if itemID is set (indicating an existing record)

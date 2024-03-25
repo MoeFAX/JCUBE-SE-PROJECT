@@ -270,6 +270,7 @@
             this.PrintStockHistory.Size = new System.Drawing.Size(27, 28);
             this.PrintStockHistory.TabIndex = 32;
             this.PrintStockHistory.UseVisualStyleBackColor = true;
+            this.PrintStockHistory.Click += new System.EventHandler(this.PrintStockHistory_Click);
             // 
             // StockInHistoryUI
             // 
