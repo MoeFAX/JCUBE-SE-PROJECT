@@ -102,7 +102,7 @@ namespace JCUBE_SE_PROJECT
                     moduleForm.ItemNameField.Text = dgvStockEntry[1, e.RowIndex].Value.ToString();
                     moduleForm.stocksField.Text = dgvStockEntry[2, e.RowIndex].Value.ToString();
                     moduleForm.SuppNameField.Text = dgvStockEntry[3, e.RowIndex].Value.ToString();
-                    moduleForm.StatusField.Text = dgvStockEntry[4, e.RowIndex].Value.ToString();
+                    moduleForm.StatusField.Text = dgvStockEntry[5, e.RowIndex].Value.ToString();
                     string stockInBy = "";
                     try
                     {
