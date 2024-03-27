@@ -224,7 +224,7 @@
             // 
             this.reorderField.Location = new System.Drawing.Point(655, 234);
             this.reorderField.Maximum = new decimal(new int[] {
-            500,
+            10000,
             0,
             0,
             0});
