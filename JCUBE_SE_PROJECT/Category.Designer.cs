@@ -157,6 +157,7 @@
             this.NoColumn.HeaderText = "No";
             this.NoColumn.MinimumWidth = 6;
             this.NoColumn.Name = "NoColumn";
+            this.NoColumn.Visible = false;
             this.NoColumn.Width = 62;
             // 
             // Id

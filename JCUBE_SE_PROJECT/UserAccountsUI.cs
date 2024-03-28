@@ -50,131 +50,152 @@ namespace JCUBE_SE_PROJECT
         {
             UAChangePassword moduleForm = new UAChangePassword(this);
             moduleForm.CPUNlbl.Text = UAUserRolelbl.Text;
-            cn.Open();
-            cm = new SqlCommand("SELECT password FROM tbUser WHERE username = @username", cn);
-            cm.Parameters.AddWithValue("@username", moduleForm.CPUNlbl.Text); // Add @username parameter
-            dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                moduleForm.CPCurrPasswordField.Text = dr["password"].ToString();
-            }
-
-            dr.Close();
-            cn.Close();
-
             moduleForm.ShowDialog();
         }
 
         public void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            try
             {
-                string colName = dgvUser.Columns[e.ColumnIndex].Name;
-                if (colName == "ArchiveAcc") //ARCHIVE FUNC
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
                 {
-                    if (MessageBox.Show("Are you sure you want to delete this item?", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    string colName = dgvUser.Columns[e.ColumnIndex].Name;
+                    if (colName == "ArchiveAcc") //ARCHIVE FUNC
                     {
-                        // Retrieve ItemID from the DataGridView
-                        int ArchAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
-
-                        cn.Open();
-                        cm = new SqlCommand("DELETE FROM tbUser WHERE AccountID = @AccountID", cn);
-                        cm.Parameters.AddWithValue("@AccountID", ArchAccID); // Add @AccountID parameter
-                        cm.ExecuteNonQuery();
-                        cn.Close();
-                        MessageBox.Show("Item has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        // Remove the row from the DataGridView
-                        dgvUser.Rows.RemoveAt(e.RowIndex);
-                        LoadUser();
-                    }
-                }
-                else if (colName == "EditAcc") //EDIT ACC
-                {
-                    if (MessageBox.Show("Are you sure you want to edit this account?", "Edit Account", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        // Retrieve AccountID from the DataGridView
-                        int AccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
-
-                        // Open EditAccount form for editing with the AccountID
-                        EditAccount editacc = new EditAccount(this);
-                        editacc.EditAccountIDField.Text = AccID.ToString(); // Set AccountID property
-
-                        // Populate fields in EditAccount form
-                        editacc.EditAccountIDField.Text = dgvUser[0, e.RowIndex].Value.ToString();
-                        editacc.EditUsernameField.Text = dgvUser[1, e.RowIndex].Value.ToString();
-                        editacc.EditFullnameField.Text = dgvUser[2, e.RowIndex].Value.ToString();
-                        editacc.EditRoleComboBox.Text = dgvUser[4, e.RowIndex].Value.ToString();
-                        editacc.SaveBtn.Enabled = true;
-                        editacc.ShowDialog();
-                    }
-                }
-                else if (colName == "ActivateAcc") //ACTIVATE ACC
-                {
-                    if (MessageBox.Show("Are you sure you want to activate this account?", "Activate Account", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        // Retrieve ItemID from the DataGridView
-                        int ActAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
-
-                        cn.Open();
-                        cm = new SqlCommand("UPDATE tbUser SET isactive = @isactive WHERE AccountID = @AccountID", cn);
-                        cm.Parameters.AddWithValue("@isactive", "True");
-                        cm.Parameters.AddWithValue("@AccountID", ActAccID); // Add @AccountID parameter
-                        cm.ExecuteNonQuery();
-                        cn.Close();
-                        MessageBox.Show("Account has been successfully activated", "ACTIVATED", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                else if (colName == "DeactivateAcc") //DEACTIVATE ACC
-                {
-                    if (MessageBox.Show("Are you sure you want to deactivate this account?", "Deactivate Account", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        // Retrieve ItemID from the DataGridView
-                        int ActAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
-
-                        cn.Open();
-                        cm = new SqlCommand("UPDATE tbUser SET isactive = @isactive WHERE AccountID = @AccountID", cn);
-                        cm.Parameters.AddWithValue("@isactive", "False");
-                        cm.Parameters.AddWithValue("@AccountID", ActAccID); // Add @AccountID parameter
-                        cm.ExecuteNonQuery();
-                        cn.Close();
-                        MessageBox.Show("Account has been successfully deactivated", "DEACTIVATED", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                else if (colName == "ResetPwd") //RESET PASSWORD
-                {
-                    if (MessageBox.Show("Are you sure you want to reset this account's password?", "Reset Password", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        // Retrieve AccountID from the DataGridView
-                        int RPWDAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
-
-                        // Open ResetPassword form for editing with the AccountID
-                        ResetPassword rpwdacc = new ResetPassword(this);
-                        rpwdacc.RPWDAccIDlbl.Text = RPWDAccID.ToString(); // Set AccountID property
-
-                        //Retrieve Password from Database in correlation with the AccountID
-                        //and Populate the Current Password Field
-                        cn.Open();
-                        cm = new SqlCommand("SELECT password, username FROM tbUser WHERE AccountID = @AccountID", cn);
-                        cm.Parameters.AddWithValue("@AccountID",RPWDAccID); // Add @AccountID parameter
-                        dr = cm.ExecuteReader();
-                        while (dr.Read())
+                        if (MessageBox.Show("Are you sure you want to delete this item?", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            rpwdacc.RPCurrPasswordField.Text = dr["password"].ToString();
-                            rpwdacc.RPUNlbl.Text = dr["username"].ToString();
-                        }
-                        dr.Close();
-                        cn.Close();
+                            // Retrieve ItemID from the DataGridView
+                            int ArchAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
 
-                        // Populate fields in EditAccount form
-                        rpwdacc.RPWDAccIDlbl.Text = dgvUser[0, e.RowIndex].Value.ToString();
-                        rpwdacc.SaveBtn.Enabled = true;
-                        rpwdacc.ShowDialog();
+                            cn.Open();
+                            cm = new SqlCommand("DELETE FROM tbUser WHERE AccountID = @AccountID", cn);
+                            cm.Parameters.AddWithValue("@AccountID", ArchAccID); // Add @AccountID parameter
+                            cm.ExecuteNonQuery();
+                            cn.Close();
+                            MessageBox.Show("Item has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Remove the row from the DataGridView
+                            dgvUser.Rows.RemoveAt(e.RowIndex);
+                            LoadUser();
+                        }
                     }
+                    else if (colName == "EditAcc") //EDIT ACC
+                    {
+                        if (MessageBox.Show("Are you sure you want to edit this account?", "Edit Account", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            // Retrieve AccountID from the DataGridView
+                            int AccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
+
+                            // Open EditAccount form for editing with the AccountID
+                            EditAccount editacc = new EditAccount(this);
+                            editacc.EditAccountIDField.Text = AccID.ToString(); // Set AccountID property
+
+                            // Populate fields in EditAccount form
+                            editacc.EditAccountIDField.Text = dgvUser[0, e.RowIndex].Value.ToString();
+                            editacc.EditUsernameField.Text = dgvUser[1, e.RowIndex].Value.ToString();
+                            editacc.EditFullnameField.Text = dgvUser[2, e.RowIndex].Value.ToString();
+                            editacc.EditRoleComboBox.Text = dgvUser[4, e.RowIndex].Value.ToString();
+                            editacc.SaveBtn.Enabled = true;
+                            editacc.ShowDialog();
+                        }
+                    }
+                    else if (colName == "ActivateAcc") //ACTIVATE ACC
+                    {
+                        if (MessageBox.Show("Are you sure you want to activate this account?", "Activate Account", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            // Retrieve ItemID from the DataGridView
+                            int ActAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
+
+                            cn.Open();
+                            cm = new SqlCommand("SELECT isactive FROM tbUser WHERE AccountID = @AccountID", cn);
+                            cm.Parameters.AddWithValue("@AccountID", ActAccID);
+                            dr = cm.ExecuteReader();
+                            if (dr.Read())
+                            {
+                                MessageBox.Show("The account is already activated!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                dr.Close();
+                                cn.Close();
+                            }
+                            else
+                            {
+                                cm = new SqlCommand("UPDATE tbUser SET isactive = @isactive WHERE AccountID = @AccountID", cn);
+                                cm.Parameters.AddWithValue("@isactive", "true");
+                                cm.Parameters.AddWithValue("@AccountID", ActAccID); // Add @AccountID parameter
+                                cm.ExecuteNonQuery();
+                                dr.Close();
+                                cn.Close();
+                                MessageBox.Show("Account has been successfully activated!", "ACTIVATED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+                    else if (colName == "DeactivateAcc") //DEACTIVATE ACC
+                    {
+                        if (MessageBox.Show("Are you sure you want to deactivate this account?", "Deactivate Account", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            // Retrieve ItemID from the DataGridView
+                            int ActAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
+
+                            cn.Open();
+                            cm = new SqlCommand("SELECT isactive FROM tbUser WHERE AccountID = @AccountID", cn);
+                            cm.Parameters.AddWithValue("@AccountID", ActAccID);
+                            dr = cm.ExecuteReader();
+                            if (dr.Read())
+                            {
+                                MessageBox.Show("The account is already deactivated!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                dr.Close();
+                                cn.Close();
+                            }
+                            else
+                            {
+                                cm = new SqlCommand("UPDATE tbUser SET isactive = @isactive WHERE AccountID = @AccountID", cn);
+                                cm.Parameters.AddWithValue("@isactive", "false");
+                                cm.Parameters.AddWithValue("@AccountID", ActAccID); // Add @AccountID parameter
+                                cm.ExecuteNonQuery();
+                                cn.Close();
+                                MessageBox.Show("Account has been successfully deactivated!", "DEACTIVATED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            
+                        }
+                    }
+                    else if (colName == "ResetPwd") //RESET PASSWORD
+                    {
+                        if (MessageBox.Show("Are you sure you want to reset this account's password?", "Reset Password", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            // Retrieve AccountID from the DataGridView
+                            int RPWDAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
+
+                            // Open ResetPassword form for editing with the AccountID
+                            ResetPassword rpwdacc = new ResetPassword(this);
+                            rpwdacc.RPWDAccIDlbl.Text = RPWDAccID.ToString(); // Set AccountID property
+
+                            //Retrieve Password from Database in correlation with the AccountID
+                            //and Populate the Current Password Field
+                            cn.Open();
+                            cm = new SqlCommand("SELECT username FROM tbUser WHERE AccountID = @AccountID", cn);
+                            cm.Parameters.AddWithValue("@AccountID", RPWDAccID); // Add @AccountID parameter
+                            dr = cm.ExecuteReader();
+                            while (dr.Read())
+                            {
+                                rpwdacc.RPUNlbl.Text = dr["username"].ToString();
+                            }
+                            dr.Close();
+                            cn.Close();
+
+                            // Populate fields in EditAccount form
+                            rpwdacc.RPWDAccIDlbl.Text = dgvUser[0, e.RowIndex].Value.ToString();
+                            rpwdacc.SaveBtn.Enabled = true;
+                            rpwdacc.ShowDialog();
+                        }
+                    }
+                    // Reload the item list after deletion or editing
+                    LoadUser();
                 }
-                // Reload the item list after deletion or editing
-                LoadUser();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning");
+            }
+
         }
         private void refreshBtn_Click(object sender, EventArgs e)
         {

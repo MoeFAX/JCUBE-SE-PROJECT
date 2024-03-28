@@ -176,18 +176,19 @@
             // 
             // UAUserNameCol
             // 
-            this.UAUserNameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.UAUserNameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.UAUserNameCol.HeaderText = "Username";
             this.UAUserNameCol.MinimumWidth = 6;
             this.UAUserNameCol.Name = "UAUserNameCol";
-            this.UAUserNameCol.Width = 98;
+            this.UAUserNameCol.Width = 150;
             // 
             // UAFullNameCol
             // 
-            this.UAFullNameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.UAFullNameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.UAFullNameCol.HeaderText = "Full Name";
             this.UAFullNameCol.MinimumWidth = 6;
             this.UAFullNameCol.Name = "UAFullNameCol";
+            this.UAFullNameCol.Width = 250;
             // 
             // UAAccActCol
             // 
@@ -199,61 +200,60 @@
             // 
             // UARoleCol
             // 
-            this.UARoleCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.UARoleCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.UARoleCol.HeaderText = "Role";
-            this.UARoleCol.MinimumWidth = 6;
+            this.UARoleCol.MinimumWidth = 80;
             this.UARoleCol.Name = "UARoleCol";
-            this.UARoleCol.Width = 63;
             // 
             // EditAcc
             // 
-            this.EditAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.EditAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.EditAcc.HeaderText = "";
             this.EditAcc.Image = ((System.Drawing.Image)(resources.GetObject("EditAcc.Image")));
             this.EditAcc.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.EditAcc.MinimumWidth = 6;
+            this.EditAcc.MinimumWidth = 30;
             this.EditAcc.Name = "EditAcc";
-            this.EditAcc.Width = 6;
+            this.EditAcc.Width = 30;
             // 
             // ResetPwd
             // 
-            this.ResetPwd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ResetPwd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ResetPwd.HeaderText = "";
             this.ResetPwd.Image = ((System.Drawing.Image)(resources.GetObject("ResetPwd.Image")));
             this.ResetPwd.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ResetPwd.MinimumWidth = 6;
+            this.ResetPwd.MinimumWidth = 30;
             this.ResetPwd.Name = "ResetPwd";
-            this.ResetPwd.Width = 6;
+            this.ResetPwd.Width = 30;
             // 
             // ActivateAcc
             // 
-            this.ActivateAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ActivateAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ActivateAcc.HeaderText = "";
             this.ActivateAcc.Image = ((System.Drawing.Image)(resources.GetObject("ActivateAcc.Image")));
             this.ActivateAcc.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ActivateAcc.MinimumWidth = 6;
+            this.ActivateAcc.MinimumWidth = 30;
             this.ActivateAcc.Name = "ActivateAcc";
-            this.ActivateAcc.Width = 6;
+            this.ActivateAcc.Width = 30;
             // 
             // DeactivateAcc
             // 
-            this.DeactivateAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DeactivateAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.DeactivateAcc.HeaderText = "";
             this.DeactivateAcc.Image = ((System.Drawing.Image)(resources.GetObject("DeactivateAcc.Image")));
             this.DeactivateAcc.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.DeactivateAcc.MinimumWidth = 6;
+            this.DeactivateAcc.MinimumWidth = 30;
             this.DeactivateAcc.Name = "DeactivateAcc";
-            this.DeactivateAcc.Width = 6;
+            this.DeactivateAcc.Width = 30;
             // 
             // ArchiveAcc
             // 
-            this.ArchiveAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ArchiveAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ArchiveAcc.HeaderText = "";
             this.ArchiveAcc.Image = ((System.Drawing.Image)(resources.GetObject("ArchiveAcc.Image")));
             this.ArchiveAcc.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ArchiveAcc.MinimumWidth = 6;
+            this.ArchiveAcc.MinimumWidth = 30;
             this.ArchiveAcc.Name = "ArchiveAcc";
-            this.ArchiveAcc.Width = 6;
+            this.ArchiveAcc.Width = 30;
             // 
             // pictureBox1
             // 
@@ -322,6 +322,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvUser;
+        private MetroFramework.Controls.MetroButton refreshBtn;
+        public System.Windows.Forms.Label UAUserRolelbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn AccountID;
         private System.Windows.Forms.DataGridViewTextBoxColumn UAUserNameCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn UAFullNameCol;
@@ -332,7 +334,5 @@
         private System.Windows.Forms.DataGridViewImageColumn ActivateAcc;
         private System.Windows.Forms.DataGridViewImageColumn DeactivateAcc;
         private System.Windows.Forms.DataGridViewImageColumn ArchiveAcc;
-        private MetroFramework.Controls.MetroButton refreshBtn;
-        public System.Windows.Forms.Label UAUserRolelbl;
     }
 }
