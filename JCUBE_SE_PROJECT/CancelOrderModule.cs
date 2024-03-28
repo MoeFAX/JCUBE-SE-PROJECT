@@ -35,7 +35,7 @@ namespace JCUBE_SE_PROJECT
             {
                 string user;
                 cn.Open();
-
+                string COEncryptedPassword = AESHelper.Encrypt(txtPassword.Text);
                 if (string.IsNullOrWhiteSpace(txtUsername.Text))
                 {
                     MessageBox.Show("Username field cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -48,9 +48,9 @@ namespace JCUBE_SE_PROJECT
                     return;
                 }
 
-                cm = new SqlCommand("SELECT * FROM tbUser WHERE username = @username and password = @password", cn);
+                cm = new SqlCommand("SELECT * FROM tbUser WHERE username = @username and encryptedPassword = @COEncryptedPassword", cn);
                 cm.Parameters.AddWithValue("@username", txtUsername.Text);
-                cm.Parameters.AddWithValue("@password", txtPassword.Text);
+                cm.Parameters.AddWithValue("@COEncryptedPassword", COEncryptedPassword);
                 dr = cm.ExecuteReader();
                 dr.Read();
                 if (dr.HasRows)
@@ -67,7 +67,7 @@ namespace JCUBE_SE_PROJECT
                         return;
                     }
 
-                    if (!String.Equals(dr["password"].ToString(), txtPassword.Text, StringComparison.Ordinal))
+                    if (!String.Equals(dr["encryptedPassword"].ToString(), COEncryptedPassword, StringComparison.Ordinal))
                     {
                         MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         dr.Close();

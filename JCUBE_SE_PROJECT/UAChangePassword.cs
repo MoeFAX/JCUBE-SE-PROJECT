@@ -22,10 +22,11 @@ namespace JCUBE_SE_PROJECT
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
         UserAccountsUI useracc;
+        private string logUsername;
 
         string  _decryptedPassword = "", _encryptedPassword = "";
 
-        public UAChangePassword(UserAccountsUI user)
+        public UAChangePassword(UserAccountsUI user, string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
@@ -36,7 +37,7 @@ namespace JCUBE_SE_PROJECT
             RTEyeBtn.MouseUp += new MouseEventHandler(RTEyeBtn_MouseUp);
             CPEyeBtn.MouseDown += new MouseEventHandler(CPEyeBtn_MouseDown);
             CPEyeBtn.MouseUp += new MouseEventHandler(CPEyeBtn_MouseUp);
-
+            logUsername = username;
         }
 
         public void Clear()
@@ -71,15 +72,10 @@ namespace JCUBE_SE_PROJECT
                     }
                 }
 
-                cm = new SqlCommand("SELECT * FROM tbUser WHERE encryptedPassword = @encryptedPassword", cn);
-                cm.Parameters.AddWithValue("@encryptedPassword", _encryptedPassword);
-                dr = cm.ExecuteReader();
-
                 if (_decryptedPassword != CPCurrPasswordField.Text)
                 {
                     MessageBox.Show("Current Password does not match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Clear();
-                    dr.Close();
                     cn.Close();
                 }
                 else
@@ -89,40 +85,28 @@ namespace JCUBE_SE_PROJECT
                     {
                         MessageBox.Show("Fields can not be null", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Clear();
-                        dr.Close();
                         cn.Close();
                     }
                     else if (CPNewPasswordField.Text.Length < 8)
                     {
                         MessageBox.Show("Password must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Clear();
-                        dr.Close();
                         cn.Close();
                     }
                     else if (!Regex.IsMatch(CPNewPasswordField.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=-]).{8,}$"))
                     {
                         MessageBox.Show("Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Clear();
-                        dr.Close();
                         cn.Close();
                     }
                     else if (CPNewPasswordField.Text != CPRTPasswordField.Text)
                     {
                         MessageBox.Show("Passwords does not match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Clear();
-                        dr.Close();
-                        cn.Close();
-                    }
-                    else if (dr.Read())
-                    {
-                        MessageBox.Show("Password already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        Clear();
-                        dr.Close();
                         cn.Close();
                     }
                     else
                     {
-                        dr.Close();
                         string CPNewEncryptedPassword = "";
 
                         using (SqlCommand command = new SqlCommand("UPDATE tbUser SET encryptedPassword = @encryptedPassword WHERE username = @username", cn))
@@ -132,6 +116,11 @@ namespace JCUBE_SE_PROJECT
                             CPNewEncryptedPassword = AESHelper.Encrypt(CPNewPasswordField.Text);
                             command.Parameters.AddWithValue("@encryptedPassword", CPNewEncryptedPassword);
                             command.ExecuteNonQuery();
+                            string logAction = "UPDATE";
+                            string logType = "ACCOUNTS";
+                            string logDescription = "Reset own Password";
+                            LogDao log = new LogDao(cn);
+                            log.AddLogs(logAction, logType, logDescription, logUsername);
                         }
                         cn.Close();
                         Clear();

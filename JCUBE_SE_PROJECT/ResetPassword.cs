@@ -78,14 +78,9 @@ namespace JCUBE_SE_PROJECT
                     }
                 }
 
-                cm = new SqlCommand("SELECT * FROM tbUser WHERE encryptedPassword = @encryptedPassword", cn);
-                cm.Parameters.AddWithValue("@encryptedPassword", _encryptedPassword);
-                dr = cm.ExecuteReader();
-
                 if (_decryptedPassword != RPCurrPasswordField.Text)
                 {
                     MessageBox.Show("Current Password does not match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    dr.Close();
                     cn.Close();
                 }
                 else
@@ -94,40 +89,28 @@ namespace JCUBE_SE_PROJECT
                     if (string.IsNullOrWhiteSpace(RPNewPasswordField.Text))
                     {
                         MessageBox.Show("Fields can not be null", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        dr.Close();
                         cn.Close();
                     }
                     else if (RPNewPasswordField.Text.Length < 8)
                     {
                         MessageBox.Show("Password must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Clear();
-                        dr.Close();
                         cn.Close();
                     }
                     else if (!Regex.IsMatch(RPNewPasswordField.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=-]).{8,}$"))
                     {
                         MessageBox.Show("Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Clear();
-                        dr.Close();
                         cn.Close();
                     }
                     else if (RPNewPasswordField.Text != RPRTPasswordField.Text)
                     {
                         MessageBox.Show("Passwords does not match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Clear();
-                        dr.Close();
-                        cn.Close();
-                    }
-                    else if (dr.Read())
-                    {
-                        MessageBox.Show("Password already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        Clear();
-                        dr.Close();
                         cn.Close();
                     }
                     else
                     {
-                        dr.Close();
                         string RPNewEncryptedPassword = "";
 
                         using (SqlCommand command = new SqlCommand("UPDATE tbUser SET encryptedPassword = @encryptedPassword WHERE username = @username", cn))

@@ -50,7 +50,7 @@ namespace JCUBE_SE_PROJECT
 
         private void CPBttn_Click(object sender, EventArgs e)
         {
-            UAChangePassword moduleForm = new UAChangePassword(this);
+            UAChangePassword moduleForm = new UAChangePassword(this, logUsername);
             moduleForm.CPUNlbl.Text = UAUserRolelbl.Text;
             moduleForm.ShowDialog();
         }
@@ -95,10 +95,10 @@ namespace JCUBE_SE_PROJECT
 
                             // Open EditAccount form for editing with the AccountID
                             EditAccount editacc = new EditAccount(this, logUsername);
-                            editacc.EditAccountIDField.Text = AccID.ToString(); // Set AccountID property
+                            editacc.EditAccountIDlbl.Text = AccID.ToString(); // Set AccountID property
 
                             // Populate fields in EditAccount form
-                            editacc.EditAccountIDField.Text = dgvUser[0, e.RowIndex].Value.ToString();
+                            editacc.EditAccountIDlbl.Text = dgvUser[0, e.RowIndex].Value.ToString();
                             editacc.EditUsernameField.Text = dgvUser[1, e.RowIndex].Value.ToString();
                             editacc.EditFullnameField.Text = dgvUser[2, e.RowIndex].Value.ToString();
                             editacc.EditRoleComboBox.Text = dgvUser[4, e.RowIndex].Value.ToString();
@@ -114,19 +114,22 @@ namespace JCUBE_SE_PROJECT
                             int ActAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
 
                             cn.Open();
-                            cm = new SqlCommand("SELECT isactive FROM tbUser WHERE AccountID = @AccountID", cn);
-                            cm.Parameters.AddWithValue("@AccountID", ActAccID);
-                            dr = cm.ExecuteReader();
-                            if (dr.Read())
+                            SqlCommand cu = new SqlCommand("SELECT COUNT(*) FROM tbUser WHERE AccountID = @AccountID AND isactive = 'true'", cn);
+                            cu.Parameters.AddWithValue("@AccountID", ActAccID);
+                            int count = (int)cu.ExecuteScalar();
+
+                            cn.Close();
+                            if (count > 0)
                             {
-                                MessageBox.Show("The account is already activated!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                dr.Close();
+                                MessageBox.Show("The account is already activated!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 cn.Close();
+                                LoadUser();
                             }
                             else
                             {
+                                cn.Open();
                                 cm = new SqlCommand("UPDATE tbUser SET isactive = @isactive WHERE AccountID = @AccountID", cn);
-                                cm.Parameters.AddWithValue("@isactive", "true");
+                                cm.Parameters.AddWithValue("@isactive", "True");
                                 cm.Parameters.AddWithValue("@AccountID", ActAccID); // Add @AccountID parameter
                                 cm.ExecuteNonQuery();
                                 string logAction = "UPDATE";
@@ -137,6 +140,7 @@ namespace JCUBE_SE_PROJECT
                                 dr.Close();
                                 cn.Close();
                                 MessageBox.Show("Account has been successfully activated!", "ACTIVATED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                LoadUser();
                             }
                         }
                     }
@@ -148,19 +152,22 @@ namespace JCUBE_SE_PROJECT
                             int ActAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
 
                             cn.Open();
-                            cm = new SqlCommand("SELECT isactive FROM tbUser WHERE AccountID = @AccountID", cn);
-                            cm.Parameters.AddWithValue("@AccountID", ActAccID);
-                            dr = cm.ExecuteReader();
-                            if (dr.Read())
+                            SqlCommand cu = new SqlCommand("SELECT COUNT(*) FROM tbUser WHERE AccountID = @AccountID AND isactive = 'false'", cn);
+                            cu.Parameters.AddWithValue("@AccountID", ActAccID);
+                            int count = (int)cu.ExecuteScalar();
+
+                            cn.Close();
+                            if (count > 0)
                             {
-                                MessageBox.Show("The account is already deactivated!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                dr.Close();
+                                MessageBox.Show("The account is already deactivated!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 cn.Close();
+                                LoadUser();
                             }
                             else
                             {
+                                cn.Open();
                                 cm = new SqlCommand("UPDATE tbUser SET isactive = @isactive WHERE AccountID = @AccountID", cn);
-                                cm.Parameters.AddWithValue("@isactive", "false");
+                                cm.Parameters.AddWithValue("@isactive", "False");
                                 cm.Parameters.AddWithValue("@AccountID", ActAccID); // Add @AccountID parameter
                                 cm.ExecuteNonQuery();
                                 string logAction = "UPDATED";
@@ -170,6 +177,7 @@ namespace JCUBE_SE_PROJECT
                                 log.AddLogs(logAction, logType, logDescription, logUsername);
                                 cn.Close();
                                 MessageBox.Show("Account has been successfully deactivated!", "DEACTIVATED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                LoadUser();
                             }
                             
                         }

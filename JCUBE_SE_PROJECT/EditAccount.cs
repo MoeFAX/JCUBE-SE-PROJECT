@@ -1,5 +1,4 @@
-﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,12 +47,65 @@ namespace JCUBE_SE_PROJECT
             return false;
         }
 
+        private bool IsUsernameValid(string username)
+        {
+            //check if the username contains any invalid characters
+            //will match any string that contains a whitespace, a comma, or any control characters
+            Regex regex = new Regex("^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+$");
+            return regex.IsMatch(username) || username.Length >= 8;
+        }
+
+        private bool IsFullnameValid(string fullname)
+        {
+            //check if the full name only contains letters
+            Regex regex = new Regex("^[a-zA-Z\\s]+$");
+            return regex.IsMatch(fullname);
+        }
+
+        private bool DoesUsernameExist(string username)
+        {
+            //check if the username already exists in the database
+            using (SqlConnection cn = new SqlConnection(dbcon.myConnection()))
+            {
+                cn.Open();
+                SqlCommand cu = new SqlCommand("SELECT username FROM tbUser WHERE AccountID = @AccountID", cn);
+                cu.Parameters.AddWithValue("@AccountID", Convert.ToInt32(EditAccountIDlbl.Text));
+                string existingUsername = cu.ExecuteScalar() as string;
+
+                SqlCommand cm = new SqlCommand("SELECT COUNT(*) FROM tbUser WHERE username = @username AND username != @existingUsername", cn);
+                cm.Parameters.AddWithValue("@username", username);
+                cm.Parameters.AddWithValue("@existingUsername", existingUsername);
+                int count = (int)cm.ExecuteScalar();
+                cn.Close();
+                return count > 0;
+            }
+        }
+
+        private bool DoesFullnameExist(string fullname)
+        {
+            //check if the full name already exists in the database
+            using (SqlConnection cn = new SqlConnection(dbcon.myConnection()))
+            {
+                cn.Open();
+                SqlCommand cu = new SqlCommand("SELECT fullname FROM tbUser WHERE AccountID = @AccountID", cn);
+                cu.Parameters.AddWithValue("@AccountID", Convert.ToInt32(EditAccountIDlbl.Text));
+                string existingFullname = cu.ExecuteScalar() as string;
+
+                SqlCommand cm = new SqlCommand("SELECT COUNT(*) FROM tbUser WHERE fullname = @fullname AND fullname != @existingFullname", cn);
+                cm.Parameters.AddWithValue("@fullname", fullname);
+                cm.Parameters.AddWithValue("@existingFullname", existingFullname);
+                int count = (int)cm.ExecuteScalar();
+                cn.Close();
+                return count > 0;
+            }
+        }
+
         private void CloseBtn_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
-        public void Clear ()
+        public void Clear()
         {
             EditUsernameField.Clear();
             EditFullnameField.Clear();
@@ -70,126 +122,75 @@ namespace JCUBE_SE_PROJECT
         {
             try
             {
-                cn.Open();
-                string logAction;
+                string logAction = "UPDATE";
                 string logType = "ACCOUNTS";
-                string logDescription;
-                if (!string.IsNullOrEmpty(EditUsernameField.Text))
+                string logDescription = "Updated an Account";
+
+                if (string.IsNullOrEmpty(EditUsernameField.Text) || string.IsNullOrEmpty(EditFullnameField.Text) || string.IsNullOrEmpty(EditRoleComboBox.Text))
                 {
+                    MessageBox.Show("Fields can not be null", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                    if (int.Parse(EditAccountIDField.Text) != 0) // Check if AccountID is set (indicating an existing record)
-                    {
-                        // Update operation
-                        cm = new SqlCommand("UPDATE tbUser SET username = @username, fullname = @fullname, role = @role WHERE AccountID = @AccountID", cn);
-                        cm.Parameters.AddWithValue("@AccountID", int.Parse(EditAccountIDField.Text));
+                if (HasUnicode(EditUsernameField.Text))
+                {
+                    MessageBox.Show("Username can not contain a unicode or emoji.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    EditUsernameField.Clear();
+                    cn.Close();
+                }
 
-                        // Common parameters for both update and insert operations
-                        cm.Parameters.AddWithValue("@username", EditUsernameField.Text);
-                        cm.Parameters.AddWithValue("@fullname", EditFullnameField.Text);
-                        cm.Parameters.AddWithValue("@role", EditRoleComboBox.Text);
-                        logAction = "UPDATE";
-                        logDescription = "Updated an Account";
-                    }
-                    else 
-                    {
-                        // Insert operation
-                        cm = new SqlCommand("INSERT INTO tbUser(username, fullname, role) VALUES(@username, @fullname, @role)", cn);
-                        MessageBox.Show("MAC CALINA", "SAVED", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        // Common parameters for both update and insert operations
-                        cm.Parameters.AddWithValue("@username", EditUsernameField.Text);
-                        cm.Parameters.AddWithValue("@fullname", EditFullnameField.Text);
-                        cm.Parameters.AddWithValue("@role", EditRoleComboBox.Text);
-                        logAction = "CREATE";
-                        logDescription = "Created a new Account";
-                    }
+                if (!IsUsernameValid(EditUsernameField.Text))
+                {
+                    MessageBox.Show("Username contains invalid characters and/or must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    EditUsernameField.Clear();
+                    return;
+                }
 
+                if (!IsFullnameValid(EditFullnameField.Text))
+                {
+                    MessageBox.Show("Full name is invalid. It must only contain letters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    EditFullnameField.Clear();
+                    return;
+                }
+
+                if (DoesUsernameExist(EditUsernameField.Text))
+                {
+                    MessageBox.Show("This Username already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    EditUsernameField.Clear();
+                    return;
+                }
+
+                if (DoesFullnameExist(EditFullnameField.Text))
+                {
+                    MessageBox.Show("This Full name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    EditFullnameField.Clear();
+                    return;
+                }
+
+                using (SqlConnection cn = new SqlConnection(dbcon.myConnection()))
+                {
+                    cn.Open();
+                    SqlCommand cm = new SqlCommand("UPDATE tbUser SET username = @username, fullname = @fullname, role = @role WHERE AccountID = @AccountID", cn);
+                    cm.Parameters.AddWithValue("@AccountID", int.Parse(EditAccountIDlbl.Text));
+                    cm.Parameters.AddWithValue("@username", EditUsernameField.Text);
+                    cm.Parameters.AddWithValue("@fullname", EditFullnameField.Text);
+                    cm.Parameters.AddWithValue("@role", EditRoleComboBox.Text);
                     cm.ExecuteNonQuery();
                     LogDao log = new LogDao(cn);
                     log.AddLogs(logAction, logType, logDescription, logUsername);
-                    MessageBox.Show("Account has been successfully saved!", "SAVED", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clear();
-                    useracc.LoadUser();
                 }
-                else /* FIELD VALIDATIONS CHECK */
-                {
-                    /* USERNAME VALIDATION CHECK */
-                    cm = new SqlCommand("SELECT * FROM tbUser WHERE username = @username", cn);
-                    cm.Parameters.AddWithValue("@username", EditUsernameField.Text);
-                    dr = cm.ExecuteReader();
 
-                    if (HasUnicode(EditUsernameField.Text))
-                    {
-                        MessageBox.Show("Username can not contain a unicode or emoji.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        EditUsernameField.Clear();
-                        dr.Close();
-                        cn.Close();
-                    }
-                    else if (EditUsernameField.Text.Length < 8)
-                    {
-                        MessageBox.Show("Username must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        EditUsernameField.Clear();
-                        dr.Close();
-                        cn.Close();
-                    }
-                    else if (Regex.IsMatch(EditUsernameField.Text, @"^(?=.*[,~`!#$%^&*()+={}\[\]:;'\<>?/\\|])"))
-                    {
-                        MessageBox.Show("Username contains invalid characters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        EditUsernameField.Clear();
-                        dr.Close();
-                        cn.Close();
-                    }
-                    else if (dr.Read())
-                    {
-                        MessageBox.Show("This Username already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        EditUsernameField.Clear();
-                        dr.Close();
-                        cn.Close();
-                    }
-                    else
-                    {
-                        dr.Close();
-                        /* USERNAME IS VALID - NEXT TO CHECK IS FULL NAME */
-                        cm = new SqlCommand("SELECT * FROM tbUser WHERE fullname = @fullname", cn);
-                        cm.Parameters.AddWithValue("@fullname", EditFullnameField.Text);
-                        dr = cm.ExecuteReader();
-
-                        if (!Regex.IsMatch(EditFullnameField.Text, "^[a-zA-Z\\s]+$"))
-                        {
-                            MessageBox.Show("Full name must only contain letters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            EditFullnameField.Clear();
-                            dr.Close();
-                            cn.Close();
-                        }
-
-                        else if (dr.Read())
-                        {
-                            MessageBox.Show("This Full name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            EditFullnameField.Clear();
-                            dr.Close();
-                            cn.Close();
-                        }
-                        else
-                        {
-                            dr.Close();
-                            cm = new SqlCommand("UPDATE tbUser SET username = @username, fullname = @fullname, role = @role WHERE AccountID = @AccountID", cn);
-                            cm.Parameters.AddWithValue("@AccountID", int.Parse(EditAccountIDField.Text));
-                            cm.Parameters.AddWithValue("@username", EditUsernameField.Text);
-                            cm.Parameters.AddWithValue("@fullname", EditFullnameField.Text);
-                            cm.Parameters.AddWithValue("@role", EditRoleComboBox.Text);
-                            cm.ExecuteNonQuery();
-                            cn.Close();
-                            Clear();
-                            MessageBox.Show("Account has been successfully saved! Please Reload.", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Close();
-                            useracc.LoadUser();
-                        }
-                    }
-                }
+                MessageBox.Show("Account has been successfully saved! Please Reload.", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Clear();
+                cn.Close();
+                Close();
+                useracc.LoadUser();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } finally
+            }
+            finally
             {
                 cn.Close();
             }

@@ -43,14 +43,17 @@ namespace JCUBE_SE_PROJECT
                 }
 
 
-                string currentPass = dbcon.getPassword(lblUsername.Text);
-                if (currentPass != txtCurrentPass.Text) 
+                string currentEncryptedPass = dbcon.getPassword(lblUsername.Text);
+
+                string currentDecryptPassword = AESHelper.Decrypt(currentEncryptedPass);
+
+                if (currentDecryptPassword != txtCurrentPass.Text) 
                 {
                     MessageBox.Show("Wrong Password! Please try again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                if (!string.Equals(currentPass, txtCurrentPass.Text, StringComparison.Ordinal))
+                if (!string.Equals(currentDecryptPassword, txtCurrentPass.Text, StringComparison.Ordinal))
                 {
                     MessageBox.Show("Wrong Password! Please try again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -94,7 +97,9 @@ namespace JCUBE_SE_PROJECT
                 return;
             }
 
-            string currentPass = dbcon.getPassword(lblUsername.Text);
+            string currentEncryptedPass = dbcon.getPassword(lblUsername.Text);
+
+            string currentDecryptPassword = AESHelper.Decrypt(currentEncryptedPass);
             try
             {
                 cn.Open();
@@ -103,7 +108,7 @@ namespace JCUBE_SE_PROJECT
                     MessageBox.Show("New Password field cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                else if (txtNewPass.Text == currentPass)
+                else if (txtNewPass.Text == currentDecryptPassword)
                 {
                     MessageBox.Show("New password cannot be the same as the current password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -126,7 +131,8 @@ namespace JCUBE_SE_PROJECT
                 {
                     if (MessageBox.Show("Change Password?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        dbcon.ExecuteQuery("UPDATE tbUser set password = '" + txtNewPass.Text + "' WHERE username ='" + lblUsername.Text + "'");
+                        string NewEncryptPassword = AESHelper.Encrypt(txtNewPass.Text);
+                        dbcon.ExecuteQuery("UPDATE tbUser set encryptedPassword = '" + NewEncryptPassword+ "' WHERE username ='" + lblUsername.Text + "'");
                         string logAction = "UPDATE";
                         string logType = "ACCOUNTS";
                         string logDescription = "Reset a Password";

@@ -45,6 +45,49 @@ namespace JCUBE_SE_PROJECT
             return false;
         }
 
+        private bool IsUsernameValid(string username)
+        {
+            //check if the username contains any invalid characters
+            //will match any string that contains a whitespace, a comma, or any control characters
+            Regex regex = new Regex("^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+$");
+            return regex.IsMatch(username) || username.Length >= 8;
+        }
+
+        private bool IsFullnameValid(string fullname)
+        {
+            //check if the full name only contains letters
+            Regex regex = new Regex("^[a-zA-Z\\s]+$");
+            return regex.IsMatch(fullname);
+        }
+
+        private bool DoesUsernameExist(string username)
+        {
+            //check if the username already exists in the database
+            using (SqlConnection cn = new SqlConnection(dbcon.myConnection()))
+            {
+                cn.Open();
+                SqlCommand cu = new SqlCommand("SELECT COUNT(*) FROM tbUser WHERE username = @username", cn);
+                cu.Parameters.AddWithValue("@username", UsernameField.Text);
+                int count = (int)cu.ExecuteScalar();
+                cn.Close();
+                return count > 0;
+            }
+        }
+
+        private bool DoesFullnameExist(string fullname)
+        {
+            //check if the full name already exists in the database
+            using (SqlConnection cn = new SqlConnection(dbcon.myConnection()))
+            {
+                cn.Open();
+                SqlCommand cu = new SqlCommand("SELECT COUNT(*) FROM tbUser WHERE fullname = @fullname", cn);
+                cu.Parameters.AddWithValue("@fullname", FullnameField.Text);
+                int count = (int)cu.ExecuteScalar();
+                cn.Close();
+                return count > 0;
+            }
+        }
+
         public void Clear()
         {
             UsernameField.Clear();
@@ -69,111 +112,70 @@ namespace JCUBE_SE_PROJECT
                 {
                     MessageBox.Show("Fields can not be null", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Clear();
-                    cn.Close();
                 }
                 else /* FIELD VALIDATIONS CHECK */
                 {
                     /* USERNAME VALIDATION CHECK */
-                    cm = new SqlCommand("SELECT * FROM tbUser WHERE username = @username", cn);
-                    cm.Parameters.AddWithValue("@username", UsernameField.Text);
-                    dr = cm.ExecuteReader();
 
                     if (HasUnicode(UsernameField.Text))
                     {
                         MessageBox.Show("Username can not contain a unicode or emoji.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         UsernameField.Clear();
-                        dr.Close();
-                        cn.Close();
                     }
-                    else if (UsernameField.Text.Length < 8)
+
+                    else if (!IsUsernameValid(UsernameField.Text))
                     {
-                        MessageBox.Show("Username must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Username contains invalid characters and/or must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         UsernameField.Clear();
-                        dr.Close();
-                        cn.Close();
+                        return;
                     }
-                    else if (Regex.IsMatch(UsernameField.Text, @"^(?=.*[,~`!#$%^&*()+={}\[\]:;'\<>?/\\|])"))
-                    {
-                        MessageBox.Show("Username contains invalid characters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        UsernameField.Clear();
-                        dr.Close();
-                        cn.Close();
-                    }
-                    else if (dr.Read())
+                    if (DoesUsernameExist(UsernameField.Text))
                     {
                         MessageBox.Show("This Username already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         UsernameField.Clear();
-                        dr.Close();
-                        cn.Close();
+                        return;
                     }
                     else
                     {
-                        dr.Close();
                         /* USERNAME IS VALID - NEXT TO CHECK IS PASSWORD */
-                        string encryptedPassword = AESHelper.Encrypt(PasswordField.Text);
-
-                        cm = new SqlCommand("SELECT * FROM tbUser WHERE encryptedPassword = @encryptedPassword", cn);
-                        cm.Parameters.AddWithValue("@encryptedPassword", encryptedPassword);
-                        dr = cm.ExecuteReader();
-
                         if (PasswordField.Text != RTPasswordField.Text)
                         {
                             MessageBox.Show("Passwords does not match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             PasswordField.Clear();
                             RTPasswordField.Clear();
-                            dr.Close();
-                            cn.Close();
                         }
                         else if (PasswordField.Text.Length < 8)
                         {
                             MessageBox.Show("Password must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             PasswordField.Clear();
                             RTPasswordField.Clear();
-                            dr.Close();
-                            cn.Close();
                         }
                         else if (!Regex.IsMatch(PasswordField.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=-]).{8,}$"))
                         {
                             MessageBox.Show("Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             PasswordField.Clear();
                             RTPasswordField.Clear();
-                            dr.Close();
-                            cn.Close();
                         }
-                        else if (dr.Read())
-                        {
-                            MessageBox.Show("This Password already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            PasswordField.Clear();
-                            RTPasswordField.Clear();
-                            dr.Close();
-                            cn.Close();
-                        }
+                        
                         else
                         {
-                            dr.Close();
                             /* PASSWORD IS VALID - NEXT TO CHECK IS FULL NAME */
-                            cm = new SqlCommand("SELECT * FROM tbUser WHERE fullname = @fullname", cn);
-                            cm.Parameters.AddWithValue("@fullname", FullnameField.Text);
-                            dr = cm.ExecuteReader();
 
-                            if (!Regex.IsMatch(FullnameField.Text, "^[a-zA-Z\\s]+$"))
+                            if (!IsFullnameValid(FullnameField.Text))
                             {
-                                MessageBox.Show("Full name must only contain letters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Full name is invalid. It must only contain letters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 FullnameField.Clear();
-                                dr.Close();
-                                cn.Close();
+                                return;
                             }
-
-                            else if (dr.Read())
+                            else if (DoesFullnameExist(FullnameField.Text))
                             {
                                 MessageBox.Show("This Full name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 FullnameField.Clear();
-                                dr.Close();
-                                cn.Close();
+                                return;
                             }
                             else
                             {
-                                dr.Close();
+                                string encryptedPassword = AESHelper.Encrypt(PasswordField.Text);
                                 cm = new SqlCommand("INSERT INTO tbUser (username, encryptedPassword, fullname, role) VALUES (@username, @encryptedPassword, @fullname, @role)", cn);
                                 cm.Parameters.AddWithValue("username", UsernameField.Text);
                                 cm.Parameters.AddWithValue("@encryptedPassword", encryptedPassword);
@@ -185,7 +187,6 @@ namespace JCUBE_SE_PROJECT
                                 string logDescription = "Created a new Account";
                                 LogDao log = new LogDao(cn);
                                 log.AddLogs(logAction, logType, logDescription, logUsername);
-                                cn.Close();
                                 Clear();
                                 MessageBox.Show("New account has been successfully saved! Please Reload.", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 Close();
@@ -197,6 +198,10 @@ namespace JCUBE_SE_PROJECT
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Warning");
+            }
+            finally
+            { 
+                cn.Close(); 
             }
         }
 
