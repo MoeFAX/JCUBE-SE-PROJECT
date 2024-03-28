@@ -133,7 +133,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnSaleHistory_Click(object sender, EventArgs e)
         {
-            openChildForm(new SalesHistory());
+            openChildForm(new SalesHistory(this));
             hideSubmenu();
         }
 
@@ -151,7 +151,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnCancelledOrder_Click(object sender, EventArgs e)
         {
-            openChildForm(new CancelledOrdersUI());
+            openChildForm(new CancelledOrdersUI(this));
         }
 
         private void btnStockHistory_Click(object sender, EventArgs e)

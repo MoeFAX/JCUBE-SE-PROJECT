@@ -92,47 +92,92 @@ namespace JCUBE_SE_PROJECT
         {
             try
             {
+                if (string.IsNullOrEmpty(comboMode.Text) && string.IsNullOrEmpty(txtCustName.Text) && string.IsNullOrEmpty(txtTin.Text) && string.IsNullOrEmpty(txtCash.Text))
+                {
+                    MessageBox.Show("Please fill in all required fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (string.IsNullOrEmpty(txtCash.Text))
                 {
                     MessageBox.Show("Payment cannot be empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // Exit the method if percentageTB is empty
+                    return;
                 }
 
-                if ((double.Parse(txtChange.Text)<0) || (txtCash.Text.Equals("")))
+                if (string.IsNullOrEmpty(txtCustName.Text))
                 {
-                    MessageBox.Show("Insufficient amount, Please enter the correct amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Customer name cannot be empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
+                }
+
+                if (string.IsNullOrEmpty(txtTin.Text))
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want the Tin# to be empty?", "Empty Tin#", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        txtTin.Text = "____________";
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
                 else
                 {
-                    for(int i = 0; i < clerk.dgvCart.Rows.Count; i++) 
+                    string tinPattern = @"^\d{3}-\d{3}-\d{3}-\d{3}$";
+
+                    if (!System.Text.RegularExpressions.Regex.IsMatch(txtTin.Text, tinPattern))
                     {
-                        cn.Open();
-                        cm = new SqlCommand("UPDATE tbItemList SET Qty = Qty - " + int.Parse(clerk.dgvCart.Rows[i].Cells[4].Value.ToString()) + "WHERE inventoryCode= '" + clerk.dgvCart.Rows[i].Cells[1].Value.ToString() + "'", cn);
-                        cm.ExecuteNonQuery();
-                        cn.Close();
-
-                        cn.Open();
-                        cm = new SqlCommand("UPDATE tbCart SET status = 'Complete' WHERE id= '" + clerk.dgvCart.Rows[i].Cells[0].Value.ToString() + "'", cn);
-                        cm.ExecuteNonQuery();
-                        cn.Close();
+                        MessageBox.Show("Incorrect format. Please follow the indicated format: 000-000-000-000", "Format Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
-                    printReceipt prtReceipt = new printReceipt(clerk);
-                    prtReceipt.LoadReceipt(txtCash.Text, txtChange.Text, txtCustName.Text);
-                    prtReceipt.ShowDialog();
-
-                    MessageBox.Show("Payment Complete!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    clerk.StartNewTransaction();
-                    this.Dispose();
-
                 }
+
+                if (string.IsNullOrEmpty(comboMode.Text))
+                    {
+                        MessageBox.Show("Mode of payment cannot be empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    if ((double.Parse(txtChange.Text) < 0) || (txtCash.Text.Equals("")))
+                    {
+                        MessageBox.Show("Insufficient amount, Please enter the correct amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else
+                    {
+                        for (int i = 0; i < clerk.dgvCart.Rows.Count; i++)
+                        {
+                            cn.Open();
+                            cm = new SqlCommand("UPDATE tbItemList SET Qty = Qty - " + int.Parse(clerk.dgvCart.Rows[i].Cells[4].Value.ToString()) + "WHERE inventoryCode= '" + clerk.dgvCart.Rows[i].Cells[1].Value.ToString() + "'", cn);
+                            cm.ExecuteNonQuery();
+                            cn.Close();
+
+                            cn.Open();
+                            cm = new SqlCommand("UPDATE tbCart SET status = 'Complete', customer = @custName, TinNum = @TIN, mode = @modeOfPayment WHERE id= '" + clerk.dgvCart.Rows[i].Cells[0].Value.ToString() + "'", cn);
+                            cm.Parameters.AddWithValue("@custName", txtCustName.Text.ToString()); ;
+                            cm.Parameters.AddWithValue("@TIN", txtTin.Text.ToString());
+                            cm.Parameters.AddWithValue("@modeOfPayment", comboMode.SelectedItem.ToString());
+                            cm.ExecuteNonQuery();
+                            cn.Close();
+                        }
+                        printReceipt prtReceipt = new printReceipt(clerk);
+                        prtReceipt.LoadReceipt(txtCash.Text, txtChange.Text, txtCustName.Text, txtTin.Text, comboMode.SelectedItem.ToString());
+                        prtReceipt.ShowDialog();
+
+                        MessageBox.Show("Payment Complete!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        clerk.StartNewTransaction();
+                        Dispose();
+
+                    }
+
                 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                
+
             }
         }
         
@@ -162,6 +207,22 @@ namespace JCUBE_SE_PROJECT
         private void txtCash_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCustName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '-')
             {
                 e.Handled = true;
             }

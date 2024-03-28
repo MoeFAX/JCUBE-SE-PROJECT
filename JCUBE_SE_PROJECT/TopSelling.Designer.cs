@@ -36,23 +36,23 @@ namespace JCUBE_SE_PROJECT
             this.btnReturn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTopSell = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnPrintTop = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLoad = new System.Windows.Forms.Button();
-            this.mngRecord = new System.Windows.Forms.Label();
-            this.cbTopSell = new System.Windows.Forms.ComboBox();
-            this.dateToTopSell = new System.Windows.Forms.DateTimePicker();
-            this.dateFromTopSell = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.flterLbl = new System.Windows.Forms.Label();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InventoryCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cbTopSell = new System.Windows.Forms.ComboBox();
+            this.dateToTopSell = new System.Windows.Forms.DateTimePicker();
+            this.dateFromTopSell = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.flterLbl = new System.Windows.Forms.Label();
+            this.btnPrintTop = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.mngRecord = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopSell)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -123,6 +123,45 @@ namespace JCUBE_SE_PROJECT
             this.dgvTopSell.Size = new System.Drawing.Size(871, 374);
             this.dgvTopSell.TabIndex = 17;
             // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.No.HeaderText = "No";
+            this.No.MinimumWidth = 6;
+            this.No.Name = "No";
+            this.No.Width = 63;
+            // 
+            // InventoryCode
+            // 
+            this.InventoryCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.InventoryCode.HeaderText = "Inventory Code";
+            this.InventoryCode.MinimumWidth = 6;
+            this.InventoryCode.Name = "InventoryCode";
+            this.InventoryCode.Width = 184;
+            // 
+            // Description
+            // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Description.HeaderText = "Description";
+            this.Description.MinimumWidth = 6;
+            this.Description.Name = "Description";
+            // 
+            // Qty
+            // 
+            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Qty.HeaderText = "Quantity";
+            this.Qty.MinimumWidth = 6;
+            this.Qty.Name = "Qty";
+            this.Qty.Width = 119;
+            // 
+            // Total
+            // 
+            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Total.HeaderText = "Total Sales";
+            this.Total.MinimumWidth = 6;
+            this.Total.Name = "Total";
+            this.Total.Width = 129;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -134,19 +173,6 @@ namespace JCUBE_SE_PROJECT
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(871, 70);
             this.panel2.TabIndex = 14;
-            // 
-            // btnPrintTop
-            // 
-            this.btnPrintTop.FlatAppearance.BorderSize = 0;
-            this.btnPrintTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintTop.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintTop.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintTop.Image")));
-            this.btnPrintTop.Location = new System.Drawing.Point(664, 42);
-            this.btnPrintTop.MinimumSize = new System.Drawing.Size(20, 20);
-            this.btnPrintTop.Name = "btnPrintTop";
-            this.btnPrintTop.Size = new System.Drawing.Size(27, 28);
-            this.btnPrintTop.TabIndex = 12;
-            this.btnPrintTop.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -185,36 +211,6 @@ namespace JCUBE_SE_PROJECT
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(911, 100);
             this.panel1.TabIndex = 13;
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.BackColor = System.Drawing.Color.White;
-            this.btnLoad.FlatAppearance.BorderSize = 0;
-            this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoad.ForeColor = System.Drawing.Color.Black;
-            this.btnLoad.Image = ((System.Drawing.Image)(resources.GetObject("btnLoad.Image")));
-            this.btnLoad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoad.Location = new System.Drawing.Point(481, 39);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(153, 35);
-            this.btnLoad.TabIndex = 3;
-            this.btnLoad.Text = "Local Data";
-            this.btnLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLoad.UseVisualStyleBackColor = false;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
-            // mngRecord
-            // 
-            this.mngRecord.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mngRecord.Image = ((System.Drawing.Image)(resources.GetObject("mngRecord.Image")));
-            this.mngRecord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mngRecord.Location = new System.Drawing.Point(758, 19);
-            this.mngRecord.Name = "mngRecord";
-            this.mngRecord.Size = new System.Drawing.Size(141, 75);
-            this.mngRecord.TabIndex = 13;
-            this.mngRecord.Text = "Manage Record";
-            this.mngRecord.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cbTopSell
             // 
@@ -269,44 +265,49 @@ namespace JCUBE_SE_PROJECT
             this.flterLbl.TabIndex = 2;
             this.flterLbl.Text = "Filter By Date:";
             // 
-            // No
+            // btnPrintTop
             // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.No.HeaderText = "No";
-            this.No.MinimumWidth = 6;
-            this.No.Name = "No";
-            this.No.Width = 63;
+            this.btnPrintTop.FlatAppearance.BorderSize = 0;
+            this.btnPrintTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintTop.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintTop.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintTop.Image")));
+            this.btnPrintTop.Location = new System.Drawing.Point(664, 42);
+            this.btnPrintTop.MinimumSize = new System.Drawing.Size(20, 20);
+            this.btnPrintTop.Name = "btnPrintTop";
+            this.btnPrintTop.Size = new System.Drawing.Size(27, 28);
+            this.btnPrintTop.TabIndex = 12;
+            this.btnPrintTop.UseVisualStyleBackColor = true;
+            this.btnPrintTop.Click += new System.EventHandler(this.btnPrintTop_Click);
             // 
-            // InventoryCode
+            // btnLoad
             // 
-            this.InventoryCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.InventoryCode.HeaderText = "Inventory Code";
-            this.InventoryCode.MinimumWidth = 6;
-            this.InventoryCode.Name = "InventoryCode";
-            this.InventoryCode.Width = 184;
+            this.btnLoad.BackColor = System.Drawing.Color.White;
+            this.btnLoad.FlatAppearance.BorderSize = 0;
+            this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.ForeColor = System.Drawing.Color.Black;
+            this.btnLoad.Image = ((System.Drawing.Image)(resources.GetObject("btnLoad.Image")));
+            this.btnLoad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLoad.Location = new System.Drawing.Point(481, 39);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(153, 35);
+            this.btnLoad.TabIndex = 3;
+            this.btnLoad.Text = "Local Data";
+            this.btnLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLoad.UseVisualStyleBackColor = false;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // Description
+            // mngRecord
             // 
-            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Description.HeaderText = "Description";
-            this.Description.MinimumWidth = 6;
-            this.Description.Name = "Description";
-            // 
-            // Qty
-            // 
-            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Qty.HeaderText = "Quantity";
-            this.Qty.MinimumWidth = 6;
-            this.Qty.Name = "Qty";
-            this.Qty.Width = 119;
-            // 
-            // Total
-            // 
-            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Total.HeaderText = "Total Sales";
-            this.Total.MinimumWidth = 6;
-            this.Total.Name = "Total";
-            this.Total.Width = 129;
+            this.mngRecord.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mngRecord.Image = ((System.Drawing.Image)(resources.GetObject("mngRecord.Image")));
+            this.mngRecord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mngRecord.Location = new System.Drawing.Point(758, 19);
+            this.mngRecord.Name = "mngRecord";
+            this.mngRecord.Size = new System.Drawing.Size(141, 75);
+            this.mngRecord.TabIndex = 13;
+            this.mngRecord.Text = "Manage Record";
+            this.mngRecord.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // TopSelling
             // 
@@ -341,7 +342,6 @@ namespace JCUBE_SE_PROJECT
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Label mngRecord;
         private System.Windows.Forms.Button btnPrintTop;
-        private System.Windows.Forms.ComboBox cbTopSell;
         private System.Windows.Forms.DateTimePicker dateToTopSell;
         private System.Windows.Forms.DateTimePicker dateFromTopSell;
         private System.Windows.Forms.Label label3;
@@ -351,5 +351,6 @@ namespace JCUBE_SE_PROJECT
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.ComboBox cbTopSell;
     }
 }

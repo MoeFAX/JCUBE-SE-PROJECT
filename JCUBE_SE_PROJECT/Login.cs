@@ -86,8 +86,11 @@ namespace JCUBE_SE_PROJECT
                         Passwordtxtbox.Clear();
                         this.Hide();
                         PosUI main = new PosUI();
+                        CartUI cart = new CartUI(main);
+                        main.clerk = cart;
                         main.POSNamelbl.Text = _fullname;
                         main.lblUserRolePOS.Text = _username;
+                        cart.clerkLbl.Text = _username;
                         main.ShowDialog();
                         //Sales Clerk salesclerk = new Sales Clerk();
                         //Sales Clerk

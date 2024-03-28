@@ -23,6 +23,7 @@ namespace JCUBE_SE_PROJECT
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             this.invUIInstance = invUIInstance;
+            btnPrintSold.Enabled = false;
         }
 
         private void btnTopSelling_Click(object sender, EventArgs e)
@@ -42,7 +43,7 @@ namespace JCUBE_SE_PROJECT
                 DateTime endDate = dateToSold.Value.Date.AddDays(1).AddSeconds(-1);
 
                 cn.Open();
-                cm = new SqlCommand("SELECT i.ItemId, c.inventoryCode, i.Description, c.srp, SUM(c.qty) AS qty, SUM(c.Discount) AS disc, SUM(c.total) AS total FROM tbCart AS c INNER JOIN tbItemList AS i ON c.inventoryCode=i.InventoryCode WHERE status LIKE 'Complete' AND date BETWEEN @StartDate AND @EndDate GROUP BY i.ItemId, c.inventoryCode, i.Description, c.srp", cn);
+                cm = new SqlCommand("SELECT i.ItemId, c.inventoryCode, i.Description, c.srp, SUM(c.qty) AS qty, SUM(c.Discount) AS disc, SUM(c.total) AS total FROM tbCart AS c INNER JOIN tbItemList AS i ON c.inventoryCode = i.InventoryCode WHERE status LIKE 'Complete' AND date BETWEEN @StartDate AND @EndDate GROUP BY c.inventoryCode, i.ItemId, i.Description, c.srp", cn);
                 cm.Parameters.AddWithValue("@StartDate", startDate);
                 cm.Parameters.AddWithValue("@EndDate", endDate);
                 dr = cm.ExecuteReader();
@@ -64,6 +65,8 @@ namespace JCUBE_SE_PROJECT
                 cm.Parameters.AddWithValue("@EndDate", endDate);
                 SoldTotal.Text = double.Parse(cm.ExecuteScalar().ToString()).ToString("#,##0.00");
 
+
+                btnPrintSold.Enabled = dgvSoldItems.Rows.Count > 0;
                 cn.Close();
             }
             catch (Exception ex)
@@ -75,6 +78,13 @@ namespace JCUBE_SE_PROJECT
         private void btnLoadSold_Click(object sender, EventArgs e)
         {
             LoadSoldItems();
+        }
+
+        private void btnPrintSold_Click(object sender, EventArgs e)
+        {
+            PrintSoldItems prtSoldItems = new PrintSoldItems(invUIInstance);
+            prtSoldItems.LoadSoldItems(dateFromSold.Value, dateToSold.Value);
+            prtSoldItems.ShowDialog();
         }
     }
 }

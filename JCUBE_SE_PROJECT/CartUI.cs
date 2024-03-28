@@ -13,6 +13,7 @@ namespace JCUBE_SE_PROJECT
 {
     public partial class CartUI : Form
     {
+        private static CartUI instance;
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
@@ -29,10 +30,19 @@ namespace JCUBE_SE_PROJECT
             getDate();
             getTransNo();
             this.clerk = clerk;
-            clerkLbl = clerk.lblUserRolePOS;
+            clerk.lblUserRolePOS.Text = clerkLbl.Text;
         }
 
-        
+        public static CartUI GetInstance(PosUI clerk)
+        {
+            if (instance == null)
+            {
+                instance = new CartUI(clerk);
+            }
+            return instance;
+        }
+
+
 
         private void btnDiscount_Click(object sender, EventArgs e)
         {
@@ -185,6 +195,64 @@ namespace JCUBE_SE_PROJECT
             }
             
         }
+
+        public string GenOcNum(string transNo)
+        {
+            string startOcNum = "0012131";
+            string ocNum = ""; // Initialize OcNum
+
+            try
+            {
+                cn.Open();
+
+                // Check if any transactions exist for the provided transNo
+                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM tbCart WHERE transNo = @transNo", cn);
+                checkCmd.Parameters.AddWithValue("@transNo", transNo);
+                int transactionCount = (int)checkCmd.ExecuteScalar();
+
+                if (transactionCount > 0)
+                {
+                  
+                    SqlCommand ocNumCmd = new SqlCommand("SELECT TOP 1 ocNum FROM tbCart WHERE transNo = @transNo ORDER BY id DESC", cn);
+                    ocNumCmd.Parameters.AddWithValue("@transNo", transNo);
+                    ocNum = ocNumCmd.ExecuteScalar()?.ToString();
+                }
+                else
+                {
+                    // If no transactions exist for the provided transNo, check if this is the first transaction
+                    SqlCommand firstTransCmd = new SqlCommand("SELECT COUNT(*) FROM tbCart", cn);
+                    int totalTransactions = (int)firstTransCmd.ExecuteScalar();
+                    if (totalTransactions == 0)
+                    {
+                        // if it is the first transaction, set ocNum to startOcNum provided
+                        ocNum = startOcNum;
+                    }
+                    else
+                    {
+                        // else generate OcNum based on the last OcNum
+                        SqlCommand lastOcNumCmd = new SqlCommand("SELECT TOP 1 ocNum FROM tbCart ORDER BY id DESC", cn);
+                        string lastOcNum = lastOcNumCmd.ExecuteScalar()?.ToString();
+                        int lastOcNumInt = int.Parse(lastOcNum);
+                        lastOcNumInt++;
+                        ocNum = lastOcNumInt.ToString().PadLeft(startOcNum.Length, '0'); 
+                    }
+                }
+                lblOcNum.Text = ocNum;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generating OcNum: " + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+            return ocNum;
+        }
+
+
+
 
         //Get the Date Today
         public void getDate()

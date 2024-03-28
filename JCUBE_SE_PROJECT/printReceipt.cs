@@ -32,7 +32,7 @@ namespace JCUBE_SE_PROJECT
             this.reportViewer2.RefreshReport();
         }
 
-        public void LoadReceipt(string cash, string change, string custName)
+        public void LoadReceipt(string cash, string change, string custName, string TinNum, string mode)
         {
             ReportDataSource prtDataSource;
             try
@@ -44,7 +44,7 @@ namespace JCUBE_SE_PROJECT
                 SqlDataAdapter da = new SqlDataAdapter();
 
                 cn.Open();
-                da.SelectCommand = new SqlCommand("SELECT c.id, c.transNo, c.inventoryCode, c.srp, c.qty, c.Discount, c.total, c.date, c.status, i.Description FROM tbCart AS c INNER JOIN tbItemList AS i ON i.InventoryCode=c.inventoryCode WHERE c.transNo LIKE '"+cart.TransNoVal.Text+"'", cn);
+                da.SelectCommand = new SqlCommand("SELECT c.id, c.transNo, c.inventoryCode, c.srp, c.qty, c.Discount, c.total, c.date, c.status, c.TinNum, c.OcNum, c.mode, i.Description FROM tbCart AS c INNER JOIN tbItemList AS i ON i.InventoryCode=c.inventoryCode WHERE c.transNo LIKE '"+cart.TransNoVal.Text+"'", cn);
                 da.Fill(ds.Tables["DtReceipt"]);
                 cn.Close();
 
@@ -55,8 +55,11 @@ namespace JCUBE_SE_PROJECT
                 ReportParameter pCash = new ReportParameter("pCash", cash);
                 ReportParameter pChange = new ReportParameter("pChange", change);
                 ReportParameter pTransaction = new ReportParameter("pTransaction", "Invoice #: " + cart.TransNoVal.Text);
-                ReportParameter pClerk = new ReportParameter("pClerk", cart.clerkLbl.Text);
-                ReportParameter pCustName = new ReportParameter("pCustName", custName);
+                ReportParameter pClerk = new ReportParameter("pClerk", "Clerk: "+ cart.clerkLbl.Text);
+                ReportParameter pCustName = new ReportParameter("pCustName", "Customer: "+ custName);
+                ReportParameter pTinNum = new ReportParameter("pTinNum", "Tin #: "+ TinNum);
+                ReportParameter pOcNum = new ReportParameter("pOcNum", "OC#:" + cart.lblOcNum.Text);
+                ReportParameter pMode = new ReportParameter("pMode", "Mode of Payment: " + mode);
 
                 reportViewer2.LocalReport.SetParameters(pVatable);
 
@@ -76,11 +79,17 @@ namespace JCUBE_SE_PROJECT
 
                 reportViewer2.LocalReport.SetParameters(pCustName);
 
+                reportViewer2.LocalReport.SetParameters(pTinNum);
+
+                reportViewer2.LocalReport.SetParameters(pOcNum);
+
+                reportViewer2.LocalReport.SetParameters(pMode);
+
                 prtDataSource = new ReportDataSource("DataSet1", ds.Tables["DtReceipt"]);
                 reportViewer2.LocalReport.DataSources.Add(prtDataSource);
                 reportViewer2.SetDisplayMode(DisplayMode.PrintLayout);
-                reportViewer2.ZoomMode = ZoomMode.Percent;
-                reportViewer2.ZoomPercent = 75;
+                reportViewer2.ZoomMode = ZoomMode.PageWidth;
+               
             }
             catch (Exception ex)
             {

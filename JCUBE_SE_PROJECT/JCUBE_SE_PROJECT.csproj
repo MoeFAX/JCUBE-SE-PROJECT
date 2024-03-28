@@ -77,6 +77,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AESHelper.cs" />
     <Compile Include="Alert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +248,18 @@
     <Compile Include="PosUI.Designer.cs">
       <DependentUpon>PosUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintCancelledOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintCancelledOrders.Designer.cs">
+      <DependentUpon>PrintCancelledOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintDailyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintDailyReport.Designer.cs">
+      <DependentUpon>PrintDailyReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrintInvList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +271,24 @@
     </Compile>
     <Compile Include="printReceipt.Designer.cs">
       <DependentUpon>printReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintSalesHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintSalesHistory.Designer.cs">
+      <DependentUpon>PrintSalesHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintSoldItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintSoldItems.Designer.cs">
+      <DependentUpon>PrintSoldItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintTopSelling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintTopSelling.Designer.cs">
+      <DependentUpon>PrintTopSelling.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -437,11 +468,26 @@
     <EmbeddedResource Include="PosUI.resx">
       <DependentUpon>PosUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintCancelledOrders.resx">
+      <DependentUpon>PrintCancelledOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintDailyReport.resx">
+      <DependentUpon>PrintDailyReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrintInvList.resx">
       <DependentUpon>PrintInvList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="printReceipt.resx">
       <DependentUpon>printReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintSalesHistory.resx">
+      <DependentUpon>PrintSalesHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintSoldItems.resx">
+      <DependentUpon>PrintSoldItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintTopSelling.resx">
+      <DependentUpon>PrintTopSelling.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -456,8 +502,13 @@
     <EmbeddedResource Include="Qty.resx">
       <DependentUpon>Qty.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportCancelledOrders.rdlc" />
+    <EmbeddedResource Include="ReportDailySales.rdlc" />
     <EmbeddedResource Include="ReportInvList.rdlc" />
     <EmbeddedResource Include="Receipt.rdlc" />
+    <EmbeddedResource Include="ReportSalesHistory.rdlc" />
+    <EmbeddedResource Include="ReportSoldItems.rdlc" />
+    <EmbeddedResource Include="ReportTopSelling.rdlc" />
     <EmbeddedResource Include="ResetPassword.resx">
       <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -550,6 +601,8 @@
     <Content Include="Properties\icons8-cancel-20.png" />
     <Content Include="Properties\icons8-close-20.png" />
     <Content Include="Properties\icons8-minus-20.png" />
+    <None Include="Resources\icons8-restore-30.png" />
+    <None Include="Resources\icons8-restore-20.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
