@@ -69,49 +69,23 @@ namespace JCUBE_SE_PROJECT
             this.Dispose();
         }
 
-
-        
-
-        public string GenerateInvCode()
-        {
-            int recordCount = 0;
-            try
-            {
-                cn.Open();
-                SqlCommand countCmd = new SqlCommand("SELECT COUNT(*) FROM tbItemList", cn);
-                recordCount = (int)countCmd.ExecuteScalar();
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error counting records: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            recordCount += 1;
-            string invCode = "INVC-" + recordCount.ToString("D6"); // D6 formats the number as six digits
-            return invCode;
-            
-        }
-
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                string invCodeNumber = GenerateInvCode();
-
                 cn.Open();
 
 
-                if (string.IsNullOrWhiteSpace(ItemCodeField.Text) ||
+                if (string.IsNullOrWhiteSpace(InvCodeField.Text) ||
+                    string.IsNullOrWhiteSpace(ItemCodeField.Text) ||
                     string.IsNullOrWhiteSpace(DescriptionField.Text) ||
                     string.IsNullOrWhiteSpace(AcquiredCostField.Text) ||
-                    string.IsNullOrWhiteSpace(PriceField.Text) ||
-                    reorderField.Value == 0 || string.IsNullOrEmpty(reorderField.Text))
+                    string.IsNullOrWhiteSpace(PriceField.Text))
                 {
                     MessageBox.Show("All fields are required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                /*string invCode = InvCodeField.Text.ToUpper();
+                string invCode = InvCodeField.Text.ToUpper();
                 string pattern = @"^INVC-[A-Z]{6}-\d{4}$";
                 bool isValidInvCode = Regex.IsMatch(invCode, pattern);
 
@@ -119,10 +93,15 @@ namespace JCUBE_SE_PROJECT
                 {
                     MessageBox.Show("Invalid Inventory Code format. Please follow the format: INVC-XXXXXX-XXXX", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                }*/
+                }
 
 
-                
+                if (!double.TryParse(AcquiredCostField.Text, out double acquiredCost) ||
+                    !double.TryParse(PriceField.Text, out double price))
+                {
+                    MessageBox.Show("Acquired Cost and SRP should be numbers.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
                 string reorderString = reorderField.Value.ToString();
                 foreach (char c in reorderString)
@@ -147,61 +126,34 @@ namespace JCUBE_SE_PROJECT
                     return;
                 }
 
-
-                if (!double.TryParse(AcquiredCostField.Text, out double acquiredCost) || acquiredCost <= 0)
-                {
-                    MessageBox.Show("Acquired Cost should be a positive number greater than zero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
                 
-                if (!double.TryParse(PriceField.Text, out double price) || price <= 0)
-                {
-                    MessageBox.Show("Price should be a positive number greater than zero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
 
                 if (itemID != 0) // Check if itemID is set (indicating an existing record)
                 {
+                    string InvCode = InvCodeField.Text.Trim(); 
+                    SqlCommand checkinv = new SqlCommand("SELECT COUNT(*) FROM tbItemList WHERE InventoryCode = @InventoryCode", cn);
+                    checkinv.Parameters.AddWithValue("@InventoryCode", InvCode);
+                    int invcodeCount = (int)checkinv.ExecuteScalar();
 
-                    string itemCode = ItemCodeField.Text.Trim();
-                    SqlCommand checkItem = new SqlCommand("SELECT COUNT(*) FROM tbItemList WHERE ItemCode = @ItemCode AND ItemID != @ItemID", cn);
-                    checkItem.Parameters.AddWithValue("@ItemCode", itemCode);
-                    checkItem.Parameters.AddWithValue("@ItemID", itemID);
-                    int itemcodeCount = (int)checkItem.ExecuteScalar();
-
-                    if (itemcodeCount > 0)
-                    {
-                        MessageBox.Show("Item Code already exists. Please enter a unique item code.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    string desc = DescriptionField.Text.Trim();
-                    SqlCommand checkDesc = new SqlCommand("SELECT COUNT(*) FROM tbItemList WHERE Description = @Description AND ItemID != @ItemID", cn);
-                    checkDesc.Parameters.AddWithValue("@Description", desc);
-                    checkDesc.Parameters.AddWithValue("@ItemID", itemID);
-                    int descCount = (int)checkDesc.ExecuteScalar();
-
-                    if (descCount > 0)
-                    {
-                        MessageBox.Show("Description already exists. Please enter a unique description.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
+                    
 
                     // Update operation
-                    cm = new SqlCommand("UPDATE tbItemList SET ItemCode = @ItemCode, Description = @Description, AcquiredCost = @AcquiredCost, bid = @bid, cid = @cid, Price = @Price, Reorder = @Reorder WHERE ItemID = @ItemID", cn);
+                    cm = new SqlCommand("UPDATE tbItemList SET InventoryCode = @InventoryCode, ItemCode = @ItemCode, Description = @Description, AcquiredCost = @AcquiredCost, bid = @bid, cid = @cid, Price = @Price, Reorder = @Reorder WHERE ItemID = @ItemID", cn);
                     cm.Parameters.AddWithValue("@ItemID", itemID);
                     
                 }
                 else
                 {
-                    
+                    string InvCode2 = InvCodeField.Text.Trim();
+                    SqlCommand checkinv = new SqlCommand("SELECT COUNT(*) FROM tbItemList WHERE InventoryCode = @InventoryCode", cn);
+                    checkinv.Parameters.AddWithValue("@InventoryCode", InvCode2);
+                    int invcodeCount = (int)checkinv.ExecuteScalar();
 
-                    // Insert operation
-                    cm = new SqlCommand("INSERT INTO tbItemList(InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Reorder) VALUES(@InventoryCode, @ItemCode, @Description, @AcquiredCost, @bid, @cid, @Price, @Reorder)", cn);
-                    cm.Parameters.AddWithValue("@InventoryCode", invCodeNumber);
+                    if (invcodeCount > 0)
+                    {
+                        MessageBox.Show("Inventory Code already exists. Please enter a unique inventory code.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     string itemCode = ItemCodeField.Text.Trim();
                     SqlCommand checkitem = new SqlCommand("SELECT COUNT(*) FROM tbItemList WHERE ItemCode = @ItemCode", cn);
                     checkitem.Parameters.AddWithValue("@ItemCode", itemCode);
@@ -212,7 +164,7 @@ namespace JCUBE_SE_PROJECT
                         MessageBox.Show("Item Code already exists. Please enter a unique item code.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    string desc = DescriptionField.Text.Trim();
+                    string desc = ItemCodeField.Text.Trim();
                     SqlCommand checkdesc = new SqlCommand("SELECT COUNT(*) FROM tbItemList WHERE Description = @Description", cn);
                     checkdesc.Parameters.AddWithValue("@Description", desc);
                     int descCount = (int)checkdesc.ExecuteScalar();
@@ -222,10 +174,13 @@ namespace JCUBE_SE_PROJECT
                         MessageBox.Show("Description already exists. Please enter a unique desciption.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                } 
+                    // Insert operation
+                    cm = new SqlCommand("INSERT INTO tbItemList(InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Reorder) VALUES(@InventoryCode, @ItemCode, @Description, @AcquiredCost, @bid, @cid, @Price, @Reorder)", cn);
+                    
+                }
 
                 // Common parameters for both update and insert operations
-                
+                cm.Parameters.AddWithValue("@InventoryCode", InvCodeField.Text);
                 cm.Parameters.AddWithValue("@ItemCode", ItemCodeField.Text);
                 cm.Parameters.AddWithValue("@Description", DescriptionField.Text);
                 cm.Parameters.AddWithValue("@AcquiredCost", acquiredCost);

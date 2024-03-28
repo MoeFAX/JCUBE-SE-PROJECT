@@ -139,11 +139,6 @@
             // 
             this.stocksField.BackColor = System.Drawing.SystemColors.Window;
             this.stocksField.Location = new System.Drawing.Point(387, 204);
-            this.stocksField.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
             this.stocksField.Name = "stocksField";
             this.stocksField.Size = new System.Drawing.Size(107, 23);
             this.stocksField.TabIndex = 38;

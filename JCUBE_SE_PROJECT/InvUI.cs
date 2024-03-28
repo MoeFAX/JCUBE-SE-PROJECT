@@ -156,7 +156,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnStockHistory_Click(object sender, EventArgs e)
         {
-            openChildForm(new StockInHistoryUI(this));
+            openChildForm(new StockInHistoryUI());
            
         }
 

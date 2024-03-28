@@ -130,7 +130,7 @@
             this.dgvSupplier.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -149,7 +149,7 @@
             this.Archive});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -178,7 +178,7 @@
             this.SupplierID.MinimumWidth = 6;
             this.SupplierID.Name = "SupplierID";
             this.SupplierID.Visible = false;
-            this.SupplierID.Width = 31;
+            this.SupplierID.Width = 125;
             // 
             // SupplierName
             // 
@@ -187,7 +187,7 @@
             this.SupplierName.HeaderText = "Supplier";
             this.SupplierName.MinimumWidth = 6;
             this.SupplierName.Name = "SupplierName";
-            this.SupplierName.Width = 104;
+            this.SupplierName.Width = 85;
             // 
             // Address
             // 
@@ -204,7 +204,7 @@
             this.ContactPerson.HeaderText = "Contact Person";
             this.ContactPerson.MinimumWidth = 6;
             this.ContactPerson.Name = "ContactPerson";
-            this.ContactPerson.Width = 176;
+            this.ContactPerson.Width = 136;
             // 
             // PhoneNo
             // 
@@ -213,7 +213,7 @@
             this.PhoneNo.HeaderText = "Phone";
             this.PhoneNo.MinimumWidth = 6;
             this.PhoneNo.Name = "PhoneNo";
-            this.PhoneNo.Width = 94;
+            this.PhoneNo.Width = 76;
             // 
             // EmailAddress
             // 
@@ -222,7 +222,7 @@
             this.EmailAddress.HeaderText = "Email";
             this.EmailAddress.MinimumWidth = 6;
             this.EmailAddress.Name = "EmailAddress";
-            this.EmailAddress.Width = 82;
+            this.EmailAddress.Width = 70;
             // 
             // Edit
             // 

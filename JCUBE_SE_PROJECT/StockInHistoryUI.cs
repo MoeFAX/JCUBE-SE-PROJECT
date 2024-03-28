@@ -1,5 +1,4 @@
-﻿using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,13 +17,11 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
-        InvUI adminuser;
-        public StockInHistoryUI(InvUI aduser)
+        public StockInHistoryUI()
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
-            adminuser = aduser;
-            LoadStockHistory();
+            
         }
 
         public void LoadStockHistory()
@@ -51,13 +48,6 @@ namespace JCUBE_SE_PROJECT
         private void pbRefresh_Click(object sender, EventArgs e)
         {
             LoadStockHistory();
-        }
-
-        private void PrintStockHistory_Click(object sender, EventArgs e)
-        {
-            PrintStockInHistory prtStock = new PrintStockInHistory(adminuser);
-            prtStock.LoadPrtStockHistory(dtpStartDate.Value, dtpEndDate.Value);
-            prtStock.ShowDialog();
         }
     }
 }

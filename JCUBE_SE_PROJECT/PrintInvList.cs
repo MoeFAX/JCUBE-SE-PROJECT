@@ -45,7 +45,7 @@ namespace JCUBE_SE_PROJECT
                 SqlDataAdapter da = new SqlDataAdapter();
                 
                 cn.Open();
-                da.SelectCommand = new SqlCommand("SELECT p.InventoryCode, p.ItemCode, p.Description, b.BrandName, c.CategoryName, p.Price, p.Qty, p.Reorder FROM tbItemList AS p INNER JOIN tbBrand AS b ON b.BrandID = p.bid INNER JOIN tbCategory AS c ON c.CategoryID = p.cid", cn);
+                da.SelectCommand = new SqlCommand("SELECT p.ItemID, p.InventoryCode, p.ItemCode, p.Description, b.BrandName, c.CategoryName, p.Price, p.Qty, p.Reorder FROM tbItemList AS p INNER JOIN tbBrand AS b ON b.BrandID = p.bid INNER JOIN tbCategory AS c ON c.CategoryID = p.cid", cn);
                 da.Fill(dsInv.Tables["DataInvList"]);
                 cn.Close();
                 ReportParameter iAdmin = new ReportParameter("iAdmin", adminuser.lblUserRole.Text);

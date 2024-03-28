@@ -141,7 +141,6 @@
             // 
             // EditAccountIDField
             // 
-            this.EditAccountIDField.Enabled = false;
             this.EditAccountIDField.Location = new System.Drawing.Point(174, 83);
             this.EditAccountIDField.Name = "EditAccountIDField";
             this.EditAccountIDField.ReadOnly = true;

@@ -37,16 +37,16 @@
             this.LoginLabel = new System.Windows.Forms.Label();
             this.Passwordtxtbox = new MetroFramework.Controls.MetroTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.NPEyeBtn = new System.Windows.Forms.PictureBox();
             this.CancelBtn = new System.Windows.Forms.Button();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.NPEyeBtn = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Closebtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -191,17 +191,6 @@
             this.panel2.Size = new System.Drawing.Size(337, 311);
             this.panel2.TabIndex = 6;
             // 
-            // NPEyeBtn
-            // 
-            this.NPEyeBtn.BackColor = System.Drawing.Color.White;
-            this.NPEyeBtn.Image = ((System.Drawing.Image)(resources.GetObject("NPEyeBtn.Image")));
-            this.NPEyeBtn.Location = new System.Drawing.Point(242, 223);
-            this.NPEyeBtn.Name = "NPEyeBtn";
-            this.NPEyeBtn.Size = new System.Drawing.Size(20, 20);
-            this.NPEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.NPEyeBtn.TabIndex = 56;
-            this.NPEyeBtn.TabStop = false;
-            // 
             // CancelBtn
             // 
             this.CancelBtn.BackColor = System.Drawing.Color.White;
@@ -221,7 +210,6 @@
             // LoginBtn
             // 
             this.LoginBtn.BackColor = System.Drawing.Color.White;
-            this.LoginBtn.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.LoginBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.LoginBtn.FlatAppearance.BorderSize = 0;
             this.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -246,6 +234,17 @@
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             // 
+            // NPEyeBtn
+            // 
+            this.NPEyeBtn.BackColor = System.Drawing.Color.White;
+            this.NPEyeBtn.Image = ((System.Drawing.Image)(resources.GetObject("NPEyeBtn.Image")));
+            this.NPEyeBtn.Location = new System.Drawing.Point(242, 223);
+            this.NPEyeBtn.Name = "NPEyeBtn";
+            this.NPEyeBtn.Size = new System.Drawing.Size(20, 20);
+            this.NPEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.NPEyeBtn.TabIndex = 56;
+            this.NPEyeBtn.TabStop = false;
+            // 
             // Login
             // 
             this.AcceptButton = this.LoginBtn;
@@ -268,8 +267,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).EndInit();
             this.ResumeLayout(false);
 
         }

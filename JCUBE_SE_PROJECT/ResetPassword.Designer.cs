@@ -45,13 +45,11 @@
             this.RPWDAccIDlbl = new System.Windows.Forms.Label();
             this.NPEyeBtn = new System.Windows.Forms.PictureBox();
             this.RTEyeBtn = new System.Windows.Forms.PictureBox();
-            this.CPEyeBtn = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RPPersonIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RTEyeBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CPEyeBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -117,6 +115,7 @@
             this.RPCurrPasswordField.Location = new System.Drawing.Point(188, 124);
             this.RPCurrPasswordField.Name = "RPCurrPasswordField";
             this.RPCurrPasswordField.PasswordChar = '●';
+            this.RPCurrPasswordField.ReadOnly = true;
             this.RPCurrPasswordField.Size = new System.Drawing.Size(459, 30);
             this.RPCurrPasswordField.TabIndex = 34;
             // 
@@ -220,17 +219,6 @@
             this.RTEyeBtn.TabIndex = 58;
             this.RTEyeBtn.TabStop = false;
             // 
-            // CPEyeBtn
-            // 
-            this.CPEyeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.CPEyeBtn.Image = ((System.Drawing.Image)(resources.GetObject("CPEyeBtn.Image")));
-            this.CPEyeBtn.Location = new System.Drawing.Point(623, 129);
-            this.CPEyeBtn.Name = "CPEyeBtn";
-            this.CPEyeBtn.Size = new System.Drawing.Size(20, 20);
-            this.CPEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.CPEyeBtn.TabIndex = 59;
-            this.CPEyeBtn.TabStop = false;
-            // 
             // ResetPassword
             // 
             this.AcceptButton = this.SaveBtn;
@@ -239,7 +227,6 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.CancelBtn;
             this.ClientSize = new System.Drawing.Size(727, 329);
-            this.Controls.Add(this.CPEyeBtn);
             this.Controls.Add(this.RTEyeBtn);
             this.Controls.Add(this.NPEyeBtn);
             this.Controls.Add(this.RPWDAccIDlbl);
@@ -266,7 +253,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.RPPersonIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RTEyeBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CPEyeBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,6 +276,5 @@
         public System.Windows.Forms.Label RPUNlbl;
         private System.Windows.Forms.PictureBox NPEyeBtn;
         private System.Windows.Forms.PictureBox RTEyeBtn;
-        private System.Windows.Forms.PictureBox CPEyeBtn;
     }
 }

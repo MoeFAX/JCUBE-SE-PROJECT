@@ -161,10 +161,8 @@
             // 
             // InvCodeField
             // 
-            this.InvCodeField.Enabled = false;
             this.InvCodeField.Location = new System.Drawing.Point(194, 85);
             this.InvCodeField.Name = "InvCodeField";
-            this.InvCodeField.ReadOnly = true;
             this.InvCodeField.Size = new System.Drawing.Size(166, 30);
             this.InvCodeField.TabIndex = 20;
             // 
@@ -224,7 +222,7 @@
             // 
             this.reorderField.Location = new System.Drawing.Point(655, 234);
             this.reorderField.Maximum = new decimal(new int[] {
-            10000,
+            500,
             0,
             0,
             0});
