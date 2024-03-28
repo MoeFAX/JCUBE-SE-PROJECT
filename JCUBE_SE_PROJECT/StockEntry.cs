@@ -56,7 +56,6 @@ namespace JCUBE_SE_PROJECT
             ItemNameField.SelectedIndex = 0;
             SuppNameField.SelectedIndex = 0;
             stocksField.Value = 1;
-            StockinbyField.Clear();
             StatusField.SelectedIndex = 0;
             StockInDate.Value = DateTime.Now;
         }
@@ -98,6 +97,19 @@ namespace JCUBE_SE_PROJECT
         {
             try
             {
+
+                if (stocksField.Value == 0 || string.IsNullOrEmpty(stocksField.Text))
+                {
+                    MessageBox.Show("Stocks can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (Convert.ToInt32(stocksField.Value) <= 0)
+                {
+                    MessageBox.Show("Stocks should must be a positive integer and it should not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 // Generate the reference number based on StockInDate
                 string referenceNumber = GenerateReferenceNumber(StockInDate.Value);
 

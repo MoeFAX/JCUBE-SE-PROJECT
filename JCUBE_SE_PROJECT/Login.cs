@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,8 +19,9 @@ namespace JCUBE_SE_PROJECT
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
 
-        public string _pass = "";
-        public bool _isactive;
+        string _username = "", _fullname = "", _role = "", _pass = "", _decryptedPassword = "", _encryptedPassword;
+        bool _isactive;
+        bool found;
 
         public Login()
         {
@@ -39,7 +41,7 @@ namespace JCUBE_SE_PROJECT
 
         public void LoginBtn_Click(object sender, EventArgs e)
         {
-            string _username = "", _fullname = "", _role = "";
+            // string _username = "", _fullname = "", _role = "";
             if (!string.IsNullOrEmpty(_username))
             {
                 StocksUI stocksForm = new StocksUI(_username);
@@ -47,28 +49,36 @@ namespace JCUBE_SE_PROJECT
             }
             try
             {
-                bool found;
+                
                 cn.Open();
-                cm = new SqlCommand("Select * From tbUser Where username = @username and password = @password", cn);
+                cm = new SqlCommand("Select * From tbUser WHERE username = @username", cn);
                 cm.Parameters.AddWithValue("@username", UserIDtxtbox.Text);
-                cm.Parameters.AddWithValue("@password", Passwordtxtbox.Text);
                 dr = cm.ExecuteReader();
                 dr.Read();
-                if (dr.HasRows)
+
+                _encryptedPassword = dr["encryptedPassword"].ToString();
+
+                _decryptedPassword = AESHelper.Decrypt(_encryptedPassword);
+
+                if (_decryptedPassword == Passwordtxtbox.Text)
                 {
-                    found = true;
-                    _username = dr["username"].ToString();
-                    _fullname = dr["fullname"].ToString();
-                    _role = dr["role"].ToString();
-                    _pass = dr["password"].ToString();
-                    _isactive = bool.Parse(dr["isactive"].ToString());
+                    if (dr.HasRows)
+                    {
+                        found = true;
+                        _username = dr["username"].ToString();
+                        _fullname = dr["fullname"].ToString();
+                        _role = dr["role"].ToString();
+                        _isactive = bool.Parse(dr["isactive"].ToString());
+                        dr.Close();
+                        cn.Close();
+                    }
                 }
                 else
                 {
                     found = false;
+                    dr.Close();
+                    cn.Close();
                 }
-                dr.Close();
-                cn.Close();
 
                 if(found)
                 {
@@ -77,6 +87,8 @@ namespace JCUBE_SE_PROJECT
                         MessageBox.Show("Account is inactive. Unable to login", "Inactive Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         UserIDtxtbox.Clear();
                         Passwordtxtbox.Clear();
+                        dr.Close();
+                        cn.Close();
                         return;
                     }
                     if(_role == "Sales Clerk")
@@ -84,6 +96,8 @@ namespace JCUBE_SE_PROJECT
                         MessageBox.Show("Welcome " + _fullname + "!", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         UserIDtxtbox.Clear();
                         Passwordtxtbox.Clear();
+                        dr.Close();
+                        cn.Close();
                         this.Hide();
                         PosUI main = new PosUI();
                         CartUI cart = new CartUI(main);
@@ -101,12 +115,13 @@ namespace JCUBE_SE_PROJECT
                         MessageBox.Show("Welcome " + _fullname + "!", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         UserIDtxtbox.Clear();
                         Passwordtxtbox.Clear();
+                        dr.Close();
+                        cn.Close();
                         this.Hide();
                         InvUI main = new InvUI(_username);
                         main.INVNamelbl.Text = _fullname;
                         main.lblUserRole.Text = _username;
                         main.UserRole = _username;
-
                         main.ShowDialog();
                         //Sales Clerk salesclerk = new Sales Clerk();
                         //Sales Clerk
@@ -115,14 +130,21 @@ namespace JCUBE_SE_PROJECT
                 }
                 else
                 {
-                    MessageBox.Show("Invalid username and password!", "ACCESS DENIED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Invalid credentials!", "ACCESS DENIED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UserIDtxtbox.Clear();
+                    Passwordtxtbox.Clear();
+                    dr.Close();
+                    cn.Close();
                 }
 
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Invalid credentials!", "ACCESS DENIED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                UserIDtxtbox.Clear();
+                Passwordtxtbox.Clear();
+                dr.Close();
                 cn.Close();
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -41,14 +41,16 @@
             this.CPRTPasswordlbl = new System.Windows.Forms.Label();
             this.CPNewPasswordField = new System.Windows.Forms.TextBox();
             this.CPCurrPasswordField = new System.Windows.Forms.TextBox();
-            this.CPCurrPasswordlbl = new System.Windows.Forms.Label();
             this.NPEyeBtn = new System.Windows.Forms.PictureBox();
             this.RTEyeBtn = new System.Windows.Forms.PictureBox();
+            this.CPCurrPasswordlbl = new System.Windows.Forms.Label();
+            this.CPEyeBtn = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CPPersonIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RTEyeBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CPEyeBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -173,19 +175,8 @@
             this.CPCurrPasswordField.Location = new System.Drawing.Point(188, 124);
             this.CPCurrPasswordField.Name = "CPCurrPasswordField";
             this.CPCurrPasswordField.PasswordChar = '●';
-            this.CPCurrPasswordField.ReadOnly = true;
             this.CPCurrPasswordField.Size = new System.Drawing.Size(459, 30);
             this.CPCurrPasswordField.TabIndex = 45;
-            // 
-            // CPCurrPasswordlbl
-            // 
-            this.CPCurrPasswordlbl.AutoSize = true;
-            this.CPCurrPasswordlbl.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPCurrPasswordlbl.Location = new System.Drawing.Point(25, 130);
-            this.CPCurrPasswordlbl.Name = "CPCurrPasswordlbl";
-            this.CPCurrPasswordlbl.Size = new System.Drawing.Size(160, 21);
-            this.CPCurrPasswordlbl.TabIndex = 46;
-            this.CPCurrPasswordlbl.Text = "Current Password:";
             // 
             // NPEyeBtn
             // 
@@ -209,6 +200,27 @@
             this.RTEyeBtn.TabIndex = 56;
             this.RTEyeBtn.TabStop = false;
             // 
+            // CPCurrPasswordlbl
+            // 
+            this.CPCurrPasswordlbl.AutoSize = true;
+            this.CPCurrPasswordlbl.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPCurrPasswordlbl.Location = new System.Drawing.Point(26, 131);
+            this.CPCurrPasswordlbl.Name = "CPCurrPasswordlbl";
+            this.CPCurrPasswordlbl.Size = new System.Drawing.Size(160, 21);
+            this.CPCurrPasswordlbl.TabIndex = 58;
+            this.CPCurrPasswordlbl.Text = "Current Password:";
+            // 
+            // CPEyeBtn
+            // 
+            this.CPEyeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.CPEyeBtn.Image = ((System.Drawing.Image)(resources.GetObject("CPEyeBtn.Image")));
+            this.CPEyeBtn.Location = new System.Drawing.Point(623, 129);
+            this.CPEyeBtn.Name = "CPEyeBtn";
+            this.CPEyeBtn.Size = new System.Drawing.Size(20, 20);
+            this.CPEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.CPEyeBtn.TabIndex = 59;
+            this.CPEyeBtn.TabStop = false;
+            // 
             // UAChangePassword
             // 
             this.AcceptButton = this.SaveBtn;
@@ -216,6 +228,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelBtn;
             this.ClientSize = new System.Drawing.Size(727, 329);
+            this.Controls.Add(this.CPEyeBtn);
+            this.Controls.Add(this.CPCurrPasswordlbl);
             this.Controls.Add(this.RTEyeBtn);
             this.Controls.Add(this.NPEyeBtn);
             this.Controls.Add(this.CPNewPasswordlbl);
@@ -227,7 +241,6 @@
             this.Controls.Add(this.CPRTPasswordlbl);
             this.Controls.Add(this.CPNewPasswordField);
             this.Controls.Add(this.CPCurrPasswordField);
-            this.Controls.Add(this.CPCurrPasswordlbl);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -241,6 +254,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CPPersonIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RTEyeBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CPEyeBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,10 +272,11 @@
         private System.Windows.Forms.TextBox CPRTPasswordField;
         private System.Windows.Forms.Label CPRTPasswordlbl;
         private System.Windows.Forms.TextBox CPNewPasswordField;
-        private System.Windows.Forms.Label CPCurrPasswordlbl;
         public System.Windows.Forms.Label CPUNlbl;
         public System.Windows.Forms.TextBox CPCurrPasswordField;
         private System.Windows.Forms.PictureBox NPEyeBtn;
         private System.Windows.Forms.PictureBox RTEyeBtn;
+        private System.Windows.Forms.Label CPCurrPasswordlbl;
+        private System.Windows.Forms.PictureBox CPEyeBtn;
     }
 }

@@ -137,6 +137,7 @@
             // 
             // RoleComboBox
             // 
+            this.RoleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RoleComboBox.FormattingEnabled = true;
             this.RoleComboBox.Items.AddRange(new object[] {
             "Administrator",
