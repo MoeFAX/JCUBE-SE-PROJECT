@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,16 +19,18 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
-        public Supplier()
+        private string logUsername;
+        public Supplier(string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            logUsername = username;
             LoadSupplier();
         }
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            SupplierModule moduleForm = new SupplierModule(this);
+            SupplierModule moduleForm = new SupplierModule(this, logUsername);
             moduleForm.ShowDialog();
         }
 
@@ -82,6 +85,11 @@ namespace JCUBE_SE_PROJECT
                             cm = new SqlCommand("DELETE FROM tbSupplier WHERE SupplierID = @SupplierID", cn);
                             cm.Parameters.AddWithValue("@SupplierID", supplierID);
                             cm.ExecuteNonQuery();
+                            string logAction = "DELETE";
+                            string logType = "SUPPLIER";
+                            string logDescription = "Deleted a Brand";
+                            LogDao log = new LogDao(cn);
+                            log.AddLogs(logAction, logType, logDescription, logUsername);
                             cn.Close();
                             MessageBox.Show("Supplier has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -96,7 +104,7 @@ namespace JCUBE_SE_PROJECT
                     
                     //supplierModule.lblid.Text = dgvSupplier[1, e.RowIndex].Value.ToString();
                     int supplierID = Convert.ToInt32(dgvSupplier.Rows[e.RowIndex].Cells["SupplierID"].Value);
-                    SupplierModule supplierModule = new SupplierModule(this);
+                    SupplierModule supplierModule = new SupplierModule(this, logUsername);
                     supplierModule.SupplierID = supplierID; // Set SupplierID property
                     supplierModule.SupplierNameField.Text = dgvSupplier[1, e.RowIndex].Value.ToString();
                     supplierModule.AddressField.Text = dgvSupplier[2, e.RowIndex].Value.ToString();

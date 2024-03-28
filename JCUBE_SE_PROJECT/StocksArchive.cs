@@ -57,6 +57,11 @@ namespace JCUBE_SE_PROJECT
                             cm = new SqlCommand("DELETE FROM tbStockEntryArchive WHERE StockID = @StockID", cn);
                             cm.Parameters.AddWithValue("@StockID", stockID); // Add @StockID parameter
                             cm.ExecuteNonQuery();
+                            string logAction = "DELETE";
+                            string logType = "STOCKS";
+                            string logDescription = "Deleted a Stock";
+                            LogDao log = new LogDao(cn);
+                            log.AddLogs(logAction, logType, logDescription, _loggedInUsername);
                             cn.Close();
                             MessageBox.Show("Item has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -69,6 +74,35 @@ namespace JCUBE_SE_PROJECT
                         }
                         // Retrieve ItemID from the DataGridView
 
+                    }
+                }
+                else if (colName == "Restore")
+                {
+                    if (MessageBox.Show("Are you sure you want to restore this item?", "Restore Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            int stockID = Convert.ToInt32(dgvStockEntryArchive.Rows[e.RowIndex].Cells["StockID"].Value);
+
+                            cn.Open();
+                            cm = new SqlCommand("INSERT INTO tbStockEntry(RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate) SELECT RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate FROM tbStockEntryArchive WHERE StockID = @StockID DELETE FROM tbStockEntryArchive WHERE StockID = @StockID", cn);
+                            cm.Parameters.AddWithValue("@StockID", stockID); // Add @StockID parameter
+                            cm.ExecuteNonQuery();
+                            string logAction = "UPDATE";
+                            string logType = "STOCKS";
+                            string logDescription = "Restored a Stock";
+                            LogDao log = new LogDao(cn);
+                            log.AddLogs(logAction, logType, logDescription, _loggedInUsername);
+                            cn.Close();
+                            MessageBox.Show("Item has been successfully restored.", "RESTORE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Remove the row from the DataGridView
+                            dgvStockEntryArchive.Rows.RemoveAt(e.RowIndex);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 LoadStocks();

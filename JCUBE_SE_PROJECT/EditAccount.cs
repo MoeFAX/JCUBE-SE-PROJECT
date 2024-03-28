@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,11 +19,13 @@ namespace JCUBE_SE_PROJECT
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
         UserAccountsUI useracc;
-        public EditAccount(UserAccountsUI user)
+        private string logUsername;
+        public EditAccount(UserAccountsUI user, string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             useracc = user;
+            logUsername = username;
         }
 
         public int AccountID
@@ -54,6 +57,9 @@ namespace JCUBE_SE_PROJECT
             try
             {
                 cn.Open();
+                string logAction;
+                string logType = "ACCOUNTS";
+                string logDescription;
                 if (!string.IsNullOrEmpty(EditUsernameField.Text))
                 {
 
@@ -67,6 +73,8 @@ namespace JCUBE_SE_PROJECT
                         cm.Parameters.AddWithValue("@username", EditUsernameField.Text);
                         cm.Parameters.AddWithValue("@fullname", EditFullnameField.Text);
                         cm.Parameters.AddWithValue("@role", EditRoleComboBox.Text);
+                        logAction = "UPDATE";
+                        logDescription = "Updated an Account";
                     }
                     else 
                     {
@@ -77,10 +85,13 @@ namespace JCUBE_SE_PROJECT
                         cm.Parameters.AddWithValue("@username", EditUsernameField.Text);
                         cm.Parameters.AddWithValue("@fullname", EditFullnameField.Text);
                         cm.Parameters.AddWithValue("@role", EditRoleComboBox.Text);
+                        logAction = "CREATE";
+                        logDescription = "Created a new Account";
                     }
 
                     cm.ExecuteNonQuery();
-                    cn.Close();
+                    LogDao log = new LogDao(cn);
+                    log.AddLogs(logAction, logType, logDescription, logUsername);
                     MessageBox.Show("Account has been successfully saved!", "SAVED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
                     useracc.LoadUser();
@@ -93,6 +104,9 @@ namespace JCUBE_SE_PROJECT
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } finally
+            {
+                cn.Close();
             }
         }
     }

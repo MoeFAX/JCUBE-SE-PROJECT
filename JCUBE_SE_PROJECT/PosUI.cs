@@ -18,10 +18,12 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
-        public PosUI()
+        private string _loggedInUsername;
+        public PosUI(string loggedInUsername)
         {
             InitializeComponent();
             clerk = new CartUI(this);
+            _loggedInUsername = loggedInUsername;
             cn = new SqlConnection(dbcon.myConnection());
         }
 
@@ -50,21 +52,22 @@ namespace JCUBE_SE_PROJECT
         private void btnSettlePayment_Click(object sender, EventArgs e)
         {
             clerk.LoadCart();
-            SettlePayment settle = new SettlePayment(clerk);
+            SettlePayment settle = new SettlePayment(clerk, _loggedInUsername);
+      
             settle.txtSale.Text = clerk.TotalSales.ToString("#,##0.00");
             settle.Show();
         }
 
         private void btnDailySales_Click(object sender, EventArgs e)
         {
-            DailySales dailySales = new DailySales();
+            DailySales dailySales = new DailySales(_loggedInUsername);
             dailySales.soldUser = lblUserRolePOS.Text;
             dailySales.ShowDialog();
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            ChangePassword moduleForm = new ChangePassword(this);
+            ChangePassword moduleForm = new ChangePassword(this, _loggedInUsername);
             moduleForm.ShowDialog();
         }
 

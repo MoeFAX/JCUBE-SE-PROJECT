@@ -13,11 +13,13 @@ namespace JCUBE_SE_PROJECT
 {
     public partial class CancelOrder : Form
     {
-       DailySales dailySales;
-        public CancelOrder(DailySales dailySales)
+        DailySales dailySales;
+        private string logUsername;
+        public CancelOrder(DailySales dailySales, string username)
         {
             InitializeComponent();
             this.dailySales = dailySales;
+            logUsername = username;
           
 
         }
@@ -30,7 +32,7 @@ namespace JCUBE_SE_PROJECT
                 {
                     if(int.Parse(QtyTxtBox.Text) >= udQty.Value)
                     {
-                        CancelOrderModule cancelOrderModule = new CancelOrderModule(this);
+                        CancelOrderModule cancelOrderModule = new CancelOrderModule(this, logUsername);
                         cancelOrderModule.txtUsername.Focus();
                         cancelOrderModule.ShowDialog();
                     }

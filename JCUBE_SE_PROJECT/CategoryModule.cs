@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,11 +18,13 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         Category category;
-        public CategoryModule(Category ctgry)
+        private string logUsername;
+        public CategoryModule(Category ctgry, string loggedInUsername)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             category = ctgry;
+            logUsername = loggedInUsername;
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
@@ -33,6 +36,9 @@ namespace JCUBE_SE_PROJECT
         {
             try
             {
+                string logAction;
+                string logDescription;
+                string logType = "CATEGORY";
                 if (string.IsNullOrWhiteSpace(CtgryNameField.Text))
                 {
                     MessageBox.Show("Category name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -57,16 +63,20 @@ namespace JCUBE_SE_PROJECT
                     cm.Parameters.AddWithValue("@CategoryName", CtgryNameField.Text);
                     cm.Parameters.AddWithValue("@CategoryID", categoryID);
                     this.Dispose();
-
+                    logAction = "UPDATE";
+                    logDescription = "Updated a Category";
                 }
                 else
                 {
                     // for create
                     cm = new SqlCommand("INSERT INTO tbCategory(CategoryName) VALUES(@CategoryName)", cn);
                     cm.Parameters.AddWithValue("@CategoryName", CtgryNameField.Text);
+                    logAction = "CREATE";
+                    logDescription = "Created a new Category";
                 }
                 cm.ExecuteNonQuery();
-                cn.Close();
+                LogDao log = new LogDao(cn);               
+                log.AddLogs(logAction, logType, logDescription, logUsername);
                 MessageBox.Show("Record has been successfully saved.", "SAVE");
                 Clear();
                 category.LoadCategory();
@@ -76,6 +86,9 @@ namespace JCUBE_SE_PROJECT
             {
 
                 MessageBox.Show(ex.Message);
+            } finally
+            {
+                cn.Close();
             }
         }
 

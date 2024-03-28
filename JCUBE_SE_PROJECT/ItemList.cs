@@ -17,10 +17,12 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
-        public ItemList()
+        private string logUsername;
+        public ItemList(string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            logUsername = username;
             LoadItemList();
         }
 
@@ -42,7 +44,7 @@ namespace JCUBE_SE_PROJECT
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            AddItem moduleForm = new AddItem(this);
+            AddItem moduleForm = new AddItem(this, logUsername);
             moduleForm.ShowDialog();
         }
         private void dgvItem_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -61,6 +63,11 @@ namespace JCUBE_SE_PROJECT
                         cm = new SqlCommand("INSERT INTO tbItemListArchive(ItemID, InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Qty, Reorder) SELECT ItemID, InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Qty, Reorder FROM tbItemList WHERE ItemID = @ItemID DELETE FROM tbItemList WHERE ItemID = @ItemID", cn);
                         cm.Parameters.AddWithValue("@ItemID", itemID); // Add @ItemID parameter
                         cm.ExecuteNonQuery();
+                        string logAction = "ARCHIVE";
+                        string logType = "ITEMS";
+                        string logDescription = "Archived an Item";
+                        LogDao log = new LogDao(cn);
+                        log.AddLogs(logAction, logType, logDescription, logUsername);
                         cn.Close();
                         MessageBox.Show("Item has been successfully archived.", "ARCHIVE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -74,7 +81,7 @@ namespace JCUBE_SE_PROJECT
                     int itemID = Convert.ToInt32(dgvItem.Rows[e.RowIndex].Cells["ItemID"].Value);
 
                     // Open AddItem form for editing with the ItemID
-                    AddItem additem = new AddItem(this);
+                    AddItem additem = new AddItem(this, logUsername);
                     additem.ItemID = itemID; // Set ItemID property
                                              // Populate fields in AddItem form
                     additem.InvCodeField.Text = dgvItem[1, e.RowIndex].Value.ToString();
@@ -96,6 +103,16 @@ namespace JCUBE_SE_PROJECT
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             LoadItemList();
+        }
+
+        public void getDate()
+        {
+            
+        }
+
+        public void getTime()
+        {
+
         }
 
         /*

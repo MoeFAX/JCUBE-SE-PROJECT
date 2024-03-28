@@ -17,11 +17,13 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         public string soldUser;
+        private string logUsername;
         SqlDataReader dr;
-        public DailySales()
+        public DailySales(string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            logUsername = username;
             LoadClerk();
             if (comboClerk.Items.Count > 0) //Set ComboBox Clerk to Select All Clerk
             {
@@ -126,7 +128,7 @@ namespace JCUBE_SE_PROJECT
             string colName = dgvSoldItems.Columns[e.ColumnIndex].Name;
             if (colName == "CancelOrder")
             {
-                CancelOrder cancelOrder = new CancelOrder(this);
+                CancelOrder cancelOrder = new CancelOrder(this, logUsername);
                 cancelOrder.idTxtbox.Text = dgvSoldItems.Rows[e.RowIndex].Cells[0].Value.ToString();
                 cancelOrder.InvTxtBox.Text = dgvSoldItems.Rows[e.RowIndex].Cells[1].Value.ToString();
                 cancelOrder.itemCodeTxtbox.Text = dgvSoldItems.Rows[e.RowIndex].Cells[2].Value.ToString();

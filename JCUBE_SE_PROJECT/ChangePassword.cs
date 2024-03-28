@@ -19,10 +19,13 @@ namespace JCUBE_SE_PROJECT
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
         PosUI posUI;
-        public ChangePassword(PosUI posUI)
+        private string logUsername;
+        public ChangePassword(PosUI posUI, string username)
         {
             InitializeComponent();
+            cn = new SqlConnection(dbcon.myConnection());
             this.posUI = posUI;
+            logUsername = username;
             lblUser.Text = posUI.POSNamelbl.Text;
             lblUsername.Text = posUI.lblUserRolePOS.Text;
             CurEyeBtn.Visible= true;
@@ -94,6 +97,7 @@ namespace JCUBE_SE_PROJECT
             string currentPass = dbcon.getPassword(lblUsername.Text);
             try
             {
+                cn.Open();
                 if (string.IsNullOrWhiteSpace(txtNewPass.Text))
                 {
                     MessageBox.Show("New Password field cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -123,6 +127,11 @@ namespace JCUBE_SE_PROJECT
                     if (MessageBox.Show("Change Password?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         dbcon.ExecuteQuery("UPDATE tbUser set password = '" + txtNewPass.Text + "' WHERE username ='" + lblUsername.Text + "'");
+                        string logAction = "UPDATE";
+                        string logType = "ACCOUNTS";
+                        string logDescription = "Reset a Password";
+                        LogDao log = new LogDao(cn);
+                        log.AddLogs(logAction, logType, logDescription, logUsername);
                         MessageBox.Show("Password has been successfully updated.", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Dispose();
                     }
@@ -132,6 +141,10 @@ namespace JCUBE_SE_PROJECT
             {
 
                 MessageBox.Show(ex.Message, "Error");
+            }
+            finally 
+            {
+                cn.Close();
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,13 +21,15 @@ namespace JCUBE_SE_PROJECT
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
         StocksUI stocks;
-        public StockEntry(StocksUI Se)
+        private string logUsername;
+        public StockEntry(StocksUI Se, string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             stocks = Se;
             LoadItemName();
             LoadSupplier();
+            logUsername = username;
         }
 
         public int StockID
@@ -98,142 +101,148 @@ namespace JCUBE_SE_PROJECT
         {
             try
             {
+                string logAction;
+                string logType = "STOCKS";
+                string logDescription;
                 // Generate the reference number based on StockInDate
                 string referenceNumber = GenerateReferenceNumber(StockInDate.Value);
 
-                using (cn = new SqlConnection(dbcon.myConnection()))
+                /*using (cn = new SqlConnection(dbcon.myConnection()))*//*
+                {*/
+                cn.Open();
+
+                if (stockID != 0) // Check if itemID is set (indicating an existing record)
                 {
-                    cn.Open();
-
-                    if (stockID != 0) // Check if itemID is set (indicating an existing record)
+                    Console.WriteLine("h1");
+                    // Retrieve the old quantity value before updating
+                    int oldQuantity = 0;
+                    int oldItem = 0;
+                    using (SqlCommand getOldDataCmd = new SqlCommand("SELECT Stocks, ilid FROM tbStockEntry WHERE StockID = @StockID", cn))
                     {
-
-                        // Retrieve the old quantity value before updating
-                        int oldQuantity = 0;
-                        int oldItem = 0;
-                        using (SqlCommand getOldDataCmd = new SqlCommand("SELECT Stocks, ilid FROM tbStockEntry WHERE StockID = @StockID", cn))
+                        Console.WriteLine("h2");
+                        getOldDataCmd.Parameters.AddWithValue("@StockID", stockID);
+                        using (SqlDataReader oldDataReader = getOldDataCmd.ExecuteReader())
                         {
-                            getOldDataCmd.Parameters.AddWithValue("@StockID", stockID);
-                            using (SqlDataReader oldDataReader = getOldDataCmd.ExecuteReader())
+                            if (oldDataReader.Read())
                             {
-                                if (oldDataReader.Read())
-                                {
-                                    oldQuantity = Convert.ToInt32(oldDataReader["Stocks"]);
-                                    oldItem = Convert.ToInt32(oldDataReader["ilid"]);
-                                }
+                                oldQuantity = Convert.ToInt32(oldDataReader["Stocks"]);
+                                oldItem = Convert.ToInt32(oldDataReader["ilid"]);
                             }
                         }
-                        using (SqlCommand cm = new SqlCommand("UPDATE tbStockEntry SET RefNo = @RefNo, ilid = @ilid, sid = @sid, Stocks = @Stocks, Status = @Status, StockInBy = @StockInBy, StockInDate = @StockInDate WHERE StockID = @StockID", cn))
-                        {
-                            cm.Parameters.AddWithValue("@RefNo", referenceNumber);
-                            cm.Parameters.AddWithValue("@ilid", ItemNameField.SelectedValue);
-                            cm.Parameters.AddWithValue("@sid", SuppNameField.SelectedValue);
-                            cm.Parameters.AddWithValue("@Stocks", stocksField.Text);
-                            cm.Parameters.AddWithValue("@Status", StatusField.SelectedItem.ToString());
-                            cm.Parameters.AddWithValue("@StockInBy", StockinbyField.Text);
-                            cm.Parameters.AddWithValue("@StockInDate", StockInDate.Value);
-                            cm.Parameters.AddWithValue("@StockID", stockID);
-                            cm.ExecuteNonQuery();
-                            
-
-                            if (oldItem != Convert.ToInt32(ItemNameField.SelectedValue))
-                            {
-                                using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty - @Quantity WHERE ItemID = @ItemID", cn))
-                                {
-                                    updateQtyCmd.Parameters.AddWithValue("@Quantity", stocksField.Text);
-                                    updateQtyCmd.Parameters.AddWithValue("@ItemID", oldItem);
-                                    updateQtyCmd.ExecuteNonQuery();
-                                }
-                            }
-                            if (StatusField.SelectedItem.ToString() == "Delivered")
-                            {
-                                int newQuantity = Convert.ToInt32(stocksField.Text);
-                                if (oldQuantity == newQuantity)
-                                {
-                                    using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty + @Quantity WHERE ItemID = @ItemID", cn))
-                                    {
-                                        updateQtyCmd.Parameters.AddWithValue("@Quantity", stocksField.Text);
-                                        updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
-                                        updateQtyCmd.ExecuteNonQuery();
-                                    }
-                                } 
-                                else if (oldQuantity != newQuantity)
-                                {
-                                    if(newQuantity > oldQuantity)
-                                    {
-                                        int quantityDifference = newQuantity - oldQuantity;
-                                        using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty + @QuantityDifference WHERE ItemID = @ItemID", cn))
-                                        {
-                                            updateQtyCmd.Parameters.AddWithValue("@QuantityDifference", quantityDifference);
-                                            updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
-                                            updateQtyCmd.ExecuteNonQuery();
-                                        }
-                                    }
-                                    else if (newQuantity < oldQuantity)
-                                    {
-                                        int quantityDifference = oldQuantity - newQuantity;
-                                        using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty - @QuantityDifference WHERE ItemID = @ItemID", cn))
-                                        {
-                                            updateQtyCmd.Parameters.AddWithValue("@QuantityDifference", quantityDifference);
-                                            updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
-                                            updateQtyCmd.ExecuteNonQuery();
-                                        }
-                                    }
-                                    
-                                }
-
-                                
-
-                            }
-
-                            if (StatusField.SelectedItem.ToString() == "Pending")
-                            {
-                                using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty - @Quantity WHERE ItemID = @ItemID", cn))
-                                {
-                                    updateQtyCmd.Parameters.AddWithValue("@Quantity", stocksField.Text);
-                                    updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
-                                    updateQtyCmd.ExecuteNonQuery();
-                                }
-                            }
-
-                            // If the status is "Delivered" and the quantity has changed, update tbItemList
-                            
-                            
-
-                        }
-                        
                     }
-                    else
+                    using (SqlCommand cm = new SqlCommand("UPDATE tbStockEntry SET RefNo = @RefNo, ilid = @ilid, sid = @sid, Stocks = @Stocks, Status = @Status, StockInBy = @StockInBy, StockInDate = @StockInDate WHERE StockID = @StockID", cn))
                     {
-                        // Insert operation
-                        using (cm = new SqlCommand("INSERT INTO tbStockEntry(RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate) VALUES(@RefNo, @ilid, @sid, @Stocks, @Status, @StockInBy, @StockInDate)", cn))
+                        cm.Parameters.AddWithValue("@RefNo", referenceNumber);
+                        cm.Parameters.AddWithValue("@ilid", ItemNameField.SelectedValue);
+                        cm.Parameters.AddWithValue("@sid", SuppNameField.SelectedValue);
+                        cm.Parameters.AddWithValue("@Stocks", stocksField.Text);
+                        cm.Parameters.AddWithValue("@Status", StatusField.SelectedItem.ToString());
+                        cm.Parameters.AddWithValue("@StockInBy", StockinbyField.Text);
+                        cm.Parameters.AddWithValue("@StockInDate", StockInDate.Value);
+                        cm.Parameters.AddWithValue("@StockID", stockID);
+                        cm.ExecuteNonQuery();
+                        logAction = "UPDATE";
+                        logDescription = "Updated a Stock";
+
+                        if (oldItem != Convert.ToInt32(ItemNameField.SelectedValue))
                         {
-                            // Insert the new quantity into tbItemList only if the status is "delivered"
-                            if (StatusField.SelectedItem.ToString() == "Delivered")
+                            using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty - @Quantity WHERE ItemID = @ItemID", cn))
+                            {
+                                updateQtyCmd.Parameters.AddWithValue("@Quantity", stocksField.Text);
+                                updateQtyCmd.Parameters.AddWithValue("@ItemID", oldItem);
+                                updateQtyCmd.ExecuteNonQuery();
+                            }
+                        }
+                        if (StatusField.SelectedItem.ToString() == "Delivered")
+                        {
+                            int newQuantity = Convert.ToInt32(stocksField.Text);
+                            if (oldQuantity == newQuantity)
                             {
                                 using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty + @Quantity WHERE ItemID = @ItemID", cn))
                                 {
                                     updateQtyCmd.Parameters.AddWithValue("@Quantity", stocksField.Text);
                                     updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
                                     updateQtyCmd.ExecuteNonQuery();
-                                    
                                 }
                             }
+                            else if (oldQuantity != newQuantity)
+                            {
+                                if (newQuantity > oldQuantity)
+                                {
+                                    int quantityDifference = newQuantity - oldQuantity;
+                                    using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty + @QuantityDifference WHERE ItemID = @ItemID", cn))
+                                    {
+                                        updateQtyCmd.Parameters.AddWithValue("@QuantityDifference", quantityDifference);
+                                        updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
+                                        updateQtyCmd.ExecuteNonQuery();
+                                    }
+                                }
+                                else if (newQuantity < oldQuantity)
+                                {
+                                    int quantityDifference = oldQuantity - newQuantity;
+                                    using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty - @QuantityDifference WHERE ItemID = @ItemID", cn))
+                                    {
+                                        updateQtyCmd.Parameters.AddWithValue("@QuantityDifference", quantityDifference);
+                                        updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
+                                        updateQtyCmd.ExecuteNonQuery();
+                                    }
+                                }
 
-                            // Common parameters for both update and insert operations
-                            cm.Parameters.AddWithValue("@RefNo", referenceNumber);
-                            cm.Parameters.AddWithValue("@ilid", ItemNameField.SelectedValue);
-                            cm.Parameters.AddWithValue("@sid", SuppNameField.SelectedValue);
-                            cm.Parameters.AddWithValue("@Stocks", stocksField.Text);
-                            cm.Parameters.AddWithValue("@Status", StatusField.SelectedItem.ToString());
-                            cm.Parameters.AddWithValue("@StockInBy", StockinbyField.Text);
-                            cm.Parameters.AddWithValue("@StockInDate", StockInDate.Value);
-                            cm.ExecuteNonQuery();
-                            
+                            }
+
+
+
                         }
+
+                        if (StatusField.SelectedItem.ToString() == "Pending")
+                        {
+                            using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty - @Quantity WHERE ItemID = @ItemID", cn))
+                            {
+                                updateQtyCmd.Parameters.AddWithValue("@Quantity", stocksField.Text);
+                                updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
+                                updateQtyCmd.ExecuteNonQuery();
+                            }
+                        }
+
+                        // If the status is "Delivered" and the quantity has changed, update tbItemList
+
+
+
+                    }
+
+                }
+                else
+                {
+                    // Insert operation
+                    using (cm = new SqlCommand("INSERT INTO tbStockEntry(RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate) VALUES(@RefNo, @ilid, @sid, @Stocks, @Status, @StockInBy, @StockInDate)", cn))
+                    {
+                        // Insert the new quantity into tbItemList only if the status is "delivered"
+                        if (StatusField.SelectedItem.ToString() == "Delivered")
+                        {
+                            using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty + @Quantity WHERE ItemID = @ItemID", cn))
+                            {
+                                updateQtyCmd.Parameters.AddWithValue("@Quantity", stocksField.Text);
+                                updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
+                                updateQtyCmd.ExecuteNonQuery();
+
+                            }
+                        }
+
+                        // Common parameters for both update and insert operations
+                        cm.Parameters.AddWithValue("@RefNo", referenceNumber);
+                        cm.Parameters.AddWithValue("@ilid", ItemNameField.SelectedValue);
+                        cm.Parameters.AddWithValue("@sid", SuppNameField.SelectedValue);
+                        cm.Parameters.AddWithValue("@Stocks", stocksField.Text);
+                        cm.Parameters.AddWithValue("@Status", StatusField.SelectedItem.ToString());
+                        cm.Parameters.AddWithValue("@StockInBy", StockinbyField.Text);
+                        cm.Parameters.AddWithValue("@StockInDate", StockInDate.Value);
+                        cm.ExecuteNonQuery();
+                        logAction = "CREATE";
+                        logDescription = "Created a new Supplier";
                     }
                 }
-
+                LogDao log = new LogDao(cn);
+                log.AddLogs(logAction, logType, logDescription, logUsername);
                 MessageBox.Show("Record has been successfully saved.", "SAVE");
                 Clear();
                 stocks.LoadStocks();

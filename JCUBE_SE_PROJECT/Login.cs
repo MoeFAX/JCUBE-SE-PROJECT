@@ -85,7 +85,7 @@ namespace JCUBE_SE_PROJECT
                         UserIDtxtbox.Clear();
                         Passwordtxtbox.Clear();
                         this.Hide();
-                        PosUI main = new PosUI();
+                        PosUI main = new PosUI(_username);
                         main.POSNamelbl.Text = _fullname;
                         main.lblUserRolePOS.Text = _username;
                         main.ShowDialog();

@@ -18,11 +18,13 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
+        private string logUsername;
 
-        public UserAccountsUI()
+        public UserAccountsUI(string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            logUsername = username;
             LoadUser();
         }
 
@@ -42,7 +44,7 @@ namespace JCUBE_SE_PROJECT
 
         private void CABttn_Click(object sender, EventArgs e)
         {
-            CreateAccount moduleForm = new CreateAccount();
+            CreateAccount moduleForm = new CreateAccount(logUsername);
             moduleForm.ShowDialog();
         }
 
@@ -81,6 +83,11 @@ namespace JCUBE_SE_PROJECT
                         cm = new SqlCommand("DELETE FROM tbUser WHERE AccountID = @AccountID", cn);
                         cm.Parameters.AddWithValue("@AccountID", ArchAccID); // Add @AccountID parameter
                         cm.ExecuteNonQuery();
+                        string logAction = "DELETE";
+                        string logType = "ACCOUNTS";
+                        string logDescription = "Deleted an Account";
+                        LogDao log = new LogDao(cn);
+                        log.AddLogs(logAction, logType, logDescription, logUsername);
                         cn.Close();
                         MessageBox.Show("Item has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -97,7 +104,7 @@ namespace JCUBE_SE_PROJECT
                         int AccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
 
                         // Open EditAccount form for editing with the AccountID
-                        EditAccount editacc = new EditAccount(this);
+                        EditAccount editacc = new EditAccount(this, logUsername);
                         editacc.EditAccountIDField.Text = AccID.ToString(); // Set AccountID property
 
                         // Populate fields in EditAccount form
@@ -121,6 +128,11 @@ namespace JCUBE_SE_PROJECT
                         cm.Parameters.AddWithValue("@isactive", "True");
                         cm.Parameters.AddWithValue("@AccountID", ActAccID); // Add @AccountID parameter
                         cm.ExecuteNonQuery();
+                        string logAction = "UPDATE";
+                        string logType = "ACCOUNTS";
+                        string logDescription = "Activated an Account";
+                        LogDao log = new LogDao(cn);
+                        log.AddLogs(logAction, logType, logDescription, logUsername);
                         cn.Close();
                         MessageBox.Show("Account has been successfully activated", "ACTIVATED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -137,6 +149,11 @@ namespace JCUBE_SE_PROJECT
                         cm.Parameters.AddWithValue("@isactive", "False");
                         cm.Parameters.AddWithValue("@AccountID", ActAccID); // Add @AccountID parameter
                         cm.ExecuteNonQuery();
+                        string logAction = "UPDATED";
+                        string logType = "ACCOUNTS";
+                        string logDescription = "Deactivated an Account";
+                        LogDao log = new LogDao(cn);
+                        log.AddLogs(logAction, logType, logDescription, logUsername);
                         cn.Close();
                         MessageBox.Show("Account has been successfully deactivated", "DEACTIVATED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -149,7 +166,7 @@ namespace JCUBE_SE_PROJECT
                         int RPWDAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
 
                         // Open ResetPassword form for editing with the AccountID
-                        ResetPassword rpwdacc = new ResetPassword(this);
+                        ResetPassword rpwdacc = new ResetPassword(this, logUsername);
                         rpwdacc.RPWDAccIDlbl.Text = RPWDAccID.ToString(); // Set AccountID property
 
                         //Retrieve Password from Database in correlation with the AccountID

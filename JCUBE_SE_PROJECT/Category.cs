@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,16 +18,19 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
-        public Category()
+        private string _loggedInUsername;
+        public Category(string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            _loggedInUsername = username;
             LoadCategory();
         }
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            CategoryModule moduleForm = new CategoryModule(this);
+            CategoryModule moduleForm = new CategoryModule(this, _loggedInUsername);
+            moduleForm.lblUname.Text = _loggedInUsername;
             moduleForm.ShowDialog();
         }
 
@@ -49,7 +53,7 @@ namespace JCUBE_SE_PROJECT
         private void dgvCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvCategory.Columns[e.ColumnIndex].Name;
-            if (colName == "Archive")
+            if (colName == "Delete")
             {
                 string categoryId = dgvCategory[1, e.RowIndex].Value.ToString();
 
@@ -76,6 +80,12 @@ namespace JCUBE_SE_PROJECT
                         cn.Open();
                         cm = new SqlCommand("DELETE FROM tbCategory WHERE CategoryID LIKE '" + dgvCategory[1, e.RowIndex].Value.ToString() + "'", cn);
                         cm.ExecuteNonQuery();
+                        LogDao log = new LogDao(cn);
+                        string logAction = "DELETE";
+                        string logType = "CATEGORY";
+                        string logDescription = "Deleted a Category";
+                        string logUsername = _loggedInUsername;
+                        log.AddLogs(logAction, logType, logDescription, logUsername);
                         cn.Close();
                         MessageBox.Show("Category has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -84,7 +94,8 @@ namespace JCUBE_SE_PROJECT
             }
             else if (colName == "Edit")
             {
-                CategoryModule categoryModule = new CategoryModule(this);
+                CategoryModule categoryModule = new CategoryModule(this, _loggedInUsername);
+                categoryModule.lblUname.Text = _loggedInUsername;
                 categoryModule.lblid.Text = dgvCategory[1, e.RowIndex].Value.ToString();
                 categoryModule.CtgryNameField.Text = dgvCategory[2, e.RowIndex].Value.ToString();
                 categoryModule.SaveBtn.Enabled = true;

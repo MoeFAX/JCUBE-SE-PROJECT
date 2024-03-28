@@ -37,6 +37,7 @@
             this.CtgryNamelbl = new System.Windows.Forms.Label();
             this.CtgryNameField = new System.Windows.Forms.TextBox();
             this.lblid = new System.Windows.Forms.Label();
+            this.lblUname = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
             this.SuspendLayout();
@@ -128,6 +129,16 @@
             this.lblid.Text = "id";
             this.lblid.Visible = false;
             // 
+            // lblUname
+            // 
+            this.lblUname.AutoSize = true;
+            this.lblUname.Location = new System.Drawing.Point(47, 218);
+            this.lblUname.Name = "lblUname";
+            this.lblUname.Size = new System.Drawing.Size(51, 21);
+            this.lblUname.TabIndex = 9;
+            this.lblUname.Text = "hello";
+            this.lblUname.Visible = false;
+            // 
             // CategoryModule
             // 
             this.AcceptButton = this.SaveBtn;
@@ -136,6 +147,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.CancelBtn;
             this.ClientSize = new System.Drawing.Size(722, 246);
+            this.Controls.Add(this.lblUname);
             this.Controls.Add(this.lblid);
             this.Controls.Add(this.CtgryNameField);
             this.Controls.Add(this.CtgryNamelbl);
@@ -166,5 +178,6 @@
         public System.Windows.Forms.Label lblid;
         public System.Windows.Forms.Button SaveBtn;
         public System.Windows.Forms.Button CancelBtn;
+        public System.Windows.Forms.Label lblUname;
     }
 }

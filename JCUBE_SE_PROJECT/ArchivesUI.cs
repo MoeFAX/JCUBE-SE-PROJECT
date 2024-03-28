@@ -13,26 +13,21 @@ namespace JCUBE_SE_PROJECT
     public partial class ArchivesUI : Form
     {
         private string loggedInUsername;
-        public ArchivesUI()
+        public ArchivesUI(string username)
         {
             InitializeComponent();
+            loggedInUsername = username;
         }
 
         private void btnItemList_Click(object sender, EventArgs e)
         {
-            ItemListArchives moduleForm = new ItemListArchives();
+            ItemListArchives moduleForm = new ItemListArchives(loggedInUsername);
             moduleForm.ShowDialog();
         }
 
         private void btnStocks_Click(object sender, EventArgs e)
         {
             StocksArchive moduleForm = new StocksArchive(loggedInUsername);
-            moduleForm.ShowDialog();
-        }
-
-        private void btnDailySales_Click(object sender, EventArgs e)
-        {
-            DailySalesArchive moduleForm = new DailySalesArchive();
             moduleForm.ShowDialog();
         }
     }

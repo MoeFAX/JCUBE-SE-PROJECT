@@ -60,10 +60,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(5);
-            this.label1.Size = new System.Drawing.Size(114, 33);
+            this.label1.Padding = new System.Windows.Forms.Padding(4);
+            this.label1.Size = new System.Drawing.Size(112, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sold Items";
             // 
@@ -79,10 +78,9 @@
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 632);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(0, 513);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1423, 50);
+            this.panel2.Size = new System.Drawing.Size(1067, 41);
             this.panel2.TabIndex = 2;
             // 
             // comboClerk
@@ -90,10 +88,9 @@
             this.comboClerk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboClerk.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboClerk.FormattingEnabled = true;
-            this.comboClerk.Location = new System.Drawing.Point(739, 16);
-            this.comboClerk.Margin = new System.Windows.Forms.Padding(4);
+            this.comboClerk.Location = new System.Drawing.Point(554, 13);
             this.comboClerk.Name = "comboClerk";
-            this.comboClerk.Size = new System.Drawing.Size(152, 28);
+            this.comboClerk.Size = new System.Drawing.Size(115, 28);
             this.comboClerk.TabIndex = 16;
             this.comboClerk.SelectedIndexChanged += new System.EventHandler(this.comboClerk_SelectedIndexChanged);
             // 
@@ -101,10 +98,10 @@
             // 
             this.totalVal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalVal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.totalVal.Location = new System.Drawing.Point(1176, 17);
-            this.totalVal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.totalVal.Location = new System.Drawing.Point(882, 14);
+            this.totalVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totalVal.Name = "totalVal";
-            this.totalVal.Size = new System.Drawing.Size(229, 32);
+            this.totalVal.Size = new System.Drawing.Size(172, 26);
             this.totalVal.TabIndex = 15;
             this.totalVal.Text = "0.00";
             this.totalVal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -113,10 +110,10 @@
             // 
             this.lblTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTotal.Location = new System.Drawing.Point(1087, 17);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblTotal.Location = new System.Drawing.Point(815, 14);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(85, 32);
+            this.lblTotal.Size = new System.Drawing.Size(64, 26);
             this.lblTotal.TabIndex = 14;
             this.lblTotal.Text = "Total:";
             // 
@@ -124,10 +121,10 @@
             // 
             this.btnPrint.BackgroundImage = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_print_50;
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnPrint.Location = new System.Drawing.Point(964, 12);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPrint.Location = new System.Drawing.Point(723, 10);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(56, 42);
+            this.btnPrint.Size = new System.Drawing.Size(42, 34);
             this.btnPrint.TabIndex = 13;
             this.btnPrint.UseSelectable = true;
             // 
@@ -135,10 +132,10 @@
             // 
             this.dateFrom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFrom.Location = new System.Drawing.Point(308, 17);
-            this.dateFrom.Margin = new System.Windows.Forms.Padding(5);
+            this.dateFrom.Location = new System.Drawing.Point(231, 14);
+            this.dateFrom.Margin = new System.Windows.Forms.Padding(4);
             this.dateFrom.Name = "dateFrom";
-            this.dateFrom.Size = new System.Drawing.Size(139, 26);
+            this.dateFrom.Size = new System.Drawing.Size(105, 26);
             this.dateFrom.TabIndex = 4;
             this.dateFrom.ValueChanged += new System.EventHandler(this.dateFrom_ValueChanged);
             // 
@@ -146,10 +143,10 @@
             // 
             this.dateTo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTo.Location = new System.Drawing.Point(544, 17);
-            this.dateTo.Margin = new System.Windows.Forms.Padding(5);
+            this.dateTo.Location = new System.Drawing.Point(408, 14);
+            this.dateTo.Margin = new System.Windows.Forms.Padding(4);
             this.dateTo.Name = "dateTo";
-            this.dateTo.Size = new System.Drawing.Size(145, 26);
+            this.dateTo.Size = new System.Drawing.Size(110, 26);
             this.dateTo.TabIndex = 4;
             this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
@@ -157,20 +154,19 @@
             // 
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label11.Location = new System.Drawing.Point(275, 14);
-            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label11.Location = new System.Drawing.Point(206, 11);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(133, 28);
+            this.label11.Size = new System.Drawing.Size(100, 23);
             this.label11.TabIndex = 17;
             // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label10.Location = new System.Drawing.Point(27, 14);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(20, 11);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(196, 26);
+            this.label10.Size = new System.Drawing.Size(147, 21);
             this.label10.TabIndex = 7;
             this.label10.Text = "Filter By Date From:";
             // 
@@ -203,13 +199,13 @@
             this.dgvSoldItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSoldItems.EnableHeadersVisualStyles = false;
             this.dgvSoldItems.GridColor = System.Drawing.Color.Snow;
-            this.dgvSoldItems.Location = new System.Drawing.Point(0, 33);
-            this.dgvSoldItems.Margin = new System.Windows.Forms.Padding(5);
+            this.dgvSoldItems.Location = new System.Drawing.Point(0, 31);
+            this.dgvSoldItems.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSoldItems.Name = "dgvSoldItems";
             this.dgvSoldItems.RowHeadersVisible = false;
             this.dgvSoldItems.RowHeadersWidth = 51;
             this.dgvSoldItems.RowTemplate.Height = 24;
-            this.dgvSoldItems.Size = new System.Drawing.Size(1423, 599);
+            this.dgvSoldItems.Size = new System.Drawing.Size(1067, 482);
             this.dgvSoldItems.TabIndex = 3;
             this.dgvSoldItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSoldItems_CellContentClick);
             // 
@@ -296,14 +292,14 @@
             // 
             // DailySales
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1423, 682);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.dgvSoldItems);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DailySales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DailySales";

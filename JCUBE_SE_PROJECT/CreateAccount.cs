@@ -18,8 +18,9 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
+        private string logUsername;
 
-        public CreateAccount()
+        public CreateAccount(string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
@@ -27,6 +28,7 @@ namespace JCUBE_SE_PROJECT
             NPEyeBtn.MouseUp += new MouseEventHandler(NPEyeBtn_MouseUp);
             RTEyeBtn.MouseDown += new MouseEventHandler(RTEyeBtn_MouseDown);
             RTEyeBtn.MouseUp += new MouseEventHandler(RTEyeBtn_MouseUp);
+            logUsername = username;
         }
 
 
@@ -83,7 +85,11 @@ namespace JCUBE_SE_PROJECT
                     cm.Parameters.AddWithValue("@fullname", FullnameField.Text);
                     cm.Parameters.AddWithValue("@role", RoleComboBox.Text);
                     cm.ExecuteNonQuery();
-                    cn.Close();
+                    string logAction = "CREATE";
+                    string logType = "ACCOUNTS";
+                    string logDescription = "Created a new Account";
+                    LogDao log = new LogDao(cn);
+                    log.AddLogs(logAction, logType, logDescription, logUsername);
                     Clear();
                     MessageBox.Show("New account has been successfully saved! Please Reload.", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
@@ -93,6 +99,9 @@ namespace JCUBE_SE_PROJECT
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Warning");
+            } finally
+            {
+                cn.Close();
             }
         }
 

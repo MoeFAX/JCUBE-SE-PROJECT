@@ -28,7 +28,7 @@ namespace JCUBE_SE_PROJECT
 
         private void addbutton_Click(object sender, EventArgs e)
         {
-            StockEntry moduleForm = new StockEntry(this);
+            StockEntry moduleForm = new StockEntry(this, _loggedInUsername);
             moduleForm.StockinbyField.Text = _loggedInUsername;
             moduleForm.StatusField.SelectedItem = "Pending";
             moduleForm.ShowDialog();
@@ -84,6 +84,11 @@ namespace JCUBE_SE_PROJECT
                         cm = new SqlCommand("INSERT INTO tbStockEntryArchive(StockID, RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate) SELECT StockID, RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate FROM tbStockEntry WHERE StockID = @StockID DELETE FROM tbStockEntry WHERE StockID = @StockID", cn);
                         cm.Parameters.AddWithValue("@StockID", stockID);
                         cm.ExecuteNonQuery();
+                        string logAction = "ARCHIVE";
+                        string logType = "STOCKS";
+                        string logDescription = "Archived a Stock";
+                        LogDao log = new LogDao(cn);
+                        log.AddLogs(logAction, logType, logDescription, _loggedInUsername);
                         cn.Close();
                         MessageBox.Show("Stock Entry record has been successfully archived.", "ARCHIVE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -97,7 +102,7 @@ namespace JCUBE_SE_PROJECT
 
                     //supplierModule.lblid.Text = dgvSupplier[1, e.RowIndex].Value.ToString();
                     int stockID = Convert.ToInt32(dgvStockEntry.Rows[e.RowIndex].Cells["StockID"].Value);
-                    StockEntry moduleForm = new StockEntry(this);
+                    StockEntry moduleForm = new StockEntry(this, _loggedInUsername);
                     moduleForm.StockID = stockID; // Set SupplierID property
                     moduleForm.ItemNameField.Text = dgvStockEntry[1, e.RowIndex].Value.ToString();
                     moduleForm.stocksField.Text = dgvStockEntry[2, e.RowIndex].Value.ToString();

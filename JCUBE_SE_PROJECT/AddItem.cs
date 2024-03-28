@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Microsoft.Reporting.Map.WebForms.BingMaps;
 
 namespace JCUBE_SE_PROJECT
 {
@@ -19,10 +20,12 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         ItemList itemList;
-        public AddItem(ItemList iL)
+        private string logUsername;
+        public AddItem(ItemList iL, string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            logUsername = username;
             itemList = iL; 
             LoadBrand();
             LoadCategory();
@@ -100,8 +103,9 @@ namespace JCUBE_SE_PROJECT
                 string invCodeNumber = GenerateInvCode();
 
                 cn.Open();
-
-
+                string logAction;
+                string logType = "ITEMS";
+                string logDescription;
                 if (string.IsNullOrWhiteSpace(ItemCodeField.Text) ||
                     string.IsNullOrWhiteSpace(DescriptionField.Text) ||
                     string.IsNullOrWhiteSpace(AcquiredCostField.Text) ||
@@ -158,7 +162,6 @@ namespace JCUBE_SE_PROJECT
 
                 if (itemID != 0) // Check if itemID is set (indicating an existing record)
                 {
-
                     string itemCode = ItemCodeField.Text.Trim();
                     SqlCommand checkItem = new SqlCommand("SELECT COUNT(*) FROM tbItemList WHERE ItemCode = @ItemCode AND ItemID != @ItemID", cn);
                     checkItem.Parameters.AddWithValue("@ItemCode", itemCode);
@@ -187,7 +190,8 @@ namespace JCUBE_SE_PROJECT
                     // Update operation
                     cm = new SqlCommand("UPDATE tbItemList SET ItemCode = @ItemCode, Description = @Description, AcquiredCost = @AcquiredCost, bid = @bid, cid = @cid, Price = @Price, Reorder = @Reorder WHERE ItemID = @ItemID", cn);
                     cm.Parameters.AddWithValue("@ItemID", itemID);
-                    
+                    logAction = "UPDATE";
+                    logDescription = "Updated an Item";
                 }
                 else
                 {
@@ -216,6 +220,8 @@ namespace JCUBE_SE_PROJECT
                         MessageBox.Show("Description already exists. Please enter a unique desciption.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+                    logAction = "CREATE";
+                    logDescription = "Created a new Item";
                 } 
 
                 // Common parameters for both update and insert operations
@@ -229,6 +235,8 @@ namespace JCUBE_SE_PROJECT
                 cm.Parameters.AddWithValue("@Reorder", reorderField.Value);
 
                 cm.ExecuteNonQuery();
+                LogDao log = new LogDao(cn);
+                log.AddLogs(logAction, logType, logDescription, logUsername);
                 MessageBox.Show("Record has been successfully saved.", "SAVE");
                 Clear();
                 itemList.LoadItemList();

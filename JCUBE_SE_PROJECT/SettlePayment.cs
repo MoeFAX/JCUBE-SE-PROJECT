@@ -17,11 +17,15 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
-       private CartUI clerk;
-        public SettlePayment(CartUI clerk)
+        private CartUI clerk;
+        public string username;
+
+        public SettlePayment(CartUI clerk, string loggedInUsername)
         {
             InitializeComponent();
             this.clerk = clerk;
+            string username = clerk.clerkLbl.Text.ToString();
+            lblUname.Text = loggedInUsername;
             cn = new SqlConnection(dbcon.myConnection());
             this.KeyPreview = true;
             
@@ -115,12 +119,18 @@ namespace JCUBE_SE_PROJECT
                         cn.Open();
                         cm = new SqlCommand("UPDATE tbCart SET status = 'Complete' WHERE id= '" + clerk.dgvCart.Rows[i].Cells[0].Value.ToString() + "'", cn);
                         cm.ExecuteNonQuery();
+                        LogDao log = new LogDao(cn);
+                        string logAction = "CREATE";
+                        string logType = "PAYMENT";
+                        string logDescription = "Settled a Payment";
+                        string logUsername = lblUname.Text;
+                        log.AddLogs(logAction, logType, logDescription, logUsername);
                         cn.Close();
                     }
                     printReceipt prtReceipt = new printReceipt(clerk);
                     prtReceipt.LoadReceipt(txtCash.Text, txtChange.Text, txtCustName.Text);
                     prtReceipt.ShowDialog();
-
+                 
                     MessageBox.Show("Payment Complete!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     clerk.StartNewTransaction();

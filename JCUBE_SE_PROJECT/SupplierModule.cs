@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,11 +21,13 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         Supplier supplier;
-        public SupplierModule(Supplier supp)
+        private string logUsername;
+        public SupplierModule(Supplier supp, string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             supplier = supp;
+            logUsername = username;
         }
         public int SupplierID
         {
@@ -42,7 +45,9 @@ namespace JCUBE_SE_PROJECT
             try
             {
                 cn.Open();
-                
+                string logAction;
+                string logType = "SUPPLIER";
+                string logDescription;
                 if (string.IsNullOrWhiteSpace(SupplierNameField.Text) ||
                     string.IsNullOrWhiteSpace(AddressField.Text) ||
                     string.IsNullOrWhiteSpace(ContactField.Text) ||
@@ -72,6 +77,8 @@ namespace JCUBE_SE_PROJECT
                     // Update operation
                     cm = new SqlCommand("UPDATE tbSupplier SET SupplierName = @SupplierName, Address = @Address, ContactPerson = @ContactPerson, PhoneNo = @PhoneNo, EmailAddress = @EmailAddress WHERE SupplierID = @SupplierID", cn);
                     cm.Parameters.AddWithValue("@SupplierID", supplierID);
+                    logAction = "UPDATE";
+                    logDescription = "Updated a Supplier";
                 }
                 else
                 {
@@ -87,6 +94,8 @@ namespace JCUBE_SE_PROJECT
                     }
                     // Insert operation
                     cm = new SqlCommand("INSERT INTO tbSupplier(SupplierName, Address, ContactPerson, PhoneNo, EmailAddress) VALUES(@SupplierName, @Address, @ContactPerson, @PhoneNo, @EmailAddress)", cn);
+                    logAction = "CREATE";
+                    logDescription = "Created a new Supplier";
                 }
 
                 // Common parameters for both update and insert operations
@@ -97,6 +106,8 @@ namespace JCUBE_SE_PROJECT
                 cm.Parameters.AddWithValue("@EmailAddress", EmailAddField.Text);
 
                 cm.ExecuteNonQuery();
+                LogDao log = new LogDao(cn);
+                log.AddLogs(logAction, logType, logDescription, logUsername);
                 MessageBox.Show("Record has been successfully saved.", "SAVE");
                 Clear();
                 supplier.LoadSupplier();

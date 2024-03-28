@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,10 +18,12 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         Brand brand;
-        public BrandModule(Brand br)
+        private string logUsername;
+        public BrandModule(Brand br, string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            logUsername = username;
             brand = br;
         }
 
@@ -33,6 +36,9 @@ namespace JCUBE_SE_PROJECT
         {
             try
             {
+                string logAction;
+                string logType = "BRAND";
+                string logDescription;
                 if (string.IsNullOrWhiteSpace(BrandNameField.Text))
                 {
                     MessageBox.Show("Brand name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -57,6 +63,8 @@ namespace JCUBE_SE_PROJECT
                     cm.Parameters.AddWithValue("@BrandName", BrandNameField.Text);
                     cm.Parameters.AddWithValue("@BrandID", brandID);
                     this.Dispose();
+                    logAction = "UPDATE";
+                    logDescription = "Updated a Brand";
                     
                 }
                 else
@@ -64,9 +72,12 @@ namespace JCUBE_SE_PROJECT
                     // for create
                     cm = new SqlCommand("INSERT INTO tbBrand(BrandName) VALUES(@BrandName)", cn);
                     cm.Parameters.AddWithValue("@BrandName", BrandNameField.Text);
+                    logAction = "CREATE";
+                    logDescription = "Created a new Brand";
                 }
                 cm.ExecuteNonQuery();
-                cn.Close();
+                LogDao log = new LogDao(cn);
+                log.AddLogs(logAction, logType, logDescription, logUsername);
                 MessageBox.Show("Record has been successfully saved.", "SAVE");
                 Clear();
                 brand.LoadBrand();
@@ -76,6 +87,9 @@ namespace JCUBE_SE_PROJECT
             {
 
                 MessageBox.Show(ex.Message);
+            } finally
+            {
+                cn.Close();
             }
         }
 

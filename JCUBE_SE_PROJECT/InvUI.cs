@@ -92,7 +92,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
-            openChildForm(new Category());
+            openChildForm(new Category(loggedInUsername));
             hideSubmenu();
         }
 
@@ -114,20 +114,20 @@ namespace JCUBE_SE_PROJECT
 
         private void btnItemList_Click(object sender, EventArgs e)
         {
-            openChildForm(new ItemList());
+            openChildForm(new ItemList(loggedInUsername));
             hideSubmenu();
             
         }
 
         private void btnBrand_Click(object sender, EventArgs e)
         {
-            openChildForm(new Brand());
+            openChildForm(new Brand(loggedInUsername));
             hideSubmenu();
         }
 
         private void btnSupplier_Click(object sender, EventArgs e)
         {
-            openChildForm(new Supplier());
+            openChildForm(new Supplier(loggedInUsername));
             hideSubmenu();
         }
 
@@ -162,7 +162,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnUserAcc_Click(object sender, EventArgs e)
         {
-            UserAccountsUI childForm = new UserAccountsUI();
+            UserAccountsUI childForm = new UserAccountsUI(loggedInUsername);
             if (activeForm != null)
             {
                 activeForm.Close();
@@ -205,7 +205,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnArchives_Click(object sender, EventArgs e)
         {
-            openChildForm(new ArchivesUI());
+            openChildForm(new ArchivesUI(loggedInUsername));
             hideSubmenu();
         }
 

@@ -30,7 +30,6 @@
         {
             this.btnItemList = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnDailySales = new System.Windows.Forms.Button();
             this.btnStocks = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -40,7 +39,7 @@
             this.btnItemList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnItemList.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItemList.ForeColor = System.Drawing.Color.White;
-            this.btnItemList.Location = new System.Drawing.Point(211, 250);
+            this.btnItemList.Location = new System.Drawing.Point(378, 143);
             this.btnItemList.Name = "btnItemList";
             this.btnItemList.Size = new System.Drawing.Size(278, 169);
             this.btnItemList.TabIndex = 2;
@@ -59,27 +58,13 @@
             this.label9.TabIndex = 6;
             this.label9.Text = "ARCHIVES";
             // 
-            // btnDailySales
-            // 
-            this.btnDailySales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.btnDailySales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDailySales.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDailySales.ForeColor = System.Drawing.Color.White;
-            this.btnDailySales.Location = new System.Drawing.Point(374, 61);
-            this.btnDailySales.Name = "btnDailySales";
-            this.btnDailySales.Size = new System.Drawing.Size(278, 169);
-            this.btnDailySales.TabIndex = 7;
-            this.btnDailySales.Text = "DAILY SALES ARCHIVES";
-            this.btnDailySales.UseVisualStyleBackColor = false;
-            this.btnDailySales.Click += new System.EventHandler(this.btnDailySales_Click);
-            // 
             // btnStocks
             // 
             this.btnStocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.btnStocks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnStocks.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStocks.ForeColor = System.Drawing.Color.White;
-            this.btnStocks.Location = new System.Drawing.Point(49, 61);
+            this.btnStocks.Location = new System.Drawing.Point(51, 143);
             this.btnStocks.Name = "btnStocks";
             this.btnStocks.Size = new System.Drawing.Size(278, 169);
             this.btnStocks.TabIndex = 8;
@@ -93,7 +78,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 449);
             this.Controls.Add(this.btnStocks);
-            this.Controls.Add(this.btnDailySales);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnItemList);
             this.Name = "ArchivesUI";
@@ -108,7 +92,6 @@
 
         private System.Windows.Forms.Button btnItemList;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnDailySales;
         private System.Windows.Forms.Button btnStocks;
     }
 }

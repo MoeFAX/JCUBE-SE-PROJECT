@@ -20,11 +20,13 @@ namespace JCUBE_SE_PROJECT
         SqlDataReader dr;
         CancelOrder cancelOrder;
         DailySales dailySales;
-        public CancelOrderModule(CancelOrder cancelOrder)
+        private string logUsername;
+        public CancelOrderModule(CancelOrder cancelOrder, string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             this.cancelOrder = cancelOrder;
+            logUsername = username;
         }
 
         private void btnCancelOrder_Click(object sender, EventArgs e)
@@ -124,6 +126,11 @@ namespace JCUBE_SE_PROJECT
                 cm.Parameters.AddWithValue("@reason", cancelOrder.RsnTxtBox.Text);
                 cm.Parameters.AddWithValue("@action", cancelOrder.AddInvCbox.Text);
                 cm.ExecuteNonQuery();
+                string logAction = "UPDATE";
+                string logType = "SALES";
+                string logDescription = "Cancelled an Order";
+                LogDao log = new LogDao(cn);
+                log.AddLogs(logAction, logType, logDescription, logUsername);
                 cn.Close();
 
             }

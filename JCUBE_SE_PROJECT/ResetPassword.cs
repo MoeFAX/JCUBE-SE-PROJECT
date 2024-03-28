@@ -19,11 +19,13 @@ namespace JCUBE_SE_PROJECT
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
         UserAccountsUI useracc;
+        private string logUsername;
         
-        public ResetPassword(UserAccountsUI user)
+        public ResetPassword(UserAccountsUI user, string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            logUsername = username; 
             useracc = user;
             NPEyeBtn.MouseDown += new MouseEventHandler(NPEyeBtn_MouseDown);
             NPEyeBtn.MouseUp += new MouseEventHandler(NPEyeBtn_MouseUp);
@@ -90,6 +92,11 @@ namespace JCUBE_SE_PROJECT
                 {
                     cm.Parameters.AddWithValue("@password", RPNewPasswordField.Text);
                     cm.ExecuteNonQuery();
+                    string logAction = "UPDATE";
+                    string logType = "ACCOUNTS";
+                    string logDescription = "Reset a Password";
+                    LogDao log = new LogDao(cn);
+                    log.AddLogs(logAction, logType, logDescription, logUsername);
                     cn.Close();
                     Clear();
                     MessageBox.Show("New password has been successfully saved for account: " + RPWDAccIDlbl.Text, "Save New Password", MessageBoxButtons.OK, MessageBoxIcon.Information);

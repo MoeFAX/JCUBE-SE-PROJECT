@@ -17,10 +17,12 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
-        public ItemListArchives()
+        private string logUsername;
+        public ItemListArchives(string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            logUsername = username;
             LoadItemList();
         }
 
@@ -56,6 +58,11 @@ namespace JCUBE_SE_PROJECT
                             cm = new SqlCommand("DELETE FROM tbItemListArchive WHERE ItemID = @ItemID", cn);
                             cm.Parameters.AddWithValue("@ItemID", itemID); // Add @ItemID parameter
                             cm.ExecuteNonQuery();
+                            string logAction = "DELETE";
+                            string logType = "ITEMS";
+                            string logDescription = "Deleted an Item";
+                            LogDao log = new LogDao(cn);
+                            log.AddLogs(logAction, logType, logDescription, logUsername);
                             cn.Close();
                             MessageBox.Show("Item has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -68,6 +75,34 @@ namespace JCUBE_SE_PROJECT
                         }
                         // Retrieve ItemID from the DataGridView
 
+                    }
+                } else if (colName == "Restore") 
+                {
+                    if (MessageBox.Show("Are you sure you want to restore this item?", "Restore Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            int itemID = Convert.ToInt32(dgvItemListArchive.Rows[e.RowIndex].Cells["ItemID"].Value);
+
+                            cn.Open();
+                            cm = new SqlCommand("INSERT INTO tbItemList(InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Qty, Reorder) SELECT InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Qty, Reorder FROM tbItemListArchive WHERE ItemID = @ItemID DELETE FROM tbItemListArchive WHERE ItemID = @ItemID", cn);
+                            cm.Parameters.AddWithValue("@ItemID", itemID); // Add @ItemID parameter
+                            cm.ExecuteNonQuery();
+                            string logAction = "UPDATE";
+                            string logType = "ITEMS";
+                            string logDescription = "Restored an Item";
+                            LogDao log = new LogDao(cn);
+                            log.AddLogs(logAction, logType, logDescription, logUsername);
+                            cn.Close();
+                            MessageBox.Show("Item has been successfully restored.", "RESTORE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Remove the row from the DataGridView
+                            dgvItemListArchive.Rows.RemoveAt(e.RowIndex);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 // Reload the item list after deletion or editing
