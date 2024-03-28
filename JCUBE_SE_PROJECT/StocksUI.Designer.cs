@@ -44,6 +44,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvStockEntry = new System.Windows.Forms.DataGridView();
             this.StockID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RefNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stocks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupplierID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,8 +87,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(153, 35);
             this.button4.TabIndex = 9;
-            this.button4.Text = "Local Data";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.Text = "Refresh";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -217,6 +217,7 @@
             this.dgvStockEntry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStockEntry.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StockID,
+            this.RefNo,
             this.ItemID,
             this.Stocks,
             this.SupplierID,
@@ -242,7 +243,16 @@
             this.StockID.HeaderText = "StockID";
             this.StockID.MinimumWidth = 6;
             this.StockID.Name = "StockID";
+            this.StockID.Visible = false;
             this.StockID.Width = 106;
+            // 
+            // RefNo
+            // 
+            this.RefNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.RefNo.HeaderText = "Reference #";
+            this.RefNo.MinimumWidth = 6;
+            this.RefNo.Name = "RefNo";
+            this.RefNo.Width = 152;
             // 
             // ItemID
             // 
@@ -287,6 +297,7 @@
             this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Edit.HeaderText = "";
             this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -298,6 +309,7 @@
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Delete.HeaderText = "";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -346,6 +358,7 @@
         private System.Windows.Forms.Button button4;
         public System.Windows.Forms.DateTimePicker dtpStockEndDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RefNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stocks;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierID;

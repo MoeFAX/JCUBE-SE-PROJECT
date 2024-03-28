@@ -17,10 +17,14 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
-        public CancelledOrdersUI()
+        InvUI adminuser;
+        public CancelledOrdersUI(InvUI aduser)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            adminuser = aduser;
+            PrintCnclOrders.Enabled = false;
+
         }
 
         public void LoadCancel()
@@ -39,10 +43,11 @@ namespace JCUBE_SE_PROJECT
                 cm.Parameters.AddWithValue("@EndDate", endDate);
 
                 dr = cm.ExecuteReader();
-
+             
                 if (!dr.HasRows)
                 {
                     MessageBox.Show("No cancelled orders found for the specified date range.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    PrintCnclOrders.Enabled = false;
                 }
                 else
                 {
@@ -50,8 +55,13 @@ namespace JCUBE_SE_PROJECT
                     {
                         dgvCancel.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), DateTime.Parse(dr[6].ToString()).ToShortDateString(), dr[7].ToString(), dr[8].ToString(), dr[9].ToString());
                     }
+                    PrintCnclOrders.Enabled = true;
                 }
+               
                 dr.Close();
+
+                
+
                 cn.Close();
             }
             catch (Exception ex)
@@ -64,6 +74,83 @@ namespace JCUBE_SE_PROJECT
         private void btnLoadCancelled_Click(object sender, EventArgs e)
         {
             LoadCancel();
+        }
+
+        private void PrintCnclOrders_Click(object sender, EventArgs e)
+        {
+            PrintCancelledOrders printCancelledOrders = new PrintCancelledOrders(adminuser);
+            printCancelledOrders.LoadPrtCncldOrders(dateFromCancelled.Value, dateToCancelled.Value);
+            printCancelledOrders.ShowDialog();
+        }
+
+        private void dgvCancel_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvCancel.Columns[e.ColumnIndex].Name;
+
+            if (colName == "Restore")
+            {
+                string action = dgvCancel.Rows[e.RowIndex].Cells["COActionCol"].Value.ToString();
+
+                // Check if the action is 'Yes' to allow restoration
+                if (action == "Yes")
+                {
+                    if (MessageBox.Show("Are you sure you want to restore this item?", "Restore Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            // Get the values of price, qty, and total from the selected row
+                            string price = dgvCancel.Rows[e.RowIndex].Cells["COPriceCol"].Value.ToString();
+                            string qty = dgvCancel.Rows[e.RowIndex].Cells["COQuantCol"].Value.ToString();
+                            string total = dgvCancel.Rows[e.RowIndex].Cells["COTotalCol"].Value.ToString();
+                            string transNo = dgvCancel.Rows[e.RowIndex].Cells["COTransacCol"].Value.ToString();
+
+                          
+                            cn.Open();
+                            cm = new SqlCommand("SELECT COUNT(*) FROM tbCart WHERE transNo = @transNo", cn);
+                            cm.Parameters.AddWithValue("@transNo", transNo);
+                            int transactionCount = (int)cm.ExecuteScalar();
+                            cn.Close();
+
+                            cn.Open();
+
+                            if (transactionCount > 0)
+                            {
+                             
+                                cm = new SqlCommand("UPDATE tbCart SET qty = qty + @qty, status = 'Complete' WHERE transNo = @transNo", cn);
+                               
+                                cm.Parameters.AddWithValue("@qty", qty);
+                                
+                                cm.Parameters.AddWithValue("@transNo", transNo);
+                                cm.ExecuteNonQuery();
+
+                                cm = new SqlCommand("UPDATE tbItemList SET Qty = Qty - @qty WHERE InventoryCode = (SELECT inventoryCode FROM tbCart WHERE transNo = @transNo)", cn);
+                                cm.Parameters.AddWithValue("@qty", qty); 
+                                cm.Parameters.AddWithValue("@transNo", transNo); 
+                                cm.ExecuteNonQuery();
+                            }
+
+                            // Delete restored item in tbCancelOrder
+                            cm = new SqlCommand("DELETE FROM tbCancelOrder WHERE transNo = @transNo", cn);
+                            cm.Parameters.AddWithValue("@transNo", transNo);
+                            cm.ExecuteNonQuery();
+
+                            cn.Close();
+
+                            MessageBox.Show("Item has been successfully restored.", "RESTORE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            LoadCancel();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("This item cannot be restored because the item was not added back to the inventory.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
     }
 }

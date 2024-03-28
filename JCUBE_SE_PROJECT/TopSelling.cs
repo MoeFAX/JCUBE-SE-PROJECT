@@ -25,6 +25,7 @@ namespace JCUBE_SE_PROJECT
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             this.invUIInstance = invUIInstance;
+            btnPrintTop.Enabled = false;
         }
         public void LoadTopSelling()
         {
@@ -59,6 +60,11 @@ namespace JCUBE_SE_PROJECT
             if (!dr.HasRows)
             {
                 MessageBox.Show("No items have been sold within the specified date range.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnPrintTop.Enabled = false;
+            }
+            else
+            {
+                btnPrintTop.Enabled = true;
             }
 
             dr?.Close();
@@ -81,6 +87,13 @@ namespace JCUBE_SE_PROJECT
             SoldItems soldItemsForm = new SoldItems(invUIInstance); 
             invUIInstance.openChildForm(soldItemsForm);
             this.Close(); 
+        }
+
+        private void btnPrintTop_Click(object sender, EventArgs e)
+        {
+            PrintTopSelling prtTopSelling = new PrintTopSelling(invUIInstance);
+            prtTopSelling.LoadPrintTopSelling(dateFromTopSell.Value, dateToTopSell.Value, cbTopSell.Text);
+            prtTopSelling.ShowDialog();
         }
     }
 }

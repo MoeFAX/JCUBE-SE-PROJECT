@@ -56,6 +56,8 @@ namespace JCUBE_SE_PROJECT
                         return;
                     }
 
+                    string ocNum = cart.GenOcNum(transNo);
+
                     cm = new SqlCommand("SELECT Qty FROM tbItemList WHERE inventoryCode = @inventoryCode", cn);
                     cm.Parameters.AddWithValue("@inventoryCode", inventoryCode);
                     cn.Open();
@@ -94,13 +96,14 @@ namespace JCUBE_SE_PROJECT
                     if (cm.ExecuteNonQuery() == 0)
                     {
                         // If no record was updated, insert a new record into tbCart
-                        cm = new SqlCommand("INSERT INTO tbCart(transNo, inventoryCode, srp, qty, date, clerk)VALUES(@transNo, @inventoryCode, @srp, @qty, @date, @clerk)", cn);
+                        cm = new SqlCommand("INSERT INTO tbCart(transNo, inventoryCode, srp, qty, date, clerk, OcNum)VALUES(@transNo, @inventoryCode, @srp, @qty, @date, @clerk, @OcNum)", cn);
                         cm.Parameters.AddWithValue("@transNo", transNo);
                         cm.Parameters.AddWithValue("@inventoryCode", inventoryCode);
                         cm.Parameters.AddWithValue("@srp", srp);
                         cm.Parameters.AddWithValue("@qty", int.Parse(txtQty.Text));
                         cm.Parameters.AddWithValue("@date", DateTime.Now);
                         cm.Parameters.AddWithValue("@clerk", clerk.lblUserRolePOS.Text);
+                        cm.Parameters.AddWithValue("@OcNum", ocNum);
                         cm.ExecuteNonQuery();
                     }
 

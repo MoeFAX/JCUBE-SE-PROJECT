@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,14 @@ namespace JCUBE_SE_PROJECT
                 comboClerk.SelectedIndex = 0; 
             }
             LoadSoldItems();
+
+            if (dgvSoldItems.Rows.Count > 0)
+            {
+                btnPrint.Enabled = true;
+            }
+            else btnPrint.Enabled = false;
+            
+            
         }
 
         public void LoadClerk()
@@ -88,7 +97,10 @@ namespace JCUBE_SE_PROJECT
             cn.Close();
             totalVal.Text = total.ToString("#,##0.00");
 
-            }
+  
+
+
+        }
 
         private void comboClerk_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -112,6 +124,11 @@ namespace JCUBE_SE_PROJECT
             if (dgvSoldItems.Rows.Count == 0)
             {
                 MessageBox.Show("No sales recorded for the selected period.", "No Sales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnPrint.Enabled = false;
+            }
+            else
+            {
+                btnPrint.Enabled = true;
             }
         }
 
@@ -141,6 +158,27 @@ namespace JCUBE_SE_PROJECT
                 cancelOrder.ShowDialog();
 
             }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            PrintDailyReport printDaily = new PrintDailyReport();
+
+            DateTime startDate = dateFrom.Value.Date;
+            DateTime endDate = dateTo.Value.Date.AddDays(1);
+
+            string param = "Date From:" + startDate.ToShortDateString() + " To: " + dateTo.Value.ToShortDateString();
+
+            if (comboClerk.Text == "All Clerk")
+            {
+                printDaily.LoadDailyReport("SELECT c.id, c.transNo, p.ItemCode, p.Description, c.srp, c.qty, c.discount, c.total FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND date >= '" + startDate.ToString("yyyy-MM-dd HH:mm:ss") + "' AND date < '" + endDate.ToString("yyyy-MM-dd HH:mm:ss") + "'", param, comboClerk.Text);
+            }
+            else
+            {
+                printDaily.LoadDailyReport("SELECT c.id, c.transNo, p.ItemCode, p.Description, c.srp, c.qty, c.discount, c.total FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND date >= '" + startDate.ToString("yyyy-MM-dd HH:mm:ss") + "' AND date < '" + endDate.ToString("yyyy-MM-dd HH:mm:ss") + "' AND Clerk = '" + comboClerk.Text + "'", param, comboClerk.Text);
+            }
+
+            printDaily.ShowDialog();
         }
     }
 }

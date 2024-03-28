@@ -38,7 +38,7 @@ namespace JCUBE_SE_PROJECT
         {
             dgvStockEntry.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand("SELECT se.StockID, il.Description, se.Stocks, s.SupplierName, se.StockInDate, se.Status FROM tbStockEntry AS se INNER JOIN tbItemList AS il ON il.ItemID = se.ilid INNER JOIN tbSupplier AS s ON s.SupplierID = se.sid WHERE CAST(se.StockInDate AS date) BETWEEN @StartDate AND @EndDate", cn);
+            cm = new SqlCommand("SELECT se.StockID, se.RefNo, il.Description, se.Stocks, s.SupplierName, se.StockInDate, se.Status FROM tbStockEntry AS se INNER JOIN tbItemList AS il ON il.ItemID = se.ilid INNER JOIN tbSupplier AS s ON s.SupplierID = se.sid WHERE CAST(se.StockInDate AS date) BETWEEN @StartDate AND @EndDate", cn);
             cm.Parameters.AddWithValue("@StartDate", dtpStockStartDate.Value.Date);
             cm.Parameters.AddWithValue("@EndDate", dtpStockEndDate.Value.Date);
             dr = cm.ExecuteReader();
@@ -46,7 +46,7 @@ namespace JCUBE_SE_PROJECT
             {
 
 
-                dgvStockEntry.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), DateTime.Parse(dr[4].ToString()).ToShortDateString(), dr[5].ToString());
+                dgvStockEntry.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), DateTime.Parse(dr[5].ToString()).ToShortDateString(), dr[6].ToString());
             }
             dr.Close();
             cn.Close();
@@ -104,10 +104,10 @@ namespace JCUBE_SE_PROJECT
                     int stockID = Convert.ToInt32(dgvStockEntry.Rows[e.RowIndex].Cells["StockID"].Value);
                     StockEntry moduleForm = new StockEntry(this, _loggedInUsername);
                     moduleForm.StockID = stockID; // Set SupplierID property
-                    moduleForm.ItemNameField.Text = dgvStockEntry[1, e.RowIndex].Value.ToString();
-                    moduleForm.stocksField.Text = dgvStockEntry[2, e.RowIndex].Value.ToString();
-                    moduleForm.SuppNameField.Text = dgvStockEntry[3, e.RowIndex].Value.ToString();
-                    moduleForm.StatusField.Text = dgvStockEntry[4, e.RowIndex].Value.ToString();
+                    moduleForm.ItemNameField.Text = dgvStockEntry[2, e.RowIndex].Value.ToString();
+                    moduleForm.stocksField.Text = dgvStockEntry[3, e.RowIndex].Value.ToString();
+                    moduleForm.SuppNameField.Text = dgvStockEntry[4, e.RowIndex].Value.ToString();
+                    moduleForm.StatusField.Text = dgvStockEntry[6, e.RowIndex].Value.ToString();
                     string stockInBy = "";
                     try
                     {

@@ -13,7 +13,7 @@ namespace JCUBE_SE_PROJECT
 {
     public partial class PosUI : Form
     {
-        CartUI clerk;
+        public CartUI clerk;
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
@@ -25,27 +25,34 @@ namespace JCUBE_SE_PROJECT
             clerk = new CartUI(this);
             _loggedInUsername = loggedInUsername;
             cn = new SqlConnection(dbcon.myConnection());
+            clerk = CartUI.GetInstance(this);
         }
 
         private Form activeForm = null;
 
         private void openChildForm(Form childForm)
         {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(childForm);
-            panelMain.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+            if (activeForm != null && activeForm.GetType() == typeof(CartUI))
+            {
+                activeForm.BringToFront();
+            }
+            else
+            {
+                if (activeForm != null)
+                    activeForm.Close();
+                activeForm = childForm;
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+                panelMain.Controls.Add(childForm);
+                panelMain.Tag = childForm;
+                childForm.BringToFront();
+                childForm.Show();
+            }
         }
 
         private void btnCart_Click(object sender, EventArgs e)
         {
-            clerk = new CartUI(this);
             openChildForm(clerk);
         }
 

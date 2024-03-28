@@ -33,6 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartUI));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.searchProdLabel = new System.Windows.Forms.Label();
             this.transactionNoLabel = new System.Windows.Forms.Label();
             this.salesTotalLabel = new System.Windows.Forms.Label();
@@ -54,6 +58,7 @@
             this.CancelOrder = new System.Windows.Forms.DataGridViewImageColumn();
             this.newTransactionLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblOcNum = new System.Windows.Forms.Label();
             this.clerkLbl = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.clrCartLabel = new System.Windows.Forms.Label();
@@ -225,7 +230,8 @@
             this.No.HeaderText = "No";
             this.No.MinimumWidth = 55;
             this.No.Name = "No";
-            this.No.Width = 55;
+            this.No.Visible = false;
+            this.No.Width = 57;
             // 
             // InventoryCode
             // 
@@ -239,7 +245,7 @@
             // 
             this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Description.HeaderText = "Description";
-            this.Description.MinimumWidth = 260;
+            this.Description.MinimumWidth = 290;
             this.Description.Name = "Description";
             // 
             // srp
@@ -296,6 +302,9 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
             this.CancelOrder.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.NullValue = null;
+            this.CancelOrder.DefaultCellStyle = dataGridViewCellStyle7;
             this.CancelOrder.HeaderText = "";
             this.CancelOrder.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
             this.CancelOrder.MinimumWidth = 20;
@@ -316,6 +325,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.lblOcNum);
             this.panel2.Controls.Add(this.clerkLbl);
             this.panel2.Controls.Add(this.btnClear);
             this.panel2.Controls.Add(this.clrCartLabel);
@@ -330,15 +340,25 @@
             this.panel2.Size = new System.Drawing.Size(670, 100);
             this.panel2.TabIndex = 15;
             // 
+            // lblOcNum
+            // 
+            this.lblOcNum.AutoSize = true;
+            this.lblOcNum.Location = new System.Drawing.Point(837, 29);
+            this.lblOcNum.Name = "lblOcNum";
+            this.lblOcNum.Size = new System.Drawing.Size(44, 16);
+            this.lblOcNum.TabIndex = 12;
+            this.lblOcNum.Text = "label2";
+            this.lblOcNum.Visible = false;
+            // 
             // clerkLbl
             // 
             this.clerkLbl.AutoSize = true;
-            this.clerkLbl.Location = new System.Drawing.Point(628, 7);
-            this.clerkLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.clerkLbl.Location = new System.Drawing.Point(837, 9);
             this.clerkLbl.Name = "clerkLbl";
-            this.clerkLbl.Size = new System.Drawing.Size(41, 15);
+            this.clerkLbl.Size = new System.Drawing.Size(44, 16);
             this.clerkLbl.TabIndex = 11;
             this.clerkLbl.Text = "label2";
+            this.clerkLbl.Visible = false;
             // 
             // btnClear
             // 
@@ -578,6 +598,12 @@
         private System.Windows.Forms.Label lbDisplayTotal;
         private System.Windows.Forms.Label clrCartLabel;
         private System.Windows.Forms.Button btnClear;
+        public System.Windows.Forms.Label vatableVal;
+        public System.Windows.Forms.Label vatVal;
+        public System.Windows.Forms.Label discountVal;
+        public System.Windows.Forms.Label DateTodayVal;
+        public System.Windows.Forms.Label clerkLbl;
+        public System.Windows.Forms.Label lblOcNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
@@ -588,10 +614,5 @@
         private System.Windows.Forms.DataGridViewImageColumn AddQty;
         private System.Windows.Forms.DataGridViewImageColumn RemQty;
         private System.Windows.Forms.DataGridViewImageColumn CancelOrder;
-        public System.Windows.Forms.Label vatableVal;
-        public System.Windows.Forms.Label vatVal;
-        public System.Windows.Forms.Label discountVal;
-        public System.Windows.Forms.Label DateTodayVal;
-        public System.Windows.Forms.Label clerkLbl;
     }
 }

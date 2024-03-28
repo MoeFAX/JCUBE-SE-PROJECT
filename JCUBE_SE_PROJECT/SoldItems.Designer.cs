@@ -30,15 +30,21 @@ namespace JCUBE_SE_PROJECT
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoldItems));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoldItems));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnTopSelling = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrintSold = new System.Windows.Forms.Button();
+            this.btnLoadSold = new System.Windows.Forms.Button();
+            this.dateToSold = new System.Windows.Forms.DateTimePicker();
+            this.dateFromSold = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.flterLbl = new System.Windows.Forms.Label();
             this.mngRecord = new System.Windows.Forms.Label();
             this.SoldTotal = new System.Windows.Forms.Label();
             this.dgvSoldItems = new System.Windows.Forms.DataGridView();
@@ -49,12 +55,6 @@ namespace JCUBE_SE_PROJECT
             this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPrintSold = new System.Windows.Forms.Button();
-            this.btnLoadSold = new System.Windows.Forms.Button();
-            this.dateToSold = new System.Windows.Forms.DateTimePicker();
-            this.dateFromSold = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.flterLbl = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSoldItems)).BeginInit();
@@ -134,120 +134,6 @@ namespace JCUBE_SE_PROJECT
             this.panel1.Size = new System.Drawing.Size(911, 100);
             this.panel1.TabIndex = 8;
             // 
-            // mngRecord
-            // 
-            this.mngRecord.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mngRecord.Image = ((System.Drawing.Image)(resources.GetObject("mngRecord.Image")));
-            this.mngRecord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mngRecord.Location = new System.Drawing.Point(758, 15);
-            this.mngRecord.Name = "mngRecord";
-            this.mngRecord.Size = new System.Drawing.Size(141, 75);
-            this.mngRecord.TabIndex = 13;
-            this.mngRecord.Text = "Manage Record";
-            this.mngRecord.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // SoldTotal
-            // 
-            this.SoldTotal.AutoSize = true;
-            this.SoldTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoldTotal.Location = new System.Drawing.Point(638, 47);
-            this.SoldTotal.Name = "SoldTotal";
-            this.SoldTotal.Size = new System.Drawing.Size(48, 23);
-            this.SoldTotal.TabIndex = 10;
-            this.SoldTotal.Text = "0.00";
-            // 
-            // dgvSoldItems
-            // 
-            this.dgvSoldItems.AllowUserToAddRows = false;
-            this.dgvSoldItems.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.dgvSoldItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvSoldItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSoldItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSoldItems.ColumnHeadersHeight = 30;
-            this.dgvSoldItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvSoldItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.No,
-            this.InventoryCode,
-            this.Description,
-            this.Price,
-            this.Qty,
-            this.Discount,
-            this.Total});
-            this.dgvSoldItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSoldItems.EnableHeadersVisualStyles = false;
-            this.dgvSoldItems.GridColor = System.Drawing.Color.Snow;
-            this.dgvSoldItems.Location = new System.Drawing.Point(20, 70);
-            this.dgvSoldItems.Name = "dgvSoldItems";
-            this.dgvSoldItems.RowHeadersVisible = false;
-            this.dgvSoldItems.RowHeadersWidth = 51;
-            this.dgvSoldItems.RowTemplate.Height = 24;
-            this.dgvSoldItems.Size = new System.Drawing.Size(871, 374);
-            this.dgvSoldItems.TabIndex = 12;
-            this.dgvSoldItems.DefaultCellStyle.Font = new Font("Arial", 10);
-            // 
-            // No
-            // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.No.DefaultCellStyle = dataGridViewCellStyle2;
-            this.No.HeaderText = "No";
-            this.No.MinimumWidth = 6;
-            this.No.Name = "No";
-            this.No.Width = 63;
-            // 
-            // InventoryCode
-            // 
-            this.InventoryCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.InventoryCode.HeaderText = "Inventory Code";
-            this.InventoryCode.MinimumWidth = 6;
-            this.InventoryCode.Name = "InventoryCode";
-            this.InventoryCode.Width = 184;
-            // 
-            // Description
-            // 
-            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Description.HeaderText = "Description";
-            this.Description.MinimumWidth = 6;
-            this.Description.Name = "Description";
-            // 
-            // Price
-            // 
-            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Price.HeaderText = "Unit Price";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.Width = 120;
-            // 
-            // Qty
-            // 
-            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Qty.HeaderText = "Quantity";
-            this.Qty.MinimumWidth = 6;
-            this.Qty.Name = "Qty";
-            this.Qty.Width = 119;
-            // 
-            // Discount
-            // 
-            this.Discount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Discount.HeaderText = "Discount";
-            this.Discount.MinimumWidth = 6;
-            this.Discount.Name = "Discount";
-            this.Discount.Width = 116;
-            // 
-            // Total
-            // 
-            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Total.HeaderText = "Total";
-            this.Total.MinimumWidth = 6;
-            this.Total.Name = "Total";
-            this.Total.Width = 80;
-            // 
             // btnPrintSold
             // 
             this.btnPrintSold.FlatAppearance.BorderSize = 0;
@@ -260,6 +146,7 @@ namespace JCUBE_SE_PROJECT
             this.btnPrintSold.Size = new System.Drawing.Size(27, 28);
             this.btnPrintSold.TabIndex = 20;
             this.btnPrintSold.UseVisualStyleBackColor = true;
+            this.btnPrintSold.Click += new System.EventHandler(this.btnPrintSold_Click);
             // 
             // btnLoadSold
             // 
@@ -319,6 +206,127 @@ namespace JCUBE_SE_PROJECT
             this.flterLbl.TabIndex = 14;
             this.flterLbl.Text = "Filter By Date:";
             // 
+            // mngRecord
+            // 
+            this.mngRecord.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mngRecord.Image = ((System.Drawing.Image)(resources.GetObject("mngRecord.Image")));
+            this.mngRecord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mngRecord.Location = new System.Drawing.Point(758, 15);
+            this.mngRecord.Name = "mngRecord";
+            this.mngRecord.Size = new System.Drawing.Size(141, 75);
+            this.mngRecord.TabIndex = 13;
+            this.mngRecord.Text = "Manage Record";
+            this.mngRecord.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // SoldTotal
+            // 
+            this.SoldTotal.AutoSize = true;
+            this.SoldTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SoldTotal.Location = new System.Drawing.Point(638, 47);
+            this.SoldTotal.Name = "SoldTotal";
+            this.SoldTotal.Size = new System.Drawing.Size(48, 23);
+            this.SoldTotal.TabIndex = 10;
+            this.SoldTotal.Text = "0.00";
+            // 
+            // dgvSoldItems
+            // 
+            this.dgvSoldItems.AllowUserToAddRows = false;
+            this.dgvSoldItems.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.dgvSoldItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvSoldItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSoldItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSoldItems.ColumnHeadersHeight = 30;
+            this.dgvSoldItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvSoldItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.No,
+            this.InventoryCode,
+            this.Description,
+            this.Price,
+            this.Qty,
+            this.Discount,
+            this.Total});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSoldItems.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSoldItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSoldItems.EnableHeadersVisualStyles = false;
+            this.dgvSoldItems.GridColor = System.Drawing.Color.Snow;
+            this.dgvSoldItems.Location = new System.Drawing.Point(20, 70);
+            this.dgvSoldItems.Name = "dgvSoldItems";
+            this.dgvSoldItems.RowHeadersVisible = false;
+            this.dgvSoldItems.RowHeadersWidth = 51;
+            this.dgvSoldItems.RowTemplate.Height = 24;
+            this.dgvSoldItems.Size = new System.Drawing.Size(871, 374);
+            this.dgvSoldItems.TabIndex = 12;
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.No.HeaderText = "No";
+            this.No.MinimumWidth = 6;
+            this.No.Name = "No";
+            this.No.Visible = false;
+            this.No.Width = 63;
+            // 
+            // InventoryCode
+            // 
+            this.InventoryCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.InventoryCode.HeaderText = "Inventory Code";
+            this.InventoryCode.MinimumWidth = 6;
+            this.InventoryCode.Name = "InventoryCode";
+            this.InventoryCode.Width = 184;
+            // 
+            // Description
+            // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Description.HeaderText = "Description";
+            this.Description.MinimumWidth = 6;
+            this.Description.Name = "Description";
+            // 
+            // Price
+            // 
+            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Price.HeaderText = "Unit Price";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.Width = 120;
+            // 
+            // Qty
+            // 
+            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Qty.HeaderText = "Quantity";
+            this.Qty.MinimumWidth = 6;
+            this.Qty.Name = "Qty";
+            this.Qty.Width = 119;
+            // 
+            // Discount
+            // 
+            this.Discount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Discount.HeaderText = "Discount";
+            this.Discount.MinimumWidth = 6;
+            this.Discount.Name = "Discount";
+            this.Discount.Width = 116;
+            // 
+            // Total
+            // 
+            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 6;
+            this.Total.Name = "Total";
+            this.Total.Width = 80;
+            // 
             // SoldItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -351,6 +359,12 @@ namespace JCUBE_SE_PROJECT
         private System.Windows.Forms.Label SoldTotal;
         private System.Windows.Forms.Label mngRecord;
         private System.Windows.Forms.DataGridView dgvSoldItems;
+        private System.Windows.Forms.Button btnPrintSold;
+        private System.Windows.Forms.Button btnLoadSold;
+        private System.Windows.Forms.DateTimePicker dateToSold;
+        private System.Windows.Forms.DateTimePicker dateFromSold;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label flterLbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
@@ -358,11 +372,5 @@ namespace JCUBE_SE_PROJECT
         private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.Button btnPrintSold;
-        private System.Windows.Forms.Button btnLoadSold;
-        private System.Windows.Forms.DateTimePicker dateToSold;
-        private System.Windows.Forms.DateTimePicker dateFromSold;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label flterLbl;
     }
 }

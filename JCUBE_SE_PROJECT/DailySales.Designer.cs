@@ -31,6 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblClerk = new System.Windows.Forms.Label();
+            this.lblTo = new System.Windows.Forms.Label();
             this.comboClerk = new System.Windows.Forms.ComboBox();
             this.totalVal = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -69,6 +71,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.panel2.Controls.Add(this.lblClerk);
+            this.panel2.Controls.Add(this.lblTo);
             this.panel2.Controls.Add(this.comboClerk);
             this.panel2.Controls.Add(this.totalVal);
             this.panel2.Controls.Add(this.lblTotal);
@@ -83,14 +87,37 @@
             this.panel2.Size = new System.Drawing.Size(1067, 41);
             this.panel2.TabIndex = 2;
             // 
+            // lblClerk
+            // 
+            this.lblClerk.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClerk.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblClerk.Location = new System.Drawing.Point(664, 15);
+            this.lblClerk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblClerk.Name = "lblClerk";
+            this.lblClerk.Size = new System.Drawing.Size(69, 26);
+            this.lblClerk.TabIndex = 19;
+            this.lblClerk.Text = "Clerk:";
+            // 
+            // lblTo
+            // 
+            this.lblTo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTo.Location = new System.Drawing.Point(396, 15);
+            this.lblTo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTo.Name = "lblTo";
+            this.lblTo.Size = new System.Drawing.Size(43, 26);
+            this.lblTo.TabIndex = 18;
+            this.lblTo.Text = "To:";
+            // 
             // comboClerk
             // 
             this.comboClerk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboClerk.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboClerk.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboClerk.FormattingEnabled = true;
-            this.comboClerk.Location = new System.Drawing.Point(554, 13);
+            this.comboClerk.Location = new System.Drawing.Point(745, 14);
+            this.comboClerk.Margin = new System.Windows.Forms.Padding(4);
             this.comboClerk.Name = "comboClerk";
-            this.comboClerk.Size = new System.Drawing.Size(115, 28);
+            this.comboClerk.Size = new System.Drawing.Size(152, 29);
             this.comboClerk.TabIndex = 16;
             this.comboClerk.SelectedIndexChanged += new System.EventHandler(this.comboClerk_SelectedIndexChanged);
             // 
@@ -98,8 +125,8 @@
             // 
             this.totalVal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalVal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.totalVal.Location = new System.Drawing.Point(882, 14);
-            this.totalVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalVal.Location = new System.Drawing.Point(1176, 12);
+            this.totalVal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.totalVal.Name = "totalVal";
             this.totalVal.Size = new System.Drawing.Size(172, 26);
             this.totalVal.TabIndex = 15;
@@ -110,8 +137,8 @@
             // 
             this.lblTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTotal.Location = new System.Drawing.Point(815, 14);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotal.Location = new System.Drawing.Point(1087, 12);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(64, 26);
             this.lblTotal.TabIndex = 14;
@@ -121,32 +148,33 @@
             // 
             this.btnPrint.BackgroundImage = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_print_50;
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnPrint.Location = new System.Drawing.Point(723, 10);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrint.Location = new System.Drawing.Point(936, 4);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(42, 34);
             this.btnPrint.TabIndex = 13;
             this.btnPrint.UseSelectable = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // dateFrom
             // 
-            this.dateFrom.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFrom.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFrom.Location = new System.Drawing.Point(231, 14);
-            this.dateFrom.Margin = new System.Windows.Forms.Padding(4);
+            this.dateFrom.Location = new System.Drawing.Point(240, 14);
+            this.dateFrom.Margin = new System.Windows.Forms.Padding(5);
             this.dateFrom.Name = "dateFrom";
-            this.dateFrom.Size = new System.Drawing.Size(105, 26);
+            this.dateFrom.Size = new System.Drawing.Size(139, 28);
             this.dateFrom.TabIndex = 4;
             this.dateFrom.ValueChanged += new System.EventHandler(this.dateFrom_ValueChanged);
             // 
             // dateTo
             // 
-            this.dateTo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTo.Location = new System.Drawing.Point(408, 14);
-            this.dateTo.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTo.Location = new System.Drawing.Point(456, 14);
+            this.dateTo.Margin = new System.Windows.Forms.Padding(5);
             this.dateTo.Name = "dateTo";
-            this.dateTo.Size = new System.Drawing.Size(110, 26);
+            this.dateTo.Size = new System.Drawing.Size(145, 28);
             this.dateTo.TabIndex = 4;
             this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
@@ -164,7 +192,8 @@
             // 
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label10.Location = new System.Drawing.Point(20, 11);
+            this.label10.Location = new System.Drawing.Point(27, 15);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(147, 21);
             this.label10.TabIndex = 7;
@@ -215,7 +244,8 @@
             this.DSNo.HeaderText = "No";
             this.DSNo.MinimumWidth = 6;
             this.DSNo.Name = "DSNo";
-            this.DSNo.Width = 63;
+            this.DSNo.Visible = false;
+            this.DSNo.Width = 65;
             // 
             // DSInvoice
             // 
@@ -334,5 +364,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DSDiscount;
         private System.Windows.Forms.DataGridViewTextBoxColumn DSTotal;
         private System.Windows.Forms.DataGridViewImageColumn CancelOrder;
+        private System.Windows.Forms.Label lblClerk;
+        private System.Windows.Forms.Label lblTo;
     }
 }

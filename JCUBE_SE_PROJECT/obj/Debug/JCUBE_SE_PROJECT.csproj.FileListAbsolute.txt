@@ -365,6 +365,11 @@ C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT
 C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintInvList.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintDailyReport.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintCancelledOrders.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintSoldItems.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintTopSelling.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintSalesHistory.resources
 D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -436,3 +441,5 @@ C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-H
 C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintInvList.resources
 C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.printReceipt.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintStockInHistory.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintStockInHistory.resources
