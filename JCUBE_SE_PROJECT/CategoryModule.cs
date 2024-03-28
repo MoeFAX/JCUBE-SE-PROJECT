@@ -39,6 +39,16 @@ namespace JCUBE_SE_PROJECT
                     return;
                 }
                 cn.Open();
+                string categoryName = CtgryNameField.Text.Trim();
+                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM tbCategory WHERE CategoryName = @CategoryName", cn);
+                checkCmd.Parameters.AddWithValue("@CategoryName", categoryName);
+                int categoryCount = (int)checkCmd.ExecuteScalar();
+
+                if (categoryCount > 0)
+                {
+                    MessageBox.Show("Category name already exists. Please enter a unique category name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (!string.IsNullOrEmpty(CtgryNameField.Text) && int.TryParse(lblid.Text, out int categoryID))
                 {
                     // for update

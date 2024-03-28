@@ -35,7 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +45,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.mngRecord = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvCriticalStocks = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +58,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCriticalStocks)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -67,7 +66,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.label1.Location = new System.Drawing.Point(3, 7);
+            this.label1.Location = new System.Drawing.Point(3, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(201, 27);
             this.label1.TabIndex = 0;
@@ -76,7 +75,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(20, 0);
@@ -84,18 +82,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(871, 70);
             this.panel2.TabIndex = 19;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Return";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
@@ -213,12 +199,12 @@
             this.panel4.Size = new System.Drawing.Size(20, 544);
             this.panel4.TabIndex = 21;
             // 
-            // dataGridView2
+            // dgvCriticalStocks
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCriticalStocks.AllowUserToAddRows = false;
+            this.dgvCriticalStocks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.dgvCriticalStocks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCriticalStocks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -226,10 +212,10 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView2.ColumnHeadersHeight = 30;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCriticalStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCriticalStocks.ColumnHeadersHeight = 30;
+            this.dgvCriticalStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCriticalStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.ItemCode,
@@ -239,16 +225,16 @@
             this.Price,
             this.ReOrder,
             this.StockOnHand});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.EnableHeadersVisualStyles = false;
-            this.dataGridView2.GridColor = System.Drawing.Color.Snow;
-            this.dataGridView2.Location = new System.Drawing.Point(20, 70);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(871, 374);
-            this.dataGridView2.TabIndex = 23;
+            this.dgvCriticalStocks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCriticalStocks.EnableHeadersVisualStyles = false;
+            this.dgvCriticalStocks.GridColor = System.Drawing.Color.Snow;
+            this.dgvCriticalStocks.Location = new System.Drawing.Point(20, 70);
+            this.dgvCriticalStocks.Name = "dgvCriticalStocks";
+            this.dgvCriticalStocks.RowHeadersVisible = false;
+            this.dgvCriticalStocks.RowHeadersWidth = 51;
+            this.dgvCriticalStocks.RowTemplate.Height = 24;
+            this.dgvCriticalStocks.Size = new System.Drawing.Size(871, 374);
+            this.dgvCriticalStocks.TabIndex = 23;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -258,6 +244,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "No";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
             this.dataGridViewTextBoxColumn1.Width = 63;
             // 
             // dataGridViewTextBoxColumn2
@@ -327,7 +314,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 544);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvCriticalStocks);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dataGridView1);
@@ -339,7 +326,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCriticalStocks)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -348,7 +335,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
@@ -359,7 +345,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label mngRecord;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvCriticalStocks;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemCode;

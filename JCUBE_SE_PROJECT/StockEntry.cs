@@ -56,7 +56,6 @@ namespace JCUBE_SE_PROJECT
             ItemNameField.SelectedIndex = 0;
             SuppNameField.SelectedIndex = 0;
             stocksField.Value = 1;
-            StockinbyField.Clear();
             StatusField.SelectedIndex = 0;
             StockInDate.Value = DateTime.Now;
         }
@@ -98,6 +97,19 @@ namespace JCUBE_SE_PROJECT
         {
             try
             {
+
+                if (stocksField.Value == 0 || string.IsNullOrEmpty(stocksField.Text))
+                {
+                    MessageBox.Show("Stocks can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (Convert.ToInt32(stocksField.Value) <= 0)
+                {
+                    MessageBox.Show("Stocks should must be a positive integer and it should not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 // Generate the reference number based on StockInDate
                 string referenceNumber = GenerateReferenceNumber(StockInDate.Value);
 
@@ -110,8 +122,8 @@ namespace JCUBE_SE_PROJECT
 
                         // Retrieve the old quantity value before updating
                         int oldQuantity = 0;
-                        string oldStatus = "";
-                        using (SqlCommand getOldDataCmd = new SqlCommand("SELECT Stocks, Status FROM tbStockEntry WHERE StockID = @StockID", cn))
+                        int oldItem = 0;
+                        using (SqlCommand getOldDataCmd = new SqlCommand("SELECT Stocks, ilid FROM tbStockEntry WHERE StockID = @StockID", cn))
                         {
                             getOldDataCmd.Parameters.AddWithValue("@StockID", stockID);
                             using (SqlDataReader oldDataReader = getOldDataCmd.ExecuteReader())
@@ -119,7 +131,7 @@ namespace JCUBE_SE_PROJECT
                                 if (oldDataReader.Read())
                                 {
                                     oldQuantity = Convert.ToInt32(oldDataReader["Stocks"]);
-                                    oldStatus = Convert.ToString(oldDataReader["Status"]);
+                                    oldItem = Convert.ToInt32(oldDataReader["ilid"]);
                                 }
                             }
                         }
@@ -134,20 +146,34 @@ namespace JCUBE_SE_PROJECT
                             cm.Parameters.AddWithValue("@StockInDate", StockInDate.Value);
                             cm.Parameters.AddWithValue("@StockID", stockID);
                             cm.ExecuteNonQuery();
+                            
 
-                            // If the status is "Delivered" and the quantity has changed, update tbItemList
-                            if (oldStatus == "Pending" && StatusField.SelectedItem.ToString() == "Delivered")
+                            if (oldItem != Convert.ToInt32(ItemNameField.SelectedValue))
+                            {
+                                using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty - @Quantity WHERE ItemID = @ItemID", cn))
+                                {
+                                    updateQtyCmd.Parameters.AddWithValue("@Quantity", stocksField.Text);
+                                    updateQtyCmd.Parameters.AddWithValue("@ItemID", oldItem);
+                                    updateQtyCmd.ExecuteNonQuery();
+                                }
+                            }
+                            if (StatusField.SelectedItem.ToString() == "Delivered")
                             {
                                 int newQuantity = Convert.ToInt32(stocksField.Text);
-                                if (oldQuantity != newQuantity)
+                                if (oldQuantity == newQuantity)
                                 {
-                                    try
+                                    using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty + @Quantity WHERE ItemID = @ItemID", cn))
                                     {
-                                        cn.Open();
-                                        // Calculate the difference in quantity
+                                        updateQtyCmd.Parameters.AddWithValue("@Quantity", stocksField.Text);
+                                        updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
+                                        updateQtyCmd.ExecuteNonQuery();
+                                    }
+                                } 
+                                else if (oldQuantity != newQuantity)
+                                {
+                                    if(newQuantity > oldQuantity)
+                                    {
                                         int quantityDifference = newQuantity - oldQuantity;
-
-                                        // Update the quantity in tbItemList
                                         using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty + @QuantityDifference WHERE ItemID = @ItemID", cn))
                                         {
                                             updateQtyCmd.Parameters.AddWithValue("@QuantityDifference", quantityDifference);
@@ -155,37 +181,37 @@ namespace JCUBE_SE_PROJECT
                                             updateQtyCmd.ExecuteNonQuery();
                                         }
                                     }
-                                    catch (Exception ex)
+                                    else if (newQuantity < oldQuantity)
                                     {
-                                        MessageBox.Show($"Error updating quantity in tbItemList: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    }
-                                    finally
-                                    {
-                                        if (cn.State == ConnectionState.Open)
+                                        int quantityDifference = oldQuantity - newQuantity;
+                                        using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty - @QuantityDifference WHERE ItemID = @ItemID", cn))
                                         {
-                                            cn.Close();
+                                            updateQtyCmd.Parameters.AddWithValue("@QuantityDifference", quantityDifference);
+                                            updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
+                                            updateQtyCmd.ExecuteNonQuery();
                                         }
                                     }
+                                    
+                                }
+
+                                
+
+                            }
+
+                            if (StatusField.SelectedItem.ToString() == "Pending")
+                            {
+                                using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty - @Quantity WHERE ItemID = @ItemID", cn))
+                                {
+                                    updateQtyCmd.Parameters.AddWithValue("@Quantity", stocksField.Text);
+                                    updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
+                                    updateQtyCmd.ExecuteNonQuery();
                                 }
                             }
-                            /*if (oldStatus == "Pending" && StatusField.SelectedItem.ToString() == "Delivered")
-                            {
-                                int newQuantity = Convert.ToInt32(stocksField.Text);
-                                if (oldQuantity != newQuantity)
-                                {
-                                    // Calculate the difference in quantity
-                                    int quantityDifference = newQuantity - oldQuantity;
 
-                                    // Update the quantity in tbItemList
-                                    
-                                    using (SqlCommand updateQtyCmd = new SqlCommand("UPDATE tbItemList SET Qty = Qty + @QuantityDifference WHERE ItemID = @ItemID", cn))
-                                    {
-                                        updateQtyCmd.Parameters.AddWithValue("@QuantityDifference", quantityDifference);
-                                        updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
-                                        updateQtyCmd.ExecuteNonQuery();
-                                    }
-                                }
-                            }*/
+                            // If the status is "Delivered" and the quantity has changed, update tbItemList
+                            
+                            
+
                         }
                         
                     }
@@ -202,6 +228,7 @@ namespace JCUBE_SE_PROJECT
                                     updateQtyCmd.Parameters.AddWithValue("@Quantity", stocksField.Text);
                                     updateQtyCmd.Parameters.AddWithValue("@ItemID", ItemNameField.SelectedValue);
                                     updateQtyCmd.ExecuteNonQuery();
+                                    
                                 }
                             }
 
@@ -214,6 +241,7 @@ namespace JCUBE_SE_PROJECT
                             cm.Parameters.AddWithValue("@StockInBy", StockinbyField.Text);
                             cm.Parameters.AddWithValue("@StockInDate", StockInDate.Value);
                             cm.ExecuteNonQuery();
+                            
                         }
                     }
                 }
@@ -221,13 +249,24 @@ namespace JCUBE_SE_PROJECT
                 MessageBox.Show("Record has been successfully saved.", "SAVE");
                 Clear();
                 stocks.LoadStocks();
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+            }
         }
 
-      
+        private void cancelbtn_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
     }
 }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemList));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSearch = new MetroFramework.Controls.MetroTextBox();
             this.addbtn = new System.Windows.Forms.Button();
             this.MngItemLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,6 +57,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.addbtn);
             this.panel1.Controls.Add(this.MngItemLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -63,6 +65,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(982, 100);
             this.panel1.TabIndex = 1;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            // 
+            // 
+            // 
+            this.txtSearch.CustomButton.Image = null;
+            this.txtSearch.CustomButton.Location = new System.Drawing.Point(253, 1);
+            this.txtSearch.CustomButton.Name = "";
+            this.txtSearch.CustomButton.Size = new System.Drawing.Size(29, 29);
+            this.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSearch.CustomButton.TabIndex = 1;
+            this.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSearch.CustomButton.UseSelectable = true;
+            this.txtSearch.CustomButton.Visible = false;
+            this.txtSearch.DisplayIcon = true;
+            this.txtSearch.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtSearch.Icon = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_search_50__1_;
+            this.txtSearch.IconRight = true;
+            this.txtSearch.Lines = new string[0];
+            this.txtSearch.Location = new System.Drawing.Point(450, 33);
+            this.txtSearch.MaxLength = 32767;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.SelectionLength = 0;
+            this.txtSearch.SelectionStart = 0;
+            this.txtSearch.ShortcutsEnabled = true;
+            this.txtSearch.Size = new System.Drawing.Size(283, 31);
+            this.txtSearch.TabIndex = 2;
+            this.txtSearch.UseSelectable = true;
+            this.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI Symbol", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // addbtn
             // 
@@ -170,6 +208,7 @@
             this.ItemID.HeaderText = "No";
             this.ItemID.MinimumWidth = 6;
             this.ItemID.Name = "ItemID";
+            this.ItemID.Visible = false;
             this.ItemID.Width = 62;
             // 
             // InventoryCode
@@ -290,6 +329,7 @@
         private System.Windows.Forms.Panel side2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgvItem;
+        private MetroFramework.Controls.MetroTextBox txtSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemCode;

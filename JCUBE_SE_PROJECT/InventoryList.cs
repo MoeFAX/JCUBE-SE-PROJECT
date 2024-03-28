@@ -17,14 +17,16 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
-        public InventoryList()
+        InvUI adminuser;
+        public InventoryList(InvUI aduser)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
-            LoadItemList();
+            adminuser = aduser;
+            LoadInvList();
         }
 
-        public void LoadItemList()
+        public void LoadInvList()
         {
             dgvInventory.Rows.Clear();
             cn.Open();
@@ -38,6 +40,13 @@ namespace JCUBE_SE_PROJECT
             }
             dr.Close();
             cn.Close();
+        }
+
+        private void PrintInvList_Click(object sender, EventArgs e)
+        {
+            PrintInvList prtinvlist = new PrintInvList(adminuser);
+            prtinvlist.LoadPrtInvList();
+            prtinvlist.ShowDialog();
         }
     }
 }

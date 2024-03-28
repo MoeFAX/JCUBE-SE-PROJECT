@@ -51,14 +51,36 @@ namespace JCUBE_SE_PROJECT
             string colName = dgvBrand.Columns[e.ColumnIndex].Name;
             if (colName == "Archive")
             {
-                if(MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                string BrandId = dgvBrand[1, e.RowIndex].Value.ToString();
+
+                // Check if the category is used in tbItemList
+                bool isUsed = false;
+                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM tbItemList WHERE bid = @BrandId", cn))
                 {
+                    cmd.Parameters.AddWithValue("@BrandId", BrandId);
                     cn.Open();
-                    cm = new SqlCommand("DELETE FROM tbBrand WHERE BrandID LIKE '" + dgvBrand[1, e.RowIndex].Value.ToString() + "'", cn);
-                    cm.ExecuteNonQuery();
+                    int count = (int)cmd.ExecuteScalar();
                     cn.Close();
-                    MessageBox.Show("Brand has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    isUsed = (count > 0);
                 }
+
+                if (isUsed)
+                {
+                    MessageBox.Show("Cannot delete the brand as it is used in other records.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        cn.Open();
+                        cm = new SqlCommand("DELETE FROM tbBrand WHERE BrandID LIKE '" + dgvBrand[1, e.RowIndex].Value.ToString() + "'", cn);
+                        cm.ExecuteNonQuery();
+                        cn.Close();
+                        MessageBox.Show("Brand has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                
             }
             else if (colName == "Edit")
             {

@@ -36,6 +36,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PrintInvList = new System.Windows.Forms.Button();
             this.mngRecord = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -124,6 +125,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.PrintInvList);
             this.panel1.Controls.Add(this.mngRecord);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 444);
@@ -131,6 +133,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(891, 100);
             this.panel1.TabIndex = 24;
+            // 
+            // PrintInvList
+            // 
+            this.PrintInvList.FlatAppearance.BorderSize = 0;
+            this.PrintInvList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrintInvList.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintInvList.Image = ((System.Drawing.Image)(resources.GetObject("PrintInvList.Image")));
+            this.PrintInvList.Location = new System.Drawing.Point(833, 41);
+            this.PrintInvList.MinimumSize = new System.Drawing.Size(20, 20);
+            this.PrintInvList.Name = "PrintInvList";
+            this.PrintInvList.Size = new System.Drawing.Size(27, 28);
+            this.PrintInvList.TabIndex = 33;
+            this.PrintInvList.UseVisualStyleBackColor = true;
+            this.PrintInvList.Click += new System.EventHandler(this.PrintInvList_Click);
             // 
             // mngRecord
             // 
@@ -162,6 +178,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "No";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
             this.dataGridViewTextBoxColumn1.Width = 63;
             // 
             // InventoryCode
@@ -256,6 +273,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label mngRecord;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button PrintInvList;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemCode;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,16 @@ namespace JCUBE_SE_PROJECT
 {
     public partial class PosUI : Form
     {
+        CartUI clerk;
+        SqlConnection cn = new SqlConnection();
+        SqlCommand cm = new SqlCommand();
+        DBConnect dbcon = new DBConnect();
+        SqlDataReader dr;
         public PosUI()
         {
             InitializeComponent();
+            clerk = new CartUI(this);
+            cn = new SqlConnection(dbcon.myConnection());
         }
 
         private Form activeForm = null;
@@ -35,35 +43,103 @@ namespace JCUBE_SE_PROJECT
 
         private void btnCart_Click(object sender, EventArgs e)
         {
-            openChildForm(new CartUI());
+            clerk = new CartUI(this);
+            openChildForm(clerk);
         }
 
         private void btnSettlePayment_Click(object sender, EventArgs e)
         {
-            SettlePayment moduleForm = new SettlePayment();
-            moduleForm.ShowDialog();
+            clerk.LoadCart();
+            SettlePayment settle = new SettlePayment(clerk);
+            settle.txtSale.Text = clerk.TotalSales.ToString("#,##0.00");
+            settle.Show();
         }
 
         private void btnDailySales_Click(object sender, EventArgs e)
         {
-            DailySales moduleForm = new DailySales();
-            moduleForm.ShowDialog();
+            DailySales dailySales = new DailySales();
+            dailySales.soldUser = lblUserRolePOS.Text;
+            dailySales.ShowDialog();
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            ChangePassword moduleForm = new ChangePassword();
+            ChangePassword moduleForm = new ChangePassword(this);
             moduleForm.ShowDialog();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
-        {           
+        {    
+            if (clerk.dgvCart.Rows.Count > 0) //The cart should not have an item to logout
+            {
+                MessageBox.Show("Please cancel transaction, before logging out!.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (MessageBox.Show("Logout Application?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
                 Login login = new Login();
-                login.ShowDialog();
+                login.Show();
             }
+        }
+        private DialogResult ConfirmExit()
+        {
+            return MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+        private void PosUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                if (clerk.dgvCart.Rows.Count > 0) //User can only exit when the cart is empty
+                {
+                    e.Cancel = true;
+                    MessageBox.Show("Please cancel transaction, before you exit!.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (ConfirmExit() == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
+        }
+
+        public void Notif()
+        {
+            try
+            {
+                int i = 0;
+                using (SqlConnection cn = new SqlConnection(dbcon.myConnection()))
+                {
+                    cn.Open();
+                    using (SqlCommand cm = new SqlCommand("SELECT p.ItemID, p.InventoryCode, p.ItemCode, p.Description, b.BrandName, c.CategoryName, p.Price, p.Reorder, p.Qty FROM tbItemList AS p INNER JOIN tbBrand AS b ON b.BrandID = p.bid INNER JOIN tbCategory AS c ON c.CategoryID = p.cid WHERE (p.Qty <= p.Reorder)", cn))
+                    {
+                        using (SqlDataReader dr = cm.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                i++;
+                                Alert alert = new Alert();
+                                alert.lblItemCode.Text = dr["ItemCode"].ToString();
+                                alert.showAlert(i + ". " + dr["Description"].ToString() + " - " + dr["Qty"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PosUI_Load(object sender, EventArgs e)
+        {
+            Notif();
         }
     }
 }

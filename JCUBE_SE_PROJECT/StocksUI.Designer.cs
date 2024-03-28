@@ -32,9 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpStockEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpStockStartDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.addbutton = new System.Windows.Forms.Button();
@@ -45,9 +44,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvStockEntry = new System.Windows.Forms.DataGridView();
             this.StockID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RefNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stocks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupplierID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockInDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
@@ -60,9 +61,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dtpStockEndDate);
+            this.panel1.Controls.Add(this.dtpStockStartDate);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.addbutton);
@@ -83,40 +83,33 @@
             this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(499, 34);
+            this.button4.Location = new System.Drawing.Point(544, 34);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(153, 35);
             this.button4.TabIndex = 9;
-            this.button4.Text = "Local Data";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.Text = "Refresh";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // dtpStockEndDate
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(712, 41);
-            this.button3.MinimumSize = new System.Drawing.Size(20, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(27, 28);
-            this.button3.TabIndex = 8;
-            this.button3.UseVisualStyleBackColor = true;
+            this.dtpStockEndDate.CustomFormat = "MM/dd/yyyy";
+            this.dtpStockEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStockEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStockEndDate.Location = new System.Drawing.Point(474, 42);
+            this.dtpStockEndDate.Name = "dtpStockEndDate";
+            this.dtpStockEndDate.Size = new System.Drawing.Size(22, 22);
+            this.dtpStockEndDate.TabIndex = 5;
             // 
-            // dateTimePicker2
+            // dtpStockStartDate
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(474, 36);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(19, 30);
-            this.dateTimePicker2.TabIndex = 5;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(407, 36);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(19, 30);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dtpStockStartDate.CustomFormat = "MM/dd/yyyy";
+            this.dtpStockStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStockStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStockStartDate.Location = new System.Drawing.Point(407, 42);
+            this.dtpStockStartDate.Name = "dtpStockStartDate";
+            this.dtpStockStartDate.Size = new System.Drawing.Size(19, 22);
+            this.dtpStockStartDate.TabIndex = 4;
             // 
             // label3
             // 
@@ -224,9 +217,11 @@
             this.dgvStockEntry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStockEntry.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StockID,
+            this.RefNo,
             this.ItemID,
             this.Stocks,
             this.SupplierID,
+            this.StockInDate,
             this.Status,
             this.Edit,
             this.Delete});
@@ -248,7 +243,16 @@
             this.StockID.HeaderText = "StockID";
             this.StockID.MinimumWidth = 6;
             this.StockID.Name = "StockID";
+            this.StockID.Visible = false;
             this.StockID.Width = 106;
+            // 
+            // RefNo
+            // 
+            this.RefNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.RefNo.HeaderText = "Reference #";
+            this.RefNo.MinimumWidth = 6;
+            this.RefNo.Name = "RefNo";
+            this.RefNo.Width = 152;
             // 
             // ItemID
             // 
@@ -272,6 +276,14 @@
             this.SupplierID.MinimumWidth = 6;
             this.SupplierID.Name = "SupplierID";
             // 
+            // StockInDate
+            // 
+            this.StockInDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.StockInDate.HeaderText = "StockInDate";
+            this.StockInDate.MinimumWidth = 6;
+            this.StockInDate.Name = "StockInDate";
+            this.StockInDate.Width = 150;
+            // 
             // Status
             // 
             this.Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -285,6 +297,7 @@
             this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Edit.HeaderText = "";
             this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -296,6 +309,7 @@
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Delete.HeaderText = "";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -340,14 +354,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DateTimePicker dtpStockStartDate;
         private System.Windows.Forms.Button button4;
+        public System.Windows.Forms.DateTimePicker dtpStockEndDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RefNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stocks;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockInDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;

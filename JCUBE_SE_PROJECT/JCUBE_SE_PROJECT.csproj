@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,6 +45,24 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -57,6 +78,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AESHelper.cs" />
+    <Compile Include="Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alert.Designer.cs">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CancelOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelOrder.Designer.cs">
+      <DependentUpon>CancelOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CancelOrderModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelOrderModule.Designer.cs">
+      <DependentUpon>CancelOrderModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArchivesUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArchivesUI.Designer.cs">
+      <DependentUpon>ArchivesUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,7 +114,26 @@
     <Compile Include="CriticalStocks.Designer.cs">
       <DependentUpon>CriticalStocks.cs</DependentUpon>
     </Compile>
+    <Compile Include="DailySalesArchive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DailySalesArchive.Designer.cs">
+      <DependentUpon>DailySalesArchive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DBConnect.cs" />
+    <Compile Include="DtInvList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DtInvList.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EditAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,11 +224,23 @@
     <Compile Include="ItemList.Designer.cs">
       <DependentUpon>ItemList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemListArchives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemListArchives.Designer.cs">
+      <DependentUpon>ItemListArchives.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logs.Designer.cs">
+      <DependentUpon>Logs.cs</DependentUpon>
     </Compile>
     <Compile Include="PosUI.cs">
       <SubType>Form</SubType>
@@ -172,8 +248,32 @@
     <Compile Include="PosUI.Designer.cs">
       <DependentUpon>PosUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintInvList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintInvList.Designer.cs">
+      <DependentUpon>PrintInvList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="printReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="printReceipt.Designer.cs">
+      <DependentUpon>printReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintStockInHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintStockInHistory.Designer.cs">
+      <DependentUpon>PrintStockInHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Qty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Qty.Designer.cs">
+      <DependentUpon>Qty.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,17 +286,30 @@
     <Compile Include="SalesHistory.Designer.cs">
       <DependentUpon>SalesHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchProduct.Designer.cs">
+      <DependentUpon>SearchProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="SoldItems.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SoldItems.Designer.cs">
       <DependentUpon>SoldItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="StockEntry.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StockEntry.Designer.cs">
       <DependentUpon>StockEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StocksArchive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StocksArchive.Designer.cs">
+      <DependentUpon>StocksArchive.cs</DependentUpon>
     </Compile>
     <Compile Include="StocksUI.cs">
       <SubType>Form</SubType>
@@ -204,17 +317,33 @@
     <Compile Include="StocksUI.Designer.cs">
       <DependentUpon>StocksUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemeColor.cs" />
     <Compile Include="TopSelling.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TopSelling.Designer.cs">
       <DependentUpon>TopSelling.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Alert.resx">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelOrder.resx">
+      <DependentUpon>CancelOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelOrderModule.resx">
+      <DependentUpon>CancelOrderModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArchivesUI.resx">
+      <DependentUpon>ArchivesUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateAccount.resx">
       <DependentUpon>CreateAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CriticalStocks.resx">
       <DependentUpon>CriticalStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailySalesArchive.resx">
+      <DependentUpon>DailySalesArchive.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditAccount.resx">
       <DependentUpon>EditAccount.cs</DependentUpon>
@@ -298,15 +427,31 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InvUI.resx">
       <DependentUpon>InvUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemList.resx">
       <DependentUpon>ItemList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ItemListArchives.resx">
+      <DependentUpon>ItemListArchives.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logs.resx">
+      <DependentUpon>Logs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PosUI.resx">
       <DependentUpon>PosUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintInvList.resx">
+      <DependentUpon>PrintInvList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="printReceipt.resx">
+      <DependentUpon>printReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintStockInHistory.resx">
+      <DependentUpon>PrintStockInHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -318,17 +463,29 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Qty.resx">
+      <DependentUpon>Qty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInvList.rdlc" />
+    <EmbeddedResource Include="Receipt.rdlc" />
+    <EmbeddedResource Include="ReportStockInHistory.rdlc" />
     <EmbeddedResource Include="ResetPassword.resx">
       <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesHistory.resx">
       <DependentUpon>SalesHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SearchProduct.resx">
+      <DependentUpon>SearchProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SoldItems.resx">
       <DependentUpon>SoldItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StockEntry.resx">
       <DependentUpon>StockEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StocksArchive.resx">
+      <DependentUpon>StocksArchive.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StocksUI.resx">
       <DependentUpon>StocksUI.cs</DependentUpon>
@@ -354,6 +511,28 @@
     <EmbeddedResource Include="UserAccountsUI.resx">
       <DependentUpon>UserAccountsUI.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DtInvList.xsc">
+      <DependentUpon>DtInvList.xsd</DependentUpon>
+    </None>
+    <None Include="DtInvList.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DtInvList.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DtInvList.xss">
+      <DependentUpon>DtInvList.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -379,6 +558,30 @@
     <Content Include="Images\password.png" />
     <Content Include="Images\supplier-icon.png" />
     <Content Include="Images\user.png" />
+    <Content Include="Properties\icons8-cancel-20.png" />
+    <Content Include="Properties\icons8-close-20.png" />
+    <Content Include="Properties\icons8-minus-20.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\icons8-eye-20.png" />
+    <None Include="Resources\icons8-password-20.png" />
+    <None Include="Resources\icons8-clear-shopping-cart-30.png" />
+    <None Include="Resources\icons8-clear-shopping-cart-40.png" />
+    <None Include="Resources\icons8-clear-shopping-cart-50.png" />
+    <None Include="Resources\icons8-cancel-20.png" />
+    <None Include="Resources\icons8-minus-20.png" />
+    <None Include="Resources\icons8-plus-20.png" />
     <None Include="Resources\icons8-lock-30.png" />
     <None Include="Resources\icons8-person-60 2.png" />
     <None Include="Resources\icons8-print-50.png" />
@@ -401,4 +604,10 @@
     <None Include="Images\usersettings icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
 </Project>

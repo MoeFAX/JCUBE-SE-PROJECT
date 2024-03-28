@@ -91,6 +91,7 @@
             this.StockinbyField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.StockinbyField.Location = new System.Drawing.Point(132, 121);
             this.StockinbyField.Name = "StockinbyField";
+            this.StockinbyField.ReadOnly = true;
             this.StockinbyField.Size = new System.Drawing.Size(362, 23);
             this.StockinbyField.TabIndex = 9;
             // 
@@ -122,6 +123,7 @@
             this.cancelbtn.TabIndex = 13;
             this.cancelbtn.Text = "Cancel";
             this.cancelbtn.UseVisualStyleBackColor = false;
+            this.cancelbtn.Click += new System.EventHandler(this.cancelbtn_Click);
             // 
             // label1
             // 
@@ -137,6 +139,11 @@
             // 
             this.stocksField.BackColor = System.Drawing.SystemColors.Window;
             this.stocksField.Location = new System.Drawing.Point(387, 204);
+            this.stocksField.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.stocksField.Name = "stocksField";
             this.stocksField.Size = new System.Drawing.Size(107, 23);
             this.stocksField.TabIndex = 38;
@@ -150,6 +157,7 @@
             // SuppNameField
             // 
             this.SuppNameField.BackColor = System.Drawing.SystemColors.Window;
+            this.SuppNameField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SuppNameField.FormattingEnabled = true;
             this.SuppNameField.Location = new System.Drawing.Point(132, 76);
             this.SuppNameField.Name = "SuppNameField";
@@ -159,6 +167,7 @@
             // ItemNameField
             // 
             this.ItemNameField.BackColor = System.Drawing.SystemColors.Window;
+            this.ItemNameField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ItemNameField.FormattingEnabled = true;
             this.ItemNameField.Location = new System.Drawing.Point(132, 35);
             this.ItemNameField.Name = "ItemNameField";

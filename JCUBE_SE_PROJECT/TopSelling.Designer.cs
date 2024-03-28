@@ -1,4 +1,6 @@
-﻿namespace JCUBE_SE_PROJECT
+﻿using System.Drawing;
+
+namespace JCUBE_SE_PROJECT
 {
     partial class TopSelling
     {
@@ -29,45 +31,45 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TopSelling));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button1 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TopSelling));
+            this.btnReturn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTopSell = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPrintTop = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.mngRecord = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbTopSell = new System.Windows.Forms.ComboBox();
+            this.dateToTopSell = new System.Windows.Forms.DateTimePicker();
+            this.dateFromTopSell = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.flterLbl = new System.Windows.Forms.Label();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InventoryCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTopSell)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnReturn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Return";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.ForeColor = System.Drawing.Color.White;
+            this.btnReturn.Location = new System.Drawing.Point(3, 34);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(131, 30);
+            this.btnReturn.TabIndex = 1;
+            this.btnReturn.Text = "Return";
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // label1
             // 
@@ -80,12 +82,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "TOP SELLING ITEMS";
             // 
-            // dataGridView1
+            // dgvTopSell
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvTopSell.AllowUserToAddRows = false;
+            this.dgvTopSell.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.dgvTopSell.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTopSell.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,30 +95,38 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 30;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTopSell.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTopSell.ColumnHeadersHeight = 30;
+            this.dgvTopSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvTopSell.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
             this.InventoryCode,
             this.Description,
             this.Qty,
             this.Total});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.Snow;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 70);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(871, 374);
-            this.dataGridView1.TabIndex = 17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTopSell.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTopSell.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTopSell.EnableHeadersVisualStyles = false;
+            this.dgvTopSell.GridColor = System.Drawing.Color.Snow;
+            this.dgvTopSell.Location = new System.Drawing.Point(20, 70);
+            this.dgvTopSell.Name = "dgvTopSell";
+            this.dgvTopSell.RowHeadersVisible = false;
+            this.dgvTopSell.RowHeadersWidth = 51;
+            this.dgvTopSell.RowTemplate.Height = 24;
+            this.dgvTopSell.Size = new System.Drawing.Size(871, 374);
+            this.dgvTopSell.TabIndex = 17;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnReturn);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(20, 0);
@@ -124,6 +134,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(871, 70);
             this.panel2.TabIndex = 14;
+            // 
+            // btnPrintTop
+            // 
+            this.btnPrintTop.FlatAppearance.BorderSize = 0;
+            this.btnPrintTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintTop.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintTop.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintTop.Image")));
+            this.btnPrintTop.Location = new System.Drawing.Point(664, 42);
+            this.btnPrintTop.MinimumSize = new System.Drawing.Size(20, 20);
+            this.btnPrintTop.Name = "btnPrintTop";
+            this.btnPrintTop.Size = new System.Drawing.Size(27, 28);
+            this.btnPrintTop.TabIndex = 12;
+            this.btnPrintTop.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -148,15 +171,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.btnPrintTop);
+            this.panel1.Controls.Add(this.btnLoad);
             this.panel1.Controls.Add(this.mngRecord);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.cbTopSell);
+            this.panel1.Controls.Add(this.dateToTopSell);
+            this.panel1.Controls.Add(this.dateFromTopSell);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.flterLbl);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 444);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -164,105 +186,92 @@
             this.panel1.Size = new System.Drawing.Size(911, 100);
             this.panel1.TabIndex = 13;
             // 
-            // button4
+            // btnLoad
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(404, 34);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(153, 35);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Local Data";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnLoad.BackColor = System.Drawing.Color.White;
+            this.btnLoad.FlatAppearance.BorderSize = 0;
+            this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.ForeColor = System.Drawing.Color.Black;
+            this.btnLoad.Image = ((System.Drawing.Image)(resources.GetObject("btnLoad.Image")));
+            this.btnLoad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLoad.Location = new System.Drawing.Point(481, 39);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(153, 35);
+            this.btnLoad.TabIndex = 3;
+            this.btnLoad.Text = "Local Data";
+            this.btnLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLoad.UseVisualStyleBackColor = false;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // mngRecord
             // 
             this.mngRecord.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mngRecord.Image = ((System.Drawing.Image)(resources.GetObject("mngRecord.Image")));
             this.mngRecord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mngRecord.Location = new System.Drawing.Point(758, 15);
+            this.mngRecord.Location = new System.Drawing.Point(758, 19);
             this.mngRecord.Name = "mngRecord";
             this.mngRecord.Size = new System.Drawing.Size(141, 75);
             this.mngRecord.TabIndex = 13;
             this.mngRecord.Text = "Manage Record";
             this.mngRecord.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button3
+            // cbTopSell
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(574, 39);
-            this.button3.MinimumSize = new System.Drawing.Size(20, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(27, 28);
-            this.button3.TabIndex = 12;
-            this.button3.UseVisualStyleBackColor = true;
+            this.cbTopSell.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTopSell.FormattingEnabled = true;
+            this.cbTopSell.Items.AddRange(new object[] {
+            "Qty",
+            "Total"});
+            this.cbTopSell.Location = new System.Drawing.Point(348, 42);
+            this.cbTopSell.Name = "cbTopSell";
+            this.cbTopSell.Size = new System.Drawing.Size(103, 29);
+            this.cbTopSell.TabIndex = 9;
+            this.cbTopSell.Text = "Sort By";
             // 
-            // comboBox1
+            // dateToTopSell
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(379, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(19, 24);
-            this.comboBox1.TabIndex = 9;
+            this.dateToTopSell.CalendarFont = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateToTopSell.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateToTopSell.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateToTopSell.Location = new System.Drawing.Point(206, 42);
+            this.dateToTopSell.Name = "dateToTopSell";
+            this.dateToTopSell.Size = new System.Drawing.Size(112, 28);
+            this.dateToTopSell.TabIndex = 5;
             // 
-            // label4
+            // dateFromTopSell
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(320, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 23);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Role";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(281, 40);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(19, 22);
-            this.dateTimePicker2.TabIndex = 5;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(214, 39);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(19, 22);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dateFromTopSell.CalendarFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFromTopSell.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFromTopSell.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFromTopSell.Location = new System.Drawing.Point(26, 42);
+            this.dateFromTopSell.Name = "dateFromTopSell";
+            this.dateFromTopSell.Size = new System.Drawing.Size(110, 28);
+            this.dateFromTopSell.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(239, 39);
+            this.label3.Location = new System.Drawing.Point(153, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "To:";
             // 
-            // label2
+            // flterLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Filter By Date From:";
+            this.flterLbl.AutoSize = true;
+            this.flterLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flterLbl.Location = new System.Drawing.Point(24, 13);
+            this.flterLbl.Name = "flterLbl";
+            this.flterLbl.Size = new System.Drawing.Size(142, 23);
+            this.flterLbl.TabIndex = 2;
+            this.flterLbl.Text = "Filter By Date:";
             // 
             // No
             // 
             this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 4.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.No.DefaultCellStyle = dataGridViewCellStyle2;
             this.No.HeaderText = "No";
             this.No.MinimumWidth = 6;
             this.No.Name = "No";
@@ -278,39 +287,40 @@
             // 
             // Description
             // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Description.HeaderText = "Description";
             this.Description.MinimumWidth = 6;
             this.Description.Name = "Description";
-            this.Description.Width = 400;
             // 
             // Qty
             // 
             this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Qty.HeaderText = "Qty";
+            this.Qty.HeaderText = "Quantity";
             this.Qty.MinimumWidth = 6;
             this.Qty.Name = "Qty";
-            this.Qty.Width = 72;
+            this.Qty.Width = 119;
             // 
             // Total
             // 
-            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Total.HeaderText = "Total Sales";
             this.Total.MinimumWidth = 6;
             this.Total.Name = "Total";
+            this.Total.Width = 129;
             // 
             // TopSelling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 544);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTopSell);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "TopSelling";
             this.Text = "TopSelling";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTopSell)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -321,22 +331,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTopSell;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Label mngRecord;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnPrintTop;
+        private System.Windows.Forms.ComboBox cbTopSell;
+        private System.Windows.Forms.DateTimePicker dateToTopSell;
+        private System.Windows.Forms.DateTimePicker dateFromTopSell;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label flterLbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;

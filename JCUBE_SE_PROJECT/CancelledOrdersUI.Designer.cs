@@ -29,31 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CancelledOrdersUI));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CONoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COTransacCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COInvCodeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COPriceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COQuantCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COTotalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CODateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COCancByCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COReasonCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCancel = new System.Windows.Forms.DataGridView();
+            this.btnLoadCancelled = new System.Windows.Forms.Button();
+            this.dateToCancelled = new System.Windows.Forms.DateTimePicker();
+            this.dateFromCancelled = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.flterLbl = new System.Windows.Forms.Label();
             this.COActionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.COReasonCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COCancByCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COTotalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COQuantCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COPriceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COInvCodeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COTransacCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CONoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCancel)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -68,63 +66,6 @@
             this.label9.Size = new System.Drawing.Size(245, 28);
             this.label9.TabIndex = 6;
             this.label9.Text = "CANCELLED ORDERS";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 545);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 21);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Filter By Date From:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(189, 545);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(70, 24);
-            this.comboBox1.TabIndex = 15;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(266, 546);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 21);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "To:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(301, 545);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(70, 24);
-            this.comboBox2.TabIndex = 17;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(381, 542);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(413, 547);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 21);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Local Data";
             // 
             // label4
             // 
@@ -147,23 +88,23 @@
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
             // 
-            // dataGridView1
+            // dgvCancel
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.dgvCancel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCancel.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvCancel.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCancel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCancel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCancel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CONoCol,
             this.COTransacCol,
             this.COInvCodeCol,
@@ -174,119 +115,194 @@
             this.COCancByCol,
             this.COReasonCol,
             this.COActionCol});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 57);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(896, 461);
-            this.dataGridView1.TabIndex = 22;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCancel.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCancel.EnableHeadersVisualStyles = false;
+            this.dgvCancel.Location = new System.Drawing.Point(16, 57);
+            this.dgvCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvCancel.Name = "dgvCancel";
+            this.dgvCancel.ReadOnly = true;
+            this.dgvCancel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgvCancel.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCancel.RowHeadersVisible = false;
+            this.dgvCancel.RowHeadersWidth = 51;
+            this.dgvCancel.RowTemplate.Height = 24;
+            this.dgvCancel.Size = new System.Drawing.Size(896, 461);
+            this.dgvCancel.TabIndex = 22;
             // 
-            // CONoCol
+            // btnLoadCancelled
             // 
-            this.CONoCol.HeaderText = "No";
-            this.CONoCol.MinimumWidth = 6;
-            this.CONoCol.Name = "CONoCol";
-            this.CONoCol.Width = 50;
+            this.btnLoadCancelled.BackColor = System.Drawing.Color.White;
+            this.btnLoadCancelled.FlatAppearance.BorderSize = 0;
+            this.btnLoadCancelled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadCancelled.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadCancelled.ForeColor = System.Drawing.Color.Black;
+            this.btnLoadCancelled.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadCancelled.Image")));
+            this.btnLoadCancelled.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLoadCancelled.Location = new System.Drawing.Point(503, 537);
+            this.btnLoadCancelled.Name = "btnLoadCancelled";
+            this.btnLoadCancelled.Size = new System.Drawing.Size(99, 35);
+            this.btnLoadCancelled.TabIndex = 24;
+            this.btnLoadCancelled.Text = "Load";
+            this.btnLoadCancelled.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLoadCancelled.UseVisualStyleBackColor = false;
+            this.btnLoadCancelled.Click += new System.EventHandler(this.btnLoadCancelled_Click);
             // 
-            // COTransacCol
+            // dateToCancelled
             // 
-            this.COTransacCol.HeaderText = "Transaction No.";
-            this.COTransacCol.MinimumWidth = 6;
-            this.COTransacCol.Name = "COTransacCol";
-            this.COTransacCol.Width = 150;
+            this.dateToCancelled.CalendarFont = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateToCancelled.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateToCancelled.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateToCancelled.Location = new System.Drawing.Point(371, 540);
+            this.dateToCancelled.Name = "dateToCancelled";
+            this.dateToCancelled.Size = new System.Drawing.Size(112, 28);
+            this.dateToCancelled.TabIndex = 27;
             // 
-            // COInvCodeCol
+            // dateFromCancelled
             // 
-            this.COInvCodeCol.HeaderText = "Inventory Code";
-            this.COInvCodeCol.MinimumWidth = 6;
-            this.COInvCodeCol.Name = "COInvCodeCol";
-            this.COInvCodeCol.Width = 130;
+            this.dateFromCancelled.CalendarFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFromCancelled.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFromCancelled.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFromCancelled.Location = new System.Drawing.Point(185, 540);
+            this.dateFromCancelled.Name = "dateFromCancelled";
+            this.dateFromCancelled.Size = new System.Drawing.Size(110, 28);
+            this.dateFromCancelled.TabIndex = 26;
             // 
-            // COPriceCol
+            // label3
             // 
-            this.COPriceCol.HeaderText = "Price";
-            this.COPriceCol.MinimumWidth = 6;
-            this.COPriceCol.Name = "COPriceCol";
-            this.COPriceCol.Width = 75;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(315, 543);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 23);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "To:";
             // 
-            // COQuantCol
+            // flterLbl
             // 
-            this.COQuantCol.HeaderText = "Qty";
-            this.COQuantCol.MinimumWidth = 6;
-            this.COQuantCol.Name = "COQuantCol";
-            this.COQuantCol.Width = 50;
-            // 
-            // COTotalCol
-            // 
-            this.COTotalCol.HeaderText = "Total";
-            this.COTotalCol.MinimumWidth = 6;
-            this.COTotalCol.Name = "COTotalCol";
-            this.COTotalCol.Width = 75;
-            // 
-            // CODateCol
-            // 
-            this.CODateCol.HeaderText = "Date";
-            this.CODateCol.MinimumWidth = 6;
-            this.CODateCol.Name = "CODateCol";
-            this.CODateCol.Width = 75;
-            // 
-            // COCancByCol
-            // 
-            this.COCancByCol.HeaderText = "Cancelled By";
-            this.COCancByCol.MinimumWidth = 6;
-            this.COCancByCol.Name = "COCancByCol";
-            this.COCancByCol.Width = 130;
-            // 
-            // COReasonCol
-            // 
-            this.COReasonCol.HeaderText = "Reason";
-            this.COReasonCol.MinimumWidth = 6;
-            this.COReasonCol.Name = "COReasonCol";
-            this.COReasonCol.Width = 80;
+            this.flterLbl.AutoSize = true;
+            this.flterLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flterLbl.Location = new System.Drawing.Point(23, 543);
+            this.flterLbl.Name = "flterLbl";
+            this.flterLbl.Size = new System.Drawing.Size(142, 23);
+            this.flterLbl.TabIndex = 23;
+            this.flterLbl.Text = "Filter By Date:";
             // 
             // COActionCol
             // 
+            this.COActionCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.COActionCol.HeaderText = "Action";
             this.COActionCol.MinimumWidth = 6;
             this.COActionCol.Name = "COActionCol";
-            this.COActionCol.Width = 125;
+            this.COActionCol.ReadOnly = true;
+            this.COActionCol.Width = 86;
+            // 
+            // COReasonCol
+            // 
+            this.COReasonCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.COReasonCol.HeaderText = "Reason";
+            this.COReasonCol.MinimumWidth = 6;
+            this.COReasonCol.Name = "COReasonCol";
+            this.COReasonCol.ReadOnly = true;
+            // 
+            // COCancByCol
+            // 
+            this.COCancByCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COCancByCol.HeaderText = "Cancelled By";
+            this.COCancByCol.MinimumWidth = 6;
+            this.COCancByCol.Name = "COCancByCol";
+            this.COCancByCol.ReadOnly = true;
+            this.COCancByCol.Width = 118;
+            // 
+            // CODateCol
+            // 
+            this.CODateCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CODateCol.HeaderText = "Date";
+            this.CODateCol.MinimumWidth = 6;
+            this.CODateCol.Name = "CODateCol";
+            this.CODateCol.ReadOnly = true;
+            this.CODateCol.Width = 76;
+            // 
+            // COTotalCol
+            // 
+            this.COTotalCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COTotalCol.HeaderText = "Total";
+            this.COTotalCol.MinimumWidth = 6;
+            this.COTotalCol.Name = "COTotalCol";
+            this.COTotalCol.ReadOnly = true;
+            this.COTotalCol.Width = 75;
+            // 
+            // COQuantCol
+            // 
+            this.COQuantCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COQuantCol.HeaderText = "Qty";
+            this.COQuantCol.MinimumWidth = 6;
+            this.COQuantCol.Name = "COQuantCol";
+            this.COQuantCol.ReadOnly = true;
+            this.COQuantCol.Width = 66;
+            // 
+            // COPriceCol
+            // 
+            this.COPriceCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COPriceCol.HeaderText = "Price";
+            this.COPriceCol.MinimumWidth = 6;
+            this.COPriceCol.Name = "COPriceCol";
+            this.COPriceCol.ReadOnly = true;
+            this.COPriceCol.Width = 75;
+            // 
+            // COInvCodeCol
+            // 
+            this.COInvCodeCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COInvCodeCol.HeaderText = "Item Code";
+            this.COInvCodeCol.MinimumWidth = 6;
+            this.COInvCodeCol.Name = "COInvCodeCol";
+            this.COInvCodeCol.ReadOnly = true;
+            this.COInvCodeCol.Width = 106;
+            // 
+            // COTransacCol
+            // 
+            this.COTransacCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COTransacCol.HeaderText = "Transaction No.";
+            this.COTransacCol.MinimumWidth = 6;
+            this.COTransacCol.Name = "COTransacCol";
+            this.COTransacCol.ReadOnly = true;
+            this.COTransacCol.Width = 133;
+            // 
+            // CONoCol
+            // 
+            this.CONoCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CONoCol.HeaderText = "No";
+            this.CONoCol.MinimumWidth = 6;
+            this.CONoCol.Name = "CONoCol";
+            this.CONoCol.ReadOnly = true;
+            this.CONoCol.Width = 63;
             // 
             // CancelledOrdersUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 592);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnLoadCancelled);
+            this.Controls.Add(this.dateToCancelled);
+            this.Controls.Add(this.dateFromCancelled);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.flterLbl);
+            this.Controls.Add(this.dgvCancel);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CancelledOrdersUI";
             this.Text = "Cancelled Orders";
-            this.Load += new System.EventHandler(this.CancelledOrders_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCancel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,15 +311,14 @@
         #endregion
 
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCancel;
+        private System.Windows.Forms.Button btnLoadCancelled;
+        private System.Windows.Forms.DateTimePicker dateToCancelled;
+        private System.Windows.Forms.DateTimePicker dateFromCancelled;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label flterLbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn CONoCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn COTransacCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn COInvCodeCol;

@@ -1,14 +1,3 @@
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\JCUBE_SE_PROJECT.exe.config
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\JCUBE_SE_PROJECT.exe
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\JCUBE_SE_PROJECT.pdb
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.csproj.AssemblyReference.cache
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Properties.Resources.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.csproj.GenerateResource.cache
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.csproj.CoreCompileInputs.cache
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.exe
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.pdb
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.InvUI.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PosUI.resources
 C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\JCUBE_SE_PROJECT.exe.config
 C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\JCUBE_SE_PROJECT.exe
 C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\JCUBE_SE_PROJECT.pdb
@@ -31,26 +20,6 @@ C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT
 C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.InventoryList.resources
 C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.TopSelling.resources
 C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.StockEntry.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Login.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\MetroFramework.Design.dll
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\MetroFramework.dll
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\MetroFramework.Fonts.dll
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.csproj.CopyComplete
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Brand.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.BrandModule.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Category.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Supplier.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CategoryModule.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.SupplierModule.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.ItemList.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.AddItem.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CriticalStocks.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.InventoryList.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.SalesHistory.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.SoldItems.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.StockEntry.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.StocksUI.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.TopSelling.resources
 D:\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\JCUBE_SE_PROJECT.exe.config
 D:\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\JCUBE_SE_PROJECT.exe
 D:\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\JCUBE_SE_PROJECT.pdb
@@ -125,15 +94,6 @@ C:\Users\herald\source\repos\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_S
 C:\Users\herald\source\repos\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CancelledOrdersUI.resources
 C:\Users\herald\source\repos\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.StockInHistoryUI.resources
 C:\Users\herald\source\repos\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.UserAccountsUI.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CartUI.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.ChangePassword.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.DailySales.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Discount.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CancelledOrdersUI.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.DashUI.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.SettlePayment.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.StockInHistoryUI.resources
-D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.UserAccountsUI.resources
 C:\Users\herald\source\repos\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CriticalStocks.resources
 C:\Users\herald\source\repos\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.InventoryList.resources
 C:\Users\herald\source\repos\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.AddItem.resources
@@ -183,3 +143,232 @@ C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUB
 C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.StockInHistoryUI.resources
 C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.UAChangePassword.resources
 C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.UserAccountsUI.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CreateAccount.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.EditAccount.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.AddItem.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Brand.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.BrandModule.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Category.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CategoryModule.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CartUI.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.ChangePassword.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.DailySales.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Discount.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CancelledOrdersUI.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.DashUI.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.ItemList.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Login.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.ResetPassword.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Supplier.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.SupplierModule.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.SettlePayment.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.StockInHistoryUI.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.UAChangePassword.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.UserAccountsUI.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.SearchProduct.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Qty.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CancelOrder.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CancelOrderModule.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Logs.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.ArchivesUI.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.ItemListArchives.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CancelOrder.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CancelOrderModule.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Qty.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.SearchProduct.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.DailySalesArchive.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.StocksArchive.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Alert.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Alert.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.ArchivesUI.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.DailySalesArchive.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.ItemListArchives.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Logs.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.StocksArchive.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\x86\SqlServerSpatial160.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\x64\SqlServerSpatial160.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\JCUBE_SE_PROJECT.exe.config
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\JCUBE_SE_PROJECT.exe
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\JCUBE_SE_PROJECT.pdb
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\MetroFramework.Design.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\MetroFramework.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\MetroFramework.Fonts.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\Microsoft.ReportViewer.Design.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\EnvDTE.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\stdole.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.csproj.AssemblyReference.cache
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Alert.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CancelOrder.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CancelOrderModule.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.ArchivesUI.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CreateAccount.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CriticalStocks.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.DailySalesArchive.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.EditAccount.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.InventoryList.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.AddItem.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Brand.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.BrandModule.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Category.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CategoryModule.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CartUI.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.ChangePassword.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.DailySales.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Discount.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.CancelledOrdersUI.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.DashUI.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.InvUI.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.ItemList.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.ItemListArchives.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Login.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Logs.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PosUI.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintInvList.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Properties.Resources.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Qty.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.ResetPassword.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.SalesHistory.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.SearchProduct.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.SoldItems.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.StockEntry.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.StocksArchive.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.StocksUI.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.TopSelling.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.Supplier.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.SupplierModule.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.SettlePayment.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.StockInHistoryUI.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.UAChangePassword.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.UserAccountsUI.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.csproj.GenerateResource.cache
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.csproj.CoreCompileInputs.cache
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.csproj.CopyComplete
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.exe
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.pdb
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.printReceipt.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\EnvDTE.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\stdole.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\x86\SqlServerSpatial160.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\x64\SqlServerSpatial160.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintInvList.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.printReceipt.resources
+D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintStockInHistory.resources

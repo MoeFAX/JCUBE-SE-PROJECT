@@ -83,9 +83,9 @@
             this.AddItemlbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddItemlbl.Location = new System.Drawing.Point(12, 18);
             this.AddItemlbl.Name = "AddItemlbl";
-            this.AddItemlbl.Size = new System.Drawing.Size(101, 23);
+            this.AddItemlbl.Size = new System.Drawing.Size(134, 23);
             this.AddItemlbl.TabIndex = 1;
-            this.AddItemlbl.Text = "Add Item";
+            this.AddItemlbl.Text = "Item Module";
             // 
             // CancelBtn
             // 
@@ -161,8 +161,10 @@
             // 
             // InvCodeField
             // 
+            this.InvCodeField.Enabled = false;
             this.InvCodeField.Location = new System.Drawing.Point(194, 85);
             this.InvCodeField.Name = "InvCodeField";
+            this.InvCodeField.ReadOnly = true;
             this.InvCodeField.Size = new System.Drawing.Size(166, 30);
             this.InvCodeField.TabIndex = 20;
             // 
@@ -221,6 +223,11 @@
             // reorderField
             // 
             this.reorderField.Location = new System.Drawing.Point(655, 234);
+            this.reorderField.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.reorderField.Name = "reorderField";
             this.reorderField.Size = new System.Drawing.Size(72, 30);
             this.reorderField.TabIndex = 37;

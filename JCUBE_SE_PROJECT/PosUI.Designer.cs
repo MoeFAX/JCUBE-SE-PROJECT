@@ -121,6 +121,7 @@
             // btnSettlePayment
             // 
             this.btnSettlePayment.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSettlePayment.Enabled = false;
             this.btnSettlePayment.FlatAppearance.BorderSize = 0;
             this.btnSettlePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettlePayment.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -298,6 +299,8 @@
             this.Name = "PosUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jcube Point Of Sales";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PosUI_FormClosing);
+            this.Load += new System.EventHandler(this.PosUI_Load);
             this.panelSidebar.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -317,7 +320,6 @@
         private System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Button btnDailySales;
-        private System.Windows.Forms.Button btnSettlePayment;
         private System.Windows.Forms.Button btnCart;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Button btnLogout;
@@ -329,6 +331,7 @@
         public System.Windows.Forms.Label POSLoggedInlbl;
         public System.Windows.Forms.Label POSNamelbl;
         public System.Windows.Forms.Label lblUserRolePOS;
+        public System.Windows.Forms.Button btnSettlePayment;
     }
 }
 
