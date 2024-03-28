@@ -443,3 +443,9 @@ C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUB
 C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.printReceipt.resources
 D:\1_UST_3RD_YEAR_FILES\JCUBE SE PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintStockInHistory.resources
 C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintStockInHistory.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintCancelledOrders.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintDailyReport.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintSalesHistory.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintSoldItems.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintTopSelling.resources
+C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintStockInHistory.resources

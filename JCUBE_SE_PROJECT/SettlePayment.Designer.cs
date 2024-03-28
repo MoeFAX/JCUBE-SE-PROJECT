@@ -516,16 +516,6 @@
             this.comboMode.Size = new System.Drawing.Size(212, 24);
             this.comboMode.TabIndex = 25;
             // 
-            // lblUname
-            // 
-            this.lblUname.AutoSize = true;
-            this.lblUname.Location = new System.Drawing.Point(237, 7);
-            this.lblUname.Name = "lblUname";
-            this.lblUname.Size = new System.Drawing.Size(41, 15);
-            this.lblUname.TabIndex = 21;
-            this.lblUname.Text = "label1";
-            this.lblUname.Visible = false;
-            // 
             // SettlePayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

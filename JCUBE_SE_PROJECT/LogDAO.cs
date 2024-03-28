@@ -22,14 +22,12 @@ namespace JCUBE_SE_PROJECT
         {
             try
             {
-                Console.WriteLine("hi");
                 SqlCommand cm = new SqlCommand("INSERT INTO tbLogs (Action, Type, Description, Username, Date) VALUES (@LogAction, @LogType, @LogDescription, @LogUsername, GETDATE())", cn);
                 cm.Parameters.AddWithValue("@LogAction", action);
                 cm.Parameters.AddWithValue("@LogType", type);
                 cm.Parameters.AddWithValue("@LogDescription", description);
                 cm.Parameters.AddWithValue("@LogUsername", username);
                 cm.ExecuteNonQuery();
-                Console.WriteLine("hello");
             }
             catch (SqlException ex)
             {

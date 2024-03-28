@@ -19,13 +19,14 @@ namespace JCUBE_SE_PROJECT
         SqlDataReader dr;
         private CartUI clerk;
         public string username;
+        private string _loggedInUsername;
 
         public SettlePayment(CartUI clerk, string loggedInUsername)
         {
             InitializeComponent();
             this.clerk = clerk;
             string username = clerk.clerkLbl.Text.ToString();
-            lblUname.Text = loggedInUsername;
+            _loggedInUsername = loggedInUsername;
             cn = new SqlConnection(dbcon.myConnection());
             this.KeyPreview = true;
             
@@ -167,7 +168,7 @@ namespace JCUBE_SE_PROJECT
                             string logAction = "CREATE";
                             string logType = "PAYMENT";
                             string logDescription = "Settled a Payment";
-                            string logUsername = lblUname.Text;
+                            string logUsername = _loggedInUsername;
                             log.AddLogs(logAction, logType, logDescription, logUsername);
                             cn.Close();
                         }

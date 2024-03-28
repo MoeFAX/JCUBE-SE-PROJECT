@@ -19,7 +19,7 @@ namespace JCUBE_SE_PROJECT
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
 
-        string _username = "", _fullname = "", _role = "", _pass = "", _decryptedPassword = "", _encryptedPassword;
+        string _username = "", _fullname = "", _role = "", _decryptedPassword = "", _encryptedPassword;
         bool _isactive;
         bool found;
 
@@ -41,7 +41,7 @@ namespace JCUBE_SE_PROJECT
 
         public void LoginBtn_Click(object sender, EventArgs e)
         {
-            // string _username = "", _fullname = "", _role = "";
+            string _username = "", _fullname = "", _role = "";
             if (!string.IsNullOrEmpty(_username))
             {
                 StocksUI stocksForm = new StocksUI(_username);
@@ -49,7 +49,7 @@ namespace JCUBE_SE_PROJECT
             }
             try
             {
-                
+
                 cn.Open();
                 cm = new SqlCommand("Select * From tbUser WHERE username = @username", cn);
                 cm.Parameters.AddWithValue("@username", UserIDtxtbox.Text);
@@ -80,7 +80,7 @@ namespace JCUBE_SE_PROJECT
                     cn.Close();
                 }
 
-                if(found)
+                if (found)
                 {
                     if (!_isactive)
                     {
@@ -91,7 +91,7 @@ namespace JCUBE_SE_PROJECT
                         cn.Close();
                         return;
                     }
-                    if(_role == "Sales Clerk")
+                    if (_role == "Sales Clerk")
                     {
                         MessageBox.Show("Welcome " + _fullname + "!", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         UserIDtxtbox.Clear();
@@ -126,7 +126,7 @@ namespace JCUBE_SE_PROJECT
                         //Sales Clerk salesclerk = new Sales Clerk();
                         //Sales Clerk
 
-                    } 
+                    }
                 }
                 else
                 {

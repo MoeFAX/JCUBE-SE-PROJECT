@@ -68,38 +68,6 @@ namespace JCUBE_SE_PROJECT
                 if (string.IsNullOrWhiteSpace(UsernameField.Text) || string.IsNullOrWhiteSpace(PasswordField.Text) || string.IsNullOrWhiteSpace(RTPasswordField.Text) || string.IsNullOrWhiteSpace(FullnameField.Text) || string.IsNullOrWhiteSpace(RoleComboBox.Text))
                 {
                     MessageBox.Show("Fields can not be null", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    cn.Close();
-                }
-                else if (PasswordField.Text.Length < 8)
-                {
-                    MessageBox.Show("Password must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    PasswordField.Clear();
-                    RTPasswordField.Clear();
-                    cn.Close();
-                }
-                else if (!Regex.IsMatch(PasswordField.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=-]).{8,}$"))
-                {
-                    MessageBox.Show("Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    PasswordField.Clear();
-                    RTPasswordField.Clear();
-                    cn.Close();
-                }
-                else if (PasswordField.Text != RTPasswordField.Text)
-                {
-                    MessageBox.Show("Passwords does not match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                else
-                {
-                    cm.Parameters.AddWithValue("@password", PasswordField.Text);
-                    cm.Parameters.AddWithValue("@fullname", FullnameField.Text);
-                    cm.Parameters.AddWithValue("@role", RoleComboBox.Text);
-                    cm.ExecuteNonQuery();
-                    string logAction = "CREATE";
-                    string logType = "ACCOUNTS";
-                    string logDescription = "Created a new Account";
-                    LogDao log = new LogDao(cn);
-                    log.AddLogs(logAction, logType, logDescription, logUsername);
                     Clear();
                     cn.Close();
                 }
@@ -110,7 +78,7 @@ namespace JCUBE_SE_PROJECT
                     cm.Parameters.AddWithValue("@username", UsernameField.Text);
                     dr = cm.ExecuteReader();
 
-                    if(HasUnicode(UsernameField.Text))
+                    if (HasUnicode(UsernameField.Text))
                     {
                         MessageBox.Show("Username can not contain a unicode or emoji.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         UsernameField.Clear();
@@ -195,7 +163,7 @@ namespace JCUBE_SE_PROJECT
                                 dr.Close();
                                 cn.Close();
                             }
-                            
+
                             else if (dr.Read())
                             {
                                 MessageBox.Show("This Full name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -212,6 +180,11 @@ namespace JCUBE_SE_PROJECT
                                 cm.Parameters.AddWithValue("@fullname", FullnameField.Text);
                                 cm.Parameters.AddWithValue("@role", RoleComboBox.Text);
                                 cm.ExecuteNonQuery();
+                                string logAction = "CREATE";
+                                string logType = "ACCOUNTS";
+                                string logDescription = "Created a new Account";
+                                LogDao log = new LogDao(cn);
+                                log.AddLogs(logAction, logType, logDescription, logUsername);
                                 cn.Close();
                                 Clear();
                                 MessageBox.Show("New account has been successfully saved! Please Reload.", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -224,9 +197,6 @@ namespace JCUBE_SE_PROJECT
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Warning");
-            } finally
-            {
-                cn.Close();
             }
         }
 
