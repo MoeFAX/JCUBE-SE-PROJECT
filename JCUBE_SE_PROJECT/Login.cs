@@ -64,13 +64,25 @@ namespace JCUBE_SE_PROJECT
                 {
                     if (dr.HasRows)
                     {
-                        found = true;
-                        _username = dr["username"].ToString();
-                        _fullname = dr["fullname"].ToString();
-                        _role = dr["role"].ToString();
-                        _isactive = bool.Parse(dr["isactive"].ToString());
-                        dr.Close();
-                        cn.Close();
+                        if (!String.Equals(dr["username"].ToString(), UserIDtxtbox.Text, StringComparison.Ordinal))
+                        {
+                            MessageBox.Show("Invalid credentials!", "ACCESS DENIED", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            UserIDtxtbox.Clear();
+                            Passwordtxtbox.Clear();
+                            dr.Close();
+                            cn.Close();
+                            return;
+                        }
+                        else
+                        {
+                            found = true;
+                            _username = dr["username"].ToString();
+                            _fullname = dr["fullname"].ToString();
+                            _role = dr["role"].ToString();
+                            _isactive = bool.Parse(dr["isactive"].ToString());
+                            dr.Close();
+                            cn.Close();
+                        }
                     }
                 }
                 else
@@ -143,7 +155,6 @@ namespace JCUBE_SE_PROJECT
                 MessageBox.Show("Invalid credentials!", "ACCESS DENIED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UserIDtxtbox.Clear();
                 Passwordtxtbox.Clear();
-                dr.Close();
                 cn.Close();
             }
         }

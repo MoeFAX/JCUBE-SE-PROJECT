@@ -33,8 +33,6 @@ namespace JCUBE_SE_PROJECT
             NPEyeBtn.MouseUp += new MouseEventHandler(NPEyeBtn_MouseUp);
             RTEyeBtn.MouseDown += new MouseEventHandler(RTEyeBtn_MouseDown);
             RTEyeBtn.MouseUp += new MouseEventHandler(RTEyeBtn_MouseUp);
-            CPEyeBtn.MouseDown += new MouseEventHandler(CPEyeBtn_MouseDown);
-            CPEyeBtn.MouseUp += new MouseEventHandler(CPEyeBtn_MouseUp);
         }
 
         public int AccountID
@@ -63,76 +61,53 @@ namespace JCUBE_SE_PROJECT
             try
             {
                 cn.Open();
-                using (SqlCommand command = new SqlCommand("SELECT encryptedPassword From tbUser WHERE username = @username", cn))
+                if (string.IsNullOrWhiteSpace(RPNewPasswordField.Text) || string.IsNullOrWhiteSpace(RPRTPasswordField.Text))
                 {
-                    command.Parameters.AddWithValue("@username", RPUNlbl.Text);
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            _encryptedPassword = reader["encryptedPassword"].ToString();
-
-                            _decryptedPassword = AESHelper.Decrypt(_encryptedPassword);
-
-                        }
-                    }
+                    MessageBox.Show("Fields can not be null", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cn.Close();
                 }
-
-                if (_decryptedPassword != RPCurrPasswordField.Text)
+                else if (RPNewPasswordField.Text.Length < 8)
                 {
-                    MessageBox.Show("Current Password does not match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Password must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Clear();
+                    cn.Close();
+                }
+                else if (!Regex.IsMatch(RPNewPasswordField.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=-]).{8,}$"))
+                {
+                    MessageBox.Show("Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Clear();
+                    cn.Close();
+                }
+                else if (RPNewPasswordField.Text != RPRTPasswordField.Text)
+                {
+                    MessageBox.Show("Passwords does not match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Clear();
                     cn.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Current Password match!", "Matched Current Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (string.IsNullOrWhiteSpace(RPNewPasswordField.Text))
-                    {
-                        MessageBox.Show("Fields can not be null", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        cn.Close();
-                    }
-                    else if (RPNewPasswordField.Text.Length < 8)
-                    {
-                        MessageBox.Show("Password must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        Clear();
-                        cn.Close();
-                    }
-                    else if (!Regex.IsMatch(RPNewPasswordField.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=-]).{8,}$"))
-                    {
-                        MessageBox.Show("Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        Clear();
-                        cn.Close();
-                    }
-                    else if (RPNewPasswordField.Text != RPRTPasswordField.Text)
-                    {
-                        MessageBox.Show("Passwords does not match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        Clear();
-                        cn.Close();
-                    }
-                    else
-                    {
-                        string RPNewEncryptedPassword = "";
+                    string RPNewEncryptedPassword = "";
 
-                        using (SqlCommand command = new SqlCommand("UPDATE tbUser SET encryptedPassword = @encryptedPassword WHERE username = @username", cn))
-                        {
+                    using (SqlCommand command = new SqlCommand("UPDATE tbUser SET encryptedPassword = @encryptedPassword WHERE username = @username", cn))
+                    {
 
-                            command.Parameters.AddWithValue("@username", RPUNlbl.Text);
-                            RPNewEncryptedPassword = AESHelper.Encrypt(RPNewPasswordField.Text);
-                            command.Parameters.AddWithValue("@encryptedPassword", RPNewEncryptedPassword);
-                            command.ExecuteNonQuery();
-                            string logAction = "UPDATE";
-                            string logType = "ACCOUNTS";
-                            string logDescription = "Reset a Password";
-                            LogDao log = new LogDao(cn);
-                            log.AddLogs(logAction, logType, logDescription, logUsername);
-                        }
-                        cn.Close();
-                        Clear();
-                        MessageBox.Show("New password has been successfully saved for account: " + RPUNlbl.Text, "Save New Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Close();
-                        useracc.LoadUser();
+                        command.Parameters.AddWithValue("@username", RPUNlbl.Text);
+                        RPNewEncryptedPassword = AESHelper.Encrypt(RPNewPasswordField.Text);
+                        command.Parameters.AddWithValue("@encryptedPassword", RPNewEncryptedPassword);
+                        command.ExecuteNonQuery();
+                        string logAction = "UPDATE";
+                        string logType = "ACCOUNTS";
+                        string logDescription = "Reset a Password";
+                        LogDao log = new LogDao(cn);
+                        log.AddLogs(logAction, logType, logDescription, logUsername);
                     }
+                    cn.Close();
+                    Clear();
+                    MessageBox.Show("New password has been successfully saved for account: " + RPUNlbl.Text, "Save New Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                    useracc.LoadUser();
                 }
+                
 
             }
             catch (Exception ex)
@@ -162,18 +137,6 @@ namespace JCUBE_SE_PROJECT
         {
             RPRTPasswordField.PasswordChar = '●';
             RPRTPasswordField.UseSystemPasswordChar = true;
-        }
-
-        public void CPEyeBtn_MouseDown(object sender, EventArgs e)
-        {
-            RPCurrPasswordField.PasswordChar = '\0';
-            RPCurrPasswordField.UseSystemPasswordChar = false;
-        }
-
-        public void CPEyeBtn_MouseUp(object sender, EventArgs e)
-        {
-            RPCurrPasswordField.PasswordChar = '●';
-            RPCurrPasswordField.UseSystemPasswordChar = true;
         }
     }
 }

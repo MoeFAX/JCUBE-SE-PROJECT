@@ -64,27 +64,58 @@ namespace JCUBE_SE_PROJECT
                     string colName = dgvUser.Columns[e.ColumnIndex].Name;
                     if (colName == "ArchiveAcc") //ARCHIVE FUNC
                     {
-                        if (MessageBox.Show("Are you sure you want to delete this item?", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        string _selecteduser = "";
+                        int SLCTDelAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
+
+                        cn.Open();
+                        using (SqlCommand command = new SqlCommand("SELECT username From tbUser WHERE AccountID = @AccountID", cn))
                         {
-                            // Retrieve ItemID from the DataGridView
-                            int ArchAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
-
-                            cn.Open();
-                            cm = new SqlCommand("DELETE FROM tbUser WHERE AccountID = @AccountID", cn);
-                            cm.Parameters.AddWithValue("@AccountID", ArchAccID); // Add @AccountID parameter
-                            cm.ExecuteNonQuery();
-                            string logAction = "DELETE";
-                            string logType = "ACCOUNTS";
-                            string logDescription = "Deleted an Account";
-                            LogDao log = new LogDao(cn);
-                            log.AddLogs(logAction, logType, logDescription, logUsername);
-                            cn.Close();
-                            MessageBox.Show("Item has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            // Remove the row from the DataGridView
-                            dgvUser.Rows.RemoveAt(e.RowIndex);
-                            LoadUser();
+                            command.Parameters.AddWithValue("@AccountID", SLCTDelAccID);
+                            using (SqlDataReader reader = command.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    _selecteduser = reader["username"].ToString();
+                                }
+                            }
                         }
+                        if (String.Equals(_selecteduser, UAUserRolelbl.Text, StringComparison.Ordinal))
+                        {
+                            MessageBox.Show("Can not perform action: Currently logged in using this account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            dr.Close();
+                            cn.Close();
+                        }
+                        else
+                        {
+                            if (MessageBox.Show("Are you sure you want to delete this account?", "Delete Accpimt", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                cn.Close();
+                                // Retrieve ItemID from the DataGridView
+                                int ArchAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
+
+                                cn.Open();
+                                cm = new SqlCommand("DELETE FROM tbUser WHERE AccountID = @AccountID", cn);
+                                cm.Parameters.AddWithValue("@AccountID", ArchAccID); // Add @AccountID parameter
+                                cm.ExecuteNonQuery();
+                                string logAction = "DELETE";
+                                string logType = "ACCOUNTS";
+                                string logDescription = "Deleted an Account";
+                                LogDao log = new LogDao(cn);
+                                log.AddLogs(logAction, logType, logDescription, logUsername);
+                                cn.Close();
+                                MessageBox.Show("Account has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                // Remove the row from the DataGridView
+                                dgvUser.Rows.RemoveAt(e.RowIndex);
+                                LoadUser();
+                            }
+                            else
+                            {
+                                cn.Close();
+                                return;
+                            }
+                        }
+                        
                     }
                     else if (colName == "EditAcc") //EDIT ACC
                     {
