@@ -31,14 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemListArchives));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PrintItemListArchives = new System.Windows.Forms.Button();
             this.MngItemLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ItemListArchivesLabel = new System.Windows.Forms.Label();
             this.side2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvItemListArchive = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InventoryCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +49,8 @@
             this.ReOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Restore = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemListArchive)).BeginInit();
@@ -57,23 +58,37 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.PrintItemListArchives);
             this.panel1.Controls.Add(this.MngItemLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 368);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(0, 453);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(736, 81);
+            this.panel1.Size = new System.Drawing.Size(981, 100);
             this.panel1.TabIndex = 2;
+            // 
+            // PrintItemListArchives
+            // 
+            this.PrintItemListArchives.FlatAppearance.BorderSize = 0;
+            this.PrintItemListArchives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrintItemListArchives.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintItemListArchives.Image = ((System.Drawing.Image)(resources.GetObject("PrintItemListArchives.Image")));
+            this.PrintItemListArchives.Location = new System.Drawing.Point(908, 28);
+            this.PrintItemListArchives.MinimumSize = new System.Drawing.Size(20, 20);
+            this.PrintItemListArchives.Name = "PrintItemListArchives";
+            this.PrintItemListArchives.Size = new System.Drawing.Size(53, 45);
+            this.PrintItemListArchives.TabIndex = 34;
+            this.PrintItemListArchives.UseVisualStyleBackColor = true;
+            this.PrintItemListArchives.Click += new System.EventHandler(this.PrintItemListArchives_Click);
             // 
             // MngItemLabel
             // 
             this.MngItemLabel.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngItemLabel.Image = ((System.Drawing.Image)(resources.GetObject("MngItemLabel.Image")));
             this.MngItemLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MngItemLabel.Location = new System.Drawing.Point(17, 11);
-            this.MngItemLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MngItemLabel.Location = new System.Drawing.Point(23, 14);
             this.MngItemLabel.Name = "MngItemLabel";
-            this.MngItemLabel.Size = new System.Drawing.Size(160, 54);
+            this.MngItemLabel.Size = new System.Drawing.Size(213, 66);
             this.MngItemLabel.TabIndex = 0;
             this.MngItemLabel.Text = "Archived Items";
             this.MngItemLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -83,9 +98,9 @@
             this.panel2.Controls.Add(this.ItemListArchivesLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(736, 57);
+            this.panel2.Size = new System.Drawing.Size(981, 70);
             this.panel2.TabIndex = 3;
             // 
             // ItemListArchivesLabel
@@ -93,8 +108,7 @@
             this.ItemListArchivesLabel.AutoSize = true;
             this.ItemListArchivesLabel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemListArchivesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.ItemListArchivesLabel.Location = new System.Drawing.Point(16, 18);
-            this.ItemListArchivesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ItemListArchivesLabel.Location = new System.Drawing.Point(21, 22);
             this.ItemListArchivesLabel.Name = "ItemListArchivesLabel";
             this.ItemListArchivesLabel.Size = new System.Drawing.Size(204, 27);
             this.ItemListArchivesLabel.TabIndex = 0;
@@ -103,19 +117,19 @@
             // side2
             // 
             this.side2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.side2.Location = new System.Drawing.Point(721, 57);
-            this.side2.Margin = new System.Windows.Forms.Padding(2);
+            this.side2.Location = new System.Drawing.Point(961, 70);
+            this.side2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.side2.Name = "side2";
-            this.side2.Size = new System.Drawing.Size(15, 311);
+            this.side2.Size = new System.Drawing.Size(20, 383);
             this.side2.TabIndex = 5;
             // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 57);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(0, 70);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(15, 311);
+            this.panel3.Size = new System.Drawing.Size(20, 383);
             this.panel3.TabIndex = 6;
             // 
             // dgvItemListArchive
@@ -148,35 +162,15 @@
             this.dgvItemListArchive.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvItemListArchive.EnableHeadersVisualStyles = false;
             this.dgvItemListArchive.GridColor = System.Drawing.Color.Snow;
-            this.dgvItemListArchive.Location = new System.Drawing.Point(15, 57);
-            this.dgvItemListArchive.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvItemListArchive.Location = new System.Drawing.Point(20, 70);
+            this.dgvItemListArchive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvItemListArchive.Name = "dgvItemListArchive";
             this.dgvItemListArchive.RowHeadersVisible = false;
             this.dgvItemListArchive.RowHeadersWidth = 51;
             this.dgvItemListArchive.RowTemplate.Height = 24;
-            this.dgvItemListArchive.Size = new System.Drawing.Size(706, 311);
+            this.dgvItemListArchive.Size = new System.Drawing.Size(941, 383);
             this.dgvItemListArchive.TabIndex = 7;
             this.dgvItemListArchive.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemListArchive_CellContentClick);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 125;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::JCUBE_SE_PROJECT.Properties.Resources.local_data_icon;
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 125;
             // 
             // ItemID
             // 
@@ -186,7 +180,7 @@
             this.ItemID.MinimumWidth = 6;
             this.ItemID.Name = "ItemID";
             this.ItemID.Visible = false;
-            this.ItemID.Width = 62;
+            this.ItemID.Width = 64;
             // 
             // InventoryCode
             // 
@@ -272,17 +266,37 @@
             this.Delete.Name = "Delete";
             this.Delete.Width = 6;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::JCUBE_SE_PROJECT.Properties.Resources.local_data_icon;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 125;
+            // 
             // ItemListArchives
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 449);
+            this.ClientSize = new System.Drawing.Size(981, 553);
             this.Controls.Add(this.dgvItemListArchive);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.side2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ItemListArchives";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ItemListArchives";
@@ -316,5 +330,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ReOrder;
         private System.Windows.Forms.DataGridViewImageColumn Restore;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.Button PrintItemListArchives;
     }
 }

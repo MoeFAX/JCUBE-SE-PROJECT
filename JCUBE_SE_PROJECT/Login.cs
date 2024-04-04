@@ -152,7 +152,8 @@ namespace JCUBE_SE_PROJECT
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Invalid credentials!", "ACCESS DENIED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Invalid credentials!", "ACCESS DENIED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 UserIDtxtbox.Clear();
                 Passwordtxtbox.Clear();
                 cn.Close();

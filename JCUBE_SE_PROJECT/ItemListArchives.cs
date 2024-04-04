@@ -110,6 +110,13 @@ namespace JCUBE_SE_PROJECT
             }
         }
 
+        private void PrintItemListArchives_Click(object sender, EventArgs e)
+        {
+            PrintItemListArchives prtitemlistarchives = new PrintItemListArchives(logUsername);
+            prtitemlistarchives.LoadPrtItemListArchives();
+            prtitemlistarchives.ShowDialog();
+        }
+
         /*private void dgvItemListArchive_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             

@@ -123,6 +123,14 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="DBConnect.cs" />
+    <Compile Include="DtArchives.cs">
+      <DependentUpon>DtArchives.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DtArchives.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DtArchives.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DtInvList.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -261,6 +269,12 @@
     <Compile Include="PrintInvList.Designer.cs">
       <DependentUpon>PrintInvList.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintItemListArchives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintItemListArchives.Designer.cs">
+      <DependentUpon>PrintItemListArchives.cs</DependentUpon>
+    </Compile>
     <Compile Include="printReceipt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +292,12 @@
     </Compile>
     <Compile Include="PrintSoldItems.Designer.cs">
       <DependentUpon>PrintSoldItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintStockArchives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintStockArchives.Designer.cs">
+      <DependentUpon>PrintStockArchives.cs</DependentUpon>
     </Compile>
     <Compile Include="PrintTopSelling.cs">
       <SubType>Form</SubType>
@@ -475,6 +495,9 @@
     <EmbeddedResource Include="PrintInvList.resx">
       <DependentUpon>PrintInvList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintItemListArchives.resx">
+      <DependentUpon>PrintItemListArchives.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="printReceipt.resx">
       <DependentUpon>printReceipt.cs</DependentUpon>
     </EmbeddedResource>
@@ -483,6 +506,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PrintSoldItems.resx">
       <DependentUpon>PrintSoldItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintStockArchives.resx">
+      <DependentUpon>PrintStockArchives.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintTopSelling.resx">
       <DependentUpon>PrintTopSelling.cs</DependentUpon>
@@ -507,8 +533,10 @@
     <EmbeddedResource Include="ReportDailySales.rdlc" />
     <EmbeddedResource Include="ReportInvList.rdlc" />
     <EmbeddedResource Include="Receipt.rdlc" />
+    <EmbeddedResource Include="ReportItemListArchives.rdlc" />
     <EmbeddedResource Include="ReportSalesHistory.rdlc" />
     <EmbeddedResource Include="ReportSoldItems.rdlc" />
+    <EmbeddedResource Include="ReportStockArchives.rdlc" />
     <EmbeddedResource Include="ReportTopSelling.rdlc" />
     <EmbeddedResource Include="ReportStockInHistory.rdlc" />
     <EmbeddedResource Include="ResetPassword.resx">
@@ -553,6 +581,17 @@
     <EmbeddedResource Include="UserAccountsUI.resx">
       <DependentUpon>UserAccountsUI.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DtArchives.xsc">
+      <DependentUpon>DtArchives.xsd</DependentUpon>
+    </None>
+    <None Include="DtArchives.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DtArchives.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DtArchives.xss">
+      <DependentUpon>DtArchives.xsd</DependentUpon>
+    </None>
     <None Include="DtInvList.xsc">
       <DependentUpon>DtInvList.xsd</DependentUpon>
     </None>

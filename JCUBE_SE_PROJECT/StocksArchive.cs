@@ -108,5 +108,12 @@ namespace JCUBE_SE_PROJECT
                 LoadStocks();
             }
         }
+
+        private void PrintStockArchives_Click(object sender, EventArgs e)
+        {
+            PrintStockArchives prtstockarchives = new PrintStockArchives(_loggedInUsername);
+            prtstockarchives.LoadPrtStockArchives();
+            prtstockarchives.ShowDialog();
+        }
     }
 }

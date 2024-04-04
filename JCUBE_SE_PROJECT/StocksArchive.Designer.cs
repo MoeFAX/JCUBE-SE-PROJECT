@@ -33,11 +33,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.StocksArchivesLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PrintStockArchives = new System.Windows.Forms.Button();
             this.MngItemLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.side2 = new System.Windows.Forms.Panel();
             this.dgvStockEntryArchive = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.StockID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stocks = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +45,7 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Restore = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockEntryArchive)).BeginInit();
@@ -55,9 +56,9 @@
             this.panel2.Controls.Add(this.StocksArchivesLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 57);
+            this.panel2.Size = new System.Drawing.Size(1067, 70);
             this.panel2.TabIndex = 4;
             // 
             // StocksArchivesLabel
@@ -65,8 +66,7 @@
             this.StocksArchivesLabel.AutoSize = true;
             this.StocksArchivesLabel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StocksArchivesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.StocksArchivesLabel.Location = new System.Drawing.Point(16, 18);
-            this.StocksArchivesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.StocksArchivesLabel.Location = new System.Drawing.Point(21, 22);
             this.StocksArchivesLabel.Name = "StocksArchivesLabel";
             this.StocksArchivesLabel.Size = new System.Drawing.Size(187, 27);
             this.StocksArchivesLabel.TabIndex = 0;
@@ -74,23 +74,37 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.PrintStockArchives);
             this.panel1.Controls.Add(this.MngItemLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 369);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 454);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 81);
+            this.panel1.Size = new System.Drawing.Size(1067, 100);
             this.panel1.TabIndex = 6;
+            // 
+            // PrintStockArchives
+            // 
+            this.PrintStockArchives.FlatAppearance.BorderSize = 0;
+            this.PrintStockArchives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrintStockArchives.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintStockArchives.Image = ((System.Drawing.Image)(resources.GetObject("PrintStockArchives.Image")));
+            this.PrintStockArchives.Location = new System.Drawing.Point(994, 28);
+            this.PrintStockArchives.MinimumSize = new System.Drawing.Size(20, 20);
+            this.PrintStockArchives.Name = "PrintStockArchives";
+            this.PrintStockArchives.Size = new System.Drawing.Size(53, 45);
+            this.PrintStockArchives.TabIndex = 33;
+            this.PrintStockArchives.UseVisualStyleBackColor = true;
+            this.PrintStockArchives.Click += new System.EventHandler(this.PrintStockArchives_Click);
             // 
             // MngItemLabel
             // 
             this.MngItemLabel.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngItemLabel.Image = ((System.Drawing.Image)(resources.GetObject("MngItemLabel.Image")));
             this.MngItemLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MngItemLabel.Location = new System.Drawing.Point(17, 11);
-            this.MngItemLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MngItemLabel.Location = new System.Drawing.Point(23, 14);
             this.MngItemLabel.Name = "MngItemLabel";
-            this.MngItemLabel.Size = new System.Drawing.Size(170, 54);
+            this.MngItemLabel.Size = new System.Drawing.Size(227, 66);
             this.MngItemLabel.TabIndex = 0;
             this.MngItemLabel.Text = "Archived Stocks";
             this.MngItemLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -98,19 +112,19 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 57);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(0, 70);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(15, 312);
+            this.panel3.Size = new System.Drawing.Size(20, 384);
             this.panel3.TabIndex = 8;
             // 
             // side2
             // 
             this.side2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.side2.Location = new System.Drawing.Point(785, 57);
-            this.side2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.side2.Location = new System.Drawing.Point(1047, 70);
+            this.side2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.side2.Name = "side2";
-            this.side2.Size = new System.Drawing.Size(15, 312);
+            this.side2.Size = new System.Drawing.Size(20, 384);
             this.side2.TabIndex = 9;
             // 
             // dgvStockEntryArchive
@@ -139,26 +153,15 @@
             this.dgvStockEntryArchive.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStockEntryArchive.EnableHeadersVisualStyles = false;
             this.dgvStockEntryArchive.GridColor = System.Drawing.Color.Snow;
-            this.dgvStockEntryArchive.Location = new System.Drawing.Point(15, 57);
-            this.dgvStockEntryArchive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvStockEntryArchive.Location = new System.Drawing.Point(20, 70);
+            this.dgvStockEntryArchive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvStockEntryArchive.Name = "dgvStockEntryArchive";
             this.dgvStockEntryArchive.RowHeadersVisible = false;
             this.dgvStockEntryArchive.RowHeadersWidth = 51;
             this.dgvStockEntryArchive.RowTemplate.Height = 24;
-            this.dgvStockEntryArchive.Size = new System.Drawing.Size(770, 312);
+            this.dgvStockEntryArchive.Size = new System.Drawing.Size(1027, 384);
             this.dgvStockEntryArchive.TabIndex = 10;
             this.dgvStockEntryArchive.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockEntryArchive_CellContentClick);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn1.Width = 125;
             // 
             // StockID
             // 
@@ -218,17 +221,28 @@
             this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Delete.Width = 21;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
             // StocksArchive
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.dgvStockEntryArchive);
             this.Controls.Add(this.side2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "StocksArchive";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StocksArchive";
@@ -257,5 +271,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewImageColumn Restore;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.Button PrintStockArchives;
     }
 }
