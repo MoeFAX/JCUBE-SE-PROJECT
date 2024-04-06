@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.Closebtn = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Title = new System.Windows.Forms.Label();
             this.UserIDtxtbox = new MetroFramework.Controls.MetroTextBox();
             this.LoginLabel = new System.Windows.Forms.Label();
             this.Passwordtxtbox = new MetroFramework.Controls.MetroTextBox();
@@ -41,57 +37,10 @@
             this.CancelBtn = new System.Windows.Forms.Button();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Closebtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.panel1.Controls.Add(this.Closebtn);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.Title);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(950, 62);
-            this.panel1.TabIndex = 2;
-            // 
-            // Closebtn
-            // 
-            this.Closebtn.Image = ((System.Drawing.Image)(resources.GetObject("Closebtn.Image")));
-            this.Closebtn.Location = new System.Drawing.Point(913, 3);
-            this.Closebtn.Name = "Closebtn";
-            this.Closebtn.Size = new System.Drawing.Size(34, 35);
-            this.Closebtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Closebtn.TabIndex = 4;
-            this.Closebtn.TabStop = false;
-            this.Closebtn.Click += new System.EventHandler(this.Closebtn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(54, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // Title
-            // 
-            this.Title.AutoSize = true;
-            this.Title.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.ForeColor = System.Drawing.Color.White;
-            this.Title.Location = new System.Drawing.Point(72, 22);
-            this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(319, 22);
-            this.Title.TabIndex = 0;
-            this.Title.Text = "JCUBE SHIELDWORKS CORPORATION";
             // 
             // UserIDtxtbox
             // 
@@ -186,7 +135,7 @@
             this.panel2.Controls.Add(this.LoginLabel);
             this.panel2.Controls.Add(this.UserIDtxtbox);
             this.panel2.Controls.Add(this.Passwordtxtbox);
-            this.panel2.Location = new System.Drawing.Point(284, 190);
+            this.panel2.Location = new System.Drawing.Point(305, 170);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(337, 311);
             this.panel2.TabIndex = 6;
@@ -252,20 +201,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.CancelBtn;
             this.ClientSize = new System.Drawing.Size(950, 650);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Closebtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).EndInit();
@@ -275,11 +221,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label Title;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox Closebtn;
         private System.Windows.Forms.Label LoginLabel;
         private MetroFramework.Controls.MetroTextBox Passwordtxtbox;
         private System.Windows.Forms.Panel panel2;

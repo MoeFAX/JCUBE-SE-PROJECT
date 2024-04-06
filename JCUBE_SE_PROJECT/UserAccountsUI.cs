@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -25,7 +27,9 @@ namespace JCUBE_SE_PROJECT
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             logUsername = username;
+
             LoadUser();
+
         }
 
         public void LoadUser()
@@ -258,6 +262,5 @@ namespace JCUBE_SE_PROJECT
             LoadUser();
         }
 
-        
     }
 }

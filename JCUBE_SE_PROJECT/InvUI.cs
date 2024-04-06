@@ -152,12 +152,13 @@ namespace JCUBE_SE_PROJECT
         private void btnCancelledOrder_Click(object sender, EventArgs e)
         {
             openChildForm(new CancelledOrdersUI(this));
+            hideSubmenu();
         }
 
         private void btnStockHistory_Click(object sender, EventArgs e)
         {
             openChildForm(new StockInHistoryUI(this));
-           
+            hideSubmenu();
         }
 
         private void btnUserAcc_Click(object sender, EventArgs e)
@@ -212,6 +213,7 @@ namespace JCUBE_SE_PROJECT
         private void btnCriticalStocks_Click(object sender, EventArgs e)
         {
             openChildForm(new CriticalStocks());
+            hideSubmenu();
         }
 
 

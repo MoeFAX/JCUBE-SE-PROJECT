@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateAccount));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.CloseBtn = new System.Windows.Forms.PictureBox();
-            this.CreateAccountlbl = new System.Windows.Forms.Label();
             this.UsernameField = new System.Windows.Forms.TextBox();
             this.Usernamelbl = new System.Windows.Forms.Label();
             this.PasswordField = new System.Windows.Forms.TextBox();
@@ -46,47 +43,13 @@
             this.SaveBtn = new System.Windows.Forms.Button();
             this.NPEyeBtn = new System.Windows.Forms.PictureBox();
             this.RTEyeBtn = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RTEyeBtn)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.panel1.Controls.Add(this.CloseBtn);
-            this.panel1.Controls.Add(this.CreateAccountlbl);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(727, 50);
-            this.panel1.TabIndex = 3;
-            // 
-            // CloseBtn
-            // 
-            this.CloseBtn.Image = ((System.Drawing.Image)(resources.GetObject("CloseBtn.Image")));
-            this.CloseBtn.Location = new System.Drawing.Point(693, 3);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(26, 28);
-            this.CloseBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CloseBtn.TabIndex = 1;
-            this.CloseBtn.TabStop = false;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
-            // 
-            // CreateAccountlbl
-            // 
-            this.CreateAccountlbl.AutoSize = true;
-            this.CreateAccountlbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateAccountlbl.Location = new System.Drawing.Point(12, 18);
-            this.CreateAccountlbl.Name = "CreateAccountlbl";
-            this.CreateAccountlbl.Size = new System.Drawing.Size(167, 23);
-            this.CreateAccountlbl.TabIndex = 1;
-            this.CreateAccountlbl.Text = "Create Account";
-            // 
             // UsernameField
             // 
-            this.UsernameField.Location = new System.Drawing.Point(174, 84);
+            this.UsernameField.Location = new System.Drawing.Point(174, 39);
             this.UsernameField.Name = "UsernameField";
             this.UsernameField.Size = new System.Drawing.Size(459, 30);
             this.UsernameField.TabIndex = 28;
@@ -94,7 +57,7 @@
             // Usernamelbl
             // 
             this.Usernamelbl.AutoSize = true;
-            this.Usernamelbl.Location = new System.Drawing.Point(68, 90);
+            this.Usernamelbl.Location = new System.Drawing.Point(68, 45);
             this.Usernamelbl.Name = "Usernamelbl";
             this.Usernamelbl.Size = new System.Drawing.Size(103, 21);
             this.Usernamelbl.TabIndex = 29;
@@ -102,7 +65,7 @@
             // 
             // PasswordField
             // 
-            this.PasswordField.Location = new System.Drawing.Point(174, 133);
+            this.PasswordField.Location = new System.Drawing.Point(174, 88);
             this.PasswordField.Name = "PasswordField";
             this.PasswordField.PasswordChar = '●';
             this.PasswordField.Size = new System.Drawing.Size(459, 30);
@@ -111,7 +74,7 @@
             // Passwordlbl
             // 
             this.Passwordlbl.AutoSize = true;
-            this.Passwordlbl.Location = new System.Drawing.Point(76, 138);
+            this.Passwordlbl.Location = new System.Drawing.Point(76, 93);
             this.Passwordlbl.Name = "Passwordlbl";
             this.Passwordlbl.Size = new System.Drawing.Size(95, 21);
             this.Passwordlbl.TabIndex = 31;
@@ -119,7 +82,7 @@
             // 
             // RTPasswordField
             // 
-            this.RTPasswordField.Location = new System.Drawing.Point(174, 183);
+            this.RTPasswordField.Location = new System.Drawing.Point(174, 138);
             this.RTPasswordField.Name = "RTPasswordField";
             this.RTPasswordField.PasswordChar = '●';
             this.RTPasswordField.Size = new System.Drawing.Size(459, 30);
@@ -129,7 +92,7 @@
             // 
             this.RTPasswordlbl.AutoSize = true;
             this.RTPasswordlbl.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RTPasswordlbl.Location = new System.Drawing.Point(8, 189);
+            this.RTPasswordlbl.Location = new System.Drawing.Point(8, 144);
             this.RTPasswordlbl.Name = "RTPasswordlbl";
             this.RTPasswordlbl.Size = new System.Drawing.Size(163, 21);
             this.RTPasswordlbl.TabIndex = 33;
@@ -142,7 +105,7 @@
             this.RoleComboBox.Items.AddRange(new object[] {
             "Administrator",
             "Sales Clerk"});
-            this.RoleComboBox.Location = new System.Drawing.Point(174, 283);
+            this.RoleComboBox.Location = new System.Drawing.Point(174, 238);
             this.RoleComboBox.Name = "RoleComboBox";
             this.RoleComboBox.Size = new System.Drawing.Size(459, 29);
             this.RoleComboBox.TabIndex = 34;
@@ -150,7 +113,7 @@
             // Rolelbl
             // 
             this.Rolelbl.AutoSize = true;
-            this.Rolelbl.Location = new System.Drawing.Point(118, 288);
+            this.Rolelbl.Location = new System.Drawing.Point(118, 243);
             this.Rolelbl.Name = "Rolelbl";
             this.Rolelbl.Size = new System.Drawing.Size(53, 21);
             this.Rolelbl.TabIndex = 35;
@@ -158,7 +121,7 @@
             // 
             // FullnameField
             // 
-            this.FullnameField.Location = new System.Drawing.Point(174, 234);
+            this.FullnameField.Location = new System.Drawing.Point(174, 189);
             this.FullnameField.Name = "FullnameField";
             this.FullnameField.Size = new System.Drawing.Size(459, 30);
             this.FullnameField.TabIndex = 36;
@@ -166,7 +129,7 @@
             // Fullnamelbl
             // 
             this.Fullnamelbl.AutoSize = true;
-            this.Fullnamelbl.Location = new System.Drawing.Point(71, 240);
+            this.Fullnamelbl.Location = new System.Drawing.Point(71, 195);
             this.Fullnamelbl.Name = "Fullnamelbl";
             this.Fullnamelbl.Size = new System.Drawing.Size(100, 21);
             this.Fullnamelbl.TabIndex = 37;
@@ -174,12 +137,12 @@
             // 
             // CancelBtn
             // 
-            this.CancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(29)))), ((int)(((byte)(43)))));
+            this.CancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(68)))), ((int)(((byte)(54)))));
             this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.FlatAppearance.BorderSize = 0;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelBtn.ForeColor = System.Drawing.Color.White;
-            this.CancelBtn.Location = new System.Drawing.Point(371, 334);
+            this.CancelBtn.Location = new System.Drawing.Point(371, 289);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(90, 30);
             this.CancelBtn.TabIndex = 39;
@@ -189,11 +152,11 @@
             // 
             // SaveBtn
             // 
-            this.SaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.SaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(155)))), ((int)(((byte)(97)))));
             this.SaveBtn.FlatAppearance.BorderSize = 0;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
-            this.SaveBtn.Location = new System.Drawing.Point(254, 334);
+            this.SaveBtn.Location = new System.Drawing.Point(254, 289);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(90, 30);
             this.SaveBtn.TabIndex = 38;
@@ -205,7 +168,7 @@
             // 
             this.NPEyeBtn.BackColor = System.Drawing.Color.Transparent;
             this.NPEyeBtn.Image = ((System.Drawing.Image)(resources.GetObject("NPEyeBtn.Image")));
-            this.NPEyeBtn.Location = new System.Drawing.Point(609, 138);
+            this.NPEyeBtn.Location = new System.Drawing.Point(609, 93);
             this.NPEyeBtn.Name = "NPEyeBtn";
             this.NPEyeBtn.Size = new System.Drawing.Size(20, 20);
             this.NPEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -216,7 +179,7 @@
             // 
             this.RTEyeBtn.BackColor = System.Drawing.Color.Transparent;
             this.RTEyeBtn.Image = ((System.Drawing.Image)(resources.GetObject("RTEyeBtn.Image")));
-            this.RTEyeBtn.Location = new System.Drawing.Point(609, 188);
+            this.RTEyeBtn.Location = new System.Drawing.Point(609, 143);
             this.RTEyeBtn.Name = "RTEyeBtn";
             this.RTEyeBtn.Size = new System.Drawing.Size(20, 20);
             this.RTEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -229,7 +192,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelBtn;
-            this.ClientSize = new System.Drawing.Size(727, 385);
+            this.ClientSize = new System.Drawing.Size(727, 335);
             this.Controls.Add(this.RTEyeBtn);
             this.Controls.Add(this.NPEyeBtn);
             this.Controls.Add(this.CancelBtn);
@@ -244,16 +207,12 @@
             this.Controls.Add(this.Passwordlbl);
             this.Controls.Add(this.UsernameField);
             this.Controls.Add(this.Usernamelbl);
-            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreateAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateAccount";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RTEyeBtn)).EndInit();
             this.ResumeLayout(false);
@@ -262,10 +221,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox CloseBtn;
-        private System.Windows.Forms.Label CreateAccountlbl;
         private System.Windows.Forms.TextBox UsernameField;
         private System.Windows.Forms.Label Usernamelbl;
         private System.Windows.Forms.TextBox PasswordField;

@@ -239,5 +239,15 @@ namespace JCUBE_SE_PROJECT.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] NotoSans_VariableFont_wdth_wght {
+            get {
+                object obj = ResourceManager.GetObject("NotoSans_VariableFont_wdth_wght", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
