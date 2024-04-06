@@ -47,34 +47,36 @@
             // 
             // RPRTPasswordField
             // 
+            this.RPRTPasswordField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RPRTPasswordField.Location = new System.Drawing.Point(188, 140);
             this.RPRTPasswordField.Name = "RPRTPasswordField";
             this.RPRTPasswordField.PasswordChar = '●';
-            this.RPRTPasswordField.Size = new System.Drawing.Size(459, 30);
+            this.RPRTPasswordField.Size = new System.Drawing.Size(459, 32);
             this.RPRTPasswordField.TabIndex = 38;
             // 
             // RPRTPasswordlbl
             // 
             this.RPRTPasswordlbl.AutoSize = true;
-            this.RPRTPasswordlbl.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RPRTPasswordlbl.Location = new System.Drawing.Point(24, 146);
+            this.RPRTPasswordlbl.Font = new System.Drawing.Font("Noto Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RPRTPasswordlbl.Location = new System.Drawing.Point(27, 144);
             this.RPRTPasswordlbl.Name = "RPRTPasswordlbl";
-            this.RPRTPasswordlbl.Size = new System.Drawing.Size(163, 21);
+            this.RPRTPasswordlbl.Size = new System.Drawing.Size(158, 26);
             this.RPRTPasswordlbl.TabIndex = 39;
             this.RPRTPasswordlbl.Text = "Re-type Password:";
             // 
             // RPNewPasswordField
             // 
+            this.RPNewPasswordField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RPNewPasswordField.Location = new System.Drawing.Point(188, 90);
             this.RPNewPasswordField.Name = "RPNewPasswordField";
             this.RPNewPasswordField.PasswordChar = '●';
-            this.RPNewPasswordField.Size = new System.Drawing.Size(459, 30);
+            this.RPNewPasswordField.Size = new System.Drawing.Size(459, 32);
             this.RPNewPasswordField.TabIndex = 36;
             // 
             // RPPersonIMG
             // 
             this.RPPersonIMG.Image = ((System.Drawing.Image)(resources.GetObject("RPPersonIMG.Image")));
-            this.RPPersonIMG.Location = new System.Drawing.Point(51, 22);
+            this.RPPersonIMG.Location = new System.Drawing.Point(135, 23);
             this.RPPersonIMG.Name = "RPPersonIMG";
             this.RPPersonIMG.Size = new System.Drawing.Size(50, 50);
             this.RPPersonIMG.TabIndex = 40;
@@ -83,24 +85,25 @@
             // RPUNlbl
             // 
             this.RPUNlbl.AutoSize = true;
-            this.RPUNlbl.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RPUNlbl.Location = new System.Drawing.Point(107, 37);
+            this.RPUNlbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RPUNlbl.Location = new System.Drawing.Point(191, 37);
             this.RPUNlbl.Name = "RPUNlbl";
-            this.RPUNlbl.Size = new System.Drawing.Size(75, 21);
+            this.RPUNlbl.Size = new System.Drawing.Size(75, 27);
             this.RPUNlbl.TabIndex = 41;
             this.RPUNlbl.Text = "Cashier";
             // 
             // CancelBtn
             // 
             this.CancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(68)))), ((int)(((byte)(54)))));
+            this.CancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.FlatAppearance.BorderSize = 0;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelBtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelBtn.ForeColor = System.Drawing.Color.White;
-            this.CancelBtn.Location = new System.Drawing.Point(377, 194);
+            this.CancelBtn.Location = new System.Drawing.Point(377, 190);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(90, 30);
+            this.CancelBtn.Size = new System.Drawing.Size(90, 35);
             this.CancelBtn.TabIndex = 43;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = false;
@@ -109,13 +112,14 @@
             // SaveBtn
             // 
             this.SaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(155)))), ((int)(((byte)(97)))));
+            this.SaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveBtn.FlatAppearance.BorderSize = 0;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
-            this.SaveBtn.Location = new System.Drawing.Point(260, 194);
+            this.SaveBtn.Location = new System.Drawing.Point(260, 190);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(90, 30);
+            this.SaveBtn.Size = new System.Drawing.Size(90, 35);
             this.SaveBtn.TabIndex = 42;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
@@ -124,19 +128,20 @@
             // RPNewPasswordlbl
             // 
             this.RPNewPasswordlbl.AutoSize = true;
-            this.RPNewPasswordlbl.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RPNewPasswordlbl.Location = new System.Drawing.Point(49, 96);
+            this.RPNewPasswordlbl.Font = new System.Drawing.Font("Noto Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RPNewPasswordlbl.Location = new System.Drawing.Point(52, 94);
             this.RPNewPasswordlbl.Name = "RPNewPasswordlbl";
-            this.RPNewPasswordlbl.Size = new System.Drawing.Size(136, 21);
+            this.RPNewPasswordlbl.Size = new System.Drawing.Size(133, 26);
             this.RPNewPasswordlbl.TabIndex = 44;
             this.RPNewPasswordlbl.Text = "New Password:";
             // 
             // RPWDAccIDlbl
             // 
             this.RPWDAccIDlbl.AutoSize = true;
-            this.RPWDAccIDlbl.Location = new System.Drawing.Point(188, 37);
+            this.RPWDAccIDlbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RPWDAccIDlbl.Location = new System.Drawing.Point(452, 37);
             this.RPWDAccIDlbl.Name = "RPWDAccIDlbl";
-            this.RPWDAccIDlbl.Size = new System.Drawing.Size(62, 21);
+            this.RPWDAccIDlbl.Size = new System.Drawing.Size(63, 27);
             this.RPWDAccIDlbl.TabIndex = 45;
             this.RPWDAccIDlbl.Text = "label1";
             this.RPWDAccIDlbl.Visible = false;
@@ -184,12 +189,13 @@
             this.Controls.Add(this.RPNewPasswordField);
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ResetPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ResetPassword";
+            this.Text = "Reset Password";
             ((System.ComponentModel.ISupportInitialize)(this.RPPersonIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RTEyeBtn)).EndInit();

@@ -51,8 +51,8 @@ namespace JCUBE_SE_PROJECT
         {
             //check if the username contains any invalid characters
             //will match any string that contains a whitespace, a comma, or any control characters
-            Regex regex = new Regex("^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+$");
-            return regex.IsMatch(username) || username.Length >= 8;
+            Regex regex = new Regex(@"[,~`!#$%^&*()+={}\[\]:;'<>?/\\|]");
+            return regex.IsMatch(EditUsernameField.Text);
         }
 
         private bool IsFullnameValid(string fullname)
@@ -134,14 +134,21 @@ namespace JCUBE_SE_PROJECT
 
                 if (HasUnicode(EditUsernameField.Text))
                 {
-                    MessageBox.Show("Username can not contain a unicode or emoji.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("User ID can not contain a unicode or emoji.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     EditUsernameField.Clear();
-                    cn.Close();
+                    return;
                 }
 
-                if (!IsUsernameValid(EditUsernameField.Text))
+                if (EditUsernameField.Text.Length < 8)
                 {
-                    MessageBox.Show("Username contains invalid characters and/or must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("User ID must be at least 8 characters long.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    EditUsernameField.Clear();
+                    return;
+                }
+
+                if (IsUsernameValid(EditUsernameField.Text))
+                {
+                    MessageBox.Show("User ID contains invalid characters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     EditUsernameField.Clear();
                     return;
                 }
@@ -155,7 +162,7 @@ namespace JCUBE_SE_PROJECT
 
                 if (DoesUsernameExist(EditUsernameField.Text))
                 {
-                    MessageBox.Show("This Username already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("This User ID already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     EditUsernameField.Clear();
                     return;
                 }

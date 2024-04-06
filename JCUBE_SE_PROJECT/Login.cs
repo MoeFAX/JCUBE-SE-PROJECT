@@ -160,13 +160,6 @@ namespace JCUBE_SE_PROJECT
             }
         }
 
-
-        private void CancelBtn_Click(object sender, EventArgs e)
-        {
-            UserIDtxtbox.Clear();
-            Passwordtxtbox.Clear();
-        }
-
         public void NPEyeBtn_MouseDown(object sender, EventArgs e)
         {
             Passwordtxtbox.PasswordChar = '\0';

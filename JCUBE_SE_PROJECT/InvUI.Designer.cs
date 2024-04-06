@@ -60,6 +60,7 @@ namespace JCUBE_SE_PROJECT
             this.INVNamelbl = new System.Windows.Forms.Label();
             this.INVJCUBELOGOIMG = new System.Windows.Forms.PictureBox();
             this.JCubelbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelSidebar.SuspendLayout();
             this.panelSubRecord.SuspendLayout();
             this.panelSubItem.SuspendLayout();
@@ -96,7 +97,7 @@ namespace JCUBE_SE_PROJECT
             this.btnArchives.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnArchives.FlatAppearance.BorderSize = 0;
             this.btnArchives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnArchives.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArchives.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArchives.ForeColor = System.Drawing.Color.White;
             this.btnArchives.Location = new System.Drawing.Point(0, 971);
             this.btnArchives.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -112,7 +113,7 @@ namespace JCUBE_SE_PROJECT
             this.btnLogs.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLogs.FlatAppearance.BorderSize = 0;
             this.btnLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogs.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogs.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogs.ForeColor = System.Drawing.Color.White;
             this.btnLogs.Location = new System.Drawing.Point(0, 921);
             this.btnLogs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -128,7 +129,7 @@ namespace JCUBE_SE_PROJECT
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Location = new System.Drawing.Point(0, 1021);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -144,7 +145,7 @@ namespace JCUBE_SE_PROJECT
             this.btnUserAcc.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUserAcc.FlatAppearance.BorderSize = 0;
             this.btnUserAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserAcc.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserAcc.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserAcc.ForeColor = System.Drawing.Color.White;
             this.btnUserAcc.Location = new System.Drawing.Point(0, 871);
             this.btnUserAcc.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -176,7 +177,7 @@ namespace JCUBE_SE_PROJECT
             this.btnCriticalStocks.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCriticalStocks.FlatAppearance.BorderSize = 0;
             this.btnCriticalStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCriticalStocks.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCriticalStocks.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCriticalStocks.ForeColor = System.Drawing.Color.White;
             this.btnCriticalStocks.Location = new System.Drawing.Point(0, 250);
             this.btnCriticalStocks.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -192,7 +193,7 @@ namespace JCUBE_SE_PROJECT
             this.btnStockHistory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStockHistory.FlatAppearance.BorderSize = 0;
             this.btnStockHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStockHistory.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockHistory.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStockHistory.ForeColor = System.Drawing.Color.White;
             this.btnStockHistory.Location = new System.Drawing.Point(0, 200);
             this.btnStockHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -208,7 +209,7 @@ namespace JCUBE_SE_PROJECT
             this.btnCancelledOrder.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCancelledOrder.FlatAppearance.BorderSize = 0;
             this.btnCancelledOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelledOrder.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelledOrder.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelledOrder.ForeColor = System.Drawing.Color.White;
             this.btnCancelledOrder.Location = new System.Drawing.Point(0, 150);
             this.btnCancelledOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -224,7 +225,7 @@ namespace JCUBE_SE_PROJECT
             this.btnInventoryList.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInventoryList.FlatAppearance.BorderSize = 0;
             this.btnInventoryList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventoryList.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventoryList.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventoryList.ForeColor = System.Drawing.Color.White;
             this.btnInventoryList.Location = new System.Drawing.Point(0, 100);
             this.btnInventoryList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -240,7 +241,7 @@ namespace JCUBE_SE_PROJECT
             this.btnSoldItem.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSoldItem.FlatAppearance.BorderSize = 0;
             this.btnSoldItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSoldItem.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSoldItem.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSoldItem.ForeColor = System.Drawing.Color.White;
             this.btnSoldItem.Location = new System.Drawing.Point(0, 50);
             this.btnSoldItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -256,7 +257,7 @@ namespace JCUBE_SE_PROJECT
             this.btnSaleHistory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSaleHistory.FlatAppearance.BorderSize = 0;
             this.btnSaleHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaleHistory.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaleHistory.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaleHistory.ForeColor = System.Drawing.Color.White;
             this.btnSaleHistory.Location = new System.Drawing.Point(0, 0);
             this.btnSaleHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -272,7 +273,7 @@ namespace JCUBE_SE_PROJECT
             this.btnRecords.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRecords.FlatAppearance.BorderSize = 0;
             this.btnRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecords.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecords.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecords.ForeColor = System.Drawing.Color.White;
             this.btnRecords.Location = new System.Drawing.Point(0, 513);
             this.btnRecords.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -288,7 +289,7 @@ namespace JCUBE_SE_PROJECT
             this.btnStocks.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStocks.FlatAppearance.BorderSize = 0;
             this.btnStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStocks.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStocks.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStocks.ForeColor = System.Drawing.Color.White;
             this.btnStocks.Location = new System.Drawing.Point(0, 463);
             this.btnStocks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -318,7 +319,7 @@ namespace JCUBE_SE_PROJECT
             this.btnSupplier.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSupplier.FlatAppearance.BorderSize = 0;
             this.btnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupplier.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupplier.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupplier.ForeColor = System.Drawing.Color.White;
             this.btnSupplier.Location = new System.Drawing.Point(0, 150);
             this.btnSupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -334,7 +335,7 @@ namespace JCUBE_SE_PROJECT
             this.btnBrand.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBrand.FlatAppearance.BorderSize = 0;
             this.btnBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrand.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrand.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrand.ForeColor = System.Drawing.Color.White;
             this.btnBrand.Location = new System.Drawing.Point(0, 100);
             this.btnBrand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -350,7 +351,7 @@ namespace JCUBE_SE_PROJECT
             this.btnCategory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCategory.FlatAppearance.BorderSize = 0;
             this.btnCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategory.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategory.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategory.ForeColor = System.Drawing.Color.White;
             this.btnCategory.Location = new System.Drawing.Point(0, 50);
             this.btnCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -366,7 +367,7 @@ namespace JCUBE_SE_PROJECT
             this.btnItemList.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnItemList.FlatAppearance.BorderSize = 0;
             this.btnItemList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItemList.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItemList.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItemList.ForeColor = System.Drawing.Color.White;
             this.btnItemList.Location = new System.Drawing.Point(0, 0);
             this.btnItemList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -382,7 +383,7 @@ namespace JCUBE_SE_PROJECT
             this.btnItem.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnItem.FlatAppearance.BorderSize = 0;
             this.btnItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItem.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItem.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItem.ForeColor = System.Drawing.Color.White;
             this.btnItem.Location = new System.Drawing.Point(0, 207);
             this.btnItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -415,12 +416,11 @@ namespace JCUBE_SE_PROJECT
             this.JCUBELOGOIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.JCUBELOGOIMG.TabIndex = 0;
             this.JCUBELOGOIMG.TabStop = false;
-            this.JCUBELOGOIMG.Click += new System.EventHandler(this.JCUBELOGOIMG_Click);
             // 
             // labelJcube
             // 
             this.labelJcube.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelJcube.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJcube.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelJcube.ForeColor = System.Drawing.Color.White;
             this.labelJcube.Location = new System.Drawing.Point(0, 144);
             this.labelJcube.Name = "labelJcube";
@@ -444,11 +444,11 @@ namespace JCUBE_SE_PROJECT
             // lblUserRole
             // 
             this.lblUserRole.AutoSize = true;
-            this.lblUserRole.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserRole.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserRole.ForeColor = System.Drawing.Color.White;
             this.lblUserRole.Location = new System.Drawing.Point(781, 36);
             this.lblUserRole.Name = "lblUserRole";
-            this.lblUserRole.Size = new System.Drawing.Size(62, 16);
+            this.lblUserRole.Size = new System.Drawing.Size(68, 20);
             this.lblUserRole.TabIndex = 2;
             this.lblUserRole.Text = "UserRole";
             // 
@@ -456,16 +456,19 @@ namespace JCUBE_SE_PROJECT
             // 
             this.lblLoggedIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLoggedIn.AutoSize = true;
-            this.lblLoggedIn.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoggedIn.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedIn.ForeColor = System.Drawing.Color.White;
-            this.lblLoggedIn.Location = new System.Drawing.Point(780, 18);
+            this.lblLoggedIn.Location = new System.Drawing.Point(782, 18);
             this.lblLoggedIn.Name = "lblLoggedIn";
-            this.lblLoggedIn.Size = new System.Drawing.Size(95, 17);
+            this.lblLoggedIn.Size = new System.Drawing.Size(88, 20);
             this.lblLoggedIn.TabIndex = 1;
             this.lblLoggedIn.Text = "Logged in as:";
             // 
             // panelMain
             // 
+            this.panelMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMain.BackgroundImage")));
+            this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelMain.Controls.Add(this.label1);
             this.panelMain.Controls.Add(this.INVLoggedInlbl);
             this.panelMain.Controls.Add(this.INVNamelbl);
             this.panelMain.Controls.Add(this.INVJCUBELOGOIMG);
@@ -480,12 +483,13 @@ namespace JCUBE_SE_PROJECT
             // INVLoggedInlbl
             // 
             this.INVLoggedInlbl.AutoSize = true;
-            this.INVLoggedInlbl.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.INVLoggedInlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.INVLoggedInlbl.Location = new System.Drawing.Point(7, 505);
+            this.INVLoggedInlbl.BackColor = System.Drawing.Color.Transparent;
+            this.INVLoggedInlbl.Font = new System.Drawing.Font("Noto Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INVLoggedInlbl.ForeColor = System.Drawing.SystemColors.Control;
+            this.INVLoggedInlbl.Location = new System.Drawing.Point(3, 361);
             this.INVLoggedInlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.INVLoggedInlbl.Name = "INVLoggedInlbl";
-            this.INVLoggedInlbl.Size = new System.Drawing.Size(232, 39);
+            this.INVLoggedInlbl.Size = new System.Drawing.Size(167, 35);
             this.INVLoggedInlbl.TabIndex = 4;
             this.INVLoggedInlbl.Text = "Logged in as:";
             this.INVLoggedInlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -493,23 +497,25 @@ namespace JCUBE_SE_PROJECT
             // INVNamelbl
             // 
             this.INVNamelbl.AutoSize = true;
-            this.INVNamelbl.Font = new System.Drawing.Font("Century Gothic", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.INVNamelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.INVNamelbl.Location = new System.Drawing.Point(7, 544);
+            this.INVNamelbl.BackColor = System.Drawing.Color.Transparent;
+            this.INVNamelbl.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INVNamelbl.ForeColor = System.Drawing.Color.White;
+            this.INVNamelbl.Location = new System.Drawing.Point(4, 396);
             this.INVNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.INVNamelbl.Name = "INVNamelbl";
-            this.INVNamelbl.Size = new System.Drawing.Size(163, 40);
+            this.INVNamelbl.Size = new System.Drawing.Size(106, 30);
             this.INVNamelbl.TabIndex = 3;
             this.INVNamelbl.Text = "Fullname";
             this.INVNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // INVJCUBELOGOIMG
             // 
+            this.INVJCUBELOGOIMG.BackColor = System.Drawing.Color.Transparent;
             this.INVJCUBELOGOIMG.Image = ((System.Drawing.Image)(resources.GetObject("INVJCUBELOGOIMG.Image")));
-            this.INVJCUBELOGOIMG.Location = new System.Drawing.Point(335, 98);
+            this.INVJCUBELOGOIMG.Location = new System.Drawing.Point(580, 182);
             this.INVJCUBELOGOIMG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.INVJCUBELOGOIMG.Name = "INVJCUBELOGOIMG";
-            this.INVJCUBELOGOIMG.Size = new System.Drawing.Size(275, 273);
+            this.INVJCUBELOGOIMG.Size = new System.Drawing.Size(275, 254);
             this.INVJCUBELOGOIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.INVJCUBELOGOIMG.TabIndex = 1;
             this.INVJCUBELOGOIMG.TabStop = false;
@@ -517,15 +523,30 @@ namespace JCUBE_SE_PROJECT
             // JCubelbl
             // 
             this.JCubelbl.AutoSize = true;
-            this.JCubelbl.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JCubelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.JCubelbl.Location = new System.Drawing.Point(51, 18);
+            this.JCubelbl.BackColor = System.Drawing.Color.Transparent;
+            this.JCubelbl.Font = new System.Drawing.Font("Noto Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JCubelbl.ForeColor = System.Drawing.SystemColors.Control;
+            this.JCubelbl.Location = new System.Drawing.Point(7, 202);
             this.JCubelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.JCubelbl.Name = "JCubelbl";
-            this.JCubelbl.Size = new System.Drawing.Size(836, 56);
+            this.JCubelbl.Size = new System.Drawing.Size(520, 42);
             this.JCubelbl.TabIndex = 0;
             this.JCubelbl.Text = "JCUBE SHIELDWORKS CORPORATION";
             this.JCubelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(6, 242);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(299, 27);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Inventory Management System";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // InvUI
             // 
@@ -536,12 +557,13 @@ namespace JCUBE_SE_PROJECT
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InvUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Jcube Inventory";
+            this.Text = "JCube Inventory";
             this.Load += new System.EventHandler(this.InvUI_Load);
             this.panelSidebar.ResumeLayout(false);
             this.panelSubRecord.ResumeLayout(false);
@@ -590,6 +612,6 @@ namespace JCUBE_SE_PROJECT
         private System.Windows.Forms.Button btnCriticalStocks;
         private System.Windows.Forms.Button btnLogs;
         private System.Windows.Forms.Button btnArchives;
-
+        private System.Windows.Forms.Label label1;
     }
 }

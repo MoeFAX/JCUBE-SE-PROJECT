@@ -189,15 +189,6 @@ namespace JCUBE_SE_PROJECT
             }
         }
 
-        private void JCUBELOGOIMG_Click(object sender, EventArgs e)
-        {
-            openChildForm(new DashUI());
-            
-
-        }
-
-        
-
         private void btnLogs_Click(object sender, EventArgs e)
         {
             openChildForm(new Logs());
@@ -253,7 +244,5 @@ namespace JCUBE_SE_PROJECT
             Notif();
             UserRole = lblUserRole.Text;
         }
-
-        
     }
 }

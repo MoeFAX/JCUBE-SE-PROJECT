@@ -34,7 +34,6 @@
             this.Passwordtxtbox = new MetroFramework.Controls.MetroTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.NPEyeBtn = new System.Windows.Forms.PictureBox();
-            this.CancelBtn = new System.Windows.Forms.Button();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
@@ -75,16 +74,16 @@
             this.UserIDtxtbox.UseSelectable = true;
             this.UserIDtxtbox.WaterMark = "USER ID";
             this.UserIDtxtbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.UserIDtxtbox.WaterMarkFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserIDtxtbox.WaterMarkFont = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // LoginLabel
             // 
             this.LoginLabel.AutoSize = true;
-            this.LoginLabel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginLabel.Font = new System.Drawing.Font("Noto Sans ExtraBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginLabel.ForeColor = System.Drawing.Color.White;
-            this.LoginLabel.Location = new System.Drawing.Point(125, 120);
+            this.LoginLabel.Location = new System.Drawing.Point(122, 118);
             this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(83, 27);
+            this.LoginLabel.Size = new System.Drawing.Size(91, 35);
             this.LoginLabel.TabIndex = 4;
             this.LoginLabel.Text = "LOGIN";
             // 
@@ -122,14 +121,13 @@
             this.Passwordtxtbox.UseSelectable = true;
             this.Passwordtxtbox.WaterMark = "PASSWORD";
             this.Passwordtxtbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.Passwordtxtbox.WaterMarkFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Passwordtxtbox.WaterMarkFont = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.panel2.Controls.Add(this.NPEyeBtn);
-            this.panel2.Controls.Add(this.CancelBtn);
             this.panel2.Controls.Add(this.LoginBtn);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.LoginLabel);
@@ -151,22 +149,6 @@
             this.NPEyeBtn.TabIndex = 56;
             this.NPEyeBtn.TabStop = false;
             // 
-            // CancelBtn
-            // 
-            this.CancelBtn.BackColor = System.Drawing.Color.White;
-            this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CancelBtn.FlatAppearance.BorderSize = 0;
-            this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelBtn.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.CancelBtn.Location = new System.Drawing.Point(182, 268);
-            this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(84, 27);
-            this.CancelBtn.TabIndex = 9;
-            this.CancelBtn.Text = "Cancel";
-            this.CancelBtn.UseVisualStyleBackColor = false;
-            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
-            // 
             // LoginBtn
             // 
             this.LoginBtn.BackColor = System.Drawing.Color.White;
@@ -174,11 +156,11 @@
             this.LoginBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.LoginBtn.FlatAppearance.BorderSize = 0;
             this.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoginBtn.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginBtn.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.LoginBtn.Location = new System.Drawing.Point(69, 268);
+            this.LoginBtn.Location = new System.Drawing.Point(92, 268);
             this.LoginBtn.Name = "LoginBtn";
-            this.LoginBtn.Size = new System.Drawing.Size(84, 27);
+            this.LoginBtn.Size = new System.Drawing.Size(143, 27);
             this.LoginBtn.TabIndex = 8;
             this.LoginBtn.Text = "Login";
             this.LoginBtn.UseVisualStyleBackColor = false;
@@ -203,11 +185,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CancelButton = this.CancelBtn;
             this.ClientSize = new System.Drawing.Size(950, 650);
             this.Controls.Add(this.panel2);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -226,7 +208,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button LoginBtn;
-        private System.Windows.Forms.Button CancelBtn;
         private MetroFramework.Controls.MetroTextBox UserIDtxtbox;
         private System.Windows.Forms.PictureBox NPEyeBtn;
     }

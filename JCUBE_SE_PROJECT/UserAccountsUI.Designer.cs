@@ -28,18 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAccountsUI));
             this.UAHeadinglbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvUser = new System.Windows.Forms.DataGridView();
             this.AccountID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UAUserNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UAFullNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UAAccActCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UARoleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EditAcc = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ResetPwd = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ActivateAcc = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DeactivateAcc = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ArchiveAcc = new System.Windows.Forms.DataGridViewImageColumn();
             this.UAUserRolelbl = new System.Windows.Forms.Label();
             this.CABttn = new System.Windows.Forms.Button();
             this.CPBttn = new System.Windows.Forms.Button();
@@ -49,14 +53,7 @@
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.refreshBtn = new MetroFramework.Controls.MetroButton();
-            this.EditAcc = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ResetPwd = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ActivateAcc = new System.Windows.Forms.DataGridViewImageColumn();
-            this.DeactivateAcc = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ArchiveAcc = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // UAHeadinglbl
@@ -72,16 +69,6 @@
             this.UAHeadinglbl.TabIndex = 6;
             this.UAHeadinglbl.Text = "USER ACCOUNTS";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(61, 542);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 23);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "User Settings";
-            // 
             // dgvUser
             // 
             this.dgvUser.AllowUserToAddRows = false;
@@ -92,15 +79,15 @@
             this.dgvUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvUser.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvUser.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Noto Sans Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Noto Sans Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AccountID,
@@ -113,14 +100,15 @@
             this.ActivateAcc,
             this.DeactivateAcc,
             this.ArchiveAcc});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Noto Sans Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUser.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Noto Sans Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUser.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvUser.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvUser.EnableHeadersVisualStyles = false;
             this.dgvUser.Location = new System.Drawing.Point(16, 107);
@@ -130,12 +118,12 @@
             this.dgvUser.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvUser.RowHeadersVisible = false;
             this.dgvUser.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvUser.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvUser.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvUser.RowTemplate.Height = 24;
             this.dgvUser.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvUser.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvUser.Size = new System.Drawing.Size(896, 411);
+            this.dgvUser.Size = new System.Drawing.Size(896, 472);
             this.dgvUser.TabIndex = 18;
             this.dgvUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellContentClick);
             // 
@@ -147,12 +135,12 @@
             this.AccountID.Name = "AccountID";
             this.AccountID.ReadOnly = true;
             this.AccountID.Visible = false;
-            this.AccountID.Width = 31;
+            this.AccountID.Width = 125;
             // 
             // UAUserNameCol
             // 
             this.UAUserNameCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.UAUserNameCol.HeaderText = "Username";
+            this.UAUserNameCol.HeaderText = "User ID";
             this.UAUserNameCol.MinimumWidth = 6;
             this.UAUserNameCol.Name = "UAUserNameCol";
             this.UAUserNameCol.ReadOnly = true;
@@ -184,6 +172,56 @@
             this.UARoleCol.Name = "UARoleCol";
             this.UARoleCol.ReadOnly = true;
             // 
+            // EditAcc
+            // 
+            this.EditAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.EditAcc.HeaderText = "";
+            this.EditAcc.Image = ((System.Drawing.Image)(resources.GetObject("EditAcc.Image")));
+            this.EditAcc.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EditAcc.MinimumWidth = 30;
+            this.EditAcc.Name = "EditAcc";
+            this.EditAcc.Width = 30;
+            // 
+            // ResetPwd
+            // 
+            this.ResetPwd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ResetPwd.HeaderText = "";
+            this.ResetPwd.Image = ((System.Drawing.Image)(resources.GetObject("ResetPwd.Image")));
+            this.ResetPwd.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ResetPwd.MinimumWidth = 30;
+            this.ResetPwd.Name = "ResetPwd";
+            this.ResetPwd.Width = 30;
+            // 
+            // ActivateAcc
+            // 
+            this.ActivateAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ActivateAcc.HeaderText = "";
+            this.ActivateAcc.Image = ((System.Drawing.Image)(resources.GetObject("ActivateAcc.Image")));
+            this.ActivateAcc.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ActivateAcc.MinimumWidth = 30;
+            this.ActivateAcc.Name = "ActivateAcc";
+            this.ActivateAcc.Width = 30;
+            // 
+            // DeactivateAcc
+            // 
+            this.DeactivateAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.DeactivateAcc.HeaderText = "";
+            this.DeactivateAcc.Image = ((System.Drawing.Image)(resources.GetObject("DeactivateAcc.Image")));
+            this.DeactivateAcc.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.DeactivateAcc.MinimumWidth = 30;
+            this.DeactivateAcc.Name = "DeactivateAcc";
+            this.DeactivateAcc.Width = 30;
+            // 
+            // ArchiveAcc
+            // 
+            this.ArchiveAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ArchiveAcc.HeaderText = "";
+            this.ArchiveAcc.Image = ((System.Drawing.Image)(resources.GetObject("ArchiveAcc.Image")));
+            this.ArchiveAcc.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ArchiveAcc.MinimumWidth = 30;
+            this.ArchiveAcc.Name = "ArchiveAcc";
+            this.ArchiveAcc.Width = 30;
+            // 
             // UAUserRolelbl
             // 
             this.UAUserRolelbl.AutoSize = true;
@@ -197,6 +235,7 @@
             // CABttn
             // 
             this.CABttn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.CABttn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CABttn.FlatAppearance.BorderSize = 0;
             this.CABttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CABttn.Font = new System.Drawing.Font("Noto Sans Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -213,11 +252,12 @@
             // CPBttn
             // 
             this.CPBttn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.CPBttn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CPBttn.FlatAppearance.BorderSize = 0;
             this.CPBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CPBttn.Font = new System.Drawing.Font("Noto Sans Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPBttn.ForeColor = System.Drawing.Color.White;
-            this.CPBttn.Location = new System.Drawing.Point(182, 54);
+            this.CPBttn.Location = new System.Drawing.Point(181, 54);
             this.CPBttn.Margin = new System.Windows.Forms.Padding(4);
             this.CPBttn.Name = "CPBttn";
             this.CPBttn.Size = new System.Drawing.Size(149, 28);
@@ -281,6 +321,7 @@
             this.refreshBtn.BackColor = System.Drawing.Color.Transparent;
             this.refreshBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("refreshBtn.BackgroundImage")));
             this.refreshBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.refreshBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refreshBtn.ForeColor = System.Drawing.Color.Transparent;
             this.refreshBtn.Location = new System.Drawing.Point(348, 53);
             this.refreshBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -289,67 +330,6 @@
             this.refreshBtn.TabIndex = 20;
             this.refreshBtn.UseSelectable = true;
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
-            // 
-            // EditAcc
-            // 
-            this.EditAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.EditAcc.HeaderText = "";
-            this.EditAcc.Image = ((System.Drawing.Image)(resources.GetObject("EditAcc.Image")));
-            this.EditAcc.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.EditAcc.MinimumWidth = 30;
-            this.EditAcc.Name = "EditAcc";
-            this.EditAcc.Width = 30;
-            // 
-            // ResetPwd
-            // 
-            this.ResetPwd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ResetPwd.HeaderText = "";
-            this.ResetPwd.Image = ((System.Drawing.Image)(resources.GetObject("ResetPwd.Image")));
-            this.ResetPwd.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ResetPwd.MinimumWidth = 30;
-            this.ResetPwd.Name = "ResetPwd";
-            this.ResetPwd.Width = 30;
-            // 
-            // ActivateAcc
-            // 
-            this.ActivateAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ActivateAcc.HeaderText = "";
-            this.ActivateAcc.Image = ((System.Drawing.Image)(resources.GetObject("ActivateAcc.Image")));
-            this.ActivateAcc.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ActivateAcc.MinimumWidth = 30;
-            this.ActivateAcc.Name = "ActivateAcc";
-            this.ActivateAcc.Width = 30;
-            // 
-            // DeactivateAcc
-            // 
-            this.DeactivateAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.DeactivateAcc.HeaderText = "";
-            this.DeactivateAcc.Image = ((System.Drawing.Image)(resources.GetObject("DeactivateAcc.Image")));
-            this.DeactivateAcc.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.DeactivateAcc.MinimumWidth = 30;
-            this.DeactivateAcc.Name = "DeactivateAcc";
-            this.DeactivateAcc.Width = 30;
-            // 
-            // ArchiveAcc
-            // 
-            this.ArchiveAcc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ArchiveAcc.HeaderText = "";
-            this.ArchiveAcc.Image = ((System.Drawing.Image)(resources.GetObject("ArchiveAcc.Image")));
-            this.ArchiveAcc.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ArchiveAcc.MinimumWidth = 30;
-            this.ArchiveAcc.Name = "ArchiveAcc";
-            this.ArchiveAcc.Width = 30;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 530);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
             // 
             // UserAccountsUI
             // 
@@ -362,27 +342,31 @@
             this.Controls.Add(this.UAUserRolelbl);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.dgvUser);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.UAHeadinglbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "UserAccountsUI";
             this.Text = "User Accounts";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvUser;
         private MetroFramework.Controls.MetroButton refreshBtn;
         public System.Windows.Forms.Label UAUserRolelbl;
         private System.Windows.Forms.Label UAHeadinglbl;
+        private System.Windows.Forms.Button CABttn;
+        private System.Windows.Forms.Button CPBttn;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn AccountID;
         private System.Windows.Forms.DataGridViewTextBoxColumn UAUserNameCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn UAFullNameCol;
@@ -393,12 +377,5 @@
         private System.Windows.Forms.DataGridViewImageColumn ActivateAcc;
         private System.Windows.Forms.DataGridViewImageColumn DeactivateAcc;
         private System.Windows.Forms.DataGridViewImageColumn ArchiveAcc;
-        private System.Windows.Forms.Button CABttn;
-        private System.Windows.Forms.Button CPBttn;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
     }
 }
