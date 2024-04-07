@@ -27,11 +27,7 @@ namespace JCUBE_SE_PROJECT
             LoadBrand();
         }
 
-        private void addbtn_Click(object sender, EventArgs e)
-        {
-            BrandModule moduleForm = new BrandModule(this, logUsername);
-            moduleForm.ShowDialog();
-        }
+        
 
         public void LoadBrand()
         {
@@ -100,6 +96,12 @@ namespace JCUBE_SE_PROJECT
 
             }
             LoadBrand();
+        }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+            BrandModule moduleForm = new BrandModule(this, logUsername);
+            moduleForm.ShowDialog();
         }
     }
 }

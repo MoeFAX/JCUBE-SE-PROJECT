@@ -47,10 +47,10 @@
             // CPNewPasswordlbl
             // 
             this.CPNewPasswordlbl.AutoSize = true;
-            this.CPNewPasswordlbl.Font = new System.Drawing.Font("Noto Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPNewPasswordlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPNewPasswordlbl.Location = new System.Drawing.Point(52, 89);
             this.CPNewPasswordlbl.Name = "CPNewPasswordlbl";
-            this.CPNewPasswordlbl.Size = new System.Drawing.Size(133, 26);
+            this.CPNewPasswordlbl.Size = new System.Drawing.Size(126, 20);
             this.CPNewPasswordlbl.TabIndex = 54;
             this.CPNewPasswordlbl.Text = "New Password:";
             // 
@@ -61,7 +61,7 @@
             this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.FlatAppearance.BorderSize = 0;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelBtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelBtn.ForeColor = System.Drawing.Color.White;
             this.CancelBtn.Location = new System.Drawing.Point(377, 186);
             this.CancelBtn.Name = "CancelBtn";
@@ -77,7 +77,7 @@
             this.SaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveBtn.FlatAppearance.BorderSize = 0;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveBtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
             this.SaveBtn.Location = new System.Drawing.Point(260, 186);
             this.SaveBtn.Name = "SaveBtn";
@@ -90,10 +90,10 @@
             // CPUNlbl
             // 
             this.CPUNlbl.AutoSize = true;
-            this.CPUNlbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPUNlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPUNlbl.Location = new System.Drawing.Point(190, 30);
             this.CPUNlbl.Name = "CPUNlbl";
-            this.CPUNlbl.Size = new System.Drawing.Size(68, 27);
+            this.CPUNlbl.Size = new System.Drawing.Size(60, 22);
             this.CPUNlbl.TabIndex = 51;
             this.CPUNlbl.Text = "Admin";
             // 
@@ -108,30 +108,30 @@
             // 
             // CPRTPasswordField
             // 
-            this.CPRTPasswordField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPRTPasswordField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPRTPasswordField.Location = new System.Drawing.Point(188, 136);
             this.CPRTPasswordField.Name = "CPRTPasswordField";
             this.CPRTPasswordField.PasswordChar = '●';
-            this.CPRTPasswordField.Size = new System.Drawing.Size(459, 32);
+            this.CPRTPasswordField.Size = new System.Drawing.Size(459, 28);
             this.CPRTPasswordField.TabIndex = 48;
             // 
             // CPRTPasswordlbl
             // 
             this.CPRTPasswordlbl.AutoSize = true;
-            this.CPRTPasswordlbl.Font = new System.Drawing.Font("Noto Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPRTPasswordlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPRTPasswordlbl.Location = new System.Drawing.Point(27, 141);
             this.CPRTPasswordlbl.Name = "CPRTPasswordlbl";
-            this.CPRTPasswordlbl.Size = new System.Drawing.Size(158, 26);
+            this.CPRTPasswordlbl.Size = new System.Drawing.Size(151, 20);
             this.CPRTPasswordlbl.TabIndex = 49;
             this.CPRTPasswordlbl.Text = "Re-type Password:";
             // 
             // CPNewPasswordField
             // 
-            this.CPNewPasswordField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPNewPasswordField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPNewPasswordField.Location = new System.Drawing.Point(188, 86);
             this.CPNewPasswordField.Name = "CPNewPasswordField";
             this.CPNewPasswordField.PasswordChar = '●';
-            this.CPNewPasswordField.Size = new System.Drawing.Size(459, 32);
+            this.CPNewPasswordField.Size = new System.Drawing.Size(459, 28);
             this.CPNewPasswordField.TabIndex = 47;
             // 
             // NPEyeBtn
@@ -177,6 +177,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "UAChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Change Password";

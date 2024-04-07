@@ -33,10 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.addbtn = new System.Windows.Forms.Button();
             this.SupplierLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.addbtn = new System.Windows.Forms.Button();
-            this.MngCtgryLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.side2 = new System.Windows.Forms.Panel();
             this.dgvSupplier = new System.Windows.Forms.DataGridView();
@@ -49,18 +48,36 @@
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Archive = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.addbtn);
             this.panel2.Controls.Add(this.SupplierLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(982, 70);
             this.panel2.TabIndex = 3;
+            // 
+            // addbtn
+            // 
+            this.addbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addbtn.FlatAppearance.BorderSize = 0;
+            this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.addbtn.Image = ((System.Drawing.Image)(resources.GetObject("addbtn.Image")));
+            this.addbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addbtn.Location = new System.Drawing.Point(759, 22);
+            this.addbtn.Name = "addbtn";
+            this.addbtn.Size = new System.Drawing.Size(106, 38);
+            this.addbtn.TabIndex = 5;
+            this.addbtn.Text = "Create";
+            this.addbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addbtn.UseVisualStyleBackColor = true;
+            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
             // 
             // SupplierLabel
             // 
@@ -75,44 +92,18 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.addbtn);
-            this.panel1.Controls.Add(this.MngCtgryLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 453);
+            this.panel1.Location = new System.Drawing.Point(0, 522);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(982, 100);
+            this.panel1.Size = new System.Drawing.Size(982, 31);
             this.panel1.TabIndex = 4;
-            // 
-            // addbtn
-            // 
-            this.addbtn.FlatAppearance.BorderSize = 0;
-            this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addbtn.Image = ((System.Drawing.Image)(resources.GetObject("addbtn.Image")));
-            this.addbtn.Location = new System.Drawing.Point(865, 33);
-            this.addbtn.Name = "addbtn";
-            this.addbtn.Size = new System.Drawing.Size(31, 31);
-            this.addbtn.TabIndex = 1;
-            this.addbtn.UseVisualStyleBackColor = true;
-            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
-            // 
-            // MngCtgryLabel
-            // 
-            this.MngCtgryLabel.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngCtgryLabel.Image = ((System.Drawing.Image)(resources.GetObject("MngCtgryLabel.Image")));
-            this.MngCtgryLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MngCtgryLabel.Location = new System.Drawing.Point(23, 14);
-            this.MngCtgryLabel.Name = "MngCtgryLabel";
-            this.MngCtgryLabel.Size = new System.Drawing.Size(147, 67);
-            this.MngCtgryLabel.TabIndex = 0;
-            this.MngCtgryLabel.Text = "Manage Supplier";
-            this.MngCtgryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 70);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(20, 383);
+            this.panel3.Size = new System.Drawing.Size(20, 452);
             this.panel3.TabIndex = 5;
             // 
             // side2
@@ -120,17 +111,22 @@
             this.side2.Dock = System.Windows.Forms.DockStyle.Right;
             this.side2.Location = new System.Drawing.Point(962, 70);
             this.side2.Name = "side2";
-            this.side2.Size = new System.Drawing.Size(20, 383);
+            this.side2.Size = new System.Drawing.Size(20, 452);
             this.side2.TabIndex = 6;
             // 
             // dgvSupplier
             // 
             this.dgvSupplier.AllowUserToAddRows = false;
+            this.dgvSupplier.AllowUserToDeleteRows = false;
+            this.dgvSupplier.AllowUserToResizeColumns = false;
+            this.dgvSupplier.AllowUserToResizeRows = false;
             this.dgvSupplier.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.dgvSupplier.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvSupplier.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvSupplier.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -147,26 +143,29 @@
             this.EmailAddress,
             this.Edit,
             this.Archive});
+            this.dgvSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSupplier.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSupplier.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvSupplier.EnableHeadersVisualStyles = false;
             this.dgvSupplier.Location = new System.Drawing.Point(20, 70);
             this.dgvSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSupplier.Name = "dgvSupplier";
+            this.dgvSupplier.ReadOnly = true;
             this.dgvSupplier.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvSupplier.RowHeadersVisible = false;
             this.dgvSupplier.RowHeadersWidth = 51;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dgvSupplier.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSupplier.RowTemplate.Height = 24;
-            this.dgvSupplier.Size = new System.Drawing.Size(942, 383);
+            this.dgvSupplier.Size = new System.Drawing.Size(942, 452);
             this.dgvSupplier.TabIndex = 18;
             this.dgvSupplier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSupplier_CellContentClick);
             // 
@@ -177,8 +176,9 @@
             this.SupplierID.HeaderText = "Id";
             this.SupplierID.MinimumWidth = 6;
             this.SupplierID.Name = "SupplierID";
+            this.SupplierID.ReadOnly = true;
             this.SupplierID.Visible = false;
-            this.SupplierID.Width = 31;
+            this.SupplierID.Width = 125;
             // 
             // SupplierName
             // 
@@ -187,7 +187,8 @@
             this.SupplierName.HeaderText = "Supplier";
             this.SupplierName.MinimumWidth = 6;
             this.SupplierName.Name = "SupplierName";
-            this.SupplierName.Width = 104;
+            this.SupplierName.ReadOnly = true;
+            this.SupplierName.Width = 92;
             // 
             // Address
             // 
@@ -196,6 +197,7 @@
             this.Address.HeaderText = "Address";
             this.Address.MinimumWidth = 6;
             this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
             // 
             // ContactPerson
             // 
@@ -204,7 +206,8 @@
             this.ContactPerson.HeaderText = "Contact Person";
             this.ContactPerson.MinimumWidth = 6;
             this.ContactPerson.Name = "ContactPerson";
-            this.ContactPerson.Width = 176;
+            this.ContactPerson.ReadOnly = true;
+            this.ContactPerson.Width = 139;
             // 
             // PhoneNo
             // 
@@ -213,7 +216,8 @@
             this.PhoneNo.HeaderText = "Phone";
             this.PhoneNo.MinimumWidth = 6;
             this.PhoneNo.Name = "PhoneNo";
-            this.PhoneNo.Width = 94;
+            this.PhoneNo.ReadOnly = true;
+            this.PhoneNo.Width = 78;
             // 
             // EmailAddress
             // 
@@ -222,7 +226,8 @@
             this.EmailAddress.HeaderText = "Email";
             this.EmailAddress.MinimumWidth = 6;
             this.EmailAddress.Name = "EmailAddress";
-            this.EmailAddress.Width = 82;
+            this.EmailAddress.ReadOnly = true;
+            this.EmailAddress.Width = 73;
             // 
             // Edit
             // 
@@ -232,6 +237,7 @@
             this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
             this.Edit.Width = 6;
             // 
             // Archive
@@ -242,11 +248,12 @@
             this.Archive.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Archive.MinimumWidth = 6;
             this.Archive.Name = "Archive";
+            this.Archive.ReadOnly = true;
             this.Archive.Width = 6;
             // 
             // Supplier
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 553);
             this.Controls.Add(this.dgvSupplier);
@@ -254,14 +261,14 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Supplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Supplier";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();
             this.ResumeLayout(false);
 
@@ -272,8 +279,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label SupplierLabel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button addbtn;
-        private System.Windows.Forms.Label MngCtgryLabel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel side2;
         private System.Windows.Forms.DataGridView dgvSupplier;
@@ -285,5 +290,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EmailAddress;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Archive;
+        private System.Windows.Forms.Button addbtn;
     }
 }

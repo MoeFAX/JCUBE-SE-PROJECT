@@ -23,6 +23,7 @@ namespace JCUBE_SE_PROJECT
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             adminuser = aduser;
+            PrintInvList.Enabled = false;
             LoadInvList();
         }
 
@@ -39,6 +40,8 @@ namespace JCUBE_SE_PROJECT
                 dgvInventory.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString());
             }
             dr.Close();
+
+            PrintInvList.Enabled = dgvInventory.Rows.Count > 0;
             cn.Close();
         }
 

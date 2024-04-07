@@ -32,10 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alert));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblItemCode = new System.Windows.Forms.Label();
             this.MsgTxt = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -44,6 +46,8 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(68)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblItemCode);
             this.panel1.Controls.Add(this.MsgTxt);
             this.panel1.Controls.Add(this.btnCancel);
@@ -52,6 +56,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(370, 75);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 58);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // lblItemCode
             // 
@@ -67,9 +81,9 @@
             // 
             this.MsgTxt.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MsgTxt.ForeColor = System.Drawing.Color.White;
-            this.MsgTxt.Location = new System.Drawing.Point(49, 9);
+            this.MsgTxt.Location = new System.Drawing.Point(74, 9);
             this.MsgTxt.Name = "MsgTxt";
-            this.MsgTxt.Size = new System.Drawing.Size(243, 54);
+            this.MsgTxt.Size = new System.Drawing.Size(242, 57);
             this.MsgTxt.TabIndex = 6;
             this.MsgTxt.Text = "Message Text";
             this.MsgTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -103,6 +117,7 @@
             this.Text = "Alert";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -113,5 +128,6 @@
         private System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.Label lblItemCode;
         public System.Windows.Forms.Label MsgTxt;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

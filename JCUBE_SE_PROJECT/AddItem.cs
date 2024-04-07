@@ -67,10 +67,7 @@ namespace JCUBE_SE_PROJECT
             reorderField.Value = 1;
         }
 
-        private void CloseBtn_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
+        
 
 
         

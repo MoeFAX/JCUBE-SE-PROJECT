@@ -26,13 +26,7 @@ namespace JCUBE_SE_PROJECT
             LoadStocks();
         }
 
-        private void addbutton_Click(object sender, EventArgs e)
-        {
-            StockEntry moduleForm = new StockEntry(this, _loggedInUsername);
-            moduleForm.StockinbyField.Text = _loggedInUsername;
-            moduleForm.StatusField.SelectedItem = "Pending";
-            moduleForm.ShowDialog();
-        }
+        
 
         public void LoadStocks()
         {
@@ -157,6 +151,14 @@ namespace JCUBE_SE_PROJECT
         private void button4_Click(object sender, EventArgs e)
         {
             LoadStocks();
+        }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+            StockEntry moduleForm = new StockEntry(this, _loggedInUsername);
+            moduleForm.StockinbyField.Text = _loggedInUsername;
+            moduleForm.StatusField.SelectedItem = "Pending";
+            moduleForm.ShowDialog();
         }
     }
 }

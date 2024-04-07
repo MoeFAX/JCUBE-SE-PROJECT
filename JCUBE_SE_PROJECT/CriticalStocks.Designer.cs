@@ -30,8 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CriticalStocks));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -43,7 +44,6 @@
             this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.mngRecord = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvCriticalStocks = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +57,6 @@
             this.StockOnHand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCriticalStocks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +89,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(20, 444);
+            this.panel3.Size = new System.Drawing.Size(20, 519);
             this.panel3.TabIndex = 20;
             // 
             // dataGridView1
@@ -123,7 +122,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(891, 444);
+            this.dataGridView1.Size = new System.Drawing.Size(891, 519);
             this.dataGridView1.TabIndex = 22;
             // 
             // No
@@ -169,25 +168,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.mngRecord);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 444);
+            this.panel1.Location = new System.Drawing.Point(0, 519);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(891, 100);
+            this.panel1.Size = new System.Drawing.Size(891, 25);
             this.panel1.TabIndex = 18;
-            // 
-            // mngRecord
-            // 
-            this.mngRecord.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mngRecord.Image = ((System.Drawing.Image)(resources.GetObject("mngRecord.Image")));
-            this.mngRecord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mngRecord.Location = new System.Drawing.Point(16, 16);
-            this.mngRecord.Name = "mngRecord";
-            this.mngRecord.Size = new System.Drawing.Size(141, 75);
-            this.mngRecord.TabIndex = 13;
-            this.mngRecord.Text = "Manage Record";
-            this.mngRecord.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel4
             // 
@@ -202,19 +188,23 @@
             // dgvCriticalStocks
             // 
             this.dgvCriticalStocks.AllowUserToAddRows = false;
+            this.dgvCriticalStocks.AllowUserToDeleteRows = false;
+            this.dgvCriticalStocks.AllowUserToResizeColumns = false;
+            this.dgvCriticalStocks.AllowUserToResizeRows = false;
             this.dgvCriticalStocks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.dgvCriticalStocks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCriticalStocks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvCriticalStocks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCriticalStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCriticalStocks.ColumnHeadersHeight = 30;
-            this.dgvCriticalStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCriticalStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCriticalStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
@@ -225,16 +215,30 @@
             this.Price,
             this.ReOrder,
             this.StockOnHand});
+            this.dgvCriticalStocks.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCriticalStocks.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCriticalStocks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCriticalStocks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCriticalStocks.EnableHeadersVisualStyles = false;
-            this.dgvCriticalStocks.GridColor = System.Drawing.Color.Snow;
             this.dgvCriticalStocks.Location = new System.Drawing.Point(20, 70);
+            this.dgvCriticalStocks.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCriticalStocks.Name = "dgvCriticalStocks";
+            this.dgvCriticalStocks.ReadOnly = true;
+            this.dgvCriticalStocks.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCriticalStocks.RowHeadersVisible = false;
             this.dgvCriticalStocks.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvCriticalStocks.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCriticalStocks.RowTemplate.Height = 24;
-            this.dgvCriticalStocks.Size = new System.Drawing.Size(871, 374);
-            this.dgvCriticalStocks.TabIndex = 23;
+            this.dgvCriticalStocks.Size = new System.Drawing.Size(871, 449);
+            this.dgvCriticalStocks.TabIndex = 18;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -244,8 +248,9 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "No";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 63;
+            this.dataGridViewTextBoxColumn1.Width = 65;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -253,13 +258,15 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Inventory Code";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 184;
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 138;
             // 
             // ItemCode
             // 
             this.ItemCode.HeaderText = "Item Code";
             this.ItemCode.MinimumWidth = 6;
             this.ItemCode.Name = "ItemCode";
+            this.ItemCode.ReadOnly = true;
             this.ItemCode.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
@@ -267,6 +274,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Description";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 200;
             // 
             // Brand
@@ -275,7 +283,8 @@
             this.Brand.HeaderText = "Brand";
             this.Brand.MinimumWidth = 6;
             this.Brand.Name = "Brand";
-            this.Brand.Width = 92;
+            this.Brand.ReadOnly = true;
+            this.Brand.Width = 75;
             // 
             // Category
             // 
@@ -283,7 +292,8 @@
             this.Category.HeaderText = "Category";
             this.Category.MinimumWidth = 6;
             this.Category.Name = "Category";
-            this.Category.Width = 126;
+            this.Category.ReadOnly = true;
+            this.Category.Width = 97;
             // 
             // Price
             // 
@@ -291,7 +301,8 @@
             this.Price.HeaderText = "Price";
             this.Price.MinimumWidth = 6;
             this.Price.Name = "Price";
-            this.Price.Width = 81;
+            this.Price.ReadOnly = true;
+            this.Price.Width = 70;
             // 
             // ReOrder
             // 
@@ -299,7 +310,8 @@
             this.ReOrder.HeaderText = "Re-Order";
             this.ReOrder.MinimumWidth = 6;
             this.ReOrder.Name = "ReOrder";
-            this.ReOrder.Width = 121;
+            this.ReOrder.ReadOnly = true;
+            this.ReOrder.Width = 98;
             // 
             // StockOnHand
             // 
@@ -307,7 +319,8 @@
             this.StockOnHand.HeaderText = "Stock On Hand";
             this.StockOnHand.MinimumWidth = 6;
             this.StockOnHand.Name = "StockOnHand";
-            this.StockOnHand.Width = 177;
+            this.StockOnHand.ReadOnly = true;
+            this.StockOnHand.Width = 137;
             // 
             // CriticalStocks
             // 
@@ -320,12 +333,12 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CriticalStocks";
             this.Text = "CriticalStocks";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCriticalStocks)).EndInit();
             this.ResumeLayout(false);
 
@@ -343,7 +356,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label mngRecord;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dgvCriticalStocks;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;

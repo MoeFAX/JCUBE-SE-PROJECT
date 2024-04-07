@@ -28,11 +28,7 @@ namespace JCUBE_SE_PROJECT
             LoadSupplier();
         }
 
-        private void addbtn_Click(object sender, EventArgs e)
-        {
-            SupplierModule moduleForm = new SupplierModule(this, logUsername);
-            moduleForm.ShowDialog();
-        }
+        
 
         public void LoadSupplier()
         {
@@ -117,6 +113,12 @@ namespace JCUBE_SE_PROJECT
                 }
                 LoadSupplier();
             }
+        }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+            SupplierModule moduleForm = new SupplierModule(this, logUsername);
+            moduleForm.ShowDialog();
         }
     }
 }

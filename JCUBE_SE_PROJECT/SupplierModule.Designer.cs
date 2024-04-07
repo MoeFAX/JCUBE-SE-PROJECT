@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupplierModule));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.CloseBtn = new System.Windows.Forms.PictureBox();
-            this.BrandSupplierlbl = new System.Windows.Forms.Label();
             this.SupplierNameField = new System.Windows.Forms.TextBox();
             this.AddressField = new System.Windows.Forms.TextBox();
             this.ContactField = new System.Windows.Forms.TextBox();
@@ -45,73 +42,39 @@
             this.SaveBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
             this.lblid = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.panel1.Controls.Add(this.CloseBtn);
-            this.panel1.Controls.Add(this.BrandSupplierlbl);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(608, 50);
-            this.panel1.TabIndex = 1;
-            // 
-            // CloseBtn
-            // 
-            this.CloseBtn.Image = ((System.Drawing.Image)(resources.GetObject("CloseBtn.Image")));
-            this.CloseBtn.Location = new System.Drawing.Point(570, 12);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(26, 28);
-            this.CloseBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CloseBtn.TabIndex = 1;
-            this.CloseBtn.TabStop = false;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
-            // 
-            // BrandSupplierlbl
-            // 
-            this.BrandSupplierlbl.AutoSize = true;
-            this.BrandSupplierlbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BrandSupplierlbl.Location = new System.Drawing.Point(12, 18);
-            this.BrandSupplierlbl.Name = "BrandSupplierlbl";
-            this.BrandSupplierlbl.Size = new System.Drawing.Size(167, 23);
-            this.BrandSupplierlbl.TabIndex = 1;
-            this.BrandSupplierlbl.Text = "Supplier Module";
             // 
             // SupplierNameField
             // 
-            this.SupplierNameField.Location = new System.Drawing.Point(169, 92);
+            this.SupplierNameField.Location = new System.Drawing.Point(170, 51);
             this.SupplierNameField.Name = "SupplierNameField";
             this.SupplierNameField.Size = new System.Drawing.Size(384, 30);
             this.SupplierNameField.TabIndex = 8;
             // 
             // AddressField
             // 
-            this.AddressField.Location = new System.Drawing.Point(169, 140);
+            this.AddressField.Location = new System.Drawing.Point(170, 99);
             this.AddressField.Name = "AddressField";
             this.AddressField.Size = new System.Drawing.Size(384, 30);
             this.AddressField.TabIndex = 9;
             // 
             // ContactField
             // 
-            this.ContactField.Location = new System.Drawing.Point(169, 185);
+            this.ContactField.Location = new System.Drawing.Point(170, 144);
             this.ContactField.Name = "ContactField";
             this.ContactField.Size = new System.Drawing.Size(384, 30);
             this.ContactField.TabIndex = 10;
             // 
             // PhoneField
             // 
-            this.PhoneField.Location = new System.Drawing.Point(169, 234);
+            this.PhoneField.Location = new System.Drawing.Point(170, 193);
             this.PhoneField.Name = "PhoneField";
             this.PhoneField.Size = new System.Drawing.Size(384, 30);
             this.PhoneField.TabIndex = 11;
             // 
             // EmailAddField
             // 
-            this.EmailAddField.Location = new System.Drawing.Point(169, 281);
+            this.EmailAddField.Location = new System.Drawing.Point(170, 240);
             this.EmailAddField.Name = "EmailAddField";
             this.EmailAddField.Size = new System.Drawing.Size(384, 30);
             this.EmailAddField.TabIndex = 12;
@@ -119,7 +82,7 @@
             // SupplierNamelbl
             // 
             this.SupplierNamelbl.AutoSize = true;
-            this.SupplierNamelbl.Location = new System.Drawing.Point(22, 95);
+            this.SupplierNamelbl.Location = new System.Drawing.Point(23, 54);
             this.SupplierNamelbl.Name = "SupplierNamelbl";
             this.SupplierNamelbl.Size = new System.Drawing.Size(141, 21);
             this.SupplierNamelbl.TabIndex = 13;
@@ -128,7 +91,7 @@
             // Addresslbl
             // 
             this.Addresslbl.AutoSize = true;
-            this.Addresslbl.Location = new System.Drawing.Point(78, 143);
+            this.Addresslbl.Location = new System.Drawing.Point(79, 102);
             this.Addresslbl.Name = "Addresslbl";
             this.Addresslbl.Size = new System.Drawing.Size(85, 21);
             this.Addresslbl.TabIndex = 14;
@@ -137,7 +100,7 @@
             // Contactlbl
             // 
             this.Contactlbl.AutoSize = true;
-            this.Contactlbl.Location = new System.Drawing.Point(9, 188);
+            this.Contactlbl.Location = new System.Drawing.Point(10, 147);
             this.Contactlbl.Name = "Contactlbl";
             this.Contactlbl.Size = new System.Drawing.Size(154, 21);
             this.Contactlbl.TabIndex = 15;
@@ -146,7 +109,7 @@
             // Phonelbl
             // 
             this.Phonelbl.AutoSize = true;
-            this.Phonelbl.Location = new System.Drawing.Point(61, 237);
+            this.Phonelbl.Location = new System.Drawing.Point(62, 196);
             this.Phonelbl.Name = "Phonelbl";
             this.Phonelbl.Size = new System.Drawing.Size(102, 21);
             this.Phonelbl.TabIndex = 16;
@@ -155,7 +118,7 @@
             // EmailAddlbl
             // 
             this.EmailAddlbl.AutoSize = true;
-            this.EmailAddlbl.Location = new System.Drawing.Point(28, 284);
+            this.EmailAddlbl.Location = new System.Drawing.Point(29, 243);
             this.EmailAddlbl.Name = "EmailAddlbl";
             this.EmailAddlbl.Size = new System.Drawing.Size(135, 21);
             this.EmailAddlbl.TabIndex = 17;
@@ -163,11 +126,12 @@
             // 
             // SaveBtn
             // 
-            this.SaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.SaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(155)))), ((int)(((byte)(97)))));
+            this.SaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveBtn.FlatAppearance.BorderSize = 0;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
-            this.SaveBtn.Location = new System.Drawing.Point(246, 358);
+            this.SaveBtn.Location = new System.Drawing.Point(198, 299);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(90, 30);
             this.SaveBtn.TabIndex = 18;
@@ -177,12 +141,13 @@
             // 
             // CancelBtn
             // 
-            this.CancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(29)))), ((int)(((byte)(43)))));
+            this.CancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(68)))), ((int)(((byte)(54)))));
+            this.CancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.FlatAppearance.BorderSize = 0;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelBtn.ForeColor = System.Drawing.Color.White;
-            this.CancelBtn.Location = new System.Drawing.Point(363, 358);
+            this.CancelBtn.Location = new System.Drawing.Point(315, 299);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(90, 30);
             this.CancelBtn.TabIndex = 19;
@@ -193,7 +158,7 @@
             // lblid
             // 
             this.lblid.AutoSize = true;
-            this.lblid.Location = new System.Drawing.Point(26, 400);
+            this.lblid.Location = new System.Drawing.Point(29, 342);
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(25, 21);
             this.lblid.TabIndex = 20;
@@ -206,7 +171,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelBtn;
-            this.ClientSize = new System.Drawing.Size(608, 428);
+            this.ClientSize = new System.Drawing.Size(608, 370);
             this.Controls.Add(this.lblid);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.SaveBtn);
@@ -220,26 +185,21 @@
             this.Controls.Add(this.Addresslbl);
             this.Controls.Add(this.SupplierNameField);
             this.Controls.Add(this.SupplierNamelbl);
-            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SupplierModule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SupplierModule";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).EndInit();
+            this.Text = "Supplier Module";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox CloseBtn;
-        private System.Windows.Forms.Label BrandSupplierlbl;
         private System.Windows.Forms.Label SupplierNamelbl;
         private System.Windows.Forms.Label Addresslbl;
         private System.Windows.Forms.Label Contactlbl;

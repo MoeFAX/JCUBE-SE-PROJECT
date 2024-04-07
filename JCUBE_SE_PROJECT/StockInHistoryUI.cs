@@ -24,6 +24,7 @@ namespace JCUBE_SE_PROJECT
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             adminuser = aduser;
+            PrintStockHistory.Enabled = false;
             LoadStockHistory();
         }
 
@@ -45,19 +46,23 @@ namespace JCUBE_SE_PROJECT
                 dgvStockHistory.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), DateTime.Parse(dr[5].ToString()).ToShortDateString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString());
             }
             dr.Close();
+
+            PrintStockHistory.Enabled = dgvStockHistory.Rows.Count > 0;
             cn.Close();
         }
 
-        private void pbRefresh_Click(object sender, EventArgs e)
-        {
-            LoadStockHistory();
-        }
+       
 
         private void PrintStockHistory_Click(object sender, EventArgs e)
         {
             PrintStockInHistory prtStock = new PrintStockInHistory(adminuser);
             prtStock.LoadPrtStockHistory(dtpStartDate.Value, dtpEndDate.Value);
             prtStock.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LoadStockHistory();
         }
     }
 }

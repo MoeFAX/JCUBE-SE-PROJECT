@@ -42,11 +42,7 @@ namespace JCUBE_SE_PROJECT
             cn.Close();
         }
 
-        private void addbtn_Click(object sender, EventArgs e)
-        {
-            AddItem moduleForm = new AddItem(this, logUsername);
-            moduleForm.ShowDialog();
-        }
+        
         private void dgvItem_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -113,6 +109,12 @@ namespace JCUBE_SE_PROJECT
         public void getTime()
         {
 
+        }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+            AddItem moduleForm = new AddItem(this, logUsername);
+            moduleForm.ShowDialog();
         }
 
         /*

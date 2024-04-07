@@ -23,6 +23,7 @@ namespace JCUBE_SE_PROJECT
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             logUsername = username;
+            PrintItemListArchives.Enabled = false;
             LoadItemList();
         }
 
@@ -37,6 +38,8 @@ namespace JCUBE_SE_PROJECT
                 dgvItemListArchive.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString());
             }
             dr.Close();
+
+            PrintItemListArchives.Enabled = dgvItemListArchive.Rows.Count > 0;
             cn.Close();
         }
 

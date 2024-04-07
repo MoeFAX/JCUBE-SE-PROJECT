@@ -27,10 +27,7 @@ namespace JCUBE_SE_PROJECT
             logUsername = loggedInUsername;
         }
 
-        private void CloseBtn_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
+       
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {

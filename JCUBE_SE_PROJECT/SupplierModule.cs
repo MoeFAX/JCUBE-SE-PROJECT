@@ -35,10 +35,7 @@ namespace JCUBE_SE_PROJECT
             set { supplierID = value; }
         }
 
-        private void CloseBtn_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
+        
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {

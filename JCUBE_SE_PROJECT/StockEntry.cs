@@ -275,7 +275,7 @@ namespace JCUBE_SE_PROJECT
 
         private void cancelbtn_Click(object sender, EventArgs e)
         {
-            Clear();
+            this.Close();
         }
     }
 }

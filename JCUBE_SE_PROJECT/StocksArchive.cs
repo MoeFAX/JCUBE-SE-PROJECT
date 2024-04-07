@@ -23,6 +23,7 @@ namespace JCUBE_SE_PROJECT
             InitializeComponent();
             _loggedInUsername = loggedInUsername;
             cn = new SqlConnection(dbcon.myConnection());
+            PrintStockArchives.Enabled = false;
             LoadStocks();
         }
         public void LoadStocks()
@@ -36,6 +37,8 @@ namespace JCUBE_SE_PROJECT
                 dgvStockEntryArchive.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString());
             }
             dr.Close();
+
+            PrintStockArchives.Enabled = dgvStockEntryArchive.Rows.Count > 0;
             cn.Close();
         }
 
@@ -115,5 +118,7 @@ namespace JCUBE_SE_PROJECT
             prtstockarchives.LoadPrtStockArchives();
             prtstockarchives.ShowDialog();
         }
+
+        
     }
 }

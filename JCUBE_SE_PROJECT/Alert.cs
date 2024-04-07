@@ -19,8 +19,8 @@ namespace JCUBE_SE_PROJECT
         {
             InitializeComponent();
             random = new Random();
-            Color color = SelectThemeColor();
-            panel1.BackColor = color;
+            
+            
         }
 
         public enum enmAction
@@ -97,6 +97,8 @@ namespace JCUBE_SE_PROJECT
             timer1.Start();
         }
 
+        
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             timer1.Interval = 1;
@@ -105,7 +107,7 @@ namespace JCUBE_SE_PROJECT
 
        
 
-        private Color SelectThemeColor()
+        /*private Color SelectThemeColor()
         {
             int index = random.Next(ThemeColor.ColorList.Count);
             while(tempIndex==index)
@@ -116,6 +118,6 @@ namespace JCUBE_SE_PROJECT
             tempIndex = index;
             string color = ThemeColor.ColorList[index];
             return ColorTranslator.FromHtml(color);
-        }
+        }*/
     }
 }

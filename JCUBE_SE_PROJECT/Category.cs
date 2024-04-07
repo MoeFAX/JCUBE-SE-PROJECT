@@ -27,12 +27,7 @@ namespace JCUBE_SE_PROJECT
             LoadCategory();
         }
 
-        private void addbtn_Click(object sender, EventArgs e)
-        {
-            CategoryModule moduleForm = new CategoryModule(this, _loggedInUsername);
-            moduleForm.lblUname.Text = _loggedInUsername;
-            moduleForm.ShowDialog();
-        }
+        
 
         public void LoadCategory()
         {
@@ -103,6 +98,13 @@ namespace JCUBE_SE_PROJECT
 
             }
             LoadCategory();
+        }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+            CategoryModule moduleForm = new CategoryModule(this, _loggedInUsername);
+            moduleForm.lblUname.Text = _loggedInUsername;
+            moduleForm.ShowDialog();
         }
     }
 }
