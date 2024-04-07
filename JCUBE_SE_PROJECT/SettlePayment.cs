@@ -134,6 +134,7 @@ namespace JCUBE_SE_PROJECT
                     if (!System.Text.RegularExpressions.Regex.IsMatch(txtTin.Text, tinPattern))
                     {
                         MessageBox.Show("Incorrect format. Please follow the indicated format: 000-000-000-000", "Format Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtTin.Clear();
                         return;
                     }
                 }
@@ -141,6 +142,7 @@ namespace JCUBE_SE_PROJECT
                 if (string.IsNullOrEmpty(comboMode.Text))
                     {
                         MessageBox.Show("Mode of payment cannot be empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtTin.Clear();
                         return;
                     }
 

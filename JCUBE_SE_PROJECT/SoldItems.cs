@@ -79,8 +79,7 @@ namespace JCUBE_SE_PROJECT
         {
             LoadSoldItems();
         }
-
-        private void btnPrintSold_Click(object sender, EventArgs e)
+        private void btnPrintSold_Click_1(object sender, EventArgs e)
         {
             PrintSoldItems prtSoldItems = new PrintSoldItems(invUIInstance);
             prtSoldItems.LoadSoldItems(dateFromSold.Value, dateToSold.Value);

@@ -71,23 +71,11 @@ namespace JCUBE_SE_PROJECT
             
         }
 
-        private void btnLoadCancelled_Click(object sender, EventArgs e)
-        {
-            LoadCancel();
-        }
-
-        private void PrintCnclOrders_Click(object sender, EventArgs e)
-        {
-            PrintCancelledOrders printCancelledOrders = new PrintCancelledOrders(adminuser);
-            printCancelledOrders.LoadPrtCncldOrders(dateFromCancelled.Value, dateToCancelled.Value);
-            printCancelledOrders.ShowDialog();
-        }
-
         private void dgvCancel_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string colName = dgvCancel.Columns[e.ColumnIndex].Name;
 
-            if (colName == "Restore")
+            /*if (colName == "Restore")
             {
                 string action = dgvCancel.Rows[e.RowIndex].Cells["COActionCol"].Value.ToString();
 
@@ -103,6 +91,7 @@ namespace JCUBE_SE_PROJECT
                             string qty = dgvCancel.Rows[e.RowIndex].Cells["COQuantCol"].Value.ToString();
                             string total = dgvCancel.Rows[e.RowIndex].Cells["COTotalCol"].Value.ToString();
                             string transNo = dgvCancel.Rows[e.RowIndex].Cells["COTransacCol"].Value.ToString();
+                            string itemCode = dgvCancel.Rows[e.RowIndex].Cells["COInvCodeCol"].Value.ToString();
 
                           
                             cn.Open();
@@ -115,23 +104,23 @@ namespace JCUBE_SE_PROJECT
 
                             if (transactionCount > 0)
                             {
-                             
-                                cm = new SqlCommand("UPDATE tbCart SET qty = qty + @qty, status = 'Complete' WHERE transNo = @transNo", cn);
-                               
-                                cm.Parameters.AddWithValue("@qty", qty);
-                                
+
+                                cm = new SqlCommand("UPDATE tbCart SET qty = qty + co.qty, status = 'Complete' FROM tbCart c INNER JOIN tbCancelOrder co ON c.transNo = co.transNo AND c.inventoryCode = co.itemCode WHERE c.transNo = @transNo AND co.itemCode = @itemCode", cn);
                                 cm.Parameters.AddWithValue("@transNo", transNo);
+                                cm.Parameters.AddWithValue("@itemCode", itemCode);
                                 cm.ExecuteNonQuery();
 
-                                cm = new SqlCommand("UPDATE tbItemList SET Qty = Qty - @qty WHERE InventoryCode = (SELECT inventoryCode FROM tbCart WHERE transNo = @transNo)", cn);
-                                cm.Parameters.AddWithValue("@qty", qty); 
-                                cm.Parameters.AddWithValue("@transNo", transNo); 
+                                cm = new SqlCommand("UPDATE tbItemList SET Qty = Qty - @qty WHERE InventoryCode = (SELECT inventoryCode FROM tbCart WHERE transNo = @transNo AND itemCode = @itemCode)", cn);
+                                cm.Parameters.AddWithValue("@qty", qty);
+                                cm.Parameters.AddWithValue("@transNo", transNo);
+                                cm.Parameters.AddWithValue("@itemCode", itemCode);
                                 cm.ExecuteNonQuery();
                             }
 
                             // Delete restored item in tbCancelOrder
-                            cm = new SqlCommand("DELETE FROM tbCancelOrder WHERE transNo = @transNo", cn);
+                            cm = new SqlCommand("DELETE FROM tbCancelOrder WHERE transNo = @transNo AND itemCode = @itemCode", cn);
                             cm.Parameters.AddWithValue("@transNo", transNo);
+                            cm.Parameters.AddWithValue("@itemCode", itemCode);
                             cm.ExecuteNonQuery();
 
                             cn.Close();
@@ -144,13 +133,62 @@ namespace JCUBE_SE_PROJECT
                         {
                             MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+                        finally
+                        {
+                            cn.Close();
+                        }
                     }
                 }
                 else
                 {
                     MessageBox.Show("This item cannot be restored because the item was not added back to the inventory.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+            }*/
+            if (colName == "Delete")
+            {
+                if (MessageBox.Show("Are you sure you want to delete this item?", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        string transNo = dgvCancel.Rows[e.RowIndex].Cells["COTransacCol"].Value.ToString();
+                        string itemCode = dgvCancel.Rows[e.RowIndex].Cells["COInvCodeCol"].Value.ToString();
+
+                        cn.Open();
+
+                        // Delete item from tbCancelOrder
+                        cm = new SqlCommand("DELETE FROM tbCancelOrder WHERE transNo = @transNo AND itemCode = @itemCode", cn);
+                        cm.Parameters.AddWithValue("@transNo", transNo);
+                        cm.Parameters.AddWithValue("@itemCode", itemCode);
+                        cm.ExecuteNonQuery();
+
+                        cn.Close();
+
+                        MessageBox.Show("Item has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        LoadCancel();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        cn.Close();
+                    }
+                }
             }
+        }
+
+        private void PrintCnclOrders_Click_1(object sender, EventArgs e)
+        {
+            PrintCancelledOrders printCancelledOrders = new PrintCancelledOrders(adminuser);
+            printCancelledOrders.LoadPrtCncldOrders(dateFromCancelled.Value, dateToCancelled.Value);
+            printCancelledOrders.ShowDialog();
+        }
+
+        private void btnLoadCancelled_Click_1(object sender, EventArgs e)
+        {
+            LoadCancel();
         }
     }
 }

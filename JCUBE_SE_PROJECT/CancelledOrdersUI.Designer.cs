@@ -30,18 +30,22 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CancelledOrdersUI));
-            this.label9 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.dgvCancel = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.PrintCnclOrders = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnLoadCancelled = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dateToCancelled = new System.Windows.Forms.DateTimePicker();
             this.dateFromCancelled = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.flterLbl = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.PrintCnclOrders = new System.Windows.Forms.Button();
-            this.btnLoadCancelled = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.CONoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COTransacCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COInvCodeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,50 +56,30 @@
             this.COCancByCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COReasonCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COActionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Restore = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCancel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.label9.Location = new System.Drawing.Point(11, 14);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(245, 28);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "CANCELLED ORDERS";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(849, 542);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 32);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Manage\r\nRecord";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvCancel
             // 
             this.dgvCancel.AllowUserToAddRows = false;
+            this.dgvCancel.AllowUserToDeleteRows = false;
+            this.dgvCancel.AllowUserToResizeColumns = false;
+            this.dgvCancel.AllowUserToResizeRows = false;
             this.dgvCancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.dgvCancel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCancel.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvCancel.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCancel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCancel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCancel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -109,7 +93,8 @@
             this.COCancByCol,
             this.COReasonCol,
             this.COActionCol,
-            this.Restore});
+            this.Delete});
+            this.dgvCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,8 +103,10 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCancel.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCancel.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCancel.EnableHeadersVisualStyles = false;
-            this.dgvCancel.Location = new System.Drawing.Point(16, 57);
+            this.dgvCancel.Location = new System.Drawing.Point(20, 63);
             this.dgvCancel.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCancel.Name = "dgvCancel";
             this.dgvCancel.ReadOnly = true;
@@ -127,101 +114,164 @@
             this.dgvCancel.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCancel.RowHeadersVisible = false;
             this.dgvCancel.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvCancel.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCancel.RowTemplate.Height = 24;
-            this.dgvCancel.Size = new System.Drawing.Size(896, 461);
+            this.dgvCancel.Size = new System.Drawing.Size(888, 462);
             this.dgvCancel.TabIndex = 22;
             this.dgvCancel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCancel_CellContentClick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.PrintCnclOrders);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnLoadCancelled);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(928, 63);
+            this.panel1.TabIndex = 35;
+            // 
+            // PrintCnclOrders
+            // 
+            this.PrintCnclOrders.BackColor = System.Drawing.Color.White;
+            this.PrintCnclOrders.FlatAppearance.BorderSize = 0;
+            this.PrintCnclOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrintCnclOrders.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintCnclOrders.ForeColor = System.Drawing.Color.Black;
+            this.PrintCnclOrders.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_print_30;
+            this.PrintCnclOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.PrintCnclOrders.Location = new System.Drawing.Point(361, 13);
+            this.PrintCnclOrders.Name = "PrintCnclOrders";
+            this.PrintCnclOrders.Size = new System.Drawing.Size(173, 35);
+            this.PrintCnclOrders.TabIndex = 39;
+            this.PrintCnclOrders.Text = "Print Preview";
+            this.PrintCnclOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PrintCnclOrders.UseVisualStyleBackColor = false;
+            this.PrintCnclOrders.Click += new System.EventHandler(this.PrintCnclOrders_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.label1.Location = new System.Drawing.Point(18, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(289, 34);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "CANCELLED ORDERS";
+            // 
+            // btnLoadCancelled
+            // 
+            this.btnLoadCancelled.BackColor = System.Drawing.Color.White;
+            this.btnLoadCancelled.FlatAppearance.BorderSize = 0;
+            this.btnLoadCancelled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadCancelled.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadCancelled.ForeColor = System.Drawing.Color.Black;
+            this.btnLoadCancelled.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadCancelled.Image")));
+            this.btnLoadCancelled.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLoadCancelled.Location = new System.Drawing.Point(588, 13);
+            this.btnLoadCancelled.Name = "btnLoadCancelled";
+            this.btnLoadCancelled.Size = new System.Drawing.Size(131, 35);
+            this.btnLoadCancelled.TabIndex = 38;
+            this.btnLoadCancelled.Text = "Refresh";
+            this.btnLoadCancelled.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLoadCancelled.UseVisualStyleBackColor = false;
+            this.btnLoadCancelled.Click += new System.EventHandler(this.btnLoadCancelled_Click_1);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.dateToCancelled);
+            this.panel2.Controls.Add(this.dateFromCancelled);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.flterLbl);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 525);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(928, 67);
+            this.panel2.TabIndex = 36;
             // 
             // dateToCancelled
             // 
             this.dateToCancelled.CalendarFont = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateToCancelled.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateToCancelled.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateToCancelled.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateToCancelled.Location = new System.Drawing.Point(371, 540);
+            this.dateToCancelled.Location = new System.Drawing.Point(360, 19);
             this.dateToCancelled.Name = "dateToCancelled";
-            this.dateToCancelled.Size = new System.Drawing.Size(112, 28);
-            this.dateToCancelled.TabIndex = 27;
+            this.dateToCancelled.Size = new System.Drawing.Size(144, 30);
+            this.dateToCancelled.TabIndex = 41;
             // 
             // dateFromCancelled
             // 
             this.dateFromCancelled.CalendarFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateFromCancelled.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFromCancelled.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFromCancelled.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFromCancelled.Location = new System.Drawing.Point(185, 540);
+            this.dateFromCancelled.Location = new System.Drawing.Point(139, 18);
             this.dateFromCancelled.Name = "dateFromCancelled";
-            this.dateFromCancelled.Size = new System.Drawing.Size(110, 28);
-            this.dateFromCancelled.TabIndex = 26;
+            this.dateFromCancelled.Size = new System.Drawing.Size(146, 30);
+            this.dateFromCancelled.TabIndex = 40;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(315, 543);
+            this.label3.Location = new System.Drawing.Point(303, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 23);
-            this.label3.TabIndex = 25;
+            this.label3.TabIndex = 39;
             this.label3.Text = "To:";
             // 
             // flterLbl
             // 
             this.flterLbl.AutoSize = true;
             this.flterLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flterLbl.Location = new System.Drawing.Point(23, 543);
+            this.flterLbl.Location = new System.Drawing.Point(20, 21);
             this.flterLbl.Name = "flterLbl";
-            this.flterLbl.Size = new System.Drawing.Size(142, 23);
-            this.flterLbl.TabIndex = 23;
-            this.flterLbl.Text = "Filter By Date:";
+            this.flterLbl.Size = new System.Drawing.Size(113, 23);
+            this.flterLbl.TabIndex = 37;
+            this.flterLbl.Text = "Filter From:";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 63);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(20, 462);
+            this.panel3.TabIndex = 37;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(908, 63);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(20, 462);
+            this.panel4.TabIndex = 38;
             // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_restore_30;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 125;
             // 
-            // PrintCnclOrders
+            // dataGridViewImageColumn2
             // 
-            this.PrintCnclOrders.FlatAppearance.BorderSize = 0;
-            this.PrintCnclOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PrintCnclOrders.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrintCnclOrders.Image = ((System.Drawing.Image)(resources.GetObject("PrintCnclOrders.Image")));
-            this.PrintCnclOrders.Location = new System.Drawing.Point(622, 540);
-            this.PrintCnclOrders.MinimumSize = new System.Drawing.Size(20, 20);
-            this.PrintCnclOrders.Name = "PrintCnclOrders";
-            this.PrintCnclOrders.Size = new System.Drawing.Size(27, 28);
-            this.PrintCnclOrders.TabIndex = 34;
-            this.PrintCnclOrders.UseVisualStyleBackColor = true;
-            this.PrintCnclOrders.Click += new System.EventHandler(this.PrintCnclOrders_Click);
-            // 
-            // btnLoadCancelled
-            // 
-            this.btnLoadCancelled.BackColor = System.Drawing.SystemColors.Control;
-            this.btnLoadCancelled.FlatAppearance.BorderSize = 0;
-            this.btnLoadCancelled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadCancelled.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadCancelled.ForeColor = System.Drawing.Color.Black;
-            this.btnLoadCancelled.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadCancelled.Image")));
-            this.btnLoadCancelled.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLoadCancelled.Location = new System.Drawing.Point(503, 537);
-            this.btnLoadCancelled.Name = "btnLoadCancelled";
-            this.btnLoadCancelled.Size = new System.Drawing.Size(99, 35);
-            this.btnLoadCancelled.TabIndex = 24;
-            this.btnLoadCancelled.Text = "Load";
-            this.btnLoadCancelled.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLoadCancelled.UseVisualStyleBackColor = false;
-            this.btnLoadCancelled.Click += new System.EventHandler(this.btnLoadCancelled_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(819, 542);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::JCUBE_SE_PROJECT.Properties.Resources.Delete_Icon;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn2.Width = 125;
             // 
             // CONoCol
             // 
@@ -230,7 +280,8 @@
             this.CONoCol.MinimumWidth = 6;
             this.CONoCol.Name = "CONoCol";
             this.CONoCol.ReadOnly = true;
-            this.CONoCol.Width = 63;
+            this.CONoCol.Visible = false;
+            this.CONoCol.Width = 31;
             // 
             // COTransacCol
             // 
@@ -239,7 +290,7 @@
             this.COTransacCol.MinimumWidth = 6;
             this.COTransacCol.Name = "COTransacCol";
             this.COTransacCol.ReadOnly = true;
-            this.COTransacCol.Width = 133;
+            this.COTransacCol.Width = 144;
             // 
             // COInvCodeCol
             // 
@@ -248,7 +299,7 @@
             this.COInvCodeCol.MinimumWidth = 6;
             this.COInvCodeCol.Name = "COInvCodeCol";
             this.COInvCodeCol.ReadOnly = true;
-            this.COInvCodeCol.Width = 106;
+            this.COInvCodeCol.Width = 104;
             // 
             // COPriceCol
             // 
@@ -257,7 +308,7 @@
             this.COPriceCol.MinimumWidth = 6;
             this.COPriceCol.Name = "COPriceCol";
             this.COPriceCol.ReadOnly = true;
-            this.COPriceCol.Width = 75;
+            this.COPriceCol.Width = 70;
             // 
             // COQuantCol
             // 
@@ -266,7 +317,7 @@
             this.COQuantCol.MinimumWidth = 6;
             this.COQuantCol.Name = "COQuantCol";
             this.COQuantCol.ReadOnly = true;
-            this.COQuantCol.Width = 66;
+            this.COQuantCol.Width = 57;
             // 
             // COTotalCol
             // 
@@ -275,7 +326,7 @@
             this.COTotalCol.MinimumWidth = 6;
             this.COTotalCol.Name = "COTotalCol";
             this.COTotalCol.ReadOnly = true;
-            this.COTotalCol.Width = 75;
+            this.COTotalCol.Width = 70;
             // 
             // CODateCol
             // 
@@ -284,7 +335,7 @@
             this.CODateCol.MinimumWidth = 6;
             this.CODateCol.Name = "CODateCol";
             this.CODateCol.ReadOnly = true;
-            this.CODateCol.Width = 76;
+            this.CODateCol.Width = 67;
             // 
             // COCancByCol
             // 
@@ -293,7 +344,7 @@
             this.COCancByCol.MinimumWidth = 6;
             this.COCancByCol.Name = "COCancByCol";
             this.COCancByCol.ReadOnly = true;
-            this.COCancByCol.Width = 118;
+            this.COCancByCol.Width = 126;
             // 
             // COReasonCol
             // 
@@ -310,57 +361,59 @@
             this.COActionCol.MinimumWidth = 6;
             this.COActionCol.Name = "COActionCol";
             this.COActionCol.ReadOnly = true;
-            this.COActionCol.Width = 86;
+            this.COActionCol.Width = 77;
             // 
-            // Restore
+            // Delete
             // 
-            this.Restore.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Restore.HeaderText = "";
-            this.Restore.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_restore_20;
-            this.Restore.MinimumWidth = 6;
-            this.Restore.Name = "Restore";
-            this.Restore.ReadOnly = true;
-            this.Restore.Width = 10;
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::JCUBE_SE_PROJECT.Properties.Resources.Delete_Icon;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Delete.Width = 21;
             // 
             // CancelledOrdersUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 592);
-            this.Controls.Add(this.PrintCnclOrders);
-            this.Controls.Add(this.btnLoadCancelled);
-            this.Controls.Add(this.dateToCancelled);
-            this.Controls.Add(this.dateFromCancelled);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.flterLbl);
             this.Controls.Add(this.dgvCancel);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CancelledOrdersUI";
             this.Text = "Cancelled Orders";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCancel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridView dgvCancel;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnLoadCancelled;
         private System.Windows.Forms.DateTimePicker dateToCancelled;
         private System.Windows.Forms.DateTimePicker dateFromCancelled;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label flterLbl;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button PrintCnclOrders;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn CONoCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn COTransacCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn COInvCodeCol;
@@ -371,6 +424,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn COCancByCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn COReasonCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn COActionCol;
-        private System.Windows.Forms.DataGridViewImageColumn Restore;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }

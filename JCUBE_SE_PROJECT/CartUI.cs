@@ -41,54 +41,7 @@ namespace JCUBE_SE_PROJECT
             }
             return instance;
         }
-
-
-
-        private void btnDiscount_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //Index of the selected row in the cart
-                int selectedRowIndex = dgvCart.CurrentRow.Index;
-
-                //Get orig price by multiplying quantity and unit price
-                double originalPrice = Convert.ToDouble(dgvCart.Rows[selectedRowIndex].Cells[3].Value) * Convert.ToDouble(dgvCart.Rows[selectedRowIndex].Cells[4].Value);
-
-                //Check if the selected item has discount
-                double existingDiscount = Convert.ToDouble(dgvCart.Rows[selectedRowIndex].Cells[5].Value);
-
-                if (existingDiscount > 0)
-                {
-                    DialogResult dialogResult = MessageBox.Show("This item already have a discount. Do you want to change it?", "Existing Discount", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        Discount discount = new Discount(this);
-                        discount.lbid.Text = id;
-                        discount.totalPriceTB.Text = originalPrice.ToString("#,##0.00"); 
-                        discount.ShowDialog();
-                    }
-                }
-                else
-                {
-                    Discount discount = new Discount(this);
-                    discount.lbid.Text = id;
-                    discount.totalPriceTB.Text = originalPrice.ToString("#,##0.00");
-                    discount.ShowDialog();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            SearchProduct searchProduct = new SearchProduct(this.clerk, this);
-            searchProduct.LoadItemList();
-            searchProduct.ShowDialog();
-        }
-
+       
         public double TotalSales { get; set; }
 
         public void LoadCart()
@@ -118,6 +71,7 @@ namespace JCUBE_SE_PROJECT
             discountVal.Text = discount.ToString("#,##0.00");
 
             GetCartTotal();
+
             if (hasCart)
             {
                btnClear.Enabled = true;
@@ -273,12 +227,12 @@ namespace JCUBE_SE_PROJECT
             if (MessageBox.Show("Remove all items from the cart?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 cn.Open();
-                cm= new SqlCommand("Delete from tbCart where transNo LIKE'"+ TransNoVal.Text+"'",cn);
+                cm = new SqlCommand("Delete from tbCart where transNo LIKE'" + TransNoVal.Text + "'", cn);
                 cm.ExecuteNonQuery();
                 cn.Close();
                 LoadCart();
                 MessageBox.Show("All items has been successfully removed", "Clear Cart", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+
             }
         }
 
@@ -355,6 +309,53 @@ namespace JCUBE_SE_PROJECT
                 }
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchProduct searchProduct = new SearchProduct(this.clerk, this);
+            searchProduct.LoadItemList();
+            searchProduct.ShowDialog();
+        }
+
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Index of the selected row in the cart
+                int selectedRowIndex = dgvCart.CurrentRow.Index;
+
+                //Get orig price by multiplying quantity and unit price
+                double originalPrice = Convert.ToDouble(dgvCart.Rows[selectedRowIndex].Cells[3].Value) * Convert.ToDouble(dgvCart.Rows[selectedRowIndex].Cells[4].Value);
+
+                //Check if the selected item has discount
+                double existingDiscount = Convert.ToDouble(dgvCart.Rows[selectedRowIndex].Cells[5].Value);
+
+                if (existingDiscount > 0)
+                {
+                    DialogResult dialogResult = MessageBox.Show("This item already have a discount. Do you want to change it?", "Existing Discount", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        Discount discount = new Discount(this);
+                        discount.lbid.Text = id;
+                        discount.totalPriceTB.Text = originalPrice.ToString("#,##0.00");
+                        discount.ShowDialog();
+                    }
+                }
+                else
+                {
+                    Discount discount = new Discount(this);
+                    discount.lbid.Text = id;
+                    discount.totalPriceTB.Text = originalPrice.ToString("#,##0.00");
+                    discount.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+       
     }
 }
 

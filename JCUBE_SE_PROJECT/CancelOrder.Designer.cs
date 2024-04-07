@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cancelOrderLbl = new System.Windows.Forms.Label();
-            this.discountPanel1 = new System.Windows.Forms.Panel();
             this.soldItemLbl = new System.Windows.Forms.Label();
             this.idLbl = new System.Windows.Forms.Label();
             this.itemCodeLbl = new System.Windows.Forms.Label();
@@ -57,44 +55,23 @@
             this.CancelOrderBtn = new System.Windows.Forms.Button();
             this.RsnTxtBox = new System.Windows.Forms.TextBox();
             this.udQty = new System.Windows.Forms.NumericUpDown();
-            this.discountPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.udQty)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cancelOrderLbl
-            // 
-            this.cancelOrderLbl.AutoSize = true;
-            this.cancelOrderLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelOrderLbl.Location = new System.Drawing.Point(12, 9);
-            this.cancelOrderLbl.Name = "cancelOrderLbl";
-            this.cancelOrderLbl.Size = new System.Drawing.Size(214, 23);
-            this.cancelOrderLbl.TabIndex = 0;
-            this.cancelOrderLbl.Text = "Cancel Order Details";
-            // 
-            // discountPanel1
-            // 
-            this.discountPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.discountPanel1.Controls.Add(this.cancelOrderLbl);
-            this.discountPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.discountPanel1.Location = new System.Drawing.Point(0, 0);
-            this.discountPanel1.Name = "discountPanel1";
-            this.discountPanel1.Size = new System.Drawing.Size(682, 42);
-            this.discountPanel1.TabIndex = 4;
             // 
             // soldItemLbl
             // 
             this.soldItemLbl.AutoSize = true;
-            this.soldItemLbl.Font = new System.Drawing.Font("Century Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.soldItemLbl.Location = new System.Drawing.Point(28, 58);
+            this.soldItemLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.soldItemLbl.Location = new System.Drawing.Point(30, 17);
             this.soldItemLbl.Name = "soldItemLbl";
-            this.soldItemLbl.Size = new System.Drawing.Size(116, 27);
+            this.soldItemLbl.Size = new System.Drawing.Size(101, 23);
             this.soldItemLbl.TabIndex = 5;
             this.soldItemLbl.Text = "Sold Item";
             // 
             // idLbl
             // 
             this.idLbl.AutoSize = true;
-            this.idLbl.Location = new System.Drawing.Point(32, 98);
+            this.idLbl.Location = new System.Drawing.Point(34, 57);
             this.idLbl.Name = "idLbl";
             this.idLbl.Size = new System.Drawing.Size(32, 21);
             this.idLbl.TabIndex = 6;
@@ -103,7 +80,7 @@
             // itemCodeLbl
             // 
             this.itemCodeLbl.AutoSize = true;
-            this.itemCodeLbl.Location = new System.Drawing.Point(32, 131);
+            this.itemCodeLbl.Location = new System.Drawing.Point(34, 90);
             this.itemCodeLbl.Name = "itemCodeLbl";
             this.itemCodeLbl.Size = new System.Drawing.Size(112, 21);
             this.itemCodeLbl.TabIndex = 7;
@@ -112,7 +89,7 @@
             // descriptionLbl
             // 
             this.descriptionLbl.AutoSize = true;
-            this.descriptionLbl.Location = new System.Drawing.Point(32, 162);
+            this.descriptionLbl.Location = new System.Drawing.Point(34, 121);
             this.descriptionLbl.Name = "descriptionLbl";
             this.descriptionLbl.Size = new System.Drawing.Size(112, 21);
             this.descriptionLbl.TabIndex = 8;
@@ -121,7 +98,7 @@
             // idTxtbox
             // 
             this.idTxtbox.Enabled = false;
-            this.idTxtbox.Location = new System.Drawing.Point(163, 95);
+            this.idTxtbox.Location = new System.Drawing.Point(165, 54);
             this.idTxtbox.Multiline = true;
             this.idTxtbox.Name = "idTxtbox";
             this.idTxtbox.Size = new System.Drawing.Size(165, 26);
@@ -130,7 +107,7 @@
             // itemCodeTxtbox
             // 
             this.itemCodeTxtbox.Enabled = false;
-            this.itemCodeTxtbox.Location = new System.Drawing.Point(163, 128);
+            this.itemCodeTxtbox.Location = new System.Drawing.Point(165, 87);
             this.itemCodeTxtbox.Multiline = true;
             this.itemCodeTxtbox.Name = "itemCodeTxtbox";
             this.itemCodeTxtbox.Size = new System.Drawing.Size(165, 26);
@@ -139,7 +116,7 @@
             // descriptionTxtBox
             // 
             this.descriptionTxtBox.Enabled = false;
-            this.descriptionTxtBox.Location = new System.Drawing.Point(163, 162);
+            this.descriptionTxtBox.Location = new System.Drawing.Point(165, 121);
             this.descriptionTxtBox.Multiline = true;
             this.descriptionTxtBox.Name = "descriptionTxtBox";
             this.descriptionTxtBox.Size = new System.Drawing.Size(165, 64);
@@ -148,7 +125,7 @@
             // QtyTxtBox
             // 
             this.QtyTxtBox.Enabled = false;
-            this.QtyTxtBox.Location = new System.Drawing.Point(489, 159);
+            this.QtyTxtBox.Location = new System.Drawing.Point(491, 118);
             this.QtyTxtBox.Multiline = true;
             this.QtyTxtBox.Name = "QtyTxtBox";
             this.QtyTxtBox.Size = new System.Drawing.Size(165, 26);
@@ -157,7 +134,7 @@
             // PrcTxtBox
             // 
             this.PrcTxtBox.Enabled = false;
-            this.PrcTxtBox.Location = new System.Drawing.Point(489, 128);
+            this.PrcTxtBox.Location = new System.Drawing.Point(491, 87);
             this.PrcTxtBox.Multiline = true;
             this.PrcTxtBox.Name = "PrcTxtBox";
             this.PrcTxtBox.Size = new System.Drawing.Size(165, 26);
@@ -166,7 +143,7 @@
             // InvTxtBox
             // 
             this.InvTxtBox.Enabled = false;
-            this.InvTxtBox.Location = new System.Drawing.Point(489, 95);
+            this.InvTxtBox.Location = new System.Drawing.Point(491, 54);
             this.InvTxtBox.Multiline = true;
             this.InvTxtBox.Name = "InvTxtBox";
             this.InvTxtBox.Size = new System.Drawing.Size(165, 26);
@@ -175,7 +152,7 @@
             // QtyLbl
             // 
             this.QtyLbl.AutoSize = true;
-            this.QtyLbl.Location = new System.Drawing.Point(360, 162);
+            this.QtyLbl.Location = new System.Drawing.Point(362, 121);
             this.QtyLbl.Name = "QtyLbl";
             this.QtyLbl.Size = new System.Drawing.Size(49, 21);
             this.QtyLbl.TabIndex = 14;
@@ -184,7 +161,7 @@
             // PrcLbl
             // 
             this.PrcLbl.AutoSize = true;
-            this.PrcLbl.Location = new System.Drawing.Point(360, 131);
+            this.PrcLbl.Location = new System.Drawing.Point(362, 90);
             this.PrcLbl.Name = "PrcLbl";
             this.PrcLbl.Size = new System.Drawing.Size(58, 21);
             this.PrcLbl.TabIndex = 13;
@@ -193,7 +170,7 @@
             // InvLbl
             // 
             this.InvLbl.AutoSize = true;
-            this.InvLbl.Location = new System.Drawing.Point(360, 98);
+            this.InvLbl.Location = new System.Drawing.Point(362, 57);
             this.InvLbl.Name = "InvLbl";
             this.InvLbl.Size = new System.Drawing.Size(121, 21);
             this.InvLbl.TabIndex = 12;
@@ -202,7 +179,7 @@
             // DiscLbl
             // 
             this.DiscLbl.AutoSize = true;
-            this.DiscLbl.Location = new System.Drawing.Point(360, 194);
+            this.DiscLbl.Location = new System.Drawing.Point(695, 54);
             this.DiscLbl.Name = "DiscLbl";
             this.DiscLbl.Size = new System.Drawing.Size(91, 21);
             this.DiscLbl.TabIndex = 18;
@@ -211,7 +188,7 @@
             // DiscTxtBox
             // 
             this.DiscTxtBox.Enabled = false;
-            this.DiscTxtBox.Location = new System.Drawing.Point(489, 194);
+            this.DiscTxtBox.Location = new System.Drawing.Point(798, 54);
             this.DiscTxtBox.Multiline = true;
             this.DiscTxtBox.Name = "DiscTxtBox";
             this.DiscTxtBox.Size = new System.Drawing.Size(165, 26);
@@ -220,7 +197,7 @@
             // TtlLbl
             // 
             this.TtlLbl.AutoSize = true;
-            this.TtlLbl.Location = new System.Drawing.Point(360, 238);
+            this.TtlLbl.Location = new System.Drawing.Point(695, 90);
             this.TtlLbl.Name = "TtlLbl";
             this.TtlLbl.Size = new System.Drawing.Size(57, 21);
             this.TtlLbl.TabIndex = 20;
@@ -229,7 +206,7 @@
             // TtlTxtBox
             // 
             this.TtlTxtBox.Enabled = false;
-            this.TtlTxtBox.Location = new System.Drawing.Point(489, 238);
+            this.TtlTxtBox.Location = new System.Drawing.Point(798, 87);
             this.TtlTxtBox.Multiline = true;
             this.TtlTxtBox.Name = "TtlTxtBox";
             this.TtlTxtBox.Size = new System.Drawing.Size(165, 26);
@@ -238,17 +215,17 @@
             // cnclItemLbl
             // 
             this.cnclItemLbl.AutoSize = true;
-            this.cnclItemLbl.Font = new System.Drawing.Font("Century Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cnclItemLbl.Location = new System.Drawing.Point(31, 277);
+            this.cnclItemLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cnclItemLbl.Location = new System.Drawing.Point(33, 213);
             this.cnclItemLbl.Name = "cnclItemLbl";
-            this.cnclItemLbl.Size = new System.Drawing.Size(179, 27);
+            this.cnclItemLbl.Size = new System.Drawing.Size(157, 23);
             this.cnclItemLbl.TabIndex = 22;
             this.cnclItemLbl.Text = "Cancel Item(s)";
             // 
             // CnclByTxtBox
             // 
             this.CnclByTxtBox.Enabled = false;
-            this.CnclByTxtBox.Location = new System.Drawing.Point(160, 429);
+            this.CnclByTxtBox.Location = new System.Drawing.Point(162, 343);
             this.CnclByTxtBox.Multiline = true;
             this.CnclByTxtBox.Name = "CnclByTxtBox";
             this.CnclByTxtBox.Size = new System.Drawing.Size(165, 26);
@@ -257,7 +234,7 @@
             // 
             // addInvLbl
             // 
-            this.addInvLbl.Location = new System.Drawing.Point(32, 317);
+            this.addInvLbl.Location = new System.Drawing.Point(34, 253);
             this.addInvLbl.Name = "addInvLbl";
             this.addInvLbl.Size = new System.Drawing.Size(123, 70);
             this.addInvLbl.TabIndex = 24;
@@ -267,7 +244,7 @@
             // CnclByLbl
             // 
             this.CnclByLbl.AutoSize = true;
-            this.CnclByLbl.Location = new System.Drawing.Point(29, 432);
+            this.CnclByLbl.Location = new System.Drawing.Point(31, 346);
             this.CnclByLbl.Name = "CnclByLbl";
             this.CnclByLbl.Size = new System.Drawing.Size(133, 21);
             this.CnclByLbl.TabIndex = 23;
@@ -277,7 +254,7 @@
             // CnclQtyLbl
             // 
             this.CnclQtyLbl.AutoSize = true;
-            this.CnclQtyLbl.Location = new System.Drawing.Point(358, 317);
+            this.CnclQtyLbl.Location = new System.Drawing.Point(360, 278);
             this.CnclQtyLbl.Name = "CnclQtyLbl";
             this.CnclQtyLbl.Size = new System.Drawing.Size(119, 21);
             this.CnclQtyLbl.TabIndex = 27;
@@ -286,7 +263,7 @@
             // RsnLbl
             // 
             this.RsnLbl.AutoSize = true;
-            this.RsnLbl.Location = new System.Drawing.Point(358, 366);
+            this.RsnLbl.Location = new System.Drawing.Point(690, 278);
             this.RsnLbl.Name = "RsnLbl";
             this.RsnLbl.Size = new System.Drawing.Size(99, 21);
             this.RsnLbl.TabIndex = 29;
@@ -298,7 +275,7 @@
             this.AddInvCbox.Items.AddRange(new object[] {
             "Yes",
             "No"});
-            this.AddInvCbox.Location = new System.Drawing.Point(163, 338);
+            this.AddInvCbox.Location = new System.Drawing.Point(165, 274);
             this.AddInvCbox.Name = "AddInvCbox";
             this.AddInvCbox.Size = new System.Drawing.Size(165, 29);
             this.AddInvCbox.TabIndex = 31;
@@ -310,7 +287,7 @@
             this.CancelOrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelOrderBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelOrderBtn.ForeColor = System.Drawing.Color.White;
-            this.CancelOrderBtn.Location = new System.Drawing.Point(505, 426);
+            this.CancelOrderBtn.Location = new System.Drawing.Point(431, 343);
             this.CancelOrderBtn.Name = "CancelOrderBtn";
             this.CancelOrderBtn.Size = new System.Drawing.Size(149, 32);
             this.CancelOrderBtn.TabIndex = 33;
@@ -320,7 +297,7 @@
             // 
             // RsnTxtBox
             // 
-            this.RsnTxtBox.Location = new System.Drawing.Point(489, 353);
+            this.RsnTxtBox.Location = new System.Drawing.Point(798, 256);
             this.RsnTxtBox.Multiline = true;
             this.RsnTxtBox.Name = "RsnTxtBox";
             this.RsnTxtBox.Size = new System.Drawing.Size(165, 64);
@@ -328,7 +305,7 @@
             // 
             // udQty
             // 
-            this.udQty.Location = new System.Drawing.Point(489, 317);
+            this.udQty.Location = new System.Drawing.Point(491, 273);
             this.udQty.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -343,7 +320,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 470);
+            this.ClientSize = new System.Drawing.Size(1001, 392);
             this.Controls.Add(this.udQty);
             this.Controls.Add(this.RsnTxtBox);
             this.Controls.Add(this.CancelOrderBtn);
@@ -371,16 +348,13 @@
             this.Controls.Add(this.itemCodeLbl);
             this.Controls.Add(this.idLbl);
             this.Controls.Add(this.soldItemLbl);
-            this.Controls.Add(this.discountPanel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CancelOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CancelOrder";
-            this.discountPanel1.ResumeLayout(false);
-            this.discountPanel1.PerformLayout();
+            this.Text = "Cancel Order Details";
             ((System.ComponentModel.ISupportInitialize)(this.udQty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -388,9 +362,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label cancelOrderLbl;
-        private System.Windows.Forms.Panel discountPanel1;
         private System.Windows.Forms.Label soldItemLbl;
         private System.Windows.Forms.Label idLbl;
         private System.Windows.Forms.Label itemCodeLbl;

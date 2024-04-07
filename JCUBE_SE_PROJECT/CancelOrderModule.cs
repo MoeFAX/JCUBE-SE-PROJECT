@@ -61,7 +61,7 @@ namespace JCUBE_SE_PROJECT
 
                     if (!String.Equals(user, txtUsername.Text, StringComparison.Ordinal))
                     {
-                        MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Invalid Credentials.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         dr.Close();
                         cn.Close();
                         return;
@@ -69,7 +69,7 @@ namespace JCUBE_SE_PROJECT
 
                     if (!String.Equals(dr["encryptedPassword"].ToString(), COEncryptedPassword, StringComparison.Ordinal))
                     {
-                        MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Invalid Credentials.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         dr.Close();
                         cn.Close();
                         return;
@@ -85,7 +85,7 @@ namespace JCUBE_SE_PROJECT
                             dbcon.ExecuteQuery("UPDATE tbItemList SET Qty = Qty + " + cancelOrder.udQty.Value + " WHERE ItemCode= '" + cancelOrder.itemCodeTxtbox.Text + "'");
                         }
                         dbcon.ExecuteQuery("UPDATE tbItemList SET Qty = Qty + " + cancelOrder.udQty.Value + " WHERE ItemID LIKE'" + cancelOrder.idTxtbox.Text + "'");
-                        dbcon.ExecuteQuery("UPDATE tbCart SET qty = qty - " + cancelOrder.udQty.Value + ", status = CASE WHEN (qty - " + cancelOrder.udQty.Value + ") <= 0 THEN 'Cancelled' ELSE status END WHERE transNo = '" + cancelOrder.InvTxtBox.Text + "'");
+                        dbcon.ExecuteQuery("UPDATE c SET c.qty = c.qty - " + cancelOrder.udQty.Value + ", c.status = CASE WHEN (c.qty - " + cancelOrder.udQty.Value + ") <= 0 THEN 'Cancelled' ELSE c.status END FROM tbCart c INNER JOIN tbItemList i ON c.inventoryCode = i.InventoryCode WHERE c.transNo = '" + cancelOrder.InvTxtBox.Text + "' AND i.ItemCode = '" + cancelOrder.itemCodeTxtbox.Text + "'");
                         MessageBox.Show("Order successfully cancelled!", "Cancel Order", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Dispose();
                         cancelOrder.ReloadSoldList();
@@ -98,7 +98,7 @@ namespace JCUBE_SE_PROJECT
                 }
                 else
                 {
-                    MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Invalid Credentials.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 dr.Close();
                 cn.Close();
@@ -107,6 +107,10 @@ namespace JCUBE_SE_PROJECT
             {
                 cn.Close();
                 MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            { 
+                cn.Close(); 
             }
         }
 

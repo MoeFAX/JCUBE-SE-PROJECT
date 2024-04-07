@@ -63,6 +63,46 @@ namespace JCUBE_SE_PROJECT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_icon {
+            get {
+                object obj = ResourceManager.GetObject("add-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Clear_Cart_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Clear Cart Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Delete Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Discount_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Discount Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cancel_20 {
             get {
                 object obj = ResourceManager.GetObject("icons8-cancel-20", resourceCulture);
@@ -183,6 +223,16 @@ namespace JCUBE_SE_PROJECT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_print_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-print-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_print_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-print-50", resourceCulture);
@@ -223,6 +273,16 @@ namespace JCUBE_SE_PROJECT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap jcube_logo_transparent {
+            get {
+                object obj = ResourceManager.GetObject("jcube_logo_transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap local_data_icon {
             get {
                 object obj = ResourceManager.GetObject("local data icon", resourceCulture);
@@ -243,11 +303,60 @@ namespace JCUBE_SE_PROJECT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+<<<<<<< Updated upstream
         internal static byte[] NotoSans_VariableFont_wdth_wght {
             get {
                 object obj = ResourceManager.GetObject("NotoSans_VariableFont_wdth_wght", resourceCulture);
                 return ((byte[])(obj));
             }
         }
+=======
+        internal static byte[] NotoSans_VariableFont_wdthwght {
+            get {
+                object obj = ResourceManager.GetObject("NotoSans_VariableFont_wdthwght", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap product_icon {
+            get {
+                object obj = ResourceManager.GetObject("product icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sales_icon_v2 {
+            get {
+                object obj = ResourceManager.GetObject("sales icon v2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Search Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap total_prod_icon {
+            get {
+                object obj = ResourceManager.GetObject("total prod icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+>>>>>>> Stashed changes
     }
 }

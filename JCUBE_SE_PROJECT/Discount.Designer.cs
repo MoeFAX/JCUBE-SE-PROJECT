@@ -31,22 +31,19 @@
             this.discTotalPriceLabel = new System.Windows.Forms.Label();
             this.discPercentage = new System.Windows.Forms.Label();
             this.discAmount = new System.Windows.Forms.Label();
-            this.discountPanel1 = new System.Windows.Forms.Panel();
-            this.discountLabel = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.totalPriceTB = new MetroFramework.Controls.MetroTextBox();
             this.percentageTB = new MetroFramework.Controls.MetroTextBox();
             this.amountTB = new MetroFramework.Controls.MetroTextBox();
             this.lbid = new System.Windows.Forms.Label();
-            this.discountPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // discTotalPriceLabel
             // 
             this.discTotalPriceLabel.AutoSize = true;
             this.discTotalPriceLabel.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discTotalPriceLabel.Location = new System.Drawing.Point(26, 55);
+            this.discTotalPriceLabel.Location = new System.Drawing.Point(30, 24);
             this.discTotalPriceLabel.Name = "discTotalPriceLabel";
             this.discTotalPriceLabel.Size = new System.Drawing.Size(105, 21);
             this.discTotalPriceLabel.TabIndex = 0;
@@ -56,7 +53,7 @@
             // 
             this.discPercentage.AutoSize = true;
             this.discPercentage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discPercentage.Location = new System.Drawing.Point(26, 95);
+            this.discPercentage.Location = new System.Drawing.Point(30, 64);
             this.discPercentage.Name = "discPercentage";
             this.discPercentage.Size = new System.Drawing.Size(122, 21);
             this.discPercentage.TabIndex = 1;
@@ -66,39 +63,19 @@
             // 
             this.discAmount.AutoSize = true;
             this.discAmount.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discAmount.Location = new System.Drawing.Point(26, 135);
+            this.discAmount.Location = new System.Drawing.Point(30, 104);
             this.discAmount.Name = "discAmount";
             this.discAmount.Size = new System.Drawing.Size(169, 21);
             this.discAmount.TabIndex = 2;
             this.discAmount.Text = "Discount Amount:";
             // 
-            // discountPanel1
-            // 
-            this.discountPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.discountPanel1.Controls.Add(this.discountLabel);
-            this.discountPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.discountPanel1.Location = new System.Drawing.Point(0, 0);
-            this.discountPanel1.Name = "discountPanel1";
-            this.discountPanel1.Size = new System.Drawing.Size(472, 42);
-            this.discountPanel1.TabIndex = 3;
-            // 
-            // discountLabel
-            // 
-            this.discountLabel.AutoSize = true;
-            this.discountLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discountLabel.Location = new System.Drawing.Point(12, 9);
-            this.discountLabel.Name = "discountLabel";
-            this.discountLabel.Size = new System.Drawing.Size(109, 23);
-            this.discountLabel.TabIndex = 0;
-            this.discountLabel.Text = "DISCOUNT";
-            // 
             // btnConfirm
             // 
-            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(155)))), ((int)(((byte)(97)))));
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(155, 174);
+            this.btnConfirm.Location = new System.Drawing.Point(159, 143);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(75, 28);
             this.btnConfirm.TabIndex = 4;
@@ -112,7 +89,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(245, 174);
+            this.btnClose.Location = new System.Drawing.Point(249, 143);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 28);
             this.btnClose.TabIndex = 5;
@@ -136,7 +113,7 @@
             this.totalPriceTB.CustomButton.Visible = false;
             this.totalPriceTB.Enabled = false;
             this.totalPriceTB.Lines = new string[0];
-            this.totalPriceTB.Location = new System.Drawing.Point(137, 55);
+            this.totalPriceTB.Location = new System.Drawing.Point(141, 24);
             this.totalPriceTB.MaxLength = 32767;
             this.totalPriceTB.Name = "totalPriceTB";
             this.totalPriceTB.PasswordChar = '\0';
@@ -166,7 +143,7 @@
             this.percentageTB.CustomButton.UseSelectable = true;
             this.percentageTB.CustomButton.Visible = false;
             this.percentageTB.Lines = new string[0];
-            this.percentageTB.Location = new System.Drawing.Point(150, 95);
+            this.percentageTB.Location = new System.Drawing.Point(154, 64);
             this.percentageTB.MaxLength = 32767;
             this.percentageTB.Name = "percentageTB";
             this.percentageTB.PasswordChar = '\0';
@@ -199,7 +176,7 @@
             this.amountTB.CustomButton.Visible = false;
             this.amountTB.Enabled = false;
             this.amountTB.Lines = new string[0];
-            this.amountTB.Location = new System.Drawing.Point(201, 135);
+            this.amountTB.Location = new System.Drawing.Point(205, 104);
             this.amountTB.MaxLength = 32767;
             this.amountTB.Name = "amountTB";
             this.amountTB.PasswordChar = '\0';
@@ -218,7 +195,7 @@
             // 
             this.lbid.AutoSize = true;
             this.lbid.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbid.Location = new System.Drawing.Point(26, 181);
+            this.lbid.Location = new System.Drawing.Point(30, 150);
             this.lbid.Name = "lbid";
             this.lbid.Size = new System.Drawing.Size(25, 21);
             this.lbid.TabIndex = 9;
@@ -229,14 +206,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 213);
+            this.ClientSize = new System.Drawing.Size(472, 186);
             this.Controls.Add(this.lbid);
             this.Controls.Add(this.amountTB);
             this.Controls.Add(this.percentageTB);
             this.Controls.Add(this.totalPriceTB);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.discountPanel1);
             this.Controls.Add(this.discAmount);
             this.Controls.Add(this.discPercentage);
             this.Controls.Add(this.discTotalPriceLabel);
@@ -244,10 +220,8 @@
             this.MinimizeBox = false;
             this.Name = "Discount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Discount";
+            this.Text = "Add Discount";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Discount_KeyDown);
-            this.discountPanel1.ResumeLayout(false);
-            this.discountPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,8 +232,6 @@
         private System.Windows.Forms.Label discTotalPriceLabel;
         private System.Windows.Forms.Label discPercentage;
         private System.Windows.Forms.Label discAmount;
-        private System.Windows.Forms.Panel discountPanel1;
-        private System.Windows.Forms.Label discountLabel;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnClose;
         public System.Windows.Forms.Label lbid;

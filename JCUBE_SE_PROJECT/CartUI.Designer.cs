@@ -30,21 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartUI));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.searchProdLabel = new System.Windows.Forms.Label();
-            this.transactionNoLabel = new System.Windows.Forms.Label();
-            this.salesTotalLabel = new System.Windows.Forms.Label();
-            this.discountLabel = new System.Windows.Forms.Label();
-            this.vatLabel = new System.Windows.Forms.Label();
-            this.vatableLabel = new System.Windows.Forms.Label();
-            this.dateLabel = new System.Windows.Forms.Label();
-            this.addDiscountLabel = new System.Windows.Forms.Label();
             this.dgvCart = new System.Windows.Forms.DataGridView();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InventoryCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,12 +47,11 @@
             this.CancelOrder = new System.Windows.Forms.DataGridViewImageColumn();
             this.newTransactionLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnDiscount = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.lblOcNum = new System.Windows.Forms.Label();
             this.clerkLbl = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.clrCartLabel = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnDiscount = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,123 +62,41 @@
             this.discountVal = new System.Windows.Forms.Label();
             this.SalesTotalVal = new System.Windows.Forms.Label();
             this.TransNoVal = new System.Windows.Forms.Label();
+            this.transactionNoLabel = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.vatableLabel = new System.Windows.Forms.Label();
+            this.salesTotalLabel = new System.Windows.Forms.Label();
+            this.discountLabel = new System.Windows.Forms.Label();
+            this.vatLabel = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // searchProdLabel
-            // 
-            this.searchProdLabel.AutoSize = true;
-            this.searchProdLabel.BackColor = System.Drawing.Color.White;
-            this.searchProdLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchProdLabel.Location = new System.Drawing.Point(8, 71);
-            this.searchProdLabel.Name = "searchProdLabel";
-            this.searchProdLabel.Size = new System.Drawing.Size(166, 23);
-            this.searchProdLabel.TabIndex = 3;
-            this.searchProdLabel.Text = "Search Product:";
-            // 
-            // transactionNoLabel
-            // 
-            this.transactionNoLabel.AutoSize = true;
-            this.transactionNoLabel.BackColor = System.Drawing.Color.White;
-            this.transactionNoLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactionNoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.transactionNoLabel.Location = new System.Drawing.Point(15, 3);
-            this.transactionNoLabel.Name = "transactionNoLabel";
-            this.transactionNoLabel.Size = new System.Drawing.Size(151, 22);
-            this.transactionNoLabel.TabIndex = 8;
-            this.transactionNoLabel.Text = "Transaction No:";
-            // 
-            // salesTotalLabel
-            // 
-            this.salesTotalLabel.AutoSize = true;
-            this.salesTotalLabel.BackColor = System.Drawing.Color.White;
-            this.salesTotalLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salesTotalLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.salesTotalLabel.Location = new System.Drawing.Point(15, 33);
-            this.salesTotalLabel.Name = "salesTotalLabel";
-            this.salesTotalLabel.Size = new System.Drawing.Size(83, 19);
-            this.salesTotalLabel.TabIndex = 9;
-            this.salesTotalLabel.Text = "Sales Total:";
-            // 
-            // discountLabel
-            // 
-            this.discountLabel.AutoSize = true;
-            this.discountLabel.BackColor = System.Drawing.Color.White;
-            this.discountLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.discountLabel.Location = new System.Drawing.Point(15, 49);
-            this.discountLabel.Name = "discountLabel";
-            this.discountLabel.Size = new System.Drawing.Size(72, 19);
-            this.discountLabel.TabIndex = 10;
-            this.discountLabel.Text = "Discount:";
-            // 
-            // vatLabel
-            // 
-            this.vatLabel.AutoSize = true;
-            this.vatLabel.BackColor = System.Drawing.Color.White;
-            this.vatLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vatLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.vatLabel.Location = new System.Drawing.Point(15, 64);
-            this.vatLabel.Name = "vatLabel";
-            this.vatLabel.Size = new System.Drawing.Size(36, 19);
-            this.vatLabel.TabIndex = 11;
-            this.vatLabel.Text = "VAT:";
-            // 
-            // vatableLabel
-            // 
-            this.vatableLabel.AutoSize = true;
-            this.vatableLabel.BackColor = System.Drawing.Color.White;
-            this.vatableLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vatableLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.vatableLabel.Location = new System.Drawing.Point(15, 80);
-            this.vatableLabel.Name = "vatableLabel";
-            this.vatableLabel.Size = new System.Drawing.Size(68, 19);
-            this.vatableLabel.TabIndex = 12;
-            this.vatableLabel.Text = "VATable:";
-            // 
-            // dateLabel
-            // 
-            this.dateLabel.AutoSize = true;
-            this.dateLabel.BackColor = System.Drawing.Color.White;
-            this.dateLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.dateLabel.Location = new System.Drawing.Point(337, 3);
-            this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(123, 22);
-            this.dateLabel.TabIndex = 13;
-            this.dateLabel.Text = "Date Today:";
-            // 
-            // addDiscountLabel
-            // 
-            this.addDiscountLabel.BackColor = System.Drawing.Color.White;
-            this.addDiscountLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addDiscountLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addDiscountLabel.Location = new System.Drawing.Point(266, 71);
-            this.addDiscountLabel.Name = "addDiscountLabel";
-            this.addDiscountLabel.Size = new System.Drawing.Size(113, 19);
-            this.addDiscountLabel.TabIndex = 5;
-            this.addDiscountLabel.Text = "Add Discount:";
-            this.addDiscountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // dgvCart
             // 
             this.dgvCart.AllowUserToAddRows = false;
+            this.dgvCart.AllowUserToDeleteRows = false;
+            this.dgvCart.AllowUserToResizeColumns = false;
+            this.dgvCart.AllowUserToResizeRows = false;
             this.dgvCart.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.dgvCart.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCart.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvCart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCart.ColumnHeadersHeight = 30;
-            this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
             this.InventoryCode,
@@ -202,22 +108,28 @@
             this.AddQty,
             this.RemQty,
             this.CancelOrder});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            this.dgvCart.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCart.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCart.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCart.EnableHeadersVisualStyles = false;
-            this.dgvCart.GridColor = System.Drawing.Color.Snow;
-            this.dgvCart.Location = new System.Drawing.Point(14, 100);
+            this.dgvCart.Location = new System.Drawing.Point(19, 100);
+            this.dgvCart.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCart.Name = "dgvCart";
+            this.dgvCart.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCart.RowHeadersVisible = false;
             this.dgvCart.RowHeadersWidth = 51;
-            this.dgvCart.Size = new System.Drawing.Size(670, 238);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvCart.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvCart.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvCart.Size = new System.Drawing.Size(893, 365);
             this.dgvCart.TabIndex = 1;
             this.dgvCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellContentClick);
             this.dgvCart.SelectionChanged += new System.EventHandler(this.dgvCart_SelectionChanged);
@@ -261,7 +173,7 @@
             this.Quantity.HeaderText = "Qty";
             this.Quantity.MinimumWidth = 40;
             this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 61;
+            this.Quantity.Width = 57;
             // 
             // Discount
             // 
@@ -269,7 +181,7 @@
             this.Discount.HeaderText = "Discount";
             this.Discount.MinimumWidth = 75;
             this.Discount.Name = "Discount";
-            this.Discount.Width = 95;
+            this.Discount.Width = 89;
             // 
             // Total
             // 
@@ -300,11 +212,8 @@
             // 
             this.CancelOrder.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            dataGridViewCellStyle3.NullValue = null;
             this.CancelOrder.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.NullValue = null;
-            this.CancelOrder.DefaultCellStyle = dataGridViewCellStyle7;
             this.CancelOrder.HeaderText = "";
             this.CancelOrder.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
             this.CancelOrder.MinimumWidth = 20;
@@ -315,7 +224,7 @@
             this.newTransactionLabel.AutoSize = true;
             this.newTransactionLabel.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newTransactionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(46)))), ((int)(((byte)(73)))));
-            this.newTransactionLabel.Location = new System.Drawing.Point(6, 7);
+            this.newTransactionLabel.Location = new System.Drawing.Point(8, 9);
             this.newTransactionLabel.Margin = new System.Windows.Forms.Padding(0);
             this.newTransactionLabel.Name = "newTransactionLabel";
             this.newTransactionLabel.Size = new System.Drawing.Size(333, 40);
@@ -325,25 +234,72 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnClear);
+            this.panel2.Controls.Add(this.btnDiscount);
+            this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.lblOcNum);
             this.panel2.Controls.Add(this.clerkLbl);
-            this.panel2.Controls.Add(this.btnClear);
-            this.panel2.Controls.Add(this.clrCartLabel);
-            this.panel2.Controls.Add(this.btnSearch);
-            this.panel2.Controls.Add(this.btnDiscount);
             this.panel2.Controls.Add(this.newTransactionLabel);
-            this.panel2.Controls.Add(this.searchProdLabel);
-            this.panel2.Controls.Add(this.addDiscountLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(14, 0);
+            this.panel2.Location = new System.Drawing.Point(19, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(670, 100);
+            this.panel2.Size = new System.Drawing.Size(893, 100);
             this.panel2.TabIndex = 15;
+            // 
+            // btnClear
+            // 
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Image = global::JCUBE_SE_PROJECT.Properties.Resources.Clear_Cart_Icon;
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClear.Location = new System.Drawing.Point(701, 56);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(152, 37);
+            this.btnClear.TabIndex = 15;
+            this.btnClear.Text = "Clear Cart:";
+            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnDiscount
+            // 
+            this.btnDiscount.FlatAppearance.BorderSize = 0;
+            this.btnDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiscount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscount.Image = global::JCUBE_SE_PROJECT.Properties.Resources.Discount_Icon;
+            this.btnDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDiscount.Location = new System.Drawing.Point(375, 56);
+            this.btnDiscount.Name = "btnDiscount";
+            this.btnDiscount.Size = new System.Drawing.Size(180, 37);
+            this.btnDiscount.TabIndex = 14;
+            this.btnDiscount.Text = "Add Discount:";
+            this.btnDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDiscount.UseVisualStyleBackColor = true;
+            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Image = global::JCUBE_SE_PROJECT.Properties.Resources.Search_Icon;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.Location = new System.Drawing.Point(28, 56);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(201, 36);
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.Text = "Search Product:";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lblOcNum
             // 
             this.lblOcNum.AutoSize = true;
-            this.lblOcNum.Location = new System.Drawing.Point(837, 29);
+            this.lblOcNum.Location = new System.Drawing.Point(1116, 36);
+            this.lblOcNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOcNum.Name = "lblOcNum";
             this.lblOcNum.Size = new System.Drawing.Size(44, 16);
             this.lblOcNum.TabIndex = 12;
@@ -353,76 +309,22 @@
             // clerkLbl
             // 
             this.clerkLbl.AutoSize = true;
-            this.clerkLbl.Location = new System.Drawing.Point(837, 9);
+            this.clerkLbl.Location = new System.Drawing.Point(1116, 11);
+            this.clerkLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.clerkLbl.Name = "clerkLbl";
             this.clerkLbl.Size = new System.Drawing.Size(44, 16);
             this.clerkLbl.TabIndex = 11;
             this.clerkLbl.Text = "label2";
             this.clerkLbl.Visible = false;
             // 
-            // btnClear
-            // 
-            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnClear.Enabled = false;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_clear_shopping_cart_30;
-            this.btnClear.Location = new System.Drawing.Point(619, 66);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(26, 28);
-            this.btnClear.TabIndex = 10;
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // clrCartLabel
-            // 
-            this.clrCartLabel.BackColor = System.Drawing.Color.White;
-            this.clrCartLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clrCartLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.clrCartLabel.Location = new System.Drawing.Point(524, 71);
-            this.clrCartLabel.Name = "clrCartLabel";
-            this.clrCartLabel.Size = new System.Drawing.Size(89, 19);
-            this.clrCartLabel.TabIndex = 9;
-            this.clrCartLabel.Text = "Clear Cart:";
-            this.clrCartLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_search_50__1_;
-            this.btnSearch.Location = new System.Drawing.Point(138, 66);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(26, 28);
-            this.btnSearch.TabIndex = 8;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnDiscount
-            // 
-            this.btnDiscount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnDiscount.Enabled = false;
-            this.btnDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDiscount.ForeColor = System.Drawing.Color.White;
-            this.btnDiscount.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_discount_642;
-            this.btnDiscount.Location = new System.Drawing.Point(380, 66);
-            this.btnDiscount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnDiscount.Name = "btnDiscount";
-            this.btnDiscount.Size = new System.Drawing.Size(26, 28);
-            this.btnDiscount.TabIndex = 7;
-            this.btnDiscount.UseVisualStyleBackColor = true;
-            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(14, 338);
+            this.panel1.Size = new System.Drawing.Size(19, 465);
             this.panel1.TabIndex = 16;
             // 
             // panel3
@@ -443,33 +345,36 @@
             this.panel3.Controls.Add(this.discountLabel);
             this.panel3.Controls.Add(this.vatLabel);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 338);
+            this.panel3.Location = new System.Drawing.Point(0, 465);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(684, 103);
+            this.panel3.Size = new System.Drawing.Size(912, 78);
             this.panel3.TabIndex = 17;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.label1.Location = new System.Drawing.Point(334, 32);
+            this.label1.Location = new System.Drawing.Point(669, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 44);
-            this.label1.TabIndex = 21;
+            this.label1.Size = new System.Drawing.Size(94, 37);
+            this.label1.TabIndex = 35;
             this.label1.Text = "Total:";
             // 
             // lbDisplayTotal
             // 
             this.lbDisplayTotal.AutoSize = true;
             this.lbDisplayTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lbDisplayTotal.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDisplayTotal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDisplayTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.lbDisplayTotal.Location = new System.Drawing.Point(424, 33);
+            this.lbDisplayTotal.Location = new System.Drawing.Point(789, 20);
+            this.lbDisplayTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDisplayTotal.Name = "lbDisplayTotal";
-            this.lbDisplayTotal.Size = new System.Drawing.Size(113, 44);
-            this.lbDisplayTotal.TabIndex = 20;
+            this.lbDisplayTotal.Size = new System.Drawing.Size(93, 37);
+            this.lbDisplayTotal.TabIndex = 34;
             this.lbDisplayTotal.Text = "00.00";
             // 
             // DateTodayVal
@@ -478,10 +383,11 @@
             this.DateTodayVal.BackColor = System.Drawing.Color.White;
             this.DateTodayVal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTodayVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.DateTodayVal.Location = new System.Drawing.Point(435, 3);
+            this.DateTodayVal.Location = new System.Drawing.Point(147, 39);
+            this.DateTodayVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DateTodayVal.Name = "DateTodayVal";
             this.DateTodayVal.Size = new System.Drawing.Size(76, 22);
-            this.DateTodayVal.TabIndex = 19;
+            this.DateTodayVal.TabIndex = 33;
             this.DateTodayVal.Text = "000000";
             // 
             // vatableVal
@@ -490,10 +396,11 @@
             this.vatableVal.BackColor = System.Drawing.Color.White;
             this.vatableVal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vatableVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.vatableVal.Location = new System.Drawing.Point(94, 81);
+            this.vatableVal.Location = new System.Drawing.Point(578, 40);
+            this.vatableVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vatableVal.Name = "vatableVal";
             this.vatableVal.Size = new System.Drawing.Size(45, 20);
-            this.vatableVal.TabIndex = 18;
+            this.vatableVal.TabIndex = 32;
             this.vatableVal.Text = "00.00";
             // 
             // vatVal
@@ -502,10 +409,11 @@
             this.vatVal.BackColor = System.Drawing.Color.White;
             this.vatVal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vatVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.vatVal.Location = new System.Drawing.Point(94, 65);
+            this.vatVal.Location = new System.Drawing.Point(577, 14);
+            this.vatVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vatVal.Name = "vatVal";
             this.vatVal.Size = new System.Drawing.Size(45, 20);
-            this.vatVal.TabIndex = 17;
+            this.vatVal.TabIndex = 31;
             this.vatVal.Text = "00.00";
             // 
             // discountVal
@@ -514,10 +422,11 @@
             this.discountVal.BackColor = System.Drawing.Color.White;
             this.discountVal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discountVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.discountVal.Location = new System.Drawing.Point(94, 49);
+            this.discountVal.Location = new System.Drawing.Point(422, 40);
+            this.discountVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.discountVal.Name = "discountVal";
             this.discountVal.Size = new System.Drawing.Size(45, 20);
-            this.discountVal.TabIndex = 16;
+            this.discountVal.TabIndex = 30;
             this.discountVal.Text = "00.00";
             // 
             // SalesTotalVal
@@ -526,10 +435,11 @@
             this.SalesTotalVal.BackColor = System.Drawing.Color.White;
             this.SalesTotalVal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalesTotalVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.SalesTotalVal.Location = new System.Drawing.Point(94, 33);
+            this.SalesTotalVal.Location = new System.Drawing.Point(421, 14);
+            this.SalesTotalVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SalesTotalVal.Name = "SalesTotalVal";
             this.SalesTotalVal.Size = new System.Drawing.Size(45, 20);
-            this.SalesTotalVal.TabIndex = 15;
+            this.SalesTotalVal.TabIndex = 29;
             this.SalesTotalVal.Text = "00.00";
             // 
             // TransNoVal
@@ -538,32 +448,141 @@
             this.TransNoVal.BackColor = System.Drawing.Color.White;
             this.TransNoVal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TransNoVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.TransNoVal.Location = new System.Drawing.Point(134, 3);
+            this.TransNoVal.Location = new System.Drawing.Point(174, 13);
+            this.TransNoVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TransNoVal.Name = "TransNoVal";
             this.TransNoVal.Size = new System.Drawing.Size(76, 22);
-            this.TransNoVal.TabIndex = 14;
+            this.TransNoVal.TabIndex = 28;
             this.TransNoVal.Text = "000000";
+            // 
+            // transactionNoLabel
+            // 
+            this.transactionNoLabel.AutoSize = true;
+            this.transactionNoLabel.BackColor = System.Drawing.Color.White;
+            this.transactionNoLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactionNoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
+            this.transactionNoLabel.Location = new System.Drawing.Point(15, 13);
+            this.transactionNoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.transactionNoLabel.Name = "transactionNoLabel";
+            this.transactionNoLabel.Size = new System.Drawing.Size(151, 22);
+            this.transactionNoLabel.TabIndex = 22;
+            this.transactionNoLabel.Text = "Transaction No:";
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.BackColor = System.Drawing.Color.White;
+            this.dateLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
+            this.dateLabel.Location = new System.Drawing.Point(16, 39);
+            this.dateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(123, 22);
+            this.dateLabel.TabIndex = 27;
+            this.dateLabel.Text = "Date Today:";
+            // 
+            // vatableLabel
+            // 
+            this.vatableLabel.AutoSize = true;
+            this.vatableLabel.BackColor = System.Drawing.Color.White;
+            this.vatableLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vatableLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
+            this.vatableLabel.Location = new System.Drawing.Point(501, 41);
+            this.vatableLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.vatableLabel.Name = "vatableLabel";
+            this.vatableLabel.Size = new System.Drawing.Size(68, 19);
+            this.vatableLabel.TabIndex = 26;
+            this.vatableLabel.Text = "VATable:";
+            // 
+            // salesTotalLabel
+            // 
+            this.salesTotalLabel.AutoSize = true;
+            this.salesTotalLabel.BackColor = System.Drawing.Color.White;
+            this.salesTotalLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salesTotalLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
+            this.salesTotalLabel.Location = new System.Drawing.Point(324, 15);
+            this.salesTotalLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.salesTotalLabel.Name = "salesTotalLabel";
+            this.salesTotalLabel.Size = new System.Drawing.Size(83, 19);
+            this.salesTotalLabel.TabIndex = 23;
+            this.salesTotalLabel.Text = "Sales Total:";
+            // 
+            // discountLabel
+            // 
+            this.discountLabel.AutoSize = true;
+            this.discountLabel.BackColor = System.Drawing.Color.White;
+            this.discountLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
+            this.discountLabel.Location = new System.Drawing.Point(324, 41);
+            this.discountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.discountLabel.Name = "discountLabel";
+            this.discountLabel.Size = new System.Drawing.Size(72, 19);
+            this.discountLabel.TabIndex = 24;
+            this.discountLabel.Text = "Discount:";
+            // 
+            // vatLabel
+            // 
+            this.vatLabel.AutoSize = true;
+            this.vatLabel.BackColor = System.Drawing.Color.White;
+            this.vatLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vatLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
+            this.vatLabel.Location = new System.Drawing.Point(501, 15);
+            this.vatLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.vatLabel.Name = "vatLabel";
+            this.vatLabel.Size = new System.Drawing.Size(36, 19);
+            this.vatLabel.TabIndex = 25;
+            this.vatLabel.Text = "VAT:";
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(668, 100);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Location = new System.Drawing.Point(891, 100);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(16, 238);
+            this.panel4.Size = new System.Drawing.Size(21, 365);
             this.panel4.TabIndex = 18;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_plus_20;
+            this.dataGridViewImageColumn1.MinimumWidth = 20;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_minus_20;
+            this.dataGridViewImageColumn2.MinimumWidth = 20;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 125;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.NullValue = null;
+            this.dataGridViewImageColumn3.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewImageColumn3.HeaderText = "";
+            this.dataGridViewImageColumn3.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
+            this.dataGridViewImageColumn3.MinimumWidth = 20;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             // 
             // CartUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(684, 441);
+            this.ClientSize = new System.Drawing.Size(912, 543);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.dgvCart);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CartUI";
             this.Text = "Jcube Point of Sales";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
@@ -576,32 +595,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label searchProdLabel;
-        private System.Windows.Forms.Label addDiscountLabel;
-        private System.Windows.Forms.Label transactionNoLabel;
-        private System.Windows.Forms.Label salesTotalLabel;
-        private System.Windows.Forms.Label discountLabel;
-        private System.Windows.Forms.Label vatLabel;
-        private System.Windows.Forms.Label vatableLabel;
-        private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label newTransactionLabel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnDiscount;
-        private System.Windows.Forms.Button btnSearch;
-        public System.Windows.Forms.Label TransNoVal;
         public System.Windows.Forms.DataGridView dgvCart;
-        public System.Windows.Forms.Label SalesTotalVal;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbDisplayTotal;
-        private System.Windows.Forms.Label clrCartLabel;
-        private System.Windows.Forms.Button btnClear;
-        public System.Windows.Forms.Label vatableVal;
-        public System.Windows.Forms.Label vatVal;
-        public System.Windows.Forms.Label discountVal;
-        public System.Windows.Forms.Label DateTodayVal;
         public System.Windows.Forms.Label clerkLbl;
         public System.Windows.Forms.Label lblOcNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
@@ -614,5 +613,25 @@
         private System.Windows.Forms.DataGridViewImageColumn AddQty;
         private System.Windows.Forms.DataGridViewImageColumn RemQty;
         private System.Windows.Forms.DataGridViewImageColumn CancelOrder;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbDisplayTotal;
+        public System.Windows.Forms.Label DateTodayVal;
+        public System.Windows.Forms.Label vatableVal;
+        public System.Windows.Forms.Label vatVal;
+        public System.Windows.Forms.Label discountVal;
+        public System.Windows.Forms.Label SalesTotalVal;
+        public System.Windows.Forms.Label TransNoVal;
+        private System.Windows.Forms.Label transactionNoLabel;
+        private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.Label vatableLabel;
+        private System.Windows.Forms.Label salesTotalLabel;
+        private System.Windows.Forms.Label discountLabel;
+        private System.Windows.Forms.Label vatLabel;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnDiscount;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.Button btnClear;
     }
 }

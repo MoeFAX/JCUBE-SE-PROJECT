@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.discountPanel1 = new System.Windows.Forms.Panel();
-            this.cancelOrderLbl = new System.Windows.Forms.Label();
             this.passwordEyeBtn = new System.Windows.Forms.PictureBox();
             this.txtUsername = new MetroFramework.Controls.MetroTextBox();
             this.txtPassword = new MetroFramework.Controls.MetroTextBox();
@@ -37,35 +35,15 @@
             this.picAvatar = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.discountPanel1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.passwordEyeBtn)).BeginInit();
             this.SuspendLayout();
-            // 
-            // discountPanel1
-            // 
-            this.discountPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.discountPanel1.Controls.Add(this.cancelOrderLbl);
-            this.discountPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.discountPanel1.Location = new System.Drawing.Point(0, 0);
-            this.discountPanel1.Name = "discountPanel1";
-            this.discountPanel1.Size = new System.Drawing.Size(672, 42);
-            this.discountPanel1.TabIndex = 5;
-            // 
-            // cancelOrderLbl
-            // 
-            this.cancelOrderLbl.AutoSize = true;
-            this.cancelOrderLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelOrderLbl.Location = new System.Drawing.Point(12, 9);
-            this.cancelOrderLbl.Name = "cancelOrderLbl";
-            this.cancelOrderLbl.Size = new System.Drawing.Size(143, 23);
-            this.cancelOrderLbl.TabIndex = 0;
-            this.cancelOrderLbl.Text = "Cancel Order";
             // 
             // passwordEyeBtn
             // 
             this.passwordEyeBtn.BackColor = System.Drawing.Color.Transparent;
             this.passwordEyeBtn.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_eye_20;
-            this.passwordEyeBtn.Location = new System.Drawing.Point(626, 183);
+            this.passwordEyeBtn.Location = new System.Drawing.Point(618, 146);
             this.passwordEyeBtn.Name = "passwordEyeBtn";
             this.passwordEyeBtn.Size = new System.Drawing.Size(20, 20);
             this.passwordEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -92,7 +70,7 @@
             this.txtUsername.DisplayIcon = true;
             this.txtUsername.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtUsername.Lines = new string[0];
-            this.txtUsername.Location = new System.Drawing.Point(179, 134);
+            this.txtUsername.Location = new System.Drawing.Point(171, 97);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.MaxLength = 32767;
             this.txtUsername.Name = "txtUsername";
@@ -128,7 +106,7 @@
             this.txtPassword.DisplayIcon = true;
             this.txtPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtPassword.Lines = new string[0];
-            this.txtPassword.Location = new System.Drawing.Point(179, 177);
+            this.txtPassword.Location = new System.Drawing.Point(171, 140);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.Name = "txtPassword";
@@ -154,7 +132,7 @@
             this.btnCancelOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelOrder.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancelOrder.Location = new System.Drawing.Point(245, 226);
+            this.btnCancelOrder.Location = new System.Drawing.Point(237, 189);
             this.btnCancelOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelOrder.Name = "btnCancelOrder";
             this.btnCancelOrder.Size = new System.Drawing.Size(192, 40);
@@ -168,7 +146,7 @@
             this.picAvatar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.picAvatar.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_person_60_2;
             this.picAvatar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.picAvatar.Location = new System.Drawing.Point(41, 58);
+            this.picAvatar.Location = new System.Drawing.Point(33, 21);
             this.picAvatar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.picAvatar.Name = "picAvatar";
             this.picAvatar.Size = new System.Drawing.Size(66, 69);
@@ -178,7 +156,7 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(41, 140);
+            this.lblUsername.Location = new System.Drawing.Point(33, 103);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(103, 21);
             this.lblUsername.TabIndex = 65;
@@ -188,18 +166,30 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(41, 183);
+            this.lblPassword.Location = new System.Drawing.Point(33, 146);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(95, 21);
             this.lblPassword.TabIndex = 66;
             this.lblPassword.Text = "Password:";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.label1.Location = new System.Drawing.Point(171, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(373, 34);
+            this.label1.TabIndex = 67;
+            this.label1.Text = "Administrator\'s Credentials";
+            // 
             // CancelOrderModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 279);
+            this.ClientSize = new System.Drawing.Size(672, 246);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.passwordEyeBtn);
@@ -207,16 +197,13 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.btnCancelOrder);
             this.Controls.Add(this.picAvatar);
-            this.Controls.Add(this.discountPanel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CancelOrderModule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CancelOrderModule";
-            this.discountPanel1.ResumeLayout(false);
-            this.discountPanel1.PerformLayout();
+            this.Text = "Cancel Order Module";
             ((System.ComponentModel.ISupportInitialize)(this.passwordEyeBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -224,9 +211,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel discountPanel1;
-        private System.Windows.Forms.Label cancelOrderLbl;
         private System.Windows.Forms.PictureBox passwordEyeBtn;
         private MetroFramework.Controls.MetroTextBox txtPassword;
         private System.Windows.Forms.Button btnCancelOrder;
@@ -234,5 +218,6 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
         public MetroFramework.Controls.MetroTextBox txtUsername;
+        private System.Windows.Forms.Label label1;
     }
 }

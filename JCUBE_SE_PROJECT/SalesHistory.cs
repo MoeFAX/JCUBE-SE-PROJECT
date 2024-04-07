@@ -125,8 +125,7 @@ namespace JCUBE_SE_PROJECT
                 btnPrintSalesHistory.Enabled = true;
             }
         }
-
-        private void btnPrintSalesHistory_Click(object sender, EventArgs e)
+        private void btnPrintSalesHistory_Click_1(object sender, EventArgs e)
         {
             PrintSalesHistory printSalesHistory = new PrintSalesHistory(invUIInstance);
             DateTime startDate = dateFrom.Value.Date;

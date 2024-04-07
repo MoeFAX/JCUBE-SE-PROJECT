@@ -88,8 +88,7 @@ namespace JCUBE_SE_PROJECT
             invUIInstance.openChildForm(soldItemsForm);
             this.Close(); 
         }
-
-        private void btnPrintTop_Click(object sender, EventArgs e)
+        private void btnPrintTop_Click_1(object sender, EventArgs e)
         {
             PrintTopSelling prtTopSelling = new PrintTopSelling(invUIInstance);
             prtTopSelling.LoadPrintTopSelling(dateFromTopSell.Value, dateToTopSell.Value, cbTopSell.Text);
