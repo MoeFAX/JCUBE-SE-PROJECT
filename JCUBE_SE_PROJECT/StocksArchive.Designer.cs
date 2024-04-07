@@ -197,11 +197,11 @@
             this.Stocks.HeaderText = "Stocks";
             this.Stocks.MinimumWidth = 6;
             this.Stocks.Name = "Stocks";
+
             this.Stocks.ReadOnly = true;
             this.Stocks.Width = 81;
-            // 
-            // SupplierID
-            // 
+            this.Stocks.Width = 94;
+
             this.SupplierID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.SupplierID.HeaderText = "Supplier Name";
             this.SupplierID.MinimumWidth = 6;
@@ -214,9 +214,9 @@
             this.Status.HeaderText = "Status";
             this.Status.MinimumWidth = 6;
             this.Status.Name = "Status";
+
             this.Status.ReadOnly = true;
-            // 
-            // Restore
+
             // 
             this.Restore.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Restore.HeaderText = "";
@@ -224,18 +224,27 @@
             this.Restore.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Restore.MinimumWidth = 6;
             this.Restore.Name = "Restore";
+
             this.Restore.ReadOnly = true;
+
+
             this.Restore.Width = 6;
             // 
             // Delete
             // 
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Delete.HeaderText = "";
+
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
             this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
+
+            this.Delete.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Delete.Width = 21;
@@ -261,11 +270,15 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+
             this.Name = "StocksArchive";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stocks Archive";
@@ -284,7 +297,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel side2;
-        private System.Windows.Forms.DataGridView dgvStockEntryArchive;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Button PrintStockArchives;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockID;
@@ -294,5 +306,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewImageColumn Restore;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
+        public System.Windows.Forms.DataGridView dgvStockEntryArchive;
     }
 }

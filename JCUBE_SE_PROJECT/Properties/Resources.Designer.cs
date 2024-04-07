@@ -303,14 +303,16 @@ namespace JCUBE_SE_PROJECT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-<<<<<<< Updated upstream
         internal static byte[] NotoSans_VariableFont_wdth_wght {
             get {
                 object obj = ResourceManager.GetObject("NotoSans_VariableFont_wdth_wght", resourceCulture);
                 return ((byte[])(obj));
             }
         }
-=======
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] NotoSans_VariableFont_wdthwght {
             get {
                 object obj = ResourceManager.GetObject("NotoSans_VariableFont_wdthwght", resourceCulture);
@@ -357,6 +359,15 @@ namespace JCUBE_SE_PROJECT.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
->>>>>>> Stashed changes
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User_Label {
+            get {
+                object obj = ResourceManager.GetObject("User Label", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

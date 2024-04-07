@@ -410,6 +410,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Brand.resx">
       <DependentUpon>Brand.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BrandModule.resx">
       <DependentUpon>BrandModule.cs</DependentUpon>
@@ -624,11 +625,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-<<<<<<< Updated upstream
     <None Include="Resources\NotoSans-VariableFont_wdth,wght.ttf" />
-=======
-    <None Include="Resources\NotoSans-VariableFont_wdthwght.ttf" />
->>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -654,6 +651,7 @@
     <None Include="Resources\Discount Icon.png" />
     <None Include="Resources\Clear Cart Icon.png" />
     <None Include="Resources\Delete Icon.png" />
+    <None Include="Resources\User Label.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

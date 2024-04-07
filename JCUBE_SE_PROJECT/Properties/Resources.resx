@@ -160,16 +160,17 @@
   <data name="product icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\product icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-discount-642" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-discount-642.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-person-60 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-person-60 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< Updated upstream
-  <data name="local data icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\local data icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
   <data name="icons8-clear-shopping-cart-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-clear-shopping-cart-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> Stashed changes
+  </data>
+  <data name="Delete Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-search-50 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-search-50 (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -183,10 +184,6 @@
   <data name="icons8-restore-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-restore-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< Updated upstream
-  <data name="NotoSans_VariableFont_wdth_wght" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NotoSans-VariableFont_wdth,wght.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-=======
   <data name="sales icon v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\sales icon v2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,8 +199,8 @@
   <data name="icons8-minus-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-minus-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-discount-642" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-discount-642.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NotoSans_VariableFont_wdth_wght" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NotoSans-VariableFont_wdth,wght.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="icons8-print-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-print-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,8 +208,7 @@
   <data name="Discount Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Discount Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Delete Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Delete Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> Stashed changes
+  <data name="User Label" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User Label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

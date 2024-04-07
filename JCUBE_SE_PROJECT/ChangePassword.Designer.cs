@@ -34,16 +34,16 @@ namespace JCUBE_SE_PROJECT
             this.btnSave = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
+            this.newPassEyeBtn = new System.Windows.Forms.PictureBox();
+            this.confirmEyeBtn = new System.Windows.Forms.PictureBox();
             this.CurEyeBtn = new System.Windows.Forms.PictureBox();
             this.txtNewPass = new MetroFramework.Controls.MetroTextBox();
             this.txtConfirmPass = new MetroFramework.Controls.MetroTextBox();
             this.txtCurrentPass = new MetroFramework.Controls.MetroTextBox();
             this.picAvatar = new System.Windows.Forms.Label();
-            this.confirmEyeBtn = new System.Windows.Forms.PictureBox();
-            this.newPassEyeBtn = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.CurEyeBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.confirmEyeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newPassEyeBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confirmEyeBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CurEyeBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNext
@@ -83,7 +83,7 @@ namespace JCUBE_SE_PROJECT
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(86, 25);
+            this.lblUser.Location = new System.Drawing.Point(94, 25);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(114, 40);
             this.lblUser.TabIndex = 8;
@@ -98,6 +98,34 @@ namespace JCUBE_SE_PROJECT
             this.lblUsername.TabIndex = 9;
             this.lblUsername.Text = "label1";
             this.lblUsername.Visible = false;
+            // 
+            // newPassEyeBtn
+            // 
+            this.newPassEyeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.newPassEyeBtn.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_eye_20;
+            this.newPassEyeBtn.Location = new System.Drawing.Point(626, 90);
+            this.newPassEyeBtn.Name = "newPassEyeBtn";
+            this.newPassEyeBtn.Size = new System.Drawing.Size(20, 20);
+            this.newPassEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.newPassEyeBtn.TabIndex = 59;
+            this.newPassEyeBtn.TabStop = false;
+            this.newPassEyeBtn.Visible = false;
+            this.newPassEyeBtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.newPassEyeBtn_MouseDown);
+            this.newPassEyeBtn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.newPassEyeBtn_MouseUp);
+            // 
+            // confirmEyeBtn
+            // 
+            this.confirmEyeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.confirmEyeBtn.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_eye_20;
+            this.confirmEyeBtn.Location = new System.Drawing.Point(626, 131);
+            this.confirmEyeBtn.Name = "confirmEyeBtn";
+            this.confirmEyeBtn.Size = new System.Drawing.Size(20, 20);
+            this.confirmEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.confirmEyeBtn.TabIndex = 58;
+            this.confirmEyeBtn.TabStop = false;
+            this.confirmEyeBtn.Visible = false;
+            this.confirmEyeBtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.confirmEyeBtn_MouseDown);
+            this.confirmEyeBtn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.confirmEyeBtn_MouseUp);
             // 
             // CurEyeBtn
             // 
@@ -231,42 +259,13 @@ namespace JCUBE_SE_PROJECT
             // picAvatar
             // 
             this.picAvatar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.picAvatar.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_person_60_2;
-            this.picAvatar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.picAvatar.Image = global::JCUBE_SE_PROJECT.Properties.Resources.User_Label;
             this.picAvatar.Location = new System.Drawing.Point(16, 11);
             this.picAvatar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.picAvatar.Name = "picAvatar";
-            this.picAvatar.Size = new System.Drawing.Size(66, 69);
+            this.picAvatar.Size = new System.Drawing.Size(71, 69);
             this.picAvatar.TabIndex = 2;
             this.picAvatar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // confirmEyeBtn
-            // 
-            this.confirmEyeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.confirmEyeBtn.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_eye_20;
-            this.confirmEyeBtn.Location = new System.Drawing.Point(626, 131);
-            this.confirmEyeBtn.Name = "confirmEyeBtn";
-            this.confirmEyeBtn.Size = new System.Drawing.Size(20, 20);
-            this.confirmEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.confirmEyeBtn.TabIndex = 58;
-            this.confirmEyeBtn.TabStop = false;
-            this.confirmEyeBtn.Visible = false;
-            this.confirmEyeBtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.confirmEyeBtn_MouseDown);
-            this.confirmEyeBtn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.confirmEyeBtn_MouseUp);
-            // 
-            // newPassEyeBtn
-            // 
-            this.newPassEyeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.newPassEyeBtn.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_eye_20;
-            this.newPassEyeBtn.Location = new System.Drawing.Point(626, 90);
-            this.newPassEyeBtn.Name = "newPassEyeBtn";
-            this.newPassEyeBtn.Size = new System.Drawing.Size(20, 20);
-            this.newPassEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.newPassEyeBtn.TabIndex = 59;
-            this.newPassEyeBtn.TabStop = false;
-            this.newPassEyeBtn.Visible = false;
-            this.newPassEyeBtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.newPassEyeBtn_MouseDown);
-            this.newPassEyeBtn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.newPassEyeBtn_MouseUp);
             // 
             // ChangePassword
             // 
@@ -291,9 +290,9 @@ namespace JCUBE_SE_PROJECT
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangePassword";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ChangePassword_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.CurEyeBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.confirmEyeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.newPassEyeBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confirmEyeBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CurEyeBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

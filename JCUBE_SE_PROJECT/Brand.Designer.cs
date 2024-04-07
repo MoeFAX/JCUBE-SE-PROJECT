@@ -202,7 +202,6 @@
             // 
             this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Edit.HeaderText = "";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
             this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
