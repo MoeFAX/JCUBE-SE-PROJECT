@@ -126,14 +126,14 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.NPEyeBtn);
             this.panel2.Controls.Add(this.LoginBtn);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.LoginLabel);
             this.panel2.Controls.Add(this.UserIDtxtbox);
             this.panel2.Controls.Add(this.Passwordtxtbox);
-            this.panel2.Location = new System.Drawing.Point(305, 170);
+            this.panel2.Location = new System.Drawing.Point(513, 188);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(337, 311);
             this.panel2.TabIndex = 6;

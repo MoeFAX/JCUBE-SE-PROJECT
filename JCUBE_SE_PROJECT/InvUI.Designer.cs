@@ -60,7 +60,6 @@ namespace JCUBE_SE_PROJECT
             this.label1 = new System.Windows.Forms.Label();
             this.INVLoggedInlbl = new System.Windows.Forms.Label();
             this.INVNamelbl = new System.Windows.Forms.Label();
-            this.INVJCUBELOGOIMG = new System.Windows.Forms.PictureBox();
             this.JCubelbl = new System.Windows.Forms.Label();
             this.panelSidebar.SuspendLayout();
             this.panelSubRecord.SuspendLayout();
@@ -69,7 +68,6 @@ namespace JCUBE_SE_PROJECT
             ((System.ComponentModel.ISupportInitialize)(this.JCUBELOGOIMG)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.INVJCUBELOGOIMG)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSidebar
@@ -526,7 +524,6 @@ namespace JCUBE_SE_PROJECT
             this.panelMain.Controls.Add(this.label1);
             this.panelMain.Controls.Add(this.INVLoggedInlbl);
             this.panelMain.Controls.Add(this.INVNamelbl);
-            this.panelMain.Controls.Add(this.INVJCUBELOGOIMG);
             this.panelMain.Controls.Add(this.JCubelbl);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(253, 62);
@@ -539,12 +536,21 @@ namespace JCUBE_SE_PROJECT
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(6, 242);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(282, 22);
+=======
+            this.label1.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(9, 417);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(299, 27);
+>>>>>>> Stashed changes
             this.label1.TabIndex = 5;
             this.label1.Text = "Inventory Management System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -555,7 +561,7 @@ namespace JCUBE_SE_PROJECT
             this.INVLoggedInlbl.BackColor = System.Drawing.Color.Transparent;
             this.INVLoggedInlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.INVLoggedInlbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.INVLoggedInlbl.Location = new System.Drawing.Point(3, 361);
+            this.INVLoggedInlbl.Location = new System.Drawing.Point(8, 466);
             this.INVLoggedInlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.INVLoggedInlbl.Name = "INVLoggedInlbl";
             this.INVLoggedInlbl.Size = new System.Drawing.Size(171, 29);
@@ -569,7 +575,7 @@ namespace JCUBE_SE_PROJECT
             this.INVNamelbl.BackColor = System.Drawing.Color.Transparent;
             this.INVNamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.INVNamelbl.ForeColor = System.Drawing.Color.White;
-            this.INVNamelbl.Location = new System.Drawing.Point(4, 396);
+            this.INVNamelbl.Location = new System.Drawing.Point(9, 501);
             this.INVNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.INVNamelbl.Name = "INVNamelbl";
             this.INVNamelbl.Size = new System.Drawing.Size(100, 25);
@@ -577,25 +583,13 @@ namespace JCUBE_SE_PROJECT
             this.INVNamelbl.Text = "Fullname";
             this.INVNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // INVJCUBELOGOIMG
-            // 
-            this.INVJCUBELOGOIMG.BackColor = System.Drawing.Color.Transparent;
-            this.INVJCUBELOGOIMG.Image = ((System.Drawing.Image)(resources.GetObject("INVJCUBELOGOIMG.Image")));
-            this.INVJCUBELOGOIMG.Location = new System.Drawing.Point(580, 182);
-            this.INVJCUBELOGOIMG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.INVJCUBELOGOIMG.Name = "INVJCUBELOGOIMG";
-            this.INVJCUBELOGOIMG.Size = new System.Drawing.Size(275, 254);
-            this.INVJCUBELOGOIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.INVJCUBELOGOIMG.TabIndex = 1;
-            this.INVJCUBELOGOIMG.TabStop = false;
-            // 
             // JCubelbl
             // 
             this.JCubelbl.AutoSize = true;
             this.JCubelbl.BackColor = System.Drawing.Color.Transparent;
             this.JCubelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.JCubelbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.JCubelbl.Location = new System.Drawing.Point(7, 202);
+            this.JCubelbl.Location = new System.Drawing.Point(7, 375);
             this.JCubelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.JCubelbl.Name = "JCubelbl";
             this.JCubelbl.Size = new System.Drawing.Size(564, 32);
@@ -629,7 +623,6 @@ namespace JCUBE_SE_PROJECT
             this.panel1.PerformLayout();
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.INVJCUBELOGOIMG)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -660,7 +653,6 @@ namespace JCUBE_SE_PROJECT
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.PictureBox JCUBELOGOIMG;
         private System.Windows.Forms.Label JCubelbl;
-        private System.Windows.Forms.PictureBox INVJCUBELOGOIMG;
         public System.Windows.Forms.Label INVNamelbl;
         public System.Windows.Forms.Label INVLoggedInlbl;
         public System.Windows.Forms.Label lblUserRole;
