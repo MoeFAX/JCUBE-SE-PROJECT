@@ -178,7 +178,7 @@
             this.NoColumn.Name = "NoColumn";
             this.NoColumn.ReadOnly = true;
             this.NoColumn.Visible = false;
-            this.NoColumn.Width = 125;
+            this.NoColumn.Width = 31;
             // 
             // Id
             // 
@@ -188,7 +188,7 @@
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
-            this.Id.Width = 125;
+            this.Id.Width = 24;
             // 
             // BrandName
             // 
@@ -202,6 +202,7 @@
             // 
             this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Edit.HeaderText = "";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
             this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
@@ -251,11 +252,11 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel side2;
         private System.Windows.Forms.DataGridView dgvBrand;
+        private System.Windows.Forms.Button addbtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Archive;
-        private System.Windows.Forms.Button addbtn;
     }
 }

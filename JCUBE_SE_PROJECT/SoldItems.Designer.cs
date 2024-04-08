@@ -100,11 +100,14 @@ namespace JCUBE_SE_PROJECT
             this.btnTopSelling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTopSelling.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTopSelling.ForeColor = System.Drawing.Color.Black;
-            this.btnTopSelling.Location = new System.Drawing.Point(649, 20);
+            this.btnTopSelling.Image = ((System.Drawing.Image)(resources.GetObject("btnTopSelling.Image")));
+            this.btnTopSelling.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTopSelling.Location = new System.Drawing.Point(669, 20);
             this.btnTopSelling.Name = "btnTopSelling";
-            this.btnTopSelling.Size = new System.Drawing.Size(201, 30);
+            this.btnTopSelling.Size = new System.Drawing.Size(130, 30);
             this.btnTopSelling.TabIndex = 1;
-            this.btnTopSelling.Text = "View Top Selling";
+            this.btnTopSelling.Text = "Top Selling";
+            this.btnTopSelling.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTopSelling.UseVisualStyleBackColor = false;
             this.btnTopSelling.Click += new System.EventHandler(this.btnTopSelling_Click);
             // 
@@ -117,9 +120,9 @@ namespace JCUBE_SE_PROJECT
             this.btnLoadSold.ForeColor = System.Drawing.Color.Black;
             this.btnLoadSold.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadSold.Image")));
             this.btnLoadSold.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLoadSold.Location = new System.Drawing.Point(469, 18);
+            this.btnLoadSold.Location = new System.Drawing.Point(488, 18);
             this.btnLoadSold.Name = "btnLoadSold";
-            this.btnLoadSold.Size = new System.Drawing.Size(120, 35);
+            this.btnLoadSold.Size = new System.Drawing.Size(102, 35);
             this.btnLoadSold.TabIndex = 15;
             this.btnLoadSold.Text = "Refresh";
             this.btnLoadSold.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -293,7 +296,7 @@ namespace JCUBE_SE_PROJECT
             this.No.MinimumWidth = 6;
             this.No.Name = "No";
             this.No.Visible = false;
-            this.No.Width = 65;
+            this.No.Width = 125;
             // 
             // InventoryCode
             // 

@@ -244,5 +244,11 @@ namespace JCUBE_SE_PROJECT
             Notif();
             UserRole = lblUserRole.Text;
         }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            openChildForm(new DashUI());
+            hideSubmenu();
+        }
     }
 }

@@ -79,5 +79,7 @@ namespace JCUBE_SE_PROJECT
         {
             LoadLogs();
         }
+
+       
     }
 }

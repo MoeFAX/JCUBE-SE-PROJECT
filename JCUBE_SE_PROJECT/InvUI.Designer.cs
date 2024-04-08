@@ -106,7 +106,7 @@ namespace JCUBE_SE_PROJECT
             this.btnArchives.Name = "btnArchives";
             this.btnArchives.Size = new System.Drawing.Size(232, 50);
             this.btnArchives.TabIndex = 12;
-            this.btnArchives.Text = "Archives";
+            this.btnArchives.Text = "Data Archives";
             this.btnArchives.UseVisualStyleBackColor = true;
             this.btnArchives.Click += new System.EventHandler(this.btnArchives_Click);
             // 
@@ -124,7 +124,7 @@ namespace JCUBE_SE_PROJECT
             this.btnLogs.Name = "btnLogs";
             this.btnLogs.Size = new System.Drawing.Size(232, 50);
             this.btnLogs.TabIndex = 11;
-            this.btnLogs.Text = "Logs";
+            this.btnLogs.Text = "Activity Logs";
             this.btnLogs.UseVisualStyleBackColor = true;
             this.btnLogs.Click += new System.EventHandler(this.btnLogs_Click);
             // 
@@ -302,7 +302,7 @@ namespace JCUBE_SE_PROJECT
             this.btnRecords.Name = "btnRecords";
             this.btnRecords.Size = new System.Drawing.Size(232, 50);
             this.btnRecords.TabIndex = 5;
-            this.btnRecords.Text = "Records";
+            this.btnRecords.Text = "Record Reports";
             this.btnRecords.UseVisualStyleBackColor = true;
             this.btnRecords.Click += new System.EventHandler(this.btnRecords_Click);
             // 
@@ -320,7 +320,7 @@ namespace JCUBE_SE_PROJECT
             this.btnStocks.Name = "btnStocks";
             this.btnStocks.Size = new System.Drawing.Size(232, 50);
             this.btnStocks.TabIndex = 4;
-            this.btnStocks.Text = "Stocks";
+            this.btnStocks.Text = "Stock Entries";
             this.btnStocks.UseVisualStyleBackColor = true;
             this.btnStocks.Click += new System.EventHandler(this.btnStocks_Click);
             // 
@@ -424,7 +424,7 @@ namespace JCUBE_SE_PROJECT
             this.btnItem.Name = "btnItem";
             this.btnItem.Size = new System.Drawing.Size(232, 59);
             this.btnItem.TabIndex = 3;
-            this.btnItem.Text = "Item";
+            this.btnItem.Text = "Item Records";
             this.btnItem.UseVisualStyleBackColor = true;
             this.btnItem.Click += new System.EventHandler(this.btnItem_Click);
             // 
@@ -445,6 +445,7 @@ namespace JCUBE_SE_PROJECT
             this.btnDashboard.TabIndex = 4;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // panelLogo
             // 
@@ -495,11 +496,10 @@ namespace JCUBE_SE_PROJECT
             // 
             // lblUserRole
             // 
-            this.lblUserRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUserRole.AutoSize = true;
             this.lblUserRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserRole.ForeColor = System.Drawing.Color.White;
-            this.lblUserRole.Location = new System.Drawing.Point(767, 36);
+            this.lblUserRole.Location = new System.Drawing.Point(6, 30);
             this.lblUserRole.Name = "lblUserRole";
             this.lblUserRole.Size = new System.Drawing.Size(73, 16);
             this.lblUserRole.TabIndex = 2;
@@ -507,11 +507,10 @@ namespace JCUBE_SE_PROJECT
             // 
             // lblLoggedIn
             // 
-            this.lblLoggedIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLoggedIn.AutoSize = true;
             this.lblLoggedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedIn.ForeColor = System.Drawing.Color.White;
-            this.lblLoggedIn.Location = new System.Drawing.Point(768, 18);
+            this.lblLoggedIn.Location = new System.Drawing.Point(7, 12);
             this.lblLoggedIn.Name = "lblLoggedIn";
             this.lblLoggedIn.Size = new System.Drawing.Size(88, 16);
             this.lblLoggedIn.TabIndex = 1;
@@ -536,21 +535,12 @@ namespace JCUBE_SE_PROJECT
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-<<<<<<< Updated upstream
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(6, 242);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 22);
-=======
-            this.label1.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(9, 417);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 27);
->>>>>>> Stashed changes
+            this.label1.Size = new System.Drawing.Size(282, 22);
             this.label1.TabIndex = 5;
             this.label1.Text = "Inventory Management System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -609,7 +599,6 @@ namespace JCUBE_SE_PROJECT
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "InvUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JCube Inventory";

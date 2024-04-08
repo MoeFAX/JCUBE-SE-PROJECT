@@ -31,6 +31,19 @@ namespace JCUBE_SE_PROJECT
             getTransNo();
             this.clerk = clerk;
             clerk.lblUserRolePOS.Text = clerkLbl.Text;
+
+            if (dgvCart.Rows.Count == 0)
+            {
+                btnClear.Enabled = false;
+                clerk.btnSettlePayment.Enabled = false;
+                btnDiscount.Enabled = false;
+            }
+            else
+            {
+                btnClear.Enabled = true;
+                clerk.btnSettlePayment.Enabled = true;
+                btnDiscount.Enabled = true;
+            }
         }
 
         public static CartUI GetInstance(PosUI clerk)
@@ -46,7 +59,7 @@ namespace JCUBE_SE_PROJECT
 
         public void LoadCart()
         {
-            Boolean hasCart = false;
+            //Boolean hasCart = false;
             double total = 0;
             double discount = 0;
             
@@ -62,7 +75,7 @@ namespace JCUBE_SE_PROJECT
                 total += Convert.ToDouble(dr["total"].ToString());
                 discount += Convert.ToDouble(dr["discount"].ToString());
                 dgvCart.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), double.Parse(dr[6].ToString()).ToString("#,##0.00"));
-                hasCart = true;
+                //hasCart = true;
             }
             dr.Close();
             cn.Close();
@@ -72,7 +85,7 @@ namespace JCUBE_SE_PROJECT
 
             GetCartTotal();
 
-            if (hasCart)
+            /*if (hasCart)
             {
                btnClear.Enabled = true;
                clerk.btnSettlePayment.Enabled = true;
@@ -83,7 +96,7 @@ namespace JCUBE_SE_PROJECT
                 btnClear.Enabled = false;
                 clerk.btnSettlePayment.Enabled = false;
                 btnDiscount.Enabled = false;
-            }
+            }*/
         }
 
         public void GetCartTotal()

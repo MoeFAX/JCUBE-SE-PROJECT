@@ -33,6 +33,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CancelledOrdersUI));
             this.dgvCancel = new System.Windows.Forms.DataGridView();
+            this.CONoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COTransacCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COInvCodeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COPriceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COQuantCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COTotalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COCancByCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COReasonCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COActionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PrintCnclOrders = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,17 +57,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.CONoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COTransacCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COInvCodeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COPriceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COQuantCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COTotalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CODateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COCancByCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COReasonCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COActionCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCancel)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -121,6 +121,109 @@
             this.dgvCancel.TabIndex = 22;
             this.dgvCancel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCancel_CellContentClick);
             // 
+            // CONoCol
+            // 
+            this.CONoCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CONoCol.HeaderText = "No";
+            this.CONoCol.MinimumWidth = 6;
+            this.CONoCol.Name = "CONoCol";
+            this.CONoCol.ReadOnly = true;
+            this.CONoCol.Visible = false;
+            this.CONoCol.Width = 125;
+            // 
+            // COTransacCol
+            // 
+            this.COTransacCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COTransacCol.HeaderText = "Transaction No.";
+            this.COTransacCol.MinimumWidth = 6;
+            this.COTransacCol.Name = "COTransacCol";
+            this.COTransacCol.ReadOnly = true;
+            this.COTransacCol.Width = 144;
+            // 
+            // COInvCodeCol
+            // 
+            this.COInvCodeCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COInvCodeCol.HeaderText = "Item Code";
+            this.COInvCodeCol.MinimumWidth = 6;
+            this.COInvCodeCol.Name = "COInvCodeCol";
+            this.COInvCodeCol.ReadOnly = true;
+            this.COInvCodeCol.Width = 104;
+            // 
+            // COPriceCol
+            // 
+            this.COPriceCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COPriceCol.HeaderText = "Price";
+            this.COPriceCol.MinimumWidth = 6;
+            this.COPriceCol.Name = "COPriceCol";
+            this.COPriceCol.ReadOnly = true;
+            this.COPriceCol.Width = 70;
+            // 
+            // COQuantCol
+            // 
+            this.COQuantCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COQuantCol.HeaderText = "Qty";
+            this.COQuantCol.MinimumWidth = 6;
+            this.COQuantCol.Name = "COQuantCol";
+            this.COQuantCol.ReadOnly = true;
+            this.COQuantCol.Width = 57;
+            // 
+            // COTotalCol
+            // 
+            this.COTotalCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COTotalCol.HeaderText = "Total";
+            this.COTotalCol.MinimumWidth = 6;
+            this.COTotalCol.Name = "COTotalCol";
+            this.COTotalCol.ReadOnly = true;
+            this.COTotalCol.Width = 70;
+            // 
+            // CODateCol
+            // 
+            this.CODateCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CODateCol.HeaderText = "Date";
+            this.CODateCol.MinimumWidth = 6;
+            this.CODateCol.Name = "CODateCol";
+            this.CODateCol.ReadOnly = true;
+            this.CODateCol.Width = 67;
+            // 
+            // COCancByCol
+            // 
+            this.COCancByCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COCancByCol.HeaderText = "Cancelled By";
+            this.COCancByCol.MinimumWidth = 6;
+            this.COCancByCol.Name = "COCancByCol";
+            this.COCancByCol.ReadOnly = true;
+            this.COCancByCol.Width = 126;
+            // 
+            // COReasonCol
+            // 
+            this.COReasonCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.COReasonCol.HeaderText = "Reason";
+            this.COReasonCol.MinimumWidth = 6;
+            this.COReasonCol.Name = "COReasonCol";
+            this.COReasonCol.ReadOnly = true;
+            // 
+            // COActionCol
+            // 
+            this.COActionCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.COActionCol.HeaderText = "Action";
+            this.COActionCol.MinimumWidth = 6;
+            this.COActionCol.Name = "COActionCol";
+            this.COActionCol.ReadOnly = true;
+            this.COActionCol.Width = 77;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::JCUBE_SE_PROJECT.Properties.Resources.Delete_Icon;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Delete.Width = 21;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
@@ -173,7 +276,7 @@
             this.btnLoadCancelled.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLoadCancelled.Location = new System.Drawing.Point(588, 13);
             this.btnLoadCancelled.Name = "btnLoadCancelled";
-            this.btnLoadCancelled.Size = new System.Drawing.Size(131, 35);
+            this.btnLoadCancelled.Size = new System.Drawing.Size(102, 35);
             this.btnLoadCancelled.TabIndex = 38;
             this.btnLoadCancelled.Text = "Refresh";
             this.btnLoadCancelled.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -272,109 +375,6 @@
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn2.Width = 125;
-            // 
-            // CONoCol
-            // 
-            this.CONoCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CONoCol.HeaderText = "No";
-            this.CONoCol.MinimumWidth = 6;
-            this.CONoCol.Name = "CONoCol";
-            this.CONoCol.ReadOnly = true;
-            this.CONoCol.Visible = false;
-            this.CONoCol.Width = 31;
-            // 
-            // COTransacCol
-            // 
-            this.COTransacCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.COTransacCol.HeaderText = "Transaction No.";
-            this.COTransacCol.MinimumWidth = 6;
-            this.COTransacCol.Name = "COTransacCol";
-            this.COTransacCol.ReadOnly = true;
-            this.COTransacCol.Width = 144;
-            // 
-            // COInvCodeCol
-            // 
-            this.COInvCodeCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.COInvCodeCol.HeaderText = "Item Code";
-            this.COInvCodeCol.MinimumWidth = 6;
-            this.COInvCodeCol.Name = "COInvCodeCol";
-            this.COInvCodeCol.ReadOnly = true;
-            this.COInvCodeCol.Width = 104;
-            // 
-            // COPriceCol
-            // 
-            this.COPriceCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.COPriceCol.HeaderText = "Price";
-            this.COPriceCol.MinimumWidth = 6;
-            this.COPriceCol.Name = "COPriceCol";
-            this.COPriceCol.ReadOnly = true;
-            this.COPriceCol.Width = 70;
-            // 
-            // COQuantCol
-            // 
-            this.COQuantCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.COQuantCol.HeaderText = "Qty";
-            this.COQuantCol.MinimumWidth = 6;
-            this.COQuantCol.Name = "COQuantCol";
-            this.COQuantCol.ReadOnly = true;
-            this.COQuantCol.Width = 57;
-            // 
-            // COTotalCol
-            // 
-            this.COTotalCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.COTotalCol.HeaderText = "Total";
-            this.COTotalCol.MinimumWidth = 6;
-            this.COTotalCol.Name = "COTotalCol";
-            this.COTotalCol.ReadOnly = true;
-            this.COTotalCol.Width = 70;
-            // 
-            // CODateCol
-            // 
-            this.CODateCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CODateCol.HeaderText = "Date";
-            this.CODateCol.MinimumWidth = 6;
-            this.CODateCol.Name = "CODateCol";
-            this.CODateCol.ReadOnly = true;
-            this.CODateCol.Width = 67;
-            // 
-            // COCancByCol
-            // 
-            this.COCancByCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.COCancByCol.HeaderText = "Cancelled By";
-            this.COCancByCol.MinimumWidth = 6;
-            this.COCancByCol.Name = "COCancByCol";
-            this.COCancByCol.ReadOnly = true;
-            this.COCancByCol.Width = 126;
-            // 
-            // COReasonCol
-            // 
-            this.COReasonCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.COReasonCol.HeaderText = "Reason";
-            this.COReasonCol.MinimumWidth = 6;
-            this.COReasonCol.Name = "COReasonCol";
-            this.COReasonCol.ReadOnly = true;
-            // 
-            // COActionCol
-            // 
-            this.COActionCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.COActionCol.HeaderText = "Action";
-            this.COActionCol.MinimumWidth = 6;
-            this.COActionCol.Name = "COActionCol";
-            this.COActionCol.ReadOnly = true;
-            this.COActionCol.Width = 77;
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Delete.HeaderText = "";
-            this.Delete.Image = global::JCUBE_SE_PROJECT.Properties.Resources.Delete_Icon;
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Delete.Width = 21;
             // 
             // CancelledOrdersUI
             // 

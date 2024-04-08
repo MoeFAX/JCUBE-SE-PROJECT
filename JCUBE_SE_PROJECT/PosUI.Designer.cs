@@ -46,10 +46,6 @@
             this.POSNamelbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.JCubelbl = new System.Windows.Forms.Label();
-<<<<<<< Updated upstream
-            this.POSJCUBELOGOIMG = new System.Windows.Forms.PictureBox();
-=======
->>>>>>> Stashed changes
             this.panelSidebar.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,12 +76,14 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 620);
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(0, 602);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(252, 32);
+            this.btnLogout.Size = new System.Drawing.Size(252, 50);
             this.btnLogout.TabIndex = 2;
-            this.btnLogout.Text = "Log out";
+            this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
@@ -96,6 +94,8 @@
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePassword.ForeColor = System.Drawing.Color.White;
+            this.btnChangePassword.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePassword.Image")));
+            this.btnChangePassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChangePassword.Location = new System.Drawing.Point(0, 358);
             this.btnChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePassword.Name = "btnChangePassword";
@@ -112,12 +112,14 @@
             this.btnDailySales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDailySales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDailySales.ForeColor = System.Drawing.Color.White;
+            this.btnDailySales.Image = ((System.Drawing.Image)(resources.GetObject("btnDailySales.Image")));
+            this.btnDailySales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDailySales.Location = new System.Drawing.Point(0, 308);
             this.btnDailySales.Margin = new System.Windows.Forms.Padding(2);
             this.btnDailySales.Name = "btnDailySales";
             this.btnDailySales.Size = new System.Drawing.Size(252, 50);
             this.btnDailySales.TabIndex = 0;
-            this.btnDailySales.Text = "Daily Sales";
+            this.btnDailySales.Text = "View Daily Sales";
             this.btnDailySales.UseVisualStyleBackColor = true;
             this.btnDailySales.Click += new System.EventHandler(this.btnDailySales_Click);
             // 
@@ -129,6 +131,8 @@
             this.btnSettlePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettlePayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettlePayment.ForeColor = System.Drawing.Color.White;
+            this.btnSettlePayment.Image = ((System.Drawing.Image)(resources.GetObject("btnSettlePayment.Image")));
+            this.btnSettlePayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettlePayment.Location = new System.Drawing.Point(0, 258);
             this.btnSettlePayment.Margin = new System.Windows.Forms.Padding(2);
             this.btnSettlePayment.Name = "btnSettlePayment";
@@ -145,12 +149,14 @@
             this.btnCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCart.ForeColor = System.Drawing.Color.White;
+            this.btnCart.Image = ((System.Drawing.Image)(resources.GetObject("btnCart.Image")));
+            this.btnCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCart.Location = new System.Drawing.Point(0, 208);
             this.btnCart.Margin = new System.Windows.Forms.Padding(2);
             this.btnCart.Name = "btnCart";
             this.btnCart.Size = new System.Drawing.Size(252, 50);
             this.btnCart.TabIndex = 0;
-            this.btnCart.Text = "Cart";
+            this.btnCart.Text = "Customer Cart";
             this.btnCart.UseVisualStyleBackColor = true;
             this.btnCart.Click += new System.EventHandler(this.btnCart_Click);
             // 
@@ -205,11 +211,10 @@
             // 
             // lblLoggedIn
             // 
-            this.lblLoggedIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLoggedIn.AutoSize = true;
             this.lblLoggedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedIn.ForeColor = System.Drawing.Color.White;
-            this.lblLoggedIn.Location = new System.Drawing.Point(782, 19);
+            this.lblLoggedIn.Location = new System.Drawing.Point(11, 19);
             this.lblLoggedIn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLoggedIn.Name = "lblLoggedIn";
             this.lblLoggedIn.Size = new System.Drawing.Size(88, 16);
@@ -218,11 +223,10 @@
             // 
             // lblUserRolePOS
             // 
-            this.lblUserRolePOS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUserRolePOS.AutoSize = true;
             this.lblUserRolePOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserRolePOS.ForeColor = System.Drawing.Color.White;
-            this.lblUserRolePOS.Location = new System.Drawing.Point(782, 36);
+            this.lblUserRolePOS.Location = new System.Drawing.Point(11, 36);
             this.lblUserRolePOS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserRolePOS.Name = "lblUserRolePOS";
             this.lblUserRolePOS.Size = new System.Drawing.Size(73, 16);
@@ -248,21 +252,12 @@
             // 
             this.POSLoggedInlbl.AutoSize = true;
             this.POSLoggedInlbl.BackColor = System.Drawing.Color.Transparent;
-<<<<<<< Updated upstream
             this.POSLoggedInlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.POSLoggedInlbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.POSLoggedInlbl.Location = new System.Drawing.Point(3, 361);
-            this.POSLoggedInlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.POSLoggedInlbl.Name = "POSLoggedInlbl";
-            this.POSLoggedInlbl.Size = new System.Drawing.Size(171, 29);
-=======
-            this.POSLoggedInlbl.Font = new System.Drawing.Font("Noto Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.POSLoggedInlbl.ForeColor = System.Drawing.SystemColors.Control;
             this.POSLoggedInlbl.Location = new System.Drawing.Point(8, 466);
             this.POSLoggedInlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.POSLoggedInlbl.Name = "POSLoggedInlbl";
-            this.POSLoggedInlbl.Size = new System.Drawing.Size(167, 35);
->>>>>>> Stashed changes
+            this.POSLoggedInlbl.Size = new System.Drawing.Size(171, 29);
             this.POSLoggedInlbl.TabIndex = 10;
             this.POSLoggedInlbl.Text = "Logged in as:";
             this.POSLoggedInlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -271,21 +266,12 @@
             // 
             this.POSNamelbl.AutoSize = true;
             this.POSNamelbl.BackColor = System.Drawing.Color.Transparent;
-<<<<<<< Updated upstream
             this.POSNamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.POSNamelbl.ForeColor = System.Drawing.Color.White;
-            this.POSNamelbl.Location = new System.Drawing.Point(4, 396);
-            this.POSNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.POSNamelbl.Name = "POSNamelbl";
-            this.POSNamelbl.Size = new System.Drawing.Size(100, 25);
-=======
-            this.POSNamelbl.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.POSNamelbl.ForeColor = System.Drawing.Color.White;
             this.POSNamelbl.Location = new System.Drawing.Point(9, 501);
             this.POSNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.POSNamelbl.Name = "POSNamelbl";
-            this.POSNamelbl.Size = new System.Drawing.Size(106, 30);
->>>>>>> Stashed changes
+            this.POSNamelbl.Size = new System.Drawing.Size(100, 25);
             this.POSNamelbl.TabIndex = 9;
             this.POSNamelbl.Text = "Fullname";
             this.POSNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -294,21 +280,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-<<<<<<< Updated upstream
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(4, 241);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 22);
-=======
-            this.label1.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(9, 417);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 27);
->>>>>>> Stashed changes
+            this.label1.Size = new System.Drawing.Size(206, 22);
             this.label1.TabIndex = 8;
             this.label1.Text = "Point of Sales System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -317,39 +294,16 @@
             // 
             this.JCubelbl.AutoSize = true;
             this.JCubelbl.BackColor = System.Drawing.Color.Transparent;
-<<<<<<< Updated upstream
             this.JCubelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JCubelbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.JCubelbl.Location = new System.Drawing.Point(5, 201);
-            this.JCubelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.JCubelbl.Name = "JCubelbl";
-            this.JCubelbl.Size = new System.Drawing.Size(564, 32);
-=======
-            this.JCubelbl.Font = new System.Drawing.Font("Noto Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.JCubelbl.ForeColor = System.Drawing.SystemColors.Control;
             this.JCubelbl.Location = new System.Drawing.Point(7, 375);
             this.JCubelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.JCubelbl.Name = "JCubelbl";
-            this.JCubelbl.Size = new System.Drawing.Size(520, 42);
->>>>>>> Stashed changes
+            this.JCubelbl.Size = new System.Drawing.Size(564, 32);
             this.JCubelbl.TabIndex = 7;
             this.JCubelbl.Text = "JCUBE SHIELDWORKS CORPORATION";
             this.JCubelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-<<<<<<< Updated upstream
-            // POSJCUBELOGOIMG
-            // 
-            this.POSJCUBELOGOIMG.BackColor = System.Drawing.Color.Transparent;
-            this.POSJCUBELOGOIMG.Image = ((System.Drawing.Image)(resources.GetObject("POSJCUBELOGOIMG.Image")));
-            this.POSJCUBELOGOIMG.Location = new System.Drawing.Point(580, 182);
-            this.POSJCUBELOGOIMG.Name = "POSJCUBELOGOIMG";
-            this.POSJCUBELOGOIMG.Size = new System.Drawing.Size(275, 254);
-            this.POSJCUBELOGOIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.POSJCUBELOGOIMG.TabIndex = 2;
-            this.POSJCUBELOGOIMG.TabStop = false;
-            // 
-=======
->>>>>>> Stashed changes
             // PosUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
