@@ -925,7 +925,11 @@
   <data name="panelMain.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA6AAAAJQCAYAAACQIAkcAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+<<<<<<< Updated upstream
         wgAADsIBFShKgAAA/7JJREFUeF7s/We/5MaR7ovq41xzZs/I0ohG9N6TTTYpelL0oiiSEmUouva92tNK
+=======
+        wwAADsMBx2+oZAAA/7JJREFUeF7s/We/5MaR7ovq41xzZs/I0ohG9N6TTTYpelL0oiiSEmUouva92tNK
+>>>>>>> Stashed changes
         MyPRe2mMRvRG0j77+H0/Eu7zRGQkAolAFYBVVWv1arz4/5CJ9AkgMh4AhfrG7z/8pJqYmJiYmJiYmJiY
         mJiYWCZ//uJ/VN945f1PqkXx8nvjiepTPj1OiMe10bTnczZRHZuZaAzziOrZauhYo/P00+q3A/ldQJRv
         DFH/ak6c47VUOIfLJGpzYmJi3ZgNjO1jyZC8NcPtstIs88lMfifEa0kTy9vNbzEv5JX3Pm7zbkCUz+id

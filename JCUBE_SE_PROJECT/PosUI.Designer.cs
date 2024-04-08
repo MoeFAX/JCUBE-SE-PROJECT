@@ -252,12 +252,20 @@
             // 
             this.POSLoggedInlbl.AutoSize = true;
             this.POSLoggedInlbl.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.POSLoggedInlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.POSLoggedInlbl.Font = new System.Drawing.Font("Noto Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.POSLoggedInlbl.ForeColor = System.Drawing.SystemColors.Control;
             this.POSLoggedInlbl.Location = new System.Drawing.Point(8, 466);
             this.POSLoggedInlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.POSLoggedInlbl.Name = "POSLoggedInlbl";
+<<<<<<< Updated upstream
             this.POSLoggedInlbl.Size = new System.Drawing.Size(171, 29);
+=======
+            this.POSLoggedInlbl.Size = new System.Drawing.Size(167, 35);
+>>>>>>> Stashed changes
             this.POSLoggedInlbl.TabIndex = 10;
             this.POSLoggedInlbl.Text = "Logged in as:";
             this.POSLoggedInlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -266,12 +274,20 @@
             // 
             this.POSNamelbl.AutoSize = true;
             this.POSNamelbl.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.POSNamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.POSNamelbl.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.POSNamelbl.ForeColor = System.Drawing.Color.White;
             this.POSNamelbl.Location = new System.Drawing.Point(9, 501);
             this.POSNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.POSNamelbl.Name = "POSNamelbl";
+<<<<<<< Updated upstream
             this.POSNamelbl.Size = new System.Drawing.Size(100, 25);
+=======
+            this.POSNamelbl.Size = new System.Drawing.Size(106, 30);
+>>>>>>> Stashed changes
             this.POSNamelbl.TabIndex = 9;
             this.POSNamelbl.Text = "Fullname";
             this.POSNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -280,12 +296,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.label1.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(9, 417);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
+<<<<<<< Updated upstream
             this.label1.Size = new System.Drawing.Size(206, 22);
+=======
+            this.label1.Size = new System.Drawing.Size(204, 27);
+>>>>>>> Stashed changes
             this.label1.TabIndex = 8;
             this.label1.Text = "Point of Sales System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -294,12 +318,20 @@
             // 
             this.JCubelbl.AutoSize = true;
             this.JCubelbl.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.JCubelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.JCubelbl.Font = new System.Drawing.Font("Noto Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.JCubelbl.ForeColor = System.Drawing.SystemColors.Control;
             this.JCubelbl.Location = new System.Drawing.Point(7, 375);
             this.JCubelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.JCubelbl.Name = "JCubelbl";
+<<<<<<< Updated upstream
             this.JCubelbl.Size = new System.Drawing.Size(564, 32);
+=======
+            this.JCubelbl.Size = new System.Drawing.Size(520, 42);
+>>>>>>> Stashed changes
             this.JCubelbl.TabIndex = 7;
             this.JCubelbl.Text = "JCUBE SHIELDWORKS CORPORATION";
             this.JCubelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

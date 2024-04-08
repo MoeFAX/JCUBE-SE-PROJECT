@@ -535,12 +535,20 @@ namespace JCUBE_SE_PROJECT
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< Updated upstream
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+=======
+            this.label1.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> Stashed changes
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(9, 417);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
+<<<<<<< Updated upstream
             this.label1.Size = new System.Drawing.Size(282, 22);
+=======
+            this.label1.Size = new System.Drawing.Size(299, 27);
+>>>>>>> Stashed changes
             this.label1.TabIndex = 5;
             this.label1.Text = "Inventory Management System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

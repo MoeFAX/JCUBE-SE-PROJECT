@@ -28,45 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArchivesUI));
             this.btnItemList = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.btnStocks = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnItemList
             // 
-            this.btnItemList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.btnItemList.BackColor = System.Drawing.Color.Transparent;
             this.btnItemList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnItemList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnItemList.FlatAppearance.BorderSize = 0;
+            this.btnItemList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnItemList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnItemList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnItemList.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItemList.ForeColor = System.Drawing.Color.White;
-            this.btnItemList.Location = new System.Drawing.Point(378, 143);
+            this.btnItemList.Location = new System.Drawing.Point(548, 299);
+            this.btnItemList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnItemList.Name = "btnItemList";
-            this.btnItemList.Size = new System.Drawing.Size(278, 169);
+            this.btnItemList.Size = new System.Drawing.Size(311, 134);
             this.btnItemList.TabIndex = 2;
             this.btnItemList.Text = "ITEM LIST ARCHIVES";
             this.btnItemList.UseVisualStyleBackColor = false;
             this.btnItemList.Click += new System.EventHandler(this.btnItemList_Click);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.label9.Location = new System.Drawing.Point(12, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(182, 40);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "ARCHIVES";
-            // 
             // btnStocks
             // 
-            this.btnStocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.btnStocks.BackColor = System.Drawing.Color.Transparent;
             this.btnStocks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnStocks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStocks.FlatAppearance.BorderSize = 0;
+            this.btnStocks.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnStocks.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStocks.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStocks.ForeColor = System.Drawing.Color.White;
-            this.btnStocks.Location = new System.Drawing.Point(51, 143);
+            this.btnStocks.Location = new System.Drawing.Point(71, 304);
+            this.btnStocks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStocks.Name = "btnStocks";
-            this.btnStocks.Size = new System.Drawing.Size(278, 169);
+            this.btnStocks.Size = new System.Drawing.Size(303, 129);
             this.btnStocks.TabIndex = 8;
             this.btnStocks.Text = "STOCKS ARCHIVES";
             this.btnStocks.UseVisualStyleBackColor = false;
@@ -74,24 +75,25 @@
             // 
             // ArchivesUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 449);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(961, 553);
             this.Controls.Add(this.btnStocks);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnItemList);
+            this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ArchivesUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ArchivesUI";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnItemList;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnStocks;
     }
 }
