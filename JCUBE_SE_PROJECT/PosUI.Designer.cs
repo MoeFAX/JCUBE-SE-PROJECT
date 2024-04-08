@@ -92,7 +92,7 @@
             this.btnChangePassword.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnChangePassword.FlatAppearance.BorderSize = 0;
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePassword.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePassword.ForeColor = System.Drawing.Color.White;
             this.btnChangePassword.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePassword.Image")));
             this.btnChangePassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -110,7 +110,7 @@
             this.btnDailySales.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDailySales.FlatAppearance.BorderSize = 0;
             this.btnDailySales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDailySales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDailySales.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDailySales.ForeColor = System.Drawing.Color.White;
             this.btnDailySales.Image = ((System.Drawing.Image)(resources.GetObject("btnDailySales.Image")));
             this.btnDailySales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -129,7 +129,7 @@
             this.btnSettlePayment.Enabled = false;
             this.btnSettlePayment.FlatAppearance.BorderSize = 0;
             this.btnSettlePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettlePayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettlePayment.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettlePayment.ForeColor = System.Drawing.Color.White;
             this.btnSettlePayment.Image = ((System.Drawing.Image)(resources.GetObject("btnSettlePayment.Image")));
             this.btnSettlePayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,7 +147,7 @@
             this.btnCart.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCart.FlatAppearance.BorderSize = 0;
             this.btnCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCart.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCart.ForeColor = System.Drawing.Color.White;
             this.btnCart.Image = ((System.Drawing.Image)(resources.GetObject("btnCart.Image")));
             this.btnCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -186,7 +186,7 @@
             // labelJcube
             // 
             this.labelJcube.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelJcube.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJcube.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelJcube.ForeColor = System.Drawing.Color.White;
             this.labelJcube.Location = new System.Drawing.Point(0, 146);
             this.labelJcube.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -212,24 +212,24 @@
             // lblLoggedIn
             // 
             this.lblLoggedIn.AutoSize = true;
-            this.lblLoggedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoggedIn.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedIn.ForeColor = System.Drawing.Color.White;
             this.lblLoggedIn.Location = new System.Drawing.Point(11, 19);
             this.lblLoggedIn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLoggedIn.Name = "lblLoggedIn";
-            this.lblLoggedIn.Size = new System.Drawing.Size(88, 16);
+            this.lblLoggedIn.Size = new System.Drawing.Size(88, 20);
             this.lblLoggedIn.TabIndex = 4;
             this.lblLoggedIn.Text = "Logged in as:";
             // 
             // lblUserRolePOS
             // 
             this.lblUserRolePOS.AutoSize = true;
-            this.lblUserRolePOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserRolePOS.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserRolePOS.ForeColor = System.Drawing.Color.White;
             this.lblUserRolePOS.Location = new System.Drawing.Point(11, 36);
             this.lblUserRolePOS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserRolePOS.Name = "lblUserRolePOS";
-            this.lblUserRolePOS.Size = new System.Drawing.Size(73, 16);
+            this.lblUserRolePOS.Size = new System.Drawing.Size(68, 20);
             this.lblUserRolePOS.TabIndex = 3;
             this.lblUserRolePOS.Text = "UserRole";
             // 
@@ -252,20 +252,12 @@
             // 
             this.POSLoggedInlbl.AutoSize = true;
             this.POSLoggedInlbl.BackColor = System.Drawing.Color.Transparent;
-<<<<<<< Updated upstream
-            this.POSLoggedInlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-=======
             this.POSLoggedInlbl.Font = new System.Drawing.Font("Noto Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
->>>>>>> Stashed changes
             this.POSLoggedInlbl.ForeColor = System.Drawing.SystemColors.Control;
             this.POSLoggedInlbl.Location = new System.Drawing.Point(8, 466);
             this.POSLoggedInlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.POSLoggedInlbl.Name = "POSLoggedInlbl";
-<<<<<<< Updated upstream
-            this.POSLoggedInlbl.Size = new System.Drawing.Size(171, 29);
-=======
             this.POSLoggedInlbl.Size = new System.Drawing.Size(167, 35);
->>>>>>> Stashed changes
             this.POSLoggedInlbl.TabIndex = 10;
             this.POSLoggedInlbl.Text = "Logged in as:";
             this.POSLoggedInlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -274,20 +266,12 @@
             // 
             this.POSNamelbl.AutoSize = true;
             this.POSNamelbl.BackColor = System.Drawing.Color.Transparent;
-<<<<<<< Updated upstream
-            this.POSNamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-=======
             this.POSNamelbl.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
->>>>>>> Stashed changes
             this.POSNamelbl.ForeColor = System.Drawing.Color.White;
             this.POSNamelbl.Location = new System.Drawing.Point(9, 501);
             this.POSNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.POSNamelbl.Name = "POSNamelbl";
-<<<<<<< Updated upstream
-            this.POSNamelbl.Size = new System.Drawing.Size(100, 25);
-=======
             this.POSNamelbl.Size = new System.Drawing.Size(106, 30);
->>>>>>> Stashed changes
             this.POSNamelbl.TabIndex = 9;
             this.POSNamelbl.Text = "Fullname";
             this.POSNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,20 +280,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-<<<<<<< Updated upstream
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-=======
             this.label1.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
->>>>>>> Stashed changes
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(9, 417);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-<<<<<<< Updated upstream
-            this.label1.Size = new System.Drawing.Size(206, 22);
-=======
             this.label1.Size = new System.Drawing.Size(204, 27);
->>>>>>> Stashed changes
             this.label1.TabIndex = 8;
             this.label1.Text = "Point of Sales System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -318,20 +294,12 @@
             // 
             this.JCubelbl.AutoSize = true;
             this.JCubelbl.BackColor = System.Drawing.Color.Transparent;
-<<<<<<< Updated upstream
-            this.JCubelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-=======
             this.JCubelbl.Font = new System.Drawing.Font("Noto Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
->>>>>>> Stashed changes
             this.JCubelbl.ForeColor = System.Drawing.SystemColors.Control;
             this.JCubelbl.Location = new System.Drawing.Point(7, 375);
             this.JCubelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.JCubelbl.Name = "JCubelbl";
-<<<<<<< Updated upstream
-            this.JCubelbl.Size = new System.Drawing.Size(564, 32);
-=======
             this.JCubelbl.Size = new System.Drawing.Size(520, 42);
->>>>>>> Stashed changes
             this.JCubelbl.TabIndex = 7;
             this.JCubelbl.Text = "JCUBE SHIELDWORKS CORPORATION";
             this.JCubelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -345,12 +313,13 @@
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panelSidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PosUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Jcube Point Of Sales";
+            this.Text = "JCube Point of Sales";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PosUI_FormClosing);
             this.Load += new System.EventHandler(this.PosUI_Load);
             this.panelSidebar.ResumeLayout(false);

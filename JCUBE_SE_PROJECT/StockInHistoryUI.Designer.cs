@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockInHistoryUI));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvStockHistory = new System.Windows.Forms.DataGridView();
@@ -56,12 +57,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Noto Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.label1.Location = new System.Drawing.Point(13, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 28);
+            this.label1.Size = new System.Drawing.Size(229, 35);
             this.label1.TabIndex = 9;
             this.label1.Text = "STOCK IN HISTORY";
             // 
@@ -77,7 +78,7 @@
             this.dgvStockHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -98,7 +99,7 @@
             this.dgvStockHistory.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -112,10 +113,18 @@
             this.dgvStockHistory.ReadOnly = true;
             this.dgvStockHistory.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvStockHistory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStockHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvStockHistory.RowHeadersVisible = false;
             this.dgvStockHistory.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvStockHistory.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvStockHistory.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvStockHistory.RowTemplate.Height = 24;
             this.dgvStockHistory.Size = new System.Drawing.Size(896, 461);
             this.dgvStockHistory.TabIndex = 18;
@@ -136,7 +145,7 @@
             this.SIHRefCol.MinimumWidth = 6;
             this.SIHRefCol.Name = "SIHRefCol";
             this.SIHRefCol.ReadOnly = true;
-            this.SIHRefCol.Width = 118;
+            this.SIHRefCol.Width = 115;
             // 
             // SIHInvCodeCol
             // 
@@ -145,7 +154,7 @@
             this.SIHInvCodeCol.MinimumWidth = 6;
             this.SIHInvCodeCol.Name = "SIHInvCodeCol";
             this.SIHInvCodeCol.ReadOnly = true;
-            this.SIHInvCodeCol.Width = 138;
+            this.SIHInvCodeCol.Width = 136;
             // 
             // SIHDescCol
             // 
@@ -162,7 +171,7 @@
             this.SIHQuantCol.MinimumWidth = 6;
             this.SIHQuantCol.Name = "SIHQuantCol";
             this.SIHQuantCol.ReadOnly = true;
-            this.SIHQuantCol.Width = 57;
+            this.SIHQuantCol.Width = 59;
             // 
             // SIHSIDCol
             // 
@@ -171,7 +180,7 @@
             this.SIHSIDCol.MinimumWidth = 6;
             this.SIHSIDCol.Name = "SIHSIDCol";
             this.SIHSIDCol.ReadOnly = true;
-            this.SIHSIDCol.Width = 126;
+            this.SIHSIDCol.Width = 124;
             // 
             // SIHSIBCol
             // 
@@ -180,7 +189,7 @@
             this.SIHSIBCol.MinimumWidth = 6;
             this.SIHSIBCol.Name = "SIHSIBCol";
             this.SIHSIBCol.ReadOnly = true;
-            this.SIHSIBCol.Width = 111;
+            this.SIHSIBCol.Width = 108;
             // 
             // SIHStatusCol
             // 
@@ -189,7 +198,7 @@
             this.SIHStatusCol.MinimumWidth = 6;
             this.SIHStatusCol.Name = "SIHStatusCol";
             this.SIHStatusCol.ReadOnly = true;
-            this.SIHStatusCol.Width = 77;
+            this.SIHStatusCol.Width = 78;
             // 
             // SIHSupplierCol
             // 
@@ -198,58 +207,61 @@
             this.SIHSupplierCol.MinimumWidth = 6;
             this.SIHSupplierCol.Name = "SIHSupplierCol";
             this.SIHSupplierCol.ReadOnly = true;
-            this.SIHSupplierCol.Width = 92;
+            this.SIHSupplierCol.Width = 90;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(290, 546);
+            this.label2.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(241, 544);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 21);
+            this.label2.Size = new System.Drawing.Size(37, 27);
             this.label2.TabIndex = 24;
             this.label2.Text = "To:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 545);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(177, 21);
+            this.label5.Size = new System.Drawing.Size(108, 27);
             this.label5.TabIndex = 22;
-            this.label5.Text = "Filter By Date From:";
+            this.label5.Text = "Filter From:";
             // 
             // dtpStartDate
             // 
             this.dtpStartDate.CustomFormat = "MM/dd/yyyy";
+            this.dtpStartDate.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(185, 546);
+            this.dtpStartDate.Location = new System.Drawing.Point(123, 547);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(99, 22);
+            this.dtpStartDate.Size = new System.Drawing.Size(99, 25);
             this.dtpStartDate.TabIndex = 30;
             // 
             // dtpEndDate
             // 
             this.dtpEndDate.CustomFormat = "MM/dd/yyyy";
+            this.dtpEndDate.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndDate.Location = new System.Drawing.Point(325, 546);
+            this.dtpEndDate.Location = new System.Drawing.Point(281, 545);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(99, 22);
+            this.dtpEndDate.Size = new System.Drawing.Size(99, 25);
             this.dtpEndDate.TabIndex = 31;
             // 
             // PrintStockHistory
             // 
+            this.PrintStockHistory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PrintStockHistory.FlatAppearance.BorderSize = 0;
             this.PrintStockHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PrintStockHistory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintStockHistory.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrintStockHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.PrintStockHistory.Image = ((System.Drawing.Image)(resources.GetObject("PrintStockHistory.Image")));
             this.PrintStockHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.PrintStockHistory.Location = new System.Drawing.Point(559, 542);
+            this.PrintStockHistory.Location = new System.Drawing.Point(693, 540);
             this.PrintStockHistory.MinimumSize = new System.Drawing.Size(20, 20);
             this.PrintStockHistory.Name = "PrintStockHistory";
-            this.PrintStockHistory.Size = new System.Drawing.Size(171, 28);
+            this.PrintStockHistory.Size = new System.Drawing.Size(192, 34);
             this.PrintStockHistory.TabIndex = 32;
             this.PrintStockHistory.Text = "Print Preview";
             this.PrintStockHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -259,15 +271,16 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(430, 542);
+            this.button4.Location = new System.Drawing.Point(564, 540);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 34);
+            this.button4.Size = new System.Drawing.Size(123, 34);
             this.button4.TabIndex = 33;
             this.button4.Text = "Refresh";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

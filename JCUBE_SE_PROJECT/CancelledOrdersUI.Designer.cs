@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CancelledOrdersUI));
             this.dgvCancel = new System.Windows.Forms.DataGridView();
             this.CONoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,7 +75,7 @@
             this.dgvCancel.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -97,7 +98,7 @@
             this.dgvCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -112,10 +113,17 @@
             this.dgvCancel.ReadOnly = true;
             this.dgvCancel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvCancel.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCancel.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCancel.RowHeadersVisible = false;
             this.dgvCancel.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvCancel.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvCancel.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCancel.RowTemplate.Height = 24;
             this.dgvCancel.Size = new System.Drawing.Size(888, 462);
             this.dgvCancel.TabIndex = 22;
@@ -138,7 +146,7 @@
             this.COTransacCol.MinimumWidth = 6;
             this.COTransacCol.Name = "COTransacCol";
             this.COTransacCol.ReadOnly = true;
-            this.COTransacCol.Width = 144;
+            this.COTransacCol.Width = 140;
             // 
             // COInvCodeCol
             // 
@@ -147,7 +155,7 @@
             this.COInvCodeCol.MinimumWidth = 6;
             this.COInvCodeCol.Name = "COInvCodeCol";
             this.COInvCodeCol.ReadOnly = true;
-            this.COInvCodeCol.Width = 104;
+            this.COInvCodeCol.Width = 103;
             // 
             // COPriceCol
             // 
@@ -156,7 +164,7 @@
             this.COPriceCol.MinimumWidth = 6;
             this.COPriceCol.Name = "COPriceCol";
             this.COPriceCol.ReadOnly = true;
-            this.COPriceCol.Width = 70;
+            this.COPriceCol.Width = 69;
             // 
             // COQuantCol
             // 
@@ -165,7 +173,7 @@
             this.COQuantCol.MinimumWidth = 6;
             this.COQuantCol.Name = "COQuantCol";
             this.COQuantCol.ReadOnly = true;
-            this.COQuantCol.Width = 57;
+            this.COQuantCol.Width = 59;
             // 
             // COTotalCol
             // 
@@ -174,7 +182,7 @@
             this.COTotalCol.MinimumWidth = 6;
             this.COTotalCol.Name = "COTotalCol";
             this.COTotalCol.ReadOnly = true;
-            this.COTotalCol.Width = 70;
+            this.COTotalCol.Width = 69;
             // 
             // CODateCol
             // 
@@ -183,7 +191,7 @@
             this.CODateCol.MinimumWidth = 6;
             this.CODateCol.Name = "CODateCol";
             this.CODateCol.ReadOnly = true;
-            this.CODateCol.Width = 67;
+            this.CODateCol.Width = 68;
             // 
             // COCancByCol
             // 
@@ -192,7 +200,7 @@
             this.COCancByCol.MinimumWidth = 6;
             this.COCancByCol.Name = "COCancByCol";
             this.COCancByCol.ReadOnly = true;
-            this.COCancByCol.Width = 126;
+            this.COCancByCol.Width = 119;
             // 
             // COReasonCol
             // 
@@ -209,7 +217,7 @@
             this.COActionCol.MinimumWidth = 6;
             this.COActionCol.Name = "COActionCol";
             this.COActionCol.ReadOnly = true;
-            this.COActionCol.Width = 77;
+            this.COActionCol.Width = 79;
             // 
             // Delete
             // 
@@ -239,9 +247,10 @@
             // PrintCnclOrders
             // 
             this.PrintCnclOrders.BackColor = System.Drawing.Color.White;
+            this.PrintCnclOrders.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PrintCnclOrders.FlatAppearance.BorderSize = 0;
             this.PrintCnclOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PrintCnclOrders.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintCnclOrders.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrintCnclOrders.ForeColor = System.Drawing.Color.Black;
             this.PrintCnclOrders.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_print_30;
             this.PrintCnclOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -257,20 +266,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Noto Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.label1.Location = new System.Drawing.Point(18, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(289, 34);
+            this.label1.Size = new System.Drawing.Size(298, 42);
             this.label1.TabIndex = 1;
             this.label1.Text = "CANCELLED ORDERS";
             // 
             // btnLoadCancelled
             // 
             this.btnLoadCancelled.BackColor = System.Drawing.Color.White;
+            this.btnLoadCancelled.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoadCancelled.FlatAppearance.BorderSize = 0;
             this.btnLoadCancelled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadCancelled.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadCancelled.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadCancelled.ForeColor = System.Drawing.Color.Black;
             this.btnLoadCancelled.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadCancelled.Image")));
             this.btnLoadCancelled.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -299,40 +309,40 @@
             // dateToCancelled
             // 
             this.dateToCancelled.CalendarFont = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateToCancelled.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateToCancelled.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateToCancelled.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateToCancelled.Location = new System.Drawing.Point(360, 19);
             this.dateToCancelled.Name = "dateToCancelled";
-            this.dateToCancelled.Size = new System.Drawing.Size(144, 30);
+            this.dateToCancelled.Size = new System.Drawing.Size(144, 32);
             this.dateToCancelled.TabIndex = 41;
             // 
             // dateFromCancelled
             // 
             this.dateFromCancelled.CalendarFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateFromCancelled.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFromCancelled.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFromCancelled.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateFromCancelled.Location = new System.Drawing.Point(139, 18);
             this.dateFromCancelled.Name = "dateFromCancelled";
-            this.dateFromCancelled.Size = new System.Drawing.Size(146, 30);
+            this.dateFromCancelled.Size = new System.Drawing.Size(146, 32);
             this.dateFromCancelled.TabIndex = 40;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(303, 22);
+            this.label3.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(303, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 23);
+            this.label3.Size = new System.Drawing.Size(40, 30);
             this.label3.TabIndex = 39;
             this.label3.Text = "To:";
             // 
             // flterLbl
             // 
             this.flterLbl.AutoSize = true;
-            this.flterLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flterLbl.Location = new System.Drawing.Point(20, 21);
+            this.flterLbl.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flterLbl.Location = new System.Drawing.Point(20, 19);
             this.flterLbl.Name = "flterLbl";
-            this.flterLbl.Size = new System.Drawing.Size(113, 23);
+            this.flterLbl.Size = new System.Drawing.Size(118, 30);
             this.flterLbl.TabIndex = 37;
             this.flterLbl.Text = "Filter From:";
             // 

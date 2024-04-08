@@ -34,6 +34,7 @@ namespace JCUBE_SE_PROJECT
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPrintSold = new System.Windows.Forms.Button();
             this.btnTopSelling = new System.Windows.Forms.Button();
@@ -80,7 +81,7 @@ namespace JCUBE_SE_PROJECT
             this.btnPrintSold.BackColor = System.Drawing.Color.White;
             this.btnPrintSold.FlatAppearance.BorderSize = 0;
             this.btnPrintSold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintSold.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintSold.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintSold.ForeColor = System.Drawing.Color.Black;
             this.btnPrintSold.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_print_30;
             this.btnPrintSold.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -98,7 +99,7 @@ namespace JCUBE_SE_PROJECT
             this.btnTopSelling.BackColor = System.Drawing.Color.Transparent;
             this.btnTopSelling.FlatAppearance.BorderSize = 0;
             this.btnTopSelling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTopSelling.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTopSelling.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTopSelling.ForeColor = System.Drawing.Color.Black;
             this.btnTopSelling.Image = ((System.Drawing.Image)(resources.GetObject("btnTopSelling.Image")));
             this.btnTopSelling.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -116,7 +117,7 @@ namespace JCUBE_SE_PROJECT
             this.btnLoadSold.BackColor = System.Drawing.Color.White;
             this.btnLoadSold.FlatAppearance.BorderSize = 0;
             this.btnLoadSold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadSold.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadSold.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadSold.ForeColor = System.Drawing.Color.Black;
             this.btnLoadSold.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadSold.Image")));
             this.btnLoadSold.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -132,11 +133,11 @@ namespace JCUBE_SE_PROJECT
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Noto Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.label1.Location = new System.Drawing.Point(7, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 34);
+            this.label1.Size = new System.Drawing.Size(183, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "SOLD ITEMS";
             // 
@@ -179,60 +180,60 @@ namespace JCUBE_SE_PROJECT
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(627, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 23);
+            this.label2.Size = new System.Drawing.Size(116, 30);
             this.label2.TabIndex = 19;
             this.label2.Text = "Total Sales:";
             // 
             // dateToSold
             // 
             this.dateToSold.CalendarFont = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateToSold.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateToSold.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateToSold.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateToSold.Location = new System.Drawing.Point(366, 20);
             this.dateToSold.Name = "dateToSold";
-            this.dateToSold.Size = new System.Drawing.Size(144, 30);
+            this.dateToSold.Size = new System.Drawing.Size(144, 32);
             this.dateToSold.TabIndex = 18;
             // 
             // dateFromSold
             // 
             this.dateFromSold.CalendarFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateFromSold.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFromSold.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFromSold.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateFromSold.Location = new System.Drawing.Point(152, 20);
             this.dateFromSold.Name = "dateFromSold";
-            this.dateFromSold.Size = new System.Drawing.Size(142, 30);
+            this.dateFromSold.Size = new System.Drawing.Size(142, 32);
             this.dateFromSold.TabIndex = 17;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(310, 24);
+            this.label3.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(310, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 23);
+            this.label3.Size = new System.Drawing.Size(40, 30);
             this.label3.TabIndex = 16;
             this.label3.Text = "To:";
             // 
             // flterLbl
             // 
             this.flterLbl.AutoSize = true;
-            this.flterLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flterLbl.Location = new System.Drawing.Point(29, 24);
+            this.flterLbl.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flterLbl.Location = new System.Drawing.Point(31, 20);
             this.flterLbl.Name = "flterLbl";
-            this.flterLbl.Size = new System.Drawing.Size(113, 23);
+            this.flterLbl.Size = new System.Drawing.Size(118, 30);
             this.flterLbl.TabIndex = 14;
             this.flterLbl.Text = "Filter From:";
             // 
             // SoldTotal
             // 
             this.SoldTotal.AutoSize = true;
-            this.SoldTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoldTotal.Location = new System.Drawing.Point(792, 24);
+            this.SoldTotal.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SoldTotal.Location = new System.Drawing.Point(753, 24);
             this.SoldTotal.Name = "SoldTotal";
-            this.SoldTotal.Size = new System.Drawing.Size(48, 23);
+            this.SoldTotal.Size = new System.Drawing.Size(51, 30);
             this.SoldTotal.TabIndex = 10;
             this.SoldTotal.Text = "0.00";
             // 
@@ -248,7 +249,7 @@ namespace JCUBE_SE_PROJECT
             this.dgvSoldItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -267,7 +268,7 @@ namespace JCUBE_SE_PROJECT
             this.dgvSoldItems.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -280,10 +281,18 @@ namespace JCUBE_SE_PROJECT
             this.dgvSoldItems.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSoldItems.Name = "dgvSoldItems";
             this.dgvSoldItems.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSoldItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSoldItems.RowHeadersVisible = false;
             this.dgvSoldItems.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvSoldItems.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvSoldItems.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSoldItems.RowTemplate.Height = 24;
             this.dgvSoldItems.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSoldItems.Size = new System.Drawing.Size(871, 407);
@@ -304,7 +313,7 @@ namespace JCUBE_SE_PROJECT
             this.InventoryCode.HeaderText = "Inventory Code";
             this.InventoryCode.MinimumWidth = 6;
             this.InventoryCode.Name = "InventoryCode";
-            this.InventoryCode.Width = 138;
+            this.InventoryCode.Width = 136;
             // 
             // Description
             // 
@@ -327,7 +336,7 @@ namespace JCUBE_SE_PROJECT
             this.Qty.HeaderText = "Quantity";
             this.Qty.MinimumWidth = 6;
             this.Qty.Name = "Qty";
-            this.Qty.Width = 90;
+            this.Qty.Width = 95;
             // 
             // Discount
             // 
@@ -335,7 +344,7 @@ namespace JCUBE_SE_PROJECT
             this.Discount.HeaderText = "Discount";
             this.Discount.MinimumWidth = 6;
             this.Discount.Name = "Discount";
-            this.Discount.Width = 94;
+            this.Discount.Width = 95;
             // 
             // Total
             // 
@@ -343,7 +352,7 @@ namespace JCUBE_SE_PROJECT
             this.Total.HeaderText = "Total";
             this.Total.MinimumWidth = 6;
             this.Total.Name = "Total";
-            this.Total.Width = 70;
+            this.Total.Width = 69;
             // 
             // SoldItems
             // 

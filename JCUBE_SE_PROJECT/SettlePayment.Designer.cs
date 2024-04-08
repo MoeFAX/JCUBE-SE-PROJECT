@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettlePayment));
             this.txtSale = new MetroFramework.Controls.MetroTextBox();
             this.txtCash = new MetroFramework.Controls.MetroTextBox();
             this.txtChange = new MetroFramework.Controls.MetroTextBox();
@@ -63,9 +64,9 @@
             // 
             this.txtSale.CustomButton.Image = null;
             this.txtSale.CustomButton.Location = new System.Drawing.Point(313, 1);
-            this.txtSale.CustomButton.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSale.CustomButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtSale.CustomButton.Name = "";
-            this.txtSale.CustomButton.Size = new System.Drawing.Size(35, 35);
+            this.txtSale.CustomButton.Size = new System.Drawing.Size(35, 28);
             this.txtSale.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtSale.CustomButton.TabIndex = 1;
             this.txtSale.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -75,7 +76,7 @@
             this.txtSale.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtSale.Lines = new string[0];
             this.txtSale.Location = new System.Drawing.Point(143, 10);
-            this.txtSale.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSale.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtSale.MaxLength = 32767;
             this.txtSale.Multiline = true;
             this.txtSale.Name = "txtSale";
@@ -99,9 +100,9 @@
             // 
             this.txtCash.CustomButton.Image = null;
             this.txtCash.CustomButton.Location = new System.Drawing.Point(313, 1);
-            this.txtCash.CustomButton.Margin = new System.Windows.Forms.Padding(5);
+            this.txtCash.CustomButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtCash.CustomButton.Name = "";
-            this.txtCash.CustomButton.Size = new System.Drawing.Size(35, 35);
+            this.txtCash.CustomButton.Size = new System.Drawing.Size(35, 28);
             this.txtCash.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCash.CustomButton.TabIndex = 1;
             this.txtCash.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -110,7 +111,7 @@
             this.txtCash.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCash.Lines = new string[0];
             this.txtCash.Location = new System.Drawing.Point(143, 63);
-            this.txtCash.Margin = new System.Windows.Forms.Padding(5);
+            this.txtCash.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtCash.MaxLength = 32767;
             this.txtCash.Multiline = true;
             this.txtCash.Name = "txtCash";
@@ -137,9 +138,9 @@
             // 
             this.txtChange.CustomButton.Image = null;
             this.txtChange.CustomButton.Location = new System.Drawing.Point(313, 1);
-            this.txtChange.CustomButton.Margin = new System.Windows.Forms.Padding(5);
+            this.txtChange.CustomButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtChange.CustomButton.Name = "";
-            this.txtChange.CustomButton.Size = new System.Drawing.Size(35, 35);
+            this.txtChange.CustomButton.Size = new System.Drawing.Size(35, 28);
             this.txtChange.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtChange.CustomButton.TabIndex = 1;
             this.txtChange.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -149,7 +150,7 @@
             this.txtChange.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtChange.Lines = new string[0];
             this.txtChange.Location = new System.Drawing.Point(143, 116);
-            this.txtChange.Margin = new System.Windows.Forms.Padding(5);
+            this.txtChange.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtChange.MaxLength = 32767;
             this.txtChange.Multiline = true;
             this.txtChange.Name = "txtChange";
@@ -174,7 +175,7 @@
             this.btn1.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.btn1.Location = new System.Drawing.Point(36, 516);
-            this.btn1.Margin = new System.Windows.Forms.Padding(5);
+            this.btn1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(80, 74);
             this.btn1.TabIndex = 3;
@@ -192,7 +193,7 @@
             this.btnEnter.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btnEnter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(155)))), ((int)(((byte)(97)))));
             this.btnEnter.Location = new System.Drawing.Point(36, 615);
-            this.btnEnter.Margin = new System.Windows.Forms.Padding(5);
+            this.btnEnter.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.Size = new System.Drawing.Size(444, 64);
             this.btnEnter.TabIndex = 4;
@@ -209,7 +210,7 @@
             this.btn2.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.btn2.Location = new System.Drawing.Point(158, 516);
-            this.btn2.Margin = new System.Windows.Forms.Padding(5);
+            this.btn2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(80, 74);
             this.btn2.TabIndex = 5;
@@ -227,7 +228,7 @@
             this.btn3.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.btn3.Location = new System.Drawing.Point(278, 516);
-            this.btn3.Margin = new System.Windows.Forms.Padding(5);
+            this.btn3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(80, 74);
             this.btn3.TabIndex = 6;
@@ -245,7 +246,7 @@
             this.btn00.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn00.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.btn00.Location = new System.Drawing.Point(400, 516);
-            this.btn00.Margin = new System.Windows.Forms.Padding(5);
+            this.btn00.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn00.Name = "btn00";
             this.btn00.Size = new System.Drawing.Size(80, 74);
             this.btn00.TabIndex = 7;
@@ -264,7 +265,7 @@
             this.btn4.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.btn4.Location = new System.Drawing.Point(36, 416);
-            this.btn4.Margin = new System.Windows.Forms.Padding(5);
+            this.btn4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(80, 74);
             this.btn4.TabIndex = 8;
@@ -283,7 +284,7 @@
             this.btn5.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.btn5.Location = new System.Drawing.Point(158, 416);
-            this.btn5.Margin = new System.Windows.Forms.Padding(5);
+            this.btn5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(80, 74);
             this.btn5.TabIndex = 9;
@@ -302,7 +303,7 @@
             this.btn6.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.btn6.Location = new System.Drawing.Point(278, 416);
-            this.btn6.Margin = new System.Windows.Forms.Padding(5);
+            this.btn6.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(80, 74);
             this.btn6.TabIndex = 10;
@@ -321,7 +322,7 @@
             this.btn0.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.btn0.Location = new System.Drawing.Point(400, 416);
-            this.btn0.Margin = new System.Windows.Forms.Padding(5);
+            this.btn0.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(80, 74);
             this.btn0.TabIndex = 11;
@@ -340,7 +341,7 @@
             this.btn7.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.btn7.Location = new System.Drawing.Point(36, 316);
-            this.btn7.Margin = new System.Windows.Forms.Padding(5);
+            this.btn7.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(80, 74);
             this.btn7.TabIndex = 12;
@@ -359,7 +360,7 @@
             this.btn8.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.btn8.Location = new System.Drawing.Point(158, 316);
-            this.btn8.Margin = new System.Windows.Forms.Padding(5);
+            this.btn8.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(80, 74);
             this.btn8.TabIndex = 13;
@@ -378,7 +379,7 @@
             this.btn9.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.btn9.Location = new System.Drawing.Point(278, 316);
-            this.btn9.Margin = new System.Windows.Forms.Padding(5);
+            this.btn9.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(80, 74);
             this.btn9.TabIndex = 14;
@@ -397,7 +398,7 @@
             this.btnc.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btnc.ForeColor = System.Drawing.Color.White;
             this.btnc.Location = new System.Drawing.Point(400, 316);
-            this.btnc.Margin = new System.Windows.Forms.Padding(5);
+            this.btnc.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnc.Name = "btnc";
             this.btnc.Size = new System.Drawing.Size(80, 74);
             this.btnc.TabIndex = 15;
@@ -411,39 +412,39 @@
             // lblChange
             // 
             this.lblChange.AutoSize = true;
-            this.lblChange.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChange.Font = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChange.Location = new System.Drawing.Point(17, 123);
             this.lblChange.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChange.Name = "lblChange";
-            this.lblChange.Size = new System.Drawing.Size(72, 18);
+            this.lblChange.Size = new System.Drawing.Size(71, 23);
             this.lblChange.TabIndex = 16;
             this.lblChange.Text = "Change:";
             // 
             // lblPayment
             // 
             this.lblPayment.AutoSize = true;
-            this.lblPayment.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayment.Font = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPayment.Location = new System.Drawing.Point(17, 70);
             this.lblPayment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPayment.Name = "lblPayment";
-            this.lblPayment.Size = new System.Drawing.Size(76, 18);
+            this.lblPayment.Size = new System.Drawing.Size(82, 23);
             this.lblPayment.TabIndex = 17;
             this.lblPayment.Text = "Payment:";
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Font = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPrice.Location = new System.Drawing.Point(17, 17);
             this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(87, 18);
+            this.lblTotalPrice.Size = new System.Drawing.Size(94, 23);
             this.lblTotalPrice.TabIndex = 18;
             this.lblTotalPrice.Text = "Total Price:";
             // 
             // lblCustName
             // 
-            this.lblCustName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustName.Font = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustName.Location = new System.Drawing.Point(16, 165);
             this.lblCustName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCustName.Name = "lblCustName";
@@ -459,9 +460,9 @@
             // 
             this.txtCustName.CustomButton.Image = null;
             this.txtCustName.CustomButton.Location = new System.Drawing.Point(313, 1);
-            this.txtCustName.CustomButton.Margin = new System.Windows.Forms.Padding(5);
+            this.txtCustName.CustomButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtCustName.CustomButton.Name = "";
-            this.txtCustName.CustomButton.Size = new System.Drawing.Size(35, 35);
+            this.txtCustName.CustomButton.Size = new System.Drawing.Size(35, 28);
             this.txtCustName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCustName.CustomButton.TabIndex = 1;
             this.txtCustName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -470,7 +471,7 @@
             this.txtCustName.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCustName.Lines = new string[0];
             this.txtCustName.Location = new System.Drawing.Point(141, 170);
-            this.txtCustName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtCustName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtCustName.MaxLength = 32767;
             this.txtCustName.Multiline = true;
             this.txtCustName.Name = "txtCustName";
@@ -490,18 +491,18 @@
             // 
             // lblTin
             // 
-            this.lblTin.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTin.Font = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTin.Location = new System.Drawing.Point(17, 213);
             this.lblTin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTin.Name = "lblTin";
             this.lblTin.Size = new System.Drawing.Size(116, 48);
             this.lblTin.TabIndex = 21;
-            this.lblTin.Text = "TIN#";
+            this.lblTin.Text = "TIN#:";
             this.lblTin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblMode
             // 
-            this.lblMode.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMode.Font = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMode.Location = new System.Drawing.Point(16, 261);
             this.lblMode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMode.Name = "lblMode";
@@ -517,9 +518,9 @@
             // 
             this.txtTin.CustomButton.Image = null;
             this.txtTin.CustomButton.Location = new System.Drawing.Point(313, 1);
-            this.txtTin.CustomButton.Margin = new System.Windows.Forms.Padding(5);
+            this.txtTin.CustomButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtTin.CustomButton.Name = "";
-            this.txtTin.CustomButton.Size = new System.Drawing.Size(35, 35);
+            this.txtTin.CustomButton.Size = new System.Drawing.Size(35, 28);
             this.txtTin.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtTin.CustomButton.TabIndex = 1;
             this.txtTin.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -528,7 +529,7 @@
             this.txtTin.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtTin.Lines = new string[0];
             this.txtTin.Location = new System.Drawing.Point(141, 218);
-            this.txtTin.Margin = new System.Windows.Forms.Padding(5);
+            this.txtTin.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtTin.MaxLength = 32767;
             this.txtTin.Multiline = true;
             this.txtTin.Name = "txtTin";
@@ -545,29 +546,28 @@
             this.txtTin.UseSelectable = true;
             this.txtTin.WaterMark = "(000-000-000-000)";
             this.txtTin.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtTin.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTin.WaterMarkFont = new System.Drawing.Font("Noto Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTin_KeyPress);
             // 
             // comboMode
             // 
             this.comboMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboMode.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboMode.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboMode.FormattingEnabled = true;
             this.comboMode.Items.AddRange(new object[] {
             "Cash",
             "Cheque",
             "GCash",
             "Bank"});
-            this.comboMode.Location = new System.Drawing.Point(179, 270);
-            this.comboMode.Margin = new System.Windows.Forms.Padding(4);
+            this.comboMode.Location = new System.Drawing.Point(179, 267);
+            this.comboMode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboMode.Name = "comboMode";
-            this.comboMode.Size = new System.Drawing.Size(310, 31);
+            this.comboMode.Size = new System.Drawing.Size(310, 38);
             this.comboMode.TabIndex = 25;
             // 
             // SettlePayment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(516, 708);
             this.Controls.Add(this.comboMode);
@@ -596,12 +596,13 @@
             this.Controls.Add(this.txtCash);
             this.Controls.Add(this.txtSale);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SettlePayment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SettlePayment";
+            this.Text = "Settle Payment";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SettlePayment_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();

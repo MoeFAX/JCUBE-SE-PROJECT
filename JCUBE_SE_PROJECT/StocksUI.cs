@@ -59,7 +59,7 @@ namespace JCUBE_SE_PROJECT
 
                         string stockID = dgvStockEntry.Rows[e.RowIndex].Cells["StockID"].Value.ToString();
                         string status = dgvStockEntry.Rows[e.RowIndex].Cells["Status"].Value.ToString();
-                        if (status == "Delivered")
+                        /*if (status == "Delivered")
                         {
                             // Retrieve the current value of the stocks from the StockEntry form
                             int currentStocks = Convert.ToInt32(dgvStockEntry.Rows[e.RowIndex].Cells["Stocks"].Value);
@@ -73,7 +73,7 @@ namespace JCUBE_SE_PROJECT
                                 updateQtyCmd.ExecuteNonQuery();
                                 cn.Close();
                             }
-                        }
+                        }*/
                         cn.Open();
                         cm = new SqlCommand("INSERT INTO tbStockEntryArchive(StockID, RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate) SELECT StockID, RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate FROM tbStockEntry WHERE StockID = @StockID DELETE FROM tbStockEntry WHERE StockID = @StockID", cn);
                         cm.Parameters.AddWithValue("@StockID", stockID);

@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PrintItemListArchives = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -61,24 +62,24 @@
             // 
             this.panel1.Controls.Add(this.PrintItemListArchives);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 483);
+            this.panel1.Location = new System.Drawing.Point(0, 484);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(981, 70);
+            this.panel1.Size = new System.Drawing.Size(1067, 70);
             this.panel1.TabIndex = 2;
             // 
             // PrintItemListArchives
             // 
             this.PrintItemListArchives.FlatAppearance.BorderSize = 0;
             this.PrintItemListArchives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PrintItemListArchives.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintItemListArchives.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrintItemListArchives.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.PrintItemListArchives.Image = ((System.Drawing.Image)(resources.GetObject("PrintItemListArchives.Image")));
             this.PrintItemListArchives.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.PrintItemListArchives.Location = new System.Drawing.Point(770, 13);
+            this.PrintItemListArchives.Location = new System.Drawing.Point(844, 13);
             this.PrintItemListArchives.MinimumSize = new System.Drawing.Size(20, 20);
             this.PrintItemListArchives.Name = "PrintItemListArchives";
-            this.PrintItemListArchives.Size = new System.Drawing.Size(169, 45);
+            this.PrintItemListArchives.Size = new System.Drawing.Size(188, 45);
             this.PrintItemListArchives.TabIndex = 34;
             this.PrintItemListArchives.Text = "Print Preview";
             this.PrintItemListArchives.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -92,27 +93,27 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(981, 70);
+            this.panel2.Size = new System.Drawing.Size(1067, 70);
             this.panel2.TabIndex = 3;
             // 
             // ItemListArchivesLabel
             // 
             this.ItemListArchivesLabel.AutoSize = true;
-            this.ItemListArchivesLabel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemListArchivesLabel.Font = new System.Drawing.Font("Noto Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemListArchivesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.ItemListArchivesLabel.Location = new System.Drawing.Point(21, 22);
             this.ItemListArchivesLabel.Name = "ItemListArchivesLabel";
-            this.ItemListArchivesLabel.Size = new System.Drawing.Size(204, 27);
+            this.ItemListArchivesLabel.Size = new System.Drawing.Size(222, 35);
             this.ItemListArchivesLabel.TabIndex = 0;
             this.ItemListArchivesLabel.Text = "Item List Archives";
             // 
             // side2
             // 
             this.side2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.side2.Location = new System.Drawing.Point(961, 70);
+            this.side2.Location = new System.Drawing.Point(1047, 70);
             this.side2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.side2.Name = "side2";
-            this.side2.Size = new System.Drawing.Size(20, 413);
+            this.side2.Size = new System.Drawing.Size(20, 414);
             this.side2.TabIndex = 5;
             // 
             // panel3
@@ -121,7 +122,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 70);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(20, 413);
+            this.panel3.Size = new System.Drawing.Size(20, 414);
             this.panel3.TabIndex = 6;
             // 
             // dgvItemListArchive
@@ -136,7 +137,7 @@
             this.dgvItemListArchive.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -159,7 +160,7 @@
             this.dgvItemListArchive.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -173,12 +174,20 @@
             this.dgvItemListArchive.Name = "dgvItemListArchive";
             this.dgvItemListArchive.ReadOnly = true;
             this.dgvItemListArchive.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItemListArchive.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItemListArchive.RowHeadersVisible = false;
             this.dgvItemListArchive.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvItemListArchive.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvItemListArchive.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItemListArchive.RowTemplate.Height = 24;
-            this.dgvItemListArchive.Size = new System.Drawing.Size(941, 413);
+            this.dgvItemListArchive.Size = new System.Drawing.Size(1027, 414);
             this.dgvItemListArchive.TabIndex = 18;
             this.dgvItemListArchive.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemListArchive_CellContentClick);
             // 
@@ -208,7 +217,7 @@
             this.ItemCode.MinimumWidth = 6;
             this.ItemCode.Name = "ItemCode";
             this.ItemCode.ReadOnly = true;
-            this.ItemCode.Width = 104;
+            this.ItemCode.Width = 103;
             // 
             // Description
             // 
@@ -225,7 +234,7 @@
             this.AcquiredCost.MinimumWidth = 6;
             this.AcquiredCost.Name = "AcquiredCost";
             this.AcquiredCost.ReadOnly = true;
-            this.AcquiredCost.Width = 131;
+            this.AcquiredCost.Width = 126;
             // 
             // bid
             // 
@@ -234,7 +243,7 @@
             this.bid.MinimumWidth = 6;
             this.bid.Name = "bid";
             this.bid.ReadOnly = true;
-            this.bid.Width = 75;
+            this.bid.Width = 76;
             // 
             // cid
             // 
@@ -243,7 +252,7 @@
             this.cid.MinimumWidth = 6;
             this.cid.Name = "cid";
             this.cid.ReadOnly = true;
-            this.cid.Width = 97;
+            this.cid.Width = 95;
             // 
             // Price
             // 
@@ -252,7 +261,7 @@
             this.Price.MinimumWidth = 6;
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
-            this.Price.Width = 65;
+            this.Price.Width = 60;
             // 
             // ReOrder
             // 
@@ -261,7 +270,7 @@
             this.ReOrder.MinimumWidth = 6;
             this.ReOrder.Name = "ReOrder";
             this.ReOrder.ReadOnly = true;
-            this.ReOrder.Width = 98;
+            this.ReOrder.Width = 95;
             // 
             // Restore
             // 
@@ -309,7 +318,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 553);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.dgvItemListArchive);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.side2);

@@ -19,15 +19,14 @@ namespace JCUBE_SE_PROJECT
             loggedInUsername = username;
         }
 
-        private void btnItemList_Click(object sender, EventArgs e)
-        {
-            ItemListArchives moduleForm = new ItemListArchives(loggedInUsername);
-            moduleForm.ShowDialog();
-        }
-
         private void btnStocks_Click(object sender, EventArgs e)
         {
             StocksArchive moduleForm = new StocksArchive(loggedInUsername);
+            moduleForm.ShowDialog();
+        }
+        private void btnItemList_Click(object sender, EventArgs e)
+        {
+            ItemListArchives moduleForm = new ItemListArchives(loggedInUsername);
             moduleForm.ShowDialog();
         }
     }

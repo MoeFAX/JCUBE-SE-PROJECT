@@ -31,9 +31,10 @@ namespace JCUBE_SE_PROJECT
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TopSelling));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReturn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTopSell = new System.Windows.Forms.DataGridView();
@@ -53,6 +54,7 @@ namespace JCUBE_SE_PROJECT
             this.dateFromTopSell = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.flterLbl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopSell)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -63,13 +65,13 @@ namespace JCUBE_SE_PROJECT
             this.btnReturn.BackColor = System.Drawing.Color.Transparent;
             this.btnReturn.FlatAppearance.BorderSize = 0;
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.ForeColor = System.Drawing.Color.Black;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
             this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReturn.Location = new System.Drawing.Point(708, 21);
+            this.btnReturn.Location = new System.Drawing.Point(707, 21);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(95, 30);
+            this.btnReturn.Size = new System.Drawing.Size(103, 30);
             this.btnReturn.TabIndex = 1;
             this.btnReturn.Text = "Return";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -79,11 +81,11 @@ namespace JCUBE_SE_PROJECT
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Noto Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.label1.Location = new System.Drawing.Point(7, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 34);
+            this.label1.Size = new System.Drawing.Size(288, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "TOP SELLING ITEMS";
             // 
@@ -97,15 +99,15 @@ namespace JCUBE_SE_PROJECT
             this.dgvTopSell.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTopSell.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvTopSell.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTopSell.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTopSell.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTopSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTopSell.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
@@ -114,14 +116,14 @@ namespace JCUBE_SE_PROJECT
             this.Qty,
             this.Total});
             this.dgvTopSell.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTopSell.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTopSell.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTopSell.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTopSell.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvTopSell.EnableHeadersVisualStyles = false;
@@ -129,10 +131,18 @@ namespace JCUBE_SE_PROJECT
             this.dgvTopSell.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTopSell.Name = "dgvTopSell";
             this.dgvTopSell.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTopSell.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTopSell.RowHeadersVisible = false;
             this.dgvTopSell.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvTopSell.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvTopSell.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvTopSell.RowTemplate.Height = 24;
             this.dgvTopSell.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvTopSell.Size = new System.Drawing.Size(871, 407);
@@ -153,7 +163,7 @@ namespace JCUBE_SE_PROJECT
             this.InventoryCode.HeaderText = "Inventory Code";
             this.InventoryCode.MinimumWidth = 6;
             this.InventoryCode.Name = "InventoryCode";
-            this.InventoryCode.Width = 138;
+            this.InventoryCode.Width = 136;
             // 
             // Description
             // 
@@ -168,7 +178,7 @@ namespace JCUBE_SE_PROJECT
             this.Qty.HeaderText = "Quantity";
             this.Qty.MinimumWidth = 6;
             this.Qty.Name = "Qty";
-            this.Qty.Width = 90;
+            this.Qty.Width = 95;
             // 
             // Total
             // 
@@ -176,7 +186,7 @@ namespace JCUBE_SE_PROJECT
             this.Total.HeaderText = "Total Sales";
             this.Total.MinimumWidth = 6;
             this.Total.Name = "Total";
-            this.Total.Width = 114;
+            this.Total.Width = 105;
             // 
             // panel2
             // 
@@ -197,7 +207,7 @@ namespace JCUBE_SE_PROJECT
             this.btnPrintTop.BackColor = System.Drawing.Color.White;
             this.btnPrintTop.FlatAppearance.BorderSize = 0;
             this.btnPrintTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintTop.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintTop.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintTop.ForeColor = System.Drawing.Color.Black;
             this.btnPrintTop.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_print_30;
             this.btnPrintTop.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -215,13 +225,13 @@ namespace JCUBE_SE_PROJECT
             this.btnLoad.BackColor = System.Drawing.Color.White;
             this.btnLoad.FlatAppearance.BorderSize = 0;
             this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoad.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoad.ForeColor = System.Drawing.Color.Black;
             this.btnLoad.Image = ((System.Drawing.Image)(resources.GetObject("btnLoad.Image")));
             this.btnLoad.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLoad.Location = new System.Drawing.Point(550, 19);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(102, 35);
+            this.btnLoad.Size = new System.Drawing.Size(113, 35);
             this.btnLoad.TabIndex = 3;
             this.btnLoad.Text = "Refresh";
             this.btnLoad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -251,6 +261,7 @@ namespace JCUBE_SE_PROJECT
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbTopSell);
             this.panel1.Controls.Add(this.dateToTopSell);
             this.panel1.Controls.Add(this.dateFromTopSell);
@@ -265,56 +276,67 @@ namespace JCUBE_SE_PROJECT
             // 
             // cbTopSell
             // 
-            this.cbTopSell.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTopSell.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTopSell.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTopSell.FormattingEnabled = true;
             this.cbTopSell.Items.AddRange(new object[] {
             "Qty",
             "Total"});
-            this.cbTopSell.Location = new System.Drawing.Point(695, 21);
+            this.cbTopSell.Location = new System.Drawing.Point(705, 17);
             this.cbTopSell.Name = "cbTopSell";
-            this.cbTopSell.Size = new System.Drawing.Size(149, 29);
+            this.cbTopSell.Size = new System.Drawing.Size(149, 35);
             this.cbTopSell.TabIndex = 9;
-            this.cbTopSell.Text = "Sort By";
             // 
             // dateToTopSell
             // 
             this.dateToTopSell.CalendarFont = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateToTopSell.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateToTopSell.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateToTopSell.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateToTopSell.Location = new System.Drawing.Point(366, 20);
             this.dateToTopSell.Name = "dateToTopSell";
-            this.dateToTopSell.Size = new System.Drawing.Size(141, 30);
+            this.dateToTopSell.Size = new System.Drawing.Size(141, 32);
             this.dateToTopSell.TabIndex = 5;
             // 
             // dateFromTopSell
             // 
             this.dateFromTopSell.CalendarFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateFromTopSell.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFromTopSell.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFromTopSell.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateFromTopSell.Location = new System.Drawing.Point(152, 20);
             this.dateFromTopSell.Name = "dateFromTopSell";
-            this.dateFromTopSell.Size = new System.Drawing.Size(143, 30);
+            this.dateFromTopSell.Size = new System.Drawing.Size(143, 32);
             this.dateFromTopSell.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(310, 24);
+            this.label3.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(310, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 23);
+            this.label3.Size = new System.Drawing.Size(40, 30);
             this.label3.TabIndex = 3;
             this.label3.Text = "To:";
             // 
             // flterLbl
             // 
             this.flterLbl.AutoSize = true;
-            this.flterLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flterLbl.Location = new System.Drawing.Point(29, 24);
+            this.flterLbl.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flterLbl.Location = new System.Drawing.Point(31, 21);
             this.flterLbl.Name = "flterLbl";
-            this.flterLbl.Size = new System.Drawing.Size(113, 23);
+            this.flterLbl.Size = new System.Drawing.Size(118, 30);
             this.flterLbl.TabIndex = 2;
             this.flterLbl.Text = "Filter From:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(618, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 30);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Sort By:";
             // 
             // TopSelling
             // 
@@ -358,5 +380,6 @@ namespace JCUBE_SE_PROJECT
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Label label2;
     }
 }

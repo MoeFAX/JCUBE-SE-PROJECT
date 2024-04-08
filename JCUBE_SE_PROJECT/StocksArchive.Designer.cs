@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.StocksArchivesLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,6 +40,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.side2 = new System.Windows.Forms.Panel();
             this.dgvStockEntryArchive = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.StockID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stocks = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +48,6 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Restore = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockEntryArchive)).BeginInit();
@@ -65,11 +66,11 @@
             // StocksArchivesLabel
             // 
             this.StocksArchivesLabel.AutoSize = true;
-            this.StocksArchivesLabel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StocksArchivesLabel.Font = new System.Drawing.Font("Noto Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StocksArchivesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.StocksArchivesLabel.Location = new System.Drawing.Point(21, 22);
             this.StocksArchivesLabel.Name = "StocksArchivesLabel";
-            this.StocksArchivesLabel.Size = new System.Drawing.Size(187, 27);
+            this.StocksArchivesLabel.Size = new System.Drawing.Size(193, 35);
             this.StocksArchivesLabel.TabIndex = 0;
             this.StocksArchivesLabel.Text = "Stocks Archives";
             // 
@@ -85,16 +86,17 @@
             // 
             // PrintStockArchives
             // 
+            this.PrintStockArchives.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PrintStockArchives.FlatAppearance.BorderSize = 0;
             this.PrintStockArchives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PrintStockArchives.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintStockArchives.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrintStockArchives.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.PrintStockArchives.Image = ((System.Drawing.Image)(resources.GetObject("PrintStockArchives.Image")));
             this.PrintStockArchives.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.PrintStockArchives.Location = new System.Drawing.Point(849, 12);
+            this.PrintStockArchives.Location = new System.Drawing.Point(831, 12);
             this.PrintStockArchives.MinimumSize = new System.Drawing.Size(20, 20);
             this.PrintStockArchives.Name = "PrintStockArchives";
-            this.PrintStockArchives.Size = new System.Drawing.Size(168, 45);
+            this.PrintStockArchives.Size = new System.Drawing.Size(186, 45);
             this.PrintStockArchives.TabIndex = 33;
             this.PrintStockArchives.Text = "Print Preview";
             this.PrintStockArchives.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -131,7 +133,7 @@
             this.dgvStockEntryArchive.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -150,7 +152,7 @@
             this.dgvStockEntryArchive.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -164,14 +166,33 @@
             this.dgvStockEntryArchive.Name = "dgvStockEntryArchive";
             this.dgvStockEntryArchive.ReadOnly = true;
             this.dgvStockEntryArchive.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStockEntryArchive.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvStockEntryArchive.RowHeadersVisible = false;
             this.dgvStockEntryArchive.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvStockEntryArchive.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvStockEntryArchive.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvStockEntryArchive.RowTemplate.Height = 24;
             this.dgvStockEntryArchive.Size = new System.Drawing.Size(1027, 415);
             this.dgvStockEntryArchive.TabIndex = 18;
             this.dgvStockEntryArchive.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockEntryArchive_CellContentClick);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 125;
             // 
             // StockID
             // 
@@ -181,7 +202,7 @@
             this.StockID.Name = "StockID";
             this.StockID.ReadOnly = true;
             this.StockID.Visible = false;
-            this.StockID.Width = 125;
+            this.StockID.Width = 64;
             // 
             // ItemID
             // 
@@ -197,11 +218,11 @@
             this.Stocks.HeaderText = "Stocks";
             this.Stocks.MinimumWidth = 6;
             this.Stocks.Name = "Stocks";
-
             this.Stocks.ReadOnly = true;
-            this.Stocks.Width = 81;
-            this.Stocks.Width = 94;
-
+            this.Stocks.Width = 78;
+            // 
+            // SupplierID
+            // 
             this.SupplierID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.SupplierID.HeaderText = "Supplier Name";
             this.SupplierID.MinimumWidth = 6;
@@ -214,9 +235,9 @@
             this.Status.HeaderText = "Status";
             this.Status.MinimumWidth = 6;
             this.Status.Name = "Status";
-
             this.Status.ReadOnly = true;
-
+            // 
+            // Restore
             // 
             this.Restore.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Restore.HeaderText = "";
@@ -224,41 +245,21 @@
             this.Restore.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Restore.MinimumWidth = 6;
             this.Restore.Name = "Restore";
-
             this.Restore.ReadOnly = true;
-
-
             this.Restore.Width = 6;
             // 
             // Delete
             // 
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Delete.HeaderText = "";
-
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.Image = global::JCUBE_SE_PROJECT.Properties.Resources.Delete_Icon;
             this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
-
-            this.Delete.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Delete.Width = 21;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn1.Width = 125;
             // 
             // StocksArchive
             // 
@@ -270,15 +271,11 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-
             this.Name = "StocksArchive";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stocks Archive";
@@ -299,6 +296,7 @@
         private System.Windows.Forms.Panel side2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Button PrintStockArchives;
+        public System.Windows.Forms.DataGridView dgvStockEntryArchive;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stocks;
@@ -306,6 +304,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewImageColumn Restore;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        public System.Windows.Forms.DataGridView dgvStockEntryArchive;
     }
 }

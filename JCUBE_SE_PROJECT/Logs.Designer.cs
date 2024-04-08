@@ -32,16 +32,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Logs));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLogs = new System.Windows.Forms.Label();
+            this.typeComboBox = new System.Windows.Forms.ComboBox();
+            this.actionComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.actionlbl = new System.Windows.Forms.Label();
             this.dateTo = new System.Windows.Forms.DateTimePicker();
             this.lblTo = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
             this.dateFrom = new System.Windows.Forms.DateTimePicker();
-            this.lblLogs = new System.Windows.Forms.Label();
-            this.typeComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.actionlbl = new System.Windows.Forms.Label();
-            this.actionComboBox = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -59,11 +60,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dateTo);
-            this.panel1.Controls.Add(this.lblTo);
-            this.panel1.Controls.Add(this.lblFrom);
-            this.panel1.Controls.Add(this.dateFrom);
             this.panel1.Controls.Add(this.lblLogs);
+            this.panel1.Controls.Add(this.typeComboBox);
+            this.panel1.Controls.Add(this.actionComboBox);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.actionlbl);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -71,11 +72,84 @@
             this.panel1.Size = new System.Drawing.Size(911, 75);
             this.panel1.TabIndex = 0;
             // 
+            // lblLogs
+            // 
+            this.lblLogs.AutoSize = true;
+            this.lblLogs.Font = new System.Drawing.Font("Noto Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.lblLogs.Location = new System.Drawing.Point(19, 26);
+            this.lblLogs.Name = "lblLogs";
+            this.lblLogs.Size = new System.Drawing.Size(222, 42);
+            this.lblLogs.TabIndex = 0;
+            this.lblLogs.Text = "ACTIVITY LOGS";
+            // 
+            // typeComboBox
+            // 
+            this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.typeComboBox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typeComboBox.FormattingEnabled = true;
+            this.typeComboBox.Items.AddRange(new object[] {
+            "",
+            "ACCOUNTS",
+            "BRAND",
+            "CATEGORY",
+            "ITEMS",
+            "PAYMENT",
+            "SALES",
+            "STOCKS",
+            "SUPPLIER"});
+            this.typeComboBox.Location = new System.Drawing.Point(726, 31);
+            this.typeComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.typeComboBox.Name = "typeComboBox";
+            this.typeComboBox.Size = new System.Drawing.Size(160, 35);
+            this.typeComboBox.TabIndex = 10;
+            this.typeComboBox.SelectedIndexChanged += new System.EventHandler(this.typeComboBox_SelectedIndexChanged);
+            // 
+            // actionComboBox
+            // 
+            this.actionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.actionComboBox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actionComboBox.FormattingEnabled = true;
+            this.actionComboBox.Items.AddRange(new object[] {
+            "",
+            "CREATE",
+            "UPDATE",
+            "DELETE",
+            "ARCHIVE"});
+            this.actionComboBox.Location = new System.Drawing.Point(471, 31);
+            this.actionComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.actionComboBox.Name = "actionComboBox";
+            this.actionComboBox.Size = new System.Drawing.Size(160, 35);
+            this.actionComboBox.TabIndex = 7;
+            this.actionComboBox.SelectedIndexChanged += new System.EventHandler(this.actionComboBox_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(660, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 30);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Type:";
+            // 
+            // actionlbl
+            // 
+            this.actionlbl.AutoSize = true;
+            this.actionlbl.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actionlbl.Location = new System.Drawing.Point(391, 34);
+            this.actionlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.actionlbl.Name = "actionlbl";
+            this.actionlbl.Size = new System.Drawing.Size(77, 30);
+            this.actionlbl.TabIndex = 8;
+            this.actionlbl.Text = "Action:";
+            // 
             // dateTo
             // 
             this.dateTo.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTo.Location = new System.Drawing.Point(708, 25);
+            this.dateTo.Location = new System.Drawing.Point(334, 10);
             this.dateTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTo.Name = "dateTo";
             this.dateTo.Size = new System.Drawing.Size(141, 30);
@@ -86,7 +160,7 @@
             // 
             this.lblTo.AutoSize = true;
             this.lblTo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTo.Location = new System.Drawing.Point(666, 29);
+            this.lblTo.Location = new System.Drawing.Point(292, 14);
             this.lblTo.Name = "lblTo";
             this.lblTo.Size = new System.Drawing.Size(36, 23);
             this.lblTo.TabIndex = 5;
@@ -96,7 +170,7 @@
             // 
             this.lblFrom.AutoSize = true;
             this.lblFrom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrom.Location = new System.Drawing.Point(400, 29);
+            this.lblFrom.Location = new System.Drawing.Point(26, 14);
             this.lblFrom.Name = "lblFrom";
             this.lblFrom.Size = new System.Drawing.Size(113, 23);
             this.lblFrom.TabIndex = 4;
@@ -107,90 +181,19 @@
             this.dateFrom.CustomFormat = "MM/DD/YYYY";
             this.dateFrom.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFrom.Location = new System.Drawing.Point(519, 25);
+            this.dateFrom.Location = new System.Drawing.Point(145, 10);
             this.dateFrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateFrom.Name = "dateFrom";
             this.dateFrom.Size = new System.Drawing.Size(141, 30);
             this.dateFrom.TabIndex = 3;
             this.dateFrom.ValueChanged += new System.EventHandler(this.dateFrom_ValueChanged);
             // 
-            // lblLogs
-            // 
-            this.lblLogs.AutoSize = true;
-            this.lblLogs.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.lblLogs.Location = new System.Drawing.Point(19, 26);
-            this.lblLogs.Name = "lblLogs";
-            this.lblLogs.Size = new System.Drawing.Size(218, 34);
-            this.lblLogs.TabIndex = 0;
-            this.lblLogs.Text = "ACTIVITY LOGS";
-            // 
-            // typeComboBox
-            // 
-            this.typeComboBox.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typeComboBox.FormattingEnabled = true;
-            this.typeComboBox.Items.AddRange(new object[] {
-            "",
-            "ACCOUNT",
-            "BRAND",
-            "CATEGORY",
-            "ITEMS",
-            "PAYMENT",
-            "SALES",
-            "STOCKS",
-            "SUPPLIER"});
-            this.typeComboBox.Location = new System.Drawing.Point(382, 11);
-            this.typeComboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.typeComboBox.Name = "typeComboBox";
-            this.typeComboBox.Size = new System.Drawing.Size(160, 29);
-            this.typeComboBox.TabIndex = 10;
-            this.typeComboBox.SelectedIndexChanged += new System.EventHandler(this.typeComboBox_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(304, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 23);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Type:";
-            // 
-            // actionlbl
-            // 
-            this.actionlbl.AutoSize = true;
-            this.actionlbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actionlbl.Location = new System.Drawing.Point(32, 14);
-            this.actionlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.actionlbl.Name = "actionlbl";
-            this.actionlbl.Size = new System.Drawing.Size(78, 23);
-            this.actionlbl.TabIndex = 8;
-            this.actionlbl.Text = "Action:";
-            // 
-            // actionComboBox
-            // 
-            this.actionComboBox.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actionComboBox.FormattingEnabled = true;
-            this.actionComboBox.Items.AddRange(new object[] {
-            "",
-            "CREATE",
-            "UPDATE",
-            "DELETE",
-            "ARCHIVE"});
-            this.actionComboBox.Location = new System.Drawing.Point(127, 11);
-            this.actionComboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.actionComboBox.Name = "actionComboBox";
-            this.actionComboBox.Size = new System.Drawing.Size(160, 29);
-            this.actionComboBox.TabIndex = 7;
-            this.actionComboBox.SelectedIndexChanged += new System.EventHandler(this.actionComboBox_SelectedIndexChanged);
-            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.typeComboBox);
-            this.panel2.Controls.Add(this.actionlbl);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.actionComboBox);
+            this.panel2.Controls.Add(this.dateTo);
+            this.panel2.Controls.Add(this.lblTo);
+            this.panel2.Controls.Add(this.lblFrom);
+            this.panel2.Controls.Add(this.dateFrom);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 494);
@@ -229,7 +232,7 @@
             this.dgvLogs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -247,7 +250,7 @@
             this.dgvLogs.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -264,7 +267,7 @@
             this.dgvLogs.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -286,7 +289,7 @@
             this.LogID.MinimumWidth = 6;
             this.LogID.Name = "LogID";
             this.LogID.ReadOnly = true;
-            this.LogID.Width = 75;
+            this.LogID.Width = 74;
             // 
             // Action
             // 
@@ -327,7 +330,7 @@
             this.Date.MinimumWidth = 6;
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
-            this.Date.Width = 107;
+            this.Date.Width = 106;
             // 
             // Logs
             // 
@@ -339,6 +342,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Logs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

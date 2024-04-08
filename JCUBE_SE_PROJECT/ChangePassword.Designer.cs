@@ -30,6 +30,7 @@ namespace JCUBE_SE_PROJECT
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePassword));
             this.btnNext = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
@@ -82,10 +83,10 @@ namespace JCUBE_SE_PROJECT
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(94, 25);
+            this.lblUser.Font = new System.Drawing.Font("Noto Sans", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Location = new System.Drawing.Point(91, 19);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(114, 40);
+            this.lblUser.Size = new System.Drawing.Size(117, 50);
             this.lblUser.TabIndex = 8;
             this.lblUser.Text = "label1";
             // 
@@ -177,7 +178,7 @@ namespace JCUBE_SE_PROJECT
             this.txtNewPass.Visible = false;
             this.txtNewPass.WaterMark = "New Password";
             this.txtNewPass.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtNewPass.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPass.WaterMarkFont = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // txtConfirmPass
             // 
@@ -216,7 +217,7 @@ namespace JCUBE_SE_PROJECT
             this.txtConfirmPass.Visible = false;
             this.txtConfirmPass.WaterMark = "Confirm Password";
             this.txtConfirmPass.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtConfirmPass.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmPass.WaterMarkFont = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // txtCurrentPass
             // 
@@ -254,7 +255,7 @@ namespace JCUBE_SE_PROJECT
             this.txtCurrentPass.UseSystemPasswordChar = true;
             this.txtCurrentPass.WaterMark = "Current Password";
             this.txtCurrentPass.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtCurrentPass.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCurrentPass.WaterMarkFont = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // picAvatar
             // 
@@ -283,12 +284,13 @@ namespace JCUBE_SE_PROJECT
             this.Controls.Add(this.txtCurrentPass);
             this.Controls.Add(this.picAvatar);
             this.Controls.Add(this.btnSave);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ChangePassword";
+            this.Text = "Change Password";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ChangePassword_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.newPassEyeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.confirmEyeBtn)).EndInit();

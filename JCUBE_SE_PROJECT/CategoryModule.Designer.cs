@@ -43,10 +43,11 @@
             this.SaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveBtn.FlatAppearance.BorderSize = 0;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveBtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
             this.SaveBtn.Location = new System.Drawing.Point(267, 102);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(90, 30);
+            this.SaveBtn.Size = new System.Drawing.Size(90, 35);
             this.SaveBtn.TabIndex = 4;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
@@ -59,10 +60,11 @@
             this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.FlatAppearance.BorderSize = 0;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelBtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelBtn.ForeColor = System.Drawing.Color.White;
             this.CancelBtn.Location = new System.Drawing.Point(384, 102);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(90, 30);
+            this.CancelBtn.Size = new System.Drawing.Size(90, 35);
             this.CancelBtn.TabIndex = 5;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = false;
@@ -71,17 +73,19 @@
             // CtgryNamelbl
             // 
             this.CtgryNamelbl.AutoSize = true;
-            this.CtgryNamelbl.Location = new System.Drawing.Point(45, 51);
+            this.CtgryNamelbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CtgryNamelbl.Location = new System.Drawing.Point(59, 50);
             this.CtgryNamelbl.Name = "CtgryNamelbl";
-            this.CtgryNamelbl.Size = new System.Drawing.Size(160, 21);
+            this.CtgryNamelbl.Size = new System.Drawing.Size(148, 27);
             this.CtgryNamelbl.TabIndex = 6;
             this.CtgryNamelbl.Text = "Category Name:";
             // 
             // CtgryNameField
             // 
+            this.CtgryNameField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CtgryNameField.Location = new System.Drawing.Point(211, 48);
             this.CtgryNameField.Name = "CtgryNameField";
-            this.CtgryNameField.Size = new System.Drawing.Size(384, 30);
+            this.CtgryNameField.Size = new System.Drawing.Size(384, 32);
             this.CtgryNameField.TabIndex = 7;
             // 
             // lblid
@@ -123,6 +127,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CategoryModule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Category Module";

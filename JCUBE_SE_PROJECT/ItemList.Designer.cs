@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemList));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemList));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSearch = new MetroFramework.Controls.MetroTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.addbtn = new System.Windows.Forms.Button();
             this.ItemListLabel = new System.Windows.Forms.Label();
             this.side2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -50,7 +52,6 @@
             this.ReOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Archive = new System.Windows.Forms.DataGridViewImageColumn();
-            this.addbtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).BeginInit();
             this.SuspendLayout();
@@ -110,14 +111,32 @@
             this.panel2.Size = new System.Drawing.Size(893, 73);
             this.panel2.TabIndex = 2;
             // 
+            // addbtn
+            // 
+            this.addbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addbtn.FlatAppearance.BorderSize = 0;
+            this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addbtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.addbtn.Image = ((System.Drawing.Image)(resources.GetObject("addbtn.Image")));
+            this.addbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addbtn.Location = new System.Drawing.Point(759, 23);
+            this.addbtn.Name = "addbtn";
+            this.addbtn.Size = new System.Drawing.Size(106, 38);
+            this.addbtn.TabIndex = 6;
+            this.addbtn.Text = "Create";
+            this.addbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addbtn.UseVisualStyleBackColor = true;
+            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
+            // 
             // ItemListLabel
             // 
             this.ItemListLabel.AutoSize = true;
-            this.ItemListLabel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemListLabel.Font = new System.Drawing.Font("Noto Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemListLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.ItemListLabel.Location = new System.Drawing.Point(20, 23);
             this.ItemListLabel.Name = "ItemListLabel";
-            this.ItemListLabel.Size = new System.Drawing.Size(101, 27);
+            this.ItemListLabel.Size = new System.Drawing.Size(118, 35);
             this.ItemListLabel.TabIndex = 0;
             this.ItemListLabel.Text = "Item List";
             // 
@@ -149,7 +168,7 @@
             this.dgvItem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -172,7 +191,7 @@
             this.dgvItem.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -186,10 +205,18 @@
             this.dgvItem.Name = "dgvItem";
             this.dgvItem.ReadOnly = true;
             this.dgvItem.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItem.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItem.RowHeadersVisible = false;
             this.dgvItem.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvItem.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvItem.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItem.RowTemplate.Height = 24;
             this.dgvItem.Size = new System.Drawing.Size(857, 487);
             this.dgvItem.TabIndex = 18;
@@ -221,7 +248,7 @@
             this.ItemCode.MinimumWidth = 6;
             this.ItemCode.Name = "ItemCode";
             this.ItemCode.ReadOnly = true;
-            this.ItemCode.Width = 104;
+            this.ItemCode.Width = 103;
             // 
             // Description
             // 
@@ -238,7 +265,7 @@
             this.AcquiredCost.MinimumWidth = 6;
             this.AcquiredCost.Name = "AcquiredCost";
             this.AcquiredCost.ReadOnly = true;
-            this.AcquiredCost.Width = 131;
+            this.AcquiredCost.Width = 126;
             // 
             // bid
             // 
@@ -247,7 +274,7 @@
             this.bid.MinimumWidth = 6;
             this.bid.Name = "bid";
             this.bid.ReadOnly = true;
-            this.bid.Width = 75;
+            this.bid.Width = 76;
             // 
             // cid
             // 
@@ -256,7 +283,7 @@
             this.cid.MinimumWidth = 6;
             this.cid.Name = "cid";
             this.cid.ReadOnly = true;
-            this.cid.Width = 97;
+            this.cid.Width = 95;
             // 
             // Price
             // 
@@ -265,7 +292,7 @@
             this.Price.MinimumWidth = 6;
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
-            this.Price.Width = 65;
+            this.Price.Width = 60;
             // 
             // ReOrder
             // 
@@ -274,7 +301,7 @@
             this.ReOrder.MinimumWidth = 6;
             this.ReOrder.Name = "ReOrder";
             this.ReOrder.ReadOnly = true;
-            this.ReOrder.Width = 98;
+            this.ReOrder.Width = 95;
             // 
             // Edit
             // 
@@ -297,24 +324,6 @@
             this.Archive.Name = "Archive";
             this.Archive.ReadOnly = true;
             this.Archive.Width = 6;
-            // 
-            // addbtn
-            // 
-            this.addbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addbtn.FlatAppearance.BorderSize = 0;
-            this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.addbtn.Image = ((System.Drawing.Image)(resources.GetObject("addbtn.Image")));
-            this.addbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addbtn.Location = new System.Drawing.Point(759, 23);
-            this.addbtn.Name = "addbtn";
-            this.addbtn.Size = new System.Drawing.Size(106, 38);
-            this.addbtn.TabIndex = 6;
-            this.addbtn.Text = "Create";
-            this.addbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addbtn.UseVisualStyleBackColor = true;
-            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
             // 
             // ItemList
             // 

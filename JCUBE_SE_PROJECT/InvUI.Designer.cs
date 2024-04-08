@@ -97,7 +97,7 @@ namespace JCUBE_SE_PROJECT
             this.btnArchives.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnArchives.FlatAppearance.BorderSize = 0;
             this.btnArchives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnArchives.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArchives.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArchives.ForeColor = System.Drawing.Color.White;
             this.btnArchives.Image = ((System.Drawing.Image)(resources.GetObject("btnArchives.Image")));
             this.btnArchives.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -115,7 +115,7 @@ namespace JCUBE_SE_PROJECT
             this.btnLogs.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLogs.FlatAppearance.BorderSize = 0;
             this.btnLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogs.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogs.ForeColor = System.Drawing.Color.White;
             this.btnLogs.Image = ((System.Drawing.Image)(resources.GetObject("btnLogs.Image")));
             this.btnLogs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,7 +133,7 @@ namespace JCUBE_SE_PROJECT
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -151,7 +151,7 @@ namespace JCUBE_SE_PROJECT
             this.btnUserAcc.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUserAcc.FlatAppearance.BorderSize = 0;
             this.btnUserAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserAcc.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserAcc.ForeColor = System.Drawing.Color.White;
             this.btnUserAcc.Image = ((System.Drawing.Image)(resources.GetObject("btnUserAcc.Image")));
             this.btnUserAcc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -185,7 +185,7 @@ namespace JCUBE_SE_PROJECT
             this.btnCriticalStocks.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCriticalStocks.FlatAppearance.BorderSize = 0;
             this.btnCriticalStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCriticalStocks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCriticalStocks.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCriticalStocks.ForeColor = System.Drawing.Color.White;
             this.btnCriticalStocks.Image = ((System.Drawing.Image)(resources.GetObject("btnCriticalStocks.Image")));
             this.btnCriticalStocks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -203,7 +203,7 @@ namespace JCUBE_SE_PROJECT
             this.btnStockHistory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStockHistory.FlatAppearance.BorderSize = 0;
             this.btnStockHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStockHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockHistory.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStockHistory.ForeColor = System.Drawing.Color.White;
             this.btnStockHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnStockHistory.Image")));
             this.btnStockHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -221,7 +221,7 @@ namespace JCUBE_SE_PROJECT
             this.btnCancelledOrder.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCancelledOrder.FlatAppearance.BorderSize = 0;
             this.btnCancelledOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelledOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelledOrder.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelledOrder.ForeColor = System.Drawing.Color.White;
             this.btnCancelledOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelledOrder.Image")));
             this.btnCancelledOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -239,7 +239,7 @@ namespace JCUBE_SE_PROJECT
             this.btnInventoryList.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInventoryList.FlatAppearance.BorderSize = 0;
             this.btnInventoryList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventoryList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventoryList.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventoryList.ForeColor = System.Drawing.Color.White;
             this.btnInventoryList.Image = ((System.Drawing.Image)(resources.GetObject("btnInventoryList.Image")));
             this.btnInventoryList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -257,7 +257,7 @@ namespace JCUBE_SE_PROJECT
             this.btnSoldItem.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSoldItem.FlatAppearance.BorderSize = 0;
             this.btnSoldItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSoldItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSoldItem.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSoldItem.ForeColor = System.Drawing.Color.White;
             this.btnSoldItem.Image = ((System.Drawing.Image)(resources.GetObject("btnSoldItem.Image")));
             this.btnSoldItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -275,7 +275,7 @@ namespace JCUBE_SE_PROJECT
             this.btnSaleHistory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSaleHistory.FlatAppearance.BorderSize = 0;
             this.btnSaleHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaleHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaleHistory.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaleHistory.ForeColor = System.Drawing.Color.White;
             this.btnSaleHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnSaleHistory.Image")));
             this.btnSaleHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -293,7 +293,7 @@ namespace JCUBE_SE_PROJECT
             this.btnRecords.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRecords.FlatAppearance.BorderSize = 0;
             this.btnRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecords.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecords.ForeColor = System.Drawing.Color.White;
             this.btnRecords.Image = ((System.Drawing.Image)(resources.GetObject("btnRecords.Image")));
             this.btnRecords.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -311,7 +311,7 @@ namespace JCUBE_SE_PROJECT
             this.btnStocks.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStocks.FlatAppearance.BorderSize = 0;
             this.btnStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStocks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStocks.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStocks.ForeColor = System.Drawing.Color.White;
             this.btnStocks.Image = ((System.Drawing.Image)(resources.GetObject("btnStocks.Image")));
             this.btnStocks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -343,7 +343,7 @@ namespace JCUBE_SE_PROJECT
             this.btnSupplier.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSupplier.FlatAppearance.BorderSize = 0;
             this.btnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupplier.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupplier.ForeColor = System.Drawing.Color.White;
             this.btnSupplier.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplier.Image")));
             this.btnSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -361,7 +361,7 @@ namespace JCUBE_SE_PROJECT
             this.btnBrand.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBrand.FlatAppearance.BorderSize = 0;
             this.btnBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrand.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrand.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrand.ForeColor = System.Drawing.Color.White;
             this.btnBrand.Image = ((System.Drawing.Image)(resources.GetObject("btnBrand.Image")));
             this.btnBrand.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -379,7 +379,7 @@ namespace JCUBE_SE_PROJECT
             this.btnCategory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCategory.FlatAppearance.BorderSize = 0;
             this.btnCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategory.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategory.ForeColor = System.Drawing.Color.White;
             this.btnCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnCategory.Image")));
             this.btnCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -397,7 +397,7 @@ namespace JCUBE_SE_PROJECT
             this.btnItemList.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnItemList.FlatAppearance.BorderSize = 0;
             this.btnItemList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItemList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItemList.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItemList.ForeColor = System.Drawing.Color.White;
             this.btnItemList.Image = ((System.Drawing.Image)(resources.GetObject("btnItemList.Image")));
             this.btnItemList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -415,7 +415,7 @@ namespace JCUBE_SE_PROJECT
             this.btnItem.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnItem.FlatAppearance.BorderSize = 0;
             this.btnItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItem.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItem.ForeColor = System.Drawing.Color.White;
             this.btnItem.Image = ((System.Drawing.Image)(resources.GetObject("btnItem.Image")));
             this.btnItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -434,7 +434,7 @@ namespace JCUBE_SE_PROJECT
             this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDashboard.FlatAppearance.BorderSize = 0;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -473,7 +473,7 @@ namespace JCUBE_SE_PROJECT
             // labelJcube
             // 
             this.labelJcube.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelJcube.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJcube.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelJcube.ForeColor = System.Drawing.Color.White;
             this.labelJcube.Location = new System.Drawing.Point(0, 144);
             this.labelJcube.Name = "labelJcube";
@@ -497,22 +497,22 @@ namespace JCUBE_SE_PROJECT
             // lblUserRole
             // 
             this.lblUserRole.AutoSize = true;
-            this.lblUserRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserRole.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserRole.ForeColor = System.Drawing.Color.White;
             this.lblUserRole.Location = new System.Drawing.Point(6, 30);
             this.lblUserRole.Name = "lblUserRole";
-            this.lblUserRole.Size = new System.Drawing.Size(73, 16);
+            this.lblUserRole.Size = new System.Drawing.Size(68, 20);
             this.lblUserRole.TabIndex = 2;
             this.lblUserRole.Text = "UserRole";
             // 
             // lblLoggedIn
             // 
             this.lblLoggedIn.AutoSize = true;
-            this.lblLoggedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoggedIn.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoggedIn.ForeColor = System.Drawing.Color.White;
             this.lblLoggedIn.Location = new System.Drawing.Point(7, 12);
             this.lblLoggedIn.Name = "lblLoggedIn";
-            this.lblLoggedIn.Size = new System.Drawing.Size(88, 16);
+            this.lblLoggedIn.Size = new System.Drawing.Size(88, 20);
             this.lblLoggedIn.TabIndex = 1;
             this.lblLoggedIn.Text = "Logged in as:";
             // 
@@ -535,20 +535,12 @@ namespace JCUBE_SE_PROJECT
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-<<<<<<< Updated upstream
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-=======
             this.label1.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
->>>>>>> Stashed changes
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(9, 417);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-<<<<<<< Updated upstream
-            this.label1.Size = new System.Drawing.Size(282, 22);
-=======
             this.label1.Size = new System.Drawing.Size(299, 27);
->>>>>>> Stashed changes
             this.label1.TabIndex = 5;
             this.label1.Text = "Inventory Management System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -557,12 +549,12 @@ namespace JCUBE_SE_PROJECT
             // 
             this.INVLoggedInlbl.AutoSize = true;
             this.INVLoggedInlbl.BackColor = System.Drawing.Color.Transparent;
-            this.INVLoggedInlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INVLoggedInlbl.Font = new System.Drawing.Font("Noto Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.INVLoggedInlbl.ForeColor = System.Drawing.SystemColors.Control;
             this.INVLoggedInlbl.Location = new System.Drawing.Point(8, 466);
             this.INVLoggedInlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.INVLoggedInlbl.Name = "INVLoggedInlbl";
-            this.INVLoggedInlbl.Size = new System.Drawing.Size(171, 29);
+            this.INVLoggedInlbl.Size = new System.Drawing.Size(167, 35);
             this.INVLoggedInlbl.TabIndex = 4;
             this.INVLoggedInlbl.Text = "Logged in as:";
             this.INVLoggedInlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -571,12 +563,12 @@ namespace JCUBE_SE_PROJECT
             // 
             this.INVNamelbl.AutoSize = true;
             this.INVNamelbl.BackColor = System.Drawing.Color.Transparent;
-            this.INVNamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INVNamelbl.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.INVNamelbl.ForeColor = System.Drawing.Color.White;
             this.INVNamelbl.Location = new System.Drawing.Point(9, 501);
             this.INVNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.INVNamelbl.Name = "INVNamelbl";
-            this.INVNamelbl.Size = new System.Drawing.Size(100, 25);
+            this.INVNamelbl.Size = new System.Drawing.Size(106, 30);
             this.INVNamelbl.TabIndex = 3;
             this.INVNamelbl.Text = "Fullname";
             this.INVNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -585,12 +577,12 @@ namespace JCUBE_SE_PROJECT
             // 
             this.JCubelbl.AutoSize = true;
             this.JCubelbl.BackColor = System.Drawing.Color.Transparent;
-            this.JCubelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JCubelbl.Font = new System.Drawing.Font("Noto Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.JCubelbl.ForeColor = System.Drawing.SystemColors.Control;
             this.JCubelbl.Location = new System.Drawing.Point(7, 375);
             this.JCubelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.JCubelbl.Name = "JCubelbl";
-            this.JCubelbl.Size = new System.Drawing.Size(564, 32);
+            this.JCubelbl.Size = new System.Drawing.Size(520, 42);
             this.JCubelbl.TabIndex = 0;
             this.JCubelbl.Text = "JCUBE SHIELDWORKS CORPORATION";
             this.JCubelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

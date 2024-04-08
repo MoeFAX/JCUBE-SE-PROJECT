@@ -39,17 +39,19 @@
             // BrandNamelbl
             // 
             this.BrandNamelbl.AutoSize = true;
-            this.BrandNamelbl.Location = new System.Drawing.Point(51, 63);
+            this.BrandNamelbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrandNamelbl.Location = new System.Drawing.Point(54, 63);
             this.BrandNamelbl.Name = "BrandNamelbl";
-            this.BrandNamelbl.Size = new System.Drawing.Size(124, 21);
+            this.BrandNamelbl.Size = new System.Drawing.Size(124, 27);
             this.BrandNamelbl.TabIndex = 1;
             this.BrandNamelbl.Text = "Brand Name:";
             // 
             // BrandNameField
             // 
+            this.BrandNameField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BrandNameField.Location = new System.Drawing.Point(181, 60);
             this.BrandNameField.Name = "BrandNameField";
-            this.BrandNameField.Size = new System.Drawing.Size(415, 30);
+            this.BrandNameField.Size = new System.Drawing.Size(415, 32);
             this.BrandNameField.TabIndex = 2;
             // 
             // SaveBtn
@@ -58,10 +60,11 @@
             this.SaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveBtn.FlatAppearance.BorderSize = 0;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveBtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
             this.SaveBtn.Location = new System.Drawing.Point(263, 114);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(90, 30);
+            this.SaveBtn.Size = new System.Drawing.Size(90, 35);
             this.SaveBtn.TabIndex = 3;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
@@ -74,10 +77,11 @@
             this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.FlatAppearance.BorderSize = 0;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelBtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelBtn.ForeColor = System.Drawing.Color.White;
             this.CancelBtn.Location = new System.Drawing.Point(380, 114);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(90, 30);
+            this.CancelBtn.Size = new System.Drawing.Size(90, 35);
             this.CancelBtn.TabIndex = 4;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = false;

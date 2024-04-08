@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CancelOrder));
             this.soldItemLbl = new System.Windows.Forms.Label();
             this.idLbl = new System.Windows.Forms.Label();
             this.itemCodeLbl = new System.Windows.Forms.Label();
@@ -61,43 +62,47 @@
             // soldItemLbl
             // 
             this.soldItemLbl.AutoSize = true;
-            this.soldItemLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.soldItemLbl.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.soldItemLbl.Location = new System.Drawing.Point(30, 17);
             this.soldItemLbl.Name = "soldItemLbl";
-            this.soldItemLbl.Size = new System.Drawing.Size(101, 23);
+            this.soldItemLbl.Size = new System.Drawing.Size(109, 30);
             this.soldItemLbl.TabIndex = 5;
             this.soldItemLbl.Text = "Sold Item";
             // 
             // idLbl
             // 
             this.idLbl.AutoSize = true;
+            this.idLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idLbl.Location = new System.Drawing.Point(34, 57);
             this.idLbl.Name = "idLbl";
-            this.idLbl.Size = new System.Drawing.Size(32, 21);
+            this.idLbl.Size = new System.Drawing.Size(34, 27);
             this.idLbl.TabIndex = 6;
             this.idLbl.Text = "Id:";
             // 
             // itemCodeLbl
             // 
             this.itemCodeLbl.AutoSize = true;
+            this.itemCodeLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemCodeLbl.Location = new System.Drawing.Point(34, 90);
             this.itemCodeLbl.Name = "itemCodeLbl";
-            this.itemCodeLbl.Size = new System.Drawing.Size(112, 21);
+            this.itemCodeLbl.Size = new System.Drawing.Size(104, 27);
             this.itemCodeLbl.TabIndex = 7;
             this.itemCodeLbl.Text = "Item Code:";
             // 
             // descriptionLbl
             // 
             this.descriptionLbl.AutoSize = true;
+            this.descriptionLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptionLbl.Location = new System.Drawing.Point(34, 121);
             this.descriptionLbl.Name = "descriptionLbl";
-            this.descriptionLbl.Size = new System.Drawing.Size(112, 21);
+            this.descriptionLbl.Size = new System.Drawing.Size(114, 27);
             this.descriptionLbl.TabIndex = 8;
             this.descriptionLbl.Text = "Description:";
             // 
             // idTxtbox
             // 
             this.idTxtbox.Enabled = false;
+            this.idTxtbox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idTxtbox.Location = new System.Drawing.Point(165, 54);
             this.idTxtbox.Multiline = true;
             this.idTxtbox.Name = "idTxtbox";
@@ -107,6 +112,7 @@
             // itemCodeTxtbox
             // 
             this.itemCodeTxtbox.Enabled = false;
+            this.itemCodeTxtbox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemCodeTxtbox.Location = new System.Drawing.Point(165, 87);
             this.itemCodeTxtbox.Multiline = true;
             this.itemCodeTxtbox.Name = "itemCodeTxtbox";
@@ -116,6 +122,7 @@
             // descriptionTxtBox
             // 
             this.descriptionTxtBox.Enabled = false;
+            this.descriptionTxtBox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptionTxtBox.Location = new System.Drawing.Point(165, 121);
             this.descriptionTxtBox.Multiline = true;
             this.descriptionTxtBox.Name = "descriptionTxtBox";
@@ -125,6 +132,7 @@
             // QtyTxtBox
             // 
             this.QtyTxtBox.Enabled = false;
+            this.QtyTxtBox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QtyTxtBox.Location = new System.Drawing.Point(491, 118);
             this.QtyTxtBox.Multiline = true;
             this.QtyTxtBox.Name = "QtyTxtBox";
@@ -134,6 +142,7 @@
             // PrcTxtBox
             // 
             this.PrcTxtBox.Enabled = false;
+            this.PrcTxtBox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrcTxtBox.Location = new System.Drawing.Point(491, 87);
             this.PrcTxtBox.Multiline = true;
             this.PrcTxtBox.Name = "PrcTxtBox";
@@ -143,6 +152,7 @@
             // InvTxtBox
             // 
             this.InvTxtBox.Enabled = false;
+            this.InvTxtBox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InvTxtBox.Location = new System.Drawing.Point(491, 54);
             this.InvTxtBox.Multiline = true;
             this.InvTxtBox.Name = "InvTxtBox";
@@ -152,42 +162,47 @@
             // QtyLbl
             // 
             this.QtyLbl.AutoSize = true;
+            this.QtyLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QtyLbl.Location = new System.Drawing.Point(362, 121);
             this.QtyLbl.Name = "QtyLbl";
-            this.QtyLbl.Size = new System.Drawing.Size(49, 21);
+            this.QtyLbl.Size = new System.Drawing.Size(46, 27);
             this.QtyLbl.TabIndex = 14;
             this.QtyLbl.Text = "Qty:";
             // 
             // PrcLbl
             // 
             this.PrcLbl.AutoSize = true;
+            this.PrcLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrcLbl.Location = new System.Drawing.Point(362, 90);
             this.PrcLbl.Name = "PrcLbl";
-            this.PrcLbl.Size = new System.Drawing.Size(58, 21);
+            this.PrcLbl.Size = new System.Drawing.Size(59, 27);
             this.PrcLbl.TabIndex = 13;
             this.PrcLbl.Text = "Price:";
             // 
             // InvLbl
             // 
             this.InvLbl.AutoSize = true;
+            this.InvLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InvLbl.Location = new System.Drawing.Point(362, 57);
             this.InvLbl.Name = "InvLbl";
-            this.InvLbl.Size = new System.Drawing.Size(121, 21);
+            this.InvLbl.Size = new System.Drawing.Size(118, 27);
             this.InvLbl.TabIndex = 12;
             this.InvLbl.Text = "Invoice No. :";
             // 
             // DiscLbl
             // 
             this.DiscLbl.AutoSize = true;
+            this.DiscLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DiscLbl.Location = new System.Drawing.Point(695, 54);
             this.DiscLbl.Name = "DiscLbl";
-            this.DiscLbl.Size = new System.Drawing.Size(91, 21);
+            this.DiscLbl.Size = new System.Drawing.Size(92, 27);
             this.DiscLbl.TabIndex = 18;
             this.DiscLbl.Text = "Discount:";
             // 
             // DiscTxtBox
             // 
             this.DiscTxtBox.Enabled = false;
+            this.DiscTxtBox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DiscTxtBox.Location = new System.Drawing.Point(798, 54);
             this.DiscTxtBox.Multiline = true;
             this.DiscTxtBox.Name = "DiscTxtBox";
@@ -197,15 +212,17 @@
             // TtlLbl
             // 
             this.TtlLbl.AutoSize = true;
+            this.TtlLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TtlLbl.Location = new System.Drawing.Point(695, 90);
             this.TtlLbl.Name = "TtlLbl";
-            this.TtlLbl.Size = new System.Drawing.Size(57, 21);
+            this.TtlLbl.Size = new System.Drawing.Size(58, 27);
             this.TtlLbl.TabIndex = 20;
             this.TtlLbl.Text = "Total:";
             // 
             // TtlTxtBox
             // 
             this.TtlTxtBox.Enabled = false;
+            this.TtlTxtBox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TtlTxtBox.Location = new System.Drawing.Point(798, 87);
             this.TtlTxtBox.Multiline = true;
             this.TtlTxtBox.Name = "TtlTxtBox";
@@ -215,16 +232,17 @@
             // cnclItemLbl
             // 
             this.cnclItemLbl.AutoSize = true;
-            this.cnclItemLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cnclItemLbl.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cnclItemLbl.Location = new System.Drawing.Point(33, 213);
             this.cnclItemLbl.Name = "cnclItemLbl";
-            this.cnclItemLbl.Size = new System.Drawing.Size(157, 23);
+            this.cnclItemLbl.Size = new System.Drawing.Size(157, 30);
             this.cnclItemLbl.TabIndex = 22;
             this.cnclItemLbl.Text = "Cancel Item(s)";
             // 
             // CnclByTxtBox
             // 
             this.CnclByTxtBox.Enabled = false;
+            this.CnclByTxtBox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CnclByTxtBox.Location = new System.Drawing.Point(162, 343);
             this.CnclByTxtBox.Multiline = true;
             this.CnclByTxtBox.Name = "CnclByTxtBox";
@@ -234,6 +252,7 @@
             // 
             // addInvLbl
             // 
+            this.addInvLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addInvLbl.Location = new System.Drawing.Point(34, 253);
             this.addInvLbl.Name = "addInvLbl";
             this.addInvLbl.Size = new System.Drawing.Size(123, 70);
@@ -244,9 +263,10 @@
             // CnclByLbl
             // 
             this.CnclByLbl.AutoSize = true;
+            this.CnclByLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CnclByLbl.Location = new System.Drawing.Point(31, 346);
             this.CnclByLbl.Name = "CnclByLbl";
-            this.CnclByLbl.Size = new System.Drawing.Size(133, 21);
+            this.CnclByLbl.Size = new System.Drawing.Size(125, 27);
             this.CnclByLbl.TabIndex = 23;
             this.CnclByLbl.Text = "Cancelled By:";
             this.CnclByLbl.Visible = false;
@@ -254,30 +274,33 @@
             // CnclQtyLbl
             // 
             this.CnclQtyLbl.AutoSize = true;
+            this.CnclQtyLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CnclQtyLbl.Location = new System.Drawing.Point(360, 278);
             this.CnclQtyLbl.Name = "CnclQtyLbl";
-            this.CnclQtyLbl.Size = new System.Drawing.Size(119, 21);
+            this.CnclQtyLbl.Size = new System.Drawing.Size(107, 27);
             this.CnclQtyLbl.TabIndex = 27;
             this.CnclQtyLbl.Text = "Cancel Qty:";
             // 
             // RsnLbl
             // 
             this.RsnLbl.AutoSize = true;
+            this.RsnLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RsnLbl.Location = new System.Drawing.Point(690, 278);
             this.RsnLbl.Name = "RsnLbl";
-            this.RsnLbl.Size = new System.Drawing.Size(99, 21);
+            this.RsnLbl.Size = new System.Drawing.Size(98, 27);
             this.RsnLbl.TabIndex = 29;
             this.RsnLbl.Text = "Reason(s):";
             // 
             // AddInvCbox
             // 
+            this.AddInvCbox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddInvCbox.FormattingEnabled = true;
             this.AddInvCbox.Items.AddRange(new object[] {
             "Yes",
             "No"});
             this.AddInvCbox.Location = new System.Drawing.Point(165, 274);
             this.AddInvCbox.Name = "AddInvCbox";
-            this.AddInvCbox.Size = new System.Drawing.Size(165, 29);
+            this.AddInvCbox.Size = new System.Drawing.Size(165, 35);
             this.AddInvCbox.TabIndex = 31;
             this.AddInvCbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddInvCbox_KeyPress);
             // 
@@ -285,11 +308,11 @@
             // 
             this.CancelOrderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(29)))), ((int)(((byte)(43)))));
             this.CancelOrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelOrderBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelOrderBtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelOrderBtn.ForeColor = System.Drawing.Color.White;
             this.CancelOrderBtn.Location = new System.Drawing.Point(431, 343);
             this.CancelOrderBtn.Name = "CancelOrderBtn";
-            this.CancelOrderBtn.Size = new System.Drawing.Size(149, 32);
+            this.CancelOrderBtn.Size = new System.Drawing.Size(148, 37);
             this.CancelOrderBtn.TabIndex = 33;
             this.CancelOrderBtn.Text = "Cancel Order";
             this.CancelOrderBtn.UseVisualStyleBackColor = false;
@@ -297,6 +320,7 @@
             // 
             // RsnTxtBox
             // 
+            this.RsnTxtBox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RsnTxtBox.Location = new System.Drawing.Point(798, 256);
             this.RsnTxtBox.Multiline = true;
             this.RsnTxtBox.Name = "RsnTxtBox";
@@ -305,6 +329,7 @@
             // 
             // udQty
             // 
+            this.udQty.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.udQty.Location = new System.Drawing.Point(491, 273);
             this.udQty.Maximum = new decimal(new int[] {
             10000,
@@ -312,7 +337,7 @@
             0,
             0});
             this.udQty.Name = "udQty";
-            this.udQty.Size = new System.Drawing.Size(165, 30);
+            this.udQty.Size = new System.Drawing.Size(165, 32);
             this.udQty.TabIndex = 35;
             this.udQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -349,6 +374,8 @@
             this.Controls.Add(this.idLbl);
             this.Controls.Add(this.soldItemLbl);
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

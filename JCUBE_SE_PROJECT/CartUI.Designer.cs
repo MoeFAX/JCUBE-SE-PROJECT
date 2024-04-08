@@ -31,9 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCart = new System.Windows.Forms.DataGridView();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InventoryCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,7 +90,7 @@
             this.dgvCart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -111,7 +112,7 @@
             this.dgvCart.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -124,10 +125,18 @@
             this.dgvCart.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCart.RowHeadersVisible = false;
             this.dgvCart.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvCart.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvCart.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCart.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvCart.Size = new System.Drawing.Size(893, 365);
             this.dgvCart.TabIndex = 1;
@@ -143,7 +152,7 @@
             this.No.MinimumWidth = 55;
             this.No.Name = "No";
             this.No.Visible = false;
-            this.No.Width = 57;
+            this.No.Width = 125;
             // 
             // InventoryCode
             // 
@@ -166,6 +175,7 @@
             this.srp.HeaderText = "Unit Price";
             this.srp.MinimumWidth = 100;
             this.srp.Name = "srp";
+            this.srp.Width = 101;
             // 
             // Quantity
             // 
@@ -173,7 +183,7 @@
             this.Quantity.HeaderText = "Qty";
             this.Quantity.MinimumWidth = 40;
             this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 57;
+            this.Quantity.Width = 59;
             // 
             // Discount
             // 
@@ -181,7 +191,7 @@
             this.Discount.HeaderText = "Discount";
             this.Discount.MinimumWidth = 75;
             this.Discount.Name = "Discount";
-            this.Discount.Width = 89;
+            this.Discount.Width = 95;
             // 
             // Total
             // 
@@ -222,12 +232,12 @@
             // newTransactionLabel
             // 
             this.newTransactionLabel.AutoSize = true;
-            this.newTransactionLabel.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newTransactionLabel.Font = new System.Drawing.Font("Noto Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newTransactionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(46)))), ((int)(((byte)(73)))));
             this.newTransactionLabel.Location = new System.Drawing.Point(8, 9);
             this.newTransactionLabel.Margin = new System.Windows.Forms.Padding(0);
             this.newTransactionLabel.Name = "newTransactionLabel";
-            this.newTransactionLabel.Size = new System.Drawing.Size(333, 40);
+            this.newTransactionLabel.Size = new System.Drawing.Size(345, 50);
             this.newTransactionLabel.TabIndex = 0;
             this.newTransactionLabel.Text = "NEW TRANSACTION";
             // 
@@ -251,7 +261,7 @@
             // 
             this.btnClear.FlatAppearance.BorderSize = 0;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Image = global::JCUBE_SE_PROJECT.Properties.Resources.Clear_Cart_Icon;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClear.Location = new System.Drawing.Point(701, 56);
@@ -267,7 +277,7 @@
             // 
             this.btnDiscount.FlatAppearance.BorderSize = 0;
             this.btnDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDiscount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscount.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiscount.Image = global::JCUBE_SE_PROJECT.Properties.Resources.Discount_Icon;
             this.btnDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDiscount.Location = new System.Drawing.Point(375, 56);
@@ -283,7 +293,7 @@
             // 
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = global::JCUBE_SE_PROJECT.Properties.Resources.Search_Icon;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.Location = new System.Drawing.Point(28, 56);
@@ -355,12 +365,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Noto Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.label1.Location = new System.Drawing.Point(669, 20);
+            this.label1.Location = new System.Drawing.Point(639, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 37);
+            this.label1.Size = new System.Drawing.Size(97, 46);
             this.label1.TabIndex = 35;
             this.label1.Text = "Total:";
             // 
@@ -368,12 +378,12 @@
             // 
             this.lbDisplayTotal.AutoSize = true;
             this.lbDisplayTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lbDisplayTotal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDisplayTotal.Font = new System.Drawing.Font("Noto Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDisplayTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.lbDisplayTotal.Location = new System.Drawing.Point(789, 20);
+            this.lbDisplayTotal.Location = new System.Drawing.Point(728, 20);
             this.lbDisplayTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDisplayTotal.Name = "lbDisplayTotal";
-            this.lbDisplayTotal.Size = new System.Drawing.Size(93, 37);
+            this.lbDisplayTotal.Size = new System.Drawing.Size(96, 46);
             this.lbDisplayTotal.TabIndex = 34;
             this.lbDisplayTotal.Text = "00.00";
             // 
@@ -381,12 +391,12 @@
             // 
             this.DateTodayVal.AutoSize = true;
             this.DateTodayVal.BackColor = System.Drawing.Color.White;
-            this.DateTodayVal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateTodayVal.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTodayVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.DateTodayVal.Location = new System.Drawing.Point(147, 39);
+            this.DateTodayVal.Location = new System.Drawing.Point(135, 41);
             this.DateTodayVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DateTodayVal.Name = "DateTodayVal";
-            this.DateTodayVal.Size = new System.Drawing.Size(76, 22);
+            this.DateTodayVal.Size = new System.Drawing.Size(72, 27);
             this.DateTodayVal.TabIndex = 33;
             this.DateTodayVal.Text = "000000";
             // 
@@ -394,12 +404,12 @@
             // 
             this.vatableVal.AutoSize = true;
             this.vatableVal.BackColor = System.Drawing.Color.White;
-            this.vatableVal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vatableVal.Font = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vatableVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.vatableVal.Location = new System.Drawing.Point(578, 40);
+            this.vatableVal.Location = new System.Drawing.Point(569, 40);
             this.vatableVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vatableVal.Name = "vatableVal";
-            this.vatableVal.Size = new System.Drawing.Size(45, 20);
+            this.vatableVal.Size = new System.Drawing.Size(50, 23);
             this.vatableVal.TabIndex = 32;
             this.vatableVal.Text = "00.00";
             // 
@@ -407,12 +417,12 @@
             // 
             this.vatVal.AutoSize = true;
             this.vatVal.BackColor = System.Drawing.Color.White;
-            this.vatVal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vatVal.Font = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vatVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.vatVal.Location = new System.Drawing.Point(577, 14);
+            this.vatVal.Location = new System.Drawing.Point(568, 14);
             this.vatVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vatVal.Name = "vatVal";
-            this.vatVal.Size = new System.Drawing.Size(45, 20);
+            this.vatVal.Size = new System.Drawing.Size(50, 23);
             this.vatVal.TabIndex = 31;
             this.vatVal.Text = "00.00";
             // 
@@ -420,12 +430,12 @@
             // 
             this.discountVal.AutoSize = true;
             this.discountVal.BackColor = System.Drawing.Color.White;
-            this.discountVal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountVal.Font = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discountVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.discountVal.Location = new System.Drawing.Point(422, 40);
+            this.discountVal.Location = new System.Drawing.Point(413, 40);
             this.discountVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.discountVal.Name = "discountVal";
-            this.discountVal.Size = new System.Drawing.Size(45, 20);
+            this.discountVal.Size = new System.Drawing.Size(50, 23);
             this.discountVal.TabIndex = 30;
             this.discountVal.Text = "00.00";
             // 
@@ -433,12 +443,12 @@
             // 
             this.SalesTotalVal.AutoSize = true;
             this.SalesTotalVal.BackColor = System.Drawing.Color.White;
-            this.SalesTotalVal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalesTotalVal.Font = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalesTotalVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.SalesTotalVal.Location = new System.Drawing.Point(421, 14);
+            this.SalesTotalVal.Location = new System.Drawing.Point(412, 14);
             this.SalesTotalVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SalesTotalVal.Name = "SalesTotalVal";
-            this.SalesTotalVal.Size = new System.Drawing.Size(45, 20);
+            this.SalesTotalVal.Size = new System.Drawing.Size(50, 23);
             this.SalesTotalVal.TabIndex = 29;
             this.SalesTotalVal.Text = "00.00";
             // 
@@ -446,12 +456,12 @@
             // 
             this.TransNoVal.AutoSize = true;
             this.TransNoVal.BackColor = System.Drawing.Color.White;
-            this.TransNoVal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TransNoVal.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TransNoVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.TransNoVal.Location = new System.Drawing.Point(174, 13);
+            this.TransNoVal.Location = new System.Drawing.Point(157, 14);
             this.TransNoVal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TransNoVal.Name = "TransNoVal";
-            this.TransNoVal.Size = new System.Drawing.Size(76, 22);
+            this.TransNoVal.Size = new System.Drawing.Size(72, 27);
             this.TransNoVal.TabIndex = 28;
             this.TransNoVal.Text = "000000";
             // 
@@ -459,12 +469,12 @@
             // 
             this.transactionNoLabel.AutoSize = true;
             this.transactionNoLabel.BackColor = System.Drawing.Color.White;
-            this.transactionNoLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactionNoLabel.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.transactionNoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
             this.transactionNoLabel.Location = new System.Drawing.Point(15, 13);
             this.transactionNoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.transactionNoLabel.Name = "transactionNoLabel";
-            this.transactionNoLabel.Size = new System.Drawing.Size(151, 22);
+            this.transactionNoLabel.Size = new System.Drawing.Size(145, 27);
             this.transactionNoLabel.TabIndex = 22;
             this.transactionNoLabel.Text = "Transaction No:";
             // 
@@ -472,12 +482,12 @@
             // 
             this.dateLabel.AutoSize = true;
             this.dateLabel.BackColor = System.Drawing.Color.White;
-            this.dateLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
             this.dateLabel.Location = new System.Drawing.Point(16, 39);
             this.dateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(123, 22);
+            this.dateLabel.Size = new System.Drawing.Size(111, 27);
             this.dateLabel.TabIndex = 27;
             this.dateLabel.Text = "Date Today:";
             // 
@@ -485,12 +495,12 @@
             // 
             this.vatableLabel.AutoSize = true;
             this.vatableLabel.BackColor = System.Drawing.Color.White;
-            this.vatableLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vatableLabel.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vatableLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.vatableLabel.Location = new System.Drawing.Point(501, 41);
+            this.vatableLabel.Location = new System.Drawing.Point(492, 41);
             this.vatableLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vatableLabel.Name = "vatableLabel";
-            this.vatableLabel.Size = new System.Drawing.Size(68, 19);
+            this.vatableLabel.Size = new System.Drawing.Size(57, 20);
             this.vatableLabel.TabIndex = 26;
             this.vatableLabel.Text = "VATable:";
             // 
@@ -498,12 +508,12 @@
             // 
             this.salesTotalLabel.AutoSize = true;
             this.salesTotalLabel.BackColor = System.Drawing.Color.White;
-            this.salesTotalLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salesTotalLabel.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salesTotalLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.salesTotalLabel.Location = new System.Drawing.Point(324, 15);
+            this.salesTotalLabel.Location = new System.Drawing.Point(315, 15);
             this.salesTotalLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.salesTotalLabel.Name = "salesTotalLabel";
-            this.salesTotalLabel.Size = new System.Drawing.Size(83, 19);
+            this.salesTotalLabel.Size = new System.Drawing.Size(74, 20);
             this.salesTotalLabel.TabIndex = 23;
             this.salesTotalLabel.Text = "Sales Total:";
             // 
@@ -511,12 +521,12 @@
             // 
             this.discountLabel.AutoSize = true;
             this.discountLabel.BackColor = System.Drawing.Color.White;
-            this.discountLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountLabel.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.discountLabel.Location = new System.Drawing.Point(324, 41);
+            this.discountLabel.Location = new System.Drawing.Point(315, 41);
             this.discountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.discountLabel.Name = "discountLabel";
-            this.discountLabel.Size = new System.Drawing.Size(72, 19);
+            this.discountLabel.Size = new System.Drawing.Size(65, 20);
             this.discountLabel.TabIndex = 24;
             this.discountLabel.Text = "Discount:";
             // 
@@ -524,12 +534,12 @@
             // 
             this.vatLabel.AutoSize = true;
             this.vatLabel.BackColor = System.Drawing.Color.White;
-            this.vatLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vatLabel.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vatLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(0)))), ((int)(((byte)(25)))));
-            this.vatLabel.Location = new System.Drawing.Point(501, 15);
+            this.vatLabel.Location = new System.Drawing.Point(492, 15);
             this.vatLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vatLabel.Name = "vatLabel";
-            this.vatLabel.Size = new System.Drawing.Size(36, 19);
+            this.vatLabel.Size = new System.Drawing.Size(33, 20);
             this.vatLabel.TabIndex = 25;
             this.vatLabel.Text = "VAT:";
             // 
@@ -563,9 +573,9 @@
             // dataGridViewImageColumn3
             // 
             this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.NullValue = null;
-            this.dataGridViewImageColumn3.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewImageColumn3.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewImageColumn3.HeaderText = "";
             this.dataGridViewImageColumn3.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
             this.dataGridViewImageColumn3.MinimumWidth = 20;

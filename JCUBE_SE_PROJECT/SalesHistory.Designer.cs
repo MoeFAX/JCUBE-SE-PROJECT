@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesHistory));
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -68,11 +70,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Noto Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.label1.Location = new System.Drawing.Point(23, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 37);
+            this.label1.Size = new System.Drawing.Size(248, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "SALES HISTORY";
             // 
@@ -113,10 +115,10 @@
             // lbTot
             // 
             this.lbTot.AutoSize = true;
-            this.lbTot.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTot.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTot.Location = new System.Drawing.Point(621, 25);
             this.lbTot.Name = "lbTot";
-            this.lbTot.Size = new System.Drawing.Size(105, 21);
+            this.lbTot.Size = new System.Drawing.Size(107, 27);
             this.lbTot.TabIndex = 13;
             this.lbTot.Text = "Total Sales:";
             // 
@@ -126,7 +128,7 @@
             this.btnPrintSalesHistory.FlatAppearance.BorderColor = System.Drawing.Color.MidnightBlue;
             this.btnPrintSalesHistory.FlatAppearance.BorderSize = 0;
             this.btnPrintSalesHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintSalesHistory.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintSalesHistory.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintSalesHistory.ForeColor = System.Drawing.Color.Black;
             this.btnPrintSalesHistory.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_print_30;
             this.btnPrintSalesHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -141,7 +143,7 @@
             // 
             // lblTotal
             // 
-            this.lblTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.Location = new System.Drawing.Point(726, 24);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(161, 23);
@@ -167,63 +169,64 @@
             // 
             // comboClrk
             // 
-            this.comboClrk.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboClrk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboClrk.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboClrk.FormattingEnabled = true;
             this.comboClrk.Location = new System.Drawing.Point(706, 19);
             this.comboClrk.Name = "comboClrk";
-            this.comboClrk.Size = new System.Drawing.Size(146, 29);
+            this.comboClrk.Size = new System.Drawing.Size(146, 35);
             this.comboClrk.TabIndex = 9;
             this.comboClrk.SelectedIndexChanged += new System.EventHandler(this.comboClrk_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(635, 23);
+            this.label4.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(637, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 23);
+            this.label4.Size = new System.Drawing.Size(66, 30);
             this.label4.TabIndex = 6;
             this.label4.Text = "Clerk:";
             // 
             // dateTo
             // 
-            this.dateTo.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTo.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTo.Location = new System.Drawing.Point(378, 18);
             this.dateTo.Name = "dateTo";
-            this.dateTo.Size = new System.Drawing.Size(149, 30);
+            this.dateTo.Size = new System.Drawing.Size(149, 32);
             this.dateTo.TabIndex = 5;
             this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
             // dateFrom
             // 
-            this.dateFrom.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFrom.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateFrom.Location = new System.Drawing.Point(177, 18);
             this.dateFrom.Name = "dateFrom";
-            this.dateFrom.Size = new System.Drawing.Size(141, 30);
+            this.dateFrom.Size = new System.Drawing.Size(141, 32);
             this.dateFrom.TabIndex = 4;
             this.dateFrom.ValueChanged += new System.EventHandler(this.dateFrom_ValueChanged);
             // 
             // lblTo
             // 
             this.lblTo.AutoSize = true;
-            this.lblTo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTo.Location = new System.Drawing.Point(330, 22);
+            this.lblTo.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTo.Location = new System.Drawing.Point(334, 20);
             this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(36, 23);
+            this.lblTo.Size = new System.Drawing.Size(40, 30);
             this.lblTo.TabIndex = 3;
             this.lblTo.Text = "To:";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(55, 22);
+            this.lblDate.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(57, 19);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(108, 23);
+            this.lblDate.Size = new System.Drawing.Size(118, 30);
             this.lblDate.TabIndex = 2;
-            this.lblDate.Text = "Filter From";
+            this.lblDate.Text = "Filter From:";
             // 
             // dgvSalesHistory
             // 
@@ -235,15 +238,15 @@
             this.dgvSalesHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSalesHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvSalesHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSalesHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSalesHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSalesHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalesHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
@@ -260,14 +263,14 @@
             this.Mode,
             this.Customer});
             this.dgvSalesHistory.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSalesHistory.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSalesHistory.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvSalesHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSalesHistory.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvSalesHistory.EnableHeadersVisualStyles = false;
@@ -275,10 +278,18 @@
             this.dgvSalesHistory.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSalesHistory.Name = "dgvSalesHistory";
             this.dgvSalesHistory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSalesHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvSalesHistory.RowHeadersVisible = false;
             this.dgvSalesHistory.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvSalesHistory.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvSalesHistory.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvSalesHistory.RowTemplate.Height = 24;
             this.dgvSalesHistory.Size = new System.Drawing.Size(871, 407);
             this.dgvSalesHistory.TabIndex = 8;
@@ -286,13 +297,13 @@
             // No
             // 
             this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 4.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.No.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 4.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.No.DefaultCellStyle = dataGridViewCellStyle7;
             this.No.HeaderText = "No";
             this.No.MinimumWidth = 6;
             this.No.Name = "No";
             this.No.Visible = false;
-            this.No.Width = 65;
+            this.No.Width = 125;
             // 
             // Invoice
             // 
@@ -308,7 +319,7 @@
             this.InventoryCode.HeaderText = "Inventory Code";
             this.InventoryCode.MinimumWidth = 6;
             this.InventoryCode.Name = "InventoryCode";
-            this.InventoryCode.Width = 138;
+            this.InventoryCode.Width = 136;
             // 
             // Description
             // 
@@ -316,7 +327,7 @@
             this.Description.HeaderText = "Description";
             this.Description.MinimumWidth = 6;
             this.Description.Name = "Description";
-            this.Description.Width = 113;
+            this.Description.Width = 112;
             // 
             // Price
             // 
@@ -324,7 +335,7 @@
             this.Price.HeaderText = "Price";
             this.Price.MinimumWidth = 6;
             this.Price.Name = "Price";
-            this.Price.Width = 70;
+            this.Price.Width = 69;
             // 
             // Qty
             // 
@@ -332,7 +343,7 @@
             this.Qty.HeaderText = "Qty";
             this.Qty.MinimumWidth = 6;
             this.Qty.Name = "Qty";
-            this.Qty.Width = 57;
+            this.Qty.Width = 59;
             // 
             // Discount
             // 
@@ -340,7 +351,7 @@
             this.Discount.HeaderText = "Discount";
             this.Discount.MinimumWidth = 6;
             this.Discount.Name = "Discount";
-            this.Discount.Width = 94;
+            this.Discount.Width = 95;
             // 
             // Total
             // 
@@ -348,7 +359,7 @@
             this.Total.HeaderText = "Total";
             this.Total.MinimumWidth = 6;
             this.Total.Name = "Total";
-            this.Total.Width = 70;
+            this.Total.Width = 69;
             // 
             // Clerk
             // 
@@ -364,7 +375,7 @@
             this.OcNum.HeaderText = "OC#";
             this.OcNum.MinimumWidth = 6;
             this.OcNum.Name = "OcNum";
-            this.OcNum.Width = 63;
+            this.OcNum.Width = 62;
             // 
             // TinNum
             // 
@@ -372,7 +383,7 @@
             this.TinNum.HeaderText = "TIN#";
             this.TinNum.MinimumWidth = 6;
             this.TinNum.Name = "TinNum";
-            this.TinNum.Width = 67;
+            this.TinNum.Width = 68;
             // 
             // Mode
             // 
@@ -380,7 +391,7 @@
             this.Mode.HeaderText = "Mode";
             this.Mode.MinimumWidth = 6;
             this.Mode.Name = "Mode";
-            this.Mode.Width = 73;
+            this.Mode.Width = 72;
             // 
             // Customer
             // 
@@ -388,7 +399,6 @@
             this.Customer.HeaderText = "Customer";
             this.Customer.MinimumWidth = 6;
             this.Customer.Name = "Customer";
-            this.Customer.Width = 99;
             // 
             // SalesHistory
             // 
@@ -400,8 +410,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SalesHistory";
-            this.Text = "SalesHistory";
+            this.Text = "Sales History";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

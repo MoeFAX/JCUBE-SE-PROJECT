@@ -47,7 +47,7 @@
             this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.FlatAppearance.BorderSize = 0;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelBtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelBtn.ForeColor = System.Drawing.Color.White;
             this.CancelBtn.Location = new System.Drawing.Point(371, 190);
             this.CancelBtn.Name = "CancelBtn";
@@ -63,7 +63,7 @@
             this.SaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveBtn.FlatAppearance.BorderSize = 0;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
             this.SaveBtn.Location = new System.Drawing.Point(254, 190);
             this.SaveBtn.Name = "SaveBtn";
@@ -75,37 +75,37 @@
             // 
             // EditFullnameField
             // 
-            this.EditFullnameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditFullnameField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditFullnameField.Location = new System.Drawing.Point(174, 86);
             this.EditFullnameField.Name = "EditFullnameField";
-            this.EditFullnameField.Size = new System.Drawing.Size(459, 28);
+            this.EditFullnameField.Size = new System.Drawing.Size(459, 32);
             this.EditFullnameField.TabIndex = 49;
             // 
             // EditFullnamelbl
             // 
             this.EditFullnamelbl.AutoSize = true;
-            this.EditFullnamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditFullnamelbl.Location = new System.Drawing.Point(69, 90);
+            this.EditFullnamelbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditFullnamelbl.Location = new System.Drawing.Point(68, 89);
             this.EditFullnamelbl.Name = "EditFullnamelbl";
-            this.EditFullnamelbl.Size = new System.Drawing.Size(96, 22);
+            this.EditFullnamelbl.Size = new System.Drawing.Size(103, 27);
             this.EditFullnamelbl.TabIndex = 50;
             this.EditFullnamelbl.Text = "Full Name:";
             // 
             // EditUsernameField
             // 
-            this.EditUsernameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditUsernameField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditUsernameField.Location = new System.Drawing.Point(174, 37);
             this.EditUsernameField.Name = "EditUsernameField";
-            this.EditUsernameField.Size = new System.Drawing.Size(459, 28);
+            this.EditUsernameField.Size = new System.Drawing.Size(459, 32);
             this.EditUsernameField.TabIndex = 41;
             // 
             // EditUsernamelbl
             // 
             this.EditUsernamelbl.AutoSize = true;
-            this.EditUsernamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditUsernamelbl.Location = new System.Drawing.Point(93, 39);
+            this.EditUsernamelbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditUsernamelbl.Location = new System.Drawing.Point(92, 38);
             this.EditUsernamelbl.Name = "EditUsernamelbl";
-            this.EditUsernamelbl.Size = new System.Drawing.Size(75, 22);
+            this.EditUsernamelbl.Size = new System.Drawing.Size(80, 27);
             this.EditUsernamelbl.TabIndex = 42;
             this.EditUsernamelbl.Text = "User ID:";
             // 
@@ -123,10 +123,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(118, 141);
+            this.label1.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(117, 140);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 22);
+            this.label1.Size = new System.Drawing.Size(54, 27);
             this.label1.TabIndex = 56;
             this.label1.Text = "Role:";
             // 
@@ -134,14 +134,14 @@
             // 
             this.EditRoleComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EditRoleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EditRoleComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditRoleComboBox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditRoleComboBox.FormattingEnabled = true;
             this.EditRoleComboBox.Items.AddRange(new object[] {
             "Administrator",
             "Sales Clerk"});
             this.EditRoleComboBox.Location = new System.Drawing.Point(174, 136);
             this.EditRoleComboBox.Name = "EditRoleComboBox";
-            this.EditRoleComboBox.Size = new System.Drawing.Size(459, 30);
+            this.EditRoleComboBox.Size = new System.Drawing.Size(459, 35);
             this.EditRoleComboBox.TabIndex = 57;
             // 
             // EditAccount

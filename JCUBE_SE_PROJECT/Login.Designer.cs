@@ -47,7 +47,7 @@
             // 
             // 
             this.UserIDtxtbox.CustomButton.Image = null;
-            this.UserIDtxtbox.CustomButton.Location = new System.Drawing.Point(165, 1);
+            this.UserIDtxtbox.CustomButton.Location = new System.Drawing.Point(246, 1);
             this.UserIDtxtbox.CustomButton.Name = "";
             this.UserIDtxtbox.CustomButton.Size = new System.Drawing.Size(31, 31);
             this.UserIDtxtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -59,7 +59,7 @@
             this.UserIDtxtbox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.UserIDtxtbox.Icon = ((System.Drawing.Image)(resources.GetObject("UserIDtxtbox.Icon")));
             this.UserIDtxtbox.Lines = new string[0];
-            this.UserIDtxtbox.Location = new System.Drawing.Point(69, 163);
+            this.UserIDtxtbox.Location = new System.Drawing.Point(29, 163);
             this.UserIDtxtbox.MaxLength = 32767;
             this.UserIDtxtbox.Name = "UserIDtxtbox";
             this.UserIDtxtbox.PasswordChar = '\0';
@@ -69,7 +69,7 @@
             this.UserIDtxtbox.SelectionLength = 0;
             this.UserIDtxtbox.SelectionStart = 0;
             this.UserIDtxtbox.ShortcutsEnabled = true;
-            this.UserIDtxtbox.Size = new System.Drawing.Size(197, 33);
+            this.UserIDtxtbox.Size = new System.Drawing.Size(278, 33);
             this.UserIDtxtbox.TabIndex = 3;
             this.UserIDtxtbox.UseSelectable = true;
             this.UserIDtxtbox.WaterMark = "USER ID";
@@ -79,11 +79,11 @@
             // LoginLabel
             // 
             this.LoginLabel.AutoSize = true;
-            this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginLabel.Font = new System.Drawing.Font("Noto Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginLabel.ForeColor = System.Drawing.Color.White;
-            this.LoginLabel.Location = new System.Drawing.Point(122, 118);
+            this.LoginLabel.Location = new System.Drawing.Point(125, 118);
             this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(92, 29);
+            this.LoginLabel.Size = new System.Drawing.Size(91, 35);
             this.LoginLabel.TabIndex = 4;
             this.LoginLabel.Text = "LOGIN";
             // 
@@ -93,7 +93,7 @@
             // 
             // 
             this.Passwordtxtbox.CustomButton.Image = null;
-            this.Passwordtxtbox.CustomButton.Location = new System.Drawing.Point(169, 2);
+            this.Passwordtxtbox.CustomButton.Location = new System.Drawing.Point(250, 2);
             this.Passwordtxtbox.CustomButton.Name = "";
             this.Passwordtxtbox.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.Passwordtxtbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -105,7 +105,7 @@
             this.Passwordtxtbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.Passwordtxtbox.Icon = ((System.Drawing.Image)(resources.GetObject("Passwordtxtbox.Icon")));
             this.Passwordtxtbox.Lines = new string[0];
-            this.Passwordtxtbox.Location = new System.Drawing.Point(69, 218);
+            this.Passwordtxtbox.Location = new System.Drawing.Point(29, 218);
             this.Passwordtxtbox.MaxLength = 32767;
             this.Passwordtxtbox.Name = "Passwordtxtbox";
             this.Passwordtxtbox.PasswordChar = '●';
@@ -116,7 +116,7 @@
             this.Passwordtxtbox.SelectionLength = 0;
             this.Passwordtxtbox.SelectionStart = 0;
             this.Passwordtxtbox.ShortcutsEnabled = true;
-            this.Passwordtxtbox.Size = new System.Drawing.Size(197, 30);
+            this.Passwordtxtbox.Size = new System.Drawing.Size(278, 30);
             this.Passwordtxtbox.TabIndex = 5;
             this.Passwordtxtbox.UseSelectable = true;
             this.Passwordtxtbox.WaterMark = "PASSWORD";
@@ -142,7 +142,7 @@
             // 
             this.NPEyeBtn.BackColor = System.Drawing.Color.White;
             this.NPEyeBtn.Image = ((System.Drawing.Image)(resources.GetObject("NPEyeBtn.Image")));
-            this.NPEyeBtn.Location = new System.Drawing.Point(242, 223);
+            this.NPEyeBtn.Location = new System.Drawing.Point(280, 223);
             this.NPEyeBtn.Name = "NPEyeBtn";
             this.NPEyeBtn.Size = new System.Drawing.Size(20, 20);
             this.NPEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -156,9 +156,9 @@
             this.LoginBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.LoginBtn.FlatAppearance.BorderSize = 0;
             this.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginBtn.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.LoginBtn.Location = new System.Drawing.Point(92, 268);
+            this.LoginBtn.Location = new System.Drawing.Point(96, 268);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(143, 27);
             this.LoginBtn.TabIndex = 8;
@@ -170,7 +170,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(110, 16);
+            this.pictureBox3.Location = new System.Drawing.Point(113, 16);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(114, 92);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

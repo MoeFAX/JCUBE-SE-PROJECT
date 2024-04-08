@@ -79,14 +79,15 @@
             // 
             // MsgTxt
             // 
-            this.MsgTxt.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MsgTxt.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MsgTxt.ForeColor = System.Drawing.Color.White;
+            this.MsgTxt.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MsgTxt.Location = new System.Drawing.Point(74, 9);
             this.MsgTxt.Name = "MsgTxt";
             this.MsgTxt.Size = new System.Drawing.Size(242, 57);
             this.MsgTxt.TabIndex = 6;
             this.MsgTxt.Text = "Message Text";
-            this.MsgTxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MsgTxt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // btnCancel
             // 

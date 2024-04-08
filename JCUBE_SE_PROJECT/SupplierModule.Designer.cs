@@ -46,81 +46,91 @@
             // 
             // SupplierNameField
             // 
+            this.SupplierNameField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SupplierNameField.Location = new System.Drawing.Point(170, 51);
             this.SupplierNameField.Name = "SupplierNameField";
-            this.SupplierNameField.Size = new System.Drawing.Size(384, 30);
+            this.SupplierNameField.Size = new System.Drawing.Size(384, 32);
             this.SupplierNameField.TabIndex = 8;
             // 
             // AddressField
             // 
+            this.AddressField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddressField.Location = new System.Drawing.Point(170, 99);
             this.AddressField.Name = "AddressField";
-            this.AddressField.Size = new System.Drawing.Size(384, 30);
+            this.AddressField.Size = new System.Drawing.Size(384, 32);
             this.AddressField.TabIndex = 9;
             // 
             // ContactField
             // 
+            this.ContactField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContactField.Location = new System.Drawing.Point(170, 144);
             this.ContactField.Name = "ContactField";
-            this.ContactField.Size = new System.Drawing.Size(384, 30);
+            this.ContactField.Size = new System.Drawing.Size(384, 32);
             this.ContactField.TabIndex = 10;
             // 
             // PhoneField
             // 
+            this.PhoneField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PhoneField.Location = new System.Drawing.Point(170, 193);
             this.PhoneField.Name = "PhoneField";
-            this.PhoneField.Size = new System.Drawing.Size(384, 30);
+            this.PhoneField.Size = new System.Drawing.Size(384, 32);
             this.PhoneField.TabIndex = 11;
             // 
             // EmailAddField
             // 
+            this.EmailAddField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailAddField.Location = new System.Drawing.Point(170, 240);
             this.EmailAddField.Name = "EmailAddField";
-            this.EmailAddField.Size = new System.Drawing.Size(384, 30);
+            this.EmailAddField.Size = new System.Drawing.Size(384, 32);
             this.EmailAddField.TabIndex = 12;
             // 
             // SupplierNamelbl
             // 
             this.SupplierNamelbl.AutoSize = true;
+            this.SupplierNamelbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SupplierNamelbl.Location = new System.Drawing.Point(23, 54);
             this.SupplierNamelbl.Name = "SupplierNamelbl";
-            this.SupplierNamelbl.Size = new System.Drawing.Size(141, 21);
+            this.SupplierNamelbl.Size = new System.Drawing.Size(143, 27);
             this.SupplierNamelbl.TabIndex = 13;
             this.SupplierNamelbl.Text = "Supplier Name:";
             // 
             // Addresslbl
             // 
             this.Addresslbl.AutoSize = true;
+            this.Addresslbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Addresslbl.Location = new System.Drawing.Point(79, 102);
             this.Addresslbl.Name = "Addresslbl";
-            this.Addresslbl.Size = new System.Drawing.Size(85, 21);
+            this.Addresslbl.Size = new System.Drawing.Size(86, 27);
             this.Addresslbl.TabIndex = 14;
             this.Addresslbl.Text = "Address:";
             // 
             // Contactlbl
             // 
             this.Contactlbl.AutoSize = true;
+            this.Contactlbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Contactlbl.Location = new System.Drawing.Point(10, 147);
             this.Contactlbl.Name = "Contactlbl";
-            this.Contactlbl.Size = new System.Drawing.Size(154, 21);
+            this.Contactlbl.Size = new System.Drawing.Size(145, 27);
             this.Contactlbl.TabIndex = 15;
             this.Contactlbl.Text = "Contact Person:";
             // 
             // Phonelbl
             // 
             this.Phonelbl.AutoSize = true;
+            this.Phonelbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Phonelbl.Location = new System.Drawing.Point(62, 196);
             this.Phonelbl.Name = "Phonelbl";
-            this.Phonelbl.Size = new System.Drawing.Size(102, 21);
+            this.Phonelbl.Size = new System.Drawing.Size(101, 27);
             this.Phonelbl.TabIndex = 16;
             this.Phonelbl.Text = "Phone No:";
             // 
             // EmailAddlbl
             // 
             this.EmailAddlbl.AutoSize = true;
+            this.EmailAddlbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailAddlbl.Location = new System.Drawing.Point(29, 243);
             this.EmailAddlbl.Name = "EmailAddlbl";
-            this.EmailAddlbl.Size = new System.Drawing.Size(135, 21);
+            this.EmailAddlbl.Size = new System.Drawing.Size(138, 27);
             this.EmailAddlbl.TabIndex = 17;
             this.EmailAddlbl.Text = "Email Address:";
             // 
@@ -130,10 +140,11 @@
             this.SaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveBtn.FlatAppearance.BorderSize = 0;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveBtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
             this.SaveBtn.Location = new System.Drawing.Point(198, 299);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(90, 30);
+            this.SaveBtn.Size = new System.Drawing.Size(90, 35);
             this.SaveBtn.TabIndex = 18;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
@@ -146,10 +157,11 @@
             this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.FlatAppearance.BorderSize = 0;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelBtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelBtn.ForeColor = System.Drawing.Color.White;
             this.CancelBtn.Location = new System.Drawing.Point(315, 299);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(90, 30);
+            this.CancelBtn.Size = new System.Drawing.Size(90, 35);
             this.CancelBtn.TabIndex = 19;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = false;

@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DailySales));
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTo = new System.Windows.Forms.Label();
             this.dateFrom = new System.Windows.Forms.DateTimePicker();
@@ -43,10 +44,6 @@
             this.totalVal = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.dgvSoldItems = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.DSNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DSInvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DSItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +53,10 @@
             this.DSDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DSTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CancelOrder = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSoldItems)).BeginInit();
             this.panel1.SuspendLayout();
@@ -81,58 +82,58 @@
             // lblTo
             // 
             this.lblTo.AutoSize = true;
-            this.lblTo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTo.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTo.Location = new System.Drawing.Point(374, 14);
+            this.lblTo.Location = new System.Drawing.Point(374, 11);
             this.lblTo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(36, 23);
+            this.lblTo.Size = new System.Drawing.Size(40, 30);
             this.lblTo.TabIndex = 18;
             this.lblTo.Text = "To:";
             // 
             // dateFrom
             // 
-            this.dateFrom.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateFrom.Font = new System.Drawing.Font("Noto Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateFrom.Location = new System.Drawing.Point(213, 11);
             this.dateFrom.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.dateFrom.Name = "dateFrom";
-            this.dateFrom.Size = new System.Drawing.Size(137, 28);
+            this.dateFrom.Size = new System.Drawing.Size(137, 31);
             this.dateFrom.TabIndex = 4;
             this.dateFrom.ValueChanged += new System.EventHandler(this.dateFrom_ValueChanged);
             // 
             // lblClerk
             // 
             this.lblClerk.AutoSize = true;
-            this.lblClerk.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClerk.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClerk.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblClerk.Location = new System.Drawing.Point(645, 14);
+            this.lblClerk.Location = new System.Drawing.Point(645, 11);
             this.lblClerk.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblClerk.Name = "lblClerk";
-            this.lblClerk.Size = new System.Drawing.Size(65, 23);
+            this.lblClerk.Size = new System.Drawing.Size(66, 30);
             this.lblClerk.TabIndex = 19;
             this.lblClerk.Text = "Clerk:";
             // 
             // dateTo
             // 
-            this.dateTo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTo.Font = new System.Drawing.Font("Noto Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTo.Location = new System.Drawing.Point(438, 11);
             this.dateTo.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.dateTo.Name = "dateTo";
-            this.dateTo.Size = new System.Drawing.Size(132, 28);
+            this.dateTo.Size = new System.Drawing.Size(132, 31);
             this.dateTo.TabIndex = 4;
             this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
             // comboClerk
             // 
             this.comboClerk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboClerk.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboClerk.Font = new System.Drawing.Font("Noto Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboClerk.FormattingEnabled = true;
             this.comboClerk.Location = new System.Drawing.Point(731, 11);
             this.comboClerk.Margin = new System.Windows.Forms.Padding(5);
             this.comboClerk.Name = "comboClerk";
-            this.comboClerk.Size = new System.Drawing.Size(201, 29);
+            this.comboClerk.Size = new System.Drawing.Size(201, 34);
             this.comboClerk.TabIndex = 16;
             this.comboClerk.SelectedIndexChanged += new System.EventHandler(this.comboClerk_SelectedIndexChanged);
             // 
@@ -149,12 +150,12 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label10.Location = new System.Drawing.Point(72, 14);
+            this.label10.Location = new System.Drawing.Point(72, 11);
             this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(113, 23);
+            this.label10.Size = new System.Drawing.Size(118, 30);
             this.label10.TabIndex = 7;
             this.label10.Text = "Filter From:";
             // 
@@ -162,12 +163,12 @@
             // 
             this.totalVal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.totalVal.AutoSize = true;
-            this.totalVal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalVal.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalVal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.totalVal.Location = new System.Drawing.Point(867, 17);
+            this.totalVal.Location = new System.Drawing.Point(781, 17);
             this.totalVal.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.totalVal.Name = "totalVal";
-            this.totalVal.Size = new System.Drawing.Size(49, 23);
+            this.totalVal.Size = new System.Drawing.Size(52, 30);
             this.totalVal.TabIndex = 15;
             this.totalVal.Text = "0.00";
             this.totalVal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -176,12 +177,12 @@
             // 
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTotal.Location = new System.Drawing.Point(768, 17);
+            this.lblTotal.Location = new System.Drawing.Point(722, 17);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(62, 23);
+            this.lblTotal.Size = new System.Drawing.Size(63, 30);
             this.lblTotal.TabIndex = 14;
             this.lblTotal.Text = "Total:";
             // 
@@ -197,7 +198,7 @@
             this.dgvSoldItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 9);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -218,7 +219,7 @@
             this.dgvSoldItems.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -233,7 +234,7 @@
             this.dgvSoldItems.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -249,59 +250,6 @@
             this.dgvSoldItems.TabIndex = 3;
             this.dgvSoldItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSoldItems_CellContentClick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(46)))), ((int)(((byte)(73)))));
-            this.label1.Location = new System.Drawing.Point(7, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(5);
-            this.label1.Size = new System.Drawing.Size(163, 44);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Sold Items";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.btnPrint);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.totalVal);
-            this.panel1.Controls.Add(this.lblTotal);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(982, 57);
-            this.panel1.TabIndex = 20;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 6;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.SystemColors.Control;
-            this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.Black;
-            this.btnPrint.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_print_30;
-            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPrint.Location = new System.Drawing.Point(214, 11);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(173, 35);
-            this.btnPrint.TabIndex = 17;
-            this.btnPrint.Text = "Print Preview";
-            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // DSNo
             // 
             this.DSNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -309,7 +257,7 @@
             this.DSNo.MinimumWidth = 6;
             this.DSNo.Name = "DSNo";
             this.DSNo.Visible = false;
-            this.DSNo.Width = 31;
+            this.DSNo.Width = 125;
             // 
             // DSInvoice
             // 
@@ -317,7 +265,7 @@
             this.DSInvoice.HeaderText = "Invoice No.";
             this.DSInvoice.MinimumWidth = 6;
             this.DSInvoice.Name = "DSInvoice";
-            this.DSInvoice.Width = 112;
+            this.DSInvoice.Width = 110;
             // 
             // DSItemCode
             // 
@@ -340,7 +288,7 @@
             this.DSPrice.HeaderText = "Price";
             this.DSPrice.MinimumWidth = 6;
             this.DSPrice.Name = "DSPrice";
-            this.DSPrice.Width = 70;
+            this.DSPrice.Width = 69;
             // 
             // DSQuantity
             // 
@@ -348,7 +296,7 @@
             this.DSQuantity.HeaderText = "Quantity";
             this.DSQuantity.MinimumWidth = 6;
             this.DSQuantity.Name = "DSQuantity";
-            this.DSQuantity.Width = 90;
+            this.DSQuantity.Width = 95;
             // 
             // DSDiscount
             // 
@@ -356,7 +304,7 @@
             this.DSDiscount.HeaderText = "Discount";
             this.DSDiscount.MinimumWidth = 6;
             this.DSDiscount.Name = "DSDiscount";
-            this.DSDiscount.Width = 94;
+            this.DSDiscount.Width = 95;
             // 
             // DSTotal
             // 
@@ -364,7 +312,7 @@
             this.DSTotal.HeaderText = "Total";
             this.DSTotal.MinimumWidth = 6;
             this.DSTotal.Name = "DSTotal";
-            this.DSTotal.Width = 70;
+            this.DSTotal.Width = 69;
             // 
             // CancelOrder
             // 
@@ -375,6 +323,60 @@
             this.CancelOrder.Name = "CancelOrder";
             this.CancelOrder.Width = 6;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Noto Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(46)))), ((int)(((byte)(73)))));
+            this.label1.Location = new System.Drawing.Point(7, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(5);
+            this.label1.Size = new System.Drawing.Size(175, 52);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Sold Items";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.btnPrint);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.totalVal);
+            this.panel1.Controls.Add(this.lblTotal);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(982, 57);
+            this.panel1.TabIndex = 20;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.Black;
+            this.btnPrint.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_print_30;
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrint.Location = new System.Drawing.Point(214, 11);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(173, 35);
+            this.btnPrint.TabIndex = 17;
+            this.btnPrint.Text = "Print Preview";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
             // DailySales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -384,6 +386,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;

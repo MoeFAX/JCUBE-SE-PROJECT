@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Discount));
             this.discTotalPriceLabel = new System.Windows.Forms.Label();
             this.discPercentage = new System.Windows.Forms.Label();
             this.discAmount = new System.Windows.Forms.Label();
@@ -42,30 +43,30 @@
             // discTotalPriceLabel
             // 
             this.discTotalPriceLabel.AutoSize = true;
-            this.discTotalPriceLabel.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discTotalPriceLabel.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discTotalPriceLabel.Location = new System.Drawing.Point(30, 24);
             this.discTotalPriceLabel.Name = "discTotalPriceLabel";
-            this.discTotalPriceLabel.Size = new System.Drawing.Size(105, 21);
+            this.discTotalPriceLabel.Size = new System.Drawing.Size(105, 27);
             this.discTotalPriceLabel.TabIndex = 0;
             this.discTotalPriceLabel.Text = "Total Price:";
             // 
             // discPercentage
             // 
             this.discPercentage.AutoSize = true;
-            this.discPercentage.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discPercentage.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discPercentage.Location = new System.Drawing.Point(30, 64);
             this.discPercentage.Name = "discPercentage";
-            this.discPercentage.Size = new System.Drawing.Size(122, 21);
+            this.discPercentage.Size = new System.Drawing.Size(122, 27);
             this.discPercentage.TabIndex = 1;
             this.discPercentage.Text = "Discount (%):";
             // 
             // discAmount
             // 
             this.discAmount.AutoSize = true;
-            this.discAmount.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discAmount.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discAmount.Location = new System.Drawing.Point(30, 104);
             this.discAmount.Name = "discAmount";
-            this.discAmount.Size = new System.Drawing.Size(169, 21);
+            this.discAmount.Size = new System.Drawing.Size(165, 27);
             this.discAmount.TabIndex = 2;
             this.discAmount.Text = "Discount Amount:";
             // 
@@ -73,11 +74,11 @@
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(155)))), ((int)(((byte)(97)))));
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Font = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(159, 143);
+            this.btnConfirm.Location = new System.Drawing.Point(154, 143);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(75, 28);
+            this.btnConfirm.Size = new System.Drawing.Size(80, 33);
             this.btnConfirm.TabIndex = 4;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -87,11 +88,11 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(29)))), ((int)(((byte)(43)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(249, 143);
+            this.btnClose.Location = new System.Drawing.Point(244, 143);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 28);
+            this.btnClose.Size = new System.Drawing.Size(80, 33);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -216,6 +217,8 @@
             this.Controls.Add(this.discAmount);
             this.Controls.Add(this.discPercentage);
             this.Controls.Add(this.discTotalPriceLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Discount";
