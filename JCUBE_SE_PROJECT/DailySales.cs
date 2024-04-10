@@ -71,11 +71,11 @@ namespace JCUBE_SE_PROJECT
 
             if (comboClerk.Text == "All Clerk")
             {
-                query = "SELECT c.id, c.transNo, p.ItemCode, p.Description, c.srp, c.qty, c.discount, c.total FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND date >= @DateFrom AND date < @DateTo";
+                query = "SELECT c.id, c.transNo, p.ItemCode, p.Description, c.srp, c.qty, c.discount, c.total FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND date >= @DateFrom AND date < @DateTo ORDER BY c.transNo ASC";
             }
             else
             {
-                query = "SELECT c.id, c.transNo, p.ItemCode, p.Description, c.srp, c.qty, c.discount, c.total FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND date >= @DateFrom AND date < @DateTo AND Clerk = @Clerk";
+                query = "SELECT c.id, c.transNo, p.ItemCode, p.Description, c.srp, c.qty, c.discount, c.total FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND date >= @DateFrom AND date < @DateTo AND Clerk = @Clerk ORDER BY c.transNo ASC";
             }
 
             cm = new SqlCommand(query, cn);
@@ -171,13 +171,24 @@ namespace JCUBE_SE_PROJECT
 
             if (comboClerk.Text == "All Clerk")
             {
+                printDaily.LoadDailyReport("SELECT c.id, c.transNo, p.ItemCode, p.Description, c.srp, c.qty, c.discount, c.total FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND date >= '" + startDate.ToString("yyyy-MM-dd HH:mm:ss") + "' AND date < '" + endDate.ToString("yyyy-MM-dd HH:mm:ss") + "' ORDER BY c.transNo ASC", param, comboClerk.Text);
+            }
+            else
+            {
+                printDaily.LoadDailyReport("SELECT c.id, c.transNo, p.ItemCode, p.Description, c.srp, c.qty, c.discount, c.total FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND date >= '" + startDate.ToString("yyyy-MM-dd HH:mm:ss") + "' AND date < '" + endDate.ToString("yyyy-MM-dd HH:mm:ss") + "' AND Clerk = '" + comboClerk.Text + "' ORDER BY c.transNo ASC", param, comboClerk.Text);
+            }
+
+
+            /*
+            if (comboClerk.Text == "All Clerk")
+            {
                 printDaily.LoadDailyReport("SELECT c.id, c.transNo, p.ItemCode, p.Description, c.srp, c.qty, c.discount, c.total FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND date >= '" + startDate.ToString("yyyy-MM-dd HH:mm:ss") + "' AND date < '" + endDate.ToString("yyyy-MM-dd HH:mm:ss") + "'", param, comboClerk.Text);
             }
             else
             {
                 printDaily.LoadDailyReport("SELECT c.id, c.transNo, p.ItemCode, p.Description, c.srp, c.qty, c.discount, c.total FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND date >= '" + startDate.ToString("yyyy-MM-dd HH:mm:ss") + "' AND date < '" + endDate.ToString("yyyy-MM-dd HH:mm:ss") + "' AND Clerk = '" + comboClerk.Text + "'", param, comboClerk.Text);
             }
-
+            */
             printDaily.ShowDialog();
         }
     }

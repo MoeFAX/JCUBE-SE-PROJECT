@@ -124,7 +124,7 @@ namespace JCUBE_SE_PROJECT
                 cm.Parameters.AddWithValue("@itemCode", cancelOrder.itemCodeTxtbox.Text);
                 cm.Parameters.AddWithValue("@price", double.Parse(cancelOrder.PrcTxtBox.Text));
                 cm.Parameters.AddWithValue("@qty", int.Parse(cancelOrder.udQty.Text));
-                cm.Parameters.AddWithValue("@total", double.Parse(cancelOrder.TtlTxtBox.Text));
+                cm.Parameters.AddWithValue("@total", double.Parse(cancelOrder.PrcTxtBox.Text) * int.Parse(cancelOrder.udQty.Text));
                 cm.Parameters.AddWithValue("@date", DateTime.Now);
                 cm.Parameters.AddWithValue("@cancelledBy", user);
                 cm.Parameters.AddWithValue("@reason", cancelOrder.RsnTxtBox.Text);

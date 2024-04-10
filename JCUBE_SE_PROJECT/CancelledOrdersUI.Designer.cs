@@ -286,7 +286,7 @@
             this.btnLoadCancelled.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLoadCancelled.Location = new System.Drawing.Point(588, 13);
             this.btnLoadCancelled.Name = "btnLoadCancelled";
-            this.btnLoadCancelled.Size = new System.Drawing.Size(102, 35);
+            this.btnLoadCancelled.Size = new System.Drawing.Size(108, 35);
             this.btnLoadCancelled.TabIndex = 38;
             this.btnLoadCancelled.Text = "Refresh";
             this.btnLoadCancelled.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

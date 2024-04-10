@@ -257,10 +257,15 @@ namespace JCUBE_SE_PROJECT
             }
 
         }
-        /*private void refreshBtn_Click(object sender, EventArgs e)
+
+        private void refreshBtn_Click(object sender, EventArgs e)
         {
             LoadUser();
-        }*/
+        }
+        /*private void refreshBtn_Click(object sender, EventArgs e)
+{
+   LoadUser();
+}*/
 
     }
 }

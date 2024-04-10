@@ -42,6 +42,14 @@ namespace JCUBE_SE_PROJECT
         public void LoginBtn_Click(object sender, EventArgs e)
         {
             string _username = "", _fullname = "", _role = "";
+            if (string.IsNullOrWhiteSpace(UserIDtxtbox.Text) || string.IsNullOrWhiteSpace(Passwordtxtbox.Text))
+            {
+                MessageBox.Show("Fields can not be null", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                UserIDtxtbox.Clear();
+                Passwordtxtbox.Clear();
+                return;
+            }
+
             if (!string.IsNullOrEmpty(_username))
             {
                 StocksUI stocksForm = new StocksUI(_username);
@@ -152,7 +160,8 @@ namespace JCUBE_SE_PROJECT
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ACCESS DENIED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show(ex.Message, "ACCESS DENIED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Invalid credentials!", "ACCESS DENIED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UserIDtxtbox.Clear();
                 Passwordtxtbox.Clear();
                 cn.Close();

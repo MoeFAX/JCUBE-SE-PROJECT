@@ -152,13 +152,15 @@ namespace JCUBE_SE_PROJECT
                     {
                         string transNo = dgvCancel.Rows[e.RowIndex].Cells["COTransacCol"].Value.ToString();
                         string itemCode = dgvCancel.Rows[e.RowIndex].Cells["COInvCodeCol"].Value.ToString();
+                        string id = dgvCancel.Rows[e.RowIndex].Cells["CONoCol"].Value.ToString();
 
                         cn.Open();
 
                         // Delete item from tbCancelOrder
-                        cm = new SqlCommand("DELETE FROM tbCancelOrder WHERE transNo = @transNo AND itemCode = @itemCode", cn);
+                        cm = new SqlCommand("DELETE FROM tbCancelOrder WHERE transNo = @transNo AND itemCode = @itemCode AND id = @id", cn);
                         cm.Parameters.AddWithValue("@transNo", transNo);
                         cm.Parameters.AddWithValue("@itemCode", itemCode);
+                        cm.Parameters.AddWithValue("@id", id);
                         cm.ExecuteNonQuery();
 
                         cn.Close();

@@ -73,7 +73,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            if(cbTopSell.Text == "Sort By")
+            if(cbTopSell.Text == "")
             {
                 MessageBox.Show("Please select sort type from the dropdown list.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cbTopSell.Focus();
