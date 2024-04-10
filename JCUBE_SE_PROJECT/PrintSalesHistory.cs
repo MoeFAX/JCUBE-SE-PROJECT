@@ -43,12 +43,13 @@ namespace JCUBE_SE_PROJECT
                 this.rvSalesHistory.LocalReport.DataSources.Clear();
 
                 cn.Open();
-
-                string query = "SELECT c.id, c.transNo, c.InventoryCode, p.Description, c.srp, c.qty, c.discount, c.total, c.clerk, c.OcNum, c.TinNum, c.mode, c.customer FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND date >= @DateFrom AND date < @DateTo ORDER BY c.transNo ASC";
+                string query = "SELECT c.id, c.transNo, c.InventoryCode, p.Description, c.srp, c.qty, c.discount, c.total, c.clerk, c.OcNum, c.TinNum, c.mode, c.customer FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND date >= @DateFrom AND date < @DateTo";
                 if (clerk != "All Clerk")
                 {
                     query += " AND Clerk = @Clerk";
                 }
+                query += " ORDER BY c.transNo ASC";
+                
                 SqlCommand cm = new SqlCommand(query, cn);
                 cm.Parameters.AddWithValue("@DateFrom", startDate.Date);
                 cm.Parameters.AddWithValue("@DateTo", endDate.Date);

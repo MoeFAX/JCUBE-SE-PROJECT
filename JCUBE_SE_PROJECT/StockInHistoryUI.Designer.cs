@@ -35,6 +35,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockInHistoryUI));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvStockHistory = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.PrintStockHistory = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SIHIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SIHRefCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SIHInvCodeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,12 +50,6 @@
             this.SIHSIBCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SIHStatusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SIHSupplierCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            this.PrintStockHistory = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockHistory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,86 +129,6 @@
             this.dgvStockHistory.Size = new System.Drawing.Size(896, 461);
             this.dgvStockHistory.TabIndex = 18;
             // 
-            // SIHIDCol
-            // 
-            this.SIHIDCol.HeaderText = "ID";
-            this.SIHIDCol.MinimumWidth = 6;
-            this.SIHIDCol.Name = "SIHIDCol";
-            this.SIHIDCol.ReadOnly = true;
-            this.SIHIDCol.Visible = false;
-            this.SIHIDCol.Width = 50;
-            // 
-            // SIHRefCol
-            // 
-            this.SIHRefCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SIHRefCol.HeaderText = "Reference #";
-            this.SIHRefCol.MinimumWidth = 6;
-            this.SIHRefCol.Name = "SIHRefCol";
-            this.SIHRefCol.ReadOnly = true;
-            this.SIHRefCol.Width = 115;
-            // 
-            // SIHInvCodeCol
-            // 
-            this.SIHInvCodeCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SIHInvCodeCol.HeaderText = "Inventory Code";
-            this.SIHInvCodeCol.MinimumWidth = 6;
-            this.SIHInvCodeCol.Name = "SIHInvCodeCol";
-            this.SIHInvCodeCol.ReadOnly = true;
-            this.SIHInvCodeCol.Width = 136;
-            // 
-            // SIHDescCol
-            // 
-            this.SIHDescCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SIHDescCol.HeaderText = "Description";
-            this.SIHDescCol.MinimumWidth = 6;
-            this.SIHDescCol.Name = "SIHDescCol";
-            this.SIHDescCol.ReadOnly = true;
-            // 
-            // SIHQuantCol
-            // 
-            this.SIHQuantCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SIHQuantCol.HeaderText = "Qty";
-            this.SIHQuantCol.MinimumWidth = 6;
-            this.SIHQuantCol.Name = "SIHQuantCol";
-            this.SIHQuantCol.ReadOnly = true;
-            this.SIHQuantCol.Width = 59;
-            // 
-            // SIHSIDCol
-            // 
-            this.SIHSIDCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SIHSIDCol.HeaderText = "Stock In Date";
-            this.SIHSIDCol.MinimumWidth = 6;
-            this.SIHSIDCol.Name = "SIHSIDCol";
-            this.SIHSIDCol.ReadOnly = true;
-            this.SIHSIDCol.Width = 124;
-            // 
-            // SIHSIBCol
-            // 
-            this.SIHSIBCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SIHSIBCol.HeaderText = "Stock In By";
-            this.SIHSIBCol.MinimumWidth = 6;
-            this.SIHSIBCol.Name = "SIHSIBCol";
-            this.SIHSIBCol.ReadOnly = true;
-            this.SIHSIBCol.Width = 108;
-            // 
-            // SIHStatusCol
-            // 
-            this.SIHStatusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SIHStatusCol.HeaderText = "Status";
-            this.SIHStatusCol.MinimumWidth = 6;
-            this.SIHStatusCol.Name = "SIHStatusCol";
-            this.SIHStatusCol.ReadOnly = true;
-            this.SIHStatusCol.Width = 78;
-            // 
-            // SIHSupplierCol
-            // 
-            this.SIHSupplierCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SIHSupplierCol.HeaderText = "Supplier";
-            this.SIHSupplierCol.MinimumWidth = 6;
-            this.SIHSupplierCol.Name = "SIHSupplierCol";
-            this.SIHSupplierCol.ReadOnly = true;
-            this.SIHSupplierCol.Width = 90;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -287,6 +207,86 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // SIHIDCol
+            // 
+            this.SIHIDCol.HeaderText = "ID";
+            this.SIHIDCol.MinimumWidth = 6;
+            this.SIHIDCol.Name = "SIHIDCol";
+            this.SIHIDCol.ReadOnly = true;
+            this.SIHIDCol.Visible = false;
+            this.SIHIDCol.Width = 50;
+            // 
+            // SIHRefCol
+            // 
+            this.SIHRefCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SIHRefCol.HeaderText = "Reference #";
+            this.SIHRefCol.MinimumWidth = 6;
+            this.SIHRefCol.Name = "SIHRefCol";
+            this.SIHRefCol.ReadOnly = true;
+            this.SIHRefCol.Width = 115;
+            // 
+            // SIHInvCodeCol
+            // 
+            this.SIHInvCodeCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SIHInvCodeCol.HeaderText = "Inventory Code";
+            this.SIHInvCodeCol.MinimumWidth = 6;
+            this.SIHInvCodeCol.Name = "SIHInvCodeCol";
+            this.SIHInvCodeCol.ReadOnly = true;
+            this.SIHInvCodeCol.Width = 136;
+            // 
+            // SIHDescCol
+            // 
+            this.SIHDescCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SIHDescCol.HeaderText = "Description";
+            this.SIHDescCol.MinimumWidth = 6;
+            this.SIHDescCol.Name = "SIHDescCol";
+            this.SIHDescCol.ReadOnly = true;
+            // 
+            // SIHQuantCol
+            // 
+            this.SIHQuantCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SIHQuantCol.HeaderText = "Stocks";
+            this.SIHQuantCol.MinimumWidth = 6;
+            this.SIHQuantCol.Name = "SIHQuantCol";
+            this.SIHQuantCol.ReadOnly = true;
+            this.SIHQuantCol.Width = 78;
+            // 
+            // SIHSIDCol
+            // 
+            this.SIHSIDCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SIHSIDCol.HeaderText = "Stock In Date";
+            this.SIHSIDCol.MinimumWidth = 6;
+            this.SIHSIDCol.Name = "SIHSIDCol";
+            this.SIHSIDCol.ReadOnly = true;
+            this.SIHSIDCol.Width = 124;
+            // 
+            // SIHSIBCol
+            // 
+            this.SIHSIBCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SIHSIBCol.HeaderText = "Stock In By";
+            this.SIHSIBCol.MinimumWidth = 6;
+            this.SIHSIBCol.Name = "SIHSIBCol";
+            this.SIHSIBCol.ReadOnly = true;
+            this.SIHSIBCol.Width = 108;
+            // 
+            // SIHStatusCol
+            // 
+            this.SIHStatusCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SIHStatusCol.HeaderText = "Status";
+            this.SIHStatusCol.MinimumWidth = 6;
+            this.SIHStatusCol.Name = "SIHStatusCol";
+            this.SIHStatusCol.ReadOnly = true;
+            this.SIHStatusCol.Width = 78;
+            // 
+            // SIHSupplierCol
+            // 
+            this.SIHSupplierCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SIHSupplierCol.HeaderText = "Supplier";
+            this.SIHSupplierCol.MinimumWidth = 6;
+            this.SIHSupplierCol.Name = "SIHSupplierCol";
+            this.SIHSupplierCol.ReadOnly = true;
+            this.SIHSupplierCol.Width = 90;
+            // 
             // StockInHistoryUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -319,6 +319,7 @@
         public System.Windows.Forms.DateTimePicker dtpStartDate;
         public System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.Button PrintStockHistory;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn SIHIDCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn SIHRefCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn SIHInvCodeCol;
@@ -328,6 +329,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SIHSIBCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn SIHStatusCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn SIHSupplierCol;
-        private System.Windows.Forms.Button button4;
     }
 }

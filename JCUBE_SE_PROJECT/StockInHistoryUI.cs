@@ -32,7 +32,7 @@ namespace JCUBE_SE_PROJECT
         {
             dgvStockHistory.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand(@"SELECT se.StockID, se.RefNo, il.InventoryCode, il.Description, il.Qty, se.StockInDate, se.StockInBy, se.Status, s.SupplierName 
+            cm = new SqlCommand(@"SELECT se.StockID, se.RefNo, il.InventoryCode, il.Description, se.Stocks, se.StockInDate, se.StockInBy, se.Status, s.SupplierName 
                           FROM tbStockEntry AS se 
                           INNER JOIN tbItemList AS il ON il.ItemID = se.ilid 
                           INNER JOIN tbSupplier AS s ON s.SupplierID = se.sid 
