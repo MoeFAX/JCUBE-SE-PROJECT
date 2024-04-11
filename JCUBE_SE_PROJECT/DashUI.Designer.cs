@@ -245,7 +245,7 @@
             // lblTop5Qty
             // 
             this.lblTop5Qty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.lblTop5Qty.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTop5Qty.Font = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTop5Qty.ForeColor = System.Drawing.Color.White;
             this.lblTop5Qty.Location = new System.Drawing.Point(12, 8);
             this.lblTop5Qty.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
@@ -365,7 +365,7 @@
             // lblTop5Tot
             // 
             this.lblTop5Tot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.lblTop5Tot.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTop5Tot.Font = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTop5Tot.ForeColor = System.Drawing.Color.White;
             this.lblTop5Tot.Location = new System.Drawing.Point(12, 8);
             this.lblTop5Tot.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);

@@ -189,7 +189,7 @@ namespace JCUBE_SE_PROJECT
             {
                 cn.Open();
 
-                cm = new SqlCommand("SELECT TOP 10 i.ItemId, i.Description, ISNULL(SUM(c.qty * c.srp), 0) AS totalSales FROM tbCart AS c INNER JOIN tbItemList AS i ON c.inventoryCode = i.InventoryCode WHERE c.date BETWEEN @FromDate AND @ToDate AND c.status LIKE 'Complete' GROUP BY i.ItemId, i.Description ORDER BY totalSales DESC", cn);
+                cm = new SqlCommand("SELECT TOP 5 i.ItemId, i.Description, ISNULL(SUM(c.qty * c.srp), 0) AS totalSales FROM tbCart AS c INNER JOIN tbItemList AS i ON c.inventoryCode = i.InventoryCode WHERE c.date BETWEEN @FromDate AND @ToDate AND c.status LIKE 'Complete' GROUP BY i.ItemId, i.Description ORDER BY totalSales DESC", cn);
                 cm.Parameters.AddWithValue("@FromDate", startDate);
                 cm.Parameters.AddWithValue("@ToDate", endDate);
 
