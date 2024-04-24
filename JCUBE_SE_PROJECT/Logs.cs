@@ -17,11 +17,13 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
-        public Logs()
+        private string _loggedInUsername;
+        public Logs(string loggedInUsername)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
-            LoadLogs();
+            _loggedInUsername = loggedInUsername;
+            LoadLogs();         
         }
 
         public void LoadLogs() 
@@ -80,6 +82,11 @@ namespace JCUBE_SE_PROJECT
             LoadLogs();
         }
 
-       
+        private void PrintStockArchives_Click(object sender, EventArgs e)
+        {
+            PrintLogs prtLogs = new PrintLogs(_loggedInUsername);
+            prtLogs.LoadPrtLogs(dateFrom.Value, dateTo.Value, actionComboBox.Text, typeComboBox.Text);
+            prtLogs.ShowDialog();
+        }
     }
 }

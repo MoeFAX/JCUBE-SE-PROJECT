@@ -138,10 +138,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DtArchives.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DtInvList.cs">
+      <DependentUpon>DtInvList.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DtInvList.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DtInvList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DtLogs.cs">
+      <DependentUpon>DtLogs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DtLogs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DtLogs.xsd</DependentUpon>
     </Compile>
     <Compile Include="EditAccount.cs">
       <SubType>Form</SubType>
@@ -281,6 +292,12 @@
     </Compile>
     <Compile Include="PrintItemListArchives.Designer.cs">
       <DependentUpon>PrintItemListArchives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintLogs.Designer.cs">
+      <DependentUpon>PrintLogs.cs</DependentUpon>
     </Compile>
     <Compile Include="printReceipt.cs">
       <SubType>Form</SubType>
@@ -510,6 +527,9 @@
     <EmbeddedResource Include="PrintItemListArchives.resx">
       <DependentUpon>PrintItemListArchives.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintLogs.resx">
+      <DependentUpon>PrintLogs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="printReceipt.resx">
       <DependentUpon>printReceipt.cs</DependentUpon>
     </EmbeddedResource>
@@ -546,6 +566,7 @@
     <EmbeddedResource Include="ReportInvList.rdlc" />
     <EmbeddedResource Include="Receipt.rdlc" />
     <EmbeddedResource Include="ReportItemListArchives.rdlc" />
+    <EmbeddedResource Include="ReportLogs.rdlc" />
     <EmbeddedResource Include="ReportSalesHistory.rdlc" />
     <EmbeddedResource Include="ReportSoldItems.rdlc" />
     <EmbeddedResource Include="ReportStockArchives.rdlc" />
@@ -625,6 +646,17 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DtLogs.xsc">
+      <DependentUpon>DtLogs.xsd</DependentUpon>
+    </None>
+    <None Include="DtLogs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DtLogs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DtLogs.xss">
+      <DependentUpon>DtLogs.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

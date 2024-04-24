@@ -113,14 +113,28 @@ namespace JCUBE_SE_PROJECT
                     }
                     if (_role == "Sales Clerk")
                     {
+                        cn.Open();
+                        if (cn.State == ConnectionState.Open)
+                        {
+                            LogDao log = new LogDao(cn);
+                            string logAction = "LOGIN";
+                            string logType = "ACCOUNTS";
+                            string logDescription = "A Sales Clerk logged in";
+                            log.AddLogs(logAction, logType, logDescription, _username);
+                            Console.WriteLine("Log added successfully. Connection is Open");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Connection is Closed. Cannot add log.");
+                        }
                         MessageBox.Show("Welcome " + _fullname + "!", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         UserIDtxtbox.Clear();
-                        Passwordtxtbox.Clear();
+                        Passwordtxtbox.Clear();                      
                         dr.Close();
                         cn.Close();
                         this.Hide();
                         PosUI main = new PosUI(_username);
-                        CartUI cart = new CartUI(main);
+                        CartUI cart = new CartUI(main);                       
                         main.clerk = cart;
                         main.POSNamelbl.Text = _fullname;
                         main.lblUserRolePOS.Text = _username;
@@ -132,9 +146,23 @@ namespace JCUBE_SE_PROJECT
                     }
                     if (_role == "Administrator")
                     {
+                        cn.Open();
+                        if (cn.State == ConnectionState.Open)
+                        {
+                            LogDao log = new LogDao(cn);
+                            string logAction = "LOGIN";
+                            string logType = "ACCOUNTS";
+                            string logDescription = "An Administrator logged in";
+                            log.AddLogs(logAction, logType, logDescription, _username);
+                            Console.WriteLine("Log added successfully. Connection is Open");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Connection is Closed. Cannot add log.");
+                        }
                         MessageBox.Show("Welcome " + _fullname + "!", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         UserIDtxtbox.Clear();
-                        Passwordtxtbox.Clear();
+                        Passwordtxtbox.Clear();                      
                         dr.Close();
                         cn.Close();
                         this.Hide();
