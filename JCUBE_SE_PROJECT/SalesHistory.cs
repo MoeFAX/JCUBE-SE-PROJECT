@@ -36,6 +36,12 @@ namespace JCUBE_SE_PROJECT
             }
             else btnPrintSalesHistory.Enabled = false;
 
+            int currentYear = DateTime.Now.Year;
+            dateFrom.MinDate = new DateTime(currentYear, 1, 1);
+            dateFrom.MaxDate = new DateTime(currentYear, 12, 31);
+            dateTo.MinDate = new DateTime(currentYear, 1, 1);
+            dateTo.MaxDate = new DateTime(currentYear, 12, 31);
+
         }
 
         public void LoadClerk()

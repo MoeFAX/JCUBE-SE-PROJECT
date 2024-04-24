@@ -823,7 +823,7 @@ namespace JCUBE_SE_PROJECT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataStockHistoryRow AddDataStockHistoryRow(string StockID, string RefNo, string InventoryCode, string Description, string Stocks, string StockInDate, string Status, string SupplierName) {
+            public DataStockHistoryRow AddDataStockHistoryRow(string StockID, string RefNo, string InventoryCode, string Description, string Stocks, System.DateTime StockInDate, string Status, string SupplierName) {
                 DataStockHistoryRow rowDataStockHistoryRow = ((DataStockHistoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         StockID,
@@ -879,7 +879,7 @@ namespace JCUBE_SE_PROJECT {
                 base.Columns.Add(this.columnDescription);
                 this.columnStocks = new global::System.Data.DataColumn("Stocks", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStocks);
-                this.columnStockInDate = new global::System.Data.DataColumn("StockInDate", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnStockInDate = new global::System.Data.DataColumn("StockInDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStockInDate);
                 this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStatus);
@@ -1374,10 +1374,10 @@ namespace JCUBE_SE_PROJECT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string StockInDate {
+            public System.DateTime StockInDate {
                 get {
                     try {
-                        return ((string)(this[this.tableDataStockHistory.StockInDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableDataStockHistory.StockInDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'StockInDate\' in table \'DataStockHistory\' is DBNull.", e);

@@ -41,11 +41,13 @@
             this.side2 = new System.Windows.Forms.Panel();
             this.dgvStockEntryArchive = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.StockID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stocks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupplierID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InventoryCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Restore = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2.SuspendLayout();
@@ -143,10 +145,11 @@
             this.dgvStockEntryArchive.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStockEntryArchive.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StockID,
-            this.ItemID,
+            this.Description,
             this.Stocks,
             this.SupplierID,
             this.Status,
+            this.InventoryCode,
             this.Restore,
             this.Delete});
             this.dgvStockEntryArchive.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -181,22 +184,35 @@
             this.dgvStockEntryArchive.RowTemplate.Height = 24;
             this.dgvStockEntryArchive.Size = new System.Drawing.Size(1027, 415);
             this.dgvStockEntryArchive.TabIndex = 18;
-            this.dgvStockEntryArchive.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockEntryArchive_CellContentClick);
+            this.dgvStockEntryArchive.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockEntryArchive_CellClick);
+            this.dgvStockEntryArchive.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvStockEntryArchive_CellFormatting);
             // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_cancel_20;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn1.Width = 125;
             // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::JCUBE_SE_PROJECT.Properties.Resources.Delete_Icon;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn2.Width = 125;
+            // 
             // StockID
             // 
-            this.StockID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.StockID.HeaderText = "StockID";
             this.StockID.MinimumWidth = 6;
             this.StockID.Name = "StockID";
@@ -204,13 +220,14 @@
             this.StockID.Visible = false;
             this.StockID.Width = 64;
             // 
-            // ItemID
+            // Description
             // 
-            this.ItemID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ItemID.HeaderText = "Item Name";
-            this.ItemID.MinimumWidth = 6;
-            this.ItemID.Name = "ItemID";
-            this.ItemID.ReadOnly = true;
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Description.DataPropertyName = "(none)";
+            this.Description.HeaderText = "Item Name";
+            this.Description.MinimumWidth = 6;
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             // 
             // Stocks
             // 
@@ -237,11 +254,20 @@
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
             // 
+            // InventoryCode
+            // 
+            this.InventoryCode.HeaderText = "InvCode";
+            this.InventoryCode.MinimumWidth = 6;
+            this.InventoryCode.Name = "InventoryCode";
+            this.InventoryCode.ReadOnly = true;
+            this.InventoryCode.Visible = false;
+            this.InventoryCode.Width = 125;
+            // 
             // Restore
             // 
             this.Restore.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Restore.HeaderText = "";
-            this.Restore.Image = global::JCUBE_SE_PROJECT.Properties.Resources.local_data_icon;
+            this.Restore.Image = global::JCUBE_SE_PROJECT.Properties.Resources.restore;
             this.Restore.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Restore.MinimumWidth = 6;
             this.Restore.Name = "Restore";
@@ -297,11 +323,13 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Button PrintStockArchives;
         public System.Windows.Forms.DataGridView dgvStockEntryArchive;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn StockID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stocks;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InventoryCode;
         private System.Windows.Forms.DataGridViewImageColumn Restore;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
     }

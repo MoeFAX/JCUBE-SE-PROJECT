@@ -67,14 +67,53 @@ namespace JCUBE_SE_PROJECT
             reorderField.Value = 1;
         }
 
-        
 
 
-        
+
+
 
         public string GenerateInvCode()
         {
-            int recordCount = 0;
+            try
+            {
+                cn.Open();
+
+                // Query to get the last used inventory code
+                cm = new SqlCommand("SELECT TOP 1 InventoryCode FROM tbItemList ORDER BY InventoryCode DESC", cn);
+                string lastInventoryCode = cm.ExecuteScalar()?.ToString();
+
+                // If no previous inventory codes found, start with INVC-000001
+                if (string.IsNullOrEmpty(lastInventoryCode))
+                {
+                    return "INVC-000001";
+                }
+
+                // Extract the numeric part of the inventory code
+                string numericPart = lastInventoryCode.Substring(lastInventoryCode.IndexOf('-') + 1);
+                int nextNumber = int.Parse(numericPart) + 1;
+
+                // Format the next inventory code
+                string invCode = "INVC-" + nextNumber.ToString("000000");
+
+
+
+                return invCode;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error generating invcode: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "";
+
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+            }
+        }
+            /*int recordCount = 0;
             try
             {
                 cn.Open();
@@ -89,9 +128,9 @@ namespace JCUBE_SE_PROJECT
 
             recordCount += 1;
             string invCode = "INVC-" + recordCount.ToString("D6"); // D6 formats the number as six digits
-            return invCode;
-            
-        }
+            return invCode;*/
+
+        
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
@@ -148,6 +187,11 @@ namespace JCUBE_SE_PROJECT
                     return;
                 }
 
+                if (ItemCodeField.Text.Length > 10)
+                {
+                    MessageBox.Show("Item Code must be 10 characters long or below.", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
+                }
 
                 if (!double.TryParse(AcquiredCostField.Text, out double acquiredCost) || acquiredCost <= 0)
                 {
@@ -191,14 +235,15 @@ namespace JCUBE_SE_PROJECT
 
 
                     // Update operation
-                    cm = new SqlCommand("UPDATE tbItemList SET ItemCode = @ItemCode, Description = @Description, AcquiredCost = @AcquiredCost, bid = @bid, cid = @cid, Price = @Price, Reorder = @Reorder WHERE ItemID = @ItemID", cn);
+                    cm = new SqlCommand("UPDATE tbItemList SET ItemCode = @ItemCode, Description = @Description, AcquiredCost = @AcquiredCost, bid = @bid, cid = @cid, Price = @Price, Reorder = @Reorder WHERE InventoryCode = @InventoryCode", cn);
                     cm.Parameters.AddWithValue("@ItemID", itemID);
                     logAction = "UPDATE";
                     logDescription = "Updated an Item";
                 }
                 else
                 {
-                    
+                   
+
 
                     // Insert operation
                     cm = new SqlCommand("INSERT INTO tbItemList(InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Reorder) VALUES(@InventoryCode, @ItemCode, @Description, @AcquiredCost, @bid, @cid, @Price, @Reorder)", cn);
@@ -264,6 +309,98 @@ namespace JCUBE_SE_PROJECT
             Clear();
         }
 
-        
+        private void AcquiredCostField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            //Only allow one decimal
+            else if (e.KeyChar == '.' && AcquiredCostField.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == '.' && AcquiredCostField.Text.Length == 0)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void PriceField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            //Only allow one decimal
+            else if (e.KeyChar == '.' && PriceField.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == '.' && PriceField.Text.Length == 0)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ItemCodeField_TextChanged(object sender, EventArgs e)
+        {
+            if (ItemCodeField.Text.Length > 0)
+            {
+                AsteriskIC.Visible = false;
+            }
+            else
+            {
+                AsteriskIC.Visible = true;
+            }
+        }
+
+        private void DescriptionField_TextChanged(object sender, EventArgs e)
+        {
+            if (DescriptionField.Text.Length > 0)
+            {
+                AsteriskDesc.Visible = false;
+            }
+            else
+            {
+                AsteriskDesc.Visible = true;
+            }
+        }
+
+        private void AcquiredCostField_TextChanged(object sender, EventArgs e)
+        {
+            if (AcquiredCostField.Text.Length > 0)
+            {
+                AsteriskAC.Visible = false;
+            }
+            else
+            {
+                AsteriskAC.Visible = true;
+            }
+        }
+
+        private void PriceField_TextChanged(object sender, EventArgs e)
+        {
+            if (PriceField.Text.Length > 0)
+            {
+                AsteriskSRP.Visible = false;
+            }
+            else
+            {
+                AsteriskSRP.Visible = true;
+            }
+        }
+
+        private void reorderField_ValueChanged(object sender, EventArgs e)
+        {
+            if (reorderField.Value == 0 || string.IsNullOrEmpty(reorderField.Text))
+            {
+                AsteriskReOrder.Visible = true;
+            }
+            else
+            {
+                AsteriskReOrder.Visible = false;
+            }
+        }
     }
 }

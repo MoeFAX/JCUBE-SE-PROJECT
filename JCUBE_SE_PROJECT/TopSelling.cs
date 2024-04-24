@@ -26,6 +26,11 @@ namespace JCUBE_SE_PROJECT
             cn = new SqlConnection(dbcon.myConnection());
             this.invUIInstance = invUIInstance;
             btnPrintTop.Enabled = false;
+            int currentYear = DateTime.Now.Year;
+            dateFromTopSell.MinDate = new DateTime(currentYear, 1, 1);
+            dateFromTopSell.MaxDate = new DateTime(currentYear, 12, 31);
+            dateToTopSell.MinDate = new DateTime(currentYear, 1, 1);
+            dateToTopSell.MaxDate = new DateTime(currentYear, 12, 31);
         }
         public void LoadTopSelling()
         {

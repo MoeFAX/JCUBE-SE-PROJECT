@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Brand));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Brand));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.addbtn = new System.Windows.Forms.Button();
             this.BrandLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.side2 = new System.Windows.Forms.Panel();
             this.dgvBrand = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.addbtn = new System.Windows.Forms.Button();
             this.NoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,24 +67,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(982, 70);
             this.panel2.TabIndex = 1;
-            // 
-            // addbtn
-            // 
-            this.addbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addbtn.FlatAppearance.BorderSize = 0;
-            this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addbtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.addbtn.Image = ((System.Drawing.Image)(resources.GetObject("addbtn.Image")));
-            this.addbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addbtn.Location = new System.Drawing.Point(770, 22);
-            this.addbtn.Name = "addbtn";
-            this.addbtn.Size = new System.Drawing.Size(106, 38);
-            this.addbtn.TabIndex = 3;
-            this.addbtn.Text = "Create";
-            this.addbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addbtn.UseVisualStyleBackColor = true;
-            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
             // 
             // BrandLabel
             // 
@@ -162,7 +146,46 @@
             this.dgvBrand.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvBrand.Size = new System.Drawing.Size(940, 452);
             this.dgvBrand.TabIndex = 18;
-            this.dgvBrand.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBrand_CellContentClick);
+            this.dgvBrand.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBrand_CellClick);
+            this.dgvBrand.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvBrand_CellFormatting);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 6;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::JCUBE_SE_PROJECT.Properties.Resources.Delete_Icon;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 6;
+            // 
+            // addbtn
+            // 
+            this.addbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addbtn.FlatAppearance.BorderSize = 0;
+            this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addbtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.addbtn.Image = ((System.Drawing.Image)(resources.GetObject("addbtn.Image")));
+            this.addbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addbtn.Location = new System.Drawing.Point(770, 22);
+            this.addbtn.Name = "addbtn";
+            this.addbtn.Size = new System.Drawing.Size(106, 38);
+            this.addbtn.TabIndex = 3;
+            this.addbtn.Text = "Create";
+            this.addbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addbtn.UseVisualStyleBackColor = true;
+            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
             // 
             // NoColumn
             // 
@@ -172,7 +195,7 @@
             this.NoColumn.Name = "NoColumn";
             this.NoColumn.ReadOnly = true;
             this.NoColumn.Visible = false;
-            this.NoColumn.Width = 125;
+            this.NoColumn.Width = 32;
             // 
             // Id
             // 
@@ -182,7 +205,7 @@
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
-            this.Id.Width = 125;
+            this.Id.Width = 26;
             // 
             // BrandName
             // 
@@ -207,7 +230,7 @@
             // 
             this.Archive.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Archive.HeaderText = "";
-            this.Archive.Image = global::JCUBE_SE_PROJECT.Properties.Resources.Delete_Icon;
+            this.Archive.Image = global::JCUBE_SE_PROJECT.Properties.Resources.delete_item;
             this.Archive.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Archive.MinimumWidth = 6;
             this.Archive.Name = "Archive";
@@ -247,6 +270,8 @@
         private System.Windows.Forms.Panel side2;
         private System.Windows.Forms.DataGridView dgvBrand;
         private System.Windows.Forms.Button addbtn;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn NoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;

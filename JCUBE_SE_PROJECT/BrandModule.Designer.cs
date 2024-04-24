@@ -34,6 +34,7 @@
             this.SaveBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
             this.lblid = new System.Windows.Forms.Label();
+            this.Asterisk = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BrandNamelbl
@@ -50,9 +51,11 @@
             // 
             this.BrandNameField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BrandNameField.Location = new System.Drawing.Point(181, 60);
+            this.BrandNameField.MaxLength = 30;
             this.BrandNameField.Name = "BrandNameField";
             this.BrandNameField.Size = new System.Drawing.Size(415, 32);
             this.BrandNameField.TabIndex = 2;
+            this.BrandNameField.TextChanged += new System.EventHandler(this.BrandNameField_TextChanged);
             // 
             // SaveBtn
             // 
@@ -97,6 +100,17 @@
             this.lblid.Text = "id";
             this.lblid.Visible = false;
             // 
+            // Asterisk
+            // 
+            this.Asterisk.AutoSize = true;
+            this.Asterisk.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Asterisk.ForeColor = System.Drawing.Color.Red;
+            this.Asterisk.Location = new System.Drawing.Point(596, 64);
+            this.Asterisk.Name = "Asterisk";
+            this.Asterisk.Size = new System.Drawing.Size(22, 27);
+            this.Asterisk.TabIndex = 11;
+            this.Asterisk.Text = "*";
+            // 
             // BrandModule
             // 
             this.AcceptButton = this.SaveBtn;
@@ -105,6 +119,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.CancelBtn;
             this.ClientSize = new System.Drawing.Size(722, 181);
+            this.Controls.Add(this.Asterisk);
             this.Controls.Add(this.lblid);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.SaveBtn);
@@ -130,5 +145,6 @@
         public System.Windows.Forms.Button SaveBtn;
         public System.Windows.Forms.Button CancelBtn;
         public System.Windows.Forms.Label lblid;
+        private System.Windows.Forms.Label Asterisk;
     }
 }

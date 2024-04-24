@@ -499,7 +499,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -512,7 +511,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!StockInDate.Value</Value>
+                                  <Value>=Format(Fields!StockInDate.Value, "MM/dd/yyyy")</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>

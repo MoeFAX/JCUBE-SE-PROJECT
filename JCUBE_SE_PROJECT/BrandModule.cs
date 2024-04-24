@@ -99,5 +99,17 @@ namespace JCUBE_SE_PROJECT
         {
             BrandNameField.Clear();
         }
+
+        private void BrandNameField_TextChanged(object sender, EventArgs e)
+        {
+            if (BrandNameField.Text.Length > 0)
+            {
+                Asterisk.Visible = false;
+            }
+            else
+            {
+                Asterisk.Visible = true;
+            }
+        }
     }
 }

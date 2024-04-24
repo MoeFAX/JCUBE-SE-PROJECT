@@ -24,6 +24,11 @@ namespace JCUBE_SE_PROJECT
             cn = new SqlConnection(dbcon.myConnection());
             adminuser = aduser;
             PrintCnclOrders.Enabled = false;
+            int currentYear = DateTime.Now.Year;
+            dateFromCancelled.MinDate = new DateTime(currentYear, 1, 1);
+            dateFromCancelled.MaxDate = new DateTime(currentYear, 12, 31);
+            dateToCancelled.MinDate = new DateTime(currentYear, 1, 1);
+            dateToCancelled.MaxDate = new DateTime(currentYear, 12, 31);
 
         }
 

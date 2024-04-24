@@ -421,11 +421,6 @@
     <EmbeddedResource Include="CategoryModule.resx">
       <DependentUpon>CategoryModule.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="SettlePayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -521,7 +516,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -636,10 +631,19 @@
     <Content Include="Images\archive-icon.png" />
     <Content Include="Images\close-blue-icon.png" />
     <Content Include="Images\close.png" />
+    <None Include="Images\delete_gray.png" />
+    <None Include="Images\delete_item.png" />
+    <None Include="Images\edit-icon-gray.png" />
+    <None Include="Images\edit-gray.png" />
+    <None Include="Images\edit-gray-final.png" />
     <Content Include="Images\edit-icon.png" />
+    <None Include="Images\edit_default.png" />
+    <None Include="Images\gray-edit.png" />
     <Content Include="Images\jcube_logo_transparent.png" />
     <Content Include="Images\manage-icon-0.png" />
     <Content Include="Images\password.png" />
+    <None Include="Images\restore.png" />
+    <None Include="Images\restore_gray.png" />
     <Content Include="Images\supplier-icon.png" />
     <Content Include="Images\user.png" />
     <Content Include="Properties\icons8-cancel-20.png" />

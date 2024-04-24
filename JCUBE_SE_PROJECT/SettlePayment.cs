@@ -29,7 +29,7 @@ namespace JCUBE_SE_PROJECT
             _loggedInUsername = loggedInUsername;
             cn = new SqlConnection(dbcon.myConnection());
             this.KeyPreview = true;
-            
+
         }
 
         private void btn1_Click(object sender, EventArgs e)
@@ -140,52 +140,55 @@ namespace JCUBE_SE_PROJECT
                 }
 
                 if (string.IsNullOrEmpty(comboMode.Text))
+                {
+                    MessageBox.Show("Mode of payment cannot be empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtTin.Clear();
+                    return;
+                }
+
+                if ((double.Parse(txtChange.Text) < 0) || (txtCash.Text.Equals("")))
+                {
+                    MessageBox.Show("Insufficient amount, Please enter the correct amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    for (int i = 0; i < clerk.dgvCart.Rows.Count; i++)
                     {
-                        MessageBox.Show("Mode of payment cannot be empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txtTin.Clear();
-                        return;
+                        cn.Open();
+                        cm = new SqlCommand("UPDATE tbItemList SET Qty = Qty - " + int.Parse(clerk.dgvCart.Rows[i].Cells[4].Value.ToString()) + "WHERE inventoryCode= '" + clerk.dgvCart.Rows[i].Cells[1].Value.ToString() + "'", cn);
+                        cm.ExecuteNonQuery();
+                        cn.Close();
+
+                        cn.Open();
+                        cm = new SqlCommand("UPDATE tbCart SET status = 'Complete', customer = @custName, TinNum = @TIN, mode = @modeOfPayment WHERE id= '" + clerk.dgvCart.Rows[i].Cells[0].Value.ToString() + "'", cn);
+                        cm.Parameters.AddWithValue("@custName", txtCustName.Text.ToString()); ;
+                        cm.Parameters.AddWithValue("@TIN", txtTin.Text.ToString());
+                        cm.Parameters.AddWithValue("@modeOfPayment", comboMode.SelectedItem.ToString());
+                        cm.ExecuteNonQuery();
+                        cn.Close();
+
+                        cn.Open();
+                        LogDao log = new LogDao(cn);
+                        string logAction = "CREATE";
+                        string logType = "PAYMENT";
+                        string logDescription = "Settled a Payment";
+                        string logUsername = _loggedInUsername;
+                        log.AddLogs(logAction, logType, logDescription, logUsername);
+                        cn.Close();
                     }
+                    printReceipt prtReceipt = new printReceipt(clerk);
+                    prtReceipt.LoadReceipt(txtCash.Text, txtChange.Text, txtCustName.Text, txtTin.Text, comboMode.SelectedItem.ToString());
+                    prtReceipt.ShowDialog();
 
-                    if ((double.Parse(txtChange.Text) < 0) || (txtCash.Text.Equals("")))
-                    {
-                        MessageBox.Show("Insufficient amount, Please enter the correct amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                    else
-                    {
-                        for (int i = 0; i < clerk.dgvCart.Rows.Count; i++)
-                        {
-                            cn.Open();
-                            cm = new SqlCommand("UPDATE tbItemList SET Qty = Qty - " + int.Parse(clerk.dgvCart.Rows[i].Cells[4].Value.ToString()) + "WHERE inventoryCode= '" + clerk.dgvCart.Rows[i].Cells[1].Value.ToString() + "'", cn);
-                            cm.ExecuteNonQuery();
-                            cn.Close();
+                    MessageBox.Show("Payment Complete!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            cn.Open();
-                            cm = new SqlCommand("UPDATE tbCart SET status = 'Complete', customer = @custName, TinNum = @TIN, mode = @modeOfPayment WHERE id= '" + clerk.dgvCart.Rows[i].Cells[0].Value.ToString() + "'", cn);
-                            cm.Parameters.AddWithValue("@custName", txtCustName.Text.ToString()); ;
-                            cm.Parameters.AddWithValue("@TIN", txtTin.Text.ToString());
-                            cm.Parameters.AddWithValue("@modeOfPayment", comboMode.SelectedItem.ToString());
-                            cm.ExecuteNonQuery();
-                            LogDao log = new LogDao(cn);
-                            string logAction = "CREATE";
-                            string logType = "PAYMENT";
-                            string logDescription = "Settled a Payment";
-                            string logUsername = _loggedInUsername;
-                            log.AddLogs(logAction, logType, logDescription, logUsername);
-                            cn.Close();
-                        }
-                        printReceipt prtReceipt = new printReceipt(clerk);
-                        prtReceipt.LoadReceipt(txtCash.Text, txtChange.Text, txtCustName.Text, txtTin.Text, comboMode.SelectedItem.ToString());
-                        prtReceipt.ShowDialog();
+                    clerk.StartNewTransaction();
+                    Dispose();
 
-                        MessageBox.Show("Payment Complete!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
-                        clerk.StartNewTransaction();
-                        Dispose();
 
-                    }
-
-                
             }
             catch (Exception ex)
             {
@@ -193,7 +196,7 @@ namespace JCUBE_SE_PROJECT
 
             }
         }
-        
+
         private void txtCash_TextChanged(object sender, EventArgs e)
         {
             try
@@ -208,8 +211,8 @@ namespace JCUBE_SE_PROJECT
                 txtChange.Text = "0.00";
             }
         }
-        
-        
+
+
 
         private void SettlePayment_KeyDown(object sender, KeyEventArgs e)
         {

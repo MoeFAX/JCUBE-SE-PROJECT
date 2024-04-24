@@ -46,9 +46,9 @@ namespace JCUBE_SE_PROJECT
                 cn.Open();
                 string sql = "SELECT se.RefNo, il.InventoryCode, il.Description, se.Stocks, se.StockInDate, se.StockInBy, se.Status, s.SupplierName " +
                     "FROM tbStockEntry AS se " +
-                    "INNER JOIN tbItemList AS il ON il.ItemID = se.ilid " +
+                    "INNER JOIN tbItemList AS il ON il.InventoryCode = se.ilid " +
                     "INNER JOIN tbSupplier AS s ON s.SupplierID = se.sid " +
-                    "WHERE CONVERT(date, se.StockInDate) BETWEEN @StartDate AND @EndDate " +
+                    "WHERE CAST(se.StockInDate AS date) BETWEEN @StartDate AND @EndDate " +
                     "AND se.Status LIKE 'Delivered'";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 cmd.Parameters.AddWithValue("@StartDate", startDate.Date);
