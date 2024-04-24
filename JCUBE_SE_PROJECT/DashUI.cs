@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace JCUBE_SE_PROJECT
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
         DateTime month = DateTime.Now;
+
         
         public DashUI()
         {
@@ -27,22 +29,23 @@ namespace JCUBE_SE_PROJECT
             LoadTotalDailySales();
             LoadTotalSoldToday();
             lblPendingStocks.Text = GetTotalPendingStocks().ToString();
-            LoadTopQty();
-            LoadTopTotal();
-            string monthName = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(month.Month);
-            lblTop5Qty.Text = "Top 5 Selling Items in " + monthName + " " + month.ToString("yyyy") + " (Quantity)";
-            lblTop5Tot.Text = "Top 5 Selling Items in " + monthName + " " + month.ToString("yyyy") + " (Total Sales)";
+            LoadCriticalStocks();
+            comboBox1.SelectedIndex = comboBox1.Items.IndexOf("Qty");
+            comboBox2.SelectedIndex = comboBox2.Items.IndexOf("Bar");
+            chartTopSelling.Series["Item"]["PieLabelStyle"] = "Disabled";
+
+
         }
 
         private void DashUI_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
 
         public void LoadTotalDailySales()
         {
@@ -141,7 +144,7 @@ namespace JCUBE_SE_PROJECT
             lblTotalSold.Text = totalQuantitySold.ToString();
         }
 
-       public void LoadTopQty()
+       public void LoadCriticalStocks()
         {
             dgvTopQty.Rows.Clear();
 
@@ -152,7 +155,7 @@ namespace JCUBE_SE_PROJECT
             {
                 cn.Open();
 
-                cm = new SqlCommand("SELECT TOP 5 i.ItemId, i.Description, ISNULL(SUM(c.qty), 0) AS qty FROM tbCart AS c INNER JOIN tbItemList AS i ON c.inventoryCode = i.InventoryCode WHERE c.date BETWEEN @FromDate AND @ToDate AND c.status LIKE 'Complete' GROUP BY i.ItemId, i.Description ORDER BY qty DESC", cn);
+                cm = new SqlCommand("SELECT ItemId, Description, Qty FROM tbItemList  WHERE (Qty <= Reorder) ORDER BY Qty DESC", cn);
                 cm.Parameters.AddWithValue("@FromDate", startDate);
                 cm.Parameters.AddWithValue("@ToDate", endDate);
 
@@ -160,7 +163,7 @@ namespace JCUBE_SE_PROJECT
 
                 while (dr.Read())
                 {
-                    dgvTopQty.Rows.Add(dr["ItemId"].ToString(), dr["Description"].ToString(), dr["qty"].ToString());
+                    dgvTopQty.Rows.Add(dr["ItemId"].ToString(), dr["Description"].ToString(), dr["Qty"].ToString());
                 }
             }
             catch (Exception ex)
@@ -178,26 +181,117 @@ namespace JCUBE_SE_PROJECT
 
         }
 
-        public void LoadTopTotal()
-        {
-            dgvTopTotal.Rows.Clear();
 
-            DateTime startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-            DateTime endDate = startDate.AddMonths(1).AddDays(-1);
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedChartType = comboBox2.Text;
+            string selectedFilter = comboBox1.Text;
+
+            if (selectedChartType == "Bar")
+            {
+                chartTopSelling.Series["Item"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+                chartTopSelling.Series["Item"].IsVisibleInLegend = false;
+                // Reset label formatting for Bar chart
+                chartTopSelling.Series["Item"].Label = ""; // Set label to empty string
+            }
+            else if (selectedChartType == "Pie")
+
+
+            {
+                chartTopSelling.Series["Item"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+                chartTopSelling.Series["Item"].IsVisibleInLegend = true;
+
+                if (selectedFilter == "Qty")
+                {
+                    chartTopSelling.Series["Item"]["PieLabelStyle"] = "Inside";
+                    chartTopSelling.Series["Item"].Label = "";
+                }
+                else
+                {
+                    chartTopSelling.Series["Item"]["PieLabelStyle"] = "Disabled";
+                    chartTopSelling.Series["Item"].Label = "#VALX | #VAL{C}";
+                }
+
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedFilter = comboBox1.Text;
+
+            // Clear existing points in the series
+            chartTopSelling.Series["Item"].Points.Clear();
 
             try
             {
                 cn.Open();
 
-                cm = new SqlCommand("SELECT TOP 5 i.ItemId, i.Description, ISNULL(SUM(c.qty * c.srp), 0) AS totalSales FROM tbCart AS c INNER JOIN tbItemList AS i ON c.inventoryCode = i.InventoryCode WHERE c.date BETWEEN @FromDate AND @ToDate AND c.status LIKE 'Complete' GROUP BY i.ItemId, i.Description ORDER BY totalSales DESC", cn);
-                cm.Parameters.AddWithValue("@FromDate", startDate);
-                cm.Parameters.AddWithValue("@ToDate", endDate);
+                DateTime startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                DateTime endDate = startDate.AddMonths(1).AddDays(-1);
+                string monthName = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(month.Month);
+
+                if (selectedFilter == "Total Sales")
+                {
+                    cm = new SqlCommand("SELECT TOP 5 p.Description, SUM(c.qty * c.srp) AS TotalSales " +
+                                        "FROM tbCart AS c " +
+                                        "INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode " +
+                                        "WHERE c.status = 'Complete' " +
+                                        "AND c.date >= @StartDate AND c.date <= @EndDate " +
+                                        "GROUP BY p.Description " +
+                                        "ORDER BY TotalSales DESC", cn);
+
+                    chartTopSelling.Titles.Clear();
+                    chartTopSelling.Titles.Add("Top 5 Selling Items By Total Sales " + "(" + monthName + ")");
+
+                }
+                else
+                {
+                    cm = new SqlCommand("SELECT TOP 5 p.Description, SUM(c.qty) AS TotalQty " +
+                                        "FROM tbCart AS c " +
+                                        "INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode " +
+                                        "WHERE c.status = 'Complete' " +
+                                        "AND c.date >= @StartDate AND c.date <= @EndDate " +
+                                        "GROUP BY p.Description " +
+                                        "ORDER BY TotalQty DESC", cn);
+
+                    chartTopSelling.Titles.Clear();
+                    chartTopSelling.Titles.Add("Top 5 Selling Items By Qty " + "(" + monthName + ")");
+
+                }
+
+                cm.Parameters.AddWithValue("@StartDate", startDate);
+                cm.Parameters.AddWithValue("@EndDate", endDate);
 
                 dr = cm.ExecuteReader();
 
                 while (dr.Read())
                 {
-                    dgvTopTotal.Rows.Add(dr["ItemId"].ToString(), dr["Description"].ToString(), double.Parse(dr["totalSales"].ToString()).ToString("#,##0.00"));
+                    if (selectedFilter == "Total Sales")
+                    {
+                        var dataPoint = chartTopSelling.Series["Item"].Points.AddXY(dr["Description"].ToString(), Convert.ToDouble(dr["TotalSales"]));
+                    }
+                    else
+                    {
+                        var dataPoint = chartTopSelling.Series["Item"].Points.AddXY(dr["Description"].ToString(), Convert.ToDouble(dr["TotalQty"]));
+                    }
+                }
+                chartTopSelling.Series["Item"].IsValueShownAsLabel = true;
+                chartTopSelling.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+                chartTopSelling.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+
+                if (selectedFilter == "Total Sales" && chartTopSelling.Series["Item"].ChartType == System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie)
+                {
+                    chartTopSelling.Series["Item"]["PieLabelStyle"] = "Disabled";
+                    chartTopSelling.Series["Item"].Label = "#VALX | #VAL{C}";
+                }
+                else
+                {
+                    chartTopSelling.Series["Item"]["PieLabelStyle"] = "Inside";
+                    chartTopSelling.Series["Item"].Label = ""; 
                 }
             }
             catch (Exception ex)
@@ -206,10 +300,11 @@ namespace JCUBE_SE_PROJECT
             }
             finally
             {
-                if (cn.State == ConnectionState.Open)
-                {
+                if (dr != null && !dr.IsClosed)
+                    dr.Close();
+
+                if (cn.State == System.Data.ConnectionState.Open)
                     cn.Close();
-                }
             }
         }
     }

@@ -52,6 +52,8 @@ namespace JCUBE_SE_PROJECT
                     return;
                 }
 
+                amountTB.Focus();
+
             }
             catch (Exception)
             {

@@ -42,6 +42,9 @@ namespace JCUBE_SE_PROJECT
             this.txtConfirmPass = new MetroFramework.Controls.MetroTextBox();
             this.txtCurrentPass = new MetroFramework.Controls.MetroTextBox();
             this.picAvatar = new System.Windows.Forms.Label();
+            this.curAst = new System.Windows.Forms.Label();
+            this.newAst = new System.Windows.Forms.Label();
+            this.confAst = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.newPassEyeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.confirmEyeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CurEyeBtn)).BeginInit();
@@ -54,7 +57,7 @@ namespace JCUBE_SE_PROJECT
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNext.Location = new System.Drawing.Point(280, 168);
+            this.btnNext.Location = new System.Drawing.Point(288, 168);
             this.btnNext.Margin = new System.Windows.Forms.Padding(4);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(120, 40);
@@ -70,7 +73,7 @@ namespace JCUBE_SE_PROJECT
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSave.Location = new System.Drawing.Point(280, 168);
+            this.btnSave.Location = new System.Drawing.Point(287, 168);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 40);
@@ -162,7 +165,7 @@ namespace JCUBE_SE_PROJECT
             this.txtNewPass.Lines = new string[0];
             this.txtNewPass.Location = new System.Drawing.Point(16, 84);
             this.txtNewPass.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNewPass.MaxLength = 32767;
+            this.txtNewPass.MaxLength = 255;
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.PasswordChar = '●';
             this.txtNewPass.PromptText = "New Password";
@@ -179,6 +182,7 @@ namespace JCUBE_SE_PROJECT
             this.txtNewPass.WaterMark = "New Password";
             this.txtNewPass.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNewPass.WaterMarkFont = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPass.TextChanged += new System.EventHandler(this.txtNewPass_TextChanged);
             // 
             // txtConfirmPass
             // 
@@ -201,7 +205,7 @@ namespace JCUBE_SE_PROJECT
             this.txtConfirmPass.Lines = new string[0];
             this.txtConfirmPass.Location = new System.Drawing.Point(16, 125);
             this.txtConfirmPass.Margin = new System.Windows.Forms.Padding(4);
-            this.txtConfirmPass.MaxLength = 32767;
+            this.txtConfirmPass.MaxLength = 255;
             this.txtConfirmPass.Name = "txtConfirmPass";
             this.txtConfirmPass.PasswordChar = '●';
             this.txtConfirmPass.PromptText = "Confirm Password";
@@ -218,6 +222,7 @@ namespace JCUBE_SE_PROJECT
             this.txtConfirmPass.WaterMark = "Confirm Password";
             this.txtConfirmPass.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtConfirmPass.WaterMarkFont = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmPass.TextChanged += new System.EventHandler(this.txtConfirmPass_TextChanged);
             // 
             // txtCurrentPass
             // 
@@ -240,7 +245,7 @@ namespace JCUBE_SE_PROJECT
             this.txtCurrentPass.Lines = new string[0];
             this.txtCurrentPass.Location = new System.Drawing.Point(16, 84);
             this.txtCurrentPass.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCurrentPass.MaxLength = 32767;
+            this.txtCurrentPass.MaxLength = 255;
             this.txtCurrentPass.Name = "txtCurrentPass";
             this.txtCurrentPass.PasswordChar = '●';
             this.txtCurrentPass.PromptText = "Current Password";
@@ -256,6 +261,7 @@ namespace JCUBE_SE_PROJECT
             this.txtCurrentPass.WaterMark = "Current Password";
             this.txtCurrentPass.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCurrentPass.WaterMarkFont = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCurrentPass.TextChanged += new System.EventHandler(this.txtCurrentPass_TextChanged);
             // 
             // picAvatar
             // 
@@ -268,11 +274,53 @@ namespace JCUBE_SE_PROJECT
             this.picAvatar.TabIndex = 2;
             this.picAvatar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // curAst
+            // 
+            this.curAst.AutoSize = true;
+            this.curAst.BackColor = System.Drawing.Color.Transparent;
+            this.curAst.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.curAst.ForeColor = System.Drawing.Color.Red;
+            this.curAst.Location = new System.Drawing.Point(655, 87);
+            this.curAst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.curAst.Name = "curAst";
+            this.curAst.Size = new System.Drawing.Size(22, 27);
+            this.curAst.TabIndex = 60;
+            this.curAst.Text = "*";
+            // 
+            // newAst
+            // 
+            this.newAst.AutoSize = true;
+            this.newAst.BackColor = System.Drawing.Color.Transparent;
+            this.newAst.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newAst.ForeColor = System.Drawing.Color.Red;
+            this.newAst.Location = new System.Drawing.Point(655, 87);
+            this.newAst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.newAst.Name = "newAst";
+            this.newAst.Size = new System.Drawing.Size(22, 27);
+            this.newAst.TabIndex = 61;
+            this.newAst.Text = "*";
+            // 
+            // confAst
+            // 
+            this.confAst.AutoSize = true;
+            this.confAst.BackColor = System.Drawing.Color.Transparent;
+            this.confAst.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confAst.ForeColor = System.Drawing.Color.Red;
+            this.confAst.Location = new System.Drawing.Point(657, 127);
+            this.confAst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.confAst.Name = "confAst";
+            this.confAst.Size = new System.Drawing.Size(22, 27);
+            this.confAst.TabIndex = 62;
+            this.confAst.Text = "*";
+            // 
             // ChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 214);
+            this.ClientSize = new System.Drawing.Size(684, 214);
+            this.Controls.Add(this.confAst);
+            this.Controls.Add(this.newAst);
+            this.Controls.Add(this.curAst);
             this.Controls.Add(this.newPassEyeBtn);
             this.Controls.Add(this.confirmEyeBtn);
             this.Controls.Add(this.CurEyeBtn);
@@ -313,5 +361,8 @@ namespace JCUBE_SE_PROJECT
         private System.Windows.Forms.PictureBox CurEyeBtn;
         private System.Windows.Forms.PictureBox confirmEyeBtn;
         private System.Windows.Forms.PictureBox newPassEyeBtn;
+        private System.Windows.Forms.Label curAst;
+        private System.Windows.Forms.Label newAst;
+        private System.Windows.Forms.Label confAst;
     }
 }

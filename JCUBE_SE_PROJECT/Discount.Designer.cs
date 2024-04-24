@@ -145,7 +145,7 @@
             this.percentageTB.CustomButton.Visible = false;
             this.percentageTB.Lines = new string[0];
             this.percentageTB.Location = new System.Drawing.Point(154, 64);
-            this.percentageTB.MaxLength = 32767;
+            this.percentageTB.MaxLength = 3;
             this.percentageTB.Name = "percentageTB";
             this.percentageTB.PasswordChar = '\0';
             this.percentageTB.ScrollBars = System.Windows.Forms.ScrollBars.None;

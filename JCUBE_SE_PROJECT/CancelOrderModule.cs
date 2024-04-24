@@ -162,5 +162,15 @@ namespace JCUBE_SE_PROJECT
                 txtPassword.UseSystemPasswordChar = true;
             }
         }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            userAst.Visible = string.IsNullOrEmpty(txtUsername.Text);
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            pasAst.Visible = string.IsNullOrEmpty(txtPassword.Text);
+        }
     }
 }
