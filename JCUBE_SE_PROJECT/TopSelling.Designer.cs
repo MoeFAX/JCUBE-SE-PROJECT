@@ -49,12 +49,12 @@ namespace JCUBE_SE_PROJECT
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.cbTopSell = new System.Windows.Forms.ComboBox();
             this.dateToTopSell = new System.Windows.Forms.DateTimePicker();
             this.dateFromTopSell = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.flterLbl = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopSell)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,7 +71,7 @@ namespace JCUBE_SE_PROJECT
             this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReturn.Location = new System.Drawing.Point(707, 21);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(103, 30);
+            this.btnReturn.Size = new System.Drawing.Size(104, 30);
             this.btnReturn.TabIndex = 1;
             this.btnReturn.Text = "Return";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -274,6 +274,17 @@ namespace JCUBE_SE_PROJECT
             this.panel1.Size = new System.Drawing.Size(911, 67);
             this.panel1.TabIndex = 13;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(618, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 30);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Sort By:";
+            // 
             // cbTopSell
             // 
             this.cbTopSell.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -326,17 +337,6 @@ namespace JCUBE_SE_PROJECT
             this.flterLbl.Size = new System.Drawing.Size(118, 30);
             this.flterLbl.TabIndex = 2;
             this.flterLbl.Text = "Filter From:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(618, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 30);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Sort By:";
             // 
             // TopSelling
             // 

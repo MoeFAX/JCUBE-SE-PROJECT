@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +36,12 @@ namespace JCUBE_SE_PROJECT
             }
             else btnPrintSalesHistory.Enabled = false;
 
+            int currentYear = DateTime.Now.Year;
+            dateFrom.MinDate = new DateTime(currentYear, 1, 1);
+            dateFrom.MaxDate = new DateTime(currentYear, 12, 31);
+            dateTo.MinDate = new DateTime(currentYear, 1, 1);
+            dateTo.MaxDate = new DateTime(currentYear, 12, 31);
+
         }
 
         public void LoadClerk()
@@ -69,11 +75,11 @@ namespace JCUBE_SE_PROJECT
 
             if (comboClrk.Text == "All Clerk")
             {
-                query = "SELECT c.id, c.transNo, c.InventoryCode, p.Description, c.srp, c.qty, c.discount, c.total, c.clerk, c.OcNum, c.TinNum, c.mode, c.customer FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND c.date >= @DateFrom AND c.date < @DateTo";
+                query = "SELECT c.id, c.transNo, c.InventoryCode, p.Description, c.srp, c.qty, c.discount, c.total, c.clerk, c.OcNum, c.TinNum, c.mode, c.customer FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND c.date >= @DateFrom AND c.date < @DateTo ORDER BY c.transNo ASC";
             }
             else
             {
-                query = "SELECT c.id, c.transNo, c.InventoryCode, p.Description, c.srp, c.qty, c.discount, c.total, c.clerk, c.OcNum, c.TinNum, c.mode, c.customer FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND c.date >= @DateFrom AND c.date < @DateTo AND Clerk = @Clerk";
+                query = "SELECT c.id, c.transNo, c.InventoryCode, p.Description, c.srp, c.qty, c.discount, c.total, c.clerk, c.OcNum, c.TinNum, c.mode, c.customer FROM tbCart AS c INNER JOIN tbItemList AS p ON c.inventoryCode = p.InventoryCode WHERE status = 'Complete' AND c.date >= @DateFrom AND c.date < @DateTo AND Clerk = @Clerk ORDER BY c.transNo ASC";
             }
 
             cm = new SqlCommand(query, cn);

@@ -62,5 +62,24 @@ namespace JCUBE_SE_PROJECT
         {
             e.Handled = true;
         }
+
+        private void AddInvCbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            addAst.Visible = string.IsNullOrEmpty(AddInvCbox.Text);
+        }
+
+        private void udQty_ValueChanged(object sender, EventArgs e)
+        {
+            if (udQty.Value > 0)
+            {
+                cancelAst.Visible = false;
+            }
+            else { cancelAst.Visible = true; }
+        }
+
+        private void RsnTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            reasonAst.Visible = string.IsNullOrEmpty(RsnTxtBox.Text);
+        }
     }
 }

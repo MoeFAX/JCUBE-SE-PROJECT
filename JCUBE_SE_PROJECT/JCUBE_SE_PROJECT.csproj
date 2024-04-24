@@ -66,6 +66,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -124,6 +125,12 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="DBConnect.cs" />
+    <Compile Include="DiscountCreds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiscountCreds.Designer.cs">
+      <DependentUpon>DiscountCreds.cs</DependentUpon>
+    </Compile>
     <Compile Include="DtArchives.cs">
       <DependentUpon>DtArchives.xsd</DependentUpon>
     </Compile>
@@ -132,10 +139,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DtArchives.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DtInvList.cs">
+      <DependentUpon>DtInvList.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DtInvList.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DtInvList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DtLogs.cs">
+      <DependentUpon>DtLogs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DtLogs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DtLogs.xsd</DependentUpon>
     </Compile>
     <Compile Include="EditAccount.cs">
       <SubType>Form</SubType>
@@ -276,6 +294,12 @@
     <Compile Include="PrintItemListArchives.Designer.cs">
       <DependentUpon>PrintItemListArchives.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintLogs.Designer.cs">
+      <DependentUpon>PrintLogs.cs</DependentUpon>
+    </Compile>
     <Compile Include="printReceipt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -394,6 +418,9 @@
     <EmbeddedResource Include="CriticalStocks.resx">
       <DependentUpon>CriticalStocks.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DiscountCreds.resx">
+      <DependentUpon>DiscountCreds.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditAccount.resx">
       <DependentUpon>EditAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -428,11 +455,6 @@
     <EmbeddedResource Include="CategoryModule.resx">
       <DependentUpon>CategoryModule.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="SettlePayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -507,6 +529,9 @@
     <EmbeddedResource Include="PrintItemListArchives.resx">
       <DependentUpon>PrintItemListArchives.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintLogs.resx">
+      <DependentUpon>PrintLogs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="printReceipt.resx">
       <DependentUpon>printReceipt.cs</DependentUpon>
     </EmbeddedResource>
@@ -528,7 +553,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -546,6 +571,7 @@
     <EmbeddedResource Include="ReportInvList.rdlc" />
     <EmbeddedResource Include="Receipt.rdlc" />
     <EmbeddedResource Include="ReportItemListArchives.rdlc" />
+    <EmbeddedResource Include="ReportLogs.rdlc" />
     <EmbeddedResource Include="ReportSalesHistory.rdlc" />
     <EmbeddedResource Include="ReportSoldItems.rdlc" />
     <EmbeddedResource Include="ReportStockArchives.rdlc" />
@@ -626,6 +652,17 @@
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="DtLogs.xsc">
+      <DependentUpon>DtLogs.xsd</DependentUpon>
+    </None>
+    <None Include="DtLogs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DtLogs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DtLogs.xss">
+      <DependentUpon>DtLogs.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -646,10 +683,19 @@
     <Content Include="Images\archive-icon.png" />
     <Content Include="Images\close-blue-icon.png" />
     <Content Include="Images\close.png" />
+    <None Include="Images\delete_gray.png" />
+    <None Include="Images\delete_item.png" />
+    <None Include="Images\edit-icon-gray.png" />
+    <None Include="Images\edit-gray.png" />
+    <None Include="Images\edit-gray-final.png" />
     <Content Include="Images\edit-icon.png" />
+    <None Include="Images\edit_default.png" />
+    <None Include="Images\gray-edit.png" />
     <Content Include="Images\jcube_logo_transparent.png" />
     <Content Include="Images\manage-icon-0.png" />
     <Content Include="Images\password.png" />
+    <None Include="Images\restore.png" />
+    <None Include="Images\restore_gray.png" />
     <Content Include="Images\supplier-icon.png" />
     <Content Include="Images\user.png" />
     <Content Include="Properties\icons8-cancel-20.png" />
@@ -663,6 +709,7 @@
     <None Include="Resources\Clear Cart Icon.png" />
     <None Include="Resources\Delete Icon.png" />
     <None Include="Resources\User Label.png" />
+    <None Include="Resources\Critical Stocks Icon.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -43,15 +43,15 @@ namespace JCUBE_SE_PROJECT
                 cn.Open();
                 if (sortBy == "Qty")
                 {
-                    cm = new SqlCommand("SELECT TOP 10 i.ItemId, c.inventoryCode, i.Description, ISNULL(SUM(c.qty), 0) AS qty, ISNULL(SUM(c.qty * c.srp), 0) AS total FROM tbCart AS c INNER JOIN tbItemList AS i ON c.inventoryCode = i.InventoryCode WHERE c.date BETWEEN @FromDate AND @ToDate AND c.status LIKE 'Complete' GROUP BY c.inventoryCode, i.Description, i.ItemId ORDER BY qty DESC", cn);
+                    cm = new SqlCommand("SELECT TOP 10 i.ItemId, c.inventoryCode, i.Description, ISNULL(SUM(c.qty), 0) AS qty, ISNULL(SUM(c.qty * c.srp), 0) AS total FROM tbCart AS c INNER JOIN tbItemList AS i ON c.inventoryCode = i.InventoryCode WHERE c.date BETWEEN DATEADD(DAY, DATEDIFF(DAY, 0, @FromDate), 0) AND DATEADD(SECOND, -1, DATEADD(DAY, DATEDIFF(DAY, 0, @ToDate) + 1, 0)) AND c.status LIKE 'Complete' GROUP BY c.inventoryCode, i.Description, i.ItemId ORDER BY qty DESC", cn);
                 }
                 else if (sortBy == "Total")
                 {
-                    cm = new SqlCommand("SELECT TOP 10 i.ItemId, c.inventoryCode, i.Description, ISNULL(SUM(c.qty), 0) AS qty, ISNULL(SUM(c.qty * c.srp), 0) AS total FROM tbCart AS c INNER JOIN tbItemList AS i ON c.inventoryCode = i.InventoryCode WHERE c.date BETWEEN @FromDate AND @ToDate AND c.status LIKE 'Complete' GROUP BY c.inventoryCode, i.Description, i.ItemId ORDER BY total DESC", cn);
+                    cm = new SqlCommand("SELECT TOP 10 i.ItemId, c.inventoryCode, i.Description, ISNULL(SUM(c.qty), 0) AS qty, ISNULL(SUM(c.qty * c.srp), 0) AS total FROM tbCart AS c INNER JOIN tbItemList AS i ON c.inventoryCode = i.InventoryCode WHERE c.date BETWEEN DATEADD(DAY, DATEDIFF(DAY, 0, @FromDate), 0) AND DATEADD(SECOND, -1, DATEADD(DAY, DATEDIFF(DAY, 0, @ToDate) + 1, 0)) AND c.status LIKE 'Complete' GROUP BY c.inventoryCode, i.Description, i.ItemId ORDER BY total DESC", cn);
                 }
 
-                cm.Parameters.AddWithValue("@FromDate", startDate.Date);
-                cm.Parameters.AddWithValue("@ToDate", endDate.Date);
+                cm.Parameters.AddWithValue("@FromDate", startDate);
+                cm.Parameters.AddWithValue("@ToDate", endDate);
 
                 DataSet1 ds = new DataSet1();
                 SqlDataAdapter da = new SqlDataAdapter(cm);

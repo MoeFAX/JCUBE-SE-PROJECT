@@ -40,18 +40,18 @@
             this.ItemListLabel = new System.Windows.Forms.Label();
             this.side2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dgvItem = new System.Windows.Forms.DataGridView();
-            this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InventoryCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AcquiredCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Archive = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ReOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AcquiredCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InventoryCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvItem = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).BeginInit();
             this.SuspendLayout();
@@ -156,6 +156,109 @@
             this.panel3.Size = new System.Drawing.Size(18, 487);
             this.panel3.TabIndex = 5;
             // 
+            // Archive
+            // 
+            this.Archive.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Archive.HeaderText = "";
+            this.Archive.Image = ((System.Drawing.Image)(resources.GetObject("Archive.Image")));
+            this.Archive.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Archive.MinimumWidth = 6;
+            this.Archive.Name = "Archive";
+            this.Archive.ReadOnly = true;
+            this.Archive.Width = 6;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Edit.HeaderText = "";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 6;
+            // 
+            // ReOrder
+            // 
+            this.ReOrder.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ReOrder.HeaderText = "Re-Order";
+            this.ReOrder.MinimumWidth = 6;
+            this.ReOrder.Name = "ReOrder";
+            this.ReOrder.ReadOnly = true;
+            this.ReOrder.Width = 95;
+            // 
+            // Price
+            // 
+            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Price.HeaderText = "SRP";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            this.Price.Width = 60;
+            // 
+            // cid
+            // 
+            this.cid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cid.HeaderText = "Category";
+            this.cid.MinimumWidth = 6;
+            this.cid.Name = "cid";
+            this.cid.ReadOnly = true;
+            this.cid.Width = 95;
+            // 
+            // bid
+            // 
+            this.bid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.bid.HeaderText = "Brand";
+            this.bid.MinimumWidth = 6;
+            this.bid.Name = "bid";
+            this.bid.ReadOnly = true;
+            this.bid.Width = 76;
+            // 
+            // AcquiredCost
+            // 
+            this.AcquiredCost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.AcquiredCost.HeaderText = "Acquired Cost";
+            this.AcquiredCost.MinimumWidth = 6;
+            this.AcquiredCost.Name = "AcquiredCost";
+            this.AcquiredCost.ReadOnly = true;
+            this.AcquiredCost.Width = 126;
+            // 
+            // Description
+            // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Description.HeaderText = "Description";
+            this.Description.MinimumWidth = 6;
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            // 
+            // ItemCode
+            // 
+            this.ItemCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ItemCode.HeaderText = "Item Code";
+            this.ItemCode.MinimumWidth = 6;
+            this.ItemCode.Name = "ItemCode";
+            this.ItemCode.ReadOnly = true;
+            this.ItemCode.Width = 103;
+            // 
+            // InventoryCode
+            // 
+            this.InventoryCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.InventoryCode.HeaderText = "Inventory Code";
+            this.InventoryCode.MinimumWidth = 6;
+            this.InventoryCode.Name = "InventoryCode";
+            this.InventoryCode.ReadOnly = true;
+            // 
+            // ItemID
+            // 
+            this.ItemID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ItemID.DataPropertyName = "ItemID";
+            this.ItemID.HeaderText = "No";
+            this.ItemID.MinimumWidth = 6;
+            this.ItemID.Name = "ItemID";
+            this.ItemID.ReadOnly = true;
+            this.ItemID.Visible = false;
+            this.ItemID.Width = 125;
+            // 
             // dgvItem
             // 
             this.dgvItem.AllowUserToAddRows = false;
@@ -222,109 +325,6 @@
             this.dgvItem.TabIndex = 18;
             this.dgvItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItem_CellContentClick);
             // 
-            // ItemID
-            // 
-            this.ItemID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ItemID.DataPropertyName = "ItemID";
-            this.ItemID.HeaderText = "No";
-            this.ItemID.MinimumWidth = 6;
-            this.ItemID.Name = "ItemID";
-            this.ItemID.ReadOnly = true;
-            this.ItemID.Visible = false;
-            this.ItemID.Width = 125;
-            // 
-            // InventoryCode
-            // 
-            this.InventoryCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.InventoryCode.HeaderText = "Inventory Code";
-            this.InventoryCode.MinimumWidth = 6;
-            this.InventoryCode.Name = "InventoryCode";
-            this.InventoryCode.ReadOnly = true;
-            // 
-            // ItemCode
-            // 
-            this.ItemCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ItemCode.HeaderText = "Item Code";
-            this.ItemCode.MinimumWidth = 6;
-            this.ItemCode.Name = "ItemCode";
-            this.ItemCode.ReadOnly = true;
-            this.ItemCode.Width = 103;
-            // 
-            // Description
-            // 
-            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Description.HeaderText = "Description";
-            this.Description.MinimumWidth = 6;
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            // 
-            // AcquiredCost
-            // 
-            this.AcquiredCost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.AcquiredCost.HeaderText = "Acquired Cost";
-            this.AcquiredCost.MinimumWidth = 6;
-            this.AcquiredCost.Name = "AcquiredCost";
-            this.AcquiredCost.ReadOnly = true;
-            this.AcquiredCost.Width = 126;
-            // 
-            // bid
-            // 
-            this.bid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.bid.HeaderText = "Brand";
-            this.bid.MinimumWidth = 6;
-            this.bid.Name = "bid";
-            this.bid.ReadOnly = true;
-            this.bid.Width = 76;
-            // 
-            // cid
-            // 
-            this.cid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cid.HeaderText = "Category";
-            this.cid.MinimumWidth = 6;
-            this.cid.Name = "cid";
-            this.cid.ReadOnly = true;
-            this.cid.Width = 95;
-            // 
-            // Price
-            // 
-            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Price.HeaderText = "SRP";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 60;
-            // 
-            // ReOrder
-            // 
-            this.ReOrder.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ReOrder.HeaderText = "Re-Order";
-            this.ReOrder.MinimumWidth = 6;
-            this.ReOrder.Name = "ReOrder";
-            this.ReOrder.ReadOnly = true;
-            this.ReOrder.Width = 95;
-            // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Edit.HeaderText = "";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Edit.MinimumWidth = 6;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 6;
-            // 
-            // Archive
-            // 
-            this.Archive.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Archive.HeaderText = "";
-            this.Archive.Image = ((System.Drawing.Image)(resources.GetObject("Archive.Image")));
-            this.Archive.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Archive.MinimumWidth = 6;
-            this.Archive.Name = "Archive";
-            this.Archive.ReadOnly = true;
-            this.Archive.Width = 6;
-            // 
             // ItemList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -356,19 +356,19 @@
         private System.Windows.Forms.Label ItemListLabel;
         private System.Windows.Forms.Panel side2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dgvItem;
         private MetroFramework.Controls.MetroTextBox txtSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InventoryCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AcquiredCost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReOrder;
-        private System.Windows.Forms.DataGridViewImageColumn Edit;
-        private System.Windows.Forms.DataGridViewImageColumn Archive;
         private System.Windows.Forms.Button addbtn;
+        private System.Windows.Forms.DataGridViewImageColumn Archive;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReOrder;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AcquiredCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InventoryCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
+        private System.Windows.Forms.DataGridView dgvItem;
     }
 }

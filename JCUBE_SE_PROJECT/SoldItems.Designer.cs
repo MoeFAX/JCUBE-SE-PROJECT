@@ -103,9 +103,9 @@ namespace JCUBE_SE_PROJECT
             this.btnTopSelling.ForeColor = System.Drawing.Color.Black;
             this.btnTopSelling.Image = ((System.Drawing.Image)(resources.GetObject("btnTopSelling.Image")));
             this.btnTopSelling.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTopSelling.Location = new System.Drawing.Point(669, 20);
+            this.btnTopSelling.Location = new System.Drawing.Point(670, 18);
             this.btnTopSelling.Name = "btnTopSelling";
-            this.btnTopSelling.Size = new System.Drawing.Size(130, 30);
+            this.btnTopSelling.Size = new System.Drawing.Size(136, 35);
             this.btnTopSelling.TabIndex = 1;
             this.btnTopSelling.Text = "Top Selling";
             this.btnTopSelling.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -123,7 +123,7 @@ namespace JCUBE_SE_PROJECT
             this.btnLoadSold.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLoadSold.Location = new System.Drawing.Point(488, 18);
             this.btnLoadSold.Name = "btnLoadSold";
-            this.btnLoadSold.Size = new System.Drawing.Size(102, 35);
+            this.btnLoadSold.Size = new System.Drawing.Size(108, 35);
             this.btnLoadSold.TabIndex = 15;
             this.btnLoadSold.Text = "Refresh";
             this.btnLoadSold.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

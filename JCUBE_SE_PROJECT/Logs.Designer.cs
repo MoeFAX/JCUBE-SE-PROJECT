@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Logs));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Logs));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLogs = new System.Windows.Forms.Label();
             this.typeComboBox = new System.Windows.Forms.ComboBox();
@@ -44,6 +44,7 @@
             this.lblFrom = new System.Windows.Forms.Label();
             this.dateFrom = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.PrintStockArchives = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvLogs = new System.Windows.Forms.DataGridView();
@@ -98,7 +99,7 @@
             "SALES",
             "STOCKS",
             "SUPPLIER"});
-            this.typeComboBox.Location = new System.Drawing.Point(726, 31);
+            this.typeComboBox.Location = new System.Drawing.Point(725, 31);
             this.typeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.typeComboBox.Name = "typeComboBox";
             this.typeComboBox.Size = new System.Drawing.Size(160, 35);
@@ -112,6 +113,8 @@
             this.actionComboBox.FormattingEnabled = true;
             this.actionComboBox.Items.AddRange(new object[] {
             "",
+            "LOGIN",
+            "LOGOUT",
             "CREATE",
             "UPDATE",
             "DELETE",
@@ -150,7 +153,7 @@
             // 
             this.dateTo.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTo.Location = new System.Drawing.Point(334, 10);
+            this.dateTo.Location = new System.Drawing.Point(333, 10);
             this.dateTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTo.Name = "dateTo";
             this.dateTo.Size = new System.Drawing.Size(141, 30);
@@ -171,7 +174,7 @@
             // 
             this.lblFrom.AutoSize = true;
             this.lblFrom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrom.Location = new System.Drawing.Point(26, 14);
+            this.lblFrom.Location = new System.Drawing.Point(27, 14);
             this.lblFrom.Name = "lblFrom";
             this.lblFrom.Size = new System.Drawing.Size(113, 23);
             this.lblFrom.TabIndex = 4;
@@ -191,6 +194,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.PrintStockArchives);
             this.panel2.Controls.Add(this.dateTo);
             this.panel2.Controls.Add(this.lblTo);
             this.panel2.Controls.Add(this.lblFrom);
@@ -202,6 +206,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(911, 50);
             this.panel2.TabIndex = 1;
+            // 
+            // PrintStockArchives
+            // 
+            this.PrintStockArchives.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PrintStockArchives.FlatAppearance.BorderSize = 0;
+            this.PrintStockArchives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrintStockArchives.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintStockArchives.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.PrintStockArchives.Image = ((System.Drawing.Image)(resources.GetObject("PrintStockArchives.Image")));
+            this.PrintStockArchives.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.PrintStockArchives.Location = new System.Drawing.Point(665, 7);
+            this.PrintStockArchives.MinimumSize = new System.Drawing.Size(20, 20);
+            this.PrintStockArchives.Name = "PrintStockArchives";
+            this.PrintStockArchives.Size = new System.Drawing.Size(184, 37);
+            this.PrintStockArchives.TabIndex = 34;
+            this.PrintStockArchives.Text = "Print Preview";
+            this.PrintStockArchives.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PrintStockArchives.UseVisualStyleBackColor = true;
+            this.PrintStockArchives.Click += new System.EventHandler(this.PrintStockArchives_Click);
             // 
             // panel3
             // 
@@ -379,5 +402,6 @@
         private System.Windows.Forms.ComboBox actionComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox typeComboBox;
+        private System.Windows.Forms.Button PrintStockArchives;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -97,6 +98,18 @@ namespace JCUBE_SE_PROJECT
         public void Clear()
         {
             CtgryNameField.Clear();
+        }
+
+        private void CtgryNameField_TextChanged(object sender, EventArgs e)
+        {
+            if (CtgryNameField.Text.Length > 0)
+            { 
+                Asterisk.Visible = false; 
+            }
+            else
+            { 
+                Asterisk.Visible = true; 
+            }
         }
     }
     

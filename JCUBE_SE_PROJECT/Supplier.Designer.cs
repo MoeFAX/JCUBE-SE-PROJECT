@@ -176,7 +176,8 @@
             this.dgvSupplier.RowTemplate.Height = 24;
             this.dgvSupplier.Size = new System.Drawing.Size(942, 452);
             this.dgvSupplier.TabIndex = 18;
-            this.dgvSupplier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSupplier_CellContentClick);
+            this.dgvSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSupplier_CellClick);
+            this.dgvSupplier.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSupplier_CellFormatting);
             // 
             // SupplierID
             // 
@@ -253,7 +254,7 @@
             // 
             this.Archive.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Archive.HeaderText = "";
-            this.Archive.Image = ((System.Drawing.Image)(resources.GetObject("Archive.Image")));
+            this.Archive.Image = global::JCUBE_SE_PROJECT.Properties.Resources.delete_item;
             this.Archive.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Archive.MinimumWidth = 6;
             this.Archive.Name = "Archive";
@@ -291,6 +292,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel side2;
         private System.Windows.Forms.DataGridView dgvSupplier;
+        private System.Windows.Forms.Button addbtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
@@ -299,6 +301,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EmailAddress;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Archive;
-        private System.Windows.Forms.Button addbtn;
     }
 }

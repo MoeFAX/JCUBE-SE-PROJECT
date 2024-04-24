@@ -131,52 +131,13 @@
         wCVmaeAm+JuGgJYDmvYwm3vahbK/FCTd0+aAPCldMnP8PqJoAnzJvT20crHcAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="ItemID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="InventoryCode.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ItemCode.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Description.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="AcquiredCost.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="bid.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cid.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ReOrder.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Edit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Edit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAJ9JREFUSEtjGAUgIGCdUsNvnfyBzyo5HCpEPQA0uEHAJuU/GFun/BGwSY6BSlEH
-        oFgAtiT5N1V8ImCTag9lYrEk5T1UijwAMxBEQ4XQg6oGKkw6QHctuiXIfJIBuuEInNwBVUI+wG04BAPl
-        HaBKSQeEDAfieqhS0sGo4VjBqOE4ARYDkTFlhoMAFkNhmHLDQQCLwdQzHARoavgowA4YGABSGtW0MXDN
-        7AAAAABJRU5ErkJggg==
-</value>
-  </data>
   <metadata name="Archive.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="Archive.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAASZJREFUSEvtlEFOAjEYhav/DBzAK+gB9CSu5SCcwERceAZN9BxewAUQoBNRLuDG
+        DAAACwwBP0AiyAAAASZJREFUSEvtlEFOAjEYhav/DBzAK+gB9CSu5SCcwERceAZN9BxewAUQoBNRLuDG
         ncKo9Q155G/JH8JgiCx4yZd0km9eO22mbp/dyXSUn5VeejOf/ZRFFhbg+a0s5DI8uZzqZkF5Ny5eZlZk
         j2HkjqjXD1b6bRWnyBgTtVcB5zwEd8BajV24IV5uWKsxxQis7p6qw/jBchZgN96paizxL7BWY0kp0sen
         X82pxqajsFZjSSnSjw5yGxPUg7UaS0rw8hoGrlGB8cR0IlirsaQYbM0t1eqfubOcGKoaS0rw0vnyhy1w
@@ -184,4 +145,43 @@
         Ze0+/x7nfgE2kC0sp6jkTwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="Edit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Edit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAJ9JREFUSEtjGAUgIGCdUsNvnfyBzyo5HCpEPQA0uEHAJuU/GFun/BGwSY6BSlEH
+        oFgAtiT5N1V8ImCTag9lYrEk5T1UijwAMxBEQ4XQg6oGKkw6QHctuiXIfJIBuuEInNwBVUI+wG04BAPl
+        HaBKSQeEDAfieqhS0sGo4VjBqOE4ARYDkTFlhoMAFkNhmHLDQQCLwdQzHARoavgowA4YGABSGtW0MXDN
+        7AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="ReOrder.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cid.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="bid.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="AcquiredCost.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Description.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ItemCode.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="InventoryCode.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ItemID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

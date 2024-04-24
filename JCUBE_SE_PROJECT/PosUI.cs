@@ -87,6 +87,21 @@ namespace JCUBE_SE_PROJECT
             }
             if (MessageBox.Show("Logout Application?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                cn.Open();
+                if (cn.State == ConnectionState.Open)
+                {
+                    LogDao log = new LogDao(cn);
+                    string logAction = "LOGOUT";
+                    string logType = "ACCOUNTS";
+                    string logDescription = "A Sales Clerk Logged Out";
+                    log.AddLogs(logAction, logType, logDescription, _loggedInUsername);
+                    Console.WriteLine("Log added successfully. Connection is Open");
+                }
+                else
+                {
+                    Console.WriteLine("Connection is Closed. Cannot add log.");
+                }
+                cn.Close();
                 this.Hide();
                 Login login = new Login();
                 login.Show();

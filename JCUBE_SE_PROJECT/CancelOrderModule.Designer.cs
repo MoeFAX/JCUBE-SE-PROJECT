@@ -37,6 +37,8 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.userAst = new System.Windows.Forms.Label();
+            this.pasAst = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.passwordEyeBtn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +46,7 @@
             // 
             this.passwordEyeBtn.BackColor = System.Drawing.Color.Transparent;
             this.passwordEyeBtn.Image = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_eye_20;
-            this.passwordEyeBtn.Location = new System.Drawing.Point(618, 146);
+            this.passwordEyeBtn.Location = new System.Drawing.Point(611, 146);
             this.passwordEyeBtn.Name = "passwordEyeBtn";
             this.passwordEyeBtn.Size = new System.Drawing.Size(20, 20);
             this.passwordEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -71,9 +73,9 @@
             this.txtUsername.DisplayIcon = true;
             this.txtUsername.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtUsername.Lines = new string[0];
-            this.txtUsername.Location = new System.Drawing.Point(171, 97);
+            this.txtUsername.Location = new System.Drawing.Point(164, 97);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUsername.MaxLength = 32767;
+            this.txtUsername.MaxLength = 30;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PromptText = "Username";
@@ -88,6 +90,7 @@
             this.txtUsername.WaterMark = "Username";
             this.txtUsername.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtUsername.WaterMarkFont = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtPassword
             // 
@@ -107,9 +110,9 @@
             this.txtPassword.DisplayIcon = true;
             this.txtPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtPassword.Lines = new string[0];
-            this.txtPassword.Location = new System.Drawing.Point(171, 140);
+            this.txtPassword.Location = new System.Drawing.Point(164, 140);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPassword.MaxLength = 32767;
+            this.txtPassword.MaxLength = 255;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.PromptText = "Password";
@@ -125,6 +128,7 @@
             this.txtPassword.WaterMark = "Password";
             this.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPassword.WaterMarkFont = new System.Drawing.Font("Noto Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // btnCancelOrder
             // 
@@ -133,7 +137,7 @@
             this.btnCancelOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelOrder.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelOrder.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancelOrder.Location = new System.Drawing.Point(237, 189);
+            this.btnCancelOrder.Location = new System.Drawing.Point(242, 189);
             this.btnCancelOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelOrder.Name = "btnCancelOrder";
             this.btnCancelOrder.Size = new System.Drawing.Size(192, 40);
@@ -186,11 +190,39 @@
             this.label1.TabIndex = 67;
             this.label1.Text = "Administrator\'s Credentials";
             // 
+            // userAst
+            // 
+            this.userAst.AutoSize = true;
+            this.userAst.BackColor = System.Drawing.Color.Transparent;
+            this.userAst.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userAst.ForeColor = System.Drawing.Color.Red;
+            this.userAst.Location = new System.Drawing.Point(641, 99);
+            this.userAst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.userAst.Name = "userAst";
+            this.userAst.Size = new System.Drawing.Size(22, 27);
+            this.userAst.TabIndex = 68;
+            this.userAst.Text = "*";
+            // 
+            // pasAst
+            // 
+            this.pasAst.AutoSize = true;
+            this.pasAst.BackColor = System.Drawing.Color.Transparent;
+            this.pasAst.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pasAst.ForeColor = System.Drawing.Color.Red;
+            this.pasAst.Location = new System.Drawing.Point(641, 142);
+            this.pasAst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pasAst.Name = "pasAst";
+            this.pasAst.Size = new System.Drawing.Size(22, 27);
+            this.pasAst.TabIndex = 69;
+            this.pasAst.Text = "*";
+            // 
             // CancelOrderModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 246);
+            this.Controls.Add(this.pasAst);
+            this.Controls.Add(this.userAst);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
@@ -223,5 +255,7 @@
         private System.Windows.Forms.Label lblPassword;
         public MetroFramework.Controls.MetroTextBox txtUsername;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label userAst;
+        private System.Windows.Forms.Label pasAst;
     }
 }

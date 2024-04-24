@@ -26,15 +26,20 @@ namespace JCUBE_SE_PROJECT
             adminuser = aduser;
             PrintStockHistory.Enabled = false;
             LoadStockHistory();
+            int currentYear = DateTime.Now.Year;
+            dtpStartDate.MinDate = new DateTime(currentYear, 1, 1);
+            dtpStartDate.MaxDate = new DateTime(currentYear, 12, 31);
+            dtpEndDate.MinDate = new DateTime(currentYear, 1, 1);
+            dtpEndDate.MaxDate = new DateTime(currentYear, 12, 31);
         }
 
         public void LoadStockHistory()
         {
             dgvStockHistory.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand(@"SELECT se.StockID, se.RefNo, il.InventoryCode, il.Description, il.Qty, se.StockInDate, se.StockInBy, se.Status, s.SupplierName 
+            cm = new SqlCommand(@"SELECT se.StockID, se.RefNo, il.InventoryCode, il.Description, se.Stocks, se.StockInDate, se.StockInBy, se.Status, s.SupplierName 
                           FROM tbStockEntry AS se 
-                          INNER JOIN tbItemList AS il ON il.ItemID = se.ilid 
+                          INNER JOIN tbItemList AS il ON il.InventoryCode = se.ilid 
                           INNER JOIN tbSupplier AS s ON s.SupplierID = se.sid 
                           WHERE CAST(se.StockInDate AS date) BETWEEN @StartDate AND @EndDate 
                           AND se.Status LIKE 'Delivered'", cn);

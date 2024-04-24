@@ -41,7 +41,7 @@ namespace JCUBE_SE_PROJECT
                 this.rvSoldItems.LocalReport.ReportPath = Application.StartupPath + @"\Reports\ReportSoldItems.rdlc";
                 this.rvSoldItems.LocalReport.DataSources.Clear();
                 cn.Open();
-                string sql = "SELECT i.ItemId, c.inventoryCode, i.Description, c.srp, SUM(c.qty) AS qty, SUM(c.Discount) AS disc, SUM(c.total) AS total FROM tbCart AS c INNER JOIN tbItemList AS i ON c.inventoryCode = i.InventoryCode WHERE status LIKE 'Complete' AND date BETWEEN @StartDate AND @EndDate GROUP BY i.ItemId, c.inventoryCode, i.Description, c.srp";
+                string sql = "SELECT i.ItemID, c.inventoryCode, i.Description, c.srp, SUM(c.qty) AS qty, SUM(c.Discount) AS disc, SUM(c.total) AS total FROM tbCart AS c INNER JOIN tbItemList AS i ON c.inventoryCode = i.InventoryCode WHERE status LIKE 'Complete' AND c.date BETWEEN DATEADD(DAY, DATEDIFF(DAY, 0, @StartDate), 0) AND DATEADD(SECOND, -1, DATEADD(DAY, DATEDIFF(DAY, 0, @EndDate) + 1, 0)) GROUP BY i.ItemId, c.inventoryCode, i.Description, c.srp";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 cmd.Parameters.AddWithValue("@StartDate", startDate.Date);
                 cmd.Parameters.AddWithValue("@EndDate", endDate.Date);

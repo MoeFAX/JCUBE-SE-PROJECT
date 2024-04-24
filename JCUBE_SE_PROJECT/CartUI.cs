@@ -332,7 +332,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnDiscount_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 //Index of the selected row in the cart
                 int selectedRowIndex = dgvCart.CurrentRow.Index;
@@ -361,6 +361,20 @@ namespace JCUBE_SE_PROJECT
                     discount.totalPriceTB.Text = originalPrice.ToString("#,##0.00");
                     discount.ShowDialog();
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }*/
+
+            try
+            {
+                DiscountCreds discountCreds = new DiscountCreds(this, id);
+                discountCreds.ShowDialog();
             }
             catch (Exception ex)
             {

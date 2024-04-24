@@ -29,7 +29,16 @@ namespace JCUBE_SE_PROJECT
             _loggedInUsername = loggedInUsername;
             cn = new SqlConnection(dbcon.myConnection());
             this.KeyPreview = true;
+            UpdateCashMaxLength();
             
+        }
+
+        private void UpdateCashMaxLength()
+        {
+            int saleLength = txtSale.Text.Length;
+            int cashMaxLength = saleLength + 2;
+            txtCash.MaxLength = cashMaxLength;
+            Console.WriteLine(cashMaxLength);
         }
 
         private void btn1_Click(object sender, EventArgs e)
@@ -140,76 +149,133 @@ namespace JCUBE_SE_PROJECT
                 }
 
                 if (string.IsNullOrEmpty(comboMode.Text))
+                {
+                    MessageBox.Show("Mode of payment cannot be empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtTin.Clear();
+                    return;
+                }
+
+                if ((double.Parse(txtChange.Text) < 0) || (txtCash.Text.Equals("")))
+                {
+                    MessageBox.Show("Insufficient amount, Please enter the correct amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    for (int i = 0; i < clerk.dgvCart.Rows.Count; i++)
                     {
-                        MessageBox.Show("Mode of payment cannot be empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txtTin.Clear();
-                        return;
+                        cn.Open();
+                        cm = new SqlCommand("UPDATE tbItemList SET Qty = Qty - " + int.Parse(clerk.dgvCart.Rows[i].Cells[4].Value.ToString()) + "WHERE inventoryCode= '" + clerk.dgvCart.Rows[i].Cells[1].Value.ToString() + "'", cn);
+                        cm.ExecuteNonQuery();
+                        cn.Close();
+
+                        cn.Open();
+                        cm = new SqlCommand("UPDATE tbCart SET status = 'Complete', customer = @custName, TinNum = @TIN, mode = @modeOfPayment WHERE id= '" + clerk.dgvCart.Rows[i].Cells[0].Value.ToString() + "'", cn);
+                        cm.Parameters.AddWithValue("@custName", txtCustName.Text.ToString()); ;
+                        cm.Parameters.AddWithValue("@TIN", txtTin.Text.ToString());
+                        cm.Parameters.AddWithValue("@modeOfPayment", comboMode.SelectedItem.ToString());
+                        cm.ExecuteNonQuery();
+                        cn.Close();
+
+                        cn.Open();
+                        LogDao log = new LogDao(cn);
+                        string logAction = "CREATE";
+                        string logType = "PAYMENT";
+                        string logDescription = "Settled a Payment";
+                        string logUsername = _loggedInUsername;
+                        log.AddLogs(logAction, logType, logDescription, logUsername);
+                        cn.Close();
                     }
+                    printReceipt prtReceipt = new printReceipt(clerk);
+                    prtReceipt.LoadReceipt(txtCash.Text, txtChange.Text, txtCustName.Text, txtTin.Text, comboMode.SelectedItem.ToString());
+                    prtReceipt.ShowDialog();
 
-                    if ((double.Parse(txtChange.Text) < 0) || (txtCash.Text.Equals("")))
-                    {
-                        MessageBox.Show("Insufficient amount, Please enter the correct amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                    else
-                    {
-                        for (int i = 0; i < clerk.dgvCart.Rows.Count; i++)
-                        {
-                            cn.Open();
-                            cm = new SqlCommand("UPDATE tbItemList SET Qty = Qty - " + int.Parse(clerk.dgvCart.Rows[i].Cells[4].Value.ToString()) + "WHERE inventoryCode= '" + clerk.dgvCart.Rows[i].Cells[1].Value.ToString() + "'", cn);
-                            cm.ExecuteNonQuery();
-                            cn.Close();
+                    MessageBox.Show("Payment Complete!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            cn.Open();
-                            cm = new SqlCommand("UPDATE tbCart SET status = 'Complete', customer = @custName, TinNum = @TIN, mode = @modeOfPayment WHERE id= '" + clerk.dgvCart.Rows[i].Cells[0].Value.ToString() + "'", cn);
-                            cm.Parameters.AddWithValue("@custName", txtCustName.Text.ToString()); ;
-                            cm.Parameters.AddWithValue("@TIN", txtTin.Text.ToString());
-                            cm.Parameters.AddWithValue("@modeOfPayment", comboMode.SelectedItem.ToString());
-                            cm.ExecuteNonQuery();
-                            LogDao log = new LogDao(cn);
-                            string logAction = "CREATE";
-                            string logType = "PAYMENT";
-                            string logDescription = "Settled a Payment";
-                            string logUsername = _loggedInUsername;
-                            log.AddLogs(logAction, logType, logDescription, logUsername);
-                            cn.Close();
-                        }
-                        printReceipt prtReceipt = new printReceipt(clerk);
-                        prtReceipt.LoadReceipt(txtCash.Text, txtChange.Text, txtCustName.Text, txtTin.Text, comboMode.SelectedItem.ToString());
-                        prtReceipt.ShowDialog();
+                    clerk.StartNewTransaction();
+                    Dispose();
 
-                        MessageBox.Show("Payment Complete!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
-                        clerk.StartNewTransaction();
-                        Dispose();
 
-                    }
-
-                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
 
             }
+            finally
+            {
+                cn.Close();
+            }
         }
-        
+
         private void txtCash_TextChanged(object sender, EventArgs e)
         {
+            /* try
+             {
+                 double sale = double.Parse(txtSale.Text);
+                 double cash = double.Parse(txtCash.Text);
+                 double change = cash - sale;
+                 txtChange.Text = change.ToString("#,##0.00");
+             }
+             catch (Exception)
+             {
+                 txtChange.Text = "0.00";
+             }*/
+
+            /* try
+             {
+                 int decimalIndex = txtCash.Text.IndexOf('.');
+                 if (decimalIndex >= 0 && txtCash.Text.Length - decimalIndex > 3)
+                 {
+                     txtCash.Text = txtCash.Text.Substring(0, decimalIndex + 3);
+                     txtCash.Select(txtCash.Text.Length, 0); // set cursor to the end
+                 }
+
+                 double sale = double.Parse(txtSale.Text);
+                 double cash = double.Parse(txtCash.Text);
+                 double change = cash - sale;
+                 txtChange.Text = change.ToString("#,##0.00");
+             }
+             catch (Exception)
+             {
+                 txtChange.Text = "0.00";
+             }*/
+
             try
             {
+                int decimalIndex = txtCash.Text.IndexOf('.');
+                if (decimalIndex >= 0 && txtCash.Text.Length - decimalIndex > 3)
+                {
+                    txtCash.Text = txtCash.Text.Substring(0, decimalIndex + 3);
+                    txtCash.Select(txtCash.Text.Length, 0); 
+                }
+
                 double sale = double.Parse(txtSale.Text);
-                double cash = double.Parse(txtCash.Text);
+                double cash = 0; 
+                if (!string.IsNullOrEmpty(txtCash.Text))
+                {
+                    if (!double.TryParse(txtCash.Text, out cash))
+                    {
+                    
+                        return;
+                    }
+                }
+
                 double change = cash - sale;
                 txtChange.Text = change.ToString("#,##0.00");
+                bool isEmpty = string.IsNullOrEmpty(txtCash.Text);
+                payAst.Visible = isEmpty; 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("Error in txtCash_TextChanged: " + ex.Message);
                 txtChange.Text = "0.00";
             }
         }
-        
-        
+
+
 
         private void SettlePayment_KeyDown(object sender, KeyEventArgs e)
         {
@@ -219,7 +285,16 @@ namespace JCUBE_SE_PROJECT
 
         private void txtCash_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+            //Only allow one decimal
+            else if (e.KeyChar == '.' && txtCash.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == '.' && txtCash.Text.Length == 0)
             {
                 e.Handled = true;
             }
@@ -231,6 +306,9 @@ namespace JCUBE_SE_PROJECT
             {
                 e.Handled = true;
             }
+
+
+            
         }
 
         private void txtTin_KeyPress(object sender, KeyPressEventArgs e)
@@ -239,6 +317,22 @@ namespace JCUBE_SE_PROJECT
             {
                 e.Handled = true;
             }
+        }
+
+        private void txtSale_TextChanged(object sender, EventArgs e)
+        {
+            //Update the max length of txtCash + 2 of Text Length of txtSales
+            UpdateCashMaxLength();
+        }
+
+        private void comboMode_TextChanged(object sender, EventArgs e)
+        {
+            modeAst.Visible = string.IsNullOrEmpty(comboMode.Text);
+        }
+
+        private void txtCustName_TextChanged(object sender, EventArgs e)
+        {
+            custAst.Visible = string.IsNullOrEmpty(txtCustName.Text);
         }
     }
 }

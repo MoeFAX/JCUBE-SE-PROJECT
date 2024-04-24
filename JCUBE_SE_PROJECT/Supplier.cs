@@ -30,7 +30,7 @@ namespace JCUBE_SE_PROJECT
 
         
 
-        public void LoadSupplier()
+        /*public void LoadSupplier()
         {
             
             dgvSupplier.Rows.Clear();
@@ -45,9 +45,49 @@ namespace JCUBE_SE_PROJECT
             }
             dr.Close();
             cn.Close();
+        }*/
+
+        public void LoadSupplier()
+        {
+            dgvSupplier.Rows.Clear();
+            try
+            {
+                cn.Open();
+                cm = new SqlCommand("SELECT * FROM tbSupplier ORDER BY SupplierName", cn);
+                dr = cm.ExecuteReader();
+
+                List<object[]> supplierData = new List<object[]>();
+
+                while (dr.Read())
+                {
+                    supplierData.Add(new object[] { dr["SupplierID"].ToString(), dr["SupplierName"].ToString(), dr["Address"].ToString(), dr["ContactPerson"].ToString(), dr["PhoneNo"].ToString(), dr["EmailAddress"].ToString() });
+                }
+                dr.Close();
+
+                foreach (object[] row in supplierData)
+                {
+                    dgvSupplier.Rows.Add(row);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading suppliers: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Close the data reader and connection in the finally block
+                /*if (dr != null && !dr.IsClosed)
+                {
+                    dr.Close();
+                }*/
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+            }
         }
 
-        private void dgvSupplier_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        /*private void dgvSupplier_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -113,12 +153,149 @@ namespace JCUBE_SE_PROJECT
                 }
                 LoadSupplier();
             }
-        }
+        }*/
 
         private void addbtn_Click(object sender, EventArgs e)
         {
             SupplierModule moduleForm = new SupplierModule(this, logUsername);
             moduleForm.ShowDialog();
+        }
+
+        private void dgvSupplier_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    string colName = dgvSupplier.Columns[e.ColumnIndex].Name;
+                    if (colName == "Archive")
+                    {
+                        string supplierID = dgvSupplier.Rows[e.RowIndex].Cells["SupplierID"].Value.ToString();
+
+                        // Check if the supplier is used in other records
+                        bool isUsed = false;
+                        using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM tbStockEntry WHERE sid = @SupplierID", cn))
+                        {
+                            cmd.Parameters.AddWithValue("@SupplierID", supplierID);
+                            cn.Open();
+                            int count = (int)cmd.ExecuteScalar();
+                            cn.Close();
+                            isUsed = (count > 0);
+                        }
+
+                        if (isUsed)
+                        {
+                            //MessageBox.Show("Cannot delete the supplier as it is used in other records.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            dgvSupplier.Rows[e.RowIndex].Cells["Archive"].ReadOnly = true;
+                            return;
+                        }
+                        else
+                        {
+                            dgvSupplier.Rows[e.RowIndex].Cells["Archive"].ReadOnly = false;
+                            if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                // Perform deletion of the supplier record
+                                cn.Open();
+                                cm = new SqlCommand("DELETE FROM tbSupplier WHERE SupplierID = @SupplierID", cn);
+                                cm.Parameters.AddWithValue("@SupplierID", supplierID);
+                                cm.ExecuteNonQuery();
+                                string logAction = "DELETE";
+                                string logType = "SUPPLIER";
+                                string logDescription = "Deleted a Brand";
+                                LogDao log = new LogDao(cn);
+                                log.AddLogs(logAction, logType, logDescription, logUsername);
+                                cn.Close();
+                                MessageBox.Show("Supplier has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                // Remove the supplier from the DataGridView
+                                dgvSupplier.Rows.RemoveAt(e.RowIndex);
+                                LoadSupplier();
+                            }
+                        }
+                    }
+
+                    else if (colName == "Edit")
+                    {
+
+                        //supplierModule.lblid.Text = dgvSupplier[1, e.RowIndex].Value.ToString();
+                        int supplierID = Convert.ToInt32(dgvSupplier.Rows[e.RowIndex].Cells["SupplierID"].Value);
+                        SupplierModule supplierModule = new SupplierModule(this, logUsername);
+                        supplierModule.SupplierID = supplierID; // Set SupplierID property
+                        supplierModule.SupplierNameField.Text = dgvSupplier[1, e.RowIndex].Value.ToString();
+                        supplierModule.AddressField.Text = dgvSupplier[2, e.RowIndex].Value.ToString();
+                        supplierModule.ContactField.Text = dgvSupplier[3, e.RowIndex].Value.ToString();
+                        supplierModule.PhoneField.Text = dgvSupplier[4, e.RowIndex].Value.ToString();
+                        supplierModule.EmailAddField.Text = dgvSupplier[5, e.RowIndex].Value.ToString();
+                        supplierModule.SaveBtn.Enabled = true;
+                        supplierModule.ShowDialog();
+                        LoadSupplier();
+
+                    }
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+            }
+        }
+
+        private void dgvSupplier_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            try
+            {
+
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    if (dgvSupplier.Columns[e.ColumnIndex].Name == "Archive")
+                    {
+
+                        string supplierID = dgvSupplier.Rows[e.RowIndex].Cells["SupplierID"].Value.ToString();
+
+                        // Check if the category is used in tbItemList
+                        bool isUsed = false;
+                        using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM tbStockEntry WHERE sid = @SupplierID", cn))
+                        {
+                            cmd.Parameters.AddWithValue("@SupplierID", supplierID);
+                            cn.Open();
+                            int count = (int)cmd.ExecuteScalar();
+                            cn.Close();
+                            isUsed = (count > 0);
+                        }
+                        // Check if the cell is disabled
+                        if (isUsed)
+                        {
+                            // Change the image of the delete icon to a gray icon
+
+                            e.Value = Properties.Resources.delete_gray;
+
+                        }
+                        else
+                        {
+                            // Change the image of the delete icon to the default icon
+                            e.Value = Properties.Resources.delete_item;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+            }
         }
     }
 }

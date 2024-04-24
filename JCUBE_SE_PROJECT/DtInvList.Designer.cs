@@ -681,7 +681,7 @@ namespace JCUBE_SE_PROJECT {
             
             private global::System.Data.DataColumn columnDescription;
             
-            private global::System.Data.DataColumn columnQty;
+            private global::System.Data.DataColumn columnStocks;
             
             private global::System.Data.DataColumn columnStockInDate;
             
@@ -756,9 +756,9 @@ namespace JCUBE_SE_PROJECT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn QtyColumn {
+            public global::System.Data.DataColumn StocksColumn {
                 get {
-                    return this.columnQty;
+                    return this.columnStocks;
                 }
             }
             
@@ -823,14 +823,14 @@ namespace JCUBE_SE_PROJECT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataStockHistoryRow AddDataStockHistoryRow(string StockID, string RefNo, string InventoryCode, string Description, string Qty, string StockInDate, string Status, string SupplierName) {
+            public DataStockHistoryRow AddDataStockHistoryRow(string StockID, string RefNo, string InventoryCode, string Description, string Stocks, System.DateTime StockInDate, string Status, string SupplierName) {
                 DataStockHistoryRow rowDataStockHistoryRow = ((DataStockHistoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         StockID,
                         RefNo,
                         InventoryCode,
                         Description,
-                        Qty,
+                        Stocks,
                         StockInDate,
                         Status,
                         SupplierName};
@@ -860,7 +860,7 @@ namespace JCUBE_SE_PROJECT {
                 this.columnRefNo = base.Columns["RefNo"];
                 this.columnInventoryCode = base.Columns["InventoryCode"];
                 this.columnDescription = base.Columns["Description"];
-                this.columnQty = base.Columns["Qty"];
+                this.columnStocks = base.Columns["Stocks"];
                 this.columnStockInDate = base.Columns["StockInDate"];
                 this.columnStatus = base.Columns["Status"];
                 this.columnSupplierName = base.Columns["SupplierName"];
@@ -877,9 +877,9 @@ namespace JCUBE_SE_PROJECT {
                 base.Columns.Add(this.columnInventoryCode);
                 this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescription);
-                this.columnQty = new global::System.Data.DataColumn("Qty", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQty);
-                this.columnStockInDate = new global::System.Data.DataColumn("StockInDate", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnStocks = new global::System.Data.DataColumn("Stocks", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStocks);
+                this.columnStockInDate = new global::System.Data.DataColumn("StockInDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStockInDate);
                 this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStatus);
@@ -1358,26 +1358,26 @@ namespace JCUBE_SE_PROJECT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Qty {
+            public string Stocks {
                 get {
                     try {
-                        return ((string)(this[this.tableDataStockHistory.QtyColumn]));
+                        return ((string)(this[this.tableDataStockHistory.StocksColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Qty\' in table \'DataStockHistory\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Stocks\' in table \'DataStockHistory\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataStockHistory.QtyColumn] = value;
+                    this[this.tableDataStockHistory.StocksColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string StockInDate {
+            public System.DateTime StockInDate {
                 get {
                     try {
-                        return ((string)(this[this.tableDataStockHistory.StockInDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableDataStockHistory.StockInDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'StockInDate\' in table \'DataStockHistory\' is DBNull.", e);
@@ -1470,14 +1470,14 @@ namespace JCUBE_SE_PROJECT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsQtyNull() {
-                return this.IsNull(this.tableDataStockHistory.QtyColumn);
+            public bool IsStocksNull() {
+                return this.IsNull(this.tableDataStockHistory.StocksColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetQtyNull() {
-                this[this.tableDataStockHistory.QtyColumn] = global::System.Convert.DBNull;
+            public void SetStocksNull() {
+                this[this.tableDataStockHistory.StocksColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

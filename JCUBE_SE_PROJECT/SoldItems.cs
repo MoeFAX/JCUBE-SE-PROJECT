@@ -24,6 +24,11 @@ namespace JCUBE_SE_PROJECT
             cn = new SqlConnection(dbcon.myConnection());
             this.invUIInstance = invUIInstance;
             btnPrintSold.Enabled = false;
+            int currentYear = DateTime.Now.Year;
+            dateFromSold.MinDate = new DateTime(currentYear, 1, 1);
+            dateFromSold.MaxDate = new DateTime(currentYear, 12, 31);
+            dateToSold.MinDate = new DateTime(currentYear, 1, 1);
+            dateToSold.MaxDate = new DateTime(currentYear, 12, 31);
         }
 
         private void btnTopSelling_Click(object sender, EventArgs e)
@@ -82,7 +87,7 @@ namespace JCUBE_SE_PROJECT
         private void btnPrintSold_Click_1(object sender, EventArgs e)
         {
             PrintSoldItems prtSoldItems = new PrintSoldItems(invUIInstance);
-            prtSoldItems.LoadSoldItems(dateFromSold.Value, dateToSold.Value);
+            prtSoldItems.LoadSoldItems(dateFromSold.Value.Date, dateToSold.Value.Date);
             prtSoldItems.ShowDialog();
         }
     }

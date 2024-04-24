@@ -141,5 +141,67 @@ namespace JCUBE_SE_PROJECT
             PhoneField.Clear();
             EmailAddField.Clear();
         }
+
+        private void SupplierNameField_TextChanged(object sender, EventArgs e)
+        {
+            if (SupplierNameField.Text.Length > 0)
+            {
+                AsteriskSupp.Visible = false;
+            }
+            else
+            {
+                AsteriskSupp.Visible = true;
+            }
+        }
+
+        private void AddressField_TextChanged(object sender, EventArgs e)
+        {
+            if (AddressField.Text.Length > 0)
+            {
+                AsteriskAdd.Visible = false;
+            }
+            else
+            {
+                AsteriskAdd.Visible = true;
+            }
+        }
+
+        private void ContactField_TextChanged(object sender, EventArgs e)
+        {
+            if (ContactField.Text.Length > 0)
+            {
+                AsteriskContact.Visible = false;
+            }
+            else
+            {
+                AsteriskContact.Visible = true;
+            }
+        }
+
+        private void PhoneField_TextChanged(object sender, EventArgs e)
+        {
+            if (PhoneField.Text.Length > 0)
+            {
+                AsteriskPhone.Visible = false;
+            }
+            else
+            {
+                AsteriskPhone.Visible = true;
+            }
+        }
+
+        private void EmailAddField_TextChanged(object sender, EventArgs e)
+        {
+            if (EmailAddField.Text.Length > 0)
+            {
+                AsteriskEmailAdd.Visible = false;
+            }
+            else
+            {
+                AsteriskEmailAdd.Visible = true;
+            }
+        }
+
+        
     }
 }

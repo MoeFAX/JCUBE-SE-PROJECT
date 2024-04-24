@@ -55,11 +55,11 @@ namespace JCUBE_SE_PROJECT
                     {
                         try
                         {
-                            int itemID = Convert.ToInt32(dgvItemListArchive.Rows[e.RowIndex].Cells["ItemID"].Value);
+                            string inventorycode = Convert.ToString(dgvItemListArchive.Rows[e.RowIndex].Cells["InventoryCode"].Value);
 
                             cn.Open();
-                            cm = new SqlCommand("DELETE FROM tbItemListArchive WHERE ItemID = @ItemID", cn);
-                            cm.Parameters.AddWithValue("@ItemID", itemID); // Add @ItemID parameter
+                            cm = new SqlCommand("DELETE FROM tbItemListArchive WHERE InventoryCode = @InventoryCode", cn);
+                            cm.Parameters.AddWithValue("@InventoryCode", inventorycode); // Add @ItemID parameter
                             cm.ExecuteNonQuery();
                             string logAction = "DELETE";
                             string logType = "ITEMS";
@@ -85,19 +85,11 @@ namespace JCUBE_SE_PROJECT
                     {
                         try
                         {
-                            int itemID = Convert.ToInt32(dgvItemListArchive.Rows[e.RowIndex].Cells["ItemID"].Value);
+                            string archivedRecordID = Convert.ToString(dgvItemListArchive.Rows[e.RowIndex].Cells["InventoryCode"].Value);
 
-                            cn.Open();
-                            cm = new SqlCommand("INSERT INTO tbItemList(InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Qty, Reorder) SELECT InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Qty, Reorder FROM tbItemListArchive WHERE ItemID = @ItemID DELETE FROM tbItemListArchive WHERE ItemID = @ItemID", cn);
-                            cm.Parameters.AddWithValue("@ItemID", itemID); // Add @ItemID parameter
-                            cm.ExecuteNonQuery();
-                            string logAction = "UPDATE";
-                            string logType = "ITEMS";
-                            string logDescription = "Restored an Item";
-                            LogDao log = new LogDao(cn);
-                            log.AddLogs(logAction, logType, logDescription, logUsername);
-                            cn.Close();
-                            MessageBox.Show("Item has been successfully restored.", "RESTORE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            RestoreRecord(archivedRecordID);
+                            
 
                             // Remove the row from the DataGridView
                             dgvItemListArchive.Rows.RemoveAt(e.RowIndex);
@@ -113,6 +105,41 @@ namespace JCUBE_SE_PROJECT
             }
         }
 
+
+        // Method to restore a record by its archivedRecordID
+        private void RestoreRecord(string archivedRecordID)
+        {
+            try
+            {
+                // Open the connection
+                cn.Open();
+
+                // Insert the record into tbItemList
+                cm = new SqlCommand("INSERT INTO tbItemList(InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Qty, Reorder) SELECT InventoryCode, ItemCode, Description, AcquiredCost, bid, cid, Price, Qty, Reorder FROM tbItemListArchive WHERE InventoryCode = @InventoryCode; DELETE FROM tbItemListArchive WHERE InventoryCode = @InventoryCode", cn);
+                cm.Parameters.AddWithValue("@InventoryCode", archivedRecordID);
+                cm.ExecuteNonQuery();
+
+               
+
+                // Log the restoration action
+                string logAction = "UPDATE";
+                string logType = "ITEMS";
+                string logDescription = "Restored an Item";
+                LogDao log = new LogDao(cn);
+                log.AddLogs(logAction, logType, logDescription, logUsername);
+
+                // Close the connection
+                cn.Close();
+
+                MessageBox.Show("Item has been successfully restored.", "RESTORE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error restoring item: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Optionally handle the exception or log it
+            }
+        }
+
         private void PrintItemListArchives_Click(object sender, EventArgs e)
         {
             PrintItemListArchives prtitemlistarchives = new PrintItemListArchives(logUsername);
@@ -120,9 +147,6 @@ namespace JCUBE_SE_PROJECT
             prtitemlistarchives.ShowDialog();
         }
 
-        /*private void dgvItemListArchive_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }*/
+     
     }
 }

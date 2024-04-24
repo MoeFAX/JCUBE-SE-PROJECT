@@ -26,6 +26,11 @@ namespace JCUBE_SE_PROJECT
             cn = new SqlConnection(dbcon.myConnection());
             this.invUIInstance = invUIInstance;
             btnPrintTop.Enabled = false;
+            int currentYear = DateTime.Now.Year;
+            dateFromTopSell.MinDate = new DateTime(currentYear, 1, 1);
+            dateFromTopSell.MaxDate = new DateTime(currentYear, 12, 31);
+            dateToTopSell.MinDate = new DateTime(currentYear, 1, 1);
+            dateToTopSell.MaxDate = new DateTime(currentYear, 12, 31);
         }
         public void LoadTopSelling()
         {
@@ -73,7 +78,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            if(cbTopSell.Text == "Sort By")
+            if(cbTopSell.Text == "")
             {
                 MessageBox.Show("Please select sort type from the dropdown list.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cbTopSell.Focus();
@@ -91,7 +96,7 @@ namespace JCUBE_SE_PROJECT
         private void btnPrintTop_Click_1(object sender, EventArgs e)
         {
             PrintTopSelling prtTopSelling = new PrintTopSelling(invUIInstance);
-            prtTopSelling.LoadPrintTopSelling(dateFromTopSell.Value, dateToTopSell.Value, cbTopSell.Text);
+            prtTopSelling.LoadPrintTopSelling(dateFromTopSell.Value.Date, dateToTopSell.Value.Date, cbTopSell.Text);
             prtTopSelling.ShowDialog();
         }
     }

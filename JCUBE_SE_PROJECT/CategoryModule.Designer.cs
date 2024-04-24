@@ -35,6 +35,7 @@
             this.CtgryNameField = new System.Windows.Forms.TextBox();
             this.lblid = new System.Windows.Forms.Label();
             this.lblUname = new System.Windows.Forms.Label();
+            this.Asterisk = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SaveBtn
@@ -84,9 +85,11 @@
             // 
             this.CtgryNameField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CtgryNameField.Location = new System.Drawing.Point(211, 48);
+            this.CtgryNameField.MaxLength = 30;
             this.CtgryNameField.Name = "CtgryNameField";
             this.CtgryNameField.Size = new System.Drawing.Size(384, 32);
             this.CtgryNameField.TabIndex = 7;
+            this.CtgryNameField.TextChanged += new System.EventHandler(this.CtgryNameField_TextChanged);
             // 
             // lblid
             // 
@@ -108,6 +111,17 @@
             this.lblUname.Text = "hello";
             this.lblUname.Visible = false;
             // 
+            // Asterisk
+            // 
+            this.Asterisk.AutoSize = true;
+            this.Asterisk.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Asterisk.ForeColor = System.Drawing.Color.Red;
+            this.Asterisk.Location = new System.Drawing.Point(595, 52);
+            this.Asterisk.Name = "Asterisk";
+            this.Asterisk.Size = new System.Drawing.Size(22, 27);
+            this.Asterisk.TabIndex = 10;
+            this.Asterisk.Text = "*";
+            // 
             // CategoryModule
             // 
             this.AcceptButton = this.SaveBtn;
@@ -116,6 +130,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.CancelBtn;
             this.ClientSize = new System.Drawing.Size(722, 174);
+            this.Controls.Add(this.Asterisk);
             this.Controls.Add(this.lblUname);
             this.Controls.Add(this.lblid);
             this.Controls.Add(this.CtgryNameField);
@@ -143,5 +158,6 @@
         public System.Windows.Forms.Button SaveBtn;
         public System.Windows.Forms.Button CancelBtn;
         public System.Windows.Forms.Label lblUname;
+        private System.Windows.Forms.Label Asterisk;
     }
 }
