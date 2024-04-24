@@ -533,7 +533,7 @@
             </TablixRowHierarchy>
             <DataSetName>DtLogs</DataSetName>
             <Top>0.27211in</Top>
-            <Left>0.829in</Left>
+            <Left>2.38235cm</Left>
             <Height>1.25292cm</Height>
             <Width>22.99042cm</Width>
             <Style>
@@ -546,7 +546,7 @@
         <Height>4.46667in</Height>
         <Style />
       </Body>
-      <Width>11.13833in</Width>
+      <Width>11.05135in</Width>
       <Page>
         <PageHeader>
           <Height>2.10789in</Height>
@@ -576,7 +576,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox19</rd:DefaultName>
               <Top>0.46419cm</Top>
-              <Left>8.86584cm</Left>
+              <Left>8.58009cm</Left>
               <Height>0.7462cm</Height>
               <Width>10.55967cm</Width>
               <Style>
@@ -623,7 +623,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox20</rd:DefaultName>
               <Top>1.31622cm</Top>
-              <Left>8.86584cm</Left>
+              <Left>8.58009cm</Left>
               <Height>0.83283cm</Height>
               <Width>10.55967cm</Width>
               <ZIndex>1</ZIndex>
@@ -660,7 +660,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox23</rd:DefaultName>
               <Top>3.84238cm</Top>
-              <Left>11.26048cm</Left>
+              <Left>10.97473cm</Left>
               <Height>1.01628cm</Height>
               <Width>5.59147cm</Width>
               <ZIndex>2</ZIndex>
@@ -693,7 +693,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
               <Top>2.23196cm</Top>
-              <Left>3.12967cm</Left>
+              <Left>2.88925cm</Left>
               <Height>0.6cm</Height>
               <Width>2.246cm</Width>
               <ZIndex>3</ZIndex>
@@ -726,7 +726,7 @@
               </Paragraphs>
               <rd:DefaultName>iAdmin</rd:DefaultName>
               <Top>2.23196cm</Top>
-              <Left>5.37567cm</Left>
+              <Left>5.08992cm</Left>
               <Height>0.56472cm</Height>
               <Width>2.5cm</Width>
               <ZIndex>4</ZIndex>
@@ -759,7 +759,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox22</rd:DefaultName>
               <Top>2.86696cm</Top>
-              <Left>19.8877cm</Left>
+              <Left>19.60195cm</Left>
               <Height>0.96689cm</Height>
               <Width>5.27398cm</Width>
               <ZIndex>5</ZIndex>
@@ -782,10 +782,10 @@
         </PageHeader>
         <PageHeight>21cm</PageHeight>
         <PageWidth>29.7cm</PageWidth>
-        <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <LeftMargin>0cm</LeftMargin>
+        <RightMargin>0cm</RightMargin>
+        <TopMargin>0cm</TopMargin>
+        <BottomMargin>0.5in</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>

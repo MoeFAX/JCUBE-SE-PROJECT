@@ -83,10 +83,14 @@ namespace JCUBE_SE_PROJECT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap delete_gray {
-            get {
+        internal static System.Drawing.Bitmap delete_gray
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("delete_gray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
+        }
         internal static System.Drawing.Bitmap Critical_Stocks_Icon {
             get {
                 object obj = ResourceManager.GetObject("Critical Stocks Icon", resourceCulture);
@@ -477,4 +481,4 @@ namespace JCUBE_SE_PROJECT.Properties {
         }
     }
 }
-}
+
