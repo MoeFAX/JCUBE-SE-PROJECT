@@ -40,6 +40,8 @@
             this.RPWDAccIDlbl = new System.Windows.Forms.Label();
             this.NPEyeBtn = new System.Windows.Forms.PictureBox();
             this.RTEyeBtn = new System.Windows.Forms.PictureBox();
+            this.ARPNewPasswordlbl = new System.Windows.Forms.Label();
+            this.ARPRTPasswordlbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.RPPersonIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RTEyeBtn)).BeginInit();
@@ -49,29 +51,33 @@
             // 
             this.RPRTPasswordField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RPRTPasswordField.Location = new System.Drawing.Point(188, 140);
+            this.RPRTPasswordField.MaxLength = 255;
             this.RPRTPasswordField.Name = "RPRTPasswordField";
             this.RPRTPasswordField.PasswordChar = '●';
             this.RPRTPasswordField.Size = new System.Drawing.Size(459, 32);
             this.RPRTPasswordField.TabIndex = 38;
+            this.RPRTPasswordField.TextChanged += new System.EventHandler(this.RPRTPasswordField_TextChanged);
             // 
             // RPRTPasswordlbl
             // 
             this.RPRTPasswordlbl.AutoSize = true;
             this.RPRTPasswordlbl.Font = new System.Drawing.Font("Noto Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RPRTPasswordlbl.Location = new System.Drawing.Point(27, 144);
+            this.RPRTPasswordlbl.Location = new System.Drawing.Point(24, 143);
             this.RPRTPasswordlbl.Name = "RPRTPasswordlbl";
-            this.RPRTPasswordlbl.Size = new System.Drawing.Size(158, 26);
+            this.RPRTPasswordlbl.Size = new System.Drawing.Size(162, 26);
             this.RPRTPasswordlbl.TabIndex = 39;
-            this.RPRTPasswordlbl.Text = "Re-type Password:";
+            this.RPRTPasswordlbl.Text = "Confirm Password:";
             // 
             // RPNewPasswordField
             // 
             this.RPNewPasswordField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RPNewPasswordField.Location = new System.Drawing.Point(188, 90);
+            this.RPNewPasswordField.MaxLength = 255;
             this.RPNewPasswordField.Name = "RPNewPasswordField";
             this.RPNewPasswordField.PasswordChar = '●';
             this.RPNewPasswordField.Size = new System.Drawing.Size(459, 32);
             this.RPNewPasswordField.TabIndex = 36;
+            this.RPNewPasswordField.TextChanged += new System.EventHandler(this.RPNewPasswordField_TextChanged);
             // 
             // RPPersonIMG
             // 
@@ -168,6 +174,32 @@
             this.RTEyeBtn.TabIndex = 58;
             this.RTEyeBtn.TabStop = false;
             // 
+            // ARPNewPasswordlbl
+            // 
+            this.ARPNewPasswordlbl.AutoSize = true;
+            this.ARPNewPasswordlbl.BackColor = System.Drawing.Color.Transparent;
+            this.ARPNewPasswordlbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ARPNewPasswordlbl.ForeColor = System.Drawing.Color.Red;
+            this.ARPNewPasswordlbl.Location = new System.Drawing.Point(647, 91);
+            this.ARPNewPasswordlbl.Name = "ARPNewPasswordlbl";
+            this.ARPNewPasswordlbl.Size = new System.Drawing.Size(22, 27);
+            this.ARPNewPasswordlbl.TabIndex = 59;
+            this.ARPNewPasswordlbl.Text = "*";
+            this.ARPNewPasswordlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ARPRTPasswordlbl
+            // 
+            this.ARPRTPasswordlbl.AutoSize = true;
+            this.ARPRTPasswordlbl.BackColor = System.Drawing.Color.Transparent;
+            this.ARPRTPasswordlbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ARPRTPasswordlbl.ForeColor = System.Drawing.Color.Red;
+            this.ARPRTPasswordlbl.Location = new System.Drawing.Point(647, 141);
+            this.ARPRTPasswordlbl.Name = "ARPRTPasswordlbl";
+            this.ARPRTPasswordlbl.Size = new System.Drawing.Size(22, 27);
+            this.ARPRTPasswordlbl.TabIndex = 60;
+            this.ARPRTPasswordlbl.Text = "*";
+            this.ARPRTPasswordlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ResetPassword
             // 
             this.AcceptButton = this.SaveBtn;
@@ -176,6 +208,8 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.CancelBtn;
             this.ClientSize = new System.Drawing.Size(727, 240);
+            this.Controls.Add(this.ARPRTPasswordlbl);
+            this.Controls.Add(this.ARPNewPasswordlbl);
             this.Controls.Add(this.RTEyeBtn);
             this.Controls.Add(this.NPEyeBtn);
             this.Controls.Add(this.RPWDAccIDlbl);
@@ -216,5 +250,7 @@
         public System.Windows.Forms.Label RPUNlbl;
         private System.Windows.Forms.PictureBox NPEyeBtn;
         private System.Windows.Forms.PictureBox RTEyeBtn;
+        private System.Windows.Forms.Label ARPNewPasswordlbl;
+        private System.Windows.Forms.Label ARPRTPasswordlbl;
     }
 }

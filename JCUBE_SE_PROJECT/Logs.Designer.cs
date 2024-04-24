@@ -115,7 +115,8 @@
             "CREATE",
             "UPDATE",
             "DELETE",
-            "ARCHIVE"});
+            "ARCHIVE",
+            "RESTORE"});
             this.actionComboBox.Location = new System.Drawing.Point(471, 31);
             this.actionComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.actionComboBox.Name = "actionComboBox";

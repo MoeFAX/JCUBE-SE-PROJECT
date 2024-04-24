@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -10,6 +11,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace JCUBE_SE_PROJECT
 {
@@ -19,18 +22,22 @@ namespace JCUBE_SE_PROJECT
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
+        UserAccountsUI useracc;
         private string logUsername;
-
-        public CreateAccount(string username)
+        public CreateAccount(UserAccountsUI user, string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
+            useracc = user;
             NPEyeBtn.MouseDown += new MouseEventHandler(NPEyeBtn_MouseDown);
             NPEyeBtn.MouseUp += new MouseEventHandler(NPEyeBtn_MouseUp);
             RTEyeBtn.MouseDown += new MouseEventHandler(RTEyeBtn_MouseDown);
             RTEyeBtn.MouseUp += new MouseEventHandler(RTEyeBtn_MouseUp);
             logUsername = username;
+            UASlctUserlbl.Text = logUsername;
         }
+
+   
 
         public bool HasUnicode(string nText)
         {
@@ -60,6 +67,13 @@ namespace JCUBE_SE_PROJECT
             return regex.IsMatch(fullname);
         }
 
+        private bool IsEmailValid(string emailaddress)
+        {
+            //check if the email address is valid
+            Regex regex = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$");
+            return regex.IsMatch(emailaddress);
+        }
+
         private bool DoesUsernameExist(string username)
         {
             //check if the username already exists in the database
@@ -82,6 +96,20 @@ namespace JCUBE_SE_PROJECT
                 cn.Open();
                 SqlCommand cu = new SqlCommand("SELECT COUNT(*) FROM tbUser WHERE fullname = @fullname", cn);
                 cu.Parameters.AddWithValue("@fullname", FullnameField.Text);
+                int count = (int)cu.ExecuteScalar();
+                cn.Close();
+                return count > 0;
+            }
+        }
+
+        private bool DoesEmailExist(string emailaddress)
+        {
+            //check if the full name already exists in the database
+            using (SqlConnection cn = new SqlConnection(dbcon.myConnection()))
+            {
+                cn.Open();
+                SqlCommand cu = new SqlCommand("SELECT COUNT(*) FROM tbUser WHERE emailaddress = @emailaddress", cn);
+                cu.Parameters.AddWithValue("@emailaddress", EmailField.Text);
                 int count = (int)cu.ExecuteScalar();
                 cn.Close();
                 return count > 0;
@@ -162,7 +190,6 @@ namespace JCUBE_SE_PROJECT
                             PasswordField.Clear();
                             RTPasswordField.Clear();
                         }
-                        
                         else
                         {
                             /* PASSWORD IS VALID - NEXT TO CHECK IS FULL NAME */
@@ -181,21 +208,65 @@ namespace JCUBE_SE_PROJECT
                             }
                             else
                             {
-                                string encryptedPassword = AESHelper.Encrypt(PasswordField.Text);
-                                cm = new SqlCommand("INSERT INTO tbUser (username, encryptedPassword, fullname, role) VALUES (@username, @encryptedPassword, @fullname, @role)", cn);
-                                cm.Parameters.AddWithValue("username", UsernameField.Text);
-                                cm.Parameters.AddWithValue("@encryptedPassword", encryptedPassword);
-                                cm.Parameters.AddWithValue("@fullname", FullnameField.Text);
-                                cm.Parameters.AddWithValue("@role", RoleComboBox.Text);
-                                cm.ExecuteNonQuery();
-                                string logAction = "CREATE";
-                                string logType = "ACCOUNTS";
-                                string logDescription = "Created a new Account";
-                                LogDao log = new LogDao(cn);
-                                log.AddLogs(logAction, logType, logDescription, logUsername);
-                                Clear();
-                                MessageBox.Show("New account has been successfully saved! Please Reload.", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Close();
+                                /* FULL NAME IS VALID - NEXT TO CHECK IS EMAIL ADDRESS */
+
+                                if(!IsEmailValid(EmailField.Text))
+                                {
+                                    MessageBox.Show("This Email is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    EmailField.Clear();
+                                    return;
+                                }
+                                else if(DoesEmailExist(EmailField.Text))
+                                {
+                                    MessageBox.Show("This Email already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    EmailField.Clear();
+                                    return;
+                                }
+                                else
+                                {
+                                    /* EMAIL ADDRESS IS VALID - NEXT TO CHECK IS ROLE */
+                                    string _selectedrole = "";
+
+                                    using (SqlCommand command = new SqlCommand("SELECT role From tbUser WHERE username = @username", cn))
+                                    {
+                                        command.Parameters.AddWithValue("@username", UASlctUserlbl.Text);
+                                        using (SqlDataReader reader = command.ExecuteReader())
+                                        {
+
+                                            if (reader.Read())
+                                            {
+                                                _selectedrole = reader["role"].ToString();
+                                            }
+                                        }
+                                    }
+                                    if (_selectedrole == "Administrator" && RoleComboBox.Text == "Administrator")
+                                    {
+                                        MessageBox.Show("You cannot create an account with this role.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        RoleComboBox.SelectedIndex = -1;
+                                        cn.Close();
+                                    }
+                                    else
+                                    {
+                                        string encryptedPassword = AESHelper.Encrypt(PasswordField.Text);
+                                        cm = new SqlCommand("INSERT INTO tbUser (username, encryptedPassword, fullname, emailaddress, role) VALUES (@username, @encryptedPassword, @fullname, @emailaddress, @role)", cn);
+                                        cm.Parameters.AddWithValue("username", UsernameField.Text);
+                                        cm.Parameters.AddWithValue("@encryptedPassword", encryptedPassword);
+                                        cm.Parameters.AddWithValue("@fullname", FullnameField.Text);
+                                        cm.Parameters.AddWithValue("@emailaddress", EmailField.Text);
+                                        cm.Parameters.AddWithValue("@role", RoleComboBox.Text);
+                                        cm.ExecuteNonQuery();
+                                        string logAction = "CREATE";
+                                        string logType = "ACCOUNTS";
+                                        string logDescription = "Created a new Account";
+                                        LogDao log = new LogDao(cn);
+                                        log.AddLogs(logAction, logType, logDescription, logUsername);
+                                        Clear();
+                                        cn.Close();
+                                        MessageBox.Show("New account has been successfully saved!", "Save Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        useracc.LoadUser();
+                                        Close();
+                                    }
+                                }
                             }
                         }
                     }
@@ -238,5 +309,78 @@ namespace JCUBE_SE_PROJECT
             RTPasswordField.PasswordChar = '●';
             RTPasswordField.UseSystemPasswordChar = true;
         }
+
+        private void UsernameField_TextChanged(object sender, EventArgs e)
+        {
+            if (UsernameField.Text.Length > 0)
+            {
+                AUsernamelbl.Visible = false;
+            }
+            else
+            {
+                AUsernamelbl.Visible = true;
+            }
+        }
+
+        private void PasswordField_TextChanged(object sender, EventArgs e)
+        {
+            if (PasswordField.Text.Length > 0)
+            {
+                APasswordlbl.Visible = false;
+            }
+            else
+            {
+                APasswordlbl.Visible = true;
+            }
+        }
+
+        private void RTPasswordField_TextChanged(object sender, EventArgs e)
+        {
+            if (RTPasswordField.Text.Length > 0)
+            {
+                ARTPasswordlbl.Visible = false;
+            }
+            else
+            {
+                ARTPasswordlbl.Visible = true;
+            }
+        }
+
+        private void FullnameField_TextChanged(object sender, EventArgs e)
+        {
+            if (FullnameField.Text.Length > 0)
+            {
+                AFullnamelbl.Visible = false;
+            }
+            else
+            {
+                AFullnamelbl.Visible = true;
+            }
+        }
+
+        private void RoleComboBox_TextChanged(object sender, EventArgs e)
+        {
+            if (RoleComboBox.Text.Length > 0)
+            {
+                ARolelbl.Visible = false;
+            }
+            else
+            {
+                ARolelbl.Visible = true;
+            }
+        }
+
+        private void EmailField_TextChanged(object sender, EventArgs e)
+        {
+            if (EmailField.Text.Length > 0)
+            {
+                AEmaillbl.Visible = false;
+            }
+            else
+            {
+                AEmaillbl.Visible = true;
+            }
+        }
+
     }
 }

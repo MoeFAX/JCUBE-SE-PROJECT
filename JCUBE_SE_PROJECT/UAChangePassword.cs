@@ -130,11 +130,32 @@ namespace JCUBE_SE_PROJECT
             CPRTPasswordField.PasswordChar = '\0';
             CPRTPasswordField.UseSystemPasswordChar = false;
         }
-
         public void RTEyeBtn_MouseUp(object sender, EventArgs e)
         {
             CPRTPasswordField.PasswordChar = '●';
             CPRTPasswordField.UseSystemPasswordChar = true;
+        }
+        private void CPNewPasswordField_TextChanged(object sender, EventArgs e)
+        {
+            if (CPNewPasswordField.Text.Length > 0)
+            {
+                ACPNewPasswordlbl.Visible = false;
+            }
+            else
+            {
+                ACPNewPasswordlbl.Visible = true;
+            }
+        }
+        private void CPRTPasswordField_TextChanged(object sender, EventArgs e)
+        {
+            if (CPRTPasswordField.Text == CPNewPasswordField.Text)
+            {
+                ACPRTPasswordlbl.Visible = false;
+            }
+            else
+            {
+                ACPRTPasswordlbl.Visible = true;
+            }
         }
     }
 }

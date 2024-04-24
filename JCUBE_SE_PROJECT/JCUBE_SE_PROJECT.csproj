@@ -77,6 +77,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountDeletion.cs" />
     <Compile Include="AESHelper.cs" />
     <Compile Include="Alert.cs">
       <SubType>Form</SubType>
@@ -319,6 +320,12 @@
     <Compile Include="Qty.Designer.cs">
       <DependentUpon>Qty.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecentlyDeleted.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecentlyDeleted.Designer.cs">
+      <DependentUpon>RecentlyDeleted.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -530,6 +537,9 @@
     </Compile>
     <EmbeddedResource Include="Qty.resx">
       <DependentUpon>Qty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecentlyDeleted.resx">
+      <DependentUpon>RecentlyDeleted.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportCancelledOrders.rdlc" />
     <EmbeddedResource Include="ReportDailySales.rdlc" />

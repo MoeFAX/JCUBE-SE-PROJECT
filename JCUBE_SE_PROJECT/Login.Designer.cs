@@ -28,14 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.UserIDtxtbox = new MetroFramework.Controls.MetroTextBox();
             this.LoginLabel = new System.Windows.Forms.Label();
             this.Passwordtxtbox = new MetroFramework.Controls.MetroTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Timelbl = new System.Windows.Forms.Label();
+            this.Timerlbl = new System.Windows.Forms.Label();
             this.NPEyeBtn = new System.Windows.Forms.PictureBox();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.loginTimer = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -59,8 +63,8 @@
             this.UserIDtxtbox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.UserIDtxtbox.Icon = ((System.Drawing.Image)(resources.GetObject("UserIDtxtbox.Icon")));
             this.UserIDtxtbox.Lines = new string[0];
-            this.UserIDtxtbox.Location = new System.Drawing.Point(29, 163);
-            this.UserIDtxtbox.MaxLength = 32767;
+            this.UserIDtxtbox.Location = new System.Drawing.Point(29, 137);
+            this.UserIDtxtbox.MaxLength = 30;
             this.UserIDtxtbox.Name = "UserIDtxtbox";
             this.UserIDtxtbox.PasswordChar = '\0';
             this.UserIDtxtbox.PromptText = "USER ID";
@@ -81,7 +85,7 @@
             this.LoginLabel.AutoSize = true;
             this.LoginLabel.Font = new System.Drawing.Font("Noto Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginLabel.ForeColor = System.Drawing.Color.White;
-            this.LoginLabel.Location = new System.Drawing.Point(125, 118);
+            this.LoginLabel.Location = new System.Drawing.Point(125, 92);
             this.LoginLabel.Name = "LoginLabel";
             this.LoginLabel.Size = new System.Drawing.Size(91, 35);
             this.LoginLabel.TabIndex = 4;
@@ -105,8 +109,8 @@
             this.Passwordtxtbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.Passwordtxtbox.Icon = ((System.Drawing.Image)(resources.GetObject("Passwordtxtbox.Icon")));
             this.Passwordtxtbox.Lines = new string[0];
-            this.Passwordtxtbox.Location = new System.Drawing.Point(29, 218);
-            this.Passwordtxtbox.MaxLength = 32767;
+            this.Passwordtxtbox.Location = new System.Drawing.Point(29, 192);
+            this.Passwordtxtbox.MaxLength = 255;
             this.Passwordtxtbox.Name = "Passwordtxtbox";
             this.Passwordtxtbox.PasswordChar = '●';
             this.Passwordtxtbox.PromptText = "PASSWORD";
@@ -127,6 +131,8 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.Timelbl);
+            this.panel2.Controls.Add(this.Timerlbl);
             this.panel2.Controls.Add(this.NPEyeBtn);
             this.panel2.Controls.Add(this.LoginBtn);
             this.panel2.Controls.Add(this.pictureBox3);
@@ -138,11 +144,36 @@
             this.panel2.Size = new System.Drawing.Size(337, 311);
             this.panel2.TabIndex = 6;
             // 
+            // Timelbl
+            // 
+            this.Timelbl.AutoSize = true;
+            this.Timelbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Timelbl.ForeColor = System.Drawing.Color.Red;
+            this.Timelbl.Location = new System.Drawing.Point(172, 283);
+            this.Timelbl.Margin = new System.Windows.Forms.Padding(0);
+            this.Timelbl.Name = "Timelbl";
+            this.Timelbl.Size = new System.Drawing.Size(32, 27);
+            this.Timelbl.TabIndex = 58;
+            this.Timelbl.Text = "00";
+            this.Timelbl.Visible = false;
+            // 
+            // Timerlbl
+            // 
+            this.Timerlbl.AutoSize = true;
+            this.Timerlbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Timerlbl.ForeColor = System.Drawing.SystemColors.Control;
+            this.Timerlbl.Location = new System.Drawing.Point(69, 282);
+            this.Timerlbl.Name = "Timerlbl";
+            this.Timerlbl.Size = new System.Drawing.Size(102, 27);
+            this.Timerlbl.TabIndex = 57;
+            this.Timerlbl.Text = "Time Left:";
+            this.Timerlbl.Visible = false;
+            // 
             // NPEyeBtn
             // 
             this.NPEyeBtn.BackColor = System.Drawing.Color.White;
             this.NPEyeBtn.Image = ((System.Drawing.Image)(resources.GetObject("NPEyeBtn.Image")));
-            this.NPEyeBtn.Location = new System.Drawing.Point(280, 223);
+            this.NPEyeBtn.Location = new System.Drawing.Point(282, 197);
             this.NPEyeBtn.Name = "NPEyeBtn";
             this.NPEyeBtn.Size = new System.Drawing.Size(20, 20);
             this.NPEyeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -158,7 +189,7 @@
             this.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginBtn.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.LoginBtn.Location = new System.Drawing.Point(96, 268);
+            this.LoginBtn.Location = new System.Drawing.Point(96, 244);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(143, 27);
             this.LoginBtn.TabIndex = 8;
@@ -170,12 +201,17 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(113, 16);
+            this.pictureBox3.Location = new System.Drawing.Point(113, -3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(114, 92);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
+            // 
+            // loginTimer
+            // 
+            this.loginTimer.Interval = 10;
+            this.loginTimer.Tick += new System.EventHandler(this.loginTimer_Tick);
             // 
             // Login
             // 
@@ -212,5 +248,8 @@
         private System.Windows.Forms.Button LoginBtn;
         private MetroFramework.Controls.MetroTextBox UserIDtxtbox;
         private System.Windows.Forms.PictureBox NPEyeBtn;
+        private System.Windows.Forms.Label Timerlbl;
+        private System.Windows.Forms.Timer loginTimer;
+        private System.Windows.Forms.Label Timelbl;
     }
 }

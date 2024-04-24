@@ -138,5 +138,30 @@ namespace JCUBE_SE_PROJECT
             RPRTPasswordField.PasswordChar = '●';
             RPRTPasswordField.UseSystemPasswordChar = true;
         }
+
+        private void RPNewPasswordField_TextChanged(object sender, EventArgs e)
+        {
+            if (RPNewPasswordField.Text.Length > 0)
+            {
+                ARPNewPasswordlbl.Visible = false;
+            }
+            else
+            {
+                ARPNewPasswordlbl.Visible = true;
+            }
+        }
+
+        private void RPRTPasswordField_TextChanged(object sender, EventArgs e)
+        {
+            if (RPRTPasswordField.Text == RPNewPasswordField.Text)
+            {
+                ARPRTPasswordlbl.Visible = false;
+            }
+            else
+            {
+                ARPRTPasswordlbl.Visible = true;
+            }
+        }
+
     }
 }

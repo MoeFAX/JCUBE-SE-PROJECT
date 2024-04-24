@@ -61,6 +61,13 @@ namespace JCUBE_SE_PROJECT
             Regex regex = new Regex("^[a-zA-Z\\s]+$");
             return regex.IsMatch(fullname);
         }
+        
+        private bool IsEmailValid(string emailaddress)
+        {
+            //check if the email address is valid
+            Regex regex = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$");
+            return regex.IsMatch(emailaddress);
+        }
 
         private bool DoesUsernameExist(string username)
         {
@@ -100,9 +107,23 @@ namespace JCUBE_SE_PROJECT
             }
         }
 
-        private void CloseBtn_Click(object sender, EventArgs e)
+        private bool DoesEmailExist(string emailaddress)
         {
-            this.Dispose();
+            //check if the full name already exists in the database
+            using (SqlConnection cn = new SqlConnection(dbcon.myConnection()))
+            {
+                cn.Open();
+                SqlCommand cu = new SqlCommand("SELECT emailaddress FROM tbUser WHERE AccountID = @AccountID", cn);
+                cu.Parameters.AddWithValue("@AccountID", Convert.ToInt32(EditAccountIDlbl.Text));
+                string existingEmail = cu.ExecuteScalar() as string; 
+                
+                SqlCommand cm = new SqlCommand("SELECT COUNT(*) FROM tbUser WHERE emailaddress = @emailaddress AND emailaddress != @existingEmail", cn);
+                cm.Parameters.AddWithValue("@emailaddress", emailaddress);
+                cm.Parameters.AddWithValue("@existingEmail", existingEmail);
+                int count = (int)cm.ExecuteScalar();
+                cn.Close();
+                return count > 0;
+            }
         }
 
         public void Clear()
@@ -160,6 +181,13 @@ namespace JCUBE_SE_PROJECT
                     return;
                 }
 
+                if (!IsEmailValid(EditEmailField.Text))
+                {
+                    MessageBox.Show("This Email is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    EditEmailField.Clear();
+                    return;
+                }
+
                 if (DoesUsernameExist(EditUsernameField.Text))
                 {
                     MessageBox.Show("This User ID already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -173,14 +201,22 @@ namespace JCUBE_SE_PROJECT
                     EditFullnameField.Clear();
                     return;
                 }
+                
+                if (DoesEmailExist(EditEmailField.Text))
+                {
+                    MessageBox.Show("This Email already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    EditEmailField.Clear();
+                    return;
+                }
 
                 using (SqlConnection cn = new SqlConnection(dbcon.myConnection()))
                 {
                     cn.Open();
-                    SqlCommand cm = new SqlCommand("UPDATE tbUser SET username = @username, fullname = @fullname, role = @role WHERE AccountID = @AccountID", cn);
+                    SqlCommand cm = new SqlCommand("UPDATE tbUser SET username = @username, fullname = @fullname, emailaddress = @emailaddress, role = @role WHERE AccountID = @AccountID", cn);
                     cm.Parameters.AddWithValue("@AccountID", int.Parse(EditAccountIDlbl.Text));
                     cm.Parameters.AddWithValue("@username", EditUsernameField.Text);
                     cm.Parameters.AddWithValue("@fullname", EditFullnameField.Text);
+                    cm.Parameters.AddWithValue("@emailaddress", EditEmailField.Text);
                     cm.Parameters.AddWithValue("@role", EditRoleComboBox.Text);
                     cm.ExecuteNonQuery();
                     LogDao log = new LogDao(cn);
@@ -200,6 +236,54 @@ namespace JCUBE_SE_PROJECT
             finally
             {
                 cn.Close();
+            }
+        }
+
+        private void EditUsernameField_TextChanged(object sender, EventArgs e)
+        {
+            if (EditUsernameField.Text.Length > 0)
+            {
+                AEditUsernamelbl.Visible = false;
+            }
+            else
+            {
+                AEditUsernamelbl.Visible = true;
+            }
+        }
+
+        private void EditFullnameField_TextChanged(object sender, EventArgs e)
+        {
+            if (EditFullnameField.Text.Length > 0)
+            {
+                AEditFullnamelbl.Visible = false;
+            }
+            else
+            {
+                AEditFullnamelbl.Visible = true;
+            }
+        }
+
+        private void EditRoleComboBox_TextChanged(object sender, EventArgs e)
+        {
+            if (EditRoleComboBox.Text.Length > 0)
+            {
+                AEditRolelbl.Visible = false;
+            }
+            else
+            {
+                AEditRolelbl.Visible = true;
+            }
+        }
+
+        private void EditEmailField_TextChanged(object sender, EventArgs e)
+        {
+            if (EditEmailField.Text.Length > 0)
+            {
+                AEditEmaillbl.Visible = false;
+            }
+            else
+            {
+                AEditEmaillbl.Visible = true;
             }
         }
     }
