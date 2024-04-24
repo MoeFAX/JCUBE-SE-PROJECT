@@ -30,6 +30,9 @@ namespace JCUBE_SE_PROJECT
             lblUsername.Text = posUI.lblUserRolePOS.Text;
             CurEyeBtn.Visible= true;
             this.KeyPreview = true;
+            curAst.Visible= true;
+            confAst.Visible= false;
+            newAst.Visible= false;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -72,10 +75,13 @@ namespace JCUBE_SE_PROJECT
                     newPassEyeBtn.Visible = true;
                     confirmEyeBtn.Visible = true;
                     CurEyeBtn.Visible = false;
+                    curAst.Visible = false;
                     txtConfirmPass.Visible = true;
                     txtCurrentPass.Visible = false;
                     btnSave.Visible = true;
                     btnNext.Visible = false;
+                    confAst.Visible = true;
+                    newAst.Visible = true;
                 }
                 
             }
@@ -226,6 +232,21 @@ namespace JCUBE_SE_PROJECT
                 }
             }
 
+        }
+
+        private void txtNewPass_TextChanged(object sender, EventArgs e)
+        {
+            newAst.Visible = string.IsNullOrEmpty(txtNewPass.Text);
+        }
+
+        private void txtConfirmPass_TextChanged(object sender, EventArgs e)
+        {
+            confAst.Visible = string.IsNullOrEmpty(txtConfirmPass.Text);
+        }
+
+        private void txtCurrentPass_TextChanged(object sender, EventArgs e)
+        {
+            curAst.Visible = string.IsNullOrEmpty(txtCurrentPass.Text);
         }
     }
 }

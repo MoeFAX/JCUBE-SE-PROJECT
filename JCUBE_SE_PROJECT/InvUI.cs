@@ -183,6 +183,20 @@ namespace JCUBE_SE_PROJECT
         {
             if (MessageBox.Show("Logout Application?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                if (cn.State == ConnectionState.Open)
+                {
+                    LogDao log = new LogDao(cn);
+                    string logAction = "LOGOUT";
+                    string logType = "ACCOUNTS";
+                    string logDescription = "An Administrator Logged Out";
+                    log.AddLogs(logAction, logType, logDescription, loggedInUsername);
+                    Console.WriteLine("Log added successfully. Connection is Open");
+                }
+                else
+                {
+                    Console.WriteLine("Connection is Closed. Cannot add log.");
+                }
+                cn.Close();
                 this.Hide();
                 Login login = new Login();
                 login.Show();
@@ -191,7 +205,7 @@ namespace JCUBE_SE_PROJECT
 
         private void btnLogs_Click(object sender, EventArgs e)
         {
-            openChildForm(new Logs());
+            openChildForm(new Logs(loggedInUsername));
             hideSubmenu();
         }
 

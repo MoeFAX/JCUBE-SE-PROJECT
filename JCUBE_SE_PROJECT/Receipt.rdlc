@@ -813,7 +813,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Thank you!</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1117,8 +1119,55 @@
               </Border>
             </Style>
           </Line>
+          <Textbox Name="Textbox15">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>**This is "</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>NOT"</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> an Official Receipt!**</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox14</rd:DefaultName>
+            <Top>9.278cm</Top>
+            <Left>0.0044cm</Left>
+            <Height>0.60384cm</Height>
+            <Width>5.12724cm</Width>
+            <ZIndex>24</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>9.47804cm</Height>
+        <Height>10.32471cm</Height>
         <Style />
       </Body>
       <Width>5.87832cm</Width>
@@ -1287,7 +1336,7 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageHeight>14cm</PageHeight>
+        <PageHeight>50cm</PageHeight>
         <PageWidth>6cm</PageWidth>
         <LeftMargin>0cm</LeftMargin>
         <RightMargin>0cm</RightMargin>

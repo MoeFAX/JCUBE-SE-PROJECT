@@ -86,6 +86,10 @@ namespace JCUBE_SE_PROJECT.Properties {
         internal static System.Drawing.Bitmap delete_gray {
             get {
                 object obj = ResourceManager.GetObject("delete_gray", resourceCulture);
+            }
+        internal static System.Drawing.Bitmap Critical_Stocks_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Critical Stocks Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -472,4 +476,5 @@ namespace JCUBE_SE_PROJECT.Properties {
             }
         }
     }
+}
 }

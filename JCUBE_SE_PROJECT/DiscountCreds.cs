@@ -8,28 +8,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace JCUBE_SE_PROJECT
 {
-    public partial class CancelOrderModule : Form
+
+    public partial class DiscountCreds : Form
     {
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
-        CancelOrder cancelOrder;
-        DailySales dailySales;
-        private string logUsername;
-        public CancelOrderModule(CancelOrder cancelOrder, string username)
+        CartUI cart;
+        private string id;
+        public DiscountCreds(CartUI cart, string id)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
-            this.cancelOrder = cancelOrder;
-            logUsername = username;
+            this.id = id;
+            this.cart = cart;
         }
 
-        private void btnCancelOrder_Click(object sender, EventArgs e)
+        private void btnAddDiscount_Click(object sender, EventArgs e)
         {
             try
             {
@@ -79,21 +78,50 @@ namespace JCUBE_SE_PROJECT
                     cn.Close();
                     if (role == "Administrator")
                     {
-                        SaveCancelOrder(user);
-                        if (cancelOrder.AddInvCbox.Text == "Yes")
+                        try
                         {
-                            dbcon.ExecuteQuery("UPDATE tbItemList SET Qty = Qty + " + cancelOrder.udQty.Value + " WHERE ItemCode= '" + cancelOrder.itemCodeTxtbox.Text + "'");
+                            //Index of the selected row in the cart
+                            int selectedRowIndex = cart.dgvCart.CurrentRow.Index;
+
+                            //Get orig price by multiplying quantity and unit price
+                            double originalPrice = Convert.ToDouble(cart.dgvCart.Rows[selectedRowIndex].Cells[3].Value) * Convert.ToDouble(cart.dgvCart.Rows[selectedRowIndex].Cells[4].Value);
+
+                            //Check if the selected item has discount
+                            double existingDiscount = Convert.ToDouble(cart.dgvCart.Rows[selectedRowIndex].Cells[5].Value);
+
+                            if (existingDiscount > 0)
+                            {
+                                DialogResult dialogResult = MessageBox.Show("This item already have a discount. Do you want to change it?", "Existing Discount", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (dialogResult == DialogResult.Yes)
+                                {
+                                    Discount discount = new Discount(cart);
+                                    discount.lbid.Text = id;
+                                    discount.totalPriceTB.Text = originalPrice.ToString("#,##0.00");
+                                    discount.ShowDialog();
+                                    this.Dispose();
+                                }
+                            }
+                            else
+                            {
+                                Discount discount = new Discount(cart);
+                                discount.lbid.Text = id;
+                                discount.totalPriceTB.Text = originalPrice.ToString("#,##0.00");
+                                discount.ShowDialog();
+                                this.Dispose();
+                            }
                         }
-                        dbcon.ExecuteQuery("UPDATE tbItemList SET Qty = Qty + " + cancelOrder.udQty.Value + " WHERE ItemID LIKE'" + cancelOrder.idTxtbox.Text + "'");
-                        dbcon.ExecuteQuery("UPDATE c SET c.qty = c.qty - " + cancelOrder.udQty.Value + ", c.status = CASE WHEN (c.qty - " + cancelOrder.udQty.Value + ") <= 0 THEN 'Cancelled' ELSE c.status END FROM tbCart c INNER JOIN tbItemList i ON c.inventoryCode = i.InventoryCode WHERE c.transNo = '" + cancelOrder.InvTxtBox.Text + "' AND i.ItemCode = '" + cancelOrder.itemCodeTxtbox.Text + "'");
-                        MessageBox.Show("Order successfully cancelled!", "Cancel Order", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Dispose();
-                        cancelOrder.ReloadSoldList();
-                        cancelOrder.Dispose();
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        finally
+                        {
+                            cn.Close();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("You do not have the necessary permissions to cancel orders. Please contact an Administrator.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Only an Administrator can add discount. Please contact an Administrator.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
@@ -109,39 +137,8 @@ namespace JCUBE_SE_PROJECT
                 MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             finally
-            { 
-                cn.Close(); 
-            }
-        }
-
-        private void SaveCancelOrder(string user)
-        {
-            try
             {
-                cn.Open();
-                cm = new SqlCommand("INSERT into tbCancelOrder (transNo, itemCode, price, qty, total, date, cancelledBy, reason, action) values (@transNo, @itemCode, @price, @qty, @total, @date, @cancelledBy, @reason, @action)", cn);
-                cm.Parameters.AddWithValue("@transNo", cancelOrder.InvTxtBox.Text);
-                cm.Parameters.AddWithValue("@itemCode", cancelOrder.itemCodeTxtbox.Text);
-                cm.Parameters.AddWithValue("@price", double.Parse(cancelOrder.PrcTxtBox.Text));
-                cm.Parameters.AddWithValue("@qty", int.Parse(cancelOrder.udQty.Text));
-                cm.Parameters.AddWithValue("@total", double.Parse(cancelOrder.PrcTxtBox.Text) * int.Parse(cancelOrder.udQty.Text));
-                cm.Parameters.AddWithValue("@date", DateTime.Now);
-                cm.Parameters.AddWithValue("@cancelledBy", user);
-                cm.Parameters.AddWithValue("@reason", cancelOrder.RsnTxtBox.Text);
-                cm.Parameters.AddWithValue("@action", cancelOrder.AddInvCbox.Text);
-                cm.ExecuteNonQuery();
-                string logAction = "UPDATE";
-                string logType = "SALES";
-                string logDescription = "Cancelled an Order";
-                LogDao log = new LogDao(cn);
-                log.AddLogs(logAction, logType, logDescription, logUsername);
                 cn.Close();
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "Error");
             }
         }
 
@@ -172,5 +169,7 @@ namespace JCUBE_SE_PROJECT
         {
             pasAst.Visible = string.IsNullOrEmpty(txtPassword.Text);
         }
+
+        
     }
 }

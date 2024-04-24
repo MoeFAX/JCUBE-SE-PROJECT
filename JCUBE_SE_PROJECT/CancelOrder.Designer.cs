@@ -56,6 +56,9 @@
             this.CancelOrderBtn = new System.Windows.Forms.Button();
             this.RsnTxtBox = new System.Windows.Forms.TextBox();
             this.udQty = new System.Windows.Forms.NumericUpDown();
+            this.addAst = new System.Windows.Forms.Label();
+            this.cancelAst = new System.Windows.Forms.Label();
+            this.reasonAst = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.udQty)).BeginInit();
             this.SuspendLayout();
             // 
@@ -255,7 +258,7 @@
             this.addInvLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addInvLbl.Location = new System.Drawing.Point(34, 253);
             this.addInvLbl.Name = "addInvLbl";
-            this.addInvLbl.Size = new System.Drawing.Size(123, 70);
+            this.addInvLbl.Size = new System.Drawing.Size(123, 82);
             this.addInvLbl.TabIndex = 24;
             this.addInvLbl.Text = "Add Item Back To Inventory?";
             this.addInvLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -302,6 +305,7 @@
             this.AddInvCbox.Name = "AddInvCbox";
             this.AddInvCbox.Size = new System.Drawing.Size(165, 35);
             this.AddInvCbox.TabIndex = 31;
+            this.AddInvCbox.SelectedIndexChanged += new System.EventHandler(this.AddInvCbox_SelectedIndexChanged);
             this.AddInvCbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddInvCbox_KeyPress);
             // 
             // CancelOrderBtn
@@ -322,30 +326,70 @@
             // 
             this.RsnTxtBox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RsnTxtBox.Location = new System.Drawing.Point(798, 256);
+            this.RsnTxtBox.MaxLength = 60;
             this.RsnTxtBox.Multiline = true;
             this.RsnTxtBox.Name = "RsnTxtBox";
             this.RsnTxtBox.Size = new System.Drawing.Size(165, 64);
             this.RsnTxtBox.TabIndex = 34;
+            this.RsnTxtBox.TextChanged += new System.EventHandler(this.RsnTxtBox_TextChanged);
             // 
             // udQty
             // 
             this.udQty.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.udQty.Location = new System.Drawing.Point(491, 273);
-            this.udQty.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
             this.udQty.Name = "udQty";
             this.udQty.Size = new System.Drawing.Size(165, 32);
             this.udQty.TabIndex = 35;
             this.udQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.udQty.ValueChanged += new System.EventHandler(this.udQty_ValueChanged);
+            // 
+            // addAst
+            // 
+            this.addAst.AutoSize = true;
+            this.addAst.BackColor = System.Drawing.Color.Transparent;
+            this.addAst.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addAst.ForeColor = System.Drawing.Color.Red;
+            this.addAst.Location = new System.Drawing.Point(331, 278);
+            this.addAst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.addAst.Name = "addAst";
+            this.addAst.Size = new System.Drawing.Size(22, 27);
+            this.addAst.TabIndex = 36;
+            this.addAst.Text = "*";
+            // 
+            // cancelAst
+            // 
+            this.cancelAst.AutoSize = true;
+            this.cancelAst.BackColor = System.Drawing.Color.Transparent;
+            this.cancelAst.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelAst.ForeColor = System.Drawing.Color.Red;
+            this.cancelAst.Location = new System.Drawing.Point(659, 275);
+            this.cancelAst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cancelAst.Name = "cancelAst";
+            this.cancelAst.Size = new System.Drawing.Size(22, 27);
+            this.cancelAst.TabIndex = 37;
+            this.cancelAst.Text = "*";
+            // 
+            // reasonAst
+            // 
+            this.reasonAst.AutoSize = true;
+            this.reasonAst.BackColor = System.Drawing.Color.Transparent;
+            this.reasonAst.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reasonAst.ForeColor = System.Drawing.Color.Red;
+            this.reasonAst.Location = new System.Drawing.Point(965, 258);
+            this.reasonAst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.reasonAst.Name = "reasonAst";
+            this.reasonAst.Size = new System.Drawing.Size(22, 27);
+            this.reasonAst.TabIndex = 38;
+            this.reasonAst.Text = "*";
             // 
             // CancelOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 392);
+            this.Controls.Add(this.reasonAst);
+            this.Controls.Add(this.cancelAst);
+            this.Controls.Add(this.addAst);
             this.Controls.Add(this.udQty);
             this.Controls.Add(this.RsnTxtBox);
             this.Controls.Add(this.CancelOrderBtn);
@@ -416,5 +460,8 @@
         public System.Windows.Forms.ComboBox AddInvCbox;
         public System.Windows.Forms.TextBox RsnTxtBox;
         public System.Windows.Forms.NumericUpDown udQty;
+        private System.Windows.Forms.Label addAst;
+        private System.Windows.Forms.Label cancelAst;
+        private System.Windows.Forms.Label reasonAst;
     }
 }
