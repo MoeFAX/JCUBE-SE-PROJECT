@@ -32,6 +32,10 @@ namespace JCUBE_SE_PROJECT
             dtpStockEndDate.MinDate = new DateTime(currentYear, 1, 1);
             dtpStockEndDate.MaxDate = new DateTime(currentYear, 12, 31);
 
+            AccountDeletion AccountAge = new AccountDeletion();
+            AccountAge.AccountAge(cn);
+            AccountDeletion ExpiredAccounts = new AccountDeletion();
+            ExpiredAccounts.ExpiredAccounts(cn);
         }
 
 
@@ -84,15 +88,6 @@ namespace JCUBE_SE_PROJECT
                     cn.Close();
                 }
             }
-        }
-
-
-
-
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            LoadStocks();
         }
 
         private void addbtn_Click(object sender, EventArgs e)
@@ -365,6 +360,11 @@ namespace JCUBE_SE_PROJECT
                     formatcn.Close();
                 }
             }
+        }
+
+        private void SIERefreshBttn_Click(object sender, EventArgs e)
+        {
+            LoadStocks();
         }
     }
 }

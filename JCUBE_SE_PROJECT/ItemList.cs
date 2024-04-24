@@ -24,6 +24,10 @@ namespace JCUBE_SE_PROJECT
             cn = new SqlConnection(dbcon.myConnection());
             logUsername = username;
             LoadItemList();
+            AccountDeletion AccountAge = new AccountDeletion();
+            AccountAge.AccountAge(cn);
+            AccountDeletion ExpiredAccounts = new AccountDeletion();
+            ExpiredAccounts.ExpiredAccounts(cn);
         }
 
         public void LoadItemList()

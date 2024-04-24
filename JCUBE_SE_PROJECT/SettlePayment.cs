@@ -30,7 +30,11 @@ namespace JCUBE_SE_PROJECT
             cn = new SqlConnection(dbcon.myConnection());
             this.KeyPreview = true;
             UpdateCashMaxLength();
-            
+
+            AccountDeletion AccountAge = new AccountDeletion();
+            AccountAge.AccountAge(cn);
+            AccountDeletion ExpiredAccounts = new AccountDeletion();
+            ExpiredAccounts.ExpiredAccounts(cn);
         }
 
         private void UpdateCashMaxLength()

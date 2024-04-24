@@ -28,7 +28,12 @@ namespace JCUBE_SE_PROJECT
             dateTo.MinDate = new DateTime(currentYear, 1, 1);
             dateTo.MaxDate = new DateTime(currentYear, 12, 31);
             _loggedInUsername = loggedInUsername;
-            LoadLogs();         
+            LoadLogs();
+
+            AccountDeletion AccountAge = new AccountDeletion();
+            AccountAge.AccountAge(cn);
+            AccountDeletion ExpiredAccounts = new AccountDeletion();
+            ExpiredAccounts.ExpiredAccounts(cn);
         }
 
         public void LoadLogs() 

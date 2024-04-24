@@ -25,6 +25,11 @@ namespace JCUBE_SE_PROJECT
             logUsername = username;
             PrintItemListArchives.Enabled = false;
             LoadItemList();
+
+            AccountDeletion AccountAge = new AccountDeletion();
+            AccountAge.AccountAge(cn);
+            AccountDeletion ExpiredAccounts = new AccountDeletion();
+            ExpiredAccounts.ExpiredAccounts(cn);
         }
 
         public void LoadItemList()

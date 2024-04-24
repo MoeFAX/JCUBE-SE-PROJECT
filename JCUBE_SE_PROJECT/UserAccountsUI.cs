@@ -30,6 +30,11 @@ namespace JCUBE_SE_PROJECT
             logUsername = username;
 
             LoadUser();
+
+            AccountDeletion AccountAge = new AccountDeletion();
+            AccountAge.AccountAge(cn);
+            AccountDeletion ExpiredAccounts = new AccountDeletion();
+            ExpiredAccounts.ExpiredAccounts(cn);
         }
 
         public void LoadUser()
@@ -106,7 +111,7 @@ namespace JCUBE_SE_PROJECT
                                     }
                                 }
                             }
-                            if (_selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Super Administrator") //admin >> super admin
+                            if (_selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Super Administrator" || _selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Administrator") //admin >> super admin or // admin >> admin
                             {
                                 MessageBox.Show("You do not have permission to do this action.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 dr.Close();
@@ -179,7 +184,7 @@ namespace JCUBE_SE_PROJECT
                                 }
                             }
                         }
-                        if (_selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Super Administrator") //admin >> super admin
+                        if (_selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Super Administrator" || _selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Administrator") //admin >> super admin or // admin >> admin
                         {
                             MessageBox.Show("You do not have permission to do this action.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             dr.Close();
@@ -232,7 +237,7 @@ namespace JCUBE_SE_PROJECT
                                 }
                             }
                         }
-                        if (_selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Super Administrator") //admin >> super admin
+                        if (_selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Super Administrator" || _selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Administrator") //admin >> super admin or // admin >> admin
                         {
                             MessageBox.Show("You do not have permission to do this action.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             dr.Close();
@@ -295,7 +300,7 @@ namespace JCUBE_SE_PROJECT
                                 }
                             }
                         }
-                        if (_selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Super Administrator") //admin >> super admin
+                        if (_selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Super Administrator" || _selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Administrator") //admin >> super admin or // admin >> admin
                         {
                             MessageBox.Show("You do not have permission to do this action.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             dr.Close();
@@ -358,7 +363,7 @@ namespace JCUBE_SE_PROJECT
                                 }
                             }
                         }
-                        if (_selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Super Administrator") //admin >> super admin
+                        if (_selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Super Administrator" || _selectedrole == "Administrator" && dgvUser[5, e.RowIndex].Value.ToString() == "Administrator") //admin >> super admin or // admin >> admin
                         {
                             MessageBox.Show("You do not have permission to do this action.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             dr.Close();

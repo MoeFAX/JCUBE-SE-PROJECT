@@ -21,8 +21,9 @@ namespace JCUBE_SE_PROJECT
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
         private string loggedInUsername;
+        private string role;
 
-        public InvUI(string username)
+        public InvUI(string username, string role)
         {
             InitializeComponent();
             //SetStyle(ControlStyles.UserPaint, true);
@@ -31,13 +32,15 @@ namespace JCUBE_SE_PROJECT
             //SetStyle(ControlStyles.ResizeRedraw, true);
             //UpdateStyles();
             loggedInUsername = username;
+            this.role = role;
             customizeDesign();
             cn = new SqlConnection(dbcon.myConnection());
-            cn.Open();
             MessageBox.Show("Database is Connected");
-           
 
-
+            AccountDeletion AccountAge = new AccountDeletion();
+            AccountAge.AccountAge(cn);
+            AccountDeletion ExpiredAccounts = new AccountDeletion();
+            ExpiredAccounts.ExpiredAccounts(cn);
         }
 
         private Form activeForm = null;
@@ -188,7 +191,7 @@ namespace JCUBE_SE_PROJECT
                     LogDao log = new LogDao(cn);
                     string logAction = "LOGOUT";
                     string logType = "ACCOUNTS";
-                    string logDescription = "An Administrator Logged Out";
+                    string logDescription = role + " logged out";
                     log.AddLogs(logAction, logType, logDescription, loggedInUsername);
                     Console.WriteLine("Log added successfully. Connection is Open");
                 }

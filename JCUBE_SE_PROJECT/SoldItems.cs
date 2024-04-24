@@ -29,6 +29,11 @@ namespace JCUBE_SE_PROJECT
             dateFromSold.MaxDate = new DateTime(currentYear, 12, 31);
             dateToSold.MinDate = new DateTime(currentYear, 1, 1);
             dateToSold.MaxDate = new DateTime(currentYear, 12, 31);
+
+            AccountDeletion AccountAge = new AccountDeletion();
+            AccountAge.AccountAge(cn);
+            AccountDeletion ExpiredAccounts = new AccountDeletion();
+            ExpiredAccounts.ExpiredAccounts(cn);
         }
 
         private void btnTopSelling_Click(object sender, EventArgs e)

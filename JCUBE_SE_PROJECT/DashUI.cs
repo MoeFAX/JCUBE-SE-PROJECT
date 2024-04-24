@@ -34,7 +34,10 @@ namespace JCUBE_SE_PROJECT
             comboBox2.SelectedIndex = comboBox2.Items.IndexOf("Bar");
             chartTopSelling.Series["Item"]["PieLabelStyle"] = "Disabled";
 
-
+            AccountDeletion AccountAge = new AccountDeletion();
+            AccountAge.AccountAge(cn);
+            AccountDeletion ExpiredAccounts = new AccountDeletion();
+            ExpiredAccounts.ExpiredAccounts(cn);
         }
 
         private void DashUI_Load(object sender, EventArgs e)

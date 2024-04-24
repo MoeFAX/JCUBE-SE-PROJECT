@@ -40,6 +40,8 @@
             this.LoginBtn = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.loginTimer = new System.Windows.Forms.Timer(this.components);
+            this.LoginCloseBttn = new System.Windows.Forms.Button();
+            this.MinimizeBttn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NPEyeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -210,22 +212,57 @@
             // 
             // loginTimer
             // 
-            this.loginTimer.Interval = 10;
+            this.loginTimer.Interval = 50;
             this.loginTimer.Tick += new System.EventHandler(this.loginTimer_Tick);
+            // 
+            // LoginCloseBttn
+            // 
+            this.LoginCloseBttn.BackColor = System.Drawing.Color.Transparent;
+            this.LoginCloseBttn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LoginCloseBttn.BackgroundImage")));
+            this.LoginCloseBttn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LoginCloseBttn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoginCloseBttn.FlatAppearance.BorderSize = 0;
+            this.LoginCloseBttn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.LoginCloseBttn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.LoginCloseBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LoginCloseBttn.Location = new System.Drawing.Point(897, 12);
+            this.LoginCloseBttn.Name = "LoginCloseBttn";
+            this.LoginCloseBttn.Size = new System.Drawing.Size(41, 41);
+            this.LoginCloseBttn.TabIndex = 7;
+            this.LoginCloseBttn.UseVisualStyleBackColor = false;
+            this.LoginCloseBttn.Click += new System.EventHandler(this.LoginCloseBttn_Click);
+            // 
+            // MinimizeBttn
+            // 
+            this.MinimizeBttn.BackColor = System.Drawing.Color.Transparent;
+            this.MinimizeBttn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MinimizeBttn.BackgroundImage")));
+            this.MinimizeBttn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MinimizeBttn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MinimizeBttn.FlatAppearance.BorderSize = 0;
+            this.MinimizeBttn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.MinimizeBttn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.MinimizeBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MinimizeBttn.Location = new System.Drawing.Point(850, 12);
+            this.MinimizeBttn.Name = "MinimizeBttn";
+            this.MinimizeBttn.Size = new System.Drawing.Size(41, 41);
+            this.MinimizeBttn.TabIndex = 8;
+            this.MinimizeBttn.UseVisualStyleBackColor = false;
+            this.MinimizeBttn.Click += new System.EventHandler(this.MinimizeBttn_Click);
             // 
             // Login
             // 
-            this.AcceptButton = this.LoginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(950, 650);
+            this.Controls.Add(this.MinimizeBttn);
+            this.Controls.Add(this.LoginCloseBttn);
             this.Controls.Add(this.panel2);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -251,5 +288,7 @@
         private System.Windows.Forms.Label Timerlbl;
         private System.Windows.Forms.Timer loginTimer;
         private System.Windows.Forms.Label Timelbl;
+        private System.Windows.Forms.Button LoginCloseBttn;
+        private System.Windows.Forms.Button MinimizeBttn;
     }
 }

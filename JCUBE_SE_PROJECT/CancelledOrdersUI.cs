@@ -29,7 +29,10 @@ namespace JCUBE_SE_PROJECT
             dateFromCancelled.MaxDate = new DateTime(currentYear, 12, 31);
             dateToCancelled.MinDate = new DateTime(currentYear, 1, 1);
             dateToCancelled.MaxDate = new DateTime(currentYear, 12, 31);
-
+            AccountDeletion AccountAge = new AccountDeletion();
+            AccountAge.AccountAge(cn);
+            AccountDeletion ExpiredAccounts = new AccountDeletion();
+            ExpiredAccounts.ExpiredAccounts(cn);
         }
 
         public void LoadCancel()

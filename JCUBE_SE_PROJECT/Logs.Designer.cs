@@ -153,7 +153,7 @@
             // 
             this.dateTo.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTo.Location = new System.Drawing.Point(333, 10);
+            this.dateTo.Location = new System.Drawing.Point(333, 17);
             this.dateTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTo.Name = "dateTo";
             this.dateTo.Size = new System.Drawing.Size(141, 30);
@@ -164,7 +164,7 @@
             // 
             this.lblTo.AutoSize = true;
             this.lblTo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTo.Location = new System.Drawing.Point(292, 14);
+            this.lblTo.Location = new System.Drawing.Point(292, 21);
             this.lblTo.Name = "lblTo";
             this.lblTo.Size = new System.Drawing.Size(36, 23);
             this.lblTo.TabIndex = 5;
@@ -174,7 +174,7 @@
             // 
             this.lblFrom.AutoSize = true;
             this.lblFrom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrom.Location = new System.Drawing.Point(27, 14);
+            this.lblFrom.Location = new System.Drawing.Point(27, 21);
             this.lblFrom.Name = "lblFrom";
             this.lblFrom.Size = new System.Drawing.Size(113, 23);
             this.lblFrom.TabIndex = 4;
@@ -185,7 +185,7 @@
             this.dateFrom.CustomFormat = "MM/DD/YYYY";
             this.dateFrom.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFrom.Location = new System.Drawing.Point(145, 10);
+            this.dateFrom.Location = new System.Drawing.Point(145, 17);
             this.dateFrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateFrom.Name = "dateFrom";
             this.dateFrom.Size = new System.Drawing.Size(141, 30);
@@ -201,10 +201,10 @@
             this.panel2.Controls.Add(this.dateFrom);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 494);
+            this.panel2.Location = new System.Drawing.Point(0, 482);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(911, 50);
+            this.panel2.Size = new System.Drawing.Size(911, 62);
             this.panel2.TabIndex = 1;
             // 
             // PrintStockArchives
@@ -216,7 +216,7 @@
             this.PrintStockArchives.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.PrintStockArchives.Image = ((System.Drawing.Image)(resources.GetObject("PrintStockArchives.Image")));
             this.PrintStockArchives.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.PrintStockArchives.Location = new System.Drawing.Point(665, 7);
+            this.PrintStockArchives.Location = new System.Drawing.Point(665, 14);
             this.PrintStockArchives.MinimumSize = new System.Drawing.Size(20, 20);
             this.PrintStockArchives.Name = "PrintStockArchives";
             this.PrintStockArchives.Size = new System.Drawing.Size(184, 37);
@@ -232,7 +232,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 75);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(25, 419);
+            this.panel3.Size = new System.Drawing.Size(25, 407);
             this.panel3.TabIndex = 2;
             // 
             // panel4
@@ -241,7 +241,7 @@
             this.panel4.Location = new System.Drawing.Point(886, 75);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(25, 419);
+            this.panel4.Size = new System.Drawing.Size(25, 407);
             this.panel4.TabIndex = 3;
             // 
             // dgvLogs
@@ -303,7 +303,7 @@
             this.dgvLogs.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvLogs.RowTemplate.Height = 24;
             this.dgvLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvLogs.Size = new System.Drawing.Size(861, 419);
+            this.dgvLogs.Size = new System.Drawing.Size(861, 407);
             this.dgvLogs.TabIndex = 18;
             // 
             // LogID

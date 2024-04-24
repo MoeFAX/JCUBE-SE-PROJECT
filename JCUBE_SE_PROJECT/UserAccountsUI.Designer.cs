@@ -56,15 +56,6 @@
             this.ActivateAcc = new System.Windows.Forms.DataGridViewImageColumn();
             this.DeactivateAcc = new System.Windows.Forms.DataGridViewImageColumn();
             this.ArchiveAcc = new System.Windows.Forms.DataGridViewImageColumn();
-            this.UAUserRolelbl = new System.Windows.Forms.Label();
-            this.CABttn = new System.Windows.Forms.Button();
-            this.CPBttn = new System.Windows.Forms.Button();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.refreshBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.SuspendLayout();
             // 
@@ -538,6 +529,5 @@
         private System.Windows.Forms.DataGridViewImageColumn ActivateAcc;
         private System.Windows.Forms.DataGridViewImageColumn DeactivateAcc;
         private System.Windows.Forms.DataGridViewImageColumn ArchiveAcc;
-        private System.Windows.Forms.Button refreshBtn;
     }
 }

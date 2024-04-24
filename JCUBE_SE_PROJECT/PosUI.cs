@@ -26,6 +26,11 @@ namespace JCUBE_SE_PROJECT
             _loggedInUsername = loggedInUsername;
             cn = new SqlConnection(dbcon.myConnection());
             clerk = CartUI.GetInstance(this);
+
+            AccountDeletion AccountAge = new AccountDeletion();
+            AccountAge.AccountAge(cn);
+            AccountDeletion ExpiredAccounts = new AccountDeletion();
+            ExpiredAccounts.ExpiredAccounts(cn);
         }
 
         private Form activeForm = null;

@@ -44,6 +44,11 @@ namespace JCUBE_SE_PROJECT
                 clerk.btnSettlePayment.Enabled = true;
                 btnDiscount.Enabled = true;
             }
+
+            AccountDeletion AccountAge = new AccountDeletion();
+            AccountAge.AccountAge(cn);
+            AccountDeletion ExpiredAccounts = new AccountDeletion();
+            ExpiredAccounts.ExpiredAccounts(cn);
         }
 
         public static CartUI GetInstance(PosUI clerk)

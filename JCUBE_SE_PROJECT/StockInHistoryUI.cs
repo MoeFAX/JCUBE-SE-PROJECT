@@ -31,6 +31,11 @@ namespace JCUBE_SE_PROJECT
             dtpStartDate.MaxDate = new DateTime(currentYear, 12, 31);
             dtpEndDate.MinDate = new DateTime(currentYear, 1, 1);
             dtpEndDate.MaxDate = new DateTime(currentYear, 12, 31);
+
+            AccountDeletion AccountAge = new AccountDeletion();
+            AccountAge.AccountAge(cn);
+            AccountDeletion ExpiredAccounts = new AccountDeletion();
+            ExpiredAccounts.ExpiredAccounts(cn);
         }
 
         public void LoadStockHistory()

@@ -28,25 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StocksUI));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StocksUI));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SIERefreshBttn = new System.Windows.Forms.Button();
             this.dtpStockEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpStockStartDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.addbtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvStockEntry = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.addbtn = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.StockID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RefNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +54,8 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockEntry)).BeginInit();
@@ -64,7 +64,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.SIERefreshBttn);
             this.panel1.Controls.Add(this.dtpStockEndDate);
             this.panel1.Controls.Add(this.dtpStockStartDate);
             this.panel1.Controls.Add(this.label3);
@@ -75,6 +75,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(912, 58);
             this.panel1.TabIndex = 0;
+            // 
+            // SIERefreshBttn
+            // 
+            this.SIERefreshBttn.BackColor = System.Drawing.Color.White;
+            this.SIERefreshBttn.FlatAppearance.BorderSize = 0;
+            this.SIERefreshBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SIERefreshBttn.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SIERefreshBttn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.SIERefreshBttn.Image = ((System.Drawing.Image)(resources.GetObject("SIERefreshBttn.Image")));
+            this.SIERefreshBttn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SIERefreshBttn.Location = new System.Drawing.Point(414, 12);
+            this.SIERefreshBttn.Name = "SIERefreshBttn";
+            this.SIERefreshBttn.Size = new System.Drawing.Size(122, 34);
+            this.SIERefreshBttn.TabIndex = 9;
+            this.SIERefreshBttn.Text = "Refresh";
+            this.SIERefreshBttn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SIERefreshBttn.UseVisualStyleBackColor = false;
+            this.SIERefreshBttn.Click += new System.EventHandler(this.SIERefreshBttn_Click);
             // 
             // dtpStockEndDate
             // 
@@ -127,6 +145,24 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(912, 70);
             this.panel2.TabIndex = 1;
+            // 
+            // addbtn
+            // 
+            this.addbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addbtn.FlatAppearance.BorderSize = 0;
+            this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addbtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.addbtn.Image = ((System.Drawing.Image)(resources.GetObject("addbtn.Image")));
+            this.addbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addbtn.Location = new System.Drawing.Point(774, 25);
+            this.addbtn.Name = "addbtn";
+            this.addbtn.Size = new System.Drawing.Size(106, 38);
+            this.addbtn.TabIndex = 6;
+            this.addbtn.Text = "Create";
+            this.addbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addbtn.UseVisualStyleBackColor = true;
+            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
             // 
             // label1
             // 
@@ -224,68 +260,6 @@
             this.dgvStockEntry.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockEntry_CellClick);
             this.dgvStockEntry.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvStockEntry_CellFormatting_1);
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::JCUBE_SE_PROJECT.Properties.Resources.edit_icon;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn1.Width = 21;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn2.Width = 21;
-            // 
-            // addbtn
-            // 
-            this.addbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addbtn.FlatAppearance.BorderSize = 0;
-            this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addbtn.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.addbtn.Image = ((System.Drawing.Image)(resources.GetObject("addbtn.Image")));
-            this.addbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addbtn.Location = new System.Drawing.Point(774, 25);
-            this.addbtn.Name = "addbtn";
-            this.addbtn.Size = new System.Drawing.Size(106, 38);
-            this.addbtn.TabIndex = 6;
-            this.addbtn.Text = "Create";
-            this.addbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addbtn.UseVisualStyleBackColor = true;
-            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(414, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(122, 34);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Refresh";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // StockID
             // 
             this.StockID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -294,7 +268,7 @@
             this.StockID.Name = "StockID";
             this.StockID.ReadOnly = true;
             this.StockID.Visible = false;
-            this.StockID.Width = 64;
+            this.StockID.Width = 125;
             // 
             // RefNo
             // 
@@ -352,7 +326,6 @@
             // 
             this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Edit.HeaderText = "";
-            
             this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
@@ -373,6 +346,32 @@
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Delete.Width = 21;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::JCUBE_SE_PROJECT.Properties.Resources.edit_icon;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn2.Width = 125;
             // 
             // StocksUI
             // 
@@ -411,7 +410,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpStockStartDate;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button SIERefreshBttn;
         public System.Windows.Forms.DateTimePicker dtpStockEndDate;
         private System.Windows.Forms.Button addbtn;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;

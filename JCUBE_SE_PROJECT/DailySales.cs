@@ -43,6 +43,11 @@ namespace JCUBE_SE_PROJECT
             dateFrom.MaxDate = new DateTime(currentYear, 12, 31);
             dateTo.MinDate = new DateTime(currentYear, 1, 1);
             dateTo.MaxDate = new DateTime(currentYear, 12, 31);
+
+            AccountDeletion AccountAge = new AccountDeletion();
+            AccountAge.AccountAge(cn);
+            AccountDeletion ExpiredAccounts = new AccountDeletion();
+            ExpiredAccounts.ExpiredAccounts(cn);
         }
 
         public void LoadClerk()
