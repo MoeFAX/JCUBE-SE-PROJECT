@@ -188,7 +188,7 @@ namespace JCUBE_SE_PROJECT
                     LogDao log = new LogDao(cn);
                     string logAction = "LOGOUT";
                     string logType = "ACCOUNTS";
-                    string logDescription = "An Account Logged Out";
+                    string logDescription = "An Administrator Logged Out";
                     log.AddLogs(logAction, logType, logDescription, loggedInUsername);
                     Console.WriteLine("Log added successfully. Connection is Open");
                 }

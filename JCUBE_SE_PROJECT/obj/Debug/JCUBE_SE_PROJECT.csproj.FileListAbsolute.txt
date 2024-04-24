@@ -543,3 +543,4 @@ C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT
 C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintItemListArchives.resources
 C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintStockArchives.resources
 C:\Users\drefs\Documents\GitHub\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintLogs.resources
+C:\Users\Evander\source\repos\JCUBE-SE-PROJECT\JCUBE-SE-PROJECT\JCUBE_SE_PROJECT\obj\Debug\JCUBE_SE_PROJECT.PrintLogs.resources
