@@ -51,19 +51,6 @@ namespace JCUBE_SE_PROJECT
             cn.Close();
         }
 
-        private void CABttn_Click(object sender, EventArgs e)
-        {
-            CreateAccount moduleForm = new CreateAccount(this, logUsername);
-            moduleForm.ShowDialog();
-        }
-
-        private void CPBttn_Click(object sender, EventArgs e)
-        {
-            UAChangePassword moduleForm = new UAChangePassword(this, logUsername);
-            moduleForm.CPUNlbl.Text = UAUserRolelbl.Text;
-            moduleForm.ShowDialog();
-        }
-
         public void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -123,7 +110,7 @@ namespace JCUBE_SE_PROJECT
                                 dr.Close();
                                 cn.Close();
 
-                                if (MessageBox.Show("Are you sure you want to archive this account?", "Archive Account", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                if (MessageBox.Show("Are you sure you want to delete this account?", "Delete Account", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                                 {
                                     // Retrieve ItemID and Role from the DataGridView
                                     int ArchAccID = Convert.ToInt32(dgvUser.Rows[e.RowIndex].Cells["AccountID"].Value);
@@ -131,7 +118,7 @@ namespace JCUBE_SE_PROJECT
 
                                     if (AccActivate == "True")
                                     {
-                                        MessageBox.Show("Account must be deactivated before archiving.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Account must be deactivated before deleting.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     }
                                     else
                                     {
@@ -154,7 +141,7 @@ namespace JCUBE_SE_PROJECT
                                         LogDao log = new LogDao(cn);
                                         log.AddLogs(logAction, logType, logDescription, logUsername);
                                         cn.Close();
-                                        MessageBox.Show("Account has been successfully archived.", "ARCHIVE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        MessageBox.Show("Account has been successfully deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                         // Remove the row from the DataGridView
                                         dgvUser.Rows.RemoveAt(e.RowIndex);
@@ -422,6 +409,19 @@ namespace JCUBE_SE_PROJECT
         private void RDBttn_Click(object sender, EventArgs e)
         {
             RecentlyDeleted moduleForm = new RecentlyDeleted(this, logUsername);
+            moduleForm.ShowDialog();
+        }
+
+        private void CABttn_Click(object sender, EventArgs e)
+        {
+            CreateAccount moduleForm = new CreateAccount(this, logUsername);
+            moduleForm.ShowDialog();
+        }
+
+        private void CPBttn_Click(object sender, EventArgs e)
+        {
+            UAChangePassword moduleForm = new UAChangePassword(this, logUsername);
+            moduleForm.CPUNlbl.Text = UAUserRolelbl.Text;
             moduleForm.ShowDialog();
         }
     }

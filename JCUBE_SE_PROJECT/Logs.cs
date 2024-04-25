@@ -66,7 +66,7 @@ namespace JCUBE_SE_PROJECT
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                dgvLogs.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), DateTime.Parse(dr[5].ToString()).ToString("yyyy-MM-dd HH:mm:ss"));
+                dgvLogs.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), DateTime.Parse(dr[5].ToString()).ToString("yyyy-MM-dd hh:mm:ss tt"));
             }
             dr.Close();
             cn.Close();

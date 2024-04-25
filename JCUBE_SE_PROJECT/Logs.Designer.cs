@@ -100,7 +100,7 @@
             "STOCKS",
             "SUPPLIER"});
             this.typeComboBox.Location = new System.Drawing.Point(725, 31);
-            this.typeComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.typeComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.typeComboBox.Name = "typeComboBox";
             this.typeComboBox.Size = new System.Drawing.Size(160, 35);
             this.typeComboBox.TabIndex = 10;
@@ -121,7 +121,7 @@
             "ARCHIVE",
             "RESTORE"});
             this.actionComboBox.Location = new System.Drawing.Point(471, 31);
-            this.actionComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.actionComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.actionComboBox.Name = "actionComboBox";
             this.actionComboBox.Size = new System.Drawing.Size(160, 35);
             this.actionComboBox.TabIndex = 7;
@@ -217,6 +217,7 @@
             this.PrintStockArchives.Image = ((System.Drawing.Image)(resources.GetObject("PrintStockArchives.Image")));
             this.PrintStockArchives.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.PrintStockArchives.Location = new System.Drawing.Point(665, 14);
+            this.PrintStockArchives.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PrintStockArchives.MinimumSize = new System.Drawing.Size(20, 20);
             this.PrintStockArchives.Name = "PrintStockArchives";
             this.PrintStockArchives.Size = new System.Drawing.Size(184, 37);
@@ -285,7 +286,7 @@
             this.dgvLogs.EnableHeadersVisualStyles = false;
             this.dgvLogs.GridColor = System.Drawing.Color.White;
             this.dgvLogs.Location = new System.Drawing.Point(25, 75);
-            this.dgvLogs.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvLogs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvLogs.Name = "dgvLogs";
             this.dgvLogs.ReadOnly = true;
             this.dgvLogs.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -313,7 +314,8 @@
             this.LogID.MinimumWidth = 6;
             this.LogID.Name = "LogID";
             this.LogID.ReadOnly = true;
-            this.LogID.Width = 74;
+            this.LogID.Visible = false;
+            this.LogID.Width = 51;
             // 
             // Action
             // 
@@ -333,11 +335,11 @@
             // 
             // Description
             // 
-            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Description.HeaderText = "Description";
             this.Description.MinimumWidth = 6;
             this.Description.Name = "Description";
             this.Description.ReadOnly = true;
+            this.Description.Width = 265;
             // 
             // Username
             // 
@@ -345,16 +347,15 @@
             this.Username.MinimumWidth = 6;
             this.Username.Name = "Username";
             this.Username.ReadOnly = true;
-            this.Username.Width = 125;
+            this.Username.Width = 160;
             // 
             // Date
             // 
-            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Date.HeaderText = "Date/Time";
             this.Date.MinimumWidth = 6;
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
-            this.Date.Width = 106;
             // 
             // Logs
             // 
@@ -392,16 +393,16 @@
         private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.DateTimePicker dateTo;
         private System.Windows.Forms.DataGridView dgvLogs;
+        private System.Windows.Forms.Label actionlbl;
+        private System.Windows.Forms.ComboBox actionComboBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox typeComboBox;
+        private System.Windows.Forms.Button PrintStockArchives;
         private System.Windows.Forms.DataGridViewTextBoxColumn LogID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Action;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.Label actionlbl;
-        private System.Windows.Forms.ComboBox actionComboBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox typeComboBox;
-        private System.Windows.Forms.Button PrintStockArchives;
     }
 }

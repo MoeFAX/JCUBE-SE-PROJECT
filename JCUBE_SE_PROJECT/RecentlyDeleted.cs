@@ -23,11 +23,13 @@ namespace JCUBE_SE_PROJECT
         SqlDataReader dr;
         UserAccountsUI useracc;
         private string logUsername;
+        private string selecteduser;
         public RecentlyDeleted(UserAccountsUI user, string username)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             logUsername = username;
+            selecteduser = username;
             useracc = user;
             AccountDeletion AccountAge = new AccountDeletion();
             AccountAge.AccountAge(cn);
@@ -59,59 +61,111 @@ namespace JCUBE_SE_PROJECT
                     string colName = dgvUserArchive.Columns[e.ColumnIndex].Name;
                     if (colName == "RestoreAcc")
                     {
-                        if (MessageBox.Show("Are you sure you want to restore this account?", "Restore Account", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        string _selectedrole = "";
+                        cn.Open();
+                        using (SqlCommand command = new SqlCommand("SELECT role From tbUser WHERE username = @username", cn))
                         {
-                            cn.Open();
-                            int ArchRDID = Convert.ToInt32(dgvUserArchive.Rows[e.RowIndex].Cells["AccountID"].Value);
-
-                            cm = new SqlCommand("SET IDENTITY_INSERT tbUser ON INSERT INTO tbUser(AccountID, username, encryptedPassword, fullname, emailaddress, isactive, role) SELECT AccountID, username, encryptedPassword, fullname, emailaddress, isactive, role FROM tbUserArchive WHERE AccountID = @AccountID DELETE FROM tbUserArchive WHERE AccountID = @AccountID SET IDENTITY_INSERT tbUser OFF", cn);
-                            cm.Parameters.AddWithValue("@AccountID", ArchRDID); // Add @AccountID parameter
-                            cm.ExecuteNonQuery();
-                            string logAction = "RESTORE";
-                            string logType = "ACCOUNTS";
-                            string logDescription = "Restored an Account";
-                            LogDao log = new LogDao(cn);
-                            log.AddLogs(logAction, logType, logDescription, logUsername);
-                            cn.Close();
-                            MessageBox.Show("Account has been successfully restored", "RESTORE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            // Remove the row from the DataGridView
-                            dgvUserArchive.Rows.RemoveAt(e.RowIndex);
-                            LoadAccounts();
-                            useracc.LoadUser();
+                            command.Parameters.AddWithValue("@username", selecteduser);
+                            using (SqlDataReader reader = command.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    _selectedrole = reader["role"].ToString();
+                                }
+                            }
                         }
-                        else
+                        if (_selectedrole == "Administrator" && dgvUserArchive[4, e.RowIndex].Value.ToString() == "Super Administrator" || _selectedrole == "Administrator" && dgvUserArchive[4, e.RowIndex].Value.ToString() == "Administrator") //admin >> super admin or // admin >> admin
                         {
+                            MessageBox.Show("You do not have permission to do this action.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            dr.Close();
                             cn.Close();
                             return;
                         }
+                        else
+                        {
+                            dr.Close();
+                            cn.Close();
+                            if (MessageBox.Show("Are you sure you want to restore this account?", "Restore Account", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                cn.Open();
+                                int ArchRDID = Convert.ToInt32(dgvUserArchive.Rows[e.RowIndex].Cells["AccountID"].Value);
+
+                                cm = new SqlCommand("SET IDENTITY_INSERT tbUser ON INSERT INTO tbUser(AccountID, username, encryptedPassword, fullname, emailaddress, isactive, role) SELECT AccountID, username, encryptedPassword, fullname, emailaddress, isactive, role FROM tbUserArchive WHERE AccountID = @AccountID DELETE FROM tbUserArchive WHERE AccountID = @AccountID SET IDENTITY_INSERT tbUser OFF", cn);
+                                cm.Parameters.AddWithValue("@AccountID", ArchRDID); // Add @AccountID parameter
+                                cm.ExecuteNonQuery();
+                                string logAction = "RESTORE";
+                                string logType = "ACCOUNTS";
+                                string logDescription = "Restored an Account";
+                                LogDao log = new LogDao(cn);
+                                log.AddLogs(logAction, logType, logDescription, logUsername);
+                                cn.Close();
+                                MessageBox.Show("Account has been successfully restored", "RESTORE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                // Remove the row from the DataGridView
+                                dgvUserArchive.Rows.RemoveAt(e.RowIndex);
+                                LoadAccounts();
+                                useracc.LoadUser();
+                            }
+                            else
+                            {
+                                cn.Close();
+                                return;
+                            }
+                        }
+                        
                     }
                     if (colName == "DeleteAcc")
                     {
-                        if (MessageBox.Show("Are you sure you want to delete this account?", "Delete Account", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        string _selectedrole = "";
+                        cn.Open();
+                        using (SqlCommand command = new SqlCommand("SELECT role From tbUser WHERE username = @username", cn))
                         {
-                            int ActRDID = Convert.ToInt32(dgvUserArchive.Rows[e.RowIndex].Cells["AccountID"].Value);
-
-                            cn.Open();
-                            cm = new SqlCommand("DELETE FROM tbUserArchive WHERE AccountID = @AccountID", cn);
-                            cm.Parameters.AddWithValue("@AccountID", ActRDID); // Add @StockID parameter
-                            cm.ExecuteNonQuery();
-                            string logAction = "DELETE";
-                            string logType = "ACCOUNTS";
-                            string logDescription = "Deleted an Account";
-                            LogDao log = new LogDao(cn);
-                            log.AddLogs(logAction, logType, logDescription, logUsername);
+                            command.Parameters.AddWithValue("@username", selecteduser);
+                            using (SqlDataReader reader = command.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    _selectedrole = reader["role"].ToString();
+                                }
+                            }
+                        }
+                        if (_selectedrole == "Administrator" && dgvUserArchive[4, e.RowIndex].Value.ToString() == "Super Administrator" || _selectedrole == "Administrator" && dgvUserArchive[4, e.RowIndex].Value.ToString() == "Administrator") //admin >> super admin or // admin >> admin
+                        {
+                            MessageBox.Show("You do not have permission to do this action.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            dr.Close();
                             cn.Close();
-                            MessageBox.Show("Account has successfully been deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            // Remove the row from the DataGridView
-                            dgvUserArchive.Rows.RemoveAt(e.RowIndex);
-                            LoadAccounts();
+                            return;
                         }
                         else
                         {
+                            dr.Close();
                             cn.Close();
-                            return;
+
+                            if (MessageBox.Show("Are you sure you want to delete this account?", "Delete Account", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                int ActRDID = Convert.ToInt32(dgvUserArchive.Rows[e.RowIndex].Cells["AccountID"].Value);
+
+                                cn.Open();
+                                cm = new SqlCommand("DELETE FROM tbUserArchive WHERE AccountID = @AccountID", cn);
+                                cm.Parameters.AddWithValue("@AccountID", ActRDID); // Add @StockID parameter
+                                cm.ExecuteNonQuery();
+                                string logAction = "DELETE";
+                                string logType = "ACCOUNTS";
+                                string logDescription = "Deleted an Account";
+                                LogDao log = new LogDao(cn);
+                                log.AddLogs(logAction, logType, logDescription, logUsername);
+                                cn.Close();
+                                MessageBox.Show("Account has successfully been deleted.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                // Remove the row from the DataGridView
+                                dgvUserArchive.Rows.RemoveAt(e.RowIndex);
+                                LoadAccounts();
+                            }
+                            else
+                            {
+                                cn.Close();
+                                return;
+                            }
                         }
                     }
                 }

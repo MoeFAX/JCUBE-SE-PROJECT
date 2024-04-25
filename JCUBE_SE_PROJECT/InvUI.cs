@@ -186,6 +186,7 @@ namespace JCUBE_SE_PROJECT
         {
             if (MessageBox.Show("Logout Application?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                cn.Open();
                 if (cn.State == ConnectionState.Open)
                 {
                     LogDao log = new LogDao(cn);
