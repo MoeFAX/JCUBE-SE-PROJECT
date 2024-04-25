@@ -676,9 +676,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox19</rd:DefaultName>
               <Top>0.59267cm</Top>
-              <Left>9.44034cm</Left>
+              <Left>8.48784cm</Left>
               <Height>0.7462cm</Height>
-              <Width>10.55967cm</Width>
+              <Width>12.30758cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -697,7 +697,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Km. 16 RS Comtd., Alabang-Zapote Road, Pamplona 1, Las Piñas City</Value>
+                      <Value>Km. 16 RSTI Compound, Alabang-Zapote Road., Pamplona Uno, Las Piñas City</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -723,9 +723,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox20</rd:DefaultName>
               <Top>1.4447cm</Top>
-              <Left>9.44034cm</Left>
+              <Left>8.48784cm</Left>
               <Height>0.83283cm</Height>
-              <Width>10.55967cm</Width>
+              <Width>12.30758cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -825,7 +825,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
-              <Top>2.35515cm</Top>
+              <Top>2.67265cm</Top>
               <Left>3.07795cm</Left>
               <Height>0.6cm</Height>
               <Width>2.246cm</Width>
@@ -855,10 +855,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>iAdmin</rd:DefaultName>
-              <Top>2.35515cm</Top>
+              <Top>2.67265cm</Top>
               <Left>5.32395cm</Left>
-              <Height>0.56472cm</Height>
-              <Width>2.5cm</Width>
+              <Height>1.00922cm</Height>
+              <Width>4.44613cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
                 <Border>

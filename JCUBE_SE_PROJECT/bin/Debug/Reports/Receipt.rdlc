@@ -1217,20 +1217,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Km.16 RS Comtd., Alabang-Zapote Road</Value>
-                      <Style>
-                        <FontSize>5.9pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value> Road, Pamplona 1, Las Pinas City</Value>
+                      <Value>Km. 16 RSTI Compound, Alabang-Zapote Road, Pamplona Uno, Las Piñas City</Value>
                       <Style>
                         <FontSize>5.9pt</FontSize>
                       </Style>
@@ -1336,7 +1323,7 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageHeight>200cm</PageHeight>
+        <PageHeight>50cm</PageHeight>
         <PageWidth>6cm</PageWidth>
         <LeftMargin>0cm</LeftMargin>
         <RightMargin>0cm</RightMargin>

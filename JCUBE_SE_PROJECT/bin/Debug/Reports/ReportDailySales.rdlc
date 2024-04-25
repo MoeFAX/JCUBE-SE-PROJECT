@@ -913,9 +913,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox19</rd:DefaultName>
               <Top>0.59267cm</Top>
-              <Left>8.80534cm</Left>
+              <Left>7.78649cm</Left>
               <Height>0.7462cm</Height>
-              <Width>10.55967cm</Width>
+              <Width>12.02302cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -971,7 +971,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Km. 16 RS Comtd., Alabang-Zapote Road, Pamplona 1, Las Piñas City</Value>
+                      <Value>Km. 16 RSTI Compound, Alabang-Zapote Road., Pamplona Uno, Las Piñas City</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -997,9 +997,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox20</rd:DefaultName>
               <Top>1.4447cm</Top>
-              <Left>8.80534cm</Left>
+              <Left>7.78649cm</Left>
               <Height>0.83283cm</Height>
-              <Width>10.55967cm</Width>
+              <Width>12.02302cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>

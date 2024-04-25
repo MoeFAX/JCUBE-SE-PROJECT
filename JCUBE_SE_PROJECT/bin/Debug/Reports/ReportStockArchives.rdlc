@@ -431,10 +431,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox19</rd:DefaultName>
-              <Top>0.47979cm</Top>
-              <Left>9.4963cm</Left>
+              <Top>0.44451cm</Top>
+              <Left>8.5438cm</Left>
               <Height>0.7462cm</Height>
-              <Width>10.55967cm</Width>
+              <Width>12.4435cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -453,7 +453,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Km. 16 RS Comtd., Alabang-Zapote Road, Pamplona 1, Las Piñas City</Value>
+                      <Value>Km. 16 RSTI Compound, Alabang-Zapote Road., Pamplona Uno, Las Piñas City</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -479,9 +479,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox20</rd:DefaultName>
               <Top>1.33182cm</Top>
-              <Left>9.4963cm</Left>
+              <Left>8.5438cm</Left>
               <Height>0.83283cm</Height>
-              <Width>10.55967cm</Width>
+              <Width>12.4435cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -548,7 +548,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox22</rd:DefaultName>
-              <Top>2.74322cm</Top>
+              <Top>2.42572cm</Top>
               <Left>19.89194cm</Left>
               <Height>0.96689cm</Height>
               <Width>5.27398cm</Width>
@@ -581,8 +581,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
-              <Top>2.24227cm</Top>
-              <Left>3.13391cm</Left>
+              <Top>2.42572cm</Top>
+              <Left>3.09863cm</Left>
               <Height>0.6cm</Height>
               <Width>2.246cm</Width>
               <ZIndex>4</ZIndex>
@@ -613,10 +613,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>iAdmin</rd:DefaultName>
-              <Top>2.24227cm</Top>
+              <Top>2.42572cm</Top>
               <Left>5.37991cm</Left>
-              <Height>0.56472cm</Height>
-              <Width>2.5cm</Width>
+              <Height>0.96689cm</Height>
+              <Width>3.81233cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
                 <Border>

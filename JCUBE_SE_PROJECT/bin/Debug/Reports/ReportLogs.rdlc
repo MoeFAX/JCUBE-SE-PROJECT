@@ -533,7 +533,6 @@
             </TablixRowHierarchy>
             <DataSetName>DtLogs</DataSetName>
             <Top>0.27211in</Top>
-            <Left>2.38235cm</Left>
             <Height>1.25292cm</Height>
             <Width>22.99042cm</Width>
             <Style>
@@ -546,7 +545,7 @@
         <Height>4.46667in</Height>
         <Style />
       </Body>
-      <Width>11.05135in</Width>
+      <Width>9.05135in</Width>
       <Page>
         <PageHeader>
           <Height>2.10789in</Height>
@@ -576,9 +575,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox19</rd:DefaultName>
               <Top>0.46419cm</Top>
-              <Left>8.58009cm</Left>
+              <Left>5.37334cm</Left>
               <Height>0.7462cm</Height>
-              <Width>10.55967cm</Width>
+              <Width>12.52817cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -597,7 +596,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Km. 16 RS Comtd., Alabang-Zapote Road, Pamplona 1, Las Piñas City</Value>
+                      <Value>Km. 16 RSTI Compound, Alabang-Zapote Road., Pamplona Uno, Las Piñas City</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -623,9 +622,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox20</rd:DefaultName>
               <Top>1.31622cm</Top>
-              <Left>8.58009cm</Left>
+              <Left>5.37334cm</Left>
               <Height>0.83283cm</Height>
-              <Width>10.55967cm</Width>
+              <Width>12.52817cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -660,7 +659,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox23</rd:DefaultName>
               <Top>3.84238cm</Top>
-              <Left>10.97473cm</Left>
+              <Left>8.40298cm</Left>
               <Height>1.01628cm</Height>
               <Width>5.59147cm</Width>
               <ZIndex>2</ZIndex>
@@ -692,8 +691,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
-              <Top>2.23196cm</Top>
-              <Left>2.88925cm</Left>
+              <Top>2.54946cm</Top>
+              <Left>0.3175cm</Left>
               <Height>0.6cm</Height>
               <Width>2.246cm</Width>
               <ZIndex>3</ZIndex>
@@ -725,10 +724,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>iAdmin</rd:DefaultName>
-              <Top>2.23196cm</Top>
-              <Left>5.08992cm</Left>
-              <Height>0.56472cm</Height>
-              <Width>2.5cm</Width>
+              <Top>2.54946cm</Top>
+              <Left>2.51817cm</Left>
+              <Height>0.96689cm</Height>
+              <Width>3.643cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
@@ -758,8 +757,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox22</rd:DefaultName>
-              <Top>2.86696cm</Top>
-              <Left>19.60195cm</Left>
+              <Top>2.54946cm</Top>
+              <Left>17.0302cm</Left>
               <Height>0.96689cm</Height>
               <Width>5.27398cm</Width>
               <ZIndex>5</ZIndex>
@@ -782,10 +781,10 @@
         </PageHeader>
         <PageHeight>21cm</PageHeight>
         <PageWidth>29.7cm</PageWidth>
-        <LeftMargin>0cm</LeftMargin>
-        <RightMargin>0cm</RightMargin>
-        <TopMargin>0cm</TopMargin>
-        <BottomMargin>0.5in</BottomMargin>
+        <LeftMargin>2cm</LeftMargin>
+        <RightMargin>2cm</RightMargin>
+        <TopMargin>2cm</TopMargin>
+        <BottomMargin>2cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
