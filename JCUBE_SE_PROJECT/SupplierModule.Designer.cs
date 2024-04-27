@@ -58,6 +58,7 @@
             this.SupplierNameField.Size = new System.Drawing.Size(384, 32);
             this.SupplierNameField.TabIndex = 8;
             this.SupplierNameField.TextChanged += new System.EventHandler(this.SupplierNameField_TextChanged);
+            this.SupplierNameField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SupplierNameField_KeyPress);
             // 
             // AddressField
             // 
@@ -67,6 +68,7 @@
             this.AddressField.Size = new System.Drawing.Size(384, 32);
             this.AddressField.TabIndex = 9;
             this.AddressField.TextChanged += new System.EventHandler(this.AddressField_TextChanged);
+            this.AddressField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddressField_KeyPress);
             // 
             // ContactField
             // 
@@ -77,6 +79,7 @@
             this.ContactField.Size = new System.Drawing.Size(384, 32);
             this.ContactField.TabIndex = 10;
             this.ContactField.TextChanged += new System.EventHandler(this.ContactField_TextChanged);
+            this.ContactField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContactField_KeyPress);
             // 
             // PhoneField
             // 
@@ -87,6 +90,7 @@
             this.PhoneField.Size = new System.Drawing.Size(384, 32);
             this.PhoneField.TabIndex = 11;
             this.PhoneField.TextChanged += new System.EventHandler(this.PhoneField_TextChanged);
+            this.PhoneField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneField_KeyPress);
             // 
             // EmailAddField
             // 
@@ -97,6 +101,7 @@
             this.EmailAddField.Size = new System.Drawing.Size(384, 32);
             this.EmailAddField.TabIndex = 12;
             this.EmailAddField.TextChanged += new System.EventHandler(this.EmailAddField_TextChanged);
+            this.EmailAddField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailAddField_KeyPress);
             // 
             // SupplierNamelbl
             // 

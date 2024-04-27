@@ -183,7 +183,7 @@ namespace JCUBE_SE_PROJECT
                                     cm = new SqlCommand("INSERT INTO tbStockEntry(RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate) SELECT RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate FROM tbStockEntryArchive WHERE StockID = @StockID DELETE FROM tbStockEntryArchive WHERE StockID = @StockID", cn);
                                     cm.Parameters.AddWithValue("@StockID", stockID); // Add @StockID parameter
                                     cm.ExecuteNonQuery();
-                                    string logAction = "UPDATE";
+                                    string logAction = "RESTORE";
                                     string logType = "STOCKS";
                                     string logDescription = "Restored a Stock";
                                     LogDao log = new LogDao(cn);

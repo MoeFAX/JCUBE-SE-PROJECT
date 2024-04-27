@@ -56,6 +56,7 @@
             this.BrandNameField.Size = new System.Drawing.Size(415, 32);
             this.BrandNameField.TabIndex = 2;
             this.BrandNameField.TextChanged += new System.EventHandler(this.BrandNameField_TextChanged);
+            this.BrandNameField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BrandNameField_KeyPress);
             // 
             // SaveBtn
             // 

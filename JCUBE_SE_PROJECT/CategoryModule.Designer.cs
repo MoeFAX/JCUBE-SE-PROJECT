@@ -90,6 +90,7 @@
             this.CtgryNameField.Size = new System.Drawing.Size(384, 32);
             this.CtgryNameField.TabIndex = 7;
             this.CtgryNameField.TextChanged += new System.EventHandler(this.CtgryNameField_TextChanged);
+            this.CtgryNameField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CtgryNameField_KeyPress);
             // 
             // lblid
             // 

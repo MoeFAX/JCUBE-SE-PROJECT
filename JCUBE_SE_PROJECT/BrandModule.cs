@@ -27,7 +27,7 @@ namespace JCUBE_SE_PROJECT
             brand = br;
         }
 
-       
+
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
@@ -52,17 +52,17 @@ namespace JCUBE_SE_PROJECT
                     MessageBox.Show("Brand name already exists. Please enter a unique brand name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (!string.IsNullOrEmpty(BrandNameField.Text) && int.TryParse(lblid.Text, out int brandID)) 
+                if (!string.IsNullOrEmpty(BrandNameField.Text) && int.TryParse(lblid.Text, out int brandID))
                 {
                     // for update
-                    
+
                     cm = new SqlCommand("UPDATE tbBrand SET BrandName = @BrandName WHERE BrandID = @BrandID", cn);
                     cm.Parameters.AddWithValue("@BrandName", BrandNameField.Text);
                     cm.Parameters.AddWithValue("@BrandID", brandID);
                     this.Dispose();
                     logAction = "UPDATE";
                     logDescription = "Updated a Brand";
-                    
+
                 }
                 else
                 {
@@ -78,13 +78,14 @@ namespace JCUBE_SE_PROJECT
                 MessageBox.Show("Record has been successfully saved.", "SAVE");
                 Clear();
                 brand.LoadBrand();
-                
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
-            } finally
+            }
+            finally
             {
                 cn.Close();
             }
@@ -109,6 +110,20 @@ namespace JCUBE_SE_PROJECT
             else
             {
                 Asterisk.Visible = true;
+            }
+        }
+
+        private HashSet<char> specialChar = new HashSet<char>
+        {
+             '.', '-', '_', '@'
+        };
+        private void BrandNameField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || char.IsDigit(e.KeyChar) ||
+           char.IsWhiteSpace(e.KeyChar) || specialChar.Contains(e.KeyChar) ||
+           char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
             }
         }
     }

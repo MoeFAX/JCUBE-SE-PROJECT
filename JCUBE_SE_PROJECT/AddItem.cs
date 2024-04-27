@@ -26,7 +26,7 @@ namespace JCUBE_SE_PROJECT
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             logUsername = username;
-            itemList = iL; 
+            itemList = iL;
             LoadBrand();
             LoadCategory();
         }
@@ -113,24 +113,24 @@ namespace JCUBE_SE_PROJECT
                 }
             }
         }
-            /*int recordCount = 0;
-            try
-            {
-                cn.Open();
-                SqlCommand countCmd = new SqlCommand("SELECT COUNT(*) FROM tbItemList", cn);
-                recordCount = (int)countCmd.ExecuteScalar();
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error counting records: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        /*int recordCount = 0;
+        try
+        {
+            cn.Open();
+            SqlCommand countCmd = new SqlCommand("SELECT COUNT(*) FROM tbItemList", cn);
+            recordCount = (int)countCmd.ExecuteScalar();
+            cn.Close();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error counting records: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
-            recordCount += 1;
-            string invCode = "INVC-" + recordCount.ToString("D6"); // D6 formats the number as six digits
-            return invCode;*/
+        recordCount += 1;
+        string invCode = "INVC-" + recordCount.ToString("D6"); // D6 formats the number as six digits
+        return invCode;*/
 
-        
+
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
@@ -162,7 +162,7 @@ namespace JCUBE_SE_PROJECT
                 }*/
 
 
-                
+
 
                 string reorderString = reorderField.Value.ToString();
                 foreach (char c in reorderString)
@@ -181,15 +181,15 @@ namespace JCUBE_SE_PROJECT
                     }
                 }
 
-                if  (Convert.ToInt32(reorderField.Value) <= 0)
+                if (Convert.ToInt32(reorderField.Value) <= 0)
                 {
                     MessageBox.Show("Reorder should must be a positive integer and it should not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (ItemCodeField.Text.Length > 10)
+                if (ItemCodeField.Text.Length > 30)
                 {
-                    MessageBox.Show("Item Code must be 10 characters long or below.", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Item Code must be 10 characters long or below.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -199,7 +199,7 @@ namespace JCUBE_SE_PROJECT
                     return;
                 }
 
-                
+
                 if (!double.TryParse(PriceField.Text, out double price) || price <= 0)
                 {
                     MessageBox.Show("Price should be a positive number greater than zero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -235,14 +235,14 @@ namespace JCUBE_SE_PROJECT
 
 
                     // Update operation
-                    cm = new SqlCommand("UPDATE tbItemList SET ItemCode = @ItemCode, Description = @Description, AcquiredCost = @AcquiredCost, bid = @bid, cid = @cid, Price = @Price, Reorder = @Reorder WHERE InventoryCode = @InventoryCode", cn);
+                    cm = new SqlCommand("UPDATE tbItemList SET ItemCode = @ItemCode, Description = @Description, AcquiredCost = @AcquiredCost, bid = @bid, cid = @cid, Price = @Price, Reorder = @Reorder WHERE ItemID = @ItemID", cn);
                     cm.Parameters.AddWithValue("@ItemID", itemID);
                     logAction = "UPDATE";
                     logDescription = "Updated an Item";
                 }
                 else
                 {
-                   
+
 
 
                     // Insert operation
@@ -270,10 +270,10 @@ namespace JCUBE_SE_PROJECT
                     }
                     logAction = "CREATE";
                     logDescription = "Created a new Item";
-                } 
+                }
 
                 // Common parameters for both update and insert operations
-                
+
                 cm.Parameters.AddWithValue("@ItemCode", ItemCodeField.Text);
                 cm.Parameters.AddWithValue("@Description", DescriptionField.Text);
                 cm.Parameters.AddWithValue("@AcquiredCost", acquiredCost);
@@ -400,6 +400,30 @@ namespace JCUBE_SE_PROJECT
             else
             {
                 AsteriskReOrder.Visible = false;
+            }
+        }
+
+        private HashSet<char> specialChar = new HashSet<char>
+        {
+             '.', '-', '_', '@'
+        };
+        private void ItemCodeField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || char.IsDigit(e.KeyChar) ||
+           char.IsWhiteSpace(e.KeyChar) || specialChar.Contains(e.KeyChar) ||
+           char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void DescriptionField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || char.IsDigit(e.KeyChar) ||
+           char.IsWhiteSpace(e.KeyChar) || specialChar.Contains(e.KeyChar) ||
+           char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
             }
         }
     }

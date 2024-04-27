@@ -101,7 +101,7 @@
             this.dtpStockEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStockEndDate.Location = new System.Drawing.Point(302, 18);
             this.dtpStockEndDate.Name = "dtpStockEndDate";
-            this.dtpStockEndDate.Size = new System.Drawing.Size(87, 25);
+            this.dtpStockEndDate.Size = new System.Drawing.Size(91, 25);
             this.dtpStockEndDate.TabIndex = 5;
             // 
             // dtpStockStartDate

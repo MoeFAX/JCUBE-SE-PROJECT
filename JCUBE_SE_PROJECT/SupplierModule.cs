@@ -201,7 +201,61 @@ namespace JCUBE_SE_PROJECT
                 AsteriskEmailAdd.Visible = true;
             }
         }
+        private HashSet<char> specialChar = new HashSet<char>
+        {
+             '.', '-', '_', '@'
+        };
 
-        
+        private HashSet<char> CharForAdd = new HashSet<char>
+        {
+             '.', '-', '_', '@', ','
+        };
+        private void SupplierNameField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || char.IsDigit(e.KeyChar) ||
+          char.IsWhiteSpace(e.KeyChar) || specialChar.Contains(e.KeyChar) ||
+          char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ContactField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || char.IsDigit(e.KeyChar) ||
+          char.IsWhiteSpace(e.KeyChar) || specialChar.Contains(e.KeyChar) ||
+          char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void EmailAddField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || char.IsDigit(e.KeyChar) ||
+          char.IsWhiteSpace(e.KeyChar) || specialChar.Contains(e.KeyChar) ||
+          char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void AddressField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || char.IsDigit(e.KeyChar) ||
+          char.IsWhiteSpace(e.KeyChar) || CharForAdd.Contains(e.KeyChar) ||
+          char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void PhoneField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

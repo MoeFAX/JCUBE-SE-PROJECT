@@ -111,6 +111,20 @@ namespace JCUBE_SE_PROJECT
                 Asterisk.Visible = true; 
             }
         }
+
+        private HashSet<char> specialChar = new HashSet<char>
+        {
+             '.', '-', '_', '@'
+        };
+        private void CtgryNameField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || char.IsDigit(e.KeyChar) ||
+          char.IsWhiteSpace(e.KeyChar) || specialChar.Contains(e.KeyChar) ||
+          char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
     }
     
 }

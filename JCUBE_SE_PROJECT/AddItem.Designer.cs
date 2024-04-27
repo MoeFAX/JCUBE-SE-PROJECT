@@ -122,11 +122,12 @@
             // 
             this.ItemCodeField.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemCodeField.Location = new System.Drawing.Point(528, 38);
-            this.ItemCodeField.MaxLength = 10;
+            this.ItemCodeField.MaxLength = 30;
             this.ItemCodeField.Name = "ItemCodeField";
             this.ItemCodeField.Size = new System.Drawing.Size(203, 32);
             this.ItemCodeField.TabIndex = 21;
             this.ItemCodeField.TextChanged += new System.EventHandler(this.ItemCodeField_TextChanged);
+            this.ItemCodeField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ItemCodeField_KeyPress);
             // 
             // ItemCodelbl
             // 
@@ -255,6 +256,7 @@
             this.DescriptionField.Size = new System.Drawing.Size(533, 32);
             this.DescriptionField.TabIndex = 40;
             this.DescriptionField.TextChanged += new System.EventHandler(this.DescriptionField_TextChanged);
+            this.DescriptionField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DescriptionField_KeyPress);
             // 
             // AsteriskIC
             // 

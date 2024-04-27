@@ -127,7 +127,7 @@ namespace JCUBE_SE_PROJECT
                
 
                 // Log the restoration action
-                string logAction = "UPDATE";
+                string logAction = "RESTORE";
                 string logType = "ITEMS";
                 string logDescription = "Restored an Item";
                 LogDao log = new LogDao(cn);
