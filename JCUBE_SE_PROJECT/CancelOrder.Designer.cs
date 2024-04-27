@@ -76,17 +76,18 @@
             // 
             this.idLbl.AutoSize = true;
             this.idLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idLbl.Location = new System.Drawing.Point(34, 57);
+            this.idLbl.Location = new System.Drawing.Point(659, 353);
             this.idLbl.Name = "idLbl";
             this.idLbl.Size = new System.Drawing.Size(34, 27);
             this.idLbl.TabIndex = 6;
             this.idLbl.Text = "Id:";
+            this.idLbl.Visible = false;
             // 
             // itemCodeLbl
             // 
             this.itemCodeLbl.AutoSize = true;
             this.itemCodeLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemCodeLbl.Location = new System.Drawing.Point(34, 90);
+            this.itemCodeLbl.Location = new System.Drawing.Point(33, 54);
             this.itemCodeLbl.Name = "itemCodeLbl";
             this.itemCodeLbl.Size = new System.Drawing.Size(104, 27);
             this.itemCodeLbl.TabIndex = 7;
@@ -96,7 +97,7 @@
             // 
             this.descriptionLbl.AutoSize = true;
             this.descriptionLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLbl.Location = new System.Drawing.Point(34, 121);
+            this.descriptionLbl.Location = new System.Drawing.Point(33, 87);
             this.descriptionLbl.Name = "descriptionLbl";
             this.descriptionLbl.Size = new System.Drawing.Size(114, 27);
             this.descriptionLbl.TabIndex = 8;
@@ -106,17 +107,18 @@
             // 
             this.idTxtbox.Enabled = false;
             this.idTxtbox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idTxtbox.Location = new System.Drawing.Point(165, 54);
+            this.idTxtbox.Location = new System.Drawing.Point(790, 350);
             this.idTxtbox.Multiline = true;
             this.idTxtbox.Name = "idTxtbox";
             this.idTxtbox.Size = new System.Drawing.Size(165, 26);
             this.idTxtbox.TabIndex = 9;
+            this.idTxtbox.Visible = false;
             // 
             // itemCodeTxtbox
             // 
             this.itemCodeTxtbox.Enabled = false;
             this.itemCodeTxtbox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemCodeTxtbox.Location = new System.Drawing.Point(165, 87);
+            this.itemCodeTxtbox.Location = new System.Drawing.Point(164, 54);
             this.itemCodeTxtbox.Multiline = true;
             this.itemCodeTxtbox.Name = "itemCodeTxtbox";
             this.itemCodeTxtbox.Size = new System.Drawing.Size(165, 26);
@@ -126,7 +128,7 @@
             // 
             this.descriptionTxtBox.Enabled = false;
             this.descriptionTxtBox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionTxtBox.Location = new System.Drawing.Point(165, 121);
+            this.descriptionTxtBox.Location = new System.Drawing.Point(164, 87);
             this.descriptionTxtBox.Multiline = true;
             this.descriptionTxtBox.Name = "descriptionTxtBox";
             this.descriptionTxtBox.Size = new System.Drawing.Size(165, 64);
@@ -136,7 +138,7 @@
             // 
             this.QtyTxtBox.Enabled = false;
             this.QtyTxtBox.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QtyTxtBox.Location = new System.Drawing.Point(491, 118);
+            this.QtyTxtBox.Location = new System.Drawing.Point(491, 121);
             this.QtyTxtBox.Multiline = true;
             this.QtyTxtBox.Name = "QtyTxtBox";
             this.QtyTxtBox.Size = new System.Drawing.Size(165, 26);
@@ -166,7 +168,7 @@
             // 
             this.QtyLbl.AutoSize = true;
             this.QtyLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QtyLbl.Location = new System.Drawing.Point(362, 121);
+            this.QtyLbl.Location = new System.Drawing.Point(334, 121);
             this.QtyLbl.Name = "QtyLbl";
             this.QtyLbl.Size = new System.Drawing.Size(46, 27);
             this.QtyLbl.TabIndex = 14;
@@ -176,7 +178,7 @@
             // 
             this.PrcLbl.AutoSize = true;
             this.PrcLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrcLbl.Location = new System.Drawing.Point(362, 90);
+            this.PrcLbl.Location = new System.Drawing.Point(334, 87);
             this.PrcLbl.Name = "PrcLbl";
             this.PrcLbl.Size = new System.Drawing.Size(59, 27);
             this.PrcLbl.TabIndex = 13;
@@ -186,11 +188,11 @@
             // 
             this.InvLbl.AutoSize = true;
             this.InvLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InvLbl.Location = new System.Drawing.Point(362, 57);
+            this.InvLbl.Location = new System.Drawing.Point(334, 54);
             this.InvLbl.Name = "InvLbl";
-            this.InvLbl.Size = new System.Drawing.Size(118, 27);
+            this.InvLbl.Size = new System.Drawing.Size(155, 27);
             this.InvLbl.TabIndex = 12;
-            this.InvLbl.Text = "Invoice No. :";
+            this.InvLbl.Text = "Transaction No. :";
             // 
             // DiscLbl
             // 
@@ -255,12 +257,13 @@
             // 
             // addInvLbl
             // 
+            this.addInvLbl.AutoSize = true;
             this.addInvLbl.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addInvLbl.Location = new System.Drawing.Point(34, 253);
             this.addInvLbl.Name = "addInvLbl";
-            this.addInvLbl.Size = new System.Drawing.Size(123, 82);
+            this.addInvLbl.Size = new System.Drawing.Size(106, 81);
             this.addInvLbl.TabIndex = 24;
-            this.addInvLbl.Text = "Add Item Back To Inventory?";
+            this.addInvLbl.Text = "Add Item \r\nback to the\r\nInventory?";
             this.addInvLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CnclByLbl
