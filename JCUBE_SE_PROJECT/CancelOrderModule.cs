@@ -29,6 +29,10 @@ namespace JCUBE_SE_PROJECT
             logUsername = username;
         }
 
+        private HashSet<char> specialChar = new HashSet<char>
+{
+    '.', '-', '_', '@'
+};
         private void btnCancelOrder_Click(object sender, EventArgs e)
         {
             try
@@ -171,6 +175,16 @@ namespace JCUBE_SE_PROJECT
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             pasAst.Visible = string.IsNullOrEmpty(txtPassword.Text);
+        }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || char.IsDigit(e.KeyChar) ||
+           char.IsWhiteSpace(e.KeyChar) || specialChar.Contains(e.KeyChar) ||
+           char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

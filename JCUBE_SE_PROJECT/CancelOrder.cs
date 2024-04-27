@@ -24,6 +24,11 @@ namespace JCUBE_SE_PROJECT
 
         }
 
+        private HashSet<char> specialChar = new HashSet<char>
+{
+    '_', '-', '"', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '=', '{', '}', '[', ']', ';', ':', ',', '.', '/', '?', '<', '>', '|', '\\', '\''
+};
+
         private void CancelOrderBtn_Click(object sender, EventArgs e)
         {
             try
@@ -80,6 +85,16 @@ namespace JCUBE_SE_PROJECT
         private void RsnTxtBox_TextChanged(object sender, EventArgs e)
         {
             reasonAst.Visible = string.IsNullOrEmpty(RsnTxtBox.Text);
+        }
+
+        private void RsnTxtBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || char.IsDigit(e.KeyChar) ||
+           char.IsWhiteSpace(e.KeyChar) || specialChar.Contains(e.KeyChar) ||
+           char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -335,6 +335,7 @@
             this.RsnTxtBox.Size = new System.Drawing.Size(165, 64);
             this.RsnTxtBox.TabIndex = 34;
             this.RsnTxtBox.TextChanged += new System.EventHandler(this.RsnTxtBox_TextChanged);
+            this.RsnTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RsnTxtBox_KeyPress);
             // 
             // udQty
             // 

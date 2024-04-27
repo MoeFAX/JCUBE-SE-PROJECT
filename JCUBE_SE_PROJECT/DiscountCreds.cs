@@ -28,6 +28,11 @@ namespace JCUBE_SE_PROJECT
             this.cart = cart;
         }
 
+        private HashSet<char> specialChar = new HashSet<char>
+{
+    '.', '-', '_', '@'
+};
+
         private void btnAddDiscount_Click(object sender, EventArgs e)
         {
             try
@@ -170,6 +175,14 @@ namespace JCUBE_SE_PROJECT
             pasAst.Visible = string.IsNullOrEmpty(txtPassword.Text);
         }
 
-        
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || char.IsDigit(e.KeyChar) ||
+           char.IsWhiteSpace(e.KeyChar) || specialChar.Contains(e.KeyChar) ||
+           char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true; 
+            }
+        }
     }
 }
