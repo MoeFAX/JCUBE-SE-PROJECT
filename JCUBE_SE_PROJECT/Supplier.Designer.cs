@@ -71,7 +71,7 @@
             this.addbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.addbtn.Image = ((System.Drawing.Image)(resources.GetObject("addbtn.Image")));
             this.addbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addbtn.Location = new System.Drawing.Point(821, 22);
+            this.addbtn.Location = new System.Drawing.Point(770, 22);
             this.addbtn.Name = "addbtn";
             this.addbtn.Size = new System.Drawing.Size(106, 38);
             this.addbtn.TabIndex = 5;

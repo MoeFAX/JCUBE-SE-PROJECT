@@ -52,7 +52,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -214,6 +213,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.PrintInvList);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(20, 0);
@@ -235,7 +235,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.PrintInvList);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 477);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -251,7 +250,7 @@
             this.PrintInvList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.PrintInvList.Image = ((System.Drawing.Image)(resources.GetObject("PrintInvList.Image")));
             this.PrintInvList.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.PrintInvList.Location = new System.Drawing.Point(683, 17);
+            this.PrintInvList.Location = new System.Drawing.Point(316, 22);
             this.PrintInvList.MinimumSize = new System.Drawing.Size(20, 20);
             this.PrintInvList.Name = "PrintInvList";
             this.PrintInvList.Size = new System.Drawing.Size(191, 38);
@@ -287,7 +286,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

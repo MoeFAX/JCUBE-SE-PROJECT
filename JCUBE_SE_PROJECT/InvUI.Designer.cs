@@ -352,7 +352,7 @@ namespace JCUBE_SE_PROJECT
             this.btnSupplier.Name = "btnSupplier";
             this.btnSupplier.Size = new System.Drawing.Size(232, 50);
             this.btnSupplier.TabIndex = 8;
-            this.btnSupplier.Text = "Supplier";
+            this.btnSupplier.Text = "Suppliers";
             this.btnSupplier.UseVisualStyleBackColor = true;
             this.btnSupplier.Click += new System.EventHandler(this.btnSupplier_Click);
             // 
@@ -370,7 +370,7 @@ namespace JCUBE_SE_PROJECT
             this.btnBrand.Name = "btnBrand";
             this.btnBrand.Size = new System.Drawing.Size(232, 50);
             this.btnBrand.TabIndex = 7;
-            this.btnBrand.Text = "Brand";
+            this.btnBrand.Text = "Brands";
             this.btnBrand.UseVisualStyleBackColor = true;
             this.btnBrand.Click += new System.EventHandler(this.btnBrand_Click);
             // 
@@ -388,7 +388,7 @@ namespace JCUBE_SE_PROJECT
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Size = new System.Drawing.Size(232, 50);
             this.btnCategory.TabIndex = 6;
-            this.btnCategory.Text = "Category";
+            this.btnCategory.Text = "Categories";
             this.btnCategory.UseVisualStyleBackColor = true;
             this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 

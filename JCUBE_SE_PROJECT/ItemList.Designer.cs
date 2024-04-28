@@ -59,9 +59,9 @@
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 560);
+            this.panel1.Location = new System.Drawing.Point(0, 534);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(893, 19);
+            this.panel1.Size = new System.Drawing.Size(982, 19);
             this.panel1.TabIndex = 1;
             // 
             // txtSearch
@@ -84,7 +84,7 @@
             this.txtSearch.Icon = global::JCUBE_SE_PROJECT.Properties.Resources.icons8_search_50__1_;
             this.txtSearch.IconRight = true;
             this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(146, 23);
+            this.txtSearch.Location = new System.Drawing.Point(191, 23);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
@@ -108,7 +108,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(893, 73);
+            this.panel2.Size = new System.Drawing.Size(982, 73);
             this.panel2.TabIndex = 2;
             // 
             // addbtn
@@ -120,7 +120,7 @@
             this.addbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.addbtn.Image = ((System.Drawing.Image)(resources.GetObject("addbtn.Image")));
             this.addbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addbtn.Location = new System.Drawing.Point(759, 23);
+            this.addbtn.Location = new System.Drawing.Point(770, 22);
             this.addbtn.Name = "addbtn";
             this.addbtn.Size = new System.Drawing.Size(106, 38);
             this.addbtn.TabIndex = 6;
@@ -143,9 +143,9 @@
             // side2
             // 
             this.side2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.side2.Location = new System.Drawing.Point(875, 73);
+            this.side2.Location = new System.Drawing.Point(964, 73);
             this.side2.Name = "side2";
-            this.side2.Size = new System.Drawing.Size(18, 487);
+            this.side2.Size = new System.Drawing.Size(18, 461);
             this.side2.TabIndex = 4;
             // 
             // panel3
@@ -153,7 +153,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 73);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(18, 487);
+            this.panel3.Size = new System.Drawing.Size(18, 461);
             this.panel3.TabIndex = 5;
             // 
             // Archive
@@ -321,7 +321,7 @@
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dgvItem.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItem.RowTemplate.Height = 24;
-            this.dgvItem.Size = new System.Drawing.Size(857, 487);
+            this.dgvItem.Size = new System.Drawing.Size(946, 461);
             this.dgvItem.TabIndex = 18;
             this.dgvItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItem_CellContentClick);
             // 
@@ -330,7 +330,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(893, 579);
+            this.ClientSize = new System.Drawing.Size(982, 553);
             this.Controls.Add(this.dgvItem);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.side2);

@@ -35,12 +35,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockInHistoryUI));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvStockHistory = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            this.PrintStockHistory = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.SIHIDCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SIHRefCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SIHInvCodeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +44,12 @@
             this.SIHSIBCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SIHStatusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SIHSupplierCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.PrintStockHistory = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockHistory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,84 +128,6 @@
             this.dgvStockHistory.RowTemplate.Height = 24;
             this.dgvStockHistory.Size = new System.Drawing.Size(896, 461);
             this.dgvStockHistory.TabIndex = 18;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(241, 544);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 27);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "To:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 545);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 27);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Filter From:";
-            // 
-            // dtpStartDate
-            // 
-            this.dtpStartDate.CustomFormat = "MM/dd/yyyy";
-            this.dtpStartDate.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(123, 547);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(99, 25);
-            this.dtpStartDate.TabIndex = 30;
-            // 
-            // dtpEndDate
-            // 
-            this.dtpEndDate.CustomFormat = "MM/dd/yyyy";
-            this.dtpEndDate.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndDate.Location = new System.Drawing.Point(281, 545);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(99, 25);
-            this.dtpEndDate.TabIndex = 31;
-            // 
-            // PrintStockHistory
-            // 
-            this.PrintStockHistory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PrintStockHistory.FlatAppearance.BorderSize = 0;
-            this.PrintStockHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PrintStockHistory.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrintStockHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.PrintStockHistory.Image = ((System.Drawing.Image)(resources.GetObject("PrintStockHistory.Image")));
-            this.PrintStockHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.PrintStockHistory.Location = new System.Drawing.Point(693, 540);
-            this.PrintStockHistory.MinimumSize = new System.Drawing.Size(20, 20);
-            this.PrintStockHistory.Name = "PrintStockHistory";
-            this.PrintStockHistory.Size = new System.Drawing.Size(192, 34);
-            this.PrintStockHistory.TabIndex = 32;
-            this.PrintStockHistory.Text = "Print Preview";
-            this.PrintStockHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PrintStockHistory.UseVisualStyleBackColor = true;
-            this.PrintStockHistory.Click += new System.EventHandler(this.PrintStockHistory_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(564, 540);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(123, 34);
-            this.button4.TabIndex = 33;
-            this.button4.Text = "Refresh";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // SIHIDCol
             // 
@@ -286,6 +208,84 @@
             this.SIHSupplierCol.Name = "SIHSupplierCol";
             this.SIHSupplierCol.ReadOnly = true;
             this.SIHSupplierCol.Width = 90;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(241, 544);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 27);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "To:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Noto Sans", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 545);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 27);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Filter From:";
+            // 
+            // dtpStartDate
+            // 
+            this.dtpStartDate.CustomFormat = "MM/dd/yyyy";
+            this.dtpStartDate.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStartDate.Location = new System.Drawing.Point(123, 547);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(99, 25);
+            this.dtpStartDate.TabIndex = 30;
+            // 
+            // dtpEndDate
+            // 
+            this.dtpEndDate.CustomFormat = "MM/dd/yyyy";
+            this.dtpEndDate.Font = new System.Drawing.Font("Noto Sans", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEndDate.Location = new System.Drawing.Point(281, 545);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(99, 25);
+            this.dtpEndDate.TabIndex = 31;
+            // 
+            // PrintStockHistory
+            // 
+            this.PrintStockHistory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PrintStockHistory.FlatAppearance.BorderSize = 0;
+            this.PrintStockHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrintStockHistory.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintStockHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.PrintStockHistory.Image = ((System.Drawing.Image)(resources.GetObject("PrintStockHistory.Image")));
+            this.PrintStockHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.PrintStockHistory.Location = new System.Drawing.Point(281, 14);
+            this.PrintStockHistory.MinimumSize = new System.Drawing.Size(20, 20);
+            this.PrintStockHistory.Name = "PrintStockHistory";
+            this.PrintStockHistory.Size = new System.Drawing.Size(192, 34);
+            this.PrintStockHistory.TabIndex = 32;
+            this.PrintStockHistory.Text = "Print Preview";
+            this.PrintStockHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PrintStockHistory.UseVisualStyleBackColor = true;
+            this.PrintStockHistory.Click += new System.EventHandler(this.PrintStockHistory_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.Location = new System.Drawing.Point(505, 14);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(123, 34);
+            this.button4.TabIndex = 33;
+            this.button4.Text = "Refresh";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // StockInHistoryUI
             // 
