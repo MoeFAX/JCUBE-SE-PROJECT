@@ -116,7 +116,11 @@ namespace JCUBE_SE_PROJECT
                             string status = dgvStockEntry.Rows[e.RowIndex].Cells["Status"].Value.ToString();
 
 
-                            cm = new SqlCommand("INSERT INTO tbStockEntryArchive(StockID, RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate) SELECT StockID, RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate FROM tbStockEntry WHERE StockID = @StockID DELETE FROM tbStockEntry WHERE StockID = @StockID", cn);
+                            cm = new SqlCommand(@"INSERT INTO tbStockEntryArchive(StockID, RefNo, ilid, sid, Stocks, Status, StockInBy, StockInDate, InventoryCode) 
+                      SELECT se.StockID, se.RefNo, se.ilid, se.sid, se.Stocks, se.Status, se.StockInBy, se.StockInDate, il.InventoryCode
+                      FROM tbStockEntry AS se
+                      INNER JOIN tbItemList AS il ON il.InventoryCode = se.ilid
+                      WHERE StockID = @StockID DELETE FROM tbStockEntry WHERE StockID = @StockID", cn);
                             cm.Parameters.AddWithValue("@StockID", stockID);
                             cm.ExecuteNonQuery();
                             string logAction = "ARCHIVE";

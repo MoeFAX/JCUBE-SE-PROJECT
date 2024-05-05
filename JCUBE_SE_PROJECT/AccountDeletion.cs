@@ -16,7 +16,7 @@ namespace JCUBE_SE_PROJECT
         public void AccountAge(SqlConnection cn)
         {
             cn.Open();
-            using (SqlCommand command = new SqlCommand("UPDATE tbUserArchive SET accountAge = DATEDIFF(mi, TimeArchived, GETDATE()) FROM tbUserArchive WHERE TimeArchived IS NOT NULL", cn))
+            using (SqlCommand command = new SqlCommand("UPDATE tbUserArchive SET accountAge = DATEDIFF(day, TimeArchived, GETDATE()) FROM tbUserArchive WHERE TimeArchived IS NOT NULL", cn))
             {
                 command.ExecuteNonQuery();
             }
@@ -26,7 +26,7 @@ namespace JCUBE_SE_PROJECT
         public void ExpiredAccounts(SqlConnection cn)
         {
             cn.Open();
-            using (SqlCommand command = new SqlCommand("DELETE FROM tbUserArchive WHERE accountAge >= 50", cn))
+            using (SqlCommand command = new SqlCommand("DELETE FROM tbUserArchive WHERE accountAge >= 30", cn))
             {
                 command.ExecuteNonQuery();
             }

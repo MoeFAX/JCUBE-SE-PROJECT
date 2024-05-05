@@ -236,7 +236,7 @@ namespace JCUBE_SE_PROJECT
                 using (SqlConnection cn = new SqlConnection(dbcon.myConnection()))
                 {
                     cn.Open();
-                    using (SqlCommand cm = new SqlCommand("SELECT p.ItemID, p.InventoryCode, p.ItemCode, p.Description, b.BrandName, c.CategoryName, p.Price, p.Reorder, p.Qty FROM tbItemList AS p INNER JOIN tbBrand AS b ON b.BrandID = p.bid INNER JOIN tbCategory AS c ON c.CategoryID = p.cid WHERE (p.Qty <= p.Reorder)", cn))
+                    using (SqlCommand cm = new SqlCommand("SELECT TOP 5 p.ItemID, p.InventoryCode, p.ItemCode, p.Description, b.BrandName, c.CategoryName, p.Price, p.Reorder, p.Qty FROM tbItemList AS p INNER JOIN tbBrand AS b ON b.BrandID = p.bid INNER JOIN tbCategory AS c ON c.CategoryID = p.cid WHERE (p.Qty <= p.Reorder)", cn))
                     {
                         using (SqlDataReader dr = cm.ExecuteReader())
                         {

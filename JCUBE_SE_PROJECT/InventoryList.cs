@@ -36,7 +36,7 @@ namespace JCUBE_SE_PROJECT
         {
             dgvInventory.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand("SELECT p.ItemID, p.InventoryCode, p.ItemCode, p.Description, b.BrandName, c.CategoryName, p.Price, p.Qty, p.Reorder FROM tbItemList AS p INNER JOIN tbBrand AS b ON b.BrandID = p.bid INNER JOIN tbCategory AS c ON c.CategoryID = p.cid", cn);
+            cm = new SqlCommand("SELECT p.ItemID, p.InventoryCode, p.ItemCode, p.Description, b.BrandName, c.CategoryName, p.Price, p.Qty, p.Reorder FROM tbItemList AS p INNER JOIN tbBrand AS b ON b.BrandID = p.bid INNER JOIN tbCategory AS c ON c.CategoryID = p.cid WHERE CONCAT (p.Description, p.ItemCode, p.InventoryCode, b.BrandName, c.CategoryName) LIKE '%" + txtSearch.Text + "%' ORDER BY p.InventoryCode ASC", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
@@ -55,6 +55,11 @@ namespace JCUBE_SE_PROJECT
             PrintInvList prtinvlist = new PrintInvList(adminuser);
             prtinvlist.LoadPrtInvList();
             prtinvlist.ShowDialog();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadInvList();
         }
     }
 }

@@ -212,7 +212,7 @@
             // 
             // loginTimer
             // 
-            this.loginTimer.Interval = 50;
+            this.loginTimer.Interval = 1000;
             this.loginTimer.Tick += new System.EventHandler(this.loginTimer_Tick);
             // 
             // LoginCloseBttn

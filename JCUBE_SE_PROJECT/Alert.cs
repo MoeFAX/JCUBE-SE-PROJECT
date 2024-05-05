@@ -37,7 +37,7 @@ namespace JCUBE_SE_PROJECT
             switch(this.action)
             {
                 case enmAction.wait:
-                    timer1.Interval = 15000;
+                    timer1.Interval = 5000;
                     action = enmAction.close; 
                     break;
                     case enmAction.start:
@@ -107,17 +107,6 @@ namespace JCUBE_SE_PROJECT
 
        
 
-        /*private Color SelectThemeColor()
-        {
-            int index = random.Next(ThemeColor.ColorList.Count);
-            while(tempIndex==index)
-            {
-                //if the color has already been selected, we select again to choose a different one.
-                index = random.Next(ThemeColor.ColorList.Count);
-            }
-            tempIndex = index;
-            string color = ThemeColor.ColorList[index];
-            return ColorTranslator.FromHtml(color);
-        }*/
+        
     }
 }
